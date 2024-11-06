@@ -144,12 +144,33 @@ public class ProductController extends BaseController {
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //----详情 start------------------------------
     @Operation(summary = "获取商品sku信息")
+    //所有提供者端接口，只要被自己服务调用者进行延迟调用，必须携带请求头(from-source=inner)，否则不能进行调用。
+    // 如果设置了isUser = true，那么还需要携带用户id和username头信息。具体详细参见：InnerAuthAspect
+    //@InnerAuth(isUser = true)
     @InnerAuth
     @GetMapping(value = "/getProductSku/{skuId}")
     public R<ProductSku> getProductSku(@PathVariable("skuId") Long skuId) {
-        return R.ok(productService.getProductSku(skuId));
+        ProductSku productSku = productService.getProductSku(skuId); //根据id查询一条数据。
+        return R.ok(productSku); //统一返回结果。对于内部服务接口调用，统一封装成R对象。
     }
 
     @Operation(summary = "获取商品信息")
@@ -162,7 +183,7 @@ public class ProductController extends BaseController {
     @Operation(summary = "获取商品sku最新价格信息")
     @InnerAuth
     @GetMapping(value = "/getSkuPrice/{skuId}")
-    public R<SkuPrice> getSkuPrice(@PathVariable("skuId") Long skuId) {
+    public R<SkuPrice> getSkuPrice(@PathVariable("skuId") Long skuId) { //SkuPrice对象只封装了两个价格salePrice和marketPrice
         return R.ok(productService.getSkuPrice(skuId));
     }
 

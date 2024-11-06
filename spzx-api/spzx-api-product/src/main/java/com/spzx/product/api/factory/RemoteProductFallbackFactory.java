@@ -20,6 +20,7 @@ import java.util.Map;
 
 /**
  * 商品降级处理类
+ * 通过OpenFeign组件的FallbackFactory接口实现降级处理类。
  */
 public class RemoteProductFallbackFactory implements FallbackFactory<RemoteProductService> {
 

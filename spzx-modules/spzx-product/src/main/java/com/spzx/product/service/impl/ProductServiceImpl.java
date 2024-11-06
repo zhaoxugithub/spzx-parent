@@ -46,6 +46,8 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     @Autowired
     private SkuStockMapper skuStockMapper;
 
+
+
     //@Autowired
     //private StringRedisTemplate stringRedisTemplate; //适合 key和value都是字符串类型
 
@@ -136,6 +138,60 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 
     @Override
     public int updateProduct(Product product) {
+
+        //延时双删 保证 数据一致性    最终一致性。
+        //修改数据库数据之前，先删除一遍缓存数据
+        List<ProductSku> productSkuList = product.getProductSkuList();
+        List<Long> skuIdList = productSkuList.stream().map(ProductSku::getId).toList();
+
+        for (Long skuId : skuIdList) {
+            String dataKey = "product:sku:" + skuId;
+            redisTemplate.delete(dataKey);
+        }
+
+
+        //1.更新Product
+        productMapper.updateById(product);
+
+        //2.更新SKU   List<ProductSku>
+        if (CollectionUtils.isEmpty(productSkuList)) {
+            throw new ServiceException("SKU数据为空");
+        }
+        productSkuList.forEach(productSku -> {
+            productSkuMapper.updateById(productSku);
+
+            //3.更新库存   List<ProductSku> -> 获取扩展字段stockNum
+            SkuStock skuStock = skuStockMapper.selectOne(new LambdaQueryWrapper<SkuStock>().eq(SkuStock::getSkuId, productSku.getId()));
+            skuStock.setTotalNum(productSku.getStockNum());
+            skuStock.setAvailableNum(skuStock.getTotalNum() - skuStock.getLockNum());
+            skuStockMapper.updateById(skuStock);
+        });
+
+        //4.更新详情ProductDetails
+        ProductDetails productDetails = productDetailsMapper
+                .selectOne(new LambdaQueryWrapper<ProductDetails>().eq(ProductDetails::getProductId, product.getId()));
+        productDetails.setImageUrls(String.join(",", product.getDetailsImageUrlList()));
+        productDetailsMapper.updateById(productDetails);
+
+
+        //修改数据库后，睡一会再删除一遍缓存。
+        try {
+            Thread.sleep(500); //保证数据库端主从复制可以全部完成。
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        for (Long skuId : skuIdList) {
+            String dataKey = "product:sku:" + skuId;
+            redisTemplate.delete(dataKey);
+        }
+
+        return 1;
+    }
+
+
+    /*@Override
+    public int updateProduct(Product product) {
+
         //1.更新Product
         productMapper.updateById(product);
 
@@ -161,7 +217,8 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         productDetailsMapper.updateById(productDetails);
 
         return 1;
-    }
+    }*/
+
 
 
     @Override
@@ -243,7 +300,8 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 
     @Override
     public SkuPrice getSkuPrice(Long skuId) {
-        ProductSku productSku = productSkuMapper.selectOne(new LambdaQueryWrapper<ProductSku>().eq(ProductSku::getId, skuId).select(ProductSku::getSalePrice, ProductSku::getMarketPrice));
+        ProductSku productSku = productSkuMapper.selectOne(new LambdaQueryWrapper<ProductSku>()
+                .eq(ProductSku::getId, skuId).select(ProductSku::getSalePrice, ProductSku::getMarketPrice));
         SkuPrice skuPrice = new SkuPrice();
         BeanUtils.copyProperties(productSku, skuPrice);
         return skuPrice;
@@ -255,7 +313,18 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         return productDetailsMapper.selectOne(new LambdaQueryWrapper<ProductDetails>().eq(ProductDetails::getProductId, id));
     }
 
-
+    /**
+     *         "skuSpecValueMap": {
+     *             "黑色 + 18G": 6,
+     *             "红色 + 18G": 4,
+     *             "白色 + 8G": 1,
+     *             "白色 + 18G": 2,
+     *             "黑色 + 8G": 5,
+     *             "红色 + 8G": 3
+     *         }
+     * @param id productId
+     * @return
+     */
     @Override
     public Map<String, Long> getSkuSpecValue(Long id) {
         List<ProductSku> productSkuList = productSkuMapper.selectList(new LambdaQueryWrapper<ProductSku>().eq(ProductSku::getProductId, id).select(ProductSku::getId, ProductSku::getSkuSpec));

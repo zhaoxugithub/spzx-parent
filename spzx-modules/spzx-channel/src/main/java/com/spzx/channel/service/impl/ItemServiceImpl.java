@@ -24,7 +24,7 @@ import java.util.Map;
 public class ItemServiceImpl implements IItemService {
 
     @Autowired
-    private RemoteProductService remoteProductService;
+    private RemoteProductService remoteProductService; //api接口：动态代理实现远程调用。
 
     @Override
     public ItemVo item(Long skuId) throws Exception {
@@ -33,8 +33,8 @@ public class ItemServiceImpl implements IItemService {
 
         //任务1.获取sku信息
         R<ProductSku> productSkuResult = remoteProductService.getProductSku(skuId, SecurityConstants.INNER);
-        if (R.FAIL == productSkuResult.getCode()) {
-            throw new ServiceException(productSkuResult.getMsg());
+        if (R.FAIL == productSkuResult.getCode()) { //远程返回结果状态码是500，那么表示降级处理了。
+            throw new ServiceException(productSkuResult.getMsg()); //抛异常给controller，继续抛给统一异常处理类。
         }
         ProductSku productSku = productSkuResult.getData();
         itemVo.setProductSku(productSku);
@@ -48,6 +48,7 @@ public class ItemServiceImpl implements IItemService {
         Product product = productResult.getData();
         itemVo.setProduct(product);
         itemVo.setSliderUrlList(Arrays.asList(product.getSliderUrls().split(",")));
+        //[{"key":"大小","valueList":["大款式","中款式","迷你款"]},{"key":"颜色","valueList":["白色","黑色"]}]
         itemVo.setSpecValueList(JSON.parseArray(product.getSpecValue()));
 
 
@@ -85,7 +86,7 @@ public class ItemServiceImpl implements IItemService {
         }
         SkuStockVo skuStockVo = skuStockResult.getData();
         itemVo.setSkuStockVo(skuStockVo);
-        productSku.setStockNum(skuStockVo.getAvailableNum());
+        productSku.setStockNum(skuStockVo.getAvailableNum()); //productSku增加一个扩展字段。
 
         return itemVo;
     }
