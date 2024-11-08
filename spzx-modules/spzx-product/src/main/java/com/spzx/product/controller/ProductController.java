@@ -209,4 +209,18 @@ public class ProductController extends BaseController {
     }
     //----详情 end------------------------------
 
+
+    /**
+     * 批量获取SkuPrice
+     * @param skuIdList 多个skuId
+     * @return 返回List<SkuPrice>
+     */
+    @Operation(summary = "批量获取商品sku最新价格信息")
+    @InnerAuth
+    @PostMapping(value = "/getSkuPriceList")
+    public R<List<SkuPrice>> getSkuPriceList(@RequestBody List<Long> skuIdList)
+    {
+        return R.ok(productService.getSkuPriceList(skuIdList));
+    }
+
 }

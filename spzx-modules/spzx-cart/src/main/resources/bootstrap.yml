@@ -25,3 +25,6 @@ spring:
         # 共享配置
         shared-configs:
           - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+# 除了拉取共享配置，还需要拉取默认规则的配置：${prefix}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+# ${prefix}  prefix前缀没有配置，取应用名称。
+# dataId = spzx-cart-dev.yml

@@ -9,6 +9,7 @@ import java.lang.annotation.Target;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;
 import com.spzx.common.security.config.ApplicationConfig;
 import com.spzx.common.security.feign.FeignAutoConfiguration;
@@ -22,7 +23,8 @@ import com.spzx.common.security.feign.FeignAutoConfiguration;
 // 指定要扫描的Mapper类的包的路径
 @MapperScan("com.spzx.**.mapper")
 // 开启线程异步执行
-@EnableAsync
+@EnableAsync  // @Async修饰的方法表示异步执行任务。
+
 // 自动加载类
 @Import({ ApplicationConfig.class, FeignAutoConfiguration.class })
 public @interface EnableCustomConfig

@@ -1,6 +1,7 @@
 package com.spzx.product.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.spzx.common.core.exception.ServiceException;
 import com.spzx.common.core.utils.bean.BeanUtils;
@@ -19,11 +20,13 @@ import com.spzx.product.service.IProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 /**
@@ -45,7 +48,6 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 
     @Autowired
     private SkuStockMapper skuStockMapper;
-
 
 
     //@Autowired
@@ -220,7 +222,6 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     }*/
 
 
-
     @Override
     public int deleteProductByIds(Long[] ids) {
         //1.删除Product表数据
@@ -256,14 +257,54 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         productMapper.updateById(product);
     }
 
+    @Transactional
     @Override
     public void updateStatus(Long id, Integer status) {
         Product product = new Product();
         product.setId(id);
         if (status == 1) {
-            product.setStatus(1);
+            product.setStatus(1); //spu上架了，那么对应的多个sku也需要上架。
+            ProductSku productSkuUpdate = new ProductSku();
+            //productSkuUpdate.setProductId(id);
+            productSkuUpdate.setStatus(1);
+            productSkuMapper.update(productSkuUpdate,new LambdaUpdateWrapper<ProductSku>().eq(ProductSku::getProductId,id));
+
+            //新上架的sku也需要存放到bitmap中
+            List<ProductSku> skuList = productSkuMapper
+                    .selectList(new LambdaQueryWrapper<ProductSku>()
+                            .eq(ProductSku::getStatus, 1)
+                            .eq(ProductSku::getProductId, id));
+            if(!CollectionUtils.isEmpty(skuList)){
+                String key = "sku:product:data";
+                for (ProductSku productSku : skuList) {
+                    Long skuId = productSku.getId();
+                    redisTemplate.opsForValue().setBit(key,skuId,true); //  true表示1   false表示0
+                }
+            }
+
         } else {
+
+            List<ProductSku> skuList = productSkuMapper
+                    .selectList(new LambdaQueryWrapper<ProductSku>()
+                            .eq(ProductSku::getStatus, 1)
+                            .eq(ProductSku::getProductId, id));
+            if(!CollectionUtils.isEmpty(skuList)){
+                String key = "sku:product:data";
+                for (ProductSku productSku : skuList) {
+                    Long skuId = productSku.getId();
+                    //redisTemplate.delete(key); //当前商品下架了，其他商品还没有下架。不能删除key
+                    redisTemplate.opsForValue().setBit(key,skuId,false);
+                    String dataKey = "product:sku:" + skuId;   //注意key名称一致。
+                    redisTemplate.delete(dataKey);
+                }
+            }
+
             product.setStatus(-1);
+            ProductSku productSkuUpdate = new ProductSku();
+            //productSkuUpdate.setProductId(id);
+            productSkuUpdate.setStatus(-1);
+            productSkuMapper.update(productSkuUpdate,new LambdaUpdateWrapper<ProductSku>().eq(ProductSku::getProductId,id));
+
         }
         productMapper.updateById(product);
     }
@@ -284,12 +325,74 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     /**
      * 服务提供者：6个接口来服务于商品详情查询。需要进行优化，提供查询效率。
      * 需要使用redis来提高性能。
+     * <p>
+     * 先从缓存获取数据，缓存中存在直接返回，缓存中不存在获取分布式锁（避免缓存击穿），从数据库获取。然后，存放到缓存中，下次利用。
+     * 这里注意哪些问题？
+     * 查询null也要存放到缓存中(一定程度上缓解缓存穿透)，缓存时间比正常数据短一些。失效时间随机增加1-5分钟，避免缓存雪崩。
+     * 增加bitmap或布隆过滤器，彻底解决缓存穿透的问题。
      */
-
     @Override
     public ProductSku getProductSku(Long skuId) {
-        return productSkuMapper.selectById(skuId);
+        try {
+            //1.先从缓存中获取，有则直接返回
+            String dataKey = "product:sku:" + skuId;
+            ProductSku productSku = (ProductSku) redisTemplate.opsForValue().get(dataKey);
+            if (productSku != null) {
+                log.info("从缓存中获取了productSku = " + productSku);
+                return productSku;
+            }
+            //2.缓存没有获取分布式锁
+            String lockKey = "product:sku:lock:" + skuId;
+            String lockVal = UUID.randomUUID().toString().replaceAll("-", ""); //加锁的标记，续期、释放锁都需要根据这个标记进行操作。
+            Boolean ifAbsent = redisTemplate.opsForValue().setIfAbsent(lockKey, lockVal, 5, TimeUnit.SECONDS);
+            if (ifAbsent) {
+                try {
+                    //2.1获取锁成功从数据库获取，存放到缓存
+                    productSku = getSkuFromDB(skuId);
+                    int random = new Random().nextInt(5);
+                    int expireTime = productSku == null ? 5 * 60 + random : 10 * 60 + random;
+                    redisTemplate.opsForValue().set(dataKey, productSku, expireTime, TimeUnit.SECONDS);
+                    return productSku;
+                } finally {
+                    //释放锁，保证原子性-lua    释放自己的锁，避免释放他人的锁。
+                    String script = "if redis.call('get',KEYS[1]) == ARGV[1] then\n" +
+                            "\treturn redis.call('del',KEYS[1])\n" +
+                            "else\n" +
+                            "\treturn 0\n" +
+                            "end";
+                    DefaultRedisScript<Long> redisScript = new DefaultRedisScript<Long>();
+                    redisScript.setScriptText(script);
+                    redisScript.setResultType(Long.class);
+                    Long result = (Long)redisTemplate.execute(redisScript, Arrays.asList(lockKey), lockVal);
+                    log.info("释放锁是否成功 result = "+result);
+                }
+            } else {
+                //2.2获取锁失败睡觉自旋
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return this.getProductSku(skuId); //自旋，调用当前方法，重试。
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return getSkuFromDB(skuId); //如果存在异常，兜底，从数据库获取数据。
+        }
     }
+
+    //从数据库获取
+    private ProductSku getSkuFromDB(Long skuId) {
+        ProductSku productSku = productSkuMapper.selectById(skuId);
+        return productSku;
+    }
+
+
+
+/*    @Override
+    public ProductSku getProductSku(Long skuId) {
+        return productSkuMapper.selectById(skuId);
+    }*/
 
 
     @Override
@@ -314,14 +417,15 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     }
 
     /**
-     *         "skuSpecValueMap": {
-     *             "黑色 + 18G": 6,
-     *             "红色 + 18G": 4,
-     *             "白色 + 8G": 1,
-     *             "白色 + 18G": 2,
-     *             "黑色 + 8G": 5,
-     *             "红色 + 8G": 3
-     *         }
+     * "skuSpecValueMap": {
+     * "黑色 + 18G": 6,
+     * "红色 + 18G": 4,
+     * "白色 + 8G": 1,
+     * "白色 + 18G": 2,
+     * "黑色 + 8G": 5,
+     * "红色 + 8G": 3
+     * }
+     *
      * @param id productId
      * @return
      */
