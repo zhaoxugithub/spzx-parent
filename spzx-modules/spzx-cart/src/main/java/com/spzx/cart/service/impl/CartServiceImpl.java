@@ -202,4 +202,66 @@ public class CartServiceImpl implements ICartService {
         }
 
     }
+
+
+    @Override
+    public List<CartInfo> getCartCheckedList(Long userId) {
+        String cartKey = getCartKey(userId);
+        BoundHashOperations<String,String,CartInfo> boundHashOperations = redisTemplate.boundHashOps(cartKey);
+        List<CartInfo> cartInfoList = boundHashOperations.values();
+
+        if(!CollectionUtils.isEmpty(cartInfoList)){
+            return cartInfoList.stream().filter(cartInfo -> cartInfo.getIsChecked()==1).toList();
+        }
+        return new ArrayList<>();
+    }
+
+
+    @Override
+    public Boolean updateCartPrice(Long userId) {
+        //获取购物车所有商品。只更新下订单中商品在购物车中的价格。
+        String cartKey = getCartKey(userId);
+        BoundHashOperations<String,String,CartInfo> boundHashOperations = redisTemplate.boundHashOps(cartKey);
+        List<CartInfo> cartInfoList = boundHashOperations.values();
+
+        if(!CollectionUtils.isEmpty(cartInfoList)){
+            List<CartInfo> checkedCartInfoList = cartInfoList.stream().filter(cartInfo -> cartInfo.getIsChecked() == 1).toList();
+            if(!CollectionUtils.isEmpty(checkedCartInfoList)){
+                List<Long> skuIdList = checkedCartInfoList.stream().map(cartInfo -> cartInfo.getSkuId()).toList();
+                R<List<SkuPrice>> skuPriceListResult = remoteProductService.getSkuPriceList(skuIdList, SecurityConstants.INNER);
+                if(skuPriceListResult.getCode()  == R.FAIL){
+                    throw new ServiceException(skuPriceListResult.getMsg());
+                }
+                List<SkuPrice> skuPriceList = skuPriceListResult.getData();
+                Map<Long, BigDecimal> skuIdToSalePriceMap = skuPriceList.stream().collect(Collectors.toMap(SkuPrice::getSkuId, SkuPrice::getSalePrice));
+                for (CartInfo checkedCartInfo : checkedCartInfoList) {
+                    BigDecimal newPrice = skuIdToSalePriceMap.get(checkedCartInfo.getSkuId());
+                    checkedCartInfo.setSkuPrice(newPrice);
+                    checkedCartInfo.setCartPrice(newPrice);
+                    boundHashOperations.put(checkedCartInfo.getSkuId().toString(),checkedCartInfo);
+                }
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+    @Override
+    public Boolean deleteCartCheckedList(Long userId) {
+        //获取购物车所有商品。只更新下订单中商品在购物车中的价格。
+        String cartKey = getCartKey(userId);
+        BoundHashOperations<String,String,CartInfo> boundHashOperations = redisTemplate.boundHashOps(cartKey);
+        List<CartInfo> cartInfoList = boundHashOperations.values();
+        if(!CollectionUtils.isEmpty(cartInfoList)){
+            for (CartInfo cartInfo : cartInfoList) {
+                if(cartInfo.getIsChecked() == 1){
+                    boundHashOperations.delete(cartInfo.getSkuId().toString());
+                }
+            }
+            return true;
+        }
+        return false;
+    }
 }

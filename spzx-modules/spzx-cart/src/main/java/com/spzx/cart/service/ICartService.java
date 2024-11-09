@@ -42,4 +42,25 @@ public interface ICartService {
      * 清空购物车
      */
     void clearCart();
+
+    /**
+     * 获取购物车中打钩的商品
+     * @param userId 登录用户id
+     * @return 打钩商品列表
+     */
+    List<CartInfo> getCartCheckedList(Long userId);
+
+    /**
+     * 更新用户购物车列表价格
+     * @param userId
+     * @return
+     */
+    Boolean updateCartPrice(Long userId);
+
+    /**
+     * 删除用户购物车中选择的商品
+     * @param userId
+     * @return
+     */
+    Boolean deleteCartCheckedList(Long userId);
 }

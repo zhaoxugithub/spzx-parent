@@ -2,8 +2,10 @@ package com.spzx.cart.controller;
 
 import com.spzx.cart.api.domain.CartInfo;
 import com.spzx.cart.service.ICartService;
+import com.spzx.common.core.domain.R;
 import com.spzx.common.core.web.controller.BaseController;
 import com.spzx.common.core.web.domain.AjaxResult;
+import com.spzx.common.security.annotation.InnerAuth;
 import com.spzx.common.security.annotation.RequiresLogin;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -81,5 +83,45 @@ public class CartController extends BaseController {
     public AjaxResult clearCart(){
         cartService.clearCart();
         return success();
+    }
+
+
+
+
+
+
+    /**
+     * 思考问题：
+     *  用户id如何获取
+     *      1.可以根据请求头->线程数据绑定
+     *          @InnerAuth(isUser = true)
+     *      2.直接传参
+     * @param userId
+     * @return
+     */
+    @Operation(summary="查询用户购物车列表中选中商品列表")
+    //@InnerAuth(isUser = true)
+    @InnerAuth
+    @GetMapping("/getCartCheckedList/{userId}")
+    public R<List<CartInfo>> getCartCheckedList(@Parameter(name = "userId", description = "会员id", required = true) @PathVariable Long userId){
+        List<CartInfo> cartInfoList = cartService.getCartCheckedList(userId);
+        return R.ok(cartInfoList);
+    }
+
+
+    @Operation(summary="更新用户购物车列表价格")
+    @InnerAuth
+    @GetMapping("/updateCartPrice/{userId}")
+    public R<Boolean> updateCartPrice(@PathVariable("userId") Long userId){
+        return R.ok(cartService.updateCartPrice(userId));
+    }
+
+
+
+    @Operation(summary="删除用户购物车列表中选中商品列表")
+    @InnerAuth
+    @GetMapping("/deleteCartCheckedList/{userId}")
+    public R<Boolean> deleteCartCheckedList(@PathVariable("userId") Long userId){
+        return R.ok(cartService.deleteCartCheckedList(userId));
     }
 }

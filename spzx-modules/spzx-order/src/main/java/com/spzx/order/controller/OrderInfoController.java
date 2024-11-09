@@ -1,6 +1,7 @@
 package com.spzx.order.controller;
 
 import com.github.pagehelper.PageHelper;
+import com.spzx.common.core.context.SecurityContextHolder;
 import com.spzx.common.core.domain.R;
 import com.spzx.common.core.utils.poi.ExcelUtil;
 import com.spzx.common.core.web.controller.BaseController;
@@ -68,4 +69,26 @@ public class OrderInfoController extends BaseController {
 
 
 
+
+
+
+
+    //======以下接口给前台系统使用=====================================================================
+    @Operation(summary = "去结算")
+    @RequiresLogin
+    @GetMapping(value = "/trade")
+    public AjaxResult getOrderTrade(){
+        TradeVo tradeVo = orderInfoService.getOrderTrade();
+        return success(tradeVo);
+    }
+
+
+
+    @Operation(summary = "用户提交订单")
+    @RequiresLogin
+    @PostMapping("/submitOrder")
+    public AjaxResult submitOrder(@RequestBody OrderForm orderForm) {
+        Long orderId = orderInfoService.submitOrder(orderForm);
+        return success(orderId);
+    }
 }

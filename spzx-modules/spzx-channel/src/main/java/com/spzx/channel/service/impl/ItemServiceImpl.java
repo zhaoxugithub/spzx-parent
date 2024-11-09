@@ -45,8 +45,7 @@ public class ItemServiceImpl implements IItemService {
         if(!isExist){
             throw new ServiceException("数据不存在-bitmap");
         }
-
-        //-------------------------------------------------------------
+        //---------------------------------------------------------------------------
         ItemVo itemVo = new ItemVo();
 
         //任务1.获取sku信息
@@ -59,7 +58,6 @@ public class ItemServiceImpl implements IItemService {
             itemVo.setProductSku(productSku);
             return productSku;
         },threadPoolExecutor);
-
 
         //任务2.获取商品信息
         CompletableFuture<Void> productCompletableFuture = productSkuCompletableFuture.thenAcceptAsync((productSku) -> { //有输入参数，不需要返回结果
