@@ -4,10 +4,12 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.spzx.common.core.exception.ServiceException;
+import com.spzx.common.core.utils.StringUtils;
 import com.spzx.common.core.utils.bean.BeanUtils;
 import com.spzx.product.api.domain.Product;
 import com.spzx.product.api.domain.ProductDetails;
 import com.spzx.product.api.domain.ProductSku;
+import com.spzx.product.api.domain.vo.SkuLockVo;
 import com.spzx.product.api.domain.vo.SkuPrice;
 import com.spzx.product.api.domain.vo.SkuQuery;
 import com.spzx.product.api.domain.vo.SkuStockVo;
@@ -267,18 +269,18 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
             ProductSku productSkuUpdate = new ProductSku();
             //productSkuUpdate.setProductId(id);
             productSkuUpdate.setStatus(1);
-            productSkuMapper.update(productSkuUpdate,new LambdaUpdateWrapper<ProductSku>().eq(ProductSku::getProductId,id));
+            productSkuMapper.update(productSkuUpdate, new LambdaUpdateWrapper<ProductSku>().eq(ProductSku::getProductId, id));
 
             //新上架的sku也需要存放到bitmap中
             List<ProductSku> skuList = productSkuMapper
                     .selectList(new LambdaQueryWrapper<ProductSku>()
                             .eq(ProductSku::getStatus, 1)
                             .eq(ProductSku::getProductId, id));
-            if(!CollectionUtils.isEmpty(skuList)){
+            if (!CollectionUtils.isEmpty(skuList)) {
                 String key = "sku:product:data";
                 for (ProductSku productSku : skuList) {
                     Long skuId = productSku.getId();
-                    redisTemplate.opsForValue().setBit(key,skuId,true); //  true表示1   false表示0
+                    redisTemplate.opsForValue().setBit(key, skuId, true); //  true表示1   false表示0
                 }
             }
 
@@ -288,12 +290,12 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
                     .selectList(new LambdaQueryWrapper<ProductSku>()
                             .eq(ProductSku::getStatus, 1)
                             .eq(ProductSku::getProductId, id));
-            if(!CollectionUtils.isEmpty(skuList)){
+            if (!CollectionUtils.isEmpty(skuList)) {
                 String key = "sku:product:data";
                 for (ProductSku productSku : skuList) {
                     Long skuId = productSku.getId();
                     //redisTemplate.delete(key); //当前商品下架了，其他商品还没有下架。不能删除key
-                    redisTemplate.opsForValue().setBit(key,skuId,false);
+                    redisTemplate.opsForValue().setBit(key, skuId, false);
                     String dataKey = "product:sku:" + skuId;   //注意key名称一致。
                     redisTemplate.delete(dataKey);
                 }
@@ -303,7 +305,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
             ProductSku productSkuUpdate = new ProductSku();
             //productSkuUpdate.setProductId(id);
             productSkuUpdate.setStatus(-1);
-            productSkuMapper.update(productSkuUpdate,new LambdaUpdateWrapper<ProductSku>().eq(ProductSku::getProductId,id));
+            productSkuMapper.update(productSkuUpdate, new LambdaUpdateWrapper<ProductSku>().eq(ProductSku::getProductId, id));
 
         }
         productMapper.updateById(product);
@@ -363,8 +365,8 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
                     DefaultRedisScript<Long> redisScript = new DefaultRedisScript<Long>();
                     redisScript.setScriptText(script);
                     redisScript.setResultType(Long.class);
-                    Long result = (Long)redisTemplate.execute(redisScript, Arrays.asList(lockKey), lockVal);
-                    log.info("释放锁是否成功 result = "+result);
+                    Long result = (Long) redisTemplate.execute(redisScript, Arrays.asList(lockKey), lockVal);
+                    log.info("释放锁是否成功 result = " + result);
                 }
             } else {
                 //2.2获取锁失败睡觉自旋
@@ -471,4 +473,72 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         }).toList();
     }
 
+    /**
+     * 作业：检查与锁定库存能否一步完成。
+     *      update sku_stock
+     * set available_num = available_num - 5 , lock_num = lock_num +5
+     * where id = 20 and available_num > 5
+     *
+     *
+     *
+     * @param orderNo 订单号
+     * @param skuLockVoList 需要锁定库存商品信息
+     * @return
+     */
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public String checkAndLock(String orderNo, List<SkuLockVo> skuLockVoList) {
+        //0.OpenFeign远程调用，可能会进行重试，需要进行去重处理（使用redis setnx 设置共享标记  分布式锁）
+        String key = "sku:checkAndLock:" + orderNo;
+        String dataKey = "sku:lock:data:" + orderNo; //业务完成，需要将锁定的数据保存到redis中时用到的key
+        Boolean ifAbsent = redisTemplate.opsForValue().setIfAbsent(key, orderNo, 1, TimeUnit.HOURS);
+        if (!ifAbsent) { //没拿到锁标记，说明当前锁定业务已经完成，那么，1个小时内进行重试，不允许； 当前线程真正执行检查锁定库存业务；另一个线程过来重试，不允许。
+            if (redisTemplate.hasKey(dataKey)) { //说明业务已经完成，不能重试，直接返回成功。
+                return "";
+            } else {
+                return "正在锁定库存,无法重试";
+            }
+        }
+
+        //1.检查库存够不够
+        if (CollectionUtils.isEmpty(skuLockVoList)) {
+            return "参数为空";
+        }
+        StringBuilder builder = new StringBuilder("");
+        for (SkuLockVo skuLockVo : skuLockVoList) {
+            SkuStock skuStock = skuStockMapper.check(skuLockVo.getSkuId(), skuLockVo.getSkuNum()); //  for update  增加数据库行锁，不允许其他业务来动锁定的数据。
+            if (skuStock == null) { //库存不够,告诉用户哪个商品库存不够。
+                builder.append("商品【" + skuLockVo.getSkuId() + "】库存不够;");
+            }
+        }
+
+        //2.不够,锁定库存失败
+        if (StringUtils.hasText(builder.toString())) { //说明检查库存失败，存在商品库存不够情况
+            redisTemplate.delete(key); //??????  删除，这样openfeign才可以进行重试。
+            return builder.toString(); // 分布式锁不解除。    正常返回字符串，事务正常提交，for update行数自动释放。
+        }
+
+        //3.库存够用，锁定库存成功
+        for (SkuLockVo skuLockVo : skuLockVoList) {
+            int count = skuStockMapper.lock(skuLockVo.getSkuId(), skuLockVo.getSkuNum());
+            if (count == 0) { //count表示sql语句起作用的行数。为0表示锁定库存失败
+                redisTemplate.delete(key);
+                throw new ServiceException("锁库存失败"); //事务回滚
+            }
+        }
+
+        //4.把锁定数据保存到redis缓存中。
+
+        //不设置过期时间的：原因，由其他的业务来删除缓存
+        // 用户手动取消订单或延迟消息15分钟处理未支付自动取消订单；  需要解锁库存  删掉缓存
+        // 用户15分钟支付订单，  需要减库存  删掉缓存
+
+        redisTemplate.opsForValue().set(dataKey, skuLockVoList);//需要设置过期时间吗? 否
+
+
+        //redisTemplate.delete(key); // ??????  不删除，继续VB保留，继续解决重试问题。
+
+
+        return ""; // 空就表示成功结果。
+    }
 }

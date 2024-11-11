@@ -8,6 +8,7 @@ import com.spzx.common.core.constant.SecurityConstants;
 import com.spzx.common.core.context.SecurityContextHolder;
 import com.spzx.common.core.domain.R;
 import com.spzx.common.core.exception.ServiceException;
+import com.spzx.common.core.utils.StringUtils;
 import com.spzx.common.core.utils.bean.BeanUtils;
 import com.spzx.common.core.utils.uuid.UUID;
 import com.spzx.common.rabbit.service.RabbitService;
@@ -21,6 +22,7 @@ import com.spzx.order.mapper.OrderItemMapper;
 import com.spzx.order.mapper.OrderLogMapper;
 import com.spzx.order.service.IOrderInfoService;
 import com.spzx.product.api.RemoteProductService;
+import com.spzx.product.api.domain.vo.SkuLockVo;
 import com.spzx.product.api.domain.vo.SkuPrice;
 import com.spzx.user.api.RemoteUserAddressService;
 import com.spzx.user.domain.UserAddress;
@@ -208,6 +210,16 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
         }
 
         // 4.校验库存锁定库存 TODO
+        List<SkuLockVo> skuLockVoList = orderItemList.stream().map(item -> {
+            SkuLockVo skuLockVo = new SkuLockVo();
+            skuLockVo.setSkuId(item.getSkuId());
+            skuLockVo.setSkuNum(item.getSkuNum());
+            return skuLockVo;
+        }).collect(Collectors.toList());
+        String checkAndLockResult = remoteProductService.checkAndLock(orderForm.getTradeNo(), skuLockVoList, SecurityConstants.INNER).getData();
+        if(StringUtils.isNotEmpty(checkAndLockResult)) {
+            throw new ServiceException(checkAndLockResult);
+        }
 
         // 5.保存订单（订单表、订单项表、订单日志表）
         Long orderId = null;
@@ -220,6 +232,10 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
 
         // 6.删除购物车选中商品
         remoteCartService.deleteCartCheckedList(userId,SecurityConstants.INNER);
+
+
+        //7.发送延迟消息,取消订单 TODO
+
 
         return orderId ;
     }

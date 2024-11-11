@@ -223,4 +223,32 @@ public class ProductController extends BaseController {
         return R.ok(productService.getSkuPriceList(skuIdList));
     }
 
+
+
+
+    //被下订单业务远程调用的接口：
+
+    /**
+     * 检查与锁定库存
+     * @param orderNo 订单号
+     * @param skuLockVoList 需要被锁定的商品数量信息
+     * @return 是否锁定成功。为空表示锁定成功。不为空，表示锁定失败，返回失败的消息。
+     */
+    @InnerAuth
+    @Operation(summary = "检查与锁定库存")
+    @PostMapping("checkAndLock/{orderNo}")
+    public R<String> checkAndLock(@PathVariable String orderNo, @RequestBody List<SkuLockVo> skuLockVoList) {
+        try {
+            String result = productService.checkAndLock(orderNo,skuLockVoList);
+            return R.ok(result);
+        } catch (ServiceException e) {
+            //throw new ServiceException(e.getMessage()); //抛异常会导致降级处理
+            e.printStackTrace();
+            return R.ok(e.getMessage());  //业务异常消息
+        } catch (Exception e){
+            e.printStackTrace();
+            return R.ok("锁定库存失败");
+        }
+    }
+
 }
