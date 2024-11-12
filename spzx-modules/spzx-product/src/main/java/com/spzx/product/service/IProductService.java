@@ -106,4 +106,16 @@ public interface IProductService extends IService<Product> {
      * @return 是否锁定成功。没有消息就是好消息。
      */
     String checkAndLock(String orderNo, List<SkuLockVo> skuLockVoList);
+
+    /**
+     * 解锁库存
+     * @param orderNo
+     */
+    void unlock(String orderNo);
+
+    /**
+     * 减库存
+     * @param orderNo
+     */
+    void minus(String orderNo);
 }

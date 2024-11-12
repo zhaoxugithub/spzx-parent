@@ -23,6 +23,12 @@ public interface IOrderInfoService extends IService<OrderInfo> {
      * @return 订单
      */
     public OrderInfo selectOrderInfoById(Long id);
+    
+    
+    
+    
+    
+    
 
 
 
@@ -47,4 +53,23 @@ public interface IOrderInfoService extends IService<OrderInfo> {
      * @return 订单id
      */
     Long submitOrder(OrderForm orderForm);
+
+    /**
+     * 关闭订单
+     * @param orderId
+     */
+    void processCloseOrder(Long orderId);
+
+    /**
+     * 根据订单号查询订单对象
+     * @param orderNo
+     * @return
+     */
+    OrderInfo getByOrderNo(String orderNo);
+
+    /**
+     * 支付成功，修改订单状态
+     * @param orderNo
+     */
+    void processPaySucess(String orderNo);
 }

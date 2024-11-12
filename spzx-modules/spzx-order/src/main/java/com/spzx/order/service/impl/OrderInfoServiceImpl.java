@@ -11,6 +11,7 @@ import com.spzx.common.core.exception.ServiceException;
 import com.spzx.common.core.utils.StringUtils;
 import com.spzx.common.core.utils.bean.BeanUtils;
 import com.spzx.common.core.utils.uuid.UUID;
+import com.spzx.common.rabbit.constant.MqConst;
 import com.spzx.common.rabbit.service.RabbitService;
 import com.spzx.order.api.domain.OrderInfo;
 import com.spzx.order.api.domain.OrderItem;
@@ -35,6 +36,7 @@ import org.springframework.util.CollectionUtils;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -227,15 +229,17 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
             orderId = this.saveOrder(orderForm);
         } catch (Exception e) {
             // 解锁库存 - 发消息异步解锁
+            rabbitService.sendMessage(MqConst.EXCHANGE_PRODUCT,MqConst.ROUTING_UNLOCK,orderForm.getTradeNo());
             throw new RuntimeException(e);
         }
 
         // 6.删除购物车选中商品
         remoteCartService.deleteCartCheckedList(userId,SecurityConstants.INNER);
 
-
-        //7.发送延迟消息,取消订单 TODO
-
+        //7.发送延迟消息,取消订单 (15分钟未支付，消费者就会进行关闭订单->解锁库存。)
+        rabbitService.sendDelayMessage(MqConst.EXCHANGE_CANCEL_ORDER,
+                MqConst.ROUTING_CANCEL_ORDER,
+                String.valueOf(orderId), MqConst.CANCEL_ORDER_DELAY_TIME);
 
         return orderId ;
     }
@@ -294,5 +298,55 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
         orderLog.setOperateUser("用户");
         orderLogMapper.insert(orderLog);
         return orderInfo.getId();
+    }
+
+
+
+
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void processCloseOrder(Long orderId) {
+        OrderInfo orderInfo = orderInfoMapper.selectById(orderId);
+        if(null != orderInfo && orderInfo.getOrderStatus().intValue() == 0) { //  订单状态orderStatus=0 说明15分钟未支付。
+            orderInfo.setOrderStatus(-1); //  -1 取消订单
+            orderInfo.setCancelTime(new Date());
+            orderInfo.setCancelReason("未支付自动取消");
+            orderInfoMapper.updateById(orderInfo);
+
+            //记录日志
+            OrderLog orderLog = new OrderLog();
+            orderLog.setOrderId(orderInfo.getId());
+            orderLog.setProcessStatus(-1);
+            orderLog.setNote("系统取消订单");
+            orderLogMapper.insert(orderLog);
+
+
+            //发送MQ消息通知商品系统解锁库存
+            rabbitService.sendMessage(MqConst.EXCHANGE_PRODUCT, MqConst.ROUTING_UNLOCK, orderInfo.getOrderNo());
+        }
+    }
+
+
+    @Override
+    public OrderInfo getByOrderNo(String orderNo) {
+        OrderInfo orderInfo = orderInfoMapper.selectOne(new LambdaQueryWrapper<OrderInfo>().eq(OrderInfo::getOrderNo, orderNo));
+        List<OrderItem> orderItemList = orderItemMapper.selectList(new LambdaQueryWrapper<OrderItem>().eq(OrderItem::getOrderId, orderInfo.getId()));
+        orderInfo.setOrderItemList(orderItemList);
+        return orderInfo;
+    }
+
+    @Override
+    public void processPaySucess(String orderNo) {
+        //获取订单信息
+        OrderInfo orderInfo = orderInfoMapper.selectOne(new LambdaQueryWrapper<OrderInfo>()
+                .eq(OrderInfo::getOrderNo, orderNo)
+                .select(OrderInfo::getId, OrderInfo::getOrderStatus));
+        //未支付
+        if(orderInfo.getOrderStatus().intValue() == 0) {
+            orderInfo.setOrderStatus(1); //已支付
+            orderInfo.setPaymentTime(new Date()); //支付时间
+            orderInfoMapper.updateById(orderInfo);
+        }
     }
 }

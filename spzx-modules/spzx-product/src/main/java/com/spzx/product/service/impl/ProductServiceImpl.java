@@ -475,13 +475,11 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 
     /**
      * 作业：检查与锁定库存能否一步完成。
-     *      update sku_stock
+     * update sku_stock
      * set available_num = available_num - 5 , lock_num = lock_num +5
      * where id = 20 and available_num > 5
      *
-     *
-     *
-     * @param orderNo 订单号
+     * @param orderNo       订单号
      * @param skuLockVoList 需要锁定库存商品信息
      * @return
      */
@@ -540,5 +538,64 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 
 
         return ""; // 空就表示成功结果。
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void unlock(String orderNo) {
+
+        //1.去重重复消息处理
+        String key = "sku:unlock:" + orderNo;
+        String dataKey = "sku:lock:data:" + orderNo; //业务完成，需要将锁定的数据保存到redis中时用到的key
+        Boolean ifAbsent = redisTemplate.opsForValue().setIfAbsent(key, orderNo, 1, TimeUnit.HOURS);
+        if (!ifAbsent) {
+            return;
+        }
+
+        //2.从缓存中把锁定数据获取到，并且校验是否为空
+        List<SkuLockVo> skuLockVoList = (List<SkuLockVo>) redisTemplate.opsForValue().get(dataKey);
+        if (CollectionUtils.isEmpty(skuLockVoList)) {
+            return;
+        }
+
+        //3.解锁
+        for (SkuLockVo skuLockVo : skuLockVoList) {
+            int count = skuStockMapper.unlock(skuLockVo.getSkuId(), skuLockVo.getSkuNum());
+            if (count == 0) {
+                throw new ServiceException("解锁库存失败");
+            }
+        }
+
+        //4.删除缓存数据，避免重复解锁
+        redisTemplate.delete(dataKey);
+    }
+
+
+    @Override
+    public void minus(String orderNo) {
+        //1.去重重复消息处理
+        String key = "sku:minus:" + orderNo;
+        String dataKey = "sku:lock:data:" + orderNo; //业务完成，需要将锁定的数据保存到redis中时用到的key
+        Boolean ifAbsent = redisTemplate.opsForValue().setIfAbsent(key, orderNo, 1, TimeUnit.HOURS);
+        if (!ifAbsent) {
+            return;
+        }
+
+        //2.从缓存中把锁定数据获取到，并且校验是否为空
+        List<SkuLockVo> skuLockVoList = (List<SkuLockVo>) redisTemplate.opsForValue().get(dataKey);
+        if (CollectionUtils.isEmpty(skuLockVoList)) {
+            return;
+        }
+
+        //3.解锁
+        for (SkuLockVo skuLockVo : skuLockVoList) {
+            int count = skuStockMapper.minus(skuLockVo.getSkuId(), skuLockVo.getSkuNum());
+            if (count == 0) {
+                throw new ServiceException("扣减库存失败");
+            }
+        }
+
+        //4.删除缓存数据，避免重复减库存。
+        redisTemplate.delete(dataKey);
     }
 }

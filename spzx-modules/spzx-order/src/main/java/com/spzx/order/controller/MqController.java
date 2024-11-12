@@ -72,7 +72,7 @@ public class MqController extends BaseController
     public AjaxResult sendDelayMsg() {
         //调用工具方法发送延迟消息
         int delayTime = 10; //延迟10秒
-        rabbitService.sendDealyMessage(DelayedMqConfig.exchange_delay, DelayedMqConfig.routing_delay, "我是延迟消息", delayTime);
+        rabbitService.sendDelayMessage(DelayedMqConfig.exchange_delay, DelayedMqConfig.routing_delay, "我是延迟消息", delayTime);
         return success();
     }
 }
