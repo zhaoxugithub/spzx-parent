@@ -4,6 +4,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!--
+    Maven9个概念：
+    pom模型
+    约定的目录结构
+    仓库
+    坐标
+    继承
+    聚合
+    依赖
+    插件和目标
+    生命周期
+    -->
+
     <groupId>com.spzx</groupId>
     <artifactId>spzx-parent</artifactId>
     <version>3.6.3</version>

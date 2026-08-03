@@ -19,10 +19,13 @@ public class ItemController extends BaseController {
     @Autowired
     private IItemService itemService;
 
+    // 前端 调用 后端  统一返回结果：
+    // AjaxResult  增删改
+    // TableDataInfo  分页
     @Operation(summary = "商品详情")
     @GetMapping("/{skuId}")
     public AjaxResult item(@PathVariable Long skuId) throws Exception {
-        return success(itemService.item(skuId));
+        return success(itemService.item(skuId)); //如果有异常抛出，交给统一异常处理类进行处理
     }
 
 }

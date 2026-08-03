@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(contextId = "remoteProductService",
-        value = ServiceNameConstants.PRODUCT_SERVICE,
-        fallbackFactory = RemoteProductFallbackFactory.class)
+@FeignClient(contextId = "remoteProductService", //IOC容器中bean对象的id
+        value = ServiceNameConstants.PRODUCT_SERVICE, //被远程调用的服务名称
+        fallbackFactory = RemoteProductFallbackFactory.class) //降级处理类
 public interface RemoteProductService {
 
     @GetMapping("/product/getTopSale")
@@ -41,6 +41,10 @@ public interface RemoteProductService {
     );
 
 
+    //api接口声明，与远程调用controller方法声明一致。
+    //注意：别忘了加父路径
+    //告诉openfeign组件，构建请求时，需要将@RequestHeader(SecurityConstants.FROM_SOURCE) String source以请求头的方式进行数据传递。
+    //传递多个请求头：声明成类型：Map、MultiValueMap、HttpHeaders
     @GetMapping("/product/getProductSku/{skuId}")
     public R<ProductSku> getProductSku(@PathVariable("skuId") Long skuId, @RequestHeader(SecurityConstants.FROM_SOURCE) String source);
 
@@ -70,4 +74,16 @@ public interface RemoteProductService {
     @PostMapping(value = "/product/getSkuPriceList")
     public R<List<SkuPrice>> getSkuPriceList(@RequestBody List<Long> skuIdList, @RequestHeader(SecurityConstants.FROM_SOURCE) String source);
 
+
+    /**
+     * 检查与锁定库存
+     * @param orderNo
+     * @param skuLockVoList
+     * @param source
+     * @return
+     */
+    @PostMapping("/product/checkAndLock/{orderNo}")
+    public R<String> checkAndLock(@PathVariable("orderNo") String orderNo,
+                                  @RequestBody List<SkuLockVo> skuLockVoList,
+                                  @RequestHeader(SecurityConstants.FROM_SOURCE) String source);
 }

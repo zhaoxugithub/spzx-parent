@@ -20,6 +20,7 @@ import java.util.Map;
 
 /**
  * 商品降级处理类
+ * 通过OpenFeign组件的FallbackFactory接口实现降级处理类。
  */
 public class RemoteProductFallbackFactory implements FallbackFactory<RemoteProductService> {
 
@@ -79,6 +80,10 @@ public class RemoteProductFallbackFactory implements FallbackFactory<RemoteProdu
                 return R.fail("批量获取商品sku最新价格信:" + throwable.getMessage());
             }
 
+            @Override
+            public R<String> checkAndLock(String orderNo, List<SkuLockVo> skuLockVoList, String source) {
+                return R.fail("检查与锁定库存失败:" + throwable.getMessage());
+            }
         };
     }
 }

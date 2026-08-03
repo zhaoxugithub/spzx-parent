@@ -144,12 +144,33 @@ public class ProductController extends BaseController {
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //----详情 start------------------------------
     @Operation(summary = "获取商品sku信息")
+    //所有提供者端接口，只要被自己服务调用者进行延迟调用，必须携带请求头(from-source=inner)，否则不能进行调用。
+    // 如果设置了isUser = true，那么还需要携带用户id和username头信息。具体详细参见：InnerAuthAspect
+    //@InnerAuth(isUser = true)
     @InnerAuth
     @GetMapping(value = "/getProductSku/{skuId}")
     public R<ProductSku> getProductSku(@PathVariable("skuId") Long skuId) {
-        return R.ok(productService.getProductSku(skuId));
+        ProductSku productSku = productService.getProductSku(skuId); //根据id查询一条数据。
+        return R.ok(productSku); //统一返回结果。对于内部服务接口调用，统一封装成R对象。
     }
 
     @Operation(summary = "获取商品信息")
@@ -162,7 +183,7 @@ public class ProductController extends BaseController {
     @Operation(summary = "获取商品sku最新价格信息")
     @InnerAuth
     @GetMapping(value = "/getSkuPrice/{skuId}")
-    public R<SkuPrice> getSkuPrice(@PathVariable("skuId") Long skuId) {
+    public R<SkuPrice> getSkuPrice(@PathVariable("skuId") Long skuId) { //SkuPrice对象只封装了两个价格salePrice和marketPrice
         return R.ok(productService.getSkuPrice(skuId));
     }
 
@@ -187,5 +208,47 @@ public class ProductController extends BaseController {
         return R.ok(productService.getSkuStock(skuId));
     }
     //----详情 end------------------------------
+
+
+    /**
+     * 批量获取SkuPrice
+     * @param skuIdList 多个skuId
+     * @return 返回List<SkuPrice>
+     */
+    @Operation(summary = "批量获取商品sku最新价格信息")
+    @InnerAuth
+    @PostMapping(value = "/getSkuPriceList")
+    public R<List<SkuPrice>> getSkuPriceList(@RequestBody List<Long> skuIdList)
+    {
+        return R.ok(productService.getSkuPriceList(skuIdList));
+    }
+
+
+
+
+    //被下订单业务远程调用的接口：
+
+    /**
+     * 检查与锁定库存
+     * @param orderNo 订单号
+     * @param skuLockVoList 需要被锁定的商品数量信息
+     * @return 是否锁定成功。为空表示锁定成功。不为空，表示锁定失败，返回失败的消息。
+     */
+    @InnerAuth
+    @Operation(summary = "检查与锁定库存")
+    @PostMapping("checkAndLock/{orderNo}")
+    public R<String> checkAndLock(@PathVariable String orderNo, @RequestBody List<SkuLockVo> skuLockVoList) {
+        try {
+            String result = productService.checkAndLock(orderNo,skuLockVoList);
+            return R.ok(result);
+        } catch (ServiceException e) {
+            //throw new ServiceException(e.getMessage()); //抛异常会导致降级处理
+            e.printStackTrace();
+            return R.ok(e.getMessage());  //业务异常消息
+        } catch (Exception e){
+            e.printStackTrace();
+            return R.ok("锁定库存失败");
+        }
+    }
 
 }

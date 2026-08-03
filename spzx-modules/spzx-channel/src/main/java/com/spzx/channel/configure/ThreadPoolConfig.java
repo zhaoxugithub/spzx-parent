@@ -17,6 +17,7 @@ public class ThreadPoolConfig {
     @Bean
     public ThreadPoolExecutor init() {
 
+
         int cpuCount = Runtime.getRuntime().availableProcessors();
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
                 cpuCount + 1,
@@ -25,7 +26,7 @@ public class ThreadPoolConfig {
                 TimeUnit.MINUTES,
                 new ArrayBlockingQueue<>(100),
                 Executors.defaultThreadFactory(),
-                (runnable, executor) -> {
+                (runnable, executor) -> { //RejectedExecutionHandler
                     System.out.println(" 线程池达到了最大饱和... ");
                     try {
                         Thread.sleep(200);
@@ -35,8 +36,8 @@ public class ThreadPoolConfig {
                     executor.submit(runnable);
                 }
         );
-        //threadPoolExecutor.prestartAllCoreThreads(); //初始化最大线程数
-        threadPoolExecutor.prestartCoreThread(); //初始化核心线程数
+        threadPoolExecutor.prestartAllCoreThreads(); //初始化所有核心线程数
+        //threadPoolExecutor.prestartCoreThread(); //初始化1个核心线程数
 
         //threadPoolExecutor.shutdown();
         return threadPoolExecutor;
