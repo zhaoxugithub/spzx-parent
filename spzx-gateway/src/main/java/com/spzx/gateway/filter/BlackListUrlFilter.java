@@ -1,6 +1,7 @@
 package com.spzx.gateway.filter;
 
 import com.spzx.common.core.utils.ServletUtils;
+import lombok.Getter;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
 import org.springframework.stereotype.Component;
@@ -34,16 +35,13 @@ public class BlackListUrlFilter extends AbstractGatewayFilterFactory<BlackListUr
     }
 
     public static class Config {
+        @Getter
         private List<String> blacklistUrl;
 
-        private List<Pattern> blacklistUrlPattern = new ArrayList<>();
+        private final List<Pattern> blacklistUrlPattern = new ArrayList<>();
 
         public boolean matchBlacklist(String url) {
             return !blacklistUrlPattern.isEmpty() && blacklistUrlPattern.stream().anyMatch(p -> p.matcher(url).find());
-        }
-
-        public List<String> getBlacklistUrl() {
-            return blacklistUrl;
         }
 
         public void setBlacklistUrl(List<String> blacklistUrl) {

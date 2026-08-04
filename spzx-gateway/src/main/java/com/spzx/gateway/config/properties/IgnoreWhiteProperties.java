@@ -13,7 +13,7 @@ import java.util.List;
  * @author spzx
  */
 @Configuration
-@RefreshScope
+@RefreshScope  // ← 关键：支持 Nacos 热刷新
 @ConfigurationProperties(prefix = "security.ignore")
 public class IgnoreWhiteProperties {
     /**
