@@ -24,6 +24,9 @@ import reactor.core.publisher.Mono;
 /**
  * 网关鉴权
  *
+ *
+ * GlobalFilter 所有的请求都会去执行
+ *
  * @author spzx
  */
 @Component
@@ -122,6 +125,7 @@ public class AuthFilter implements GlobalFilter, Ordered {
         return token;
     }
 
+    // order 值越小越是先执行
     @Override
     public int getOrder() {
         return -200;

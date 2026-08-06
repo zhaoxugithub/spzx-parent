@@ -1,0 +1,313 @@
+<mxfile>
+  <diagram id="seqlayout" name="SPZX Auth Login Sequence Diagram">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="client" value="客户端 (Browser/App)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=40;participant=umlActor;verticalAlign=bottom;spacingBottom=-14;labelBackgroundColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="100" height="3870" as="geometry"/>
+        </mxCell>
+        <mxCell id="gateway" value="Gateway&#xa;(8080)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=40;" vertex="1" parent="1">
+          <mxGeometry x="250" y="40" width="100" height="3870" as="geometry"/>
+        </mxCell>
+        <mxCell id="auth" value="spzx-auth&#xa;(9200)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=40;" vertex="1" parent="1">
+          <mxGeometry x="460" y="40" width="100" height="3870" as="geometry"/>
+        </mxCell>
+        <mxCell id="redis" value="Redis" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=40;" vertex="1" parent="1">
+          <mxGeometry x="670" y="40" width="100" height="3870" as="geometry"/>
+        </mxCell>
+        <mxCell id="system" value="spzx-system&#xa;(9201)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=40;" vertex="1" parent="1">
+          <mxGeometry x="880" y="40" width="100" height="3870" as="geometry"/>
+        </mxCell>
+        <mxCell id="user_svc" value="spzx-user&#xa;(9206)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=40;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="40" width="100" height="3870" as="geometry"/>
+        </mxCell>
+        <mxCell id="act0" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;fillColor=#ffffff;" vertex="1" parent="redis">
+          <mxGeometry x="45" y="530" width="10" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="act1" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;fillColor=#ffffff;" vertex="1" parent="system">
+          <mxGeometry x="45" y="700" width="10" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="act2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;fillColor=#ffffff;" vertex="1" parent="redis">
+          <mxGeometry x="45" y="1070" width="10" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="act3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;fillColor=#ffffff;" vertex="1" parent="system">
+          <mxGeometry x="45" y="1470" width="10" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="act4" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;fillColor=#ffffff;" vertex="1" parent="redis">
+          <mxGeometry x="45" y="1310" width="10" height="650" as="geometry"/>
+        </mxCell>
+        <mxCell id="act5" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;fillColor=#ffffff;" vertex="1" parent="auth">
+          <mxGeometry x="45" y="210" width="10" height="1870" as="geometry"/>
+        </mxCell>
+        <mxCell id="act6" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;fillColor=#ffffff;" vertex="1" parent="gateway">
+          <mxGeometry x="45" y="90" width="10" height="2040" as="geometry"/>
+        </mxCell>
+        <mxCell id="act7" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;fillColor=#ffffff;" vertex="1" parent="redis">
+          <mxGeometry x="45" y="2500" width="10" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="act8" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;fillColor=#ffffff;" vertex="1" parent="redis">
+          <mxGeometry x="45" y="3020" width="10" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="act9" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;fillColor=#ffffff;" vertex="1" parent="user_svc">
+          <mxGeometry x="45" y="3120" width="10" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="act10" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;fillColor=#ffffff;" vertex="1" parent="user_svc">
+          <mxGeometry x="45" y="3430" width="10" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="act11" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;fillColor=#ffffff;" vertex="1" parent="system">
+          <mxGeometry x="45" y="3530" width="10" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="act12" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;fillColor=#ffffff;" vertex="1" parent="redis">
+          <mxGeometry x="45" y="3630" width="10" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="act13" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;fillColor=#ffffff;" vertex="1" parent="auth">
+          <mxGeometry x="45" y="2740" width="10" height="990" as="geometry"/>
+        </mxCell>
+        <mxCell id="act14" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;fillColor=#ffffff;" vertex="1" parent="gateway">
+          <mxGeometry x="45" y="2240" width="10" height="1540" as="geometry"/>
+        </mxCell>
+        <mxCell id="m0" value="POST /login&#xa;Body: {username, password}" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.5;exitY=0.0233;entryX=0;entryY=0.0;" edge="1" parent="1" source="client" target="act6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m1" value="ValidateCodeFilter&#xa;校验验证码" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.0245;entryX=1;entryY=0.0392;" edge="1" parent="1" source="act6" target="act6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="360" y="180"/><mxPoint x="360" y="210"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" value="转发 POST /login → TokenController.login()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.0588;entryX=0;entryY=0.0;" edge="1" parent="1" source="act6" target="act5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="note3" value="=== SysLoginService.login(username, password) ===" style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="530" y="280" width="150" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="m4" value="1.校验 username/password 非空" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.0588;entryX=1;entryY=0.0749;" edge="1" parent="1" source="act5" target="act5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="570" y="360"/><mxPoint x="570" y="390"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" value="2.校验密码长度 [5,20]" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.0963;entryX=1;entryY=0.1123;" edge="1" parent="1" source="act5" target="act5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="570" y="430"/><mxPoint x="570" y="460"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" value="3.校验用户名长度 [2,20]" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.1337;entryX=1;entryY=0.1497;" edge="1" parent="1" source="act5" target="act5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="570" y="500"/><mxPoint x="570" y="530"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" value="4.redisService.getCacheObject(&#xa;&quot;sys_config:sys.login.blackIPList&quot;)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.1711;entryX=0;entryY=0.0;" edge="1" parent="1" source="act5" target="act0">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m8" value="返回黑名单IP列表" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;strokeColor=#999999;fontColor=#999999;exitX=0;exitY=1.0;entryX=1;entryY=0.1979;" edge="1" parent="1" source="act0" target="act5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m9" value="IpUtils.isMatchedIp() 检查当前IP是否在黑名单" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.2246;entryX=1;entryY=0.2406;" edge="1" parent="1" source="act5" target="act5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="570" y="670"/><mxPoint x="570" y="700"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m10" value="5.Feign: RemoteUserService.getUserInfo(username, &quot;inner&quot;)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.262;entryX=0;entryY=0.0;" edge="1" parent="1" source="act5" target="act1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m11" value="SysUserServiceImpl.selectUserByUserName()&#xa;查询 sys_user 表" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.4167;entryX=1;entryY=0.6667;" edge="1" parent="1" source="act1" target="act1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="990" y="790"/><mxPoint x="990" y="820"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m12" value="返回 R&lt;LoginUser&gt;&#xa;(含 SysUser + 角色/菜单/权限列表)" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;strokeColor=#999999;fontColor=#999999;exitX=0;exitY=1.0;entryX=1;entryY=0.3262;" edge="1" parent="1" source="act1" target="act5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m13" value="6.检查 delFlag != &quot;2&quot; (未删除)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.3529;entryX=1;entryY=0.369;" edge="1" parent="1" source="act5" target="act5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="570" y="910"/><mxPoint x="570" y="940"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m14" value="7.检查 status != &quot;1&quot; (未停用)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.3904;entryX=1;entryY=0.4064;" edge="1" parent="1" source="act5" target="act5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="570" y="980"/><mxPoint x="570" y="1010"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note15" value="=== SysPasswordService.validate(user, password) ===" style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="530" y="1030" width="150" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="m16" value="8.getCacheObject(&quot;pwd_err_cnt:&quot; + username)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.4599;entryX=0;entryY=0.0;" edge="1" parent="1" source="act5" target="act2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m17" value="返回重试次数 (null→0)" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;strokeColor=#999999;fontColor=#999999;exitX=0;exitY=1.0;entryX=1;entryY=0.4866;" edge="1" parent="1" source="act2" target="act5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m18" value="9.检查 retryCount &gt;= 5?&#xa;是→锁定10分钟,抛异常" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.5134;entryX=1;entryY=0.5294;" edge="1" parent="1" source="act5" target="act5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="570" y="1210"/><mxPoint x="570" y="1240"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m19" value="10.SecurityUtils.matchesPassword()&#xa;BCryptPasswordEncoder.matches()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.5508;entryX=1;entryY=0.5668;" edge="1" parent="1" source="act5" target="act5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="570" y="1280"/><mxPoint x="570" y="1310"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m20" value="11a.失败: setCacheObject(&quot;pwd_err_cnt:..&quot;, count+1)&#xa;TTL=10min" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.5882;entryX=0;entryY=0.0;" edge="1" parent="1" source="act5" target="act4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m21" value="11b.成功: deleteObject(&quot;pwd_err_cnt:..&quot;)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.615;entryX=0;entryY=0.0769;" edge="1" parent="1" source="act5" target="act4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="note22" value="=== SysRecordLogService.recordLogininfor() ===" style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="530" y="1430" width="150" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="m23" value="12.Feign: RemoteLogService.saveLogininfor(logininfor, &quot;inner&quot;)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.6738;entryX=0;entryY=0.0;" edge="1" parent="1" source="act5" target="act3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m24" value="SysLogininforServiceImpl.insertLogininfor()&#xa;写入 sys_logininfor 表" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.4167;entryX=1;entryY=0.6667;" edge="1" parent="1" source="act3" target="act3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="990" y="1560"/><mxPoint x="990" y="1590"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m25" value="返回成功" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;strokeColor=#999999;fontColor=#999999;exitX=0;exitY=1.0;entryX=1;entryY=0.738;" edge="1" parent="1" source="act3" target="act5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m26" value="SysLoginService.login() 返回 LoginUser" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.7647;entryX=1;entryY=0.7807;" edge="1" parent="1" source="act5" target="act5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="570" y="1680"/><mxPoint x="570" y="1710"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note27" value="=== TokenService.createToken(loginUser) ===" style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="530" y="1730" width="150" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="m28" value="13.IdUtils.fastUUID() 生成 token" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.8342;entryX=1;entryY=0.8503;" edge="1" parent="1" source="act5" target="act5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="570" y="1810"/><mxPoint x="570" y="1840"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m29" value="14.IpUtils.getIpAddr() 设置登录IP" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.8717;entryX=1;entryY=0.8877;" edge="1" parent="1" source="act5" target="act5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="570" y="1880"/><mxPoint x="570" y="1910"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m30" value="15.setCacheObject(&#xa;&quot;login_tokens:&quot;+token, loginUser, 720min)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.9091;entryX=0;entryY=0.9231;" edge="1" parent="1" source="act5" target="act4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m31" value="Redis 存储成功" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;strokeColor=#999999;fontColor=#999999;exitX=0;exitY=1.0;entryX=1;entryY=0.9358;" edge="1" parent="1" source="act4" target="act5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m32" value="16.JwtUtils.createToken({user_key, user_id, username})&#xa;Jwts.builder().signWith(HS512, secret).compact()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.9626;entryX=1;entryY=0.9786;" edge="1" parent="1" source="act5" target="act5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="570" y="2050"/><mxPoint x="570" y="2080"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m33" value="返回 ResponseEntity&lt;Map&gt;&#xa;{access_token, expires_in:720}" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;strokeColor=#999999;fontColor=#999999;exitX=0;exitY=1.0;entryX=1;entryY=0.9755;" edge="1" parent="1" source="act5" target="act6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m34" value="返回 R&lt;{access_token, expires_in}&gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;strokeColor=#999999;fontColor=#999999;exitX=0;exitY=1.0;entryX=0.5;entryY=0.5504;" edge="1" parent="1" source="act6" target="client">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="note35" value="=== 后续请求: Gateway AuthFilter 认证 ===" style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="320" y="2200" width="150" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="m36" value="后续请求&#xa;Header: Authorization: Bearer &lt;token&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.5;exitY=0.5788;entryX=0;entryY=0.0;" edge="1" parent="1" source="client" target="act14">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m37" value="AuthFilter.filter()&#xa;1.白名单检查 → 非白名单URL" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.0325;entryX=1;entryY=0.0519;" edge="1" parent="1" source="act14" target="act14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="360" y="2330"/><mxPoint x="360" y="2360"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m38" value="2.提取 Authorization header&#xa;去除 &quot;Bearer &quot; 前缀" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.0779;entryX=1;entryY=0.0974;" edge="1" parent="1" source="act14" target="act14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="360" y="2400"/><mxPoint x="360" y="2430"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m39" value="3.JwtUtils.parseToken(token)&#xa;解析 JWT Claims" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.1234;entryX=1;entryY=0.1429;" edge="1" parent="1" source="act14" target="act14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="360" y="2470"/><mxPoint x="360" y="2500"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m40" value="4.检查 &quot;login_tokens:&quot;+user_key 是否存在" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.1688;entryX=0;entryY=0.0;" edge="1" parent="1" source="act14" target="act7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m41" value="会话存在 (未过期)" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;strokeColor=#999999;fontColor=#999999;exitX=0;exitY=1.0;entryX=1;entryY=0.2013;" edge="1" parent="1" source="act7" target="act14">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m42" value="5.设置请求头:&#xa;x-user_key, x-user_id, x-username" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.2338;entryX=1;entryY=0.2532;" edge="1" parent="1" source="act14" target="act14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="360" y="2640"/><mxPoint x="360" y="2670"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m43" value="6.移除 from-source header" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.2792;entryX=1;entryY=0.2987;" edge="1" parent="1" source="act14" target="act14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="360" y="2710"/><mxPoint x="360" y="2740"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m44" value="转发请求到下游服务" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.3247;entryX=0;entryY=0.0;" edge="1" parent="1" source="act14" target="act13">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="note45" value="=== H5登录 (H5TokenController) ===" style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="530" y="2810" width="150" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="m46" value="POST /h5/login&#xa;Body: {username, password}" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.5;exitY=0.7364;entryX=0;entryY=0.3961;" edge="1" parent="1" source="client" target="act14">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m47" value="转发 → H5TokenController.login()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.4286;entryX=0;entryY=0.1616;" edge="1" parent="1" source="act14" target="act13">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m48" value="H5LoginService.login(username, password)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.2121;entryX=1;entryY=0.2424;" edge="1" parent="1" source="act13" target="act13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="570" y="2990"/><mxPoint x="570" y="3020"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m49" value="getCacheObject(&quot;sys_config:sys.login.blackIPList&quot;)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.2828;entryX=0;entryY=0.0;" edge="1" parent="1" source="act13" target="act8">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m50" value="返回黑名单" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;strokeColor=#999999;fontColor=#999999;exitX=0;exitY=1.0;entryX=1;entryY=0.3333;" edge="1" parent="1" source="act8" target="act13">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m51" value="Feign: RemoteUserInfoService.getUserInfo(username, &quot;inner&quot;)&#xa;GET /userInfo/info/{username}" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.3838;entryX=0;entryY=0.0;" edge="1" parent="1" source="act13" target="act9">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m52" value="UserInfoServiceImpl.selectByUserName()&#xa;查询 user_info 表" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.4167;entryX=1;entryY=0.6667;" edge="1" parent="1" source="act9" target="act9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1200" y="3210"/><mxPoint x="1200" y="3240"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m53" value="返回 R&lt;UserInfo&gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;strokeColor=#999999;fontColor=#999999;exitX=0;exitY=1.0;entryX=1;entryY=0.5051;" edge="1" parent="1" source="act9" target="act13">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m54" value="构建 LoginUser 对象" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.5556;entryX=1;entryY=0.5859;" edge="1" parent="1" source="act13" target="act13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="570" y="3330"/><mxPoint x="570" y="3360"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m55" value="密码校验 (BCrypt)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.6263;entryX=1;entryY=0.6566;" edge="1" parent="1" source="act13" target="act13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="570" y="3400"/><mxPoint x="570" y="3430"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m56" value="Feign: RemoteUserInfoService.updateUserLogin(updateUserLogin, &quot;inner&quot;)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.697;entryX=0;entryY=0.0;" edge="1" parent="1" source="act13" target="act10">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m57" value="更新 lastLoginIp/lastLoginTime" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;strokeColor=#999999;fontColor=#999999;exitX=0;exitY=1.0;entryX=1;entryY=0.7475;" edge="1" parent="1" source="act10" target="act13">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m58" value="Feign: RemoteLogService.saveLogininfor() 记录日志" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.798;entryX=0;entryY=0.0;" edge="1" parent="1" source="act13" target="act11">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m59" value="返回成功" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;strokeColor=#999999;fontColor=#999999;exitX=0;exitY=1.0;entryX=1;entryY=0.8485;" edge="1" parent="1" source="act11" target="act13">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m60" value="TokenService.createToken()&#xa;setCacheObject(&quot;login_tokens:&quot;+token, ...)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.899;entryX=0;entryY=0.0;" edge="1" parent="1" source="act13" target="act12">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m61" value="缓存成功" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;strokeColor=#999999;fontColor=#999999;exitX=0;exitY=1.0;entryX=1;entryY=0.9495;" edge="1" parent="1" source="act12" target="act13">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m62" value="返回 R&lt;{access_token}&gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;strokeColor=#999999;fontColor=#999999;exitX=0;exitY=1.0;entryX=1;entryY=0.9675;" edge="1" parent="1" source="act13" target="act14">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="m63" value="返回令牌" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;curved=0;rounded=0;strokeColor=#999999;fontColor=#999999;exitX=0;exitY=1.0;entryX=0.5;entryY=0.9767;" edge="1" parent="1" source="act14" target="client">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

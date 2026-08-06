@@ -3,6 +3,7 @@ package com.spzx.system.service.impl;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -18,8 +19,7 @@ import com.spzx.system.service.ISysRoleService;
  * @author spzx
  */
 @Service
-public class SysPermissionServiceImpl implements ISysPermissionService
-{
+public class SysPermissionServiceImpl implements ISysPermissionService {
     @Autowired
     private ISysRoleService roleService;
 
@@ -33,16 +33,12 @@ public class SysPermissionServiceImpl implements ISysPermissionService
      * @return 角色权限信息
      */
     @Override
-    public Set<String> getRolePermission(SysUser user)
-    {
+    public Set<String> getRolePermission(SysUser user) {
         Set<String> roles = new HashSet<String>();
         // 管理员拥有所有权限
-        if (user.isAdmin())
-        {
+        if (user.isAdmin()) {
             roles.add("admin");
-        }
-        else
-        {
+        } else {
             roles.addAll(roleService.selectRolePermissionByUserId(user.getUserId()));
         }
         return roles;
@@ -55,29 +51,21 @@ public class SysPermissionServiceImpl implements ISysPermissionService
      * @return 菜单权限信息
      */
     @Override
-    public Set<String> getMenuPermission(SysUser user)
-    {
-        Set<String> perms = new HashSet<String>();
+    public Set<String> getMenuPermission(SysUser user) {
+        Set<String> perms = new HashSet<>();
         // 管理员拥有所有权限
-        if (user.isAdmin())
-        {
+        if (user.isAdmin()) {
             perms.add("*:*:*");
-        }
-        else
-        {
+        } else {
             List<SysRole> roles = user.getRoles();
-            if (!CollectionUtils.isEmpty(roles))
-            {
+            if (!CollectionUtils.isEmpty(roles)) {
                 // 多角色设置permissions属性，以便数据权限匹配权限
-                for (SysRole role : roles)
-                {
+                for (SysRole role : roles) {
                     Set<String> rolePerms = menuService.selectMenuPermsByRoleId(role.getRoleId());
                     role.setPermissions(rolePerms);
                     perms.addAll(rolePerms);
                 }
-            }
-            else
-            {
+            } else {
                 perms.addAll(menuService.selectMenuPermsByUserId(user.getUserId()));
             }
         }

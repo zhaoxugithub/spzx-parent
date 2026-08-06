@@ -1,0 +1,94 @@
+{
+  "title": "SPZX Auth Login Sequence Diagram",
+  "participants": [
+    {"id": "client", "label": "客户端 (Browser/App)", "actor": true},
+    {"id": "gateway", "label": "Gateway\n(8080)", "actor": false},
+    {"id": "auth", "label": "spzx-auth\n(9200)", "actor": false},
+    {"id": "redis", "label": "Redis", "actor": false},
+    {"id": "system", "label": "spzx-system\n(9201)", "actor": false},
+    {"id": "user_svc", "label": "spzx-user\n(9206)", "actor": false}
+  ],
+  "messages": [
+    {"from": "client", "to": "gateway", "label": "POST /login\nBody: {username, password}"},
+    {"from": "gateway", "to": "gateway", "label": "ValidateCodeFilter\n校验验证码"},
+    {"from": "gateway", "to": "auth", "label": "转发 POST /login → TokenController.login()"},
+
+    {"note": "=== SysLoginService.login(username, password) ===", "over": "auth"},
+
+    {"from": "auth", "to": "auth", "label": "1.校验 username/password 非空"},
+    {"from": "auth", "to": "auth", "label": "2.校验密码长度 [5,20]"},
+    {"from": "auth", "to": "auth", "label": "3.校验用户名长度 [2,20]"},
+
+    {"from": "auth", "to": "redis", "label": "4.redisService.getCacheObject(\n\"sys_config:sys.login.blackIPList\")"},
+    {"from": "redis", "to": "auth", "label": "返回黑名单IP列表", "return": true},
+    {"from": "auth", "to": "auth", "label": "IpUtils.isMatchedIp() 检查当前IP是否在黑名单"},
+
+    {"from": "auth", "to": "system", "label": "5.Feign: RemoteUserService.getUserInfo(username, \"inner\")"},
+    {"from": "system", "to": "system", "label": "SysUserServiceImpl.selectUserByUserName()\n查询 sys_user 表"},
+    {"from": "system", "to": "auth", "label": "返回 R<LoginUser>\n(含 SysUser + 角色/菜单/权限列表)", "return": true},
+
+    {"from": "auth", "to": "auth", "label": "6.检查 delFlag != \"2\" (未删除)"},
+    {"from": "auth", "to": "auth", "label": "7.检查 status != \"1\" (未停用)"},
+
+    {"note": "=== SysPasswordService.validate(user, password) ===", "over": "auth"},
+
+    {"from": "auth", "to": "redis", "label": "8.getCacheObject(\"pwd_err_cnt:\" + username)"},
+    {"from": "redis", "to": "auth", "label": "返回重试次数 (null→0)", "return": true},
+    {"from": "auth", "to": "auth", "label": "9.检查 retryCount >= 5?\n是→锁定10分钟,抛异常"},
+    {"from": "auth", "to": "auth", "label": "10.SecurityUtils.matchesPassword()\nBCryptPasswordEncoder.matches()"},
+    {"from": "auth", "to": "redis", "label": "11a.失败: setCacheObject(\"pwd_err_cnt:..\", count+1)\nTTL=10min"},
+    {"from": "auth", "to": "redis", "label": "11b.成功: deleteObject(\"pwd_err_cnt:..\")"},
+
+    {"note": "=== SysRecordLogService.recordLogininfor() ===", "over": "auth"},
+
+    {"from": "auth", "to": "system", "label": "12.Feign: RemoteLogService.saveLogininfor(logininfor, \"inner\")"},
+    {"from": "system", "to": "system", "label": "SysLogininforServiceImpl.insertLogininfor()\n写入 sys_logininfor 表"},
+    {"from": "system", "to": "auth", "label": "返回成功", "return": true},
+
+    {"from": "auth", "to": "auth", "label": "SysLoginService.login() 返回 LoginUser"},
+
+    {"note": "=== TokenService.createToken(loginUser) ===", "over": "auth"},
+
+    {"from": "auth", "to": "auth", "label": "13.IdUtils.fastUUID() 生成 token"},
+    {"from": "auth", "to": "auth", "label": "14.IpUtils.getIpAddr() 设置登录IP"},
+    {"from": "auth", "to": "redis", "label": "15.setCacheObject(\n\"login_tokens:\"+token, loginUser, 720min)"},
+    {"from": "redis", "to": "auth", "label": "Redis 存储成功", "return": true},
+    {"from": "auth", "to": "auth", "label": "16.JwtUtils.createToken({user_key, user_id, username})\nJwts.builder().signWith(HS512, secret).compact()"},
+
+    {"from": "auth", "to": "gateway", "label": "返回 ResponseEntity<Map>\n{access_token, expires_in:720}", "return": true},
+    {"from": "gateway", "to": "client", "label": "返回 R<{access_token, expires_in}>", "return": true},
+
+    {"note": "=== 后续请求: Gateway AuthFilter 认证 ===", "over": "gateway"},
+
+    {"from": "client", "to": "gateway", "label": "后续请求\nHeader: Authorization: Bearer <token>"},
+    {"from": "gateway", "to": "gateway", "label": "AuthFilter.filter()\n1.白名单检查 → 非白名单URL"},
+    {"from": "gateway", "to": "gateway", "label": "2.提取 Authorization header\n去除 \"Bearer \" 前缀"},
+    {"from": "gateway", "to": "gateway", "label": "3.JwtUtils.parseToken(token)\n解析 JWT Claims"},
+    {"from": "gateway", "to": "redis", "label": "4.检查 \"login_tokens:\"+user_key 是否存在"},
+    {"from": "redis", "to": "gateway", "label": "会话存在 (未过期)", "return": true},
+    {"from": "gateway", "to": "gateway", "label": "5.设置请求头:\nx-user_key, x-user_id, x-username"},
+    {"from": "gateway", "to": "gateway", "label": "6.移除 from-source header"},
+    {"from": "gateway", "to": "auth", "label": "转发请求到下游服务"},
+
+    {"note": "=== H5登录 (H5TokenController) ===", "over": "auth"},
+
+    {"from": "client", "to": "gateway", "label": "POST /h5/login\nBody: {username, password}"},
+    {"from": "gateway", "to": "auth", "label": "转发 → H5TokenController.login()"},
+    {"from": "auth", "to": "auth", "label": "H5LoginService.login(username, password)"},
+    {"from": "auth", "to": "redis", "label": "getCacheObject(\"sys_config:sys.login.blackIPList\")"},
+    {"from": "redis", "to": "auth", "label": "返回黑名单", "return": true},
+    {"from": "auth", "to": "user_svc", "label": "Feign: RemoteUserInfoService.getUserInfo(username, \"inner\")\nGET /userInfo/info/{username}"},
+    {"from": "user_svc", "to": "user_svc", "label": "UserInfoServiceImpl.selectByUserName()\n查询 user_info 表"},
+    {"from": "user_svc", "to": "auth", "label": "返回 R<UserInfo>", "return": true},
+    {"from": "auth", "to": "auth", "label": "构建 LoginUser 对象"},
+    {"from": "auth", "to": "auth", "label": "密码校验 (BCrypt)"},
+    {"from": "auth", "to": "user_svc", "label": "Feign: RemoteUserInfoService.updateUserLogin(updateUserLogin, \"inner\")"},
+    {"from": "user_svc", "to": "auth", "label": "更新 lastLoginIp/lastLoginTime", "return": true},
+    {"from": "auth", "to": "system", "label": "Feign: RemoteLogService.saveLogininfor() 记录日志"},
+    {"from": "system", "to": "auth", "label": "返回成功", "return": true},
+    {"from": "auth", "to": "redis", "label": "TokenService.createToken()\nsetCacheObject(\"login_tokens:\"+token, ...)"},
+    {"from": "redis", "to": "auth", "label": "缓存成功", "return": true},
+    {"from": "auth", "to": "gateway", "label": "返回 R<{access_token}>", "return": true},
+    {"from": "gateway", "to": "client", "label": "返回令牌", "return": true}
+  ]
+}
