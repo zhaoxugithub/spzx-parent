@@ -27,6 +27,12 @@ target/
 
 ### JRebel ###
 rebel.xml
+
+######################################################################
+# SkyWalking
+# agent 为下载产物(二进制，~50MB)，不入库；下载脚本: docker/skywalking/download-agent.sh
+/docker/skywalking/agent/
+/docker/skywalking/oap-data/
 ### NetBeans ###
 nbproject/private/
 build/*

@@ -3,6 +3,7 @@ package com.spzx.common.security.auth;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+
 import org.springframework.util.PatternMatchUtils;
 import com.spzx.common.core.context.SecurityContextHolder;
 import com.spzx.common.core.exception.auth.NotLoginException;
@@ -23,12 +24,15 @@ import com.spzx.system.api.model.LoginUser;
  *
  * @author spzx
  */
-public class AuthLogic
-{
-    /** 所有权限标识 */
+public class AuthLogic {
+    /**
+     * 所有权限标识
+     */
     private static final String ALL_PERMISSION = "*:*:*";
 
-    /** 管理员角色权限标识 */
+    /**
+     * 管理员角色权限标识
+     */
     private static final String SUPER_ADMIN = "admin";
 
     public TokenService tokenService = SpringUtils.getBean(TokenService.class);
@@ -36,11 +40,9 @@ public class AuthLogic
     /**
      * 会话注销
      */
-    public void logout()
-    {
+    public void logout() {
         String token = SecurityUtils.getToken();
-        if (token == null)
-        {
+        if (token == null) {
             return;
         }
         logoutByToken(token);
@@ -49,16 +51,14 @@ public class AuthLogic
     /**
      * 会话注销，根据指定Token
      */
-    public void logoutByToken(String token)
-    {
+    public void logoutByToken(String token) {
         tokenService.delLoginUser(token);
     }
 
     /**
      * 检验用户是否已经登录，如未登录，则抛出异常
      */
-    public void checkLogin()
-    {
+    public void checkLogin() {
         getLoginUser();
     }
 
@@ -67,16 +67,13 @@ public class AuthLogic
      *
      * @return 用户缓存信息
      */
-    public LoginUser getLoginUser()
-    {
+    public LoginUser getLoginUser() {
         String token = SecurityUtils.getToken();
-        if (token == null)
-        {
+        if (token == null) {
             throw new NotLoginException("未提供token");
         }
         LoginUser loginUser = SecurityUtils.getLoginUser();
-        if (loginUser == null)
-        {
+        if (loginUser == null) {
             throw new NotLoginException("无效的token");
         }
         return loginUser;
@@ -88,8 +85,7 @@ public class AuthLogic
      * @param token 前端传递的认证信息
      * @return 用户缓存信息
      */
-    public LoginUser getLoginUser(String token)
-    {
+    public LoginUser getLoginUser(String token) {
         return tokenService.getLoginUser(token);
     }
 
@@ -98,8 +94,7 @@ public class AuthLogic
      *
      * @param loginUser 当前用户信息
      */
-    public void verifyLoginUserExpire(LoginUser loginUser)
-    {
+    public void verifyLoginUserExpire(LoginUser loginUser) {
         tokenService.verifyToken(loginUser);
     }
 
@@ -109,8 +104,7 @@ public class AuthLogic
      * @param permission 权限字符串
      * @return 用户是否具备某权限
      */
-    public boolean hasPermi(String permission)
-    {
+    public boolean hasPermi(String permission) {
         return hasPermi(getPermiList(), permission);
     }
 
@@ -120,10 +114,8 @@ public class AuthLogic
      * @param permission 权限字符串
      * @return 用户是否具备某权限
      */
-    public void checkPermi(String permission)
-    {
-        if (!hasPermi(getPermiList(), permission))
-        {
+    public void checkPermi(String permission) {
+        if (!hasPermi(getPermiList(), permission)) {
             throw new NotPermissionException(permission);
         }
     }
@@ -133,14 +125,12 @@ public class AuthLogic
      *
      * @param requiresPermissions 注解对象
      */
-    public void checkPermi(RequiresPermissions requiresPermissions)
-    {
+    public void checkPermi(RequiresPermissions requiresPermissions) {
         SecurityContextHolder.setPermission(StringUtils.join(requiresPermissions.value(), ","));
         if (requiresPermissions.logical() == Logical.AND) //@RequiresPermissions(value = {"system:user:add", "system:user:edit"}, logical = Logical.AND)
         {
             checkPermiAnd(requiresPermissions.value());
-        }
-        else //@RequiresPermissions(value = {"system:user:add", "system:user:edit"}, logical = Logical.OR)
+        } else //@RequiresPermissions(value = {"system:user:add", "system:user:edit"}, logical = Logical.OR)
         {
             checkPermiOr(requiresPermissions.value());
         }
@@ -151,13 +141,11 @@ public class AuthLogic
      *
      * @param permissions 权限列表
      */
-    public void checkPermiAnd(String... permissions)
-    {
+    public void checkPermiAnd(String... permissions) {
         Set<String> permissionList = getPermiList(); //获取登录拥有的权限标识集合
         for (String permission : permissions) //注解上标记权限标识
         {
-            if (!hasPermi(permissionList, permission))
-            {
+            if (!hasPermi(permissionList, permission)) {
                 throw new NotPermissionException(permission);
             }
         }
@@ -168,18 +156,14 @@ public class AuthLogic
      *
      * @param permissions 权限码数组
      */
-    public void checkPermiOr(String... permissions)
-    {
+    public void checkPermiOr(String... permissions) {
         Set<String> permissionList = getPermiList();
-        for (String permission : permissions)
-        {
-            if (hasPermi(permissionList, permission))
-            {
+        for (String permission : permissions) {
+            if (hasPermi(permissionList, permission)) {
                 return;
             }
         }
-        if (permissions.length > 0)
-        {
+        if (permissions.length > 0) {
             throw new NotPermissionException(permissions);
         }
     }
@@ -190,8 +174,7 @@ public class AuthLogic
      * @param role 角色标识
      * @return 用户是否具备某角色
      */
-    public boolean hasRole(String role)
-    {
+    public boolean hasRole(String role) {
         return hasRole(getRoleList(), role);
     }
 
@@ -200,10 +183,8 @@ public class AuthLogic
      *
      * @param role 角色标识
      */
-    public void checkRole(String role)
-    {
-        if (!hasRole(role))
-        {
+    public void checkRole(String role) {
+        if (!hasRole(role)) {
             throw new NotRoleException(role);
         }
     }
@@ -213,14 +194,10 @@ public class AuthLogic
      *
      * @param requiresRoles 注解对象
      */
-    public void checkRole(RequiresRoles requiresRoles)
-    {
-        if (requiresRoles.logical() == Logical.AND)
-        {
+    public void checkRole(RequiresRoles requiresRoles) {
+        if (requiresRoles.logical() == Logical.AND) {
             checkRoleAnd(requiresRoles.value());
-        }
-        else
-        {
+        } else {
             checkRoleOr(requiresRoles.value());
         }
     }
@@ -230,13 +207,11 @@ public class AuthLogic
      *
      * @param roles 角色标识数组
      */
-    public void checkRoleAnd(String... roles)
-    {
+    public void checkRoleAnd(String... roles) {
         Set<String> roleList = getRoleList(); //登录时，登录成功，获取当前登录用户拥有的角色列表；都是放在redis缓存里。我们从换成里可以得到这个集合。
         for (String role : roles) //@RequiresRoles({"admin", "common"})
         {
-            if (!hasRole(roleList, role))
-            {
+            if (!hasRole(roleList, role)) {
                 throw new NotRoleException(role);
             }
         }
@@ -247,18 +222,15 @@ public class AuthLogic
      *
      * @param roles 角色标识数组
      */
-    public void checkRoleOr(String... roles)
-    {
+    public void checkRoleOr(String... roles) {
         Set<String> roleList = getRoleList(); //登录时拥有的角色列表
         for (String role : roles) //注解上标记角色key集合   @RequiresRoles(value = {"admin", "common"}, logical = Logical.OR)
         {
-            if (hasRole(roleList, role))
-            {
+            if (hasRole(roleList, role)) {
                 return;
             }
         }
-        if (roles.length > 0)
-        {
+        if (roles.length > 0) {
             throw new NotRoleException(roles);
         }
     }
@@ -268,8 +240,7 @@ public class AuthLogic
      *
      * @param at 注解对象
      */
-    public void checkByAnnotation(RequiresLogin at)
-    {
+    public void checkByAnnotation(RequiresLogin at) {
         this.checkLogin();
     }
 
@@ -278,15 +249,11 @@ public class AuthLogic
      *
      * @param at 注解对象
      */
-    public void checkByAnnotation(RequiresRoles at)
-    {
+    public void checkByAnnotation(RequiresRoles at) {
         String[] roleArray = at.value();
-        if (at.logical() == Logical.AND)
-        {
+        if (at.logical() == Logical.AND) {
             this.checkRoleAnd(roleArray);
-        }
-        else
-        {
+        } else {
             this.checkRoleOr(roleArray);
         }
     }
@@ -296,15 +263,11 @@ public class AuthLogic
      *
      * @param at 注解对象
      */
-    public void checkByAnnotation(RequiresPermissions at)
-    {
+    public void checkByAnnotation(RequiresPermissions at) {
         String[] permissionArray = at.value();
-        if (at.logical() == Logical.AND)
-        {
+        if (at.logical() == Logical.AND) {
             this.checkPermiAnd(permissionArray);
-        }
-        else
-        {
+        } else {
             this.checkPermiOr(permissionArray);
         }
     }
@@ -314,15 +277,11 @@ public class AuthLogic
      *
      * @return 角色列表
      */
-    public Set<String> getRoleList()
-    {
-        try
-        {
+    public Set<String> getRoleList() {
+        try {
             LoginUser loginUser = getLoginUser();
             return loginUser.getRoles();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             return new HashSet<String>();
         }
     }
@@ -332,15 +291,11 @@ public class AuthLogic
      *
      * @return 权限列表
      */
-    public Set<String> getPermiList()
-    {
-        try
-        {
+    public Set<String> getPermiList() {
+        try {
             LoginUser loginUser = getLoginUser();
             return loginUser.getPermissions();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             return new HashSet<String>();
         }
     }
@@ -349,11 +304,10 @@ public class AuthLogic
      * 判断是否包含权限
      *
      * @param authorities 权限列表
-     * @param permission 权限字符串
+     * @param permission  权限字符串
      * @return 用户是否具备某权限
      */
-    public boolean hasPermi(Collection<String> authorities, String permission)
-    {
+    public boolean hasPermi(Collection<String> authorities, String permission) {
         return authorities.stream().filter(StringUtils::hasText)
                 .anyMatch(x -> ALL_PERMISSION.equals(x) || PatternMatchUtils.simpleMatch(x, permission));
     }
@@ -362,11 +316,10 @@ public class AuthLogic
      * 判断是否包含角色
      *
      * @param roles 角色列表
-     * @param role 角色
+     * @param role  角色
      * @return 用户是否具备某角色权限
      */
-    public boolean hasRole(Collection<String> roles, String role)
-    {
+    public boolean hasRole(Collection<String> roles, String role) {
         return roles.stream().filter(StringUtils::hasText)
                 .anyMatch(x -> SUPER_ADMIN.equals(x) || PatternMatchUtils.simpleMatch(x, role));
     }

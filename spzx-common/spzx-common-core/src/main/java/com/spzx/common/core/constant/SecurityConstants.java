@@ -46,4 +46,9 @@ public class SecurityConstants
      * 角色权限
      */
     public static final String ROLE_PERMISSION = "role_permission";
+
+    /**
+     * 全链路追踪ID
+     */
+    public static final String TRACE_ID = "X-Trace-Id";
 }

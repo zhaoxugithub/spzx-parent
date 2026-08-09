@@ -1,5 +1,5 @@
 # 基础镜像
-FROM  openjdk:8-jre
+FROM  eclipse-temurin:21-jre
 # author
 MAINTAINER spzx
 
@@ -10,6 +10,6 @@ RUN mkdir -p /home/spzx
 # 指定路径
 WORKDIR /home/spzx
 # 复制jar文件到路径
-COPY ./jar/spzx-modules-file.jar /home/spzx/spzx-modules-file.jar
+COPY ./jar/spzx-file.jar /home/spzx/spzx-file.jar
 # 启动文件服务
-ENTRYPOINT ["java","-jar","spzx-modules-file.jar"]
+ENTRYPOINT ["java","-jar","spzx-file.jar"]

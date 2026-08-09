@@ -2,7 +2,7 @@
 
 # 使用说明，用来提示输入参数
 usage() {
-	echo "Usage: sh 执行脚本.sh [port|base|modules|stop|rm]"
+	echo "Usage: sh 执行脚本.sh [port|base|skywalking|modules|stop|rm]"
 	exit 1
 }
 
@@ -21,12 +21,26 @@ port(){
 	firewall-cmd --add-port=9202/tcp --permanent
 	firewall-cmd --add-port=9203/tcp --permanent
 	firewall-cmd --add-port=9300/tcp --permanent
+	# SkyWalking
+	firewall-cmd --add-port=11800/tcp --permanent
+	firewall-cmd --add-port=12800/tcp --permanent
+	firewall-cmd --add-port=18080/tcp --permanent
 	service firewalld restart
 }
 
 # 启动基础环境（必须）
 base(){
 	docker-compose up -d spzx-mysql spzx-redis spzx-nacos
+}
+
+# 启动 SkyWalking 全链路监控（OAP + UI），并确认 agent 已下载
+skywalking(){
+	if [ ! -f ./skywalking/agent/skywalking-agent.jar ]; then
+		echo "[skywalking] 未找到 agent，先执行: sh skywalking/download-agent.sh"
+		exit 1
+	fi
+	docker-compose up -d spzx-skywalking-oap spzx-skywalking-ui
+	echo "[skywalking] UI: http://<宿主机IP>:18080"
 }
 
 # 启动程序模块（必须）
@@ -51,6 +65,9 @@ case "$1" in
 ;;
 "base")
 	base
+;;
+"skywalking")
+	skywalking
 ;;
 "modules")
 	modules

@@ -125,8 +125,15 @@ Key exchanges and queues (defined in `MqConst` in spzx-common-rabbit):
 - `@EnableCustomConfig` / `@EnableRyFeignClients` — composite annotations to bootstrap security + Feign configuration
 
 ### Docker deployment
-- `docker-compose.yml` orchestrates: Nacos, MySQL (ry-cloud DB), Redis, Nginx (frontend), Gateway, Auth, System, Gen, Job, File, Monitor
+- `docker-compose.yml` orchestrates: Nacos, MySQL (ry-cloud DB), Redis, Nginx (frontend), Gateway, Auth, System, Gen, Job, File, Monitor, plus SkyWalking OAP/UI
 - Nginx serves the Vue frontend from `/home/spzx/projects/spzx-ui` and proxies `/prod-api/` → Gateway
+
+### SkyWalking 全链路监控
+- **SkyWalking 9.6.0**（OAP :11800/:12800 + UI :18080，agent 与 OAP/UI 版本必须一致）
+- 所有 Java 服务通过 `JAVA_TOOL_OPTIONS=-javaagent:/skywalking/agent/skywalking-agent.jar` 注入 agent（docker-compose 共享挂载 `docker/skywalking/agent`），零代码侵入
+- 每个服务通过 `SW_AGENT_SERVICE_NAME` 设置链路服务名；agent 下载与插件启用见 `docker/skywalking/download-agent.sh`（已启用 gateway/webflux-6/mvc-6/nacos-2/mybatis/sentinel/quartz 插件）
+- 本地开发：`sh bin/skywalking-run.sh <模块路径>` 或 IDEA VM options 加 `-javaagent`；详见 `doc/skywalking-全链路改造.md`
+- 注意：agent 目录与 OAP H2 数据目录均已 gitignore，不入库
 
 ## Package Naming Convention
 

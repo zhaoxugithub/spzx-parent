@@ -12,6 +12,7 @@ import com.spzx.gateway.config.properties.IgnoreWhiteProperties;
 import io.jsonwebtoken.Claims;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
@@ -23,8 +24,8 @@ import reactor.core.publisher.Mono;
 
 /**
  * 网关鉴权
- *
- *
+ * <p>
+ * <p>
  * GlobalFilter 所有的请求都会去执行
  *
  * @author spzx
@@ -46,16 +47,13 @@ public class AuthFilter implements GlobalFilter, Ordered {
         ServerHttpRequest request = exchange.getRequest();
         ServerHttpRequest.Builder mutate = request.mutate();
 
-        //      http://localhost:8080/product/brand/list  判断路径是否在白名单中，在的话则无需校验jwt令牌；
+        // http://localhost:8080/product/brand/list
+        // 判断路径是否在白名单中，在的话则无需校验jwt令牌；
         String url = request.getURI().getPath();
         // 跳过不需要验证的路径
         if (StringUtils.matches(url, ignoreWhite.getWhites())) {
             return chain.filter(exchange);
         }
-
-        //Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX2tleSI6IjUwMjZmMWU2LWNmY2QtNGE3Ny1iMjg2LTYwZDBlZjVmMTYwNCIsInVzZXJuYW1lIjoiYWRtaW4ifQ.3W6tCGIAC72EY6aXeI0VG2ip2dg66anN5N6VyNoW3pTsZBbVjM9u5keElSm_bRiHxyk9i9gCkN_Tc
-
-        //eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX2tleSI6IjUwMjZmMWU2LWNmY2QtNGE3Ny1iMjg2LTYwZDBlZjVmMTYwNCIsInVzZXJuYW1lIjoiYWRtaW4ifQ.3W6tCGIAC72EY6aXeI0VG2ip2dg66anN5N6VyNoW3pTsZBbVjM9u5keElSm_bRiHxyk9i9gCkN_Tc
 
         String token = getToken(request); //从请求头中获取jwt令牌：去掉前缀
         if (StringUtils.isEmpty(token)) {
@@ -101,7 +99,10 @@ public class AuthFilter implements GlobalFilter, Ordered {
     }
 
     private Mono<Void> unauthorizedResponse(ServerWebExchange exchange, String msg) {
-        log.error("[鉴权异常处理]请求路径:{}", exchange.getRequest().getPath());
+        String traceId = exchange.getRequest().getHeaders().getFirst("X-Trace-Id");
+        MDC.put("traceId", traceId != null ? traceId : "N/A");
+        log.error("[鉴权异常处理]请求路径:{}, 异常信息:{}", exchange.getRequest().getPath(), msg);
+        MDC.clear();
         return ServletUtils.webFluxResponseWriter(exchange.getResponse(), msg, HttpStatus.UNAUTHORIZED);
     }
 

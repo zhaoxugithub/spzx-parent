@@ -1,4 +1,11 @@
 version : '3.8'
+
+# =============================================================================
+# SkyWalking 全链路监控接入说明：
+# 所有 Java 服务共享一份 agent（./skywalking/agent），通过环境变量
+# JAVA_TOOL_OPTIONS 注入 -javaagent，无需修改各服务 Dockerfile；
+# SW_COLLECTOR_BACKEND_SERVICES 指向 OAP，SW_AGENT_SERVICE_NAME 为链路服务名。
+# =============================================================================
 services:
   spzx-nacos:
     container_name: spzx-nacos
@@ -65,6 +72,34 @@ services:
       - spzx-gateway
     links:
       - spzx-gateway
+
+  # ======================= SkyWalking 全链路监控 =======================
+  spzx-skywalking-oap:
+    container_name: spzx-skywalking-oap
+    image: apache/skywalking-oap-server:9.6.0
+    user: root   # 官方镜像默认 skywalking 用户(UID 11800)，无法写宿主机 bind mount，开发环境以 root 运行
+    environment:
+      - SW_STORAGE=h2
+      - SW_STORAGE_H2_URL=jdbc:h2:file:/skywalking/data/skywalking-oap-db
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./skywalking/oap-data:/skywalking/data
+    ports:
+      - "11800:11800"   # gRPC: agent 上报链路数据
+      - "12800:12800"   # HTTP: UI / 第三方查询接口
+    restart: unless-stopped
+  spzx-skywalking-ui:
+    container_name: spzx-skywalking-ui
+    image: apache/skywalking-ui:9.6.0
+    environment:
+      - SW_OAP_ADDRESS=http://spzx-skywalking-oap:12800
+      - TZ=Asia/Shanghai
+    ports:
+      - "18080:8080"    # 宿主机 18080 (8080 已被网关占用)
+    depends_on:
+      - spzx-skywalking-oap
+    restart: unless-stopped
+
   spzx-gateway:
     container_name: spzx-gateway
     build:
@@ -72,8 +107,16 @@ services:
       dockerfile: dockerfile
     ports:
       - "8080:8080"
+    volumes:
+      - ./skywalking/agent:/skywalking/agent:ro
+    environment:
+      - SW_AGENT_SERVICE_NAME=spzx-gateway
+      - JAVA_TOOL_OPTIONS=-javaagent:/skywalking/agent/skywalking-agent.jar
+      - SW_COLLECTOR_BACKEND_SERVICES=spzx-skywalking-oap:11800
+      - TZ=Asia/Shanghai
     depends_on:
       - spzx-redis
+      - spzx-skywalking-oap
     links:
       - spzx-redis
   spzx-auth:
@@ -83,8 +126,16 @@ services:
       dockerfile: dockerfile
     ports:
       - "9200:9200"
+    volumes:
+      - ./skywalking/agent:/skywalking/agent:ro
+    environment:
+      - SW_AGENT_SERVICE_NAME=spzx-auth
+      - JAVA_TOOL_OPTIONS=-javaagent:/skywalking/agent/skywalking-agent.jar
+      - SW_COLLECTOR_BACKEND_SERVICES=spzx-skywalking-oap:11800
+      - TZ=Asia/Shanghai
     depends_on:
       - spzx-redis
+      - spzx-skywalking-oap
     links:
       - spzx-redis
   spzx-modules-system:
@@ -94,9 +145,17 @@ services:
       dockerfile: dockerfile
     ports:
       - "9201:9201"
+    volumes:
+      - ./skywalking/agent:/skywalking/agent:ro
+    environment:
+      - SW_AGENT_SERVICE_NAME=spzx-system
+      - JAVA_TOOL_OPTIONS=-javaagent:/skywalking/agent/skywalking-agent.jar
+      - SW_COLLECTOR_BACKEND_SERVICES=spzx-skywalking-oap:11800
+      - TZ=Asia/Shanghai
     depends_on:
       - spzx-redis
       - spzx-mysql
+      - spzx-skywalking-oap
     links:
       - spzx-redis
       - spzx-mysql
@@ -107,8 +166,16 @@ services:
       dockerfile: dockerfile
     ports:
       - "9202:9202"
+    volumes:
+      - ./skywalking/agent:/skywalking/agent:ro
+    environment:
+      - SW_AGENT_SERVICE_NAME=spzx-gen
+      - JAVA_TOOL_OPTIONS=-javaagent:/skywalking/agent/skywalking-agent.jar
+      - SW_COLLECTOR_BACKEND_SERVICES=spzx-skywalking-oap:11800
+      - TZ=Asia/Shanghai
     depends_on:
       - spzx-mysql
+      - spzx-skywalking-oap
     links:
       - spzx-mysql
   spzx-modules-job:
@@ -118,8 +185,16 @@ services:
       dockerfile: dockerfile
     ports:
       - "9203:9203"
+    volumes:
+      - ./skywalking/agent:/skywalking/agent:ro
+    environment:
+      - SW_AGENT_SERVICE_NAME=spzx-job
+      - JAVA_TOOL_OPTIONS=-javaagent:/skywalking/agent/skywalking-agent.jar
+      - SW_COLLECTOR_BACKEND_SERVICES=spzx-skywalking-oap:11800
+      - TZ=Asia/Shanghai
     depends_on:
       - spzx-mysql
+      - spzx-skywalking-oap
     links:
       - spzx-mysql
   spzx-modules-file:
@@ -130,7 +205,15 @@ services:
     ports:
       - "9300:9300"
     volumes:
-    - ./spzx/uploadPath:/home/spzx/uploadPath
+      - ./spzx/uploadPath:/home/spzx/uploadPath
+      - ./skywalking/agent:/skywalking/agent:ro
+    environment:
+      - SW_AGENT_SERVICE_NAME=spzx-file
+      - JAVA_TOOL_OPTIONS=-javaagent:/skywalking/agent/skywalking-agent.jar
+      - SW_COLLECTOR_BACKEND_SERVICES=spzx-skywalking-oap:11800
+      - TZ=Asia/Shanghai
+    depends_on:
+      - spzx-skywalking-oap
   spzx-visual-monitor:
     container_name: spzx-visual-monitor
     build:
@@ -138,3 +221,12 @@ services:
       dockerfile: dockerfile
     ports:
       - "9100:9100"
+    volumes:
+      - ./skywalking/agent:/skywalking/agent:ro
+    environment:
+      - SW_AGENT_SERVICE_NAME=spzx-monitor
+      - JAVA_TOOL_OPTIONS=-javaagent:/skywalking/agent/skywalking-agent.jar
+      - SW_COLLECTOR_BACKEND_SERVICES=spzx-skywalking-oap:11800
+      - TZ=Asia/Shanghai
+    depends_on:
+      - spzx-skywalking-oap

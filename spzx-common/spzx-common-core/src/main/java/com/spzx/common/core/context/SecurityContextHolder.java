@@ -2,6 +2,7 @@ package com.spzx.common.core.context;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
 import com.alibaba.ttl.TransmittableThreadLocal;
 import com.spzx.common.core.constant.SecurityConstants;
 import com.spzx.common.core.text.Convert;
@@ -13,88 +14,72 @@ import com.spzx.common.core.utils.StringUtils;
  *
  * @author spzx
  */
-public class SecurityContextHolder
-{
+public class SecurityContextHolder {
     //ThreadLocal： 只能将数据绑定到当前线程，只能针对于当前线程请求进行数据共享。不能进行父子线程的数据共享。
     //TransmittableThreadLocal  是 的一个子类： 可以进行父子线程数据共享。
     private static final TransmittableThreadLocal<Map<String, Object>> THREAD_LOCAL = new TransmittableThreadLocal<Map<String, Object>>();
 
-    public static void set(String key, Object value)
-    {
+    public static void set(String key, Object value) {
         Map<String, Object> map = getLocalMap();
         map.put(key, value == null ? StringUtils.EMPTY : value);
     }
 
-    public static String get(String key)
-    {
+    public static String get(String key) {
         Map<String, Object> map = getLocalMap();
         return Convert.toStr(map.getOrDefault(key, StringUtils.EMPTY));
     }
 
-    public static <T> T get(String key, Class<T> clazz)
-    {
+    public static <T> T get(String key, Class<T> clazz) {
         Map<String, Object> map = getLocalMap();
         return StringUtils.cast(map.getOrDefault(key, null));
     }
 
-    public static Map<String, Object> getLocalMap()
-    {
+    public static Map<String, Object> getLocalMap() {
         Map<String, Object> map = THREAD_LOCAL.get();
-        if (map == null)
-        {
+        if (map == null) {
             map = new ConcurrentHashMap<String, Object>();
             THREAD_LOCAL.set(map);
         }
         return map;
     }
 
-    public static void setLocalMap(Map<String, Object> threadLocalMap)
-    {
+    public static void setLocalMap(Map<String, Object> threadLocalMap) {
         THREAD_LOCAL.set(threadLocalMap);
     }
 
-    public static Long getUserId()
-    {
+    public static Long getUserId() {
         return Convert.toLong(get(SecurityConstants.DETAILS_USER_ID), 0L);
     }
 
-    public static void setUserId(String account)
-    {
+    public static void setUserId(String account) {
         set(SecurityConstants.DETAILS_USER_ID, account);
     }
 
-    public static String getUserName()
-    {
+    public static String getUserName() {
         return get(SecurityConstants.DETAILS_USERNAME);
     }
 
-    public static void setUserName(String username)
-    {
+    public static void setUserName(String username) {
         set(SecurityConstants.DETAILS_USERNAME, username);
     }
 
-    public static String getUserKey()
-    {
+    public static String getUserKey() {
         return get(SecurityConstants.USER_KEY);
     }
 
-    public static void setUserKey(String userKey)
-    {
+    public static void setUserKey(String userKey) {
         set(SecurityConstants.USER_KEY, userKey);
     }
 
-    public static String getPermission()
-    {
+    public static String getPermission() {
         return get(SecurityConstants.ROLE_PERMISSION);
     }
 
-    public static void setPermission(String permissions)
-    {
+    public static void setPermission(String permissions) {
         set(SecurityConstants.ROLE_PERMISSION, permissions);
     }
 
-    public static void remove()
-    {
+    public static void remove() {
         THREAD_LOCAL.remove();
     }
 }
