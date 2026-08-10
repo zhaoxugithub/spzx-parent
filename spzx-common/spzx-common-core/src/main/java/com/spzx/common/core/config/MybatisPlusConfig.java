@@ -3,6 +3,7 @@ package com.spzx.common.core.config;
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
+import com.spzx.common.core.interceptor.MybatisSqlLogInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,6 +28,15 @@ public class MybatisPlusConfig {
         //向Mybatis过滤器链中添加分页拦截器
         interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL)); // limit ?,?
         return interceptor;
+    }
+
+    /**
+     * SQL 日志拦截器：日志中直接输出真实参数替换后的 MySQL 执行 SQL
+     * 可通过 spzx.sql-log.enabled=false 关闭（Nacos 共享配置 application-dev.yml 中配置）
+     */
+    @Bean
+    public MybatisSqlLogInterceptor mybatisSqlLogInterceptor(){
+        return new MybatisSqlLogInterceptor();
     }
 
 }

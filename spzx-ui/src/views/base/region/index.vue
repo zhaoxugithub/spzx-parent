@@ -20,7 +20,7 @@ const parentCode = ref('0')
 
 const loadNode = async (node, resolve) => {
   // eslint-disable-next-line no-debugger
-  debugger
+  // debugger
   if (node.data.code) {
     parentCode.value = node.data.code
   }
