@@ -1,6 +1,7 @@
 package com.spzx.common.security.config;
 
 import java.util.TimeZone;
+
 import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -11,14 +12,12 @@ import com.spzx.common.security.filter.TraceIdFilter;
  *
  * @author spzx
  */
-public class ApplicationConfig
-{
+public class ApplicationConfig {
     /**
      * 时区配置
      */
     @Bean
-    public Jackson2ObjectMapperBuilderCustomizer jacksonObjectMapperCustomization()
-    {
+    public Jackson2ObjectMapperBuilderCustomizer jacksonObjectMapperCustomization() {
         return jacksonObjectMapperBuilder -> jacksonObjectMapperBuilder.timeZone(TimeZone.getDefault());
     }
 

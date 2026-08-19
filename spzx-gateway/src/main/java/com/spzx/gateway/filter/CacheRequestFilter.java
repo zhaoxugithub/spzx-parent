@@ -31,32 +31,54 @@ public class CacheRequestFilter extends AbstractGatewayFilterFactory<CacheReques
         return "CacheRequestFilter";
     }
 
-    @Override
     public GatewayFilter apply(Config config) {
-        CacheRequestGatewayFilter cacheRequestGatewayFilter = new CacheRequestGatewayFilter();
-        Integer order = config.getOrder();
-        if (order == null) {
-            return cacheRequestGatewayFilter;
-        }
-        return new OrderedGatewayFilter(cacheRequestGatewayFilter, order);
-    }
-
-    public static class CacheRequestGatewayFilter implements GatewayFilter {
-        @Override
-        public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+        GatewayFilter gatewayFilter = (exchange, chain) -> {
             // GET DELETE 不过滤
             HttpMethod method = exchange.getRequest().getMethod();
             if (method == null || method == HttpMethod.GET || method == HttpMethod.DELETE) {
                 return chain.filter(exchange);
             }
             return ServerWebExchangeUtils.cacheRequestBodyAndRequest(exchange, (serverHttpRequest) -> {
+                // ServerHttpRequestDecorator
                 if (serverHttpRequest == exchange.getRequest()) {
                     return chain.filter(exchange);
                 }
                 return chain.filter(exchange.mutate().request(serverHttpRequest).build());
             });
+        };
+        Integer order = config.getOrder();
+        if(order == null){
+            return gatewayFilter;
         }
+        return new OrderedGatewayFilter(gatewayFilter, order);
     }
+
+//    @Override
+//    public GatewayFilter apply(Config config) {
+//        CacheRequestGatewayFilter cacheRequestGatewayFilter = new CacheRequestGatewayFilter();
+//        Integer order = config.getOrder();
+//        if (order == null) {
+//            return cacheRequestGatewayFilter;
+//        }
+//        return new OrderedGatewayFilter(cacheRequestGatewayFilter, order);
+//    }
+//
+//    public static class CacheRequestGatewayFilter implements GatewayFilter {
+//        @Override
+//        public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+//            // GET DELETE 不过滤
+//            HttpMethod method = exchange.getRequest().getMethod();
+//            if (method == null || method == HttpMethod.GET || method == HttpMethod.DELETE) {
+//                return chain.filter(exchange);
+//            }
+//            return ServerWebExchangeUtils.cacheRequestBodyAndRequest(exchange, (serverHttpRequest) -> {
+//                if (serverHttpRequest == exchange.getRequest()) {
+//                    return chain.filter(exchange);
+//                }
+//                return chain.filter(exchange.mutate().request(serverHttpRequest).build());
+//            });
+//        }
+//    }
 
     @Override
     public List<String> shortcutFieldOrder() {

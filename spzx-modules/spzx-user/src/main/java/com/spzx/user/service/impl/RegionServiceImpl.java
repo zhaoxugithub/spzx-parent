@@ -18,8 +18,7 @@ import java.util.List;
  * @date 2024-07-08
  */
 @Service
-public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> implements IRegionService
-{
+public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> implements IRegionService {
     @Autowired
     private RegionMapper regionMapper;
 
@@ -39,8 +38,8 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
         if (StringUtils.isEmpty(code)) {
             return "";
         }
-        Region region = regionMapper.selectOne(new LambdaQueryWrapper<Region>().eq(Region::getCode,code).select(Region::getName));
-        if(null != region) {
+        Region region = regionMapper.selectOne(new LambdaQueryWrapper<Region>().eq(Region::getCode, code).select(Region::getName));
+        if (null != region) {
             return region.getName();
         }
         return "";

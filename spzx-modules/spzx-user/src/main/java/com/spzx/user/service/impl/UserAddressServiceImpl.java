@@ -21,8 +21,7 @@ import com.spzx.user.service.IUserAddressService;
  * @date 2024-09-27
  */
 @Service
-public class UserAddressServiceImpl extends ServiceImpl<UserAddressMapper, UserAddress> implements IUserAddressService
-{
+public class UserAddressServiceImpl extends ServiceImpl<UserAddressMapper, UserAddress> implements IUserAddressService {
 
     @Autowired
     private UserAddressMapper userAddressMapper;
@@ -36,8 +35,7 @@ public class UserAddressServiceImpl extends ServiceImpl<UserAddressMapper, UserA
      * @return 用户地址
      */
     @Override
-    public List<UserAddress> selectUserAddressList()
-    {
+    public List<UserAddress> selectUserAddressList() {
         // 获取当前登录用户的id
         Long userId = SecurityContextHolder.getUserId();
         return userAddressMapper.selectList(new LambdaQueryWrapper<UserAddress>().eq(UserAddress::getUserId, userId));
@@ -50,8 +48,7 @@ public class UserAddressServiceImpl extends ServiceImpl<UserAddressMapper, UserA
      * @return 结果
      */
     @Override
-    public int insertUserAddress(UserAddress userAddress)
-    {
+    public int insertUserAddress(UserAddress userAddress) {
         userAddress.setUserId(SecurityContextHolder.getUserId());
         String provinceName = regionService.getNameByCode(userAddress.getProvinceCode());
         String cityName = regionService.getNameByCode(userAddress.getCityCode());
@@ -61,7 +58,7 @@ public class UserAddressServiceImpl extends ServiceImpl<UserAddressMapper, UserA
         userAddress.setCreateTime(DateUtils.getNowDate());
 
         //如果是默认地址，其他地址更新为非默认地址
-        if(userAddress.getIsDefault().intValue() == 1) {
+        if (userAddress.getIsDefault().intValue() == 1) {
             UserAddress updateUserAddress = new UserAddress();
             updateUserAddress.setIsDefault(0);
             userAddressMapper.update(updateUserAddress, new LambdaQueryWrapper<UserAddress>().eq(UserAddress::getUserId, userAddress.getUserId()));
@@ -76,8 +73,7 @@ public class UserAddressServiceImpl extends ServiceImpl<UserAddressMapper, UserA
      * @return 结果
      */
     @Override
-    public int updateUserAddress(UserAddress userAddress)
-    {
+    public int updateUserAddress(UserAddress userAddress) {
         String provinceName = regionService.getNameByCode(userAddress.getProvinceCode());
         String cityName = regionService.getNameByCode(userAddress.getCityCode());
         String districtName = regionService.getNameByCode(userAddress.getDistrictCode());
@@ -85,7 +81,7 @@ public class UserAddressServiceImpl extends ServiceImpl<UserAddressMapper, UserA
         userAddress.setFullAddress(fullAddress);
         userAddress.setUpdateTime(DateUtils.getNowDate());
         //如果是默认地址，其他地址更新为非默认地址
-        if(userAddress.getIsDefault().intValue() == 1) {
+        if (userAddress.getIsDefault().intValue() == 1) {
             UserAddress updateUserAddress = new UserAddress();
             updateUserAddress.setIsDefault(0);
             userAddressMapper.update(updateUserAddress, new LambdaQueryWrapper<UserAddress>().eq(UserAddress::getUserId, userAddress.getUserId()));

@@ -18,13 +18,10 @@ import com.spzx.system.api.model.LoginUser;
  *
  * @author spzx
  */
-public class HeaderInterceptor implements AsyncHandlerInterceptor
-{
+public class HeaderInterceptor implements AsyncHandlerInterceptor {
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception
-    {
-        if (!(handler instanceof HandlerMethod))
-        {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        if (!(handler instanceof HandlerMethod)) {
             return true;
         }
 
@@ -34,11 +31,9 @@ public class HeaderInterceptor implements AsyncHandlerInterceptor
         SecurityContextHolder.setUserKey(ServletUtils.getHeader(request, SecurityConstants.USER_KEY));
 
         String token = SecurityUtils.getToken();
-        if (StringUtils.isNotEmpty(token))
-        {
+        if (StringUtils.isNotEmpty(token)) {
             LoginUser loginUser = AuthUtil.getLoginUser(token);
-            if (StringUtils.isNotNull(loginUser))
-            {
+            if (StringUtils.isNotNull(loginUser)) {
                 AuthUtil.verifyLoginUserExpire(loginUser); // 会话续期    默认12小时缓存失效，小于2小时会自动续期。
                 SecurityContextHolder.set(SecurityConstants.LOGIN_USER, loginUser);
             }
@@ -48,8 +43,7 @@ public class HeaderInterceptor implements AsyncHandlerInterceptor
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
-            throws Exception
-    {
+            throws Exception {
         SecurityContextHolder.remove();
     }
 }

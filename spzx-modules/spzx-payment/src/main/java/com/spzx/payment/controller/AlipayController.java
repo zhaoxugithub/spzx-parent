@@ -117,11 +117,15 @@ public class AlipayController extends BaseController {
                 paymentInfoService.updatePaymentStatus(paramMap, 2); //  支付类型：付款方式：1-微信 2-支付宝
                 return "success" ; //商品平台收到异步通知后，执行业务逻辑后，需要给支付宝返回"success"字符串。表示支付流程结束。
             }else{
-                // TODO 验签失败则记录异常日志，并在response中返回failure.
+                // 签名通过但交易状态非成功状态，记录异常日志，返回 failure 让支付宝按策略重试
+                log.error("[支付宝异步回调]签名验证通过,但交易状态异常, out_trade_no={}, trade_status={}",
+                        paramMap.get("out_trade_no"), trade_status);
                 return "failure";
             }
         }else{
-            // TODO 验签失败则记录异常日志，并在response中返回failure.
+            // 验签失败，记录异常日志（防止告警丢失），并返回 failure 通知支付宝
+            log.error("[支付宝异步回调]验签失败, out_trade_no={}, 回调参数:{}",
+                    paramMap.get("out_trade_no"), paramMap);
             return "failure"; //验签失败。
         }
 

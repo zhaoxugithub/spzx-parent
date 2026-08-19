@@ -55,7 +55,8 @@ public class AuthFilter implements GlobalFilter, Ordered {
             return chain.filter(exchange);
         }
 
-        String token = getToken(request); //从请求头中获取jwt令牌：去掉前缀
+        //从请求头中获取jwt令牌：去掉前缀
+        String token = getToken(request);
         if (StringUtils.isEmpty(token)) {
             return unauthorizedResponse(exchange, "令牌不能为空");
         }

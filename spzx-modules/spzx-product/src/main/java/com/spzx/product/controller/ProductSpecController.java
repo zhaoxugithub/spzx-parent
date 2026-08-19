@@ -22,7 +22,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/productSpec")
 public class ProductSpecController extends BaseController {
-    
+
     @Autowired
     private IProductSpecService productSpecService;
 

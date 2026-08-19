@@ -39,8 +39,8 @@ public class MqConst {
     public static final String EXCHANGE_CANCEL_ORDER = "spzx.cancel.order";
     public static final String ROUTING_CANCEL_ORDER = "spzx.cancel.order";
     public static final String QUEUE_CANCEL_ORDER = "spzx.cancel.order";
-    //public static final Integer CANCEL_ORDER_DELAY_TIME = 15 * 60;
-    public static final Integer CANCEL_ORDER_DELAY_TIME = 1 * 60; //TODO 临时
+    // 取消订单延迟时间。演示环境设为 1 分钟便于观察延迟队列效果；生产环境建议改为 15 分钟(15 * 60)
+    public static final Integer CANCEL_ORDER_DELAY_TIME = 1 * 60;
 
 
 }

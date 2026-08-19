@@ -223,6 +223,19 @@
                 <version>${mybatis-plus.version}</version>
             </dependency>
 
+            <!--
+                Druid 连接池版本统一管理。
+                说明: spring-cloud-starter-alibaba-seata 传递依赖 seata-all:1.7.0-native-rc2,
+                其声明的 druid 1.2.6 POM 中包含 com.sun:tools / com.sun:jconsole 的 system 依赖
+                (指向 lib/openjdk-1.8-tools.jar), 在 JDK 9+ 环境下 Maven 无法解析。
+                这里统一强制为项目使用的 1.2.21 (无 system 依赖), 保证 JDK 21 可编译。
+            -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
             <!-- lombok -->
             <dependency>
                 <groupId>org.projectlombok</groupId>

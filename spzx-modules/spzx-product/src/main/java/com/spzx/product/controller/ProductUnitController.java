@@ -27,15 +27,15 @@ public class ProductUnitController extends BaseController {
     @Operation(summary = "分页")
     @GetMapping("/list")
     public TableDataInfo findPage(
-                                  @Parameter(name = "pageNum",description = "第几页",required = true)
-                                  @RequestParam(value = "pageNum",defaultValue = "1",required = true) Integer pageNum,
-                                  @Parameter(name = "pageSize",description = "每页条数",required = true)
-                                  @RequestParam(value = "pageSize",defaultValue = "10",required = true) Integer pageSize,
-                                  ProductUnit productUnit){
+            @Parameter(name = "pageNum", description = "第几页", required = true)
+            @RequestParam(value = "pageNum", defaultValue = "1", required = true) Integer pageNum,
+            @Parameter(name = "pageSize", description = "每页条数", required = true)
+            @RequestParam(value = "pageSize", defaultValue = "10", required = true) Integer pageSize,
+            ProductUnit productUnit) {
 
         //com.baomidou.mybatisplus.core.metadata.IPage
-        IPage pageParam = new Page(pageNum,pageSize);
-        IPage page = productUnitService.findPage(pageParam,productUnit);
+        IPage pageParam = new Page(pageNum, pageSize);
+        IPage page = productUnitService.findPage(pageParam, productUnit);
         return getDataTable(page);
     }
 

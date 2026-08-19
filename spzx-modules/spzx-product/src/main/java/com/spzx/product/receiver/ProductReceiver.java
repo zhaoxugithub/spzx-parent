@@ -24,6 +24,7 @@ public class ProductReceiver {
 
     /**
      * 解锁库存
+     *
      * @param orderNo 订单号
      */
     @SneakyThrows
@@ -33,20 +34,19 @@ public class ProductReceiver {
             key = {MqConst.ROUTING_UNLOCK}
     ))
     public void unlock(String orderNo, Message message, Channel channel) {
-        if(StringUtils.hasText(orderNo)){
+        if (StringUtils.hasText(orderNo)) {
             log.info("[商品服务]监听解锁库存消息：{}", orderNo);
             //业务逻辑处理
             productService.unlock(orderNo); //含去重
         }
-        channel.basicAck(message.getMessageProperties().getDeliveryTag(),false);
+        channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
     }
-
-
 
 
     /**
      * 扣减库存
-     * @param orderNo  订单号
+     *
+     * @param orderNo 订单号
      */
     @SneakyThrows
     @RabbitListener(bindings = @QueueBinding(
@@ -56,7 +56,7 @@ public class ProductReceiver {
     ))
     public void minus(String orderNo, Channel channel, Message message) {
         //业务处理
-        if (StringUtils.isNotEmpty(orderNo)){
+        if (StringUtils.isNotEmpty(orderNo)) {
             log.info("[商品服务]监听减库存消息：{}", orderNo);
             //扣减库存
             productService.minus(orderNo); //含消息去重处理

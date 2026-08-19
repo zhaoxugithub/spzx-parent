@@ -37,8 +37,8 @@ public class SmsController extends BaseController { // Sms   Short Message Servi
     @GetMapping(value = "sendCode/{phone}")
     public AjaxResult sendCode(@Parameter(name = "phone", description = "手机", required = true) @PathVariable String phone) {
         String code = new DecimalFormat("0000").format(new Random().nextInt(10000));
-        redisTemplate.opsForValue().set("phone:code:"+phone , code, 5, TimeUnit.MINUTES);
-        log.info(phone+": " + code);
+        redisTemplate.opsForValue().set("phone:code:" + phone, code, 5, TimeUnit.MINUTES);
+        log.info(phone + ": " + code);
 
         Map<String, Object> param = new HashMap<>();
         param.put("code", code);

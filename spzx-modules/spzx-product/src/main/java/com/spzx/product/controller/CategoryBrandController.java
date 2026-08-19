@@ -81,6 +81,7 @@ public class CategoryBrandController extends BaseController {
 
     /**
      * 根据分类id获取品牌列表
+     *
      * @param categoryId
      * @return
      */

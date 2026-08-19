@@ -40,19 +40,15 @@ public class SysPasswordService {
 
     public void validate(LoginUser user, String password) {
         String username = user.getUsername();
-
         Integer retryCount = redisService.getCacheObject(getCacheKey(username));
-
         if (retryCount == null) {
             retryCount = 0;
         }
-
         if (retryCount >= Integer.valueOf(maxRetryCount).intValue()) {
             String errMsg = String.format("密码输入错误%s次，帐户锁定%s分钟", maxRetryCount, lockTime);
             recordLogService.recordLogininfor(username, Constants.LOGIN_FAIL, errMsg);
             throw new ServiceException(errMsg);
         }
-
         if (!matches(user, password)) {
             retryCount = retryCount + 1;
             recordLogService.recordLogininfor(username, Constants.LOGIN_FAIL, String.format("密码输入错误%s次", retryCount));

@@ -211,7 +211,8 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
             throw new ServiceException(builder.toString());
         }
 
-        // 4.校验库存锁定库存 TODO
+        // 4.校验库存并锁定库存（远程调用 spzx-product 的 checkAndLock）
+        //    失败时返回非空字符串，提示具体哪个商品库存不足；成功时库存已锁定，等待支付后扣减或超时解锁
         List<SkuLockVo> skuLockVoList = orderItemList.stream().map(item -> {
             SkuLockVo skuLockVo = new SkuLockVo();
             skuLockVo.setSkuId(item.getSkuId());

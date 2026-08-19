@@ -1,7 +1,6 @@
 package com.spzx.product.controller;
 
 
-
 import com.spzx.common.core.domain.R;
 import com.spzx.common.core.web.controller.BaseController;
 import com.spzx.common.core.web.domain.AjaxResult;
@@ -29,7 +28,7 @@ import java.util.List;
  * http://localhost:9205/brand/list
  */
 @Slf4j
-@Tag(name="品牌管理")
+@Tag(name = "品牌管理")
 @RequestMapping("/brand")
 @RestController
 public class BrandController extends BaseController {
@@ -43,17 +42,18 @@ public class BrandController extends BaseController {
 
     /**
      * 查询品牌列表
+     *
      * @param brand
      * @return
      */
     @Operation(summary = "查询品牌列表")
     @GetMapping("list")
-    @RequiresPermissions(value = {"product:brand:list","product:brand:query"},logical = Logical.OR)
-    public TableDataInfo list(Brand brand){
+    @RequiresPermissions(value = {"product:brand:list", "product:brand:query"}, logical = Logical.OR)
+    public TableDataInfo list(Brand brand) {
         //com.github.pagehelper.Page extends ArrayList
         startPage(); //Page<E> page = startPage(pageNum, pageSize);
 
-        List<Brand> brandList =  brandService.list(brand);
+        List<Brand> brandList = brandService.list(brand);
 
         return getDataTable(brandList);
     }
@@ -61,7 +61,7 @@ public class BrandController extends BaseController {
     @Operation(summary = "查询品牌详情")
     @GetMapping("/{id}")
     @RequiresPermissions(value = {"product:brand:query"})
-    public AjaxResult getById(@PathVariable Long id){
+    public AjaxResult getById(@PathVariable Long id) {
         Brand brand = brandService.getById(id);
         return success(brand);
     }
@@ -70,7 +70,7 @@ public class BrandController extends BaseController {
     @PostMapping
     @RequiresPermissions(value = {"product:brand:add"})
     @Log(title = "品牌管理", businessType = BusinessType.INSERT)
-    public AjaxResult save(@RequestBody @Validated Brand brand){ //io.swagger.v3.oas.annotations.parameters.RequestBody; 错误的导包，导致数据封装不进来
+    public AjaxResult save(@RequestBody @Validated Brand brand) { //io.swagger.v3.oas.annotations.parameters.RequestBody; 错误的导包，导致数据封装不进来
         brand.setCreateBy(SecurityUtils.getUsername()); //从线程上获取绑定的数据。（请求流程中，经过网关过滤器，经过SpringMVC拦截器,它们往线程上绑定的数据。）
         int rows = brandService.save(brand); //sql语句对数据起作用行数
         return success(rows);
@@ -80,7 +80,7 @@ public class BrandController extends BaseController {
     @PutMapping
     @RequiresPermissions(value = {"product:brand:edit"})
     @Log(title = "品牌管理", businessType = BusinessType.UPDATE)
-    public AjaxResult update(@RequestBody @Validated Brand brand){
+    public AjaxResult update(@RequestBody @Validated Brand brand) {
         brand.setUpdateBy(SecurityUtils.getUsername()); //从线程上获取绑定的数据。（请求流程中，经过网关过滤器，经过SpringMVC拦截器,它们往线程上绑定的数据。）
         int rows = brandService.update(brand); //sql语句对数据起作用行数
         return toAjax(rows);
@@ -90,7 +90,7 @@ public class BrandController extends BaseController {
     @DeleteMapping("/{ids}")
     @RequiresPermissions(value = {"product:brand:remove"})
     @Log(title = "品牌管理", businessType = BusinessType.DELETE)
-    public AjaxResult deleteBatch(@PathVariable("ids") Long[] ids){ //@PathVariable("ids") List<Long> ids
+    public AjaxResult deleteBatch(@PathVariable("ids") Long[] ids) { //@PathVariable("ids") List<Long> ids
         int rows = brandService.deleteBatch(ids);
         return toAjax(rows);
     }

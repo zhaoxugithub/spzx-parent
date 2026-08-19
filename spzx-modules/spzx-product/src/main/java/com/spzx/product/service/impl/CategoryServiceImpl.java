@@ -19,6 +19,8 @@ import org.springframework.web.multipart.MultipartFile;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * 商品分类Service业务层处理
@@ -31,17 +33,18 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
 
     @Override
     public List<Category> treeSelect(Long id) {
-        List<Category> categoryList = categoryMapper.selectList(new LambdaQueryWrapper<Category>().eq(Category::getParentId, id));
+        // 优化: 一次查询全部分类的 id/parentId, 用 Set 判断是否包含子节点, 避免 N+1 查询
+        List<Category> allCategoryList = categoryMapper.selectList(
+                new LambdaQueryWrapper<Category>().select(Category::getId, Category::getParentId));
+        Set<Long> parentIdSet = allCategoryList.stream()
+                .map(Category::getParentId)
+                .filter(java.util.Objects::nonNull)
+                .collect(Collectors.toSet());
+
+        List<Category> categoryList = categoryMapper.selectList(
+                new LambdaQueryWrapper<Category>().eq(Category::getParentId, id));
         //设置分类对象的hasChildren属性值，前端用于控制是否显示 > 箭头。
-        //TODO 优化处理。
-        categoryList.forEach(category -> {
-            Long count = categoryMapper.selectCount(new LambdaQueryWrapper<Category>().eq(Category::getParentId, category.getId()));
-            if (count > 0) {
-                category.setHasChildren(true);
-            } else {
-                category.setHasChildren(false);
-            }
-        });
+        categoryList.forEach(category -> category.setHasChildren(parentIdSet.contains(category.getId())));
         return categoryList;
     }
 

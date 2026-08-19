@@ -41,56 +41,60 @@ public class SysLoginService {
      * 登录
      */
     public LoginUser login(String username, String password) {
-        // 用户名或密码为空 错误
+        // 1. 参数校验：用户名/密码不能为空
         if (StringUtils.isAnyBlank(username, password)) {
-            recordLogService.recordLogininfor(username, Constants.LOGIN_FAIL, "用户/密码必须填写");
-            throw new ServiceException("用户/密码必须填写");
+            loginFail(username, "用户/密码必须填写");
         }
-        // 密码如果不在指定范围内 错误
+        // 2. 参数校验：密码长度必须在指定范围内
         if (password.length() < UserConstants.PASSWORD_MIN_LENGTH
                 || password.length() > UserConstants.PASSWORD_MAX_LENGTH) {
-            recordLogService.recordLogininfor(username, Constants.LOGIN_FAIL, "用户密码不在指定范围");
-            throw new ServiceException("用户密码不在指定范围");
+            loginFail(username, "用户密码不在指定范围");
         }
-        // 用户名不在指定范围内 错误
+        // 3. 参数校验：用户名长度必须在指定范围内
         if (username.length() < UserConstants.USERNAME_MIN_LENGTH
                 || username.length() > UserConstants.USERNAME_MAX_LENGTH) {
-            recordLogService.recordLogininfor(username, Constants.LOGIN_FAIL, "用户名不在指定范围");
-            throw new ServiceException("用户名不在指定范围");
+            loginFail(username, "用户名不在指定范围");
         }
-        // IP黑名单校验
+        // 4. IP 黑名单校验
         String blackStr = Convert.toStr(redisService.getCacheObject(CacheConstants.SYS_LOGIN_BLACKIPLIST));
         if (IpUtils.isMatchedIp(blackStr, IpUtils.getIpAddr())) {
-            recordLogService.recordLogininfor(username, Constants.LOGIN_FAIL, "很遗憾，访问IP已被列入系统黑名单");
-            throw new ServiceException("很遗憾，访问IP已被列入系统黑名单");
+            loginFail(username, "很遗憾，访问IP已被列入系统黑名单");
         }
-        // 查询用户信息
+        // 5. 远程查询用户信息（Feign 调用 spzx-system 的 RemoteUserService）
         R<LoginUser> userResult = remoteUserService.getUserInfo(username, SecurityConstants.INNER);
 
-        if (StringUtils.isNull(userResult) || StringUtils.isNull(userResult.getData())) {
-            recordLogService.recordLogininfor(username, Constants.LOGIN_FAIL, "登录用户不存在");
-            throw new ServiceException("登录用户：" + username + " 不存在");
+        // 5.1 远程服务调用异常/降级：先判断 R.FAIL，避免降级返回被误判为"用户不存在"
+        if (StringUtils.isNull(userResult)) {
+            loginFail(username, "登录服务调用失败");
         }
-
         if (R.FAIL == userResult.getCode()) {
-            throw new ServiceException(userResult.getMsg());
+            loginFail(username, userResult.getMsg());
+        }
+        // 5.2 用户不存在
+        if (StringUtils.isNull(userResult.getData())) {
+            loginFail(username, "登录用户：" + username + " 不存在");
         }
 
         LoginUser userInfo = userResult.getData();
-        SysUser user = userResult.getData().getSysUser();
+        SysUser user = userInfo.getSysUser();
+        // 6. 账号状态校验：已删除
         if (UserStatus.DELETED.getCode().equals(user.getDelFlag())) {
-            recordLogService.recordLogininfor(username, Constants.LOGIN_FAIL, "对不起，您的账号已被删除");
-            throw new ServiceException("对不起，您的账号：" + username + " 已被删除");
+            loginFail(username, "对不起，您的账号：" + username + " 已被删除");
         }
+        // 7. 账号状态校验：已停用
         if (UserStatus.DISABLE.getCode().equals(user.getStatus())) {
-            recordLogService.recordLogininfor(username, Constants.LOGIN_FAIL, "用户已停用，请联系管理员");
-            throw new ServiceException("对不起，您的账号：" + username + " 已停用");
+            loginFail(username, "对不起，您的账号：" + username + " 已停用");
         }
+        // 8. 密码校验（内含错误次数限制：连续 5 次错误锁定 10 分钟）
         passwordService.validate(userInfo, password);
+        // 9. 记录登录成功日志
         recordLogService.recordLogininfor(username, Constants.LOGIN_SUCCESS, "登录成功");
         return userInfo;
     }
 
+    /**
+     * 登出
+     */
     public void logout(String loginName) {
         recordLogService.recordLogininfor(loginName, Constants.LOGOUT, "退出成功");
     }
@@ -123,5 +127,16 @@ public class SysLoginService {
             throw new ServiceException(registerResult.getMsg());
         }
         recordLogService.recordLogininfor(username, Constants.REGISTER, "注册成功");
+    }
+
+    /**
+     * 登录失败统一处理：记录失败日志并抛出业务异常
+     *
+     * @param username 用户名
+     * @param message  失败原因
+     */
+    private void loginFail(String username, String message) {
+        recordLogService.recordLogininfor(username, Constants.LOGIN_FAIL, message);
+        throw new ServiceException(message);
     }
 }
