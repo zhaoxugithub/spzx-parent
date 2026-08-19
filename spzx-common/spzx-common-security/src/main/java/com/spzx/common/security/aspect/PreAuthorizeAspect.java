@@ -54,7 +54,8 @@ public class PreAuthorizeAspect {
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         // 注解鉴权
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
-        checkMethodAnnotation(signature.getMethod()); //权限校验：原理，注解上权限标识或角色标识，是否在用户所拥有的权限标识集合中存在。存在可以访问，否则不能访问。
+        //权限校验：原理，注解上权限标识或角色标识，是否在用户所拥有的权限标识集合中存在。存在可以访问，否则不能访问。
+        checkMethodAnnotation(signature.getMethod());
         try {
             // 执行原有逻辑
             Object obj = joinPoint.proceed();
