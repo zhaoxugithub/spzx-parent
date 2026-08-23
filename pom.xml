@@ -53,10 +53,9 @@
         <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
         <lombok.version>1.18.30</lombok.version>
         <alipay.version>4.8.73.ALL</alipay.version>
-
         <!-- ========== 统一 IP/端口配置（只需修改此处，所有子模块自动同步）========== -->
-        <nacos.addr>192.168.31.93:8848</nacos.addr>
-        <sentinel.dashboard>192.168.31.93:8858</sentinel.dashboard>
+        <nacos.addr>150.158.27.19:8848</nacos.addr>
+        <sentinel.dashboard>150.158.27.19:8858</sentinel.dashboard>
     </properties>
 
     <!-- 依赖声明 -->

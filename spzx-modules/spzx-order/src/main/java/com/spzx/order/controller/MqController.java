@@ -17,8 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "Mq接口管理")
 @RestController
 @RequestMapping("/mq")
-public class MqController extends BaseController
-{
+public class MqController extends BaseController {
     @Autowired
     private RabbitService rabbitService; //推荐使用封装业务接口发送消息。
 
@@ -26,16 +25,14 @@ public class MqController extends BaseController
 
     @Operation(summary = "发送消息")
     @GetMapping("/sendMessage")
-    public AjaxResult sendMessage()
-    {
+    public AjaxResult sendMessage() {
         rabbitService.sendMessage(MqConst.EXCHANGE_TEST, MqConst.ROUTING_TEST, "hello");
         return success();
     }
 
-
     @Operation(summary = "发送确认消息")
     @GetMapping("/sendConfirmMessage")
-    public AjaxResult sendConfirmMessage(){
+    public AjaxResult sendConfirmMessage() {
         //1.测试正常流程，交换机名称正确，发送路由key正确
         //rabbitService.sendMessage(MqConst.EXCHANGE_TEST, MqConst.ROUTING_CONFIRM, "hello, confirm");
 
@@ -53,7 +50,6 @@ public class MqController extends BaseController
     }
 
 
-
     /**
      * 消息发送延迟消息：基于死信实现
      */
@@ -64,8 +60,6 @@ public class MqController extends BaseController
         rabbitService.sendMessage(DeadLetterMqConfig.exchange_dead, DeadLetterMqConfig.routing_dead_1, "我是延迟消息");
         return success();
     }
-
-
 
     @Operation(summary = "发送延迟消息：基于延迟插件")
     @GetMapping("/sendDelayMsg")

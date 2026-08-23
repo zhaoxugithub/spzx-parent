@@ -25,6 +25,7 @@ public class CartController extends BaseController {
 
     /**
      * 添加购物车
+     *
      * @param skuId  商品skuId
      * @param skuNum 增量数量
      * @return 添加购物车是否成功
@@ -33,8 +34,8 @@ public class CartController extends BaseController {
     @RequiresLogin
     @GetMapping("addToCart/{skuId}/{skuNum}")
     public AjaxResult addToCart(@Parameter(name = "skuId", description = "商品skuId", required = true) @PathVariable("skuId") Long skuId,
-                                @Parameter(name = "skuNum", description = "数量", required = true) @PathVariable("skuNum") Integer skuNum){
-        cartService.addToCart(skuId,skuNum);
+                                @Parameter(name = "skuNum", description = "数量", required = true) @PathVariable("skuNum") Integer skuNum) {
+        cartService.addToCart(skuId, skuNum);
         return success();
     }
 
@@ -43,7 +44,7 @@ public class CartController extends BaseController {
     @RequiresLogin
     @GetMapping("cartList")
     public AjaxResult cartList() {
-        List<CartInfo> cartInfoList =  cartService.cartList();
+        List<CartInfo> cartInfoList = cartService.cartList();
         return success(cartInfoList);
     }
 
@@ -57,7 +58,7 @@ public class CartController extends BaseController {
     }
 
 
-    @Operation(summary="更新选中状态")
+    @Operation(summary = "更新选中状态")
     @RequiresLogin
     @GetMapping("checkCart/{skuId}/{isChecked}")
     public AjaxResult checkCart(@Parameter(name = "skuId", description = "商品skuId", required = true) @PathVariable(value = "skuId") Long skuId,
@@ -67,61 +68,57 @@ public class CartController extends BaseController {
     }
 
 
-    @Operation(summary="更新购物车商品全部选中状态")
+    @Operation(summary = "更新购物车商品全部选中状态")
     @RequiresLogin
     @GetMapping("allCheckCart/{isChecked}")
     public AjaxResult allCheckCart(@Parameter(name = "isChecked", description = "是否选中 1:选中 0:取消选中", required = true)
-                                       @PathVariable(value = "isChecked") Integer isChecked){
+                                   @PathVariable(value = "isChecked") Integer isChecked) {
         cartService.allCheckCart(isChecked);
         return success();
     }
 
 
-    @Operation(summary="清空购物车")
+    @Operation(summary = "清空购物车")
     @RequiresLogin
     @GetMapping("clearCart")
-    public AjaxResult clearCart(){
+    public AjaxResult clearCart() {
         cartService.clearCart();
         return success();
     }
 
 
-
-
-
-
     /**
      * 思考问题：
-     *  用户id如何获取
-     *      1.可以根据请求头->线程数据绑定
-     *          @InnerAuth(isUser = true)
-     *      2.直接传参
+     * 用户id如何获取
+     * 1.可以根据请求头->线程数据绑定
+     *
      * @param userId
      * @return
+     * @InnerAuth(isUser = true)
+     * 2.直接传参
      */
-    @Operation(summary="查询用户购物车列表中选中商品列表")
+    @Operation(summary = "查询用户购物车列表中选中商品列表")
     //@InnerAuth(isUser = true)
     @InnerAuth
     @GetMapping("/getCartCheckedList/{userId}")
-    public R<List<CartInfo>> getCartCheckedList(@Parameter(name = "userId", description = "会员id", required = true) @PathVariable Long userId){
+    public R<List<CartInfo>> getCartCheckedList(@Parameter(name = "userId", description = "会员id", required = true) @PathVariable Long userId) {
         List<CartInfo> cartInfoList = cartService.getCartCheckedList(userId);
         return R.ok(cartInfoList);
     }
 
 
-    @Operation(summary="更新用户购物车列表价格")
+    @Operation(summary = "更新用户购物车列表价格")
     @InnerAuth
     @GetMapping("/updateCartPrice/{userId}")
-    public R<Boolean> updateCartPrice(@PathVariable("userId") Long userId){
+    public R<Boolean> updateCartPrice(@PathVariable("userId") Long userId) {
         return R.ok(cartService.updateCartPrice(userId));
     }
 
 
-
-    @Operation(summary="删除用户购物车列表中选中商品列表")
+    @Operation(summary = "删除用户购物车列表中选中商品列表")
     @InnerAuth
     @GetMapping("/deleteCartCheckedList/{userId}")
-    public R<Boolean> deleteCartCheckedList(@PathVariable("userId") Long userId){
+    public R<Boolean> deleteCartCheckedList(@PathVariable("userId") Long userId) {
         return R.ok(cartService.deleteCartCheckedList(userId));
     }
 }
