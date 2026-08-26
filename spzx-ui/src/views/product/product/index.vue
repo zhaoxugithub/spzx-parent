@@ -466,7 +466,6 @@ function handleAdd() {
   open.value = true;
   title.value = "添加商品";
   console.log(form.value)
-  debugger
 
   //清空
   activeIndex.value = 0
