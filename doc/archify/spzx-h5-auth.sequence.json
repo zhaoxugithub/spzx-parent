@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "SPZX H5 移动端认证时序图（短信验证码）",
+    "locale": "zh-CN",
+    "output": "doc/archify/spzx-h5-auth.html",
+    "viewBox": [1080, 560],
+    "column_fit": "spread",
+    "quality_profile": "showcase",
+    "views": [
+      { "id": "sms",     "label": "获取短信验证码", "focus": ["h5", "gw", "user", "redis"], "note": "向手机号下发 4 位验证码并缓存 5 分钟." },
+      { "id": "register", "label": "手机号注册",     "focus": ["h5", "gw", "auth", "redis", "user", "db"], "note": "凭短信验证码注册, 由认证中心校验并落库." },
+      { "id": "login",   "label": "手机号登录",     "focus": ["h5", "gw", "auth", "redis", "user"], "note": "手机号+密码登录并签发 JWT, 缓存 Redis 会话." }
+    ]
+  },
+  "participants": [
+    { "id": "h5",   "type": "frontend", "label": "H5 移动端",   "sublabel": "Vue3 小程序/H5" },
+    { "id": "gw",   "type": "backend",  "label": "网关",       "sublabel": "spzx-gateway" },
+    { "id": "auth", "type": "backend",  "label": "认证中心",   "sublabel": "spzx-auth" },
+    { "id": "user", "type": "backend",  "label": "会员服务",   "sublabel": "spzx-user" },
+    { "id": "redis","type": "database", "label": "Redis",      "sublabel": "验证码/会话" },
+    { "id": "db",   "type": "database", "label": "MySQL",      "sublabel": "user_info" }
+  ],
+  "segments": [
+    { "from": 154, "to": 228, "label": "① 获取短信验证码" },
+    { "from": 236, "to": 368, "label": "② 手机号注册(验证码)" },
+    { "from": 376, "to": 480, "label": "③ 手机号+密码登录" }
+  ],
+  "messages": [
+    { "id": "sms-get",      "from": "h5",    "to": "gw",    "y": 160, "label": "GET /sms/sendCode/{phone}", "variant": "default" },
+    { "id": "sms-forward",  "from": "gw",    "to": "user",  "y": 188, "label": "转发 /sms/sendCode", "variant": "emphasis" },
+    { "id": "sms-store",    "from": "user",  "to": "redis", "y": 216, "label": "SET phone:code:{phone} (5min)", "variant": "dashed", "note": "生成 4 位验证码并调用阿里云短信服务下发" },
+
+    { "id": "reg-post",     "from": "h5",    "to": "gw",    "y": 244, "label": "POST /h5/register {phone,password,code}", "variant": "emphasis" },
+    { "id": "reg-forward",  "from": "gw",    "to": "auth",  "y": 272, "label": "转发 /h5/register", "variant": "emphasis", "note": "白名单路径, 网关跳过 JWT 鉴权" },
+    { "id": "reg-verify",   "from": "auth",  "to": "redis", "y": 300, "label": "校验短信验证码(一次性)", "variant": "security" },
+    { "id": "reg-feign",    "from": "auth",  "to": "user",  "y": 328, "label": "Feign register @InnerAuth", "variant": "emphasis" },
+    { "id": "reg-insert",   "from": "user",  "to": "db",    "y": 356, "label": "INSERT user_info (BCrypt)", "variant": "emphasis" },
+
+    { "id": "login-post",   "from": "h5",    "to": "gw",    "y": 384, "label": "POST /h5/login {phone,password}", "variant": "emphasis" },
+    { "id": "login-forward","from": "gw",    "to": "auth",  "y": 412, "label": "转发 /h5/login", "variant": "emphasis", "note": "白名单路径 + IP 黑名单校验" },
+    { "id": "login-token",  "from": "auth",  "to": "redis", "y": 440, "label": "BCrypt 校验 + SET login_tokens:{uuid} (12h)", "variant": "emphasis", "note": "密码校验后签发 JWT; 登录成功更新 user_info 登录 IP/时间" },
+    { "id": "login-return", "from": "auth",  "to": "h5",    "y": 468, "label": "200 {access_token, expires_in}", "variant": "return" }
+  ],
+  "activations": [
+    { "participant": "h5",   "from": 162, "to": 472, "type": "frontend" },
+    { "participant": "gw",   "from": 162, "to": 470, "type": "backend" },
+    { "participant": "auth", "from": 278, "to": 470, "type": "backend" },
+    { "participant": "user", "from": 192, "to": 360, "type": "backend" }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "短信验证码链路",
+      "items": [
+        "H5 请求 GET /sms/sendCode/{phone}, member 服务生成 4 位验证码",
+        "验证码存 Redis phone:code:{phone}, 有效期 5 分钟",
+        "通过阿里云短信服务下发, 注册时一次性校验收取"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "H5 认证特点",
+      "items": [
+        "用户名即 11 位手机号, 无 RBAC 角色/菜单权限",
+        "密码 BCrypt 存储, 登录失败同样做错误次数锁定",
+        "注册/登录均走认证中心, 内部 Feign 调用 @InnerAuth 保护"
+      ]
+    },
+    {
+      "dot": "orange",
+      "title": "双层会话",
+      "items": [
+        "JWT 仅存 user_key/user_id/username 轻量声明",
+        "会话(LoginUser)存 Redis 12 小时, 支持注销/踢人/续期",
+        "登录成功额外调用更新最近登录 IP 与时间"
+      ]
+    }
+  ]
+}

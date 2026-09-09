@@ -52,7 +52,8 @@ public class CartServiceImpl implements ICartService {
         //从Redis Hash类型中获取操作购物车的k-v map
         BoundHashOperations<String, String, CartInfo> boundHashOperations = redisTemplate.boundHashOps(cartKey);
         int threshold = 99; //单个商品数量的最大限额
-        if (boundHashOperations.hasKey(hashKey)) { //以前添加过这个商品，修改购物车里这个商品的数量
+        // 以前添加过这个商品，修改购物车里这个商品的数量
+        if (boundHashOperations.hasKey(hashKey)) {
             CartInfo cartInfo = boundHashOperations.get(hashKey);
             int newSkuNum = cartInfo.getSkuNum() + skuNum;
             cartInfo.setSkuNum(newSkuNum > threshold ? threshold : newSkuNum);
@@ -89,12 +90,12 @@ public class CartServiceImpl implements ICartService {
 
     //生成购物车的key
     private String getCartKey(Long userId) {
-        String cartKey = "user:cart:" + userId;
-        return cartKey;
+        return "user:cart:" + userId;
     }
 
     /**
      * 查看购物车列表数据
+     *
      * @return 列表数据
      */
     @Override
@@ -103,20 +104,20 @@ public class CartServiceImpl implements ICartService {
         Long userId = SecurityContextHolder.getUserId(); //从当前线程上获取共享数据。HeaderInterceptor拦截器获取请求头信息，将数据绑定到当前线程上。
         String cartKey = getCartKey(userId);
 
-        BoundHashOperations<String,String,CartInfo> boundHashOperations = redisTemplate.boundHashOps(cartKey);
+        BoundHashOperations<String, String, CartInfo> boundHashOperations = redisTemplate.boundHashOps(cartKey);
         List<CartInfo> cartInfoList = boundHashOperations.values();
-        if(CollectionUtils.isEmpty(cartInfoList)){
+        if (CollectionUtils.isEmpty(cartInfoList)) {
             return new ArrayList<>();
         }
 
         //购物车列表排序，根据添加时间进行倒序排序
-        cartInfoList = cartInfoList.stream().sorted((o1, o2)-> o2.getCreateTime().compareTo(o1.getCreateTime())).toList();
+        cartInfoList = cartInfoList.stream().sorted((o1, o2) -> o2.getCreateTime().compareTo(o1.getCreateTime())).toList();
 
 
         //远程获取商品最新价格，给与页面价格变动提示。
         List<Long> skuIdList = cartInfoList.stream().map(CartInfo::getSkuId).toList();
         R<List<SkuPrice>> skuPriceListResult = remoteProductService.getSkuPriceList(skuIdList, SecurityConstants.INNER);
-        if(skuPriceListResult.getCode() == R.FAIL){
+        if (skuPriceListResult.getCode() == R.FAIL) {
             throw new ServiceException(skuPriceListResult.getMsg());
         }
         List<SkuPrice> skuPriceList = skuPriceListResult.getData();//最新价格
@@ -135,6 +136,7 @@ public class CartServiceImpl implements ICartService {
 
     /**
      * 删除购物车商品
+     *
      * @param skuId
      */
     @Override
@@ -146,14 +148,15 @@ public class CartServiceImpl implements ICartService {
         //准备Redis Hash类型小Key
         String hashKey = String.valueOf(skuId);
 
-        BoundHashOperations<String,String,CartInfo> boundHashOperations = redisTemplate.boundHashOps(cartKey);
-        if(boundHashOperations.hasKey(hashKey)){
+        BoundHashOperations<String, String, CartInfo> boundHashOperations = redisTemplate.boundHashOps(cartKey);
+        if (boundHashOperations.hasKey(hashKey)) {
             boundHashOperations.delete(hashKey);
         }
     }
 
     /**
      * 修改选中状态
+     *
      * @param skuId
      * @param isChecked
      */
@@ -166,11 +169,11 @@ public class CartServiceImpl implements ICartService {
         //准备Redis Hash类型小Key
         String hashKey = String.valueOf(skuId);
 
-        BoundHashOperations<String,String,CartInfo> boundHashOperations = redisTemplate.boundHashOps(cartKey);
-        if(boundHashOperations.hasKey(hashKey)){
+        BoundHashOperations<String, String, CartInfo> boundHashOperations = redisTemplate.boundHashOps(cartKey);
+        if (boundHashOperations.hasKey(hashKey)) {
             CartInfo cartInfo = boundHashOperations.get(hashKey);
             cartInfo.setIsChecked(isChecked);
-            boundHashOperations.put(hashKey,cartInfo);
+            boundHashOperations.put(hashKey, cartInfo);
         }
     }
 
@@ -179,14 +182,14 @@ public class CartServiceImpl implements ICartService {
         //准备Redis Hash类型大key
         Long userId = SecurityContextHolder.getUserId(); //从当前线程上获取共享数据。HeaderInterceptor拦截器获取请求头信息，将数据绑定到当前线程上。
         String cartKey = getCartKey(userId);
-        
-        BoundHashOperations<String,String,CartInfo> boundHashOperations = redisTemplate.boundHashOps(cartKey);
+
+        BoundHashOperations<String, String, CartInfo> boundHashOperations = redisTemplate.boundHashOps(cartKey);
 
         List<CartInfo> cartInfoList = boundHashOperations.values();
-        if(!CollectionUtils.isEmpty(cartInfoList)){
+        if (!CollectionUtils.isEmpty(cartInfoList)) {
             for (CartInfo cartInfo : cartInfoList) {
                 cartInfo.setIsChecked(isChecked); //每一个商品选中状态都与总的状态一致
-                boundHashOperations.put(cartInfo.getSkuId().toString(),cartInfo);
+                boundHashOperations.put(cartInfo.getSkuId().toString(), cartInfo);
             }
         }
     }
@@ -197,7 +200,7 @@ public class CartServiceImpl implements ICartService {
         Long userId = SecurityContextHolder.getUserId(); //从当前线程上获取共享数据。HeaderInterceptor拦截器获取请求头信息，将数据绑定到当前线程上。
         String cartKey = getCartKey(userId);
 
-        if(redisTemplate.hasKey(cartKey)){
+        if (redisTemplate.hasKey(cartKey)) {
             redisTemplate.delete(cartKey);
         }
 
@@ -207,11 +210,11 @@ public class CartServiceImpl implements ICartService {
     @Override
     public List<CartInfo> getCartCheckedList(Long userId) {
         String cartKey = getCartKey(userId);
-        BoundHashOperations<String,String,CartInfo> boundHashOperations = redisTemplate.boundHashOps(cartKey);
+        BoundHashOperations<String, String, CartInfo> boundHashOperations = redisTemplate.boundHashOps(cartKey);
         List<CartInfo> cartInfoList = boundHashOperations.values();
 
-        if(!CollectionUtils.isEmpty(cartInfoList)){
-            return cartInfoList.stream().filter(cartInfo -> cartInfo.getIsChecked()==1).toList();
+        if (!CollectionUtils.isEmpty(cartInfoList)) {
+            return cartInfoList.stream().filter(cartInfo -> cartInfo.getIsChecked() == 1).toList();
         }
         return new ArrayList<>();
     }
@@ -221,15 +224,15 @@ public class CartServiceImpl implements ICartService {
     public Boolean updateCartPrice(Long userId) {
         //获取购物车所有商品。只更新下订单中商品在购物车中的价格。
         String cartKey = getCartKey(userId);
-        BoundHashOperations<String,String,CartInfo> boundHashOperations = redisTemplate.boundHashOps(cartKey);
+        BoundHashOperations<String, String, CartInfo> boundHashOperations = redisTemplate.boundHashOps(cartKey);
         List<CartInfo> cartInfoList = boundHashOperations.values();
 
-        if(!CollectionUtils.isEmpty(cartInfoList)){
+        if (!CollectionUtils.isEmpty(cartInfoList)) {
             List<CartInfo> checkedCartInfoList = cartInfoList.stream().filter(cartInfo -> cartInfo.getIsChecked() == 1).toList();
-            if(!CollectionUtils.isEmpty(checkedCartInfoList)){
+            if (!CollectionUtils.isEmpty(checkedCartInfoList)) {
                 List<Long> skuIdList = checkedCartInfoList.stream().map(cartInfo -> cartInfo.getSkuId()).toList();
                 R<List<SkuPrice>> skuPriceListResult = remoteProductService.getSkuPriceList(skuIdList, SecurityConstants.INNER);
-                if(skuPriceListResult.getCode()  == R.FAIL){
+                if (skuPriceListResult.getCode() == R.FAIL) {
                     throw new ServiceException(skuPriceListResult.getMsg());
                 }
                 List<SkuPrice> skuPriceList = skuPriceListResult.getData();
@@ -238,7 +241,7 @@ public class CartServiceImpl implements ICartService {
                     BigDecimal newPrice = skuIdToSalePriceMap.get(checkedCartInfo.getSkuId());
                     checkedCartInfo.setSkuPrice(newPrice);
                     checkedCartInfo.setCartPrice(newPrice);
-                    boundHashOperations.put(checkedCartInfo.getSkuId().toString(),checkedCartInfo);
+                    boundHashOperations.put(checkedCartInfo.getSkuId().toString(), checkedCartInfo);
                 }
                 return true;
             }
@@ -252,11 +255,11 @@ public class CartServiceImpl implements ICartService {
     public Boolean deleteCartCheckedList(Long userId) {
         //获取购物车所有商品。只更新下订单中商品在购物车中的价格。
         String cartKey = getCartKey(userId);
-        BoundHashOperations<String,String,CartInfo> boundHashOperations = redisTemplate.boundHashOps(cartKey);
+        BoundHashOperations<String, String, CartInfo> boundHashOperations = redisTemplate.boundHashOps(cartKey);
         List<CartInfo> cartInfoList = boundHashOperations.values();
-        if(!CollectionUtils.isEmpty(cartInfoList)){
+        if (!CollectionUtils.isEmpty(cartInfoList)) {
             for (CartInfo cartInfo : cartInfoList) {
-                if(cartInfo.getIsChecked() == 1){
+                if (cartInfo.getIsChecked() == 1) {
                     boundHashOperations.delete(cartInfo.getSkuId().toString());
                 }
             }

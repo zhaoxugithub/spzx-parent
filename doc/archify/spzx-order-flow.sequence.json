@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "SPZX 下单→锁库存→支付→扣库存时序图",
+    "locale": "zh-CN",
+    "output": "doc/archify/spzx-order-flow.html",
+    "viewBox": [1080, 560],
+    "column_fit": "spread",
+    "quality_profile": "showcase",
+    "views": [
+      { "id": "submit",  "label": "下单+锁库存", "focus": ["h5", "order", "product"], "note": "提交订单时远程校验价格并锁定库存, 不足即返回; 同时发送延迟消息防超时." },
+      { "id": "pay",     "label": "支付宝支付",   "focus": ["h5", "payment", "alipay"], "note": "唤起支付宝 WAP 支付, 异步回调验签后更新支付状态." },
+      { "id": "minus",   "label": "扣减库存",     "focus": ["payment", "mq", "order", "product"], "note": "支付成功经 MQ 通知订单与商品, 更新订单并扣减库存." }
+    ]
+  },
+  "participants": [
+    { "id": "h5",      "type": "frontend", "label": "H5 前端",     "sublabel": "H5 商城" },
+    { "id": "order",   "type": "backend",  "label": "订单服务",   "sublabel": "spzx-order" },
+    { "id": "product", "type": "backend",  "label": "商品服务",   "sublabel": "spzx-product" },
+    { "id": "payment", "type": "backend",  "label": "支付服务",   "sublabel": "spzx-payment" },
+    { "id": "alipay",  "type": "external", "label": "支付宝",     "sublabel": "Alipay 网关" },
+    { "id": "mq",      "type": "messagebus","label": "RabbitMQ",  "sublabel": "异步消息" }
+  ],
+  "segments": [
+    { "from": 154, "to": 256, "label": "① 下单 + 锁库存" },
+    { "from": 264, "to": 368, "label": "② 支付宝支付" },
+    { "from": 376, "to": 480, "label": "③ 扣减库存 / 超时解锁" }
+  ],
+  "messages": [
+    { "id": "submit-order",   "from": "h5",      "to": "order",    "y": 160, "label": "POST /orderInfo/submitOrder {items}", "variant": "emphasis", "note": "经网关 + 登录鉴权; 先做购物车汇总/去重/价格校验" },
+    { "id": "lock-stock",     "from": "order",   "to": "product",  "y": 188, "label": "checkAndLock 校验并锁定库存", "variant": "emphasis", "note": "@InnerAuth; 库存不足即返回, 成功则锁定等待支付" },
+    { "id": "lock-ok",        "from": "product", "to": "order",    "y": 216, "label": "库存锁定成功", "variant": "return" },
+    { "id": "submit-return",  "from": "order",   "to": "h5",       "y": 244, "label": "200 orderId", "variant": "return" },
+
+    { "id": "pay-post",       "from": "h5",      "to": "payment",  "y": 272, "label": "POST /alipay/submitAlipay/{orderNo}", "variant": "emphasis", "note": "经网关 + 登录鉴权" },
+    { "id": "pay-wap",        "from": "payment", "to": "alipay",   "y": 300, "label": "发起 WAP 支付 alipay.trade.wap.pay", "variant": "emphasis" },
+    { "id": "pay-notify",     "from": "alipay",  "to": "payment",  "y": 328, "label": "异步回调 /callback/notify (RSA2验签)", "variant": "security" },
+    { "id": "pay-success-mq", "from": "payment", "to": "mq",       "y": 356, "label": "发送支付成功消息", "variant": "dashed" },
+
+    { "id": "pay-update",     "from": "mq",      "to": "order",    "y": 384, "label": "推送支付成功→更新订单为已支付", "variant": "dashed" },
+    { "id": "minus-mq",       "from": "order",   "to": "mq",       "y": 412, "label": "发送扣减库存消息", "variant": "dashed" },
+    { "id": "minus-consume",  "from": "mq",      "to": "product",  "y": 440, "label": "推送扣库存消息→扣减库存", "variant": "dashed" },
+    { "id": "unlock-mq",      "from": "order",   "to": "mq",       "y": 468, "label": "15min 未支付→发送解锁库存消息", "variant": "dashed" }
+  ],
+  "activations": [
+    { "participant": "h5",     "from": 162, "to": 300, "type": "frontend" },
+    { "participant": "payment", "from": 276, "to": 360, "type": "backend" },
+    { "participant": "alipay", "from": 304, "to": 332, "type": "external" }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "下单 → 锁库存",
+      "items": [
+        "提交订单先做购物车汇总 + Lua 脚本去重 + 价格校验",
+        "远程调用商品服务 checkAndLock 锁定库存(不足即返回)",
+        "同时发送 15 分钟延迟消息, 超时自动关单并解锁"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "支付",
+      "items": [
+        "支付服务先保存支付单, 再发起支付宝 WAP 支付",
+        "支付宝异步回调 RSA2 验签后更新支付状态",
+        "基于 MQ 通知订单系统修改订单状态"
+      ]
+    },
+    {
+      "dot": "orange",
+      "title": "扣库存 / 解锁",
+      "items": [
+        "订单收到支付成功消息 → 置为已支付",
+        "再发 MQ 扣减库存消息, 商品服务消费并扣减 MySQL 库存",
+        "未支付超时由延迟消息触发解锁库存(解锁/扣减含去重)"
+      ]
+    }
+  ]
+}

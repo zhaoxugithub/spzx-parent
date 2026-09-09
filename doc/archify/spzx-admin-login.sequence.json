@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "SPZX 后台管理端登录时序图",
+    "locale": "zh-CN",
+    "output": "doc/archify/spzx-admin-login.html",
+    "viewBox": [1080, 560],
+    "column_fit": "spread",
+    "quality_profile": "showcase",
+    "views": [
+      { "id": "captcha",   "label": "获取验证码",   "focus": ["ui", "gw", "redis"], "note": "登录前先经网关获取并存储图形验证码." },
+      { "id": "validate",  "label": "网关校验登录", "focus": ["ui", "gw", "redis", "auth"], "note": "验证码一次性校验后, 网关将登录请求转发至认证中心." },
+      { "id": "account",   "label": "账号/密码校验", "focus": ["auth", "sys", "db", "redis"], "note": "通过 Feign 查询用户并组装 RBAC 权限集合, 再做 BCrypt 密码校验." },
+      { "id": "token",     "label": "签发令牌",     "focus": ["auth", "redis", "ui"], "note": "生成 JWT 并缓存 Redis 会话 12 小时, 返回 access_token." }
+    ]
+  },
+  "participants": [
+    { "id": "ui",    "type": "frontend", "label": "管理后台 UI",   "sublabel": "spzx-ui" },
+    { "id": "gw",    "type": "backend",  "label": "网关",         "sublabel": "spzx-gateway" },
+    { "id": "auth",  "type": "backend",  "label": "认证中心",     "sublabel": "spzx-auth" },
+    { "id": "sys",   "type": "backend",  "label": "系统服务",     "sublabel": "spzx-system" },
+    { "id": "redis", "type": "database", "label": "Redis",        "sublabel": "会话/验证码" },
+    { "id": "db",    "type": "database", "label": "MySQL",        "sublabel": "sys_user" }
+  ],
+  "segments": [
+    { "from": 154, "to": 228, "label": "① 获取验证码" },
+    { "from": 236, "to": 312, "label": "② 网关校验登录" },
+    { "from": 320, "to": 424, "label": "③ 账号 / 密码校验" },
+    { "from": 432, "to": 476, "label": "④ 签发令牌" }
+  ],
+  "messages": [
+    { "id": "captcha-get",    "from": "ui",    "to": "gw",    "y": 160, "label": "GET /code 获取图形验证码", "variant": "default" },
+    { "id": "captcha-store",  "from": "gw",    "to": "redis", "y": 188, "label": "生成并存储 captcha_codes:{uuid}", "variant": "dashed", "note": "受 captchaProperties.enabled 全局开关控制" },
+    { "id": "captcha-return", "from": "gw",    "to": "ui",    "y": 216, "label": "{uuid, img} 返回验证码", "variant": "return" },
+
+    { "id": "login-post",     "from": "ui",    "to": "gw",    "y": 244, "label": "POST /auth/login {username,password,code,uuid}", "variant": "emphasis" },
+    { "id": "captcha-verify", "from": "gw",    "to": "redis", "y": 272, "label": "校验验证码 code", "variant": "security" },
+    { "id": "forward-login",  "from": "gw",    "to": "auth",  "y": 300, "label": "转发 POST /auth/login", "variant": "emphasis", "note": "白名单路径 /auth/login, 网关跳过 JWT 鉴权" },
+
+    { "id": "feign-user",     "from": "auth",  "to": "sys",   "y": 328, "label": "Feign GET /user/info/{username}", "variant": "emphasis", "note": "@InnerAuth, 请求头 from-source=inner" },
+    { "id": "db-query",       "from": "sys",   "to": "db",    "y": 356, "label": "SELECT sys_user + role + menu(perms)", "variant": "emphasis" },
+    { "id": "login-user",     "from": "sys",   "to": "auth",  "y": 384, "label": "R<LoginUser>", "variant": "return" },
+    { "id": "pwd-check",      "from": "auth",  "to": "redis", "y": 412, "label": "BCrypt 密码校验 + 错误计数", "variant": "security", "note": "5 次错误锁定 10 分钟, 失败提示统一防枚举" },
+
+    { "id": "token-store",    "from": "auth",  "to": "redis", "y": 440, "label": "SET login_tokens:{uuid} (12h)", "variant": "emphasis" },
+    { "id": "login-response", "from": "auth",  "to": "ui",    "y": 468, "label": "200 {access_token, expires_in}", "variant": "return", "note": "经网关返回前端, 存入 Cookie Admin-Token" }
+  ],
+  "activations": [
+    { "participant": "ui",    "from": 162, "to": 474, "type": "frontend" },
+    { "participant": "gw",    "from": 162, "to": 472, "type": "backend" },
+    { "participant": "auth",  "from": 305, "to": 472, "type": "backend" },
+    { "participant": "sys",   "from": 332, "to": 388, "type": "backend" }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "登录主链路",
+      "items": [
+        "管理后台 UI → 网关(验证码+白名单放行) → spzx-auth → spzx-system",
+        "spzx-system 复用若依 RBAC 模型组装 LoginUser(权限/角色)",
+        "最终签发 JWT 并缓存 Redis 会话 12 小时"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "安全设计要点",
+      "items": [
+        "图形验证码一次性(防重放), 密码 BCrypt + 错误 5 次锁定 10 分钟",
+        "失败提示统一, 防止用户名枚举攻击",
+        "网关还会校验 IP 黑名单并剥离 from-source 头防伪造内部调用"
+      ]
+    },
+    {
+      "dot": "orange",
+      "title": "双层会话",
+      "items": [
+        "JWT 只存 user_key/user_id/username 轻量声明",
+        "真实会话(LoginUser)存 Redis, 支持注销/踢人/续期",
+        "网关注入用户头, 下游 HeaderInterceptor 绑定上下文"
+      ]
+    }
+  ]
+}
