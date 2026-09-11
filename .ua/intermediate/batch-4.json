@@ -1,0 +1,41 @@
+{
+  "nodes": [
+    {
+      "id": "document:spzx-modules/spzx-cart/src/main/resources/banner.txt",
+      "type": "document",
+      "name": "banner.txt",
+      "filePath": "spzx-modules/spzx-cart/src/main/resources/banner.txt",
+      "summary": "购物车微服务 spzx-cart 的 Spring Boot 启动横幅（ASCII 艺术图），用于在控制台展示应用名称与 Spring Boot 版本信息。",
+      "tags": ["documentation", "banner", "spring-boot"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-cart/src/main/resources/bootstrap.yml",
+      "type": "config",
+      "name": "bootstrap.yml",
+      "filePath": "spzx-modules/spzx-cart/src/main/resources/bootstrap.yml",
+      "summary": "购物车微服务 spzx-cart 的启动引导配置文件，设置服务端口 9209、应用名称 spzx-cart，并向 Nacos 注册中心与配置中心注册。",
+      "tags": ["configuration", "spring-boot", "nacos", "microservice"],
+      "complexity": "simple",
+      "languageNotes": "Spring Cloud 引导配置，通过 Nacos shared-configs 拉取 application-dev.yml 共享配置。"
+    },
+    {
+      "id": "config:spzx-modules/spzx-cart/src/main/resources/logback.xml",
+      "type": "config",
+      "name": "logback.xml",
+      "filePath": "spzx-modules/spzx-cart/src/main/resources/logback.xml",
+      "summary": "购物车微服务 spzx-cart 的 Logback 日志配置，定义控制台输出、info/error 滚动文件输出以及 com.spzx 包的日志级别。",
+      "tags": ["configuration", "logging", "logback", "monitoring"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:spzx-modules/spzx-cart/src/main/resources/bootstrap.yml",
+      "target": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

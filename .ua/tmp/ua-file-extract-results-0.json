@@ -1,0 +1,172 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 2,
+  "filesSkipped": [
+    "pom.xml"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 2,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 2
+    }
+  },
+  "results": [
+    {
+      "path": "CLAUDE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 144,
+      "nonEmptyLines": 114,
+      "sections": [
+        {
+          "heading": "CLAUDE.md",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Project Overview",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Build & Run",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Service Architecture",
+          "level": 2,
+          "line": 34
+        },
+        {
+          "heading": "Module Organization",
+          "level": 2,
+          "line": 54
+        },
+        {
+          "heading": "Key Architecture Patterns",
+          "level": 2,
+          "line": 81
+        },
+        {
+          "heading": "Authentication flow",
+          "level": 3,
+          "line": 83
+        },
+        {
+          "heading": "RBAC authorization",
+          "level": 3,
+          "line": 94
+        },
+        {
+          "heading": "Configuration",
+          "level": 3,
+          "line": 100
+        },
+        {
+          "heading": "Data access",
+          "level": 3,
+          "line": 106
+        },
+        {
+          "heading": "RabbitMQ messaging",
+          "level": 3,
+          "line": 114
+        },
+        {
+          "heading": "Custom annotations",
+          "level": 3,
+          "line": 122
+        },
+        {
+          "heading": "Docker deployment",
+          "level": 3,
+          "line": 127
+        },
+        {
+          "heading": "SkyWalking 全链路监控",
+          "level": 3,
+          "line": 131
+        },
+        {
+          "heading": "Package Naming Convention",
+          "level": 2,
+          "line": 138
+        },
+        {
+          "heading": "Repository Structure Note",
+          "level": 2,
+          "line": 142
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 16
+      }
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 131,
+      "nonEmptyLines": 113,
+      "sections": [
+        {
+          "heading": "平台简介",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "友情链接 [若依/RuoYi-Cloud](https://gitee.com/zhangmrit/spzx-cloud) Ant Design版本。",
+          "level": 4,
+          "line": 25
+        },
+        {
+          "heading": "系统模块",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "架构图",
+          "level": 2,
+          "line": 55
+        },
+        {
+          "heading": "内置功能",
+          "level": 2,
+          "line": 59
+        },
+        {
+          "heading": "在线体验",
+          "level": 2,
+          "line": 79
+        },
+        {
+          "heading": "演示图",
+          "level": 2,
+          "line": 87
+        },
+        {
+          "heading": "若依微服务交流群",
+          "level": 2,
+          "line": 129
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    }
+  ]
+}

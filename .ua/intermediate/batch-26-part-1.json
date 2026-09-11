@@ -1,0 +1,581 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/KaptchaTextCreator.java",
+      "type": "file",
+      "name": "KaptchaTextCreator.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/config/KaptchaTextCreator.java",
+      "summary": "网关验证码文本生成器,根据配置类型从字库随机生成中文或数学运算验证码文本。",
+      "tags": ["captcha", "gateway", "text-generator"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/KaptchaTextCreator.java:KaptchaTextCreator",
+      "type": "class",
+      "name": "KaptchaTextCreator",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/config/KaptchaTextCreator.java",
+      "lineRange": [12, 61],
+      "summary": "实现 Kaptcha TextCreator 接口,基于内置字库随机生成验证码文本。",
+      "tags": ["text-generator", "captcha", "gateway"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-gateway/src/main/java/com/spzx/gateway/config/KaptchaTextCreator.java:getText",
+      "type": "function",
+      "name": "getText",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/config/KaptchaTextCreator.java",
+      "lineRange": [15, 60],
+      "summary": "根据验证码类型随机生成中文或数学运算验证码文本。",
+      "tags": ["captcha", "generator", "random"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/RouterFunctionConfiguration.java",
+      "type": "file",
+      "name": "RouterFunctionConfiguration.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/config/RouterFunctionConfiguration.java",
+      "summary": "网关功能性路由配置类,通过 RouterFunction 将 /code 验证码请求路由到 ValidateCodeHandler。",
+      "tags": ["gateway", "config", "routing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/RouterFunctionConfiguration.java:RouterFunctionConfiguration",
+      "type": "class",
+      "name": "RouterFunctionConfiguration",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/config/RouterFunctionConfiguration.java",
+      "lineRange": [17, 29],
+      "summary": "配置类,以函数式路由方式暴露网关验证码接口。",
+      "tags": ["config", "routing", "spring"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/SwaggerProvider.java",
+      "type": "file",
+      "name": "SwaggerProvider.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/config/SwaggerProvider.java",
+      "summary": "网关的 Swagger 资源提供者,用于聚合各下游微服务的 API 文档。",
+      "tags": ["gateway", "swagger", "documentation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/properties/CaptchaProperties.java",
+      "type": "file",
+      "name": "CaptchaProperties.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/config/properties/CaptchaProperties.java",
+      "summary": "网关验证码相关配置属性类,绑定验证码开关与校验类型。",
+      "tags": ["gateway", "config", "properties"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/properties/CaptchaProperties.java:CaptchaProperties",
+      "type": "class",
+      "name": "CaptchaProperties",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/config/properties/CaptchaProperties.java",
+      "lineRange": [14, 28],
+      "summary": "验证码配置属性绑定类,提供启用开关与类型的 getter。",
+      "tags": ["config", "properties", "captcha"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/properties/IgnoreWhiteProperties.java",
+      "type": "file",
+      "name": "IgnoreWhiteProperties.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/config/properties/IgnoreWhiteProperties.java",
+      "summary": "网关鉴权白名单配置属性类,声明无需登录即可访问的 URL 列表。",
+      "tags": ["gateway", "config", "security", "properties"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/properties/IgnoreWhiteProperties.java:IgnoreWhiteProperties",
+      "type": "class",
+      "name": "IgnoreWhiteProperties",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/config/properties/IgnoreWhiteProperties.java",
+      "lineRange": [17, 27],
+      "summary": "鉴权白名单配置属性绑定类,存放白名单 URL 集合。",
+      "tags": ["config", "properties", "security"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/properties/XssProperties.java",
+      "type": "file",
+      "name": "XssProperties.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/config/properties/XssProperties.java",
+      "summary": "网关 XSS 防护配置属性类,控制 XSS 过滤器开关及排除的 URL 列表。",
+      "tags": ["gateway", "config", "security", "xss"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/properties/XssProperties.java:XssProperties",
+      "type": "class",
+      "name": "XssProperties",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/config/properties/XssProperties.java",
+      "lineRange": [17, 33],
+      "summary": "XSS 配置属性绑定类,存放过滤器开关与排除 URL。",
+      "tags": ["config", "properties", "security", "xss"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/AuthFilter.java",
+      "type": "file",
+      "name": "AuthFilter.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/AuthFilter.java",
+      "summary": "网关全局认证过滤器,校验 JWT 与 Redis 会话,并将用户身份信息写入转发请求头。",
+      "tags": ["gateway", "security", "filter", "middleware"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/filter/AuthFilter.java:AuthFilter",
+      "type": "class",
+      "name": "AuthFilter",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/AuthFilter.java",
+      "lineRange": [33, 135],
+      "summary": "实现 GatewayFilter 的全局认证过滤器,处理白名单、JWT 解析与用户头注入。",
+      "tags": ["filter", "security", "auth", "gateway"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-gateway/src/main/java/com/spzx/gateway/filter/AuthFilter.java:filter",
+      "type": "function",
+      "name": "filter",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/AuthFilter.java",
+      "lineRange": [45, 87],
+      "summary": "核心认证逻辑:白名单判断、JWT 校验并注入用户请求头。",
+      "tags": ["filter", "security", "auth"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/BlackListUrlFilter.java",
+      "type": "file",
+      "name": "BlackListUrlFilter.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/BlackListUrlFilter.java",
+      "summary": "网关黑名单 URL 过滤器,当请求路径命中黑名单时直接拒绝访问。",
+      "tags": ["gateway", "security", "filter"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/filter/BlackListUrlFilter.java:BlackListUrlFilter",
+      "type": "class",
+      "name": "BlackListUrlFilter",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/BlackListUrlFilter.java",
+      "lineRange": [18, 56],
+      "summary": "黑名单 URL 过滤器,校验请求路径是否命中黑名单规则。",
+      "tags": ["filter", "security", "gateway"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-gateway/src/main/java/com/spzx/gateway/filter/BlackListUrlFilter.java:apply",
+      "type": "function",
+      "name": "apply",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/BlackListUrlFilter.java",
+      "lineRange": [20, 31],
+      "summary": "进行黑名单匹配,命中则返回拒绝响应。",
+      "tags": ["filter", "security", "blacklist"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/CacheRequestFilter.java",
+      "type": "file",
+      "name": "CacheRequestFilter.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/CacheRequestFilter.java",
+      "summary": "网关请求体缓存过滤器,为下游转发缓存读取过的请求体。",
+      "tags": ["gateway", "filter", "middleware"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/filter/CacheRequestFilter.java:CacheRequestFilter",
+      "type": "class",
+      "name": "CacheRequestFilter",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/CacheRequestFilter.java",
+      "lineRange": [23, 93],
+      "summary": "缓存请求体的网关过滤器,支持按方法缓存以复用请求体。",
+      "tags": ["filter", "gateway", "middleware"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-gateway/src/main/java/com/spzx/gateway/filter/CacheRequestFilter.java:apply",
+      "type": "function",
+      "name": "apply",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/CacheRequestFilter.java",
+      "lineRange": [34, 54],
+      "summary": "对请求体进行缓存处理并继续转发。",
+      "tags": ["filter", "gateway", "cache"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/TraceIdFilter.java",
+      "type": "file",
+      "name": "TraceIdFilter.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/TraceIdFilter.java",
+      "summary": "网关链路追踪过滤器,为每个请求生成并传播 X-Trace-Id 追踪标识。",
+      "tags": ["gateway", "filter", "tracing", "observability"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/filter/TraceIdFilter.java:TraceIdFilter",
+      "type": "class",
+      "name": "TraceIdFilter",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/TraceIdFilter.java",
+      "lineRange": [24, 47],
+      "summary": "链路追踪过滤器,生成 X-Trace-Id 并在请求链路上传递。",
+      "tags": ["filter", "tracing", "observability"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-gateway/src/main/java/com/spzx/gateway/filter/TraceIdFilter.java:filter",
+      "type": "function",
+      "name": "filter",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/TraceIdFilter.java",
+      "lineRange": [29, 41],
+      "summary": "为请求生成追踪 ID 并写入 MDC 与请求头。",
+      "tags": ["filter", "tracing", "observability"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java",
+      "type": "file",
+      "name": "ValidateCodeFilter.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java",
+      "summary": "网关登录验证码校验过滤器,校验 /auth/login 与 /auth/register 请求的图形验证码。",
+      "tags": ["gateway", "security", "captcha", "filter"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java:ValidateCodeFilter",
+      "type": "class",
+      "name": "ValidateCodeFilter",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java",
+      "lineRange": [27, 73],
+      "summary": "验证码校验过滤器,对登录校验验证码是否匹配。",
+      "tags": ["filter", "security", "captcha"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java:apply",
+      "type": "function",
+      "name": "apply",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java",
+      "lineRange": [41, 60],
+      "summary": "读取请求体校验验证码并依据结果放行或拦截。",
+      "tags": ["filter", "captcha", "security"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java:resolveBodyFromRequest",
+      "type": "function",
+      "name": "resolveBodyFromRequest",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java",
+      "lineRange": [62, 72],
+      "summary": "从响应式请求中异步读取请求体字符串。",
+      "tags": ["filter", "reactive", "request-body"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java",
+      "type": "file",
+      "name": "XssFilter.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java",
+      "summary": "网关 XSS 防护过滤器,对请求体与请求头做 HTML 消毒处理。",
+      "tags": ["gateway", "security", "xss", "filter"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java:XssFilter",
+      "type": "class",
+      "name": "XssFilter",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java",
+      "lineRange": [30, 113],
+      "summary": "XSS 防护过滤器,对请求体与请求头做 HTML 转义消毒。",
+      "tags": ["filter", "security", "xss"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java:filter",
+      "type": "function",
+      "name": "filter",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java",
+      "lineRange": [37, 61],
+      "summary": "判断路径与开关并对请求体进行 XSS 消毒。",
+      "tags": ["filter", "security", "xss"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java:requestDecorator",
+      "type": "function",
+      "name": "requestDecorator",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java",
+      "lineRange": [63, 97],
+      "summary": "构造装饰后的请求对象,对请求体与请求头做 HTML 转义。",
+      "tags": ["filter", "xss", "sanitize"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/handler/GatewayExceptionHandler.java",
+      "type": "file",
+      "name": "GatewayExceptionHandler.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/handler/GatewayExceptionHandler.java",
+      "summary": "网关全局异常处理器,统一将异常转换为 JSON 错误响应返回调用方。",
+      "tags": ["gateway", "error-handling", "handler"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/handler/GatewayExceptionHandler.java:GatewayExceptionHandler",
+      "type": "class",
+      "name": "GatewayExceptionHandler",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/handler/GatewayExceptionHandler.java",
+      "lineRange": [20, 48],
+      "summary": "网关异常处理器,将异常映射为统一的 JSON 错误响应。",
+      "tags": ["handler", "error-handling", "gateway"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-gateway/src/main/java/com/spzx/gateway/handler/GatewayExceptionHandler.java:handle",
+      "type": "function",
+      "name": "handle",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/handler/GatewayExceptionHandler.java",
+      "lineRange": [25, 47],
+      "summary": "捕获网关异常并写入统一 JSON 错误响应。",
+      "tags": ["handler", "error-handling"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/KaptchaTextCreator.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/KaptchaTextCreator.java:KaptchaTextCreator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/KaptchaTextCreator.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/KaptchaTextCreator.java:KaptchaTextCreator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/KaptchaTextCreator.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/config/KaptchaTextCreator.java:getText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/RouterFunctionConfiguration.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/RouterFunctionConfiguration.java:RouterFunctionConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/RouterFunctionConfiguration.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/RouterFunctionConfiguration.java:RouterFunctionConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/properties/CaptchaProperties.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/properties/CaptchaProperties.java:CaptchaProperties",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/properties/CaptchaProperties.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/properties/CaptchaProperties.java:CaptchaProperties",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/properties/IgnoreWhiteProperties.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/properties/IgnoreWhiteProperties.java:IgnoreWhiteProperties",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/properties/IgnoreWhiteProperties.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/properties/IgnoreWhiteProperties.java:IgnoreWhiteProperties",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/properties/XssProperties.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/properties/XssProperties.java:XssProperties",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/properties/XssProperties.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/properties/XssProperties.java:XssProperties",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/AuthFilter.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/filter/AuthFilter.java:AuthFilter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/AuthFilter.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/filter/AuthFilter.java:AuthFilter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/AuthFilter.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/filter/AuthFilter.java:filter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/BlackListUrlFilter.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/filter/BlackListUrlFilter.java:BlackListUrlFilter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/BlackListUrlFilter.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/filter/BlackListUrlFilter.java:BlackListUrlFilter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/BlackListUrlFilter.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/filter/BlackListUrlFilter.java:apply",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/CacheRequestFilter.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/filter/CacheRequestFilter.java:CacheRequestFilter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/CacheRequestFilter.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/filter/CacheRequestFilter.java:CacheRequestFilter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/CacheRequestFilter.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/filter/CacheRequestFilter.java:apply",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/TraceIdFilter.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/filter/TraceIdFilter.java:TraceIdFilter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/TraceIdFilter.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/filter/TraceIdFilter.java:TraceIdFilter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/TraceIdFilter.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/filter/TraceIdFilter.java:filter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java:ValidateCodeFilter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java:ValidateCodeFilter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java:apply",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java:resolveBodyFromRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java:XssFilter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java:XssFilter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java:filter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java:requestDecorator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/handler/GatewayExceptionHandler.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/handler/GatewayExceptionHandler.java:GatewayExceptionHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/handler/GatewayExceptionHandler.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/handler/GatewayExceptionHandler.java:GatewayExceptionHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/handler/GatewayExceptionHandler.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/handler/GatewayExceptionHandler.java:handle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    }
+  ]
+}

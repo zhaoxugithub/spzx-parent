@@ -1,0 +1,232 @@
+{
+    "projectRoot":  "C:\\Users\\11931\\IdeaProjects\\spzx-parent",
+    "batchFiles":  [
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysMenuService.java",
+                           "language":  "java",
+                           "sizeLines":  144,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysNoticeService.java",
+                           "language":  "java",
+                           "sizeLines":  60,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysOperLogService.java",
+                           "language":  "java",
+                           "sizeLines":  49,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPermissionService.java",
+                           "language":  "java",
+                           "sizeLines":  29,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPostService.java",
+                           "language":  "java",
+                           "sizeLines":  99,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysRoleService.java",
+                           "language":  "java",
+                           "sizeLines":  173,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserOnlineService.java",
+                           "language":  "java",
+                           "sizeLines":  48,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserService.java",
+                           "language":  "java",
+                           "sizeLines":  206,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java",
+                           "language":  "java",
+                           "sizeLines":  192,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+                           "language":  "java",
+                           "sizeLines":  304,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictDataServiceImpl.java",
+                           "language":  "java",
+                           "sizeLines":  102,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java",
+                           "language":  "java",
+                           "sizeLines":  202,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysLogininforServiceImpl.java",
+                           "language":  "java",
+                           "sizeLines":  61,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+                           "language":  "java",
+                           "sizeLines":  466,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysNoticeServiceImpl.java",
+                           "language":  "java",
+                           "sizeLines":  86,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysOperLogServiceImpl.java",
+                           "language":  "java",
+                           "sizeLines":  72,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java",
+                           "language":  "java",
+                           "sizeLines":  74,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPostServiceImpl.java",
+                           "language":  "java",
+                           "sizeLines":  163,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+                           "language":  "java",
+                           "sizeLines":  385,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserOnlineServiceImpl.java",
+                           "language":  "java",
+                           "sizeLines":  80,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+                           "language":  "java",
+                           "sizeLines":  492,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-user/pom.xml",
+                           "language":  "xml",
+                           "sizeLines":  91,
+                           "fileCategory":  "config"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-user/src/main/java/com/spzx/user/SpzxUserApplication.java",
+                           "language":  "java",
+                           "sizeLines":  30,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/RegionController.java",
+                           "language":  "java",
+                           "sizeLines":  23,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/SmsController.java",
+                           "language":  "java",
+                           "sizeLines":  48,
+                           "fileCategory":  "code"
+                       }
+                   ],
+    "batchImportData":  {
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysMenuService.java":  [
+
+                                                                                                                    ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysNoticeService.java":  [
+
+                                                                                                                      ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysOperLogService.java":  [
+
+                                                                                                                       ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPermissionService.java":  [
+
+                                                                                                                          ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPostService.java":  [
+
+                                                                                                                    ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysRoleService.java":  [
+
+                                                                                                                    ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserOnlineService.java":  [
+
+                                                                                                                          ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserService.java":  [
+
+                                                                                                                    ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java":  [
+
+                                                                                                                              ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java":  [
+
+                                                                                                                            ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictDataServiceImpl.java":  [
+
+                                                                                                                                ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java":  [
+
+                                                                                                                                ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysLogininforServiceImpl.java":  [
+
+                                                                                                                                  ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java":  [
+
+                                                                                                                            ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysNoticeServiceImpl.java":  [
+
+                                                                                                                              ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysOperLogServiceImpl.java":  [
+
+                                                                                                                               ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java":  [
+
+                                                                                                                                  ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPostServiceImpl.java":  [
+
+                                                                                                                            ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java":  [
+
+                                                                                                                            ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserOnlineServiceImpl.java":  [
+
+                                                                                                                                  ],
+                            "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java":  [
+
+                                                                                                                            ],
+                            "spzx-modules/spzx-user/pom.xml":  [
+
+                                                               ],
+                            "spzx-modules/spzx-user/src/main/java/com/spzx/user/SpzxUserApplication.java":  [
+
+                                                                                                            ],
+                            "spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/RegionController.java":  [
+
+                                                                                                                    ],
+                            "spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/SmsController.java":  [
+
+                                                                                                                 ]
+                        }
+}

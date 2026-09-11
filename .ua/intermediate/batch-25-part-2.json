@@ -1,0 +1,764 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignRequestInterceptor.java",
+      "type": "file",
+      "name": "FeignRequestInterceptor.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignRequestInterceptor.java",
+      "summary": "Feign 请求拦截器，将请求头中的用户上下文（userId、username、用户key 等）转发到下游服务。",
+      "tags": [
+        "feign",
+        "interceptor",
+        "spring",
+        "microservice",
+        "context"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/filter/TraceIdFilter.java",
+      "type": "file",
+      "name": "TraceIdFilter.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/filter/TraceIdFilter.java",
+      "summary": "链路追踪过滤器，从请求头读取 traceId 写入 MDC，实现全链路日志追踪。",
+      "tags": [
+        "filter",
+        "logging",
+        "trace-id",
+        "web",
+        "spring"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/handler/GlobalExceptionHandler.java",
+      "type": "file",
+      "name": "GlobalExceptionHandler.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/handler/GlobalExceptionHandler.java",
+      "summary": "全局异常处理器，集中捕获鉴权、参数校验及运行时异常并转换为统一响应结构。",
+      "tags": [
+        "exception-handler",
+        "security",
+        "web",
+        "validation",
+        "spring"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/interceptor/HeaderInterceptor.java",
+      "type": "file",
+      "name": "HeaderInterceptor.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/interceptor/HeaderInterceptor.java",
+      "summary": "请求头拦截器，从请求头还原用户信息到 SecurityContextHolder，并自动刷新会话过期时间。",
+      "tags": [
+        "interceptor",
+        "security",
+        "context",
+        "web",
+        "spring"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java",
+      "type": "file",
+      "name": "TokenService.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java",
+      "summary": "登录令牌服务，负责 JWT 创建解析、登录用户存取校验与自动续签。",
+      "tags": [
+        "token",
+        "security",
+        "jwt",
+        "redis",
+        "service"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/DictUtils.java",
+      "type": "file",
+      "name": "DictUtils.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/DictUtils.java",
+      "summary": "字典缓存工具类，封装字典数据的 Redis 缓存读写、删除与清理。",
+      "tags": [
+        "utility",
+        "dictionary",
+        "redis",
+        "cache",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/SecurityUtils.java",
+      "type": "file",
+      "name": "SecurityUtils.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/SecurityUtils.java",
+      "summary": "安全工具类，提供当前用户信息、令牌解析、管理员判断与 BCrypt 密码校验等便捷方法。",
+      "tags": [
+        "utility",
+        "security",
+        "auth",
+        "password",
+        "context"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "type": "file",
+      "name": "org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "filePath": "spzx-common/spzx-common-security/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "summary": "Spring Boot 自动配置注册清单，声明 security 模块中的自动配置类。",
+      "tags": [
+        "spring",
+        "auto-configuration",
+        "config",
+        "module-registry"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Spring Boot 3 使用 AutoConfiguration.imports 注册自动配置类。"
+    },
+    {
+      "id": "config:spzx-gateway/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-gateway/pom.xml",
+      "summary": "spzx-gateway 网关模块的 Maven 构建配置，声明 Gateway、Nacos、Sentinel、验证码及公共 Redis 等依赖。",
+      "tags": [
+        "configuration",
+        "maven",
+        "build-system",
+        "gateway",
+        "dependency-management"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "spring-boot-maven-plugin 通过 repackage 生成可执行 jar。"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/SpzxGatewayApplication.java",
+      "type": "file",
+      "name": "SpzxGatewayApplication.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/SpzxGatewayApplication.java",
+      "summary": "网关服务启动类，使用 @SpringBootApplication 启动 Spring Cloud Gateway 网关应用。",
+      "tags": [
+        "entry-point",
+        "spring",
+        "gateway",
+        "application",
+        "boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java",
+      "type": "file",
+      "name": "CaptchaConfig.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java",
+      "summary": "验证码配置类，定义普通字符与数学运算两种 Kaptcha 验证码 Bean。",
+      "tags": [
+        "config",
+        "captcha",
+        "kaptcha",
+        "gateway",
+        "bean"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/GatewayConfig.java",
+      "type": "file",
+      "name": "GatewayConfig.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/config/GatewayConfig.java",
+      "summary": "网关配置类，注册 Sentinel 网关异常降级处理器 Bean。",
+      "tags": [
+        "config",
+        "gateway",
+        "sentinel",
+        "fallback",
+        "spring"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignRequestInterceptor.java:FeignRequestInterceptor",
+      "type": "class",
+      "name": "FeignRequestInterceptor",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignRequestInterceptor.java",
+      "lineRange": [
+        19,
+        54
+      ],
+      "summary": "Feign 请求拦截器，将请求头中的用户上下文与来源信息传播到下游服务。",
+      "tags": [
+        "feign",
+        "interceptor",
+        "spring",
+        "context"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/filter/TraceIdFilter.java:TraceIdFilter",
+      "type": "class",
+      "name": "TraceIdFilter",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/filter/TraceIdFilter.java",
+      "lineRange": [
+        26,
+        53
+      ],
+      "summary": "过滤器类，将 traceId 写入 MDC 并在请求结束时清理。",
+      "tags": [
+        "filter",
+        "logging",
+        "trace-id",
+        "web"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/handler/GlobalExceptionHandler.java:GlobalExceptionHandler",
+      "type": "class",
+      "name": "GlobalExceptionHandler",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/handler/GlobalExceptionHandler.java",
+      "lineRange": [
+        27,
+        159
+      ],
+      "summary": "全局异常处理器，将各类异常转换为统一错误响应。",
+      "tags": [
+        "exception-handler",
+        "security",
+        "web",
+        "validation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/interceptor/HeaderInterceptor.java:HeaderInterceptor",
+      "type": "class",
+      "name": "HeaderInterceptor",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/interceptor/HeaderInterceptor.java",
+      "lineRange": [
+        21,
+        49
+      ],
+      "summary": "请求头拦截器，还原用户信息到上下文并在会话过期前续期。",
+      "tags": [
+        "interceptor",
+        "security",
+        "context",
+        "web"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java:TokenService",
+      "type": "class",
+      "name": "TokenService",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java",
+      "lineRange": [
+        28,
+        158
+      ],
+      "summary": "令牌服务，负责 JWT 生成解析、登录用户存取与自动续签。",
+      "tags": [
+        "token",
+        "security",
+        "jwt",
+        "redis",
+        "service"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/DictUtils.java:DictUtils",
+      "type": "class",
+      "name": "DictUtils",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/DictUtils.java",
+      "lineRange": [
+        17,
+        75
+      ],
+      "summary": "字典缓存工具类，封装字典数据的 Redis 缓存操作。",
+      "tags": [
+        "utility",
+        "dictionary",
+        "redis",
+        "cache"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/SecurityUtils.java:SecurityUtils",
+      "type": "class",
+      "name": "SecurityUtils",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/SecurityUtils.java",
+      "lineRange": [
+        17,
+        105
+      ],
+      "summary": "安全工具类，提供用户信息、令牌、管理员判断与密码校验能力。",
+      "tags": [
+        "utility",
+        "security",
+        "auth",
+        "password"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/SpzxGatewayApplication.java:SpzxGatewayApplication",
+      "type": "class",
+      "name": "SpzxGatewayApplication",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/SpzxGatewayApplication.java",
+      "lineRange": [
+        12,
+        27
+      ],
+      "summary": "网关启动类，启动 Spring Cloud Gateway 应用。",
+      "tags": [
+        "entry-point",
+        "spring",
+        "gateway",
+        "application"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java:CaptchaConfig",
+      "type": "class",
+      "name": "CaptchaConfig",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java",
+      "lineRange": [
+        17,
+        82
+      ],
+      "summary": "验证码配置类，提供普通字符与数学运算两种 Kaptcha Bean。",
+      "tags": [
+        "config",
+        "captcha",
+        "kaptcha",
+        "gateway"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/GatewayConfig.java:GatewayConfig",
+      "type": "class",
+      "name": "GatewayConfig",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/config/GatewayConfig.java",
+      "lineRange": [
+        14,
+        21
+      ],
+      "summary": "网关配置类，注册 Sentinel 网关降级处理器。",
+      "tags": [
+        "config",
+        "gateway",
+        "sentinel",
+        "fallback"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignRequestInterceptor.java:apply",
+      "type": "function",
+      "name": "apply",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignRequestInterceptor.java",
+      "lineRange": [
+        21,
+        53
+      ],
+      "summary": "为 Feign 请求模板注入用户上下文与来源等请求头，实现上下文跨服务传播。",
+      "tags": [
+        "feign",
+        "interceptor",
+        "context",
+        "spring"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/filter/TraceIdFilter.java:doFilter",
+      "type": "function",
+      "name": "doFilter",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/filter/TraceIdFilter.java",
+      "lineRange": [
+        34,
+        48
+      ],
+      "summary": "读取 traceId 写入 MDC，执行后续过滤器链并清理上下文。",
+      "tags": [
+        "filter",
+        "logging",
+        "trace-id",
+        "web"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java:createToken",
+      "type": "function",
+      "name": "createToken",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java",
+      "lineRange": [
+        48,
+        69
+      ],
+      "summary": "基于 LoginUser 生成 JWT 令牌并写入 Redis 会话缓存。",
+      "tags": [
+        "token",
+        "security",
+        "jwt",
+        "redis"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java:getLoginUser",
+      "type": "function",
+      "name": "getLoginUser",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java",
+      "lineRange": [
+        96,
+        108
+      ],
+      "summary": "解析令牌从 Redis 读取登录用户，捕获并记录异常。",
+      "tags": [
+        "token",
+        "security",
+        "jwt",
+        "context"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/DictUtils.java:getDictCache",
+      "type": "function",
+      "name": "getDictCache",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/DictUtils.java",
+      "lineRange": [
+        36,
+        44
+      ],
+      "summary": "按缓存 key 读取字典数据并转换为列表返回。",
+      "tags": [
+        "utility",
+        "dictionary",
+        "redis",
+        "cache"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-gateway/src/main/java/com/spzx/gateway/SpzxGatewayApplication.java:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/SpzxGatewayApplication.java",
+      "lineRange": [
+        14,
+        26
+      ],
+      "summary": "网关应用入口，启动 Spring Cloud Gateway 并打印启动信息。",
+      "tags": [
+        "entry-point",
+        "spring",
+        "gateway",
+        "boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java:getKaptchaBean",
+      "type": "function",
+      "name": "getKaptchaBean",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java",
+      "lineRange": [
+        19,
+        44
+      ],
+      "summary": "构建普通字符验证码 Kaptcha Bean，配置字体、尺寸与干扰线等属性。",
+      "tags": [
+        "config",
+        "captcha",
+        "kaptcha",
+        "bean"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java:getKaptchaBeanMath",
+      "type": "function",
+      "name": "getKaptchaBeanMath",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java",
+      "lineRange": [
+        46,
+        81
+      ],
+      "summary": "构建数学运算验证码 Kaptcha Bean，配置运算文本生成器及相关属性。",
+      "tags": [
+        "config",
+        "captcha",
+        "kaptcha",
+        "bean"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignRequestInterceptor.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignRequestInterceptor.java:FeignRequestInterceptor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignRequestInterceptor.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignRequestInterceptor.java:FeignRequestInterceptor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/filter/TraceIdFilter.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/filter/TraceIdFilter.java:TraceIdFilter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/filter/TraceIdFilter.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/filter/TraceIdFilter.java:TraceIdFilter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/handler/GlobalExceptionHandler.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/handler/GlobalExceptionHandler.java:GlobalExceptionHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/handler/GlobalExceptionHandler.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/handler/GlobalExceptionHandler.java:GlobalExceptionHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/interceptor/HeaderInterceptor.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/interceptor/HeaderInterceptor.java:HeaderInterceptor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/interceptor/HeaderInterceptor.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/interceptor/HeaderInterceptor.java:HeaderInterceptor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java:TokenService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java:TokenService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/DictUtils.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/DictUtils.java:DictUtils",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/DictUtils.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/DictUtils.java:DictUtils",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/SecurityUtils.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/SecurityUtils.java:SecurityUtils",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/SecurityUtils.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/SecurityUtils.java:SecurityUtils",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/SpzxGatewayApplication.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/SpzxGatewayApplication.java:SpzxGatewayApplication",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/SpzxGatewayApplication.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/SpzxGatewayApplication.java:SpzxGatewayApplication",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java:CaptchaConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java:CaptchaConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/GatewayConfig.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/GatewayConfig.java:GatewayConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/GatewayConfig.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/config/GatewayConfig.java:GatewayConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignRequestInterceptor.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignRequestInterceptor.java:apply",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignRequestInterceptor.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignRequestInterceptor.java:apply",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/filter/TraceIdFilter.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/filter/TraceIdFilter.java:doFilter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/filter/TraceIdFilter.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/filter/TraceIdFilter.java:doFilter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java:createToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java:createToken",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java:getLoginUser",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java:getLoginUser",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/DictUtils.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/DictUtils.java:getDictCache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/DictUtils.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/DictUtils.java:getDictCache",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/SpzxGatewayApplication.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/SpzxGatewayApplication.java:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/SpzxGatewayApplication.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/SpzxGatewayApplication.java:main",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java:getKaptchaBean",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java:getKaptchaBean",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java:getKaptchaBeanMath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java:getKaptchaBeanMath",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

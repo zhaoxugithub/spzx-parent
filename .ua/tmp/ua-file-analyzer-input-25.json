@@ -1,0 +1,232 @@
+{
+    "projectRoot":  "C:\\Users\\11931\\IdeaProjects\\spzx-parent",
+    "batchFiles":  [
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/EnableRyFeignClients.java",
+                           "language":  "java",
+                           "sizeLines":  27,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/InnerAuth.java",
+                           "language":  "java",
+                           "sizeLines":  19,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/Logical.java",
+                           "language":  "java",
+                           "sizeLines":  20,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresLogin.java",
+                           "language":  "java",
+                           "sizeLines":  18,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresPermissions.java",
+                           "language":  "java",
+                           "sizeLines":  26,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresRoles.java",
+                           "language":  "java",
+                           "sizeLines":  26,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/InnerAuthAspect.java",
+                           "language":  "java",
+                           "sizeLines":  47,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java",
+                           "language":  "java",
+                           "sizeLines":  90,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+                           "language":  "java",
+                           "sizeLines":  326,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthUtil.java",
+                           "language":  "java",
+                           "sizeLines":  151,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/ApplicationConfig.java",
+                           "language":  "java",
+                           "sizeLines":  36,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/WebMvcConfig.java",
+                           "language":  "java",
+                           "sizeLines":  29,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignAutoConfiguration.java",
+                           "language":  "java",
+                           "sizeLines":  18,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignRequestInterceptor.java",
+                           "language":  "java",
+                           "sizeLines":  54,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/filter/TraceIdFilter.java",
+                           "language":  "java",
+                           "sizeLines":  53,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/handler/GlobalExceptionHandler.java",
+                           "language":  "java",
+                           "sizeLines":  159,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/interceptor/HeaderInterceptor.java",
+                           "language":  "java",
+                           "sizeLines":  49,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java",
+                           "language":  "java",
+                           "sizeLines":  158,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/DictUtils.java",
+                           "language":  "java",
+                           "sizeLines":  75,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/SecurityUtils.java",
+                           "language":  "java",
+                           "sizeLines":  105,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-common/spzx-common-security/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+                           "language":  "imports",
+                           "sizeLines":  5,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/pom.xml",
+                           "language":  "xml",
+                           "sizeLines":  104,
+                           "fileCategory":  "config"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/SpzxGatewayApplication.java",
+                           "language":  "java",
+                           "sizeLines":  27,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java",
+                           "language":  "java",
+                           "sizeLines":  82,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/config/GatewayConfig.java",
+                           "language":  "java",
+                           "sizeLines":  21,
+                           "fileCategory":  "code"
+                       }
+                   ],
+    "batchImportData":  {
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/EnableRyFeignClients.java":  [
+
+                                                                                                                                             ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/InnerAuth.java":  [
+
+                                                                                                                                  ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/Logical.java":  [
+
+                                                                                                                                ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresLogin.java":  [
+
+                                                                                                                                      ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresPermissions.java":  [
+
+                                                                                                                                            ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresRoles.java":  [
+
+                                                                                                                                      ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/InnerAuthAspect.java":  [
+
+                                                                                                                                    ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java":  [
+
+                                                                                                                                       ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java":  [
+
+                                                                                                                            ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthUtil.java":  [
+
+                                                                                                                           ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/ApplicationConfig.java":  [
+
+                                                                                                                                      ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/WebMvcConfig.java":  [
+
+                                                                                                                                 ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignAutoConfiguration.java":  [
+
+                                                                                                                                          ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignRequestInterceptor.java":  [
+
+                                                                                                                                           ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/filter/TraceIdFilter.java":  [
+
+                                                                                                                                  ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/handler/GlobalExceptionHandler.java":  [
+
+                                                                                                                                            ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/interceptor/HeaderInterceptor.java":  [
+
+                                                                                                                                           ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java":  [
+
+                                                                                                                                  ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/DictUtils.java":  [
+
+                                                                                                                             ],
+                            "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/SecurityUtils.java":  [
+
+                                                                                                                                 ],
+                            "spzx-common/spzx-common-security/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports":  [
+
+                                                                                                                                                                     ],
+                            "spzx-gateway/pom.xml":  [
+
+                                                     ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/SpzxGatewayApplication.java":  [
+
+                                                                                                        ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java":  [
+
+                                                                                                      ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/config/GatewayConfig.java":  [
+
+                                                                                                      ]
+                        }
+}

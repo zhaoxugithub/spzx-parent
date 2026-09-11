@@ -1,0 +1,592 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/configure/AlipayConfig.java",
+      "type": "file",
+      "name": "AlipayConfig.java",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/configure/AlipayConfig.java",
+      "summary": "支付宝支付配置类,通过 @ConfigurationProperties 绑定支付宝网关、应用私钥、appId、公私钥等参数,并声明 AlipayClient Bean 供支付服务使用。",
+      "tags": ["配置", "支付", "支付宝", "spring-bean"],
+      "complexity": "simple",
+      "languageNotes": "使用 @ConfigurationProperties 绑定支付宝配置项,并通过 @Bean 构建 alipayClient SDK 客户端。"
+    },
+    {
+      "id": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/configure/AlipayConfig.java:AlipayConfig",
+      "type": "class",
+      "name": "AlipayConfig",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/configure/AlipayConfig.java",
+      "lineRange": [9, 61],
+      "summary": "支付宝配置属性类,聚合支付宝网关地址、应用私钥、appId、公私钥等参数,并作为配置提供 AlipayClient Bean。",
+      "tags": ["配置", "支付", "支付宝", "factory"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/controller/AlipayController.java",
+      "type": "file",
+      "name": "AlipayController.java",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/controller/AlipayController.java",
+      "summary": "支付宝支付控制器,提供提交支付宝支付和异步回调(notify)处理接口,校验 RSA 签名后更新支付流水状态。",
+      "tags": ["api-handler", "controller", "支付", "支付宝", "payment-callback"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/controller/AlipayController.java:AlipayController",
+      "type": "class",
+      "name": "AlipayController",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/controller/AlipayController.java",
+      "lineRange": [20, 126],
+      "summary": "支付宝支付 REST 控制器,暴露提交支付与异步回调两个对外接口,协调支付服务与支付流水服务。",
+      "tags": ["api-handler", "controller", "支付"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/controller/AlipayController.java:submitAlipay",
+      "type": "function",
+      "name": "submitAlipay",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/controller/AlipayController.java",
+      "lineRange": [40, 49],
+      "summary": "提交支付宝支付,根据订单号调用支付服务并返回可跳转的支付页面表单。",
+      "tags": ["api-handler", "支付", "controller"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/controller/AlipayController.java:alipayNotify",
+      "type": "function",
+      "name": "alipayNotify",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/controller/AlipayController.java",
+      "lineRange": [93, 125],
+      "summary": "支付宝异步回调处理,校验 RSA 签名,对交易成功/完成状态更新支付流水并返回成功应答。",
+      "tags": ["api-handler", "payment-callback", "支付宝", "controller"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/domain/PaymentInfo.java",
+      "type": "file",
+      "name": "PaymentInfo.java",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/domain/PaymentInfo.java",
+      "summary": "支付信息实体类,映射支付流水表,记录用户、订单号、支付类型、金额、交易号及回调时间等字段。",
+      "tags": ["data-model", "entity", "支付"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/domain/PaymentInfo.java:PaymentInfo",
+      "type": "class",
+      "name": "PaymentInfo",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/domain/PaymentInfo.java",
+      "lineRange": [15, 84],
+      "summary": "支付流水实体,持久化支付宝支付订单的金额、支付类型、交易号、回调时间与回调内容等字段。",
+      "tags": ["data-model", "entity", "支付"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/mapper/PaymentInfoMapper.java",
+      "type": "file",
+      "name": "PaymentInfoMapper.java",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/mapper/PaymentInfoMapper.java",
+      "summary": "支付宝支付信息 MyBatis-Plus Mapper 接口,负责支付流水表的数据库访问操作。",
+      "tags": ["mybatis", "mapper", "data-access", "支付"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/receiver/PaymentReceiver.java",
+      "type": "file",
+      "name": "PaymentReceiver.java",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/receiver/PaymentReceiver.java",
+      "summary": "支付结果消息监听器,订阅支付相关 MQ 消息并触发支付宝支付处理逻辑。",
+      "tags": ["rabbitmq", "event-handler", "支付"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IAlipayService.java",
+      "type": "file",
+      "name": "IAlipayService.java",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IAlipayService.java",
+      "summary": "支付宝支付服务接口,定义提交支付宝支付的方法契约,供控制器与实现类使用。",
+      "tags": ["service", "interface", "支付"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IAlipayService.java:IAlipayService",
+      "type": "class",
+      "name": "IAlipayService",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IAlipayService.java",
+      "lineRange": [3, 6],
+      "summary": "支付宝支付服务接口,声明提交支付宝支付的方法契约,由 AlipayServiceImpl 实现。",
+      "tags": ["service", "interface", "支付"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IPaymentInfoService.java",
+      "type": "file",
+      "name": "IPaymentInfoService.java",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IPaymentInfoService.java",
+      "summary": "支付流水服务接口,定义保存支付记录与更新支付状态的方法契约。",
+      "tags": ["service", "interface", "支付"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IPaymentInfoService.java:IPaymentInfoService",
+      "type": "class",
+      "name": "IPaymentInfoService",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IPaymentInfoService.java",
+      "lineRange": [11, 26],
+      "summary": "支付流水服务接口,声明保存支付信息与更新支付状态两个方法,由 PaymentInfoServiceImpl 实现。",
+      "tags": ["service", "interface", "支付"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/AlipayServiceImpl.java",
+      "type": "file",
+      "name": "AlipayServiceImpl.java",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/AlipayServiceImpl.java",
+      "summary": "支付宝支付服务实现,构建支付宝 WAP 支付请求并返回支付页面表单字符串。",
+      "tags": ["service", "支付", "支付宝", "impl"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/AlipayServiceImpl.java:AlipayServiceImpl",
+      "type": "class",
+      "name": "AlipayServiceImpl",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/AlipayServiceImpl.java",
+      "lineRange": [17, 64],
+      "summary": "支付宝支付服务实现类,组装商品业务参数并生成可跳转的支付宝 WAP 支付表单。",
+      "tags": ["service", "支付", "支付宝", "impl"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/AlipayServiceImpl.java:submitAlipay",
+      "type": "function",
+      "name": "submitAlipay",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/AlipayServiceImpl.java",
+      "lineRange": [34, 63],
+      "summary": "创建支付宝 WAP 支付请求,按订单构造业务参数并调用 SDK 返回支付页面表单。",
+      "tags": ["service", "支付", "支付宝"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java",
+      "type": "file",
+      "name": "PaymentInfoServiceImpl.java",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java",
+      "summary": "支付流水服务实现,负责保存支付记录,并在支付回调时更新状态、发送支付完成 MQ 消息。",
+      "tags": ["service", "支付", "rabbitmq", "impl"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java:PaymentInfoServiceImpl",
+      "type": "class",
+      "name": "PaymentInfoServiceImpl",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java",
+      "lineRange": [26, 82],
+      "summary": "支付流水服务实现类,涉及保存支付记录、更新支付状态,并通过 RabbitMQ 触发支付完成消息。",
+      "tags": ["service", "支付", "impl"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java:savePayment",
+      "type": "function",
+      "name": "savePayment",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java",
+      "lineRange": [38, 61],
+      "summary": "根据订单号校验并构造支付信息,金额与内容取自订单数据后写入支付流水表。",
+      "tags": ["service", "支付", "persistence"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java:updatePaymentStatus",
+      "type": "function",
+      "name": "updatePaymentStatus",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java",
+      "lineRange": [64, 81],
+      "summary": "支付回调时按交易结果更新支付状态与交易号,成功后通过 MQ 发送支付完成消息。",
+      "tags": ["service", "支付", "rabbitmq", "payment-callback"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:spzx-modules/spzx-payment/src/main/resources/mapper/payment/PaymentInfoMapper.xml",
+      "type": "config",
+      "name": "PaymentInfoMapper.xml",
+      "filePath": "spzx-modules/spzx-payment/src/main/resources/mapper/payment/PaymentInfoMapper.xml",
+      "summary": "MyBatis Mapper XML 配置,定义 PaymentInfo 支付流水表的结果映射与查询 SQL 片段。",
+      "tags": ["configuration", "mybatis", "mapper", "支付"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-product/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-modules/spzx-product/pom.xml",
+      "summary": "spzx-product 商品服务模块的 Maven 构建配置,声明 Nacos、Sentinel、Redis、RabbitMQ、EasyExcel 等依赖及 Spring Boot 打包插件。",
+      "tags": ["configuration", "build-system", "maven", "spring-boot"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/SpzxProductApplication.java",
+      "type": "file",
+      "name": "SpzxProductApplication.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/SpzxProductApplication.java",
+      "summary": "商品服务启动入口类,启动 Spring Boot 应用并在启动完成后预热商品 SKU 的库存位图缓存。",
+      "tags": ["entry-point", "application", "spring-boot", "service"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/SpzxProductApplication.java:SpzxProductApplication",
+      "type": "class",
+      "name": "SpzxProductApplication",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/SpzxProductApplication.java",
+      "lineRange": [18, 55],
+      "summary": "商品服务 Spring Boot 启动类,同时实现启动后对 SKU 库存位图(bitmap)进行初始化预热。",
+      "tags": ["entry-point", "application", "spring-boot"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/SpzxProductApplication.java:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/SpzxProductApplication.java",
+      "lineRange": [22, 34],
+      "summary": "应用主入口,调用 SpringApplication.run 启动商品服务。",
+      "tags": ["entry-point", "application"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/SpzxProductApplication.java:run",
+      "type": "function",
+      "name": "run",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/SpzxProductApplication.java",
+      "lineRange": [43, 54],
+      "summary": "应用启动后回调,遍历商品 SKU 并对 Redis 库存位图进行预热初始化。",
+      "tags": ["initialization", "redis", "cache"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "type": "file",
+      "name": "BrandController.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "summary": "品牌管理控制器,提供品牌的分页查询、详情、新增、更新、批量删除及全量品牌列表接口。",
+      "tags": ["api-handler", "controller", "brand", "crud"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java:BrandController",
+      "type": "class",
+      "name": "BrandController",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "lineRange": [30, 114],
+      "summary": "品牌管理 REST 控制器,暴露品牌的列表、详情、保存、更新、删除以及全量品牌接口。",
+      "tags": ["api-handler", "controller", "brand"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java:list",
+      "type": "function",
+      "name": "list",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "lineRange": [49, 59],
+      "summary": "分页查询品牌列表并返回表格数据。",
+      "tags": ["api-handler", "controller", "brand", "query"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java:getById",
+      "type": "function",
+      "name": "getById",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "lineRange": [61, 67],
+      "summary": "按主键查询单个品牌详情。",
+      "tags": ["api-handler", "controller", "brand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java:save",
+      "type": "function",
+      "name": "save",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "lineRange": [69, 77],
+      "summary": "新增品牌,记录创建人后写入品牌数据。",
+      "tags": ["api-handler", "controller", "brand", "create"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java:update",
+      "type": "function",
+      "name": "update",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "lineRange": [79, 87],
+      "summary": "更新品牌信息,记录更新人后保存修改。",
+      "tags": ["api-handler", "controller", "brand", "update"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java:deleteBatch",
+      "type": "function",
+      "name": "deleteBatch",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "lineRange": [89, 96],
+      "summary": "按 id 列表批量删除品牌。",
+      "tags": ["api-handler", "controller", "brand", "delete"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java:getBrandAll",
+      "type": "function",
+      "name": "getBrandAll",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "lineRange": [98, 103],
+      "summary": "返回全部品牌列表,供跨服务查询使用。",
+      "tags": ["api-handler", "controller", "brand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java:getBrandAllList",
+      "type": "function",
+      "name": "getBrandAllList",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "lineRange": [107, 112],
+      "summary": "返回全部品牌列表(R.ok 包装),供内部调用。",
+      "tags": ["api-handler", "controller", "brand"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/configure/AlipayConfig.java",
+      "target": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/configure/AlipayConfig.java:AlipayConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/configure/AlipayConfig.java",
+      "target": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/configure/AlipayConfig.java:AlipayConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/controller/AlipayController.java",
+      "target": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/controller/AlipayController.java:AlipayController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/controller/AlipayController.java",
+      "target": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/controller/AlipayController.java:AlipayController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/controller/AlipayController.java",
+      "target": "function:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/controller/AlipayController.java:submitAlipay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/controller/AlipayController.java",
+      "target": "function:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/controller/AlipayController.java:alipayNotify",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/domain/PaymentInfo.java",
+      "target": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/domain/PaymentInfo.java:PaymentInfo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/domain/PaymentInfo.java",
+      "target": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/domain/PaymentInfo.java:PaymentInfo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IAlipayService.java",
+      "target": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IAlipayService.java:IAlipayService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IAlipayService.java",
+      "target": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IAlipayService.java:IAlipayService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IPaymentInfoService.java",
+      "target": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IPaymentInfoService.java:IPaymentInfoService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IPaymentInfoService.java",
+      "target": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IPaymentInfoService.java:IPaymentInfoService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/AlipayServiceImpl.java",
+      "target": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/AlipayServiceImpl.java:AlipayServiceImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/AlipayServiceImpl.java",
+      "target": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/AlipayServiceImpl.java:AlipayServiceImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/AlipayServiceImpl.java",
+      "target": "function:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/AlipayServiceImpl.java:submitAlipay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/AlipayServiceImpl.java:AlipayServiceImpl",
+      "target": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IAlipayService.java:IAlipayService",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java",
+      "target": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java:PaymentInfoServiceImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java",
+      "target": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java:PaymentInfoServiceImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java",
+      "target": "function:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java:savePayment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java",
+      "target": "function:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java:updatePaymentStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java:PaymentInfoServiceImpl",
+      "target": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IPaymentInfoService.java:IPaymentInfoService",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/SpzxProductApplication.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/SpzxProductApplication.java:SpzxProductApplication",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/SpzxProductApplication.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/SpzxProductApplication.java:SpzxProductApplication",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/SpzxProductApplication.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/SpzxProductApplication.java:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/SpzxProductApplication.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/SpzxProductApplication.java:run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java:BrandController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java:BrandController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java:list",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java:getById",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java:save",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java:update",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java:deleteBatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java:getBrandAll",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java:getBrandAllList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,907 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/EnableRyFeignClients.java",
+      "type": "file",
+      "name": "EnableRyFeignClients.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/EnableRyFeignClients.java",
+      "summary": "自定义 Feign 启动注解，封装 @EnableFeignClients 并默认扫描 com.spzx 包，用于开启微服务间的 Feign 调用。",
+      "tags": [
+        "annotation",
+        "feign",
+        "microservice",
+        "spring",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/InnerAuth.java",
+      "type": "file",
+      "name": "InnerAuth.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/InnerAuth.java",
+      "summary": "内部认证注解，标记仅供内部服务间调用的接口方法，由 InnerAuthAspect 校验内部信任头。",
+      "tags": [
+        "annotation",
+        "security",
+        "auth",
+        "feign",
+        "spring"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/Logical.java",
+      "type": "file",
+      "name": "Logical.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/Logical.java",
+      "summary": "认证逻辑枚举，定义 AND/OR 两种多权限或多角色的组合校验模式，被权限注解引用。",
+      "tags": [
+        "enum",
+        "security",
+        "auth",
+        "type-definition",
+        "rbac"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresLogin.java",
+      "type": "file",
+      "name": "RequiresLogin.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresLogin.java",
+      "summary": "登录认证注解，标注方法或类需登录后才能访问，交由 PreAuthorizeAspect 统一处理。",
+      "tags": [
+        "annotation",
+        "security",
+        "auth",
+        "login",
+        "spring"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresPermissions.java",
+      "type": "file",
+      "name": "RequiresPermissions.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresPermissions.java",
+      "summary": "权限认证注解，声明访问所需权限码及 AND/OR 校验模式，用于方法级 RBAC 鉴权。",
+      "tags": [
+        "annotation",
+        "security",
+        "auth",
+        "permission",
+        "rbac"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresRoles.java",
+      "type": "file",
+      "name": "RequiresRoles.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresRoles.java",
+      "summary": "角色认证注解，声明访问所需角色标识及 AND/OR 校验模式，用于方法级 RBAC 鉴权。",
+      "tags": [
+        "annotation",
+        "security",
+        "auth",
+        "role",
+        "rbac"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/InnerAuthAspect.java",
+      "type": "file",
+      "name": "InnerAuthAspect.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/InnerAuthAspect.java",
+      "summary": "内部认证切面，拦截 @InnerAuth 注解方法，校验请求来源头以阻止外部伪造内部调用。",
+      "tags": [
+        "aspect",
+        "security",
+        "auth",
+        "aop",
+        "spring"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java",
+      "type": "file",
+      "name": "PreAuthorizeAspect.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java",
+      "summary": "预授权切面，基于 @RequiresLogin/@RequiresPermissions/@RequiresRoles 注解执行方法级权限校验。",
+      "tags": [
+        "aspect",
+        "security",
+        "auth",
+        "aop",
+        "rbac"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "type": "file",
+      "name": "AuthLogic.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "summary": "认证与授权核心逻辑类，实现登录校验、用户角色/权限获取与注解驱动的鉴权判断。",
+      "tags": [
+        "security",
+        "auth",
+        "rbac",
+        "service",
+        "authorization"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthUtil.java",
+      "type": "file",
+      "name": "AuthUtil.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthUtil.java",
+      "summary": "认证工具门面，将 AuthLogic 能力包装为静态方法，方便调用方完成登录与鉴权判断。",
+      "tags": [
+        "security",
+        "auth",
+        "utility",
+        "facade",
+        "authorization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/ApplicationConfig.java",
+      "type": "file",
+      "name": "ApplicationConfig.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/ApplicationConfig.java",
+      "summary": "应用配置类，注册 Jackson 时区序列化定制与 TraceId 过滤器 Bean。",
+      "tags": [
+        "config",
+        "spring",
+        "serialization",
+        "trace-id",
+        "web"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/WebMvcConfig.java",
+      "type": "file",
+      "name": "WebMvcConfig.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/WebMvcConfig.java",
+      "summary": "Web MVC 配置，注册 HeaderInterceptor 拦截器并配置放行路径，用于注入用户上下文。",
+      "tags": [
+        "config",
+        "spring",
+        "web-mvc",
+        "interceptor",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignAutoConfiguration.java",
+      "type": "file",
+      "name": "FeignAutoConfiguration.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignAutoConfiguration.java",
+      "summary": "Feign 自动配置类，提供 FeignRequestInterceptor Bean 以在跨服务调用中传播用户上下文。",
+      "tags": [
+        "config",
+        "feign",
+        "spring",
+        "microservice",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/EnableRyFeignClients.java:EnableRyFeignClients",
+      "type": "class",
+      "name": "EnableRyFeignClients",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/EnableRyFeignClients.java",
+      "lineRange": [
+        16,
+        27
+      ],
+      "summary": "Feign 启动注解接口，默认扫描 com.spzx 包以启用服务间 Feign 客户端。",
+      "tags": [
+        "annotation",
+        "feign",
+        "microservice",
+        "spring"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/InnerAuth.java:InnerAuth",
+      "type": "class",
+      "name": "InnerAuth",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/InnerAuth.java",
+      "lineRange": [
+        13,
+        19
+      ],
+      "summary": "内部认证注解，通过 isUser 决定是否校验用户信息。",
+      "tags": [
+        "annotation",
+        "security",
+        "auth",
+        "spring"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/Logical.java:Logical",
+      "type": "class",
+      "name": "Logical",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/Logical.java",
+      "lineRange": [
+        9,
+        20
+      ],
+      "summary": "认证组合逻辑枚举，提供 AND/OR 两种校验模式。",
+      "tags": [
+        "enum",
+        "security",
+        "auth",
+        "rbac"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresLogin.java:RequiresLogin",
+      "type": "class",
+      "name": "RequiresLogin",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresLogin.java",
+      "lineRange": [
+        16,
+        18
+      ],
+      "summary": "登录认证注解，限定方法或类需登录后才能访问。",
+      "tags": [
+        "annotation",
+        "security",
+        "auth",
+        "login"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresPermissions.java:RequiresPermissions",
+      "type": "class",
+      "name": "RequiresPermissions",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresPermissions.java",
+      "lineRange": [
+        16,
+        26
+      ],
+      "summary": "权限认证注解，声明所需权限码与 AND/OR 校验逻辑。",
+      "tags": [
+        "annotation",
+        "security",
+        "auth",
+        "permission"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresRoles.java:RequiresRoles",
+      "type": "class",
+      "name": "RequiresRoles",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresRoles.java",
+      "lineRange": [
+        15,
+        26
+      ],
+      "summary": "角色认证注解，声明所需角色标识与 AND/OR 校验逻辑。",
+      "tags": [
+        "annotation",
+        "security",
+        "auth",
+        "role"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/InnerAuthAspect.java:InnerAuthAspect",
+      "type": "class",
+      "name": "InnerAuthAspect",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/InnerAuthAspect.java",
+      "lineRange": [
+        19,
+        47
+      ],
+      "summary": "内部认证切面类，环绕拦截 @InnerAuth 注解方法并校验内部来源头。",
+      "tags": [
+        "aspect",
+        "security",
+        "auth",
+        "aop"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java:PreAuthorizeAspect",
+      "type": "class",
+      "name": "PreAuthorizeAspect",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java",
+      "lineRange": [
+        22,
+        90
+      ],
+      "summary": "预授权切面类，通过 AOP 在方法调用前执行登录、角色与权限校验。",
+      "tags": [
+        "aspect",
+        "security",
+        "auth",
+        "aop",
+        "rbac"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:AuthLogic",
+      "type": "class",
+      "name": "AuthLogic",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "lineRange": [
+        27,
+        326
+      ],
+      "summary": "鉴权核心类，封装登录校验、令牌管理、角色与权限匹配及注解鉴权逻辑。",
+      "tags": [
+        "security",
+        "auth",
+        "rbac",
+        "service",
+        "authorization"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthUtil.java:AuthUtil",
+      "type": "class",
+      "name": "AuthUtil",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthUtil.java",
+      "lineRange": [
+        12,
+        151
+      ],
+      "summary": "鉴权工具门面类，以静态方法暴露 AuthLogic 的登录与鉴权能力。",
+      "tags": [
+        "security",
+        "auth",
+        "utility",
+        "facade"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/ApplicationConfig.java:ApplicationConfig",
+      "type": "class",
+      "name": "ApplicationConfig",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/ApplicationConfig.java",
+      "lineRange": [
+        15,
+        36
+      ],
+      "summary": "应用配置类，配置 Jackson 时区并注册 TraceId 过滤器。",
+      "tags": [
+        "config",
+        "spring",
+        "serialization",
+        "trace-id"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/WebMvcConfig.java:WebMvcConfig",
+      "type": "class",
+      "name": "WebMvcConfig",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/WebMvcConfig.java",
+      "lineRange": [
+        12,
+        29
+      ],
+      "summary": "Web MVC 配置类，注册 HeaderInterceptor 拦截器并配置放行路径。",
+      "tags": [
+        "config",
+        "spring",
+        "web-mvc",
+        "interceptor"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignAutoConfiguration.java:FeignAutoConfiguration",
+      "type": "class",
+      "name": "FeignAutoConfiguration",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignAutoConfiguration.java",
+      "lineRange": [
+        12,
+        18
+      ],
+      "summary": "Feign 自动配置类，注册 Feign 上下文传播拦截器 Bean。",
+      "tags": [
+        "config",
+        "feign",
+        "spring",
+        "microservice"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/InnerAuthAspect.java:innerAround",
+      "type": "function",
+      "name": "innerAround",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/InnerAuthAspect.java",
+      "lineRange": [
+        22,
+        37
+      ],
+      "summary": "环绕通知，校验请求头 from-source 是否为内部来源，阻止外部伪造内部调用。",
+      "tags": [
+        "aspect",
+        "security",
+        "auth",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java:around",
+      "type": "function",
+      "name": "around",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java",
+      "lineRange": [
+        53,
+        66
+      ],
+      "summary": "环绕通知，解析目标方法上的鉴权注解并执行校验。",
+      "tags": [
+        "aspect",
+        "security",
+        "auth",
+        "aop"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java:checkMethodAnnotation",
+      "type": "function",
+      "name": "checkMethodAnnotation",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java",
+      "lineRange": [
+        71,
+        89
+      ],
+      "summary": "反射读取方法上的登录、角色、权限注解并调用对应校验逻辑。",
+      "tags": [
+        "security",
+        "auth",
+        "reflection",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:getLoginUser",
+      "type": "function",
+      "name": "getLoginUser",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "lineRange": [
+        70,
+        80
+      ],
+      "summary": "从令牌获取并校验当前登录用户，未登录时抛出异常。",
+      "tags": [
+        "security",
+        "auth",
+        "token",
+        "context"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:checkPermi",
+      "type": "function",
+      "name": "checkPermi",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "lineRange": [
+        128,
+        137
+      ],
+      "summary": "按 @RequiresPermissions 注解的 AND/OR 模式校验权限码。",
+      "tags": [
+        "security",
+        "auth",
+        "rbac",
+        "permission"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:checkPermiAnd",
+      "type": "function",
+      "name": "checkPermiAnd",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "lineRange": [
+        144,
+        153
+      ],
+      "summary": "校验当前用户是否同时具备权限注解声明的所有权限。",
+      "tags": [
+        "security",
+        "auth",
+        "rbac",
+        "permission"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:checkPermiOr",
+      "type": "function",
+      "name": "checkPermiOr",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "lineRange": [
+        160,
+        170
+      ],
+      "summary": "校验当前用户是否具备权限注解声明的任一权限。",
+      "tags": [
+        "security",
+        "auth",
+        "rbac",
+        "permission"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:checkRoleAnd",
+      "type": "function",
+      "name": "checkRoleAnd",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "lineRange": [
+        211,
+        220
+      ],
+      "summary": "校验当前用户是否同时具备角色注解声明的所有角色。",
+      "tags": [
+        "security",
+        "auth",
+        "rbac",
+        "role"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:checkRoleOr",
+      "type": "function",
+      "name": "checkRoleOr",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "lineRange": [
+        227,
+        238
+      ],
+      "summary": "校验当前用户是否具备角色注解声明的任一角色。",
+      "tags": [
+        "security",
+        "auth",
+        "rbac",
+        "role"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/EnableRyFeignClients.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/EnableRyFeignClients.java:EnableRyFeignClients",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/EnableRyFeignClients.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/EnableRyFeignClients.java:EnableRyFeignClients",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/InnerAuth.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/InnerAuth.java:InnerAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/InnerAuth.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/InnerAuth.java:InnerAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/Logical.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/Logical.java:Logical",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/Logical.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/Logical.java:Logical",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresLogin.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresLogin.java:RequiresLogin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresLogin.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresLogin.java:RequiresLogin",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresPermissions.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresPermissions.java:RequiresPermissions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresPermissions.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresPermissions.java:RequiresPermissions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresRoles.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresRoles.java:RequiresRoles",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresRoles.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresRoles.java:RequiresRoles",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/InnerAuthAspect.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/InnerAuthAspect.java:InnerAuthAspect",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/InnerAuthAspect.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/InnerAuthAspect.java:InnerAuthAspect",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java:PreAuthorizeAspect",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java:PreAuthorizeAspect",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:AuthLogic",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:AuthLogic",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthUtil.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthUtil.java:AuthUtil",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthUtil.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthUtil.java:AuthUtil",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/ApplicationConfig.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/ApplicationConfig.java:ApplicationConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/ApplicationConfig.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/ApplicationConfig.java:ApplicationConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/WebMvcConfig.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/WebMvcConfig.java:WebMvcConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/WebMvcConfig.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/WebMvcConfig.java:WebMvcConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignAutoConfiguration.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignAutoConfiguration.java:FeignAutoConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignAutoConfiguration.java",
+      "target": "class:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignAutoConfiguration.java:FeignAutoConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/InnerAuthAspect.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/InnerAuthAspect.java:innerAround",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/InnerAuthAspect.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/InnerAuthAspect.java:innerAround",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java:around",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java:around",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java:checkMethodAnnotation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java:checkMethodAnnotation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:getLoginUser",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:getLoginUser",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:checkPermi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:checkPermi",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:checkPermiAnd",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:checkPermiAnd",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:checkPermiOr",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:checkPermiOr",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:checkRoleAnd",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:checkRoleAnd",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:checkRoleOr",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "target": "function:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java:checkRoleOr",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

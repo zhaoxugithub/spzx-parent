@@ -1,0 +1,55 @@
+{
+  "nodes": [
+    {
+      "id": "document:CLAUDE.md",
+      "type": "document",
+      "name": "CLAUDE.md",
+      "filePath": "CLAUDE.md",
+      "summary": "项目架构与开发指南文档,概述 SPZX(尚硅谷甄选)微服务平台的模块结构、Spring Cloud Alibaba 架构、认证/RBAC/数据访问等关键架构模式以及构建运行方式。",
+      "tags": ["documentation", "architecture", "overview", "spring-cloud", "guide"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "项目介绍 README 文档,介绍平台简介、系统模块划分、架构图、内置功能以及在线体验等说明。",
+      "tags": ["documentation", "overview", "entry-point", "project-intro"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "pom.xml",
+      "summary": "Maven 父工程 POM 配置,聚合管理 spzx-auth、gateway、api、common、modules、visual 等子模块,统一声明 Spring Cloud Alibaba、Spring Boot、MyBatis-Plus、Knife4j 等依赖版本及 Nacos/Sentinel 地址,并配置资源过滤与编译插件。",
+      "tags": ["maven", "build-system", "configuration", "dependency-management"],
+      "complexity": "complex",
+      "languageNotes": "父 POM 使用 Maven 属性占位符并开启资源过滤(bootstrap.yml 中的 ${nacos.addr} 等占位符由 Maven 编译时替换为统一 IP/端口配置)。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:README.md",
+      "target": "document:CLAUDE.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "config:pom.xml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:CLAUDE.md",
+      "target": "config:pom.xml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

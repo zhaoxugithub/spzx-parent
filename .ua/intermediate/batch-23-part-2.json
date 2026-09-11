@@ -1,0 +1,195 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableDataInfo.java",
+      "type": "file",
+      "name": "TableDataInfo.java",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableDataInfo.java",
+      "summary": "分页响应数据封装，包含总条数、行数据、状态码与提示信息。",
+      "tags": ["data-model", "pagination", "response"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableDataInfo.java:TableDataInfo",
+      "type": "class",
+      "name": "TableDataInfo",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableDataInfo.java",
+      "lineRange": [11, 85],
+      "summary": "分页结果对象，封装 total、rows、code、msg，用于向前端返回分页数据。",
+      "tags": ["data-model", "pagination", "response"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableSupport.java",
+      "type": "file",
+      "name": "TableSupport.java",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableSupport.java",
+      "summary": "分页查询辅助类，从请求上下文构建分页参数与 PageHelper 请求对象。",
+      "tags": ["utility", "pagination", "pagehelper"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableSupport.java:TableSupport",
+      "type": "class",
+      "name": "TableSupport",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableSupport.java",
+      "lineRange": [11, 56],
+      "summary": "分页支持类，构建并返回分页请求的 PageDomain 与 PageHelper 分页对象。",
+      "tags": ["utility", "pagination", "pagehelper"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableSupport.java:getPageDomain",
+      "type": "function",
+      "name": "getPageDomain",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableSupport.java",
+      "lineRange": [41, 50],
+      "summary": "从请求参数读取并组装分页域对象。",
+      "tags": ["pagination", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/xss/Xss.java",
+      "type": "file",
+      "name": "Xss.java",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/xss/Xss.java",
+      "summary": "自定义 XSS 校验注解，配合 XssValidator 对字段与方法参数进行脚本过滤校验。",
+      "tags": ["validation", "xss", "security", "annotation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/xss/XssValidator.java",
+      "type": "file",
+      "name": "XssValidator.java",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/xss/XssValidator.java",
+      "summary": "XSS 校验实现类，使用正则检测文本中是否包含可执行脚本片段。",
+      "tags": ["validation", "xss", "security"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/xss/XssValidator.java:XssValidator",
+      "type": "class",
+      "name": "XssValidator",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/xss/XssValidator.java",
+      "lineRange": [14, 34],
+      "summary": "XSS 校验器，实现 ConstraintValidator 接口，检测并拦截含脚本的输入。",
+      "tags": ["validation", "xss", "security"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-core/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "type": "file",
+      "name": "AutoConfiguration.imports",
+      "filePath": "spzx-common/spzx-common-core/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "summary": "Spring Boot 自动配置注册文件，声明 commons-core 的 SpringUtils 与 MybatisPlusConfig 为自动配置类。",
+      "tags": ["configuration", "spring-boot", "auto-configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-common/spzx-common-datascope/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-common/spzx-common-datascope/pom.xml",
+      "summary": "spzx-common-datascope 模块的 Maven 构建配置，声明对 spzx-common-security 的依赖以提供数据权限切面。",
+      "tags": ["configuration", "maven", "build-system", "dependency"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/annotation/DataScope.java",
+      "type": "file",
+      "name": "DataScope.java",
+      "filePath": "spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/annotation/DataScope.java",
+      "summary": "数据权限过滤注解，用于标记需要按部门或用户进行行级权限过滤的方法。",
+      "tags": ["annotation", "data-scope", "security", "permission"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/aspect/DataScopeAspect.java",
+      "type": "file",
+      "name": "DataScopeAspect.java",
+      "filePath": "spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/aspect/DataScopeAspect.java",
+      "summary": "数据权限切面，拦截 @DataScope 注解方法并拼接 SQL 行级过滤条件。",
+      "tags": ["aspect", "data-scope", "security", "aop"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/aspect/DataScopeAspect.java:DataScopeAspect",
+      "type": "class",
+      "name": "DataScopeAspect",
+      "filePath": "spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/aspect/DataScopeAspect.java",
+      "lineRange": [25, 149],
+      "summary": "数据权限切面类，根据 @DataScope 配置与用户角色生成部门/用户数据过滤 SQL。",
+      "tags": ["aspect", "data-scope", "security", "aop"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/aspect/DataScopeAspect.java:handleDataScope",
+      "type": "function",
+      "name": "handleDataScope",
+      "filePath": "spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/aspect/DataScopeAspect.java",
+      "lineRange": [64, 76],
+      "summary": "解析切点上的 @DataScope 注解信息，为后续过滤做准备。",
+      "tags": ["aspect", "data-scope", "aop"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/aspect/DataScopeAspect.java:dataScopeFilter",
+      "type": "function",
+      "name": "dataScopeFilter",
+      "filePath": "spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/aspect/DataScopeAspect.java",
+      "lineRange": [87, 137],
+      "summary": "根据用户权限构造 dataScope 字段并拼接行级数据过滤 SQL。",
+      "tags": ["aspect", "data-scope", "security"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-datascope/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "type": "file",
+      "name": "AutoConfiguration.imports",
+      "filePath": "spzx-common/spzx-common-datascope/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "summary": "Spring Boot 自动配置注册文件，声明 DataScopeAspect 为自动配置类。",
+      "tags": ["configuration", "spring-boot", "auto-configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-common/spzx-common-datasource/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-common/spzx-common-datasource/pom.xml",
+      "summary": "spzx-common-datasource 模块的 Maven 构建配置，声明 Druid 与 dynamic-datasource 依赖以支持多数据源。",
+      "tags": ["configuration", "maven", "build-system", "datasource"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-datasource/src/main/java/com/spzx/common/datasource/annotation/Master.java",
+      "type": "file",
+      "name": "Master.java",
+      "filePath": "spzx-common/spzx-common-datasource/src/main/java/com/spzx/common/datasource/annotation/Master.java",
+      "summary": "主库数据源注解，标记使用 master 数据源的类或方法(基于 dynamic-datasource 的 @DS)。",
+      "tags": ["annotation", "datasource", "multi-datasource"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-datasource/src/main/java/com/spzx/common/datasource/annotation/Slave.java",
+      "type": "file",
+      "name": "Slave.java",
+      "filePath": "spzx-common/spzx-common-datasource/src/main/java/com/spzx/common/datasource/annotation/Slave.java",
+      "summary": "从库数据源注解，标记使用 slave 数据源的类或方法(基于 dynamic-datasource 的 @DS)。",
+      "tags": ["annotation", "datasource", "multi-datasource"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {"source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableDataInfo.java", "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableDataInfo.java:TableDataInfo", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableDataInfo.java", "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableDataInfo.java:TableDataInfo", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableSupport.java", "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableSupport.java:TableSupport", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableSupport.java", "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableSupport.java:TableSupport", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableSupport.java", "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableSupport.java:getPageDomain", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/xss/XssValidator.java", "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/xss/XssValidator.java:XssValidator", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/xss/XssValidator.java", "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/xss/XssValidator.java:XssValidator", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/aspect/DataScopeAspect.java", "target": "class:spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/aspect/DataScopeAspect.java:DataScopeAspect", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/aspect/DataScopeAspect.java", "target": "class:spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/aspect/DataScopeAspect.java:DataScopeAspect", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/aspect/DataScopeAspect.java", "target": "function:spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/aspect/DataScopeAspect.java:handleDataScope", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/aspect/DataScopeAspect.java", "target": "function:spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/aspect/DataScopeAspect.java:dataScopeFilter", "type": "contains", "direction": "forward", "weight": 1.0}
+  ]
+}

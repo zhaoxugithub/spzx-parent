@@ -1,0 +1,4584 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 21,
+  "filesSkipped": [
+    "spzx-api/spzx-api-product/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+    "spzx-api/spzx-api-system/pom.xml",
+    "spzx-api/spzx-api-system/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+    "spzx-api/spzx-api-user/pom.xml"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 21,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 21,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/factory/RemoteBrandFallbackFactory.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "create",
+          "startLine": 19,
+          "endLine": 29,
+          "params": [
+            "throwable"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RemoteBrandFallbackFactory",
+          "startLine": 15,
+          "endLine": 30,
+          "methods": [
+            "create"
+          ],
+          "properties": [
+            "log"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "create",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "RemoteBrandFallbackFactory",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "create",
+          "callee": "log.error",
+          "lineNumber": 21
+        },
+        {
+          "caller": "create",
+          "callee": "throwable.getMessage",
+          "lineNumber": 21
+        },
+        {
+          "caller": "create",
+          "callee": "new RemoteBrandService",
+          "lineNumber": 23
+        },
+        {
+          "caller": "getBrandAllList",
+          "callee": "R.fail",
+          "lineNumber": 26
+        },
+        {
+          "caller": "getBrandAllList",
+          "callee": "throwable.getMessage",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/factory/RemoteCategoryFallbackFacgtory.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "create",
+          "startLine": 18,
+          "endLine": 34,
+          "params": [
+            "cause"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RemoteCategoryFallbackFacgtory",
+          "startLine": 15,
+          "endLine": 35,
+          "methods": [
+            "create"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "create",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "RemoteCategoryFallbackFacgtory",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "create",
+          "callee": "log.error",
+          "lineNumber": 21
+        },
+        {
+          "caller": "create",
+          "callee": "new RemoteCategoryService",
+          "lineNumber": 23
+        },
+        {
+          "caller": "getOneCategory",
+          "callee": "R.fail",
+          "lineNumber": 26
+        },
+        {
+          "caller": "tree",
+          "callee": "R.fail",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/factory/RemoteProductFallbackFactory.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 71,
+      "functions": [
+        {
+          "name": "create",
+          "startLine": 29,
+          "endLine": 88,
+          "params": [
+            "throwable"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RemoteProductFallbackFactory",
+          "startLine": 25,
+          "endLine": 89,
+          "methods": [
+            "create"
+          ],
+          "properties": [
+            "log"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "create",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "RemoteProductFallbackFactory",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "create",
+          "callee": "log.error",
+          "lineNumber": 32
+        },
+        {
+          "caller": "create",
+          "callee": "new RemoteProductService",
+          "lineNumber": 34
+        },
+        {
+          "caller": "getTopSale",
+          "callee": "R.fail",
+          "lineNumber": 37
+        },
+        {
+          "caller": "skuList",
+          "callee": "R.fail",
+          "lineNumber": 42
+        },
+        {
+          "caller": "skuList",
+          "callee": "throwable.getMessage",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "R.fail",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "throwable.getMessage",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getProduct",
+          "callee": "R.fail",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getProduct",
+          "callee": "throwable.getMessage",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getSkuPrice",
+          "callee": "R.fail",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getSkuPrice",
+          "callee": "throwable.getMessage",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getProductDetails",
+          "callee": "R.fail",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getProductDetails",
+          "callee": "throwable.getMessage",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getSkuSpecValue",
+          "callee": "R.fail",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getSkuSpecValue",
+          "callee": "throwable.getMessage",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getSkuStock",
+          "callee": "R.fail",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getSkuStock",
+          "callee": "throwable.getMessage",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "R.fail",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "throwable.getMessage",
+          "lineNumber": 80
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "R.fail",
+          "lineNumber": 85
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "throwable.getMessage",
+          "lineNumber": 85
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/RemoteFileService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "RemoteFileService",
+          "startLine": 18,
+          "endLine": 29,
+          "methods": [
+            "upload"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RemoteFileService",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/RemoteLogService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 38,
+      "classes": [
+        {
+          "name": "RemoteLogService",
+          "startLine": 19,
+          "endLine": 41,
+          "methods": [
+            "saveLog",
+            "saveLogininfor"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RemoteLogService",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/RemoteUserService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 40,
+      "classes": [
+        {
+          "name": "RemoteUserService",
+          "startLine": 21,
+          "endLine": 43,
+          "methods": [
+            "getUserInfo",
+            "registerUserInfo"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RemoteUserService",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/domain/SysDept.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 203,
+      "nonEmptyLines": 164,
+      "functions": [
+        {
+          "name": "getDeptId",
+          "startLine": 58,
+          "endLine": 61,
+          "params": []
+        },
+        {
+          "name": "setDeptId",
+          "startLine": 63,
+          "endLine": 66,
+          "params": [
+            "deptId"
+          ]
+        },
+        {
+          "name": "getParentId",
+          "startLine": 68,
+          "endLine": 71,
+          "params": []
+        },
+        {
+          "name": "setParentId",
+          "startLine": 73,
+          "endLine": 76,
+          "params": [
+            "parentId"
+          ]
+        },
+        {
+          "name": "getAncestors",
+          "startLine": 78,
+          "endLine": 81,
+          "params": []
+        },
+        {
+          "name": "setAncestors",
+          "startLine": 83,
+          "endLine": 86,
+          "params": [
+            "ancestors"
+          ]
+        },
+        {
+          "name": "getDeptName",
+          "startLine": 88,
+          "endLine": 93,
+          "params": []
+        },
+        {
+          "name": "setDeptName",
+          "startLine": 95,
+          "endLine": 98,
+          "params": [
+            "deptName"
+          ]
+        },
+        {
+          "name": "getOrderNum",
+          "startLine": 100,
+          "endLine": 104,
+          "params": []
+        },
+        {
+          "name": "setOrderNum",
+          "startLine": 106,
+          "endLine": 109,
+          "params": [
+            "orderNum"
+          ]
+        },
+        {
+          "name": "getLeader",
+          "startLine": 111,
+          "endLine": 114,
+          "params": []
+        },
+        {
+          "name": "setLeader",
+          "startLine": 116,
+          "endLine": 119,
+          "params": [
+            "leader"
+          ]
+        },
+        {
+          "name": "getPhone",
+          "startLine": 121,
+          "endLine": 125,
+          "params": []
+        },
+        {
+          "name": "setPhone",
+          "startLine": 127,
+          "endLine": 130,
+          "params": [
+            "phone"
+          ]
+        },
+        {
+          "name": "getEmail",
+          "startLine": 132,
+          "endLine": 137,
+          "params": []
+        },
+        {
+          "name": "setEmail",
+          "startLine": 139,
+          "endLine": 142,
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "getStatus",
+          "startLine": 144,
+          "endLine": 147,
+          "params": []
+        },
+        {
+          "name": "setStatus",
+          "startLine": 149,
+          "endLine": 152,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "getDelFlag",
+          "startLine": 154,
+          "endLine": 157,
+          "params": []
+        },
+        {
+          "name": "setDelFlag",
+          "startLine": 159,
+          "endLine": 162,
+          "params": [
+            "delFlag"
+          ]
+        },
+        {
+          "name": "getParentName",
+          "startLine": 164,
+          "endLine": 167,
+          "params": []
+        },
+        {
+          "name": "setParentName",
+          "startLine": 169,
+          "endLine": 172,
+          "params": [
+            "parentName"
+          ]
+        },
+        {
+          "name": "getChildren",
+          "startLine": 174,
+          "endLine": 177,
+          "params": []
+        },
+        {
+          "name": "setChildren",
+          "startLine": 179,
+          "endLine": 182,
+          "params": [
+            "children"
+          ]
+        },
+        {
+          "name": "toString",
+          "startLine": 184,
+          "endLine": 202,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysDept",
+          "startLine": 18,
+          "endLine": 203,
+          "methods": [
+            "getDeptId",
+            "setDeptId",
+            "getParentId",
+            "setParentId",
+            "getAncestors",
+            "setAncestors",
+            "getDeptName",
+            "setDeptName",
+            "getOrderNum",
+            "setOrderNum",
+            "getLeader",
+            "setLeader",
+            "getPhone",
+            "setPhone",
+            "getEmail",
+            "setEmail",
+            "getStatus",
+            "setStatus",
+            "getDelFlag",
+            "setDelFlag",
+            "getParentName",
+            "setParentName",
+            "getChildren",
+            "setChildren",
+            "toString"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "deptId",
+            "parentId",
+            "ancestors",
+            "deptName",
+            "orderNum",
+            "leader",
+            "phone",
+            "email",
+            "status",
+            "delFlag",
+            "parentName",
+            "children"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getDeptId",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "setDeptId",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "getParentId",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "setParentId",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "getAncestors",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "setAncestors",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "getDeptName",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "setDeptName",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "getOrderNum",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "setOrderNum",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "getLeader",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "setLeader",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "getPhone",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "setPhone",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "getEmail",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "setEmail",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "getStatus",
+          "line": 144,
+          "isDefault": false
+        },
+        {
+          "name": "setStatus",
+          "line": 149,
+          "isDefault": false
+        },
+        {
+          "name": "getDelFlag",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "setDelFlag",
+          "line": 159,
+          "isDefault": false
+        },
+        {
+          "name": "getParentName",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "setParentName",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "getChildren",
+          "line": 174,
+          "isDefault": false
+        },
+        {
+          "name": "setChildren",
+          "line": 179,
+          "isDefault": false
+        },
+        {
+          "name": "toString",
+          "line": 184,
+          "isDefault": false
+        },
+        {
+          "name": "SysDept",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"deptId\", getDeptId())\n            .append(\"parentId\", getParentId())\n            .append(\"ancestors\", getAncestors())\n            .append(\"deptName\", getDeptName())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"leader\", getLeader())\n            .append(\"phone\", getPhone())\n            .append(\"email\", getEmail())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy())\n            .append(\"updateTime\", getUpdateTime()).toString",
+          "lineNumber": 186
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"deptId\", getDeptId())\n            .append(\"parentId\", getParentId())\n            .append(\"ancestors\", getAncestors())\n            .append(\"deptName\", getDeptName())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"leader\", getLeader())\n            .append(\"phone\", getPhone())\n            .append(\"email\", getEmail())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy()).append",
+          "lineNumber": 186
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"deptId\", getDeptId())\n            .append(\"parentId\", getParentId())\n            .append(\"ancestors\", getAncestors())\n            .append(\"deptName\", getDeptName())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"leader\", getLeader())\n            .append(\"phone\", getPhone())\n            .append(\"email\", getEmail())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime()).append",
+          "lineNumber": 186
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"deptId\", getDeptId())\n            .append(\"parentId\", getParentId())\n            .append(\"ancestors\", getAncestors())\n            .append(\"deptName\", getDeptName())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"leader\", getLeader())\n            .append(\"phone\", getPhone())\n            .append(\"email\", getEmail())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag())\n            .append(\"createBy\", getCreateBy()).append",
+          "lineNumber": 186
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"deptId\", getDeptId())\n            .append(\"parentId\", getParentId())\n            .append(\"ancestors\", getAncestors())\n            .append(\"deptName\", getDeptName())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"leader\", getLeader())\n            .append(\"phone\", getPhone())\n            .append(\"email\", getEmail())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag()).append",
+          "lineNumber": 186
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"deptId\", getDeptId())\n            .append(\"parentId\", getParentId())\n            .append(\"ancestors\", getAncestors())\n            .append(\"deptName\", getDeptName())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"leader\", getLeader())\n            .append(\"phone\", getPhone())\n            .append(\"email\", getEmail())\n            .append(\"status\", getStatus()).append",
+          "lineNumber": 186
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"deptId\", getDeptId())\n            .append(\"parentId\", getParentId())\n            .append(\"ancestors\", getAncestors())\n            .append(\"deptName\", getDeptName())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"leader\", getLeader())\n            .append(\"phone\", getPhone())\n            .append(\"email\", getEmail()).append",
+          "lineNumber": 186
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"deptId\", getDeptId())\n            .append(\"parentId\", getParentId())\n            .append(\"ancestors\", getAncestors())\n            .append(\"deptName\", getDeptName())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"leader\", getLeader())\n            .append(\"phone\", getPhone()).append",
+          "lineNumber": 186
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"deptId\", getDeptId())\n            .append(\"parentId\", getParentId())\n            .append(\"ancestors\", getAncestors())\n            .append(\"deptName\", getDeptName())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"leader\", getLeader()).append",
+          "lineNumber": 186
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"deptId\", getDeptId())\n            .append(\"parentId\", getParentId())\n            .append(\"ancestors\", getAncestors())\n            .append(\"deptName\", getDeptName())\n            .append(\"orderNum\", getOrderNum()).append",
+          "lineNumber": 186
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"deptId\", getDeptId())\n            .append(\"parentId\", getParentId())\n            .append(\"ancestors\", getAncestors())\n            .append(\"deptName\", getDeptName()).append",
+          "lineNumber": 186
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"deptId\", getDeptId())\n            .append(\"parentId\", getParentId())\n            .append(\"ancestors\", getAncestors()).append",
+          "lineNumber": 186
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"deptId\", getDeptId())\n            .append(\"parentId\", getParentId()).append",
+          "lineNumber": 186
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"deptId\", getDeptId()).append",
+          "lineNumber": 186
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE).append",
+          "lineNumber": 186
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder",
+          "lineNumber": 186
+        },
+        {
+          "caller": "toString",
+          "callee": "getDeptId",
+          "lineNumber": 187
+        },
+        {
+          "caller": "toString",
+          "callee": "getParentId",
+          "lineNumber": 188
+        },
+        {
+          "caller": "toString",
+          "callee": "getAncestors",
+          "lineNumber": 189
+        },
+        {
+          "caller": "toString",
+          "callee": "getDeptName",
+          "lineNumber": 190
+        },
+        {
+          "caller": "toString",
+          "callee": "getOrderNum",
+          "lineNumber": 191
+        },
+        {
+          "caller": "toString",
+          "callee": "getLeader",
+          "lineNumber": 192
+        },
+        {
+          "caller": "toString",
+          "callee": "getPhone",
+          "lineNumber": 193
+        },
+        {
+          "caller": "toString",
+          "callee": "getEmail",
+          "lineNumber": 194
+        },
+        {
+          "caller": "toString",
+          "callee": "getStatus",
+          "lineNumber": 195
+        },
+        {
+          "caller": "toString",
+          "callee": "getDelFlag",
+          "lineNumber": 196
+        },
+        {
+          "caller": "toString",
+          "callee": "getCreateBy",
+          "lineNumber": 197
+        },
+        {
+          "caller": "toString",
+          "callee": "getCreateTime",
+          "lineNumber": 198
+        },
+        {
+          "caller": "toString",
+          "callee": "getUpdateBy",
+          "lineNumber": 199
+        },
+        {
+          "caller": "toString",
+          "callee": "getUpdateTime",
+          "lineNumber": 200
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 26,
+        "functionCount": 25,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/domain/SysDictData.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 176,
+      "nonEmptyLines": 145,
+      "functions": [
+        {
+          "name": "getDictCode",
+          "startLine": 55,
+          "endLine": 58,
+          "params": []
+        },
+        {
+          "name": "setDictCode",
+          "startLine": 60,
+          "endLine": 63,
+          "params": [
+            "dictCode"
+          ]
+        },
+        {
+          "name": "getDictSort",
+          "startLine": 65,
+          "endLine": 68,
+          "params": []
+        },
+        {
+          "name": "setDictSort",
+          "startLine": 70,
+          "endLine": 73,
+          "params": [
+            "dictSort"
+          ]
+        },
+        {
+          "name": "getDictLabel",
+          "startLine": 75,
+          "endLine": 80,
+          "params": []
+        },
+        {
+          "name": "setDictLabel",
+          "startLine": 82,
+          "endLine": 85,
+          "params": [
+            "dictLabel"
+          ]
+        },
+        {
+          "name": "getDictValue",
+          "startLine": 87,
+          "endLine": 92,
+          "params": []
+        },
+        {
+          "name": "setDictValue",
+          "startLine": 94,
+          "endLine": 97,
+          "params": [
+            "dictValue"
+          ]
+        },
+        {
+          "name": "getDictType",
+          "startLine": 99,
+          "endLine": 104,
+          "params": []
+        },
+        {
+          "name": "setDictType",
+          "startLine": 106,
+          "endLine": 109,
+          "params": [
+            "dictType"
+          ]
+        },
+        {
+          "name": "getCssClass",
+          "startLine": 111,
+          "endLine": 115,
+          "params": []
+        },
+        {
+          "name": "setCssClass",
+          "startLine": 117,
+          "endLine": 120,
+          "params": [
+            "cssClass"
+          ]
+        },
+        {
+          "name": "getListClass",
+          "startLine": 122,
+          "endLine": 125,
+          "params": []
+        },
+        {
+          "name": "setListClass",
+          "startLine": 127,
+          "endLine": 130,
+          "params": [
+            "listClass"
+          ]
+        },
+        {
+          "name": "getDefault",
+          "startLine": 132,
+          "endLine": 135,
+          "params": []
+        },
+        {
+          "name": "getIsDefault",
+          "startLine": 137,
+          "endLine": 140,
+          "params": []
+        },
+        {
+          "name": "setIsDefault",
+          "startLine": 142,
+          "endLine": 145,
+          "params": [
+            "isDefault"
+          ]
+        },
+        {
+          "name": "getStatus",
+          "startLine": 147,
+          "endLine": 150,
+          "params": []
+        },
+        {
+          "name": "setStatus",
+          "startLine": 152,
+          "endLine": 155,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "toString",
+          "startLine": 157,
+          "endLine": 175,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysDictData",
+          "startLine": 17,
+          "endLine": 176,
+          "methods": [
+            "getDictCode",
+            "setDictCode",
+            "getDictSort",
+            "setDictSort",
+            "getDictLabel",
+            "setDictLabel",
+            "getDictValue",
+            "setDictValue",
+            "getDictType",
+            "setDictType",
+            "getCssClass",
+            "setCssClass",
+            "getListClass",
+            "setListClass",
+            "getDefault",
+            "getIsDefault",
+            "setIsDefault",
+            "getStatus",
+            "setStatus",
+            "toString"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "dictCode",
+            "dictSort",
+            "dictLabel",
+            "dictValue",
+            "dictType",
+            "cssClass",
+            "listClass",
+            "isDefault",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getDictCode",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "setDictCode",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "getDictSort",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "setDictSort",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "getDictLabel",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "setDictLabel",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "getDictValue",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "setDictValue",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "getDictType",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "setDictType",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "getCssClass",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "setCssClass",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "getListClass",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "setListClass",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "getDefault",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "getIsDefault",
+          "line": 137,
+          "isDefault": false
+        },
+        {
+          "name": "setIsDefault",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "getStatus",
+          "line": 147,
+          "isDefault": false
+        },
+        {
+          "name": "setStatus",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "toString",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "SysDictData",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getDefault",
+          "callee": "UserConstants.YES.equals",
+          "lineNumber": 134
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictCode\", getDictCode())\n            .append(\"dictSort\", getDictSort())\n            .append(\"dictLabel\", getDictLabel())\n            .append(\"dictValue\", getDictValue())\n            .append(\"dictType\", getDictType())\n            .append(\"cssClass\", getCssClass())\n            .append(\"listClass\", getListClass())\n            .append(\"isDefault\", getIsDefault())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy())\n            .append(\"updateTime\", getUpdateTime())\n            .append(\"remark\", getRemark()).toString",
+          "lineNumber": 159
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictCode\", getDictCode())\n            .append(\"dictSort\", getDictSort())\n            .append(\"dictLabel\", getDictLabel())\n            .append(\"dictValue\", getDictValue())\n            .append(\"dictType\", getDictType())\n            .append(\"cssClass\", getCssClass())\n            .append(\"listClass\", getListClass())\n            .append(\"isDefault\", getIsDefault())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy())\n            .append(\"updateTime\", getUpdateTime()).append",
+          "lineNumber": 159
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictCode\", getDictCode())\n            .append(\"dictSort\", getDictSort())\n            .append(\"dictLabel\", getDictLabel())\n            .append(\"dictValue\", getDictValue())\n            .append(\"dictType\", getDictType())\n            .append(\"cssClass\", getCssClass())\n            .append(\"listClass\", getListClass())\n            .append(\"isDefault\", getIsDefault())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy()).append",
+          "lineNumber": 159
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictCode\", getDictCode())\n            .append(\"dictSort\", getDictSort())\n            .append(\"dictLabel\", getDictLabel())\n            .append(\"dictValue\", getDictValue())\n            .append(\"dictType\", getDictType())\n            .append(\"cssClass\", getCssClass())\n            .append(\"listClass\", getListClass())\n            .append(\"isDefault\", getIsDefault())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime()).append",
+          "lineNumber": 159
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictCode\", getDictCode())\n            .append(\"dictSort\", getDictSort())\n            .append(\"dictLabel\", getDictLabel())\n            .append(\"dictValue\", getDictValue())\n            .append(\"dictType\", getDictType())\n            .append(\"cssClass\", getCssClass())\n            .append(\"listClass\", getListClass())\n            .append(\"isDefault\", getIsDefault())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy()).append",
+          "lineNumber": 159
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictCode\", getDictCode())\n            .append(\"dictSort\", getDictSort())\n            .append(\"dictLabel\", getDictLabel())\n            .append(\"dictValue\", getDictValue())\n            .append(\"dictType\", getDictType())\n            .append(\"cssClass\", getCssClass())\n            .append(\"listClass\", getListClass())\n            .append(\"isDefault\", getIsDefault())\n            .append(\"status\", getStatus()).append",
+          "lineNumber": 159
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictCode\", getDictCode())\n            .append(\"dictSort\", getDictSort())\n            .append(\"dictLabel\", getDictLabel())\n            .append(\"dictValue\", getDictValue())\n            .append(\"dictType\", getDictType())\n            .append(\"cssClass\", getCssClass())\n            .append(\"listClass\", getListClass())\n            .append(\"isDefault\", getIsDefault()).append",
+          "lineNumber": 159
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictCode\", getDictCode())\n            .append(\"dictSort\", getDictSort())\n            .append(\"dictLabel\", getDictLabel())\n            .append(\"dictValue\", getDictValue())\n            .append(\"dictType\", getDictType())\n            .append(\"cssClass\", getCssClass())\n            .append(\"listClass\", getListClass()).append",
+          "lineNumber": 159
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictCode\", getDictCode())\n            .append(\"dictSort\", getDictSort())\n            .append(\"dictLabel\", getDictLabel())\n            .append(\"dictValue\", getDictValue())\n            .append(\"dictType\", getDictType())\n            .append(\"cssClass\", getCssClass()).append",
+          "lineNumber": 159
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictCode\", getDictCode())\n            .append(\"dictSort\", getDictSort())\n            .append(\"dictLabel\", getDictLabel())\n            .append(\"dictValue\", getDictValue())\n            .append(\"dictType\", getDictType()).append",
+          "lineNumber": 159
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictCode\", getDictCode())\n            .append(\"dictSort\", getDictSort())\n            .append(\"dictLabel\", getDictLabel())\n            .append(\"dictValue\", getDictValue()).append",
+          "lineNumber": 159
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictCode\", getDictCode())\n            .append(\"dictSort\", getDictSort())\n            .append(\"dictLabel\", getDictLabel()).append",
+          "lineNumber": 159
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictCode\", getDictCode())\n            .append(\"dictSort\", getDictSort()).append",
+          "lineNumber": 159
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictCode\", getDictCode()).append",
+          "lineNumber": 159
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE).append",
+          "lineNumber": 159
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder",
+          "lineNumber": 159
+        },
+        {
+          "caller": "toString",
+          "callee": "getDictCode",
+          "lineNumber": 160
+        },
+        {
+          "caller": "toString",
+          "callee": "getDictSort",
+          "lineNumber": 161
+        },
+        {
+          "caller": "toString",
+          "callee": "getDictLabel",
+          "lineNumber": 162
+        },
+        {
+          "caller": "toString",
+          "callee": "getDictValue",
+          "lineNumber": 163
+        },
+        {
+          "caller": "toString",
+          "callee": "getDictType",
+          "lineNumber": 164
+        },
+        {
+          "caller": "toString",
+          "callee": "getCssClass",
+          "lineNumber": 165
+        },
+        {
+          "caller": "toString",
+          "callee": "getListClass",
+          "lineNumber": 166
+        },
+        {
+          "caller": "toString",
+          "callee": "getIsDefault",
+          "lineNumber": 167
+        },
+        {
+          "caller": "toString",
+          "callee": "getStatus",
+          "lineNumber": 168
+        },
+        {
+          "caller": "toString",
+          "callee": "getCreateBy",
+          "lineNumber": 169
+        },
+        {
+          "caller": "toString",
+          "callee": "getCreateTime",
+          "lineNumber": 170
+        },
+        {
+          "caller": "toString",
+          "callee": "getUpdateBy",
+          "lineNumber": 171
+        },
+        {
+          "caller": "toString",
+          "callee": "getUpdateTime",
+          "lineNumber": 172
+        },
+        {
+          "caller": "toString",
+          "callee": "getRemark",
+          "lineNumber": 173
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 21,
+        "functionCount": 20,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/domain/SysDictType.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 96,
+      "nonEmptyLines": 81,
+      "functions": [
+        {
+          "name": "getDictId",
+          "startLine": 37,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "setDictId",
+          "startLine": 42,
+          "endLine": 45,
+          "params": [
+            "dictId"
+          ]
+        },
+        {
+          "name": "getDictName",
+          "startLine": 47,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "setDictName",
+          "startLine": 54,
+          "endLine": 57,
+          "params": [
+            "dictName"
+          ]
+        },
+        {
+          "name": "getDictType",
+          "startLine": 59,
+          "endLine": 65,
+          "params": []
+        },
+        {
+          "name": "setDictType",
+          "startLine": 67,
+          "endLine": 70,
+          "params": [
+            "dictType"
+          ]
+        },
+        {
+          "name": "getStatus",
+          "startLine": 72,
+          "endLine": 75,
+          "params": []
+        },
+        {
+          "name": "setStatus",
+          "startLine": 77,
+          "endLine": 80,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "toString",
+          "startLine": 82,
+          "endLine": 95,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysDictType",
+          "startLine": 17,
+          "endLine": 96,
+          "methods": [
+            "getDictId",
+            "setDictId",
+            "getDictName",
+            "setDictName",
+            "getDictType",
+            "setDictType",
+            "getStatus",
+            "setStatus",
+            "toString"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "dictId",
+            "dictName",
+            "dictType",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getDictId",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "setDictId",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "getDictName",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "setDictName",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "getDictType",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "setDictType",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "getStatus",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "setStatus",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "toString",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "SysDictType",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictId\", getDictId())\n            .append(\"dictName\", getDictName())\n            .append(\"dictType\", getDictType())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy())\n            .append(\"updateTime\", getUpdateTime())\n            .append(\"remark\", getRemark()).toString",
+          "lineNumber": 84
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictId\", getDictId())\n            .append(\"dictName\", getDictName())\n            .append(\"dictType\", getDictType())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy())\n            .append(\"updateTime\", getUpdateTime()).append",
+          "lineNumber": 84
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictId\", getDictId())\n            .append(\"dictName\", getDictName())\n            .append(\"dictType\", getDictType())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy()).append",
+          "lineNumber": 84
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictId\", getDictId())\n            .append(\"dictName\", getDictName())\n            .append(\"dictType\", getDictType())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime()).append",
+          "lineNumber": 84
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictId\", getDictId())\n            .append(\"dictName\", getDictName())\n            .append(\"dictType\", getDictType())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy()).append",
+          "lineNumber": 84
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictId\", getDictId())\n            .append(\"dictName\", getDictName())\n            .append(\"dictType\", getDictType())\n            .append(\"status\", getStatus()).append",
+          "lineNumber": 84
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictId\", getDictId())\n            .append(\"dictName\", getDictName())\n            .append(\"dictType\", getDictType()).append",
+          "lineNumber": 84
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictId\", getDictId())\n            .append(\"dictName\", getDictName()).append",
+          "lineNumber": 84
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"dictId\", getDictId()).append",
+          "lineNumber": 84
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE).append",
+          "lineNumber": 84
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder",
+          "lineNumber": 84
+        },
+        {
+          "caller": "toString",
+          "callee": "getDictId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "toString",
+          "callee": "getDictName",
+          "lineNumber": 86
+        },
+        {
+          "caller": "toString",
+          "callee": "getDictType",
+          "lineNumber": 87
+        },
+        {
+          "caller": "toString",
+          "callee": "getStatus",
+          "lineNumber": 88
+        },
+        {
+          "caller": "toString",
+          "callee": "getCreateBy",
+          "lineNumber": 89
+        },
+        {
+          "caller": "toString",
+          "callee": "getCreateTime",
+          "lineNumber": 90
+        },
+        {
+          "caller": "toString",
+          "callee": "getUpdateBy",
+          "lineNumber": 91
+        },
+        {
+          "caller": "toString",
+          "callee": "getUpdateTime",
+          "lineNumber": 92
+        },
+        {
+          "caller": "toString",
+          "callee": "getRemark",
+          "lineNumber": 93
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/domain/SysFile.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "getName",
+          "startLine": 23,
+          "endLine": 26,
+          "params": []
+        },
+        {
+          "name": "setName",
+          "startLine": 28,
+          "endLine": 31,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "getUrl",
+          "startLine": 33,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "setUrl",
+          "startLine": 38,
+          "endLine": 41,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "toString",
+          "startLine": 43,
+          "endLine": 49,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysFile",
+          "startLine": 11,
+          "endLine": 50,
+          "methods": [
+            "getName",
+            "setName",
+            "getUrl",
+            "setUrl",
+            "toString"
+          ],
+          "properties": [
+            "name",
+            "url"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getName",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "setName",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "getUrl",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "setUrl",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "toString",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "SysFile",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"name\", getName())\n            .append(\"url\", getUrl()).toString",
+          "lineNumber": 45
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"name\", getName()).append",
+          "lineNumber": 45
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE).append",
+          "lineNumber": 45
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder",
+          "lineNumber": 45
+        },
+        {
+          "caller": "toString",
+          "callee": "getName",
+          "lineNumber": 46
+        },
+        {
+          "caller": "toString",
+          "callee": "getUrl",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/domain/SysLogininfor.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 82,
+      "functions": [
+        {
+          "name": "getInfoId",
+          "startLine": 43,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "setInfoId",
+          "startLine": 48,
+          "endLine": 51,
+          "params": [
+            "infoId"
+          ]
+        },
+        {
+          "name": "getUserName",
+          "startLine": 53,
+          "endLine": 56,
+          "params": []
+        },
+        {
+          "name": "setUserName",
+          "startLine": 58,
+          "endLine": 61,
+          "params": [
+            "userName"
+          ]
+        },
+        {
+          "name": "getStatus",
+          "startLine": 63,
+          "endLine": 66,
+          "params": []
+        },
+        {
+          "name": "setStatus",
+          "startLine": 68,
+          "endLine": 71,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "getIpaddr",
+          "startLine": 73,
+          "endLine": 76,
+          "params": []
+        },
+        {
+          "name": "setIpaddr",
+          "startLine": 78,
+          "endLine": 81,
+          "params": [
+            "ipaddr"
+          ]
+        },
+        {
+          "name": "getMsg",
+          "startLine": 83,
+          "endLine": 86,
+          "params": []
+        },
+        {
+          "name": "setMsg",
+          "startLine": 88,
+          "endLine": 91,
+          "params": [
+            "msg"
+          ]
+        },
+        {
+          "name": "getAccessTime",
+          "startLine": 93,
+          "endLine": 96,
+          "params": []
+        },
+        {
+          "name": "setAccessTime",
+          "startLine": 98,
+          "endLine": 101,
+          "params": [
+            "accessTime"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysLogininfor",
+          "startLine": 14,
+          "endLine": 102,
+          "methods": [
+            "getInfoId",
+            "setInfoId",
+            "getUserName",
+            "setUserName",
+            "getStatus",
+            "setStatus",
+            "getIpaddr",
+            "setIpaddr",
+            "getMsg",
+            "setMsg",
+            "getAccessTime",
+            "setAccessTime"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "infoId",
+            "userName",
+            "status",
+            "ipaddr",
+            "msg",
+            "accessTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getInfoId",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "setInfoId",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "getUserName",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "setUserName",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "getStatus",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "setStatus",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "getIpaddr",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "setIpaddr",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "getMsg",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "setMsg",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "getAccessTime",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "setAccessTime",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "SysLogininfor",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 13,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/domain/SysOperLog.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 255,
+      "nonEmptyLines": 202,
+      "functions": [
+        {
+          "name": "getOperId",
+          "startLine": 86,
+          "endLine": 89,
+          "params": []
+        },
+        {
+          "name": "setOperId",
+          "startLine": 91,
+          "endLine": 94,
+          "params": [
+            "operId"
+          ]
+        },
+        {
+          "name": "getTitle",
+          "startLine": 96,
+          "endLine": 99,
+          "params": []
+        },
+        {
+          "name": "setTitle",
+          "startLine": 101,
+          "endLine": 104,
+          "params": [
+            "title"
+          ]
+        },
+        {
+          "name": "getBusinessType",
+          "startLine": 106,
+          "endLine": 109,
+          "params": []
+        },
+        {
+          "name": "setBusinessType",
+          "startLine": 111,
+          "endLine": 114,
+          "params": [
+            "businessType"
+          ]
+        },
+        {
+          "name": "getBusinessTypes",
+          "startLine": 116,
+          "endLine": 119,
+          "params": []
+        },
+        {
+          "name": "setBusinessTypes",
+          "startLine": 121,
+          "endLine": 124,
+          "params": [
+            "businessTypes"
+          ]
+        },
+        {
+          "name": "getMethod",
+          "startLine": 126,
+          "endLine": 129,
+          "params": []
+        },
+        {
+          "name": "setMethod",
+          "startLine": 131,
+          "endLine": 134,
+          "params": [
+            "method"
+          ]
+        },
+        {
+          "name": "getRequestMethod",
+          "startLine": 136,
+          "endLine": 139,
+          "params": []
+        },
+        {
+          "name": "setRequestMethod",
+          "startLine": 141,
+          "endLine": 144,
+          "params": [
+            "requestMethod"
+          ]
+        },
+        {
+          "name": "getOperatorType",
+          "startLine": 146,
+          "endLine": 149,
+          "params": []
+        },
+        {
+          "name": "setOperatorType",
+          "startLine": 151,
+          "endLine": 154,
+          "params": [
+            "operatorType"
+          ]
+        },
+        {
+          "name": "getOperName",
+          "startLine": 156,
+          "endLine": 159,
+          "params": []
+        },
+        {
+          "name": "setOperName",
+          "startLine": 161,
+          "endLine": 164,
+          "params": [
+            "operName"
+          ]
+        },
+        {
+          "name": "getDeptName",
+          "startLine": 166,
+          "endLine": 169,
+          "params": []
+        },
+        {
+          "name": "setDeptName",
+          "startLine": 171,
+          "endLine": 174,
+          "params": [
+            "deptName"
+          ]
+        },
+        {
+          "name": "getOperUrl",
+          "startLine": 176,
+          "endLine": 179,
+          "params": []
+        },
+        {
+          "name": "setOperUrl",
+          "startLine": 181,
+          "endLine": 184,
+          "params": [
+            "operUrl"
+          ]
+        },
+        {
+          "name": "getOperIp",
+          "startLine": 186,
+          "endLine": 189,
+          "params": []
+        },
+        {
+          "name": "setOperIp",
+          "startLine": 191,
+          "endLine": 194,
+          "params": [
+            "operIp"
+          ]
+        },
+        {
+          "name": "getOperParam",
+          "startLine": 196,
+          "endLine": 199,
+          "params": []
+        },
+        {
+          "name": "setOperParam",
+          "startLine": 201,
+          "endLine": 204,
+          "params": [
+            "operParam"
+          ]
+        },
+        {
+          "name": "getJsonResult",
+          "startLine": 206,
+          "endLine": 209,
+          "params": []
+        },
+        {
+          "name": "setJsonResult",
+          "startLine": 211,
+          "endLine": 214,
+          "params": [
+            "jsonResult"
+          ]
+        },
+        {
+          "name": "getStatus",
+          "startLine": 216,
+          "endLine": 219,
+          "params": []
+        },
+        {
+          "name": "setStatus",
+          "startLine": 221,
+          "endLine": 224,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "getErrorMsg",
+          "startLine": 226,
+          "endLine": 229,
+          "params": []
+        },
+        {
+          "name": "setErrorMsg",
+          "startLine": 231,
+          "endLine": 234,
+          "params": [
+            "errorMsg"
+          ]
+        },
+        {
+          "name": "getOperTime",
+          "startLine": 236,
+          "endLine": 239,
+          "params": []
+        },
+        {
+          "name": "setOperTime",
+          "startLine": 241,
+          "endLine": 244,
+          "params": [
+            "operTime"
+          ]
+        },
+        {
+          "name": "getCostTime",
+          "startLine": 246,
+          "endLine": 249,
+          "params": []
+        },
+        {
+          "name": "setCostTime",
+          "startLine": 251,
+          "endLine": 254,
+          "params": [
+            "costTime"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysOperLog",
+          "startLine": 14,
+          "endLine": 255,
+          "methods": [
+            "getOperId",
+            "setOperId",
+            "getTitle",
+            "setTitle",
+            "getBusinessType",
+            "setBusinessType",
+            "getBusinessTypes",
+            "setBusinessTypes",
+            "getMethod",
+            "setMethod",
+            "getRequestMethod",
+            "setRequestMethod",
+            "getOperatorType",
+            "setOperatorType",
+            "getOperName",
+            "setOperName",
+            "getDeptName",
+            "setDeptName",
+            "getOperUrl",
+            "setOperUrl",
+            "getOperIp",
+            "setOperIp",
+            "getOperParam",
+            "setOperParam",
+            "getJsonResult",
+            "setJsonResult",
+            "getStatus",
+            "setStatus",
+            "getErrorMsg",
+            "setErrorMsg",
+            "getOperTime",
+            "setOperTime",
+            "getCostTime",
+            "setCostTime"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "operId",
+            "title",
+            "businessType",
+            "businessTypes",
+            "method",
+            "requestMethod",
+            "operatorType",
+            "operName",
+            "deptName",
+            "operUrl",
+            "operIp",
+            "operParam",
+            "jsonResult",
+            "status",
+            "errorMsg",
+            "operTime",
+            "costTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getOperId",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "setOperId",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "getTitle",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "setTitle",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "getBusinessType",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "setBusinessType",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "getBusinessTypes",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "setBusinessTypes",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "getMethod",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "setMethod",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "getRequestMethod",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "setRequestMethod",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "getOperatorType",
+          "line": 146,
+          "isDefault": false
+        },
+        {
+          "name": "setOperatorType",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "getOperName",
+          "line": 156,
+          "isDefault": false
+        },
+        {
+          "name": "setOperName",
+          "line": 161,
+          "isDefault": false
+        },
+        {
+          "name": "getDeptName",
+          "line": 166,
+          "isDefault": false
+        },
+        {
+          "name": "setDeptName",
+          "line": 171,
+          "isDefault": false
+        },
+        {
+          "name": "getOperUrl",
+          "line": 176,
+          "isDefault": false
+        },
+        {
+          "name": "setOperUrl",
+          "line": 181,
+          "isDefault": false
+        },
+        {
+          "name": "getOperIp",
+          "line": 186,
+          "isDefault": false
+        },
+        {
+          "name": "setOperIp",
+          "line": 191,
+          "isDefault": false
+        },
+        {
+          "name": "getOperParam",
+          "line": 196,
+          "isDefault": false
+        },
+        {
+          "name": "setOperParam",
+          "line": 201,
+          "isDefault": false
+        },
+        {
+          "name": "getJsonResult",
+          "line": 206,
+          "isDefault": false
+        },
+        {
+          "name": "setJsonResult",
+          "line": 211,
+          "isDefault": false
+        },
+        {
+          "name": "getStatus",
+          "line": 216,
+          "isDefault": false
+        },
+        {
+          "name": "setStatus",
+          "line": 221,
+          "isDefault": false
+        },
+        {
+          "name": "getErrorMsg",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "setErrorMsg",
+          "line": 231,
+          "isDefault": false
+        },
+        {
+          "name": "getOperTime",
+          "line": 236,
+          "isDefault": false
+        },
+        {
+          "name": "setOperTime",
+          "line": 241,
+          "isDefault": false
+        },
+        {
+          "name": "getCostTime",
+          "line": 246,
+          "isDefault": false
+        },
+        {
+          "name": "setCostTime",
+          "line": 251,
+          "isDefault": false
+        },
+        {
+          "name": "SysOperLog",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 35,
+        "functionCount": 34,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/domain/SysRole.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 241,
+      "nonEmptyLines": 194,
+      "functions": [
+        {
+          "name": "SysRole",
+          "startLine": 67,
+          "endLine": 70,
+          "params": []
+        },
+        {
+          "name": "SysRole",
+          "startLine": 72,
+          "endLine": 75,
+          "params": [
+            "roleId"
+          ]
+        },
+        {
+          "name": "getRoleId",
+          "startLine": 77,
+          "endLine": 80,
+          "params": []
+        },
+        {
+          "name": "setRoleId",
+          "startLine": 82,
+          "endLine": 85,
+          "params": [
+            "roleId"
+          ]
+        },
+        {
+          "name": "isAdmin",
+          "startLine": 87,
+          "endLine": 90,
+          "params": []
+        },
+        {
+          "name": "isAdmin",
+          "startLine": 92,
+          "endLine": 95,
+          "params": [
+            "roleId"
+          ]
+        },
+        {
+          "name": "getRoleName",
+          "startLine": 97,
+          "endLine": 102,
+          "params": []
+        },
+        {
+          "name": "setRoleName",
+          "startLine": 104,
+          "endLine": 107,
+          "params": [
+            "roleName"
+          ]
+        },
+        {
+          "name": "getRoleKey",
+          "startLine": 109,
+          "endLine": 114,
+          "params": []
+        },
+        {
+          "name": "setRoleKey",
+          "startLine": 116,
+          "endLine": 119,
+          "params": [
+            "roleKey"
+          ]
+        },
+        {
+          "name": "getRoleSort",
+          "startLine": 121,
+          "endLine": 125,
+          "params": []
+        },
+        {
+          "name": "setRoleSort",
+          "startLine": 127,
+          "endLine": 130,
+          "params": [
+            "roleSort"
+          ]
+        },
+        {
+          "name": "getDataScope",
+          "startLine": 132,
+          "endLine": 135,
+          "params": []
+        },
+        {
+          "name": "setDataScope",
+          "startLine": 137,
+          "endLine": 140,
+          "params": [
+            "dataScope"
+          ]
+        },
+        {
+          "name": "isMenuCheckStrictly",
+          "startLine": 142,
+          "endLine": 145,
+          "params": []
+        },
+        {
+          "name": "setMenuCheckStrictly",
+          "startLine": 147,
+          "endLine": 150,
+          "params": [
+            "menuCheckStrictly"
+          ]
+        },
+        {
+          "name": "isDeptCheckStrictly",
+          "startLine": 152,
+          "endLine": 155,
+          "params": []
+        },
+        {
+          "name": "setDeptCheckStrictly",
+          "startLine": 157,
+          "endLine": 160,
+          "params": [
+            "deptCheckStrictly"
+          ]
+        },
+        {
+          "name": "getStatus",
+          "startLine": 162,
+          "endLine": 165,
+          "params": []
+        },
+        {
+          "name": "setStatus",
+          "startLine": 167,
+          "endLine": 170,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "getDelFlag",
+          "startLine": 172,
+          "endLine": 175,
+          "params": []
+        },
+        {
+          "name": "setDelFlag",
+          "startLine": 177,
+          "endLine": 180,
+          "params": [
+            "delFlag"
+          ]
+        },
+        {
+          "name": "isFlag",
+          "startLine": 182,
+          "endLine": 185,
+          "params": []
+        },
+        {
+          "name": "setFlag",
+          "startLine": 187,
+          "endLine": 190,
+          "params": [
+            "flag"
+          ]
+        },
+        {
+          "name": "getMenuIds",
+          "startLine": 192,
+          "endLine": 195,
+          "params": []
+        },
+        {
+          "name": "setMenuIds",
+          "startLine": 197,
+          "endLine": 200,
+          "params": [
+            "menuIds"
+          ]
+        },
+        {
+          "name": "getDeptIds",
+          "startLine": 202,
+          "endLine": 205,
+          "params": []
+        },
+        {
+          "name": "setDeptIds",
+          "startLine": 207,
+          "endLine": 210,
+          "params": [
+            "deptIds"
+          ]
+        },
+        {
+          "name": "getPermissions",
+          "startLine": 212,
+          "endLine": 215,
+          "params": []
+        },
+        {
+          "name": "setPermissions",
+          "startLine": 217,
+          "endLine": 220,
+          "params": [
+            "permissions"
+          ]
+        },
+        {
+          "name": "toString",
+          "startLine": 222,
+          "endLine": 240,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysRole",
+          "startLine": 18,
+          "endLine": 241,
+          "methods": [
+            "SysRole",
+            "SysRole",
+            "getRoleId",
+            "setRoleId",
+            "isAdmin",
+            "isAdmin",
+            "getRoleName",
+            "setRoleName",
+            "getRoleKey",
+            "setRoleKey",
+            "getRoleSort",
+            "setRoleSort",
+            "getDataScope",
+            "setDataScope",
+            "isMenuCheckStrictly",
+            "setMenuCheckStrictly",
+            "isDeptCheckStrictly",
+            "setDeptCheckStrictly",
+            "getStatus",
+            "setStatus",
+            "getDelFlag",
+            "setDelFlag",
+            "isFlag",
+            "setFlag",
+            "getMenuIds",
+            "setMenuIds",
+            "getDeptIds",
+            "setDeptIds",
+            "getPermissions",
+            "setPermissions",
+            "toString"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "roleId",
+            "roleName",
+            "roleKey",
+            "roleSort",
+            "dataScope",
+            "menuCheckStrictly",
+            "deptCheckStrictly",
+            "status",
+            "delFlag",
+            "flag",
+            "menuIds",
+            "deptIds",
+            "permissions"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SysRole",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "SysRole",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "getRoleId",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "setRoleId",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "isAdmin",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "isAdmin",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "getRoleName",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "setRoleName",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "getRoleKey",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "setRoleKey",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "getRoleSort",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "setRoleSort",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "getDataScope",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "setDataScope",
+          "line": 137,
+          "isDefault": false
+        },
+        {
+          "name": "isMenuCheckStrictly",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "setMenuCheckStrictly",
+          "line": 147,
+          "isDefault": false
+        },
+        {
+          "name": "isDeptCheckStrictly",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "setDeptCheckStrictly",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "getStatus",
+          "line": 162,
+          "isDefault": false
+        },
+        {
+          "name": "setStatus",
+          "line": 167,
+          "isDefault": false
+        },
+        {
+          "name": "getDelFlag",
+          "line": 172,
+          "isDefault": false
+        },
+        {
+          "name": "setDelFlag",
+          "line": 177,
+          "isDefault": false
+        },
+        {
+          "name": "isFlag",
+          "line": 182,
+          "isDefault": false
+        },
+        {
+          "name": "setFlag",
+          "line": 187,
+          "isDefault": false
+        },
+        {
+          "name": "getMenuIds",
+          "line": 192,
+          "isDefault": false
+        },
+        {
+          "name": "setMenuIds",
+          "line": 197,
+          "isDefault": false
+        },
+        {
+          "name": "getDeptIds",
+          "line": 202,
+          "isDefault": false
+        },
+        {
+          "name": "setDeptIds",
+          "line": 207,
+          "isDefault": false
+        },
+        {
+          "name": "getPermissions",
+          "line": 212,
+          "isDefault": false
+        },
+        {
+          "name": "setPermissions",
+          "line": 217,
+          "isDefault": false
+        },
+        {
+          "name": "toString",
+          "line": 222,
+          "isDefault": false
+        },
+        {
+          "name": "SysRole",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isAdmin",
+          "callee": "isAdmin",
+          "lineNumber": 89
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"roleId\", getRoleId())\n            .append(\"roleName\", getRoleName())\n            .append(\"roleKey\", getRoleKey())\n            .append(\"roleSort\", getRoleSort())\n            .append(\"dataScope\", getDataScope())\n            .append(\"menuCheckStrictly\", isMenuCheckStrictly())\n            .append(\"deptCheckStrictly\", isDeptCheckStrictly())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy())\n            .append(\"updateTime\", getUpdateTime())\n            .append(\"remark\", getRemark()).toString",
+          "lineNumber": 224
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"roleId\", getRoleId())\n            .append(\"roleName\", getRoleName())\n            .append(\"roleKey\", getRoleKey())\n            .append(\"roleSort\", getRoleSort())\n            .append(\"dataScope\", getDataScope())\n            .append(\"menuCheckStrictly\", isMenuCheckStrictly())\n            .append(\"deptCheckStrictly\", isDeptCheckStrictly())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy())\n            .append(\"updateTime\", getUpdateTime()).append",
+          "lineNumber": 224
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"roleId\", getRoleId())\n            .append(\"roleName\", getRoleName())\n            .append(\"roleKey\", getRoleKey())\n            .append(\"roleSort\", getRoleSort())\n            .append(\"dataScope\", getDataScope())\n            .append(\"menuCheckStrictly\", isMenuCheckStrictly())\n            .append(\"deptCheckStrictly\", isDeptCheckStrictly())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy()).append",
+          "lineNumber": 224
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"roleId\", getRoleId())\n            .append(\"roleName\", getRoleName())\n            .append(\"roleKey\", getRoleKey())\n            .append(\"roleSort\", getRoleSort())\n            .append(\"dataScope\", getDataScope())\n            .append(\"menuCheckStrictly\", isMenuCheckStrictly())\n            .append(\"deptCheckStrictly\", isDeptCheckStrictly())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime()).append",
+          "lineNumber": 224
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"roleId\", getRoleId())\n            .append(\"roleName\", getRoleName())\n            .append(\"roleKey\", getRoleKey())\n            .append(\"roleSort\", getRoleSort())\n            .append(\"dataScope\", getDataScope())\n            .append(\"menuCheckStrictly\", isMenuCheckStrictly())\n            .append(\"deptCheckStrictly\", isDeptCheckStrictly())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag())\n            .append(\"createBy\", getCreateBy()).append",
+          "lineNumber": 224
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"roleId\", getRoleId())\n            .append(\"roleName\", getRoleName())\n            .append(\"roleKey\", getRoleKey())\n            .append(\"roleSort\", getRoleSort())\n            .append(\"dataScope\", getDataScope())\n            .append(\"menuCheckStrictly\", isMenuCheckStrictly())\n            .append(\"deptCheckStrictly\", isDeptCheckStrictly())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag()).append",
+          "lineNumber": 224
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"roleId\", getRoleId())\n            .append(\"roleName\", getRoleName())\n            .append(\"roleKey\", getRoleKey())\n            .append(\"roleSort\", getRoleSort())\n            .append(\"dataScope\", getDataScope())\n            .append(\"menuCheckStrictly\", isMenuCheckStrictly())\n            .append(\"deptCheckStrictly\", isDeptCheckStrictly())\n            .append(\"status\", getStatus()).append",
+          "lineNumber": 224
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"roleId\", getRoleId())\n            .append(\"roleName\", getRoleName())\n            .append(\"roleKey\", getRoleKey())\n            .append(\"roleSort\", getRoleSort())\n            .append(\"dataScope\", getDataScope())\n            .append(\"menuCheckStrictly\", isMenuCheckStrictly())\n            .append(\"deptCheckStrictly\", isDeptCheckStrictly()).append",
+          "lineNumber": 224
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"roleId\", getRoleId())\n            .append(\"roleName\", getRoleName())\n            .append(\"roleKey\", getRoleKey())\n            .append(\"roleSort\", getRoleSort())\n            .append(\"dataScope\", getDataScope())\n            .append(\"menuCheckStrictly\", isMenuCheckStrictly()).append",
+          "lineNumber": 224
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"roleId\", getRoleId())\n            .append(\"roleName\", getRoleName())\n            .append(\"roleKey\", getRoleKey())\n            .append(\"roleSort\", getRoleSort())\n            .append(\"dataScope\", getDataScope()).append",
+          "lineNumber": 224
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"roleId\", getRoleId())\n            .append(\"roleName\", getRoleName())\n            .append(\"roleKey\", getRoleKey())\n            .append(\"roleSort\", getRoleSort()).append",
+          "lineNumber": 224
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"roleId\", getRoleId())\n            .append(\"roleName\", getRoleName())\n            .append(\"roleKey\", getRoleKey()).append",
+          "lineNumber": 224
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"roleId\", getRoleId())\n            .append(\"roleName\", getRoleName()).append",
+          "lineNumber": 224
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"roleId\", getRoleId()).append",
+          "lineNumber": 224
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE).append",
+          "lineNumber": 224
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder",
+          "lineNumber": 224
+        },
+        {
+          "caller": "toString",
+          "callee": "getRoleId",
+          "lineNumber": 225
+        },
+        {
+          "caller": "toString",
+          "callee": "getRoleName",
+          "lineNumber": 226
+        },
+        {
+          "caller": "toString",
+          "callee": "getRoleKey",
+          "lineNumber": 227
+        },
+        {
+          "caller": "toString",
+          "callee": "getRoleSort",
+          "lineNumber": 228
+        },
+        {
+          "caller": "toString",
+          "callee": "getDataScope",
+          "lineNumber": 229
+        },
+        {
+          "caller": "toString",
+          "callee": "isMenuCheckStrictly",
+          "lineNumber": 230
+        },
+        {
+          "caller": "toString",
+          "callee": "isDeptCheckStrictly",
+          "lineNumber": 231
+        },
+        {
+          "caller": "toString",
+          "callee": "getStatus",
+          "lineNumber": 232
+        },
+        {
+          "caller": "toString",
+          "callee": "getDelFlag",
+          "lineNumber": 233
+        },
+        {
+          "caller": "toString",
+          "callee": "getCreateBy",
+          "lineNumber": 234
+        },
+        {
+          "caller": "toString",
+          "callee": "getCreateTime",
+          "lineNumber": 235
+        },
+        {
+          "caller": "toString",
+          "callee": "getUpdateBy",
+          "lineNumber": 236
+        },
+        {
+          "caller": "toString",
+          "callee": "getUpdateTime",
+          "lineNumber": 237
+        },
+        {
+          "caller": "toString",
+          "callee": "getRemark",
+          "lineNumber": 238
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 32,
+        "functionCount": 31,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/domain/SysUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 323,
+      "nonEmptyLines": 262,
+      "functions": [
+        {
+          "name": "SysUser",
+          "startLine": 92,
+          "endLine": 95,
+          "params": []
+        },
+        {
+          "name": "SysUser",
+          "startLine": 97,
+          "endLine": 100,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "getUserId",
+          "startLine": 102,
+          "endLine": 105,
+          "params": []
+        },
+        {
+          "name": "setUserId",
+          "startLine": 107,
+          "endLine": 110,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "isAdmin",
+          "startLine": 112,
+          "endLine": 115,
+          "params": []
+        },
+        {
+          "name": "isAdmin",
+          "startLine": 117,
+          "endLine": 120,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "getDeptId",
+          "startLine": 122,
+          "endLine": 125,
+          "params": []
+        },
+        {
+          "name": "setDeptId",
+          "startLine": 127,
+          "endLine": 130,
+          "params": [
+            "deptId"
+          ]
+        },
+        {
+          "name": "getNickName",
+          "startLine": 132,
+          "endLine": 137,
+          "params": []
+        },
+        {
+          "name": "setNickName",
+          "startLine": 139,
+          "endLine": 142,
+          "params": [
+            "nickName"
+          ]
+        },
+        {
+          "name": "getUserName",
+          "startLine": 144,
+          "endLine": 150,
+          "params": []
+        },
+        {
+          "name": "setUserName",
+          "startLine": 152,
+          "endLine": 155,
+          "params": [
+            "userName"
+          ]
+        },
+        {
+          "name": "getEmail",
+          "startLine": 157,
+          "endLine": 162,
+          "params": []
+        },
+        {
+          "name": "setEmail",
+          "startLine": 164,
+          "endLine": 167,
+          "params": [
+            "email"
+          ]
+        },
+        {
+          "name": "getPhonenumber",
+          "startLine": 169,
+          "endLine": 173,
+          "params": []
+        },
+        {
+          "name": "setPhonenumber",
+          "startLine": 175,
+          "endLine": 178,
+          "params": [
+            "phonenumber"
+          ]
+        },
+        {
+          "name": "getSex",
+          "startLine": 180,
+          "endLine": 183,
+          "params": []
+        },
+        {
+          "name": "setSex",
+          "startLine": 185,
+          "endLine": 188,
+          "params": [
+            "sex"
+          ]
+        },
+        {
+          "name": "getAvatar",
+          "startLine": 190,
+          "endLine": 193,
+          "params": []
+        },
+        {
+          "name": "setAvatar",
+          "startLine": 195,
+          "endLine": 198,
+          "params": [
+            "avatar"
+          ]
+        },
+        {
+          "name": "getPassword",
+          "startLine": 200,
+          "endLine": 203,
+          "params": []
+        },
+        {
+          "name": "setPassword",
+          "startLine": 205,
+          "endLine": 208,
+          "params": [
+            "password"
+          ]
+        },
+        {
+          "name": "getStatus",
+          "startLine": 210,
+          "endLine": 213,
+          "params": []
+        },
+        {
+          "name": "setStatus",
+          "startLine": 215,
+          "endLine": 218,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "getDelFlag",
+          "startLine": 220,
+          "endLine": 223,
+          "params": []
+        },
+        {
+          "name": "setDelFlag",
+          "startLine": 225,
+          "endLine": 228,
+          "params": [
+            "delFlag"
+          ]
+        },
+        {
+          "name": "getLoginIp",
+          "startLine": 230,
+          "endLine": 233,
+          "params": []
+        },
+        {
+          "name": "setLoginIp",
+          "startLine": 235,
+          "endLine": 238,
+          "params": [
+            "loginIp"
+          ]
+        },
+        {
+          "name": "getLoginDate",
+          "startLine": 240,
+          "endLine": 243,
+          "params": []
+        },
+        {
+          "name": "setLoginDate",
+          "startLine": 245,
+          "endLine": 248,
+          "params": [
+            "loginDate"
+          ]
+        },
+        {
+          "name": "getDept",
+          "startLine": 250,
+          "endLine": 253,
+          "params": []
+        },
+        {
+          "name": "setDept",
+          "startLine": 255,
+          "endLine": 258,
+          "params": [
+            "dept"
+          ]
+        },
+        {
+          "name": "getRoles",
+          "startLine": 260,
+          "endLine": 263,
+          "params": []
+        },
+        {
+          "name": "setRoles",
+          "startLine": 265,
+          "endLine": 268,
+          "params": [
+            "roles"
+          ]
+        },
+        {
+          "name": "getRoleIds",
+          "startLine": 270,
+          "endLine": 273,
+          "params": []
+        },
+        {
+          "name": "setRoleIds",
+          "startLine": 275,
+          "endLine": 278,
+          "params": [
+            "roleIds"
+          ]
+        },
+        {
+          "name": "getPostIds",
+          "startLine": 280,
+          "endLine": 283,
+          "params": []
+        },
+        {
+          "name": "setPostIds",
+          "startLine": 285,
+          "endLine": 288,
+          "params": [
+            "postIds"
+          ]
+        },
+        {
+          "name": "getRoleId",
+          "startLine": 290,
+          "endLine": 293,
+          "params": []
+        },
+        {
+          "name": "setRoleId",
+          "startLine": 295,
+          "endLine": 298,
+          "params": [
+            "roleId"
+          ]
+        },
+        {
+          "name": "toString",
+          "startLine": 299,
+          "endLine": 322,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysUser",
+          "startLine": 20,
+          "endLine": 323,
+          "methods": [
+            "SysUser",
+            "SysUser",
+            "getUserId",
+            "setUserId",
+            "isAdmin",
+            "isAdmin",
+            "getDeptId",
+            "setDeptId",
+            "getNickName",
+            "setNickName",
+            "getUserName",
+            "setUserName",
+            "getEmail",
+            "setEmail",
+            "getPhonenumber",
+            "setPhonenumber",
+            "getSex",
+            "setSex",
+            "getAvatar",
+            "setAvatar",
+            "getPassword",
+            "setPassword",
+            "getStatus",
+            "setStatus",
+            "getDelFlag",
+            "setDelFlag",
+            "getLoginIp",
+            "setLoginIp",
+            "getLoginDate",
+            "setLoginDate",
+            "getDept",
+            "setDept",
+            "getRoles",
+            "setRoles",
+            "getRoleIds",
+            "setRoleIds",
+            "getPostIds",
+            "setPostIds",
+            "getRoleId",
+            "setRoleId",
+            "toString"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "userId",
+            "deptId",
+            "userName",
+            "nickName",
+            "email",
+            "phonenumber",
+            "sex",
+            "avatar",
+            "password",
+            "status",
+            "delFlag",
+            "loginIp",
+            "loginDate",
+            "dept",
+            "roles",
+            "roleIds",
+            "postIds",
+            "roleId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SysUser",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "SysUser",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "getUserId",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "setUserId",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "isAdmin",
+          "line": 112,
+          "isDefault": false
+        },
+        {
+          "name": "isAdmin",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "getDeptId",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "setDeptId",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "getNickName",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "setNickName",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "getUserName",
+          "line": 144,
+          "isDefault": false
+        },
+        {
+          "name": "setUserName",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "getEmail",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "setEmail",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "getPhonenumber",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "setPhonenumber",
+          "line": 175,
+          "isDefault": false
+        },
+        {
+          "name": "getSex",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "setSex",
+          "line": 185,
+          "isDefault": false
+        },
+        {
+          "name": "getAvatar",
+          "line": 190,
+          "isDefault": false
+        },
+        {
+          "name": "setAvatar",
+          "line": 195,
+          "isDefault": false
+        },
+        {
+          "name": "getPassword",
+          "line": 200,
+          "isDefault": false
+        },
+        {
+          "name": "setPassword",
+          "line": 205,
+          "isDefault": false
+        },
+        {
+          "name": "getStatus",
+          "line": 210,
+          "isDefault": false
+        },
+        {
+          "name": "setStatus",
+          "line": 215,
+          "isDefault": false
+        },
+        {
+          "name": "getDelFlag",
+          "line": 220,
+          "isDefault": false
+        },
+        {
+          "name": "setDelFlag",
+          "line": 225,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginIp",
+          "line": 230,
+          "isDefault": false
+        },
+        {
+          "name": "setLoginIp",
+          "line": 235,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginDate",
+          "line": 240,
+          "isDefault": false
+        },
+        {
+          "name": "setLoginDate",
+          "line": 245,
+          "isDefault": false
+        },
+        {
+          "name": "getDept",
+          "line": 250,
+          "isDefault": false
+        },
+        {
+          "name": "setDept",
+          "line": 255,
+          "isDefault": false
+        },
+        {
+          "name": "getRoles",
+          "line": 260,
+          "isDefault": false
+        },
+        {
+          "name": "setRoles",
+          "line": 265,
+          "isDefault": false
+        },
+        {
+          "name": "getRoleIds",
+          "line": 270,
+          "isDefault": false
+        },
+        {
+          "name": "setRoleIds",
+          "line": 275,
+          "isDefault": false
+        },
+        {
+          "name": "getPostIds",
+          "line": 280,
+          "isDefault": false
+        },
+        {
+          "name": "setPostIds",
+          "line": 285,
+          "isDefault": false
+        },
+        {
+          "name": "getRoleId",
+          "line": 290,
+          "isDefault": false
+        },
+        {
+          "name": "setRoleId",
+          "line": 295,
+          "isDefault": false
+        },
+        {
+          "name": "toString",
+          "line": 299,
+          "isDefault": false
+        },
+        {
+          "name": "SysUser",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isAdmin",
+          "callee": "isAdmin",
+          "lineNumber": 114
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId())\n            .append(\"deptId\", getDeptId())\n            .append(\"userName\", getUserName())\n            .append(\"nickName\", getNickName())\n            .append(\"email\", getEmail())\n            .append(\"phonenumber\", getPhonenumber())\n            .append(\"sex\", getSex())\n            .append(\"avatar\", getAvatar())\n            .append(\"password\", getPassword())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag())\n            .append(\"loginIp\", getLoginIp())\n            .append(\"loginDate\", getLoginDate())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy())\n            .append(\"updateTime\", getUpdateTime())\n            .append(\"remark\", getRemark())\n            .append(\"dept\", getDept()).toString",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId())\n            .append(\"deptId\", getDeptId())\n            .append(\"userName\", getUserName())\n            .append(\"nickName\", getNickName())\n            .append(\"email\", getEmail())\n            .append(\"phonenumber\", getPhonenumber())\n            .append(\"sex\", getSex())\n            .append(\"avatar\", getAvatar())\n            .append(\"password\", getPassword())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag())\n            .append(\"loginIp\", getLoginIp())\n            .append(\"loginDate\", getLoginDate())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy())\n            .append(\"updateTime\", getUpdateTime())\n            .append(\"remark\", getRemark()).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId())\n            .append(\"deptId\", getDeptId())\n            .append(\"userName\", getUserName())\n            .append(\"nickName\", getNickName())\n            .append(\"email\", getEmail())\n            .append(\"phonenumber\", getPhonenumber())\n            .append(\"sex\", getSex())\n            .append(\"avatar\", getAvatar())\n            .append(\"password\", getPassword())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag())\n            .append(\"loginIp\", getLoginIp())\n            .append(\"loginDate\", getLoginDate())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy())\n            .append(\"updateTime\", getUpdateTime()).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId())\n            .append(\"deptId\", getDeptId())\n            .append(\"userName\", getUserName())\n            .append(\"nickName\", getNickName())\n            .append(\"email\", getEmail())\n            .append(\"phonenumber\", getPhonenumber())\n            .append(\"sex\", getSex())\n            .append(\"avatar\", getAvatar())\n            .append(\"password\", getPassword())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag())\n            .append(\"loginIp\", getLoginIp())\n            .append(\"loginDate\", getLoginDate())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy()).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId())\n            .append(\"deptId\", getDeptId())\n            .append(\"userName\", getUserName())\n            .append(\"nickName\", getNickName())\n            .append(\"email\", getEmail())\n            .append(\"phonenumber\", getPhonenumber())\n            .append(\"sex\", getSex())\n            .append(\"avatar\", getAvatar())\n            .append(\"password\", getPassword())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag())\n            .append(\"loginIp\", getLoginIp())\n            .append(\"loginDate\", getLoginDate())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime()).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId())\n            .append(\"deptId\", getDeptId())\n            .append(\"userName\", getUserName())\n            .append(\"nickName\", getNickName())\n            .append(\"email\", getEmail())\n            .append(\"phonenumber\", getPhonenumber())\n            .append(\"sex\", getSex())\n            .append(\"avatar\", getAvatar())\n            .append(\"password\", getPassword())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag())\n            .append(\"loginIp\", getLoginIp())\n            .append(\"loginDate\", getLoginDate())\n            .append(\"createBy\", getCreateBy()).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId())\n            .append(\"deptId\", getDeptId())\n            .append(\"userName\", getUserName())\n            .append(\"nickName\", getNickName())\n            .append(\"email\", getEmail())\n            .append(\"phonenumber\", getPhonenumber())\n            .append(\"sex\", getSex())\n            .append(\"avatar\", getAvatar())\n            .append(\"password\", getPassword())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag())\n            .append(\"loginIp\", getLoginIp())\n            .append(\"loginDate\", getLoginDate()).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId())\n            .append(\"deptId\", getDeptId())\n            .append(\"userName\", getUserName())\n            .append(\"nickName\", getNickName())\n            .append(\"email\", getEmail())\n            .append(\"phonenumber\", getPhonenumber())\n            .append(\"sex\", getSex())\n            .append(\"avatar\", getAvatar())\n            .append(\"password\", getPassword())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag())\n            .append(\"loginIp\", getLoginIp()).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId())\n            .append(\"deptId\", getDeptId())\n            .append(\"userName\", getUserName())\n            .append(\"nickName\", getNickName())\n            .append(\"email\", getEmail())\n            .append(\"phonenumber\", getPhonenumber())\n            .append(\"sex\", getSex())\n            .append(\"avatar\", getAvatar())\n            .append(\"password\", getPassword())\n            .append(\"status\", getStatus())\n            .append(\"delFlag\", getDelFlag()).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId())\n            .append(\"deptId\", getDeptId())\n            .append(\"userName\", getUserName())\n            .append(\"nickName\", getNickName())\n            .append(\"email\", getEmail())\n            .append(\"phonenumber\", getPhonenumber())\n            .append(\"sex\", getSex())\n            .append(\"avatar\", getAvatar())\n            .append(\"password\", getPassword())\n            .append(\"status\", getStatus()).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId())\n            .append(\"deptId\", getDeptId())\n            .append(\"userName\", getUserName())\n            .append(\"nickName\", getNickName())\n            .append(\"email\", getEmail())\n            .append(\"phonenumber\", getPhonenumber())\n            .append(\"sex\", getSex())\n            .append(\"avatar\", getAvatar())\n            .append(\"password\", getPassword()).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId())\n            .append(\"deptId\", getDeptId())\n            .append(\"userName\", getUserName())\n            .append(\"nickName\", getNickName())\n            .append(\"email\", getEmail())\n            .append(\"phonenumber\", getPhonenumber())\n            .append(\"sex\", getSex())\n            .append(\"avatar\", getAvatar()).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId())\n            .append(\"deptId\", getDeptId())\n            .append(\"userName\", getUserName())\n            .append(\"nickName\", getNickName())\n            .append(\"email\", getEmail())\n            .append(\"phonenumber\", getPhonenumber())\n            .append(\"sex\", getSex()).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId())\n            .append(\"deptId\", getDeptId())\n            .append(\"userName\", getUserName())\n            .append(\"nickName\", getNickName())\n            .append(\"email\", getEmail())\n            .append(\"phonenumber\", getPhonenumber()).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId())\n            .append(\"deptId\", getDeptId())\n            .append(\"userName\", getUserName())\n            .append(\"nickName\", getNickName())\n            .append(\"email\", getEmail()).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId())\n            .append(\"deptId\", getDeptId())\n            .append(\"userName\", getUserName())\n            .append(\"nickName\", getNickName()).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId())\n            .append(\"deptId\", getDeptId())\n            .append(\"userName\", getUserName()).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId())\n            .append(\"deptId\", getDeptId()).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"userId\", getUserId()).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE).append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder",
+          "lineNumber": 301
+        },
+        {
+          "caller": "toString",
+          "callee": "getUserId",
+          "lineNumber": 302
+        },
+        {
+          "caller": "toString",
+          "callee": "getDeptId",
+          "lineNumber": 303
+        },
+        {
+          "caller": "toString",
+          "callee": "getUserName",
+          "lineNumber": 304
+        },
+        {
+          "caller": "toString",
+          "callee": "getNickName",
+          "lineNumber": 305
+        },
+        {
+          "caller": "toString",
+          "callee": "getEmail",
+          "lineNumber": 306
+        },
+        {
+          "caller": "toString",
+          "callee": "getPhonenumber",
+          "lineNumber": 307
+        },
+        {
+          "caller": "toString",
+          "callee": "getSex",
+          "lineNumber": 308
+        },
+        {
+          "caller": "toString",
+          "callee": "getAvatar",
+          "lineNumber": 309
+        },
+        {
+          "caller": "toString",
+          "callee": "getPassword",
+          "lineNumber": 310
+        },
+        {
+          "caller": "toString",
+          "callee": "getStatus",
+          "lineNumber": 311
+        },
+        {
+          "caller": "toString",
+          "callee": "getDelFlag",
+          "lineNumber": 312
+        },
+        {
+          "caller": "toString",
+          "callee": "getLoginIp",
+          "lineNumber": 313
+        },
+        {
+          "caller": "toString",
+          "callee": "getLoginDate",
+          "lineNumber": 314
+        },
+        {
+          "caller": "toString",
+          "callee": "getCreateBy",
+          "lineNumber": 315
+        },
+        {
+          "caller": "toString",
+          "callee": "getCreateTime",
+          "lineNumber": 316
+        },
+        {
+          "caller": "toString",
+          "callee": "getUpdateBy",
+          "lineNumber": 317
+        },
+        {
+          "caller": "toString",
+          "callee": "getUpdateTime",
+          "lineNumber": 318
+        },
+        {
+          "caller": "toString",
+          "callee": "getRemark",
+          "lineNumber": 319
+        },
+        {
+          "caller": "toString",
+          "callee": "getDept",
+          "lineNumber": 320
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 42,
+        "functionCount": 41,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/factory/RemoteFileFallbackFactory.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "create",
+          "startLine": 22,
+          "endLine": 34,
+          "params": [
+            "throwable"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RemoteFileFallbackFactory",
+          "startLine": 17,
+          "endLine": 35,
+          "methods": [
+            "create"
+          ],
+          "properties": [
+            "log"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "create",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "RemoteFileFallbackFactory",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "create",
+          "callee": "log.error",
+          "lineNumber": 25
+        },
+        {
+          "caller": "create",
+          "callee": "throwable.getMessage",
+          "lineNumber": 25
+        },
+        {
+          "caller": "create",
+          "callee": "new RemoteFileService",
+          "lineNumber": 26
+        },
+        {
+          "caller": "upload",
+          "callee": "R.fail",
+          "lineNumber": 31
+        },
+        {
+          "caller": "upload",
+          "callee": "throwable.getMessage",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/factory/RemoteLogFallbackFactory.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 37,
+      "functions": [
+        {
+          "name": "create",
+          "startLine": 22,
+          "endLine": 41,
+          "params": [
+            "throwable"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RemoteLogFallbackFactory",
+          "startLine": 17,
+          "endLine": 42,
+          "methods": [
+            "create"
+          ],
+          "properties": [
+            "log"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "create",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "RemoteLogFallbackFactory",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "create",
+          "callee": "log.error",
+          "lineNumber": 25
+        },
+        {
+          "caller": "create",
+          "callee": "throwable.getMessage",
+          "lineNumber": 25
+        },
+        {
+          "caller": "create",
+          "callee": "new RemoteLogService",
+          "lineNumber": 26
+        },
+        {
+          "caller": "saveLog",
+          "callee": "R.fail",
+          "lineNumber": 31
+        },
+        {
+          "caller": "saveLog",
+          "callee": "throwable.getMessage",
+          "lineNumber": 31
+        },
+        {
+          "caller": "saveLogininfor",
+          "callee": "R.fail",
+          "lineNumber": 37
+        },
+        {
+          "caller": "saveLogininfor",
+          "callee": "throwable.getMessage",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/factory/RemoteUserFallbackFactory.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 37,
+      "functions": [
+        {
+          "name": "create",
+          "startLine": 22,
+          "endLine": 40,
+          "params": [
+            "throwable"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RemoteUserFallbackFactory",
+          "startLine": 17,
+          "endLine": 41,
+          "methods": [
+            "create"
+          ],
+          "properties": [
+            "log"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "create",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "RemoteUserFallbackFactory",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "create",
+          "callee": "log.error",
+          "lineNumber": 25
+        },
+        {
+          "caller": "create",
+          "callee": "throwable.getMessage",
+          "lineNumber": 25
+        },
+        {
+          "caller": "create",
+          "callee": "new RemoteUserService",
+          "lineNumber": 26
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "R.fail",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "throwable.getMessage",
+          "lineNumber": 31
+        },
+        {
+          "caller": "registerUserInfo",
+          "callee": "R.fail",
+          "lineNumber": 37
+        },
+        {
+          "caller": "registerUserInfo",
+          "callee": "throwable.getMessage",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/model/LoginUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 158,
+      "nonEmptyLines": 122,
+      "functions": [
+        {
+          "name": "getToken",
+          "startLine": 71,
+          "endLine": 73,
+          "params": []
+        },
+        {
+          "name": "setToken",
+          "startLine": 75,
+          "endLine": 77,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "getUserid",
+          "startLine": 79,
+          "endLine": 81,
+          "params": []
+        },
+        {
+          "name": "setUserid",
+          "startLine": 83,
+          "endLine": 85,
+          "params": [
+            "userid"
+          ]
+        },
+        {
+          "name": "getUsername",
+          "startLine": 87,
+          "endLine": 89,
+          "params": []
+        },
+        {
+          "name": "setUsername",
+          "startLine": 91,
+          "endLine": 93,
+          "params": [
+            "username"
+          ]
+        },
+        {
+          "name": "getPassword",
+          "startLine": 95,
+          "endLine": 97,
+          "params": []
+        },
+        {
+          "name": "setPassword",
+          "startLine": 99,
+          "endLine": 101,
+          "params": [
+            "password"
+          ]
+        },
+        {
+          "name": "getStatus",
+          "startLine": 103,
+          "endLine": 105,
+          "params": []
+        },
+        {
+          "name": "setStatus",
+          "startLine": 107,
+          "endLine": 109,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "getLoginTime",
+          "startLine": 111,
+          "endLine": 113,
+          "params": []
+        },
+        {
+          "name": "setLoginTime",
+          "startLine": 115,
+          "endLine": 117,
+          "params": [
+            "loginTime"
+          ]
+        },
+        {
+          "name": "getExpireTime",
+          "startLine": 119,
+          "endLine": 121,
+          "params": []
+        },
+        {
+          "name": "setExpireTime",
+          "startLine": 123,
+          "endLine": 125,
+          "params": [
+            "expireTime"
+          ]
+        },
+        {
+          "name": "getIpaddr",
+          "startLine": 127,
+          "endLine": 129,
+          "params": []
+        },
+        {
+          "name": "setIpaddr",
+          "startLine": 131,
+          "endLine": 133,
+          "params": [
+            "ipaddr"
+          ]
+        },
+        {
+          "name": "getPermissions",
+          "startLine": 135,
+          "endLine": 137,
+          "params": []
+        },
+        {
+          "name": "setPermissions",
+          "startLine": 139,
+          "endLine": 141,
+          "params": [
+            "permissions"
+          ]
+        },
+        {
+          "name": "getRoles",
+          "startLine": 143,
+          "endLine": 145,
+          "params": []
+        },
+        {
+          "name": "setRoles",
+          "startLine": 147,
+          "endLine": 149,
+          "params": [
+            "roles"
+          ]
+        },
+        {
+          "name": "getSysUser",
+          "startLine": 151,
+          "endLine": 153,
+          "params": []
+        },
+        {
+          "name": "setSysUser",
+          "startLine": 155,
+          "endLine": 157,
+          "params": [
+            "sysUser"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LoginUser",
+          "startLine": 13,
+          "endLine": 158,
+          "methods": [
+            "getToken",
+            "setToken",
+            "getUserid",
+            "setUserid",
+            "getUsername",
+            "setUsername",
+            "getPassword",
+            "setPassword",
+            "getStatus",
+            "setStatus",
+            "getLoginTime",
+            "setLoginTime",
+            "getExpireTime",
+            "setExpireTime",
+            "getIpaddr",
+            "setIpaddr",
+            "getPermissions",
+            "setPermissions",
+            "getRoles",
+            "setRoles",
+            "getSysUser",
+            "setSysUser"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "token",
+            "userid",
+            "username",
+            "password",
+            "status",
+            "loginTime",
+            "expireTime",
+            "ipaddr",
+            "permissions",
+            "roles",
+            "sysUser"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getToken",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "setToken",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "getUserid",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "setUserid",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "getUsername",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "setUsername",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "getPassword",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "setPassword",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "getStatus",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "setStatus",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginTime",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "setLoginTime",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "getExpireTime",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "setExpireTime",
+          "line": 123,
+          "isDefault": false
+        },
+        {
+          "name": "getIpaddr",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "setIpaddr",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "getPermissions",
+          "line": 135,
+          "isDefault": false
+        },
+        {
+          "name": "setPermissions",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "getRoles",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "setRoles",
+          "line": 147,
+          "isDefault": false
+        },
+        {
+          "name": "getSysUser",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "setSysUser",
+          "line": 155,
+          "isDefault": false
+        },
+        {
+          "name": "LoginUser",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 23,
+        "functionCount": 22,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-user/src/main/java/com/spzx/user/api/RemoteUserAddressService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "RemoteUserAddressService",
+          "startLine": 13,
+          "endLine": 19,
+          "methods": [
+            "getUserAddress"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RemoteUserAddressService",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-user/src/main/java/com/spzx/user/api/RemoteUserInfoService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "RemoteUserInfoService",
+          "startLine": 15,
+          "endLine": 29,
+          "methods": [
+            "register",
+            "getUserInfo",
+            "updateUserLogin"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RemoteUserInfoService",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-api/spzx-api-user/src/main/java/com/spzx/user/api/factory/RemoteUserAddressFallbackFactory.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "create",
+          "startLine": 18,
+          "endLine": 28,
+          "params": [
+            "throwable"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RemoteUserAddressFallbackFactory",
+          "startLine": 14,
+          "endLine": 29,
+          "methods": [
+            "create"
+          ],
+          "properties": [
+            "log"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "create",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "RemoteUserAddressFallbackFactory",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "create",
+          "callee": "log.error",
+          "lineNumber": 20
+        },
+        {
+          "caller": "create",
+          "callee": "throwable.getMessage",
+          "lineNumber": 20
+        },
+        {
+          "caller": "create",
+          "callee": "new RemoteUserAddressService",
+          "lineNumber": 21
+        },
+        {
+          "caller": "getUserAddress",
+          "callee": "R.fail",
+          "lineNumber": 25
+        },
+        {
+          "caller": "getUserAddress",
+          "callee": "throwable.getMessage",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 1,
+  "filesSkipped": [
+    "spzx-modules/spzx-user/src/main/resources/banner.txt",
+    "spzx-modules/spzx-user/src/main/resources/logback.xml"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 1,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 1
+    }
+  },
+  "results": [
+    {
+      "path": "spzx-modules/spzx-user/src/main/resources/bootstrap.yml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 27,
+      "nonEmptyLines": 26,
+      "sections": [
+        {
+          "heading": "server",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "spring",
+          "level": 1,
+          "line": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    }
+  ]
+}

@@ -1,0 +1,966 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysMenuService.java",
+      "type": "file",
+      "name": "ISysMenuService.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysMenuService.java",
+      "summary": "系统菜单服务接口，定义菜单分页、权限标识、路由树、菜单管理(新增/修改/删除/唯一校验)等方法，供权限与菜单控制器调用。",
+      "tags": [
+        "service-interface",
+        "menu",
+        "rbac",
+        "api-handler"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysNoticeService.java",
+      "type": "file",
+      "name": "ISysNoticeService.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysNoticeService.java",
+      "summary": "系统通知公告服务接口，定义公告的查询、新增、修改、单删与批量删除方法。",
+      "tags": [
+        "service-interface",
+        "notice",
+        "crud",
+        "api-handler"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysOperLogService.java",
+      "type": "file",
+      "name": "ISysOperLogService.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysOperLogService.java",
+      "summary": "系统操作日志服务接口，定义操作日志的写入、分页查询、删除与清空方法。",
+      "tags": [
+        "service-interface",
+        "audit-log",
+        "api-handler",
+        "logging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPermissionService.java",
+      "type": "file",
+      "name": "ISysPermissionService.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPermissionService.java",
+      "summary": "系统权限服务接口，提供根据用户计算角色权限与菜单权限标识的方法，被鉴权模块使用。",
+      "tags": [
+        "service-interface",
+        "permission",
+        "rbac",
+        "authorization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPostService.java",
+      "type": "file",
+      "name": "ISysPostService.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPostService.java",
+      "summary": "系统岗位管理服务接口，定义岗位的分页、全部、按用户查询以及岗位新增/修改/删除与唯一性校验方法。",
+      "tags": [
+        "service-interface",
+        "post",
+        "crud",
+        "api-handler"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysRoleService.java",
+      "type": "file",
+      "name": "ISysRoleService.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysRoleService.java",
+      "summary": "系统角色管理服务接口，定义角色分页、用户角色关联、权限标识、数据权限以及角色的增删改与授权方法。",
+      "tags": [
+        "service-interface",
+        "role",
+        "rbac",
+        "authorization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserOnlineService.java",
+      "type": "file",
+      "name": "ISysUserOnlineService.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserOnlineService.java",
+      "summary": "系统在线用户服务接口，按IP、用户名、组合条件查询在线用户，并将登录用户对象转换为在线用户记录。",
+      "tags": [
+        "service-interface",
+        "online-user",
+        "monitoring",
+        "api-handler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserService.java",
+      "type": "file",
+      "name": "ISysUserService.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserService.java",
+      "summary": "系统用户管理服务接口，定义用户分页、已分配/未分配列表、用户信息、唯一性校验、注册以及用户新增/修改/删除/导入等方法。",
+      "tags": [
+        "service-interface",
+        "user",
+        "crud",
+        "api-handler"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java",
+      "type": "file",
+      "name": "SysConfigServiceImpl.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java",
+      "summary": "系统参数配置服务实现，提供参数的分页查询、按键查询(带Redis缓存)、增删改、缓存加载/清理/重置与唯一性校验。",
+      "tags": [
+        "service",
+        "config",
+        "redis-cache",
+        "crud"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "type": "file",
+      "name": "SysDeptServiceImpl.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "summary": "系统部门管理服务实现，提供部门树构建、按角色查询、数据范围校验、部门增删改与子节点更新等方法。",
+      "tags": [
+        "service",
+        "department",
+        "tree",
+        "rbac"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictDataServiceImpl.java",
+      "type": "file",
+      "name": "SysDictDataServiceImpl.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictDataServiceImpl.java",
+      "summary": "系统字典数据服务实现，提供字典数据的分页查询、标签取值、按类型缓存刷新以及字典数据增删改方法。",
+      "tags": [
+        "service",
+        "dictionary",
+        "redis-cache",
+        "crud"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java",
+      "type": "file",
+      "name": "SysDictTypeServiceImpl.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java",
+      "summary": "系统字典类型服务实现，提供字典类型分页/全部查询、按类型取数据(带缓存)、类型增删改、缓存刷新与唯一性校验。",
+      "tags": [
+        "service",
+        "dictionary",
+        "redis-cache",
+        "crud"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysLogininforServiceImpl.java",
+      "type": "file",
+      "name": "SysLogininforServiceImpl.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysLogininforServiceImpl.java",
+      "summary": "系统登录日志服务实现，提供登录日志的写入、分页查询、批量删除与清空方法。",
+      "tags": [
+        "service",
+        "login-log",
+        "logging",
+        "crud"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysMenuService.java:ISysMenuService",
+      "type": "class",
+      "name": "ISysMenuService",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysMenuService.java",
+      "lineRange": [
+        14,
+        144
+      ],
+      "summary": "菜单服务接口，声明菜单列表、权限标识、路由树、菜单管理等方法。",
+      "tags": [
+        "service-interface",
+        "menu",
+        "rbac"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysNoticeService.java:ISysNoticeService",
+      "type": "class",
+      "name": "ISysNoticeService",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysNoticeService.java",
+      "lineRange": [
+        11,
+        60
+      ],
+      "summary": "通知公告服务接口，声明公告查询与增删改方法。",
+      "tags": [
+        "service-interface",
+        "notice",
+        "crud"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysOperLogService.java:ISysOperLogService",
+      "type": "class",
+      "name": "ISysOperLogService",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysOperLogService.java",
+      "lineRange": [
+        11,
+        49
+      ],
+      "summary": "操作日志服务接口，声明日志写入、查询、删除、清空方法。",
+      "tags": [
+        "service-interface",
+        "audit-log",
+        "logging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPermissionService.java:ISysPermissionService",
+      "type": "class",
+      "name": "ISysPermissionService",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPermissionService.java",
+      "lineRange": [
+        12,
+        29
+      ],
+      "summary": "权限服务接口，声明角色权限与菜单权限聚合方法。",
+      "tags": [
+        "service-interface",
+        "permission",
+        "rbac"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPostService.java:ISysPostService",
+      "type": "class",
+      "name": "ISysPostService",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPostService.java",
+      "lineRange": [
+        11,
+        99
+      ],
+      "summary": "岗位服务接口，声明岗位查询、唯一性校验与增删改方法。",
+      "tags": [
+        "service-interface",
+        "post",
+        "crud"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysRoleService.java:ISysRoleService",
+      "type": "class",
+      "name": "ISysRoleService",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysRoleService.java",
+      "lineRange": [
+        13,
+        173
+      ],
+      "summary": "角色服务接口，声明角色查询、数据权限校验与授权方法。",
+      "tags": [
+        "service-interface",
+        "role",
+        "rbac"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserOnlineService.java:ISysUserOnlineService",
+      "type": "class",
+      "name": "ISysUserOnlineService",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserOnlineService.java",
+      "lineRange": [
+        11,
+        48
+      ],
+      "summary": "在线用户服务接口，声明在线用户查询与转换方法。",
+      "tags": [
+        "service-interface",
+        "online-user",
+        "monitoring"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserService.java:ISysUserService",
+      "type": "class",
+      "name": "ISysUserService",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserService.java",
+      "lineRange": [
+        12,
+        206
+      ],
+      "summary": "用户服务接口，声明用户查询、校验、注册与增删改导入方法。",
+      "tags": [
+        "service-interface",
+        "user",
+        "crud"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java:SysConfigServiceImpl",
+      "type": "class",
+      "name": "SysConfigServiceImpl",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java",
+      "lineRange": [
+        24,
+        192
+      ],
+      "summary": "参数配置服务实现，含Redis缓存读写与缓存刷新逻辑。",
+      "tags": [
+        "service",
+        "config",
+        "redis-cache"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:SysDeptServiceImpl",
+      "type": "class",
+      "name": "SysDeptServiceImpl",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "lineRange": [
+        30,
+        304
+      ],
+      "summary": "部门管理服务实现，包含树构建、数据范围校验与部门增删改。",
+      "tags": [
+        "service",
+        "department",
+        "tree",
+        "rbac"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictDataServiceImpl.java:SysDictDataServiceImpl",
+      "type": "class",
+      "name": "SysDictDataServiceImpl",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictDataServiceImpl.java",
+      "lineRange": [
+        17,
+        102
+      ],
+      "summary": "字典数据服务实现，负责字典数据查询与缓存刷新。",
+      "tags": [
+        "service",
+        "dictionary",
+        "redis-cache"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java:SysDictTypeServiceImpl",
+      "type": "class",
+      "name": "SysDictTypeServiceImpl",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java",
+      "lineRange": [
+        27,
+        202
+      ],
+      "summary": "字典类型服务实现，负责字典类型管理与缓存加载。",
+      "tags": [
+        "service",
+        "dictionary",
+        "redis-cache"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysLogininforServiceImpl.java:SysLogininforServiceImpl",
+      "type": "class",
+      "name": "SysLogininforServiceImpl",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysLogininforServiceImpl.java",
+      "lineRange": [
+        16,
+        61
+      ],
+      "summary": "登录日志服务实现，提供登录日志的写入、查询与清理。",
+      "tags": [
+        "service",
+        "login-log",
+        "logging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java:selectConfigByKey",
+      "type": "function",
+      "name": "selectConfigByKey",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java",
+      "lineRange": [
+        59,
+        73
+      ],
+      "summary": "根据参数键查询参数值，优先从Redis缓存读取，未命中则查库并写回缓存。",
+      "tags": [
+        "method",
+        "service",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java:updateConfig",
+      "type": "function",
+      "name": "updateConfig",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java",
+      "lineRange": [
+        107,
+        119
+      ],
+      "summary": "更新参数配置，若键名变更则清理旧缓存并刷新新值缓存。",
+      "tags": [
+        "method",
+        "service",
+        "config",
+        "cache"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java:deleteConfigByIds",
+      "type": "function",
+      "name": "deleteConfigByIds",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java",
+      "lineRange": [
+        126,
+        136
+      ],
+      "summary": "批量删除参数配置，校验内置参数权限并同步清理缓存。",
+      "tags": [
+        "method",
+        "service",
+        "cache"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:buildDeptTree",
+      "type": "function",
+      "name": "buildDeptTree",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "lineRange": [
+        68,
+        83
+      ],
+      "summary": "将扁平部门列表构建为父子部门树结构。",
+      "tags": [
+        "method",
+        "service",
+        "tree"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:checkDeptDataScope",
+      "type": "function",
+      "name": "checkDeptDataScope",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "lineRange": [
+        176,
+        186
+      ],
+      "summary": "校验当前用户对指定部门的操作数据范围。",
+      "tags": [
+        "method",
+        "service",
+        "rbac"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:insertDept",
+      "type": "function",
+      "name": "insertDept",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "lineRange": [
+        194,
+        203
+      ],
+      "summary": "新增部门，校验父部门状态并维护祖先路径。",
+      "tags": [
+        "method",
+        "service",
+        "crud"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:updateDept",
+      "type": "function",
+      "name": "updateDept",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "lineRange": [
+        211,
+        228
+      ],
+      "summary": "更新部门，处理父级变更、状态与祖先路径联动。",
+      "tags": [
+        "method",
+        "service",
+        "crud"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:recursionFn",
+      "type": "function",
+      "name": "recursionFn",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "lineRange": [
+        272,
+        281
+      ],
+      "summary": "递归地将子树组装到指定部门节点。",
+      "tags": [
+        "method",
+        "service",
+        "tree"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:getChildList",
+      "type": "function",
+      "name": "getChildList",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "lineRange": [
+        286,
+        296
+      ],
+      "summary": "查找指定部门的直接子部门列表。",
+      "tags": [
+        "method",
+        "service",
+        "tree"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java:selectDictDataByType",
+      "type": "function",
+      "name": "selectDictDataByType",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java",
+      "lineRange": [
+        70,
+        82
+      ],
+      "summary": "按字典类型查询字典数据，优先读缓存，未命中查库并刷新缓存。",
+      "tags": [
+        "method",
+        "service",
+        "dictionary",
+        "cache"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java:deleteDictTypeByIds",
+      "type": "function",
+      "name": "deleteDictTypeByIds",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java",
+      "lineRange": [
+        111,
+        121
+      ],
+      "summary": "批量删除字典类型，校验关联数据并清理缓存。",
+      "tags": [
+        "method",
+        "service",
+        "dictionary"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java:updateDictType",
+      "type": "function",
+      "name": "updateDictType",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java",
+      "lineRange": [
+        174,
+        185
+      ],
+      "summary": "更新字典类型，联动更新关联字典数据类型并刷新缓存。",
+      "tags": [
+        "method",
+        "service",
+        "dictionary"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysMenuService.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysMenuService.java:ISysMenuService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysNoticeService.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysNoticeService.java:ISysNoticeService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysOperLogService.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysOperLogService.java:ISysOperLogService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPermissionService.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPermissionService.java:ISysPermissionService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPostService.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPostService.java:ISysPostService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysRoleService.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysRoleService.java:ISysRoleService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserOnlineService.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserOnlineService.java:ISysUserOnlineService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserService.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserService.java:ISysUserService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java:SysConfigServiceImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:SysDeptServiceImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictDataServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictDataServiceImpl.java:SysDictDataServiceImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java:SysDictTypeServiceImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysLogininforServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysLogininforServiceImpl.java:SysLogininforServiceImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java:selectConfigByKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java:updateConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java:deleteConfigByIds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:buildDeptTree",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:checkDeptDataScope",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:insertDept",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:updateDept",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:recursionFn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:getChildList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java:selectDictDataByType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java:deleteDictTypeByIds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java:updateDictType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysMenuService.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysMenuService.java:ISysMenuService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysNoticeService.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysNoticeService.java:ISysNoticeService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysOperLogService.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysOperLogService.java:ISysOperLogService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPermissionService.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPermissionService.java:ISysPermissionService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPostService.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPostService.java:ISysPostService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysRoleService.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysRoleService.java:ISysRoleService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserOnlineService.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserOnlineService.java:ISysUserOnlineService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserService.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserService.java:ISysUserService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java:SysConfigServiceImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:SysDeptServiceImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictDataServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictDataServiceImpl.java:SysDictDataServiceImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java:SysDictTypeServiceImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysLogininforServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysLogininforServiceImpl.java:SysLogininforServiceImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java:selectConfigByKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java:updateConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java:deleteConfigByIds",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:buildDeptTree",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:checkDeptDataScope",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:insertDept",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:updateDept",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:recursionFn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java:getChildList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java:selectDictDataByType",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java:deleteDictTypeByIds",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java:updateDictType",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

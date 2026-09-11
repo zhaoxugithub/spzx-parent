@@ -1,0 +1,56 @@
+{
+  "nodes": [
+    {
+      "id": "document:spzx-modules/spzx-payment/src/main/resources/banner.txt",
+      "type": "document",
+      "name": "banner.txt",
+      "filePath": "spzx-modules/spzx-payment/src/main/resources/banner.txt",
+      "summary": "spzx-payment 服务启动时在控制台打印的 Spring Boot ASCII 艺术横幅,内含 Spring Boot 版本与应用名称占位符。",
+      "tags": ["documentation", "startup", "spring-boot", "banner"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-payment/src/main/resources/bootstrap.yml",
+      "type": "config",
+      "name": "bootstrap.yml",
+      "filePath": "spzx-modules/spzx-payment/src/main/resources/bootstrap.yml",
+      "summary": "spzx-payment 支付服务的启动引导配置,声明应用名称 spzx-payment、端口 9210、dev 环境,配置 Nacos 服务注册与配置中心地址,并引入共享的 application-dev.yml 配置。",
+      "tags": ["configuration", "nacos", "microservice", "spring-cloud", "service-registry"],
+      "complexity": "simple",
+      "languageNotes": "YAML 配置文件,通过 Nacos 完成服务发现与配置拉取,并共享 dev 环境配置。"
+    },
+    {
+      "id": "config:spzx-modules/spzx-payment/src/main/resources/logback.xml",
+      "type": "config",
+      "name": "logback.xml",
+      "filePath": "spzx-modules/spzx-payment/src/main/resources/logback.xml",
+      "summary": "spzx-payment 服务的日志配置,控制台与按时间滚动文件(info/error)双路输出,日志模式内嵌 traceId,历史保留 60 天,并设置 com.spzx 与 Spring 框架的日志级别。",
+      "tags": ["configuration", "logging", "logback", "monitoring"],
+      "complexity": "moderate",
+      "languageNotes": "使用 LevelFilter 将 INFO 与 ERROR 分离到不同滚动文件,格式化模式内嵌 traceId 以便全链路追踪。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:spzx-modules/spzx-payment/src/main/resources/bootstrap.yml",
+      "target": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-modules/spzx-payment/src/main/resources/logback.xml",
+      "target": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:spzx-modules/spzx-payment/src/main/resources/banner.txt",
+      "target": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

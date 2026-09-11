@@ -1,0 +1,13 @@
+{
+  "projectRoot": "C:\\Users\\11931\\IdeaProjects\\spzx-parent",
+  "batchFiles": [
+    {"path": "CLAUDE.md", "language": "markdown", "sizeLines": 144, "fileCategory": "docs"},
+    {"path": "README.md", "language": "markdown", "sizeLines": 131, "fileCategory": "docs"},
+    {"path": "pom.xml", "language": "xml", "sizeLines": 360, "fileCategory": "config"}
+  ],
+  "batchImportData": {
+    "CLAUDE.md": [],
+    "README.md": [],
+    "pom.xml": []
+  }
+}

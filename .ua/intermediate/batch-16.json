@@ -1,0 +1,47 @@
+{
+  "nodes": [
+    {
+      "id": "document:spzx-modules/spzx-user/src/main/resources/banner.txt",
+      "type": "document",
+      "name": "banner.txt",
+      "filePath": "spzx-modules/spzx-user/src/main/resources/banner.txt",
+      "summary": "spzx-user 服务的 Spring Boot 启动横幅(banner),包含应用名与版本占位符及 ASCII 图形,用于控制台启动时展示。",
+      "tags": ["banner", "documentation", "spring-boot", "startup"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-user/src/main/resources/bootstrap.yml",
+      "type": "config",
+      "name": "bootstrap.yml",
+      "filePath": "spzx-modules/spzx-user/src/main/resources/bootstrap.yml",
+      "summary": "spzx-user 服务的 Spring Cloud 启动配置(bootstrap),设置端口 9206、应用名 spzx-user,并接入 Nacos 服务注册与配置中心,从 Nacos 拉取共享 application-dev.yml 配置。",
+      "tags": ["configuration", "spring-cloud", "nacos", "bootstrap", "service-discovery"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-user/src/main/resources/logback.xml",
+      "type": "config",
+      "name": "logback.xml",
+      "filePath": "spzx-modules/spzx-user/src/main/resources/logback.xml",
+      "summary": "spzx-user 服务的 Logback 日志配置,包含控制台与按天滚动的 info/error 文件输出,日志格式携带 traceId,并设置 com.spzx 与 Spring 的日志级别。",
+      "tags": ["configuration", "logging", "logback", "monitoring"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:spzx-modules/spzx-user/src/main/resources/bootstrap.yml",
+      "target": "file:spzx-modules/spzx-user/src/main/java/com/spzx/user/SpzxUserApplication.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-modules/spzx-user/src/main/resources/logback.xml",
+      "target": "file:spzx-modules/spzx-user/src/main/java/com/spzx/user/SpzxUserApplication.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

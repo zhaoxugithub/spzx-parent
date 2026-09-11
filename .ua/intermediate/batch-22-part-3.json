@@ -1,0 +1,1297 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileTypeUtils.java",
+      "type": "file",
+      "name": "FileTypeUtils.java",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileTypeUtils.java",
+      "summary": "文件类型判断工具类，按文件名后缀识别文件类型。",
+      "tags": [
+        "utility",
+        "file",
+        "mime"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileTypeUtils.java:FileTypeUtils",
+      "type": "class",
+      "name": "FileTypeUtils",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileTypeUtils.java",
+      "lineRange": [
+        14,
+        95
+      ],
+      "summary": "文件类型工具，根据扩展名判断图片等文件类别。",
+      "tags": [
+        "utility",
+        "file",
+        "mime"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileTypeUtils.java:getFileExtendName",
+      "type": "function",
+      "name": "getFileExtendName",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileTypeUtils.java",
+      "lineRange": [
+        73,
+        94
+      ],
+      "summary": "获取文件扩展名并做小写与长度校验。",
+      "tags": [
+        "utility",
+        "file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "type": "file",
+      "name": "FileUtils.java",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "summary": "文件工具类，提供写入、删除、下载响应头与文件名处理。",
+      "tags": [
+        "utility",
+        "file",
+        "download"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java:FileUtils",
+      "type": "class",
+      "name": "FileUtils",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "lineRange": [
+        21,
+        253
+      ],
+      "summary": "文件工具，封装字节写入、删除与下载头设置。",
+      "tags": [
+        "utility",
+        "file",
+        "download"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java:writeBytes",
+      "type": "function",
+      "name": "writeBytes",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "lineRange": [
+        38,
+        85
+      ],
+      "summary": "将字节写入文件并校验目录与文件名。",
+      "tags": [
+        "utility",
+        "file",
+        "io"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java:deleteFile",
+      "type": "function",
+      "name": "deleteFile",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "lineRange": [
+        93,
+        103
+      ],
+      "summary": "删除指定文件。",
+      "tags": [
+        "utility",
+        "file",
+        "io"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java:setFileDownloadHeader",
+      "type": "function",
+      "name": "setFileDownloadHeader",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "lineRange": [
+        140,
+        166
+      ],
+      "summary": "设置文件下载响应头并处理中文文件名。",
+      "tags": [
+        "utility",
+        "file",
+        "http",
+        "download"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java:getName",
+      "type": "function",
+      "name": "getName",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "lineRange": [
+        174,
+        205
+      ],
+      "summary": "从请求或路径解析文件名并校验目录穿越。",
+      "tags": [
+        "utility",
+        "file",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java:setAttachmentResponseHeader",
+      "type": "function",
+      "name": "setAttachmentResponseHeader",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "lineRange": [
+        226,
+        240
+      ],
+      "summary": "设置附件下载响应头。",
+      "tags": [
+        "utility",
+        "file",
+        "http"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java",
+      "type": "file",
+      "name": "ImageUtils.java",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java",
+      "summary": "图片读取工具类，将网络图片读取为字节并转为输入流。",
+      "tags": [
+        "utility",
+        "image",
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java:ImageUtils",
+      "type": "class",
+      "name": "ImageUtils",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java",
+      "lineRange": [
+        17,
+        84
+      ],
+      "summary": "图片工具，通过 URL 读取远程图片数据。",
+      "tags": [
+        "utility",
+        "image",
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java:getImage",
+      "type": "function",
+      "name": "getImage",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java",
+      "lineRange": [
+        21,
+        37
+      ],
+      "summary": "读取图片 URL 并返回字节数组。",
+      "tags": [
+        "utility",
+        "image",
+        "io"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java:getFile",
+      "type": "function",
+      "name": "getFile",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java",
+      "lineRange": [
+        39,
+        52
+      ],
+      "summary": "将图片字节转换为输入流。",
+      "tags": [
+        "utility",
+        "image",
+        "io"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java:readFile",
+      "type": "function",
+      "name": "readFile",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java",
+      "lineRange": [
+        60,
+        83
+      ],
+      "summary": "通过 URL 连接读取图片流为字节。",
+      "tags": [
+        "utility",
+        "image",
+        "http"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/MimeTypeUtils.java",
+      "type": "file",
+      "name": "MimeTypeUtils.java",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/MimeTypeUtils.java",
+      "summary": "MIME 类型扩展名工具类，定义常用图片与媒体扩展名。",
+      "tags": [
+        "utility",
+        "mime",
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/MimeTypeUtils.java:MimeTypeUtils",
+      "type": "class",
+      "name": "MimeTypeUtils",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/MimeTypeUtils.java",
+      "lineRange": [
+        8,
+        59
+      ],
+      "summary": "MIME 工具，集中维护常见图片/媒体扩展名常量并判定扩展名。",
+      "tags": [
+        "utility",
+        "mime",
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/MimeTypeUtils.java:getExtension",
+      "type": "function",
+      "name": "getExtension",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/MimeTypeUtils.java",
+      "lineRange": [
+        41,
+        58
+      ],
+      "summary": "根据文件扩展名判定所属媒体类型。",
+      "tags": [
+        "utility",
+        "mime",
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java",
+      "type": "file",
+      "name": "EscapeUtil.java",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java",
+      "summary": "HTML 转义工具类，对 HTML 特殊字符进行转义与还原。",
+      "tags": [
+        "utility",
+        "html",
+        "security",
+        "escaping"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java:EscapeUtil",
+      "type": "class",
+      "name": "EscapeUtil",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java",
+      "lineRange": [
+        10,
+        167
+      ],
+      "summary": "HTML 转义工具，实现逻辑字符到 HTML 实体的双向转换。",
+      "tags": [
+        "utility",
+        "html",
+        "security",
+        "escaping"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java:encode",
+      "type": "function",
+      "name": "encode",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java",
+      "lineRange": [
+        70,
+        103
+      ],
+      "summary": "将字符串中的 HTML 敏感字符转义为实体。",
+      "tags": [
+        "utility",
+        "html",
+        "escaping",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java:decode",
+      "type": "function",
+      "name": "decode",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java",
+      "lineRange": [
+        111,
+        154
+      ],
+      "summary": "将 HTML 实体还原为原始字符。",
+      "tags": [
+        "utility",
+        "html",
+        "escaping"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "type": "file",
+      "name": "HTMLFilter.java",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "summary": "HTML 过滤器，通过标签与属性白名单过滤危险内容以防御 XSS。",
+      "tags": [
+        "security",
+        "html",
+        "filter",
+        "sanitization"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:HTMLFilter",
+      "type": "class",
+      "name": "HTMLFilter",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "lineRange": [
+        18,
+        570
+      ],
+      "summary": "HTML 净化器，基于白名单校验标签、属性与协议。",
+      "tags": [
+        "security",
+        "html",
+        "sanitization"
+      ],
+      "complexity": "complex",
+      "languageNotes": "移植自 OWASP HTML Filter，使用正则状态机逐字符解析并白名单过滤。"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:filter",
+      "type": "function",
+      "name": "filter",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "lineRange": [
+        198,
+        214
+      ],
+      "summary": "对外过滤入口，校验并清理输入 HTML。",
+      "tags": [
+        "security",
+        "html",
+        "filter"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:escapeComments",
+      "type": "function",
+      "name": "escapeComments",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "lineRange": [
+        226,
+        238
+      ],
+      "summary": "转义 HTML 注释内容。",
+      "tags": [
+        "security",
+        "html"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:balanceHTML",
+      "type": "function",
+      "name": "balanceHTML",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "lineRange": [
+        240,
+        270
+      ],
+      "summary": "校正标签配对与空白以规范 HTML。",
+      "tags": [
+        "security",
+        "html"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:checkTags",
+      "type": "function",
+      "name": "checkTags",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "lineRange": [
+        272,
+        298
+      ],
+      "summary": "检查并修正标签结构。",
+      "tags": [
+        "security",
+        "html"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:processRemoveBlanks",
+      "type": "function",
+      "name": "processRemoveBlanks",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "lineRange": [
+        300,
+        318
+      ],
+      "summary": "移除非必要的空白与空标签。",
+      "tags": [
+        "security",
+        "html"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:processTag",
+      "type": "function",
+      "name": "processTag",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "lineRange": [
+        326,
+        435
+      ],
+      "summary": "处理单个标签，校验其属性与协议。",
+      "tags": [
+        "security",
+        "html",
+        "sanitization"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:processParamProtocol",
+      "type": "function",
+      "name": "processParamProtocol",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "lineRange": [
+        437,
+        456
+      ],
+      "summary": "校验属性值中的危险协议。",
+      "tags": [
+        "security",
+        "html"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:decodeEntities",
+      "type": "function",
+      "name": "decodeEntities",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "lineRange": [
+        458,
+        496
+      ],
+      "summary": "解码字符实体与 Unicode 实体。",
+      "tags": [
+        "security",
+        "html"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:validateEntities",
+      "type": "function",
+      "name": "validateEntities",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "lineRange": [
+        498,
+        513
+      ],
+      "summary": "校验并保留合法字符实体。",
+      "tags": [
+        "security",
+        "html"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:encodeQuotes",
+      "type": "function",
+      "name": "encodeQuotes",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "lineRange": [
+        515,
+        536
+      ],
+      "summary": "编码属性引号防止注入。",
+      "tags": [
+        "security",
+        "html"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:inArray",
+      "type": "function",
+      "name": "inArray",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "lineRange": [
+        549,
+        559
+      ],
+      "summary": "判断字符串是否存在于数组中。",
+      "tags": [
+        "security",
+        "html"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "type": "file",
+      "name": "IpUtils.java",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "summary": "IP 工具类，获取客户端真实 IP、校验内网地址并按白名单匹配。",
+      "tags": [
+        "utility",
+        "ip",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:IpUtils",
+      "type": "class",
+      "name": "IpUtils",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "lineRange": [
+        14,
+        382
+      ],
+      "summary": "IP 工具，解析多级反向代理 IP 并支持通配与网段匹配。",
+      "tags": [
+        "utility",
+        "ip",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:getIpAddr",
+      "type": "function",
+      "name": "getIpAddr",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "lineRange": [
+        39,
+        69
+      ],
+      "summary": "从请求头逐级解析客户端真实 IP 地址。",
+      "tags": [
+        "utility",
+        "ip",
+        "http"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:internalIp",
+      "type": "function",
+      "name": "internalIp",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "lineRange": [
+        89,
+        124
+      ],
+      "summary": "判断 IP 是否为内网私有地址。",
+      "tags": [
+        "utility",
+        "ip",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:textToNumericFormatV4",
+      "type": "function",
+      "name": "textToNumericFormatV4",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "lineRange": [
+        132,
+        212
+      ],
+      "summary": "将 IPv4 文本转换为整数形式便于比较。",
+      "tags": [
+        "utility",
+        "ip"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:getHostIp",
+      "type": "function",
+      "name": "getHostIp",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "lineRange": [
+        219,
+        229
+      ],
+      "summary": "获取本机主机 IP。",
+      "tags": [
+        "utility",
+        "ip"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:getHostName",
+      "type": "function",
+      "name": "getHostName",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "lineRange": [
+        236,
+        246
+      ],
+      "summary": "获取本机主机名。",
+      "tags": [
+        "utility",
+        "ip"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:getMultistageReverseProxyIp",
+      "type": "function",
+      "name": "getMultistageReverseProxyIp",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "lineRange": [
+        254,
+        270
+      ],
+      "summary": "从多级代理链中解析初始客户端 IP。",
+      "tags": [
+        "utility",
+        "ip"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:ipIsInWildCardNoCheck",
+      "type": "function",
+      "name": "ipIsInWildCardNoCheck",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "lineRange": [
+        302,
+        316
+      ],
+      "summary": "判断 IP 是否匹配通配符形式。",
+      "tags": [
+        "utility",
+        "ip"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:ipIsInNetNoCheck",
+      "type": "function",
+      "name": "ipIsInNetNoCheck",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "lineRange": [
+        329,
+        349
+      ],
+      "summary": "判断 IP 是否落在指定网段。",
+      "tags": [
+        "utility",
+        "ip",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:isMatchedIp",
+      "type": "function",
+      "name": "isMatchedIp",
+      "filePath": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "lineRange": [
+        358,
+        381
+      ],
+      "summary": "按白名单规则判断 IP 是否匹配。",
+      "tags": [
+        "utility",
+        "ip",
+        "security"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileTypeUtils.java",
+      "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileTypeUtils.java:FileTypeUtils",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileTypeUtils.java",
+      "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileTypeUtils.java:FileTypeUtils",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileTypeUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileTypeUtils.java:getFileExtendName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileTypeUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileTypeUtils.java:getFileExtendName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java:FileUtils",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java:FileUtils",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java:writeBytes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java:writeBytes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java:deleteFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java:deleteFile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java:setFileDownloadHeader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java:setFileDownloadHeader",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java:getName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java:getName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java:setAttachmentResponseHeader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java:setAttachmentResponseHeader",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java",
+      "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java:ImageUtils",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java",
+      "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java:ImageUtils",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java:getImage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java:getImage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java:getFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java:getFile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java:readFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java:readFile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/MimeTypeUtils.java",
+      "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/MimeTypeUtils.java:MimeTypeUtils",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/MimeTypeUtils.java",
+      "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/MimeTypeUtils.java:MimeTypeUtils",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/MimeTypeUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/MimeTypeUtils.java:getExtension",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/MimeTypeUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/MimeTypeUtils.java:getExtension",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java",
+      "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java:EscapeUtil",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java",
+      "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java:EscapeUtil",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java:encode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java:encode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java:decode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java:decode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:HTMLFilter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:HTMLFilter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:filter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:filter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:escapeComments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:escapeComments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:balanceHTML",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:balanceHTML",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:checkTags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:checkTags",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:processRemoveBlanks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:processRemoveBlanks",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:processTag",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:processTag",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:processParamProtocol",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:processParamProtocol",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:decodeEntities",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:decodeEntities",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:validateEntities",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:validateEntities",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:encodeQuotes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:encodeQuotes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:inArray",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java:inArray",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:IpUtils",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "class:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:IpUtils",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:getIpAddr",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:getIpAddr",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:internalIp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:internalIp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:textToNumericFormatV4",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:textToNumericFormatV4",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:getHostIp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:getHostIp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:getHostName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:getHostName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:getMultistageReverseProxyIp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:getMultistageReverseProxyIp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:ipIsInWildCardNoCheck",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:ipIsInWildCardNoCheck",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:ipIsInNetNoCheck",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:ipIsInNetNoCheck",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:isMatchedIp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "target": "function:spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java:isMatchedIp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "projectRoot": "C:\\Users\\11931\\IdeaProjects\\spzx-parent",
+  "batchFiles": [
+    {"path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/ISysFileService.java", "language": "java", "sizeLines": 20, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/LocalSysFileServiceImpl.java", "language": "java", "sizeLines": 50, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/MinioSysFileServiceImpl.java", "language": "java", "sizeLines": 49, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java", "language": "java", "sizeLines": 185, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-gen/pom.xml", "language": "xml", "sizeLines": 81, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/SpzxGenApplication.java", "language": "java", "sizeLines": 32, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/config/GenConfig.java", "language": "java", "sizeLines": 66, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/controller/GenController.java", "language": "java", "sizeLines": 211, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/domain/GenTable.java", "language": "java", "sizeLines": 383, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/domain/GenTableColumn.java", "language": "java", "sizeLines": 374, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/mapper/GenTableColumnMapper.java", "language": "java", "sizeLines": 60, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/mapper/GenTableMapper.java", "language": "java", "sizeLines": 83, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableColumnServiceImpl.java", "language": "java", "sizeLines": 68, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java", "language": "java", "sizeLines": 521, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableColumnService.java", "language": "java", "sizeLines": 44, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableService.java", "language": "java", "sizeLines": 121, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java", "language": "java", "sizeLines": 258, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityInitializer.java", "language": "java", "sizeLines": 34, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java", "language": "java", "sizeLines": 408, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-gen/src/main/resources/mapper/generator/GenTableColumnMapper.xml", "language": "xml", "sizeLines": 127, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-gen/src/main/resources/mapper/generator/GenTableMapper.xml", "language": "xml", "sizeLines": 206, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-gen/src/main/resources/vm/java/controller.java.vm", "language": "vm", "sizeLines": 125, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-gen/src/main/resources/vm/java/domain.java.vm", "language": "vm", "sizeLines": 63, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-gen/src/main/resources/vm/java/mapper.java.vm", "language": "vm", "sizeLines": 27, "fileCategory": "code"},
+    {"path": "spzx-modules/spzx-gen/src/main/resources/vm/java/service.java.vm", "language": "vm", "sizeLines": 24, "fileCategory": "code"}
+  ],
+  "batchImportData": {}
+}

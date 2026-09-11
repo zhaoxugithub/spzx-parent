@@ -1,0 +1,36 @@
+# Understand-Anything ignore rules — scoped to SPZX backend Java core.
+# Exclude the Vue/admin frontend (spzx-ui), docs, docker infra, logs, and
+# build/generated/noise files. Keep the microservice Java sources, shared
+# modules, Feign api, gateway, auth, and visual/monitor.
+
+# --- frontend / non-backend ---
+spzx-ui/
+
+# --- docs / diagrams / deploy / logs (noise for a code graph) ---
+doc/
+docker/
+logs/
+bin/
+*.svg
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.zip
+*.log
+
+# --- build / generated / IDE ---
+node_modules/
+target/
+dist/
+build/
+.idea/
+*.iml
+*.class
+*.jar
+*.war
+
+# --- tools / scratch ---
+seq.json
+*.pyc
+__pycache__/

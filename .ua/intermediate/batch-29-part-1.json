@@ -1,0 +1,435 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/resources/vm/java/sub-domain.java.vm",
+      "type": "file",
+      "name": "sub-domain.java.vm",
+      "filePath": "spzx-modules/spzx-gen/src/main/resources/vm/java/sub-domain.java.vm",
+      "summary": "代码生成器的子域(值对象)Java 模板,用于为业务子模块生成领域对象类。",
+      "tags": ["codegen", "template", "velocity", "java"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/resources/vm/java/serviceImpl.java.vm",
+      "type": "file",
+      "name": "serviceImpl.java.vm",
+      "filePath": "spzx-modules/spzx-gen/src/main/resources/vm/java/serviceImpl.java.vm",
+      "summary": "代码生成器的 Service 接口实现类 Velocity 模板,为业务模块生成 Service 实现代码。",
+      "tags": ["codegen", "template", "velocity", "service"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/resources/vm/js/api.js.vm",
+      "type": "file",
+      "name": "api.js.vm",
+      "filePath": "spzx-modules/spzx-gen/src/main/resources/vm/js/api.js.vm",
+      "summary": "代码生成器的前端 API 请求 JS 模板,生成对接后端接口的前端调用代码。",
+      "tags": ["codegen", "template", "velocity", "api", "frontend"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/resources/vm/sql/sql.vm",
+      "type": "file",
+      "name": "sql.vm",
+      "filePath": "spzx-modules/spzx-gen/src/main/resources/vm/sql/sql.vm",
+      "summary": "代码生成器的 SQL 脚本模板,生成建表或业务数据初始化语句。",
+      "tags": ["codegen", "template", "velocity", "sql"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/resources/vm/vue/index-tree.vue.vm",
+      "type": "file",
+      "name": "index-tree.vue.vm",
+      "filePath": "spzx-modules/spzx-gen/src/main/resources/vm/vue/index-tree.vue.vm",
+      "summary": "代码生成器的 Vue(Element UI)树型页面模板,生成带树形表格的列表管理页面。",
+      "tags": ["codegen", "template", "velocity", "vue", "tree"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/resources/vm/vue/index.vue.vm",
+      "type": "file",
+      "name": "index.vue.vm",
+      "filePath": "spzx-modules/spzx-gen/src/main/resources/vm/vue/index.vue.vm",
+      "summary": "代码生成器的 Vue(Element UI)列表页模板,生成带分页查询的列表管理页面。",
+      "tags": ["codegen", "template", "velocity", "vue", "crud"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/resources/vm/vue/v3/index-tree.vue.vm",
+      "type": "file",
+      "name": "index-tree.vue.vm",
+      "filePath": "spzx-modules/spzx-gen/src/main/resources/vm/vue/v3/index-tree.vue.vm",
+      "summary": "代码生成器的 Vue3 树型页面模板,生成基于组合式 API 的树形管理页面。",
+      "tags": ["codegen", "template", "velocity", "vue3", "tree"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/resources/vm/vue/v3/index.vue.vm",
+      "type": "file",
+      "name": "index.vue.vm",
+      "filePath": "spzx-modules/spzx-gen/src/main/resources/vm/vue/v3/index.vue.vm",
+      "summary": "代码生成器的 Vue3 列表页模板,生成基于组合式 API 的列表管理页面。",
+      "tags": ["codegen", "template", "velocity", "vue3", "crud"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/resources/vm/xml/mapper.xml.vm",
+      "type": "file",
+      "name": "mapper.xml.vm",
+      "filePath": "spzx-modules/spzx-gen/src/main/resources/vm/xml/mapper.xml.vm",
+      "summary": "代码生成器的 MyBatis Mapper XML 模板,生成对应实体的数据库访问 SQL 映射。",
+      "tags": ["codegen", "template", "velocity", "mybatis"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-job/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-modules/spzx-job/pom.xml",
+      "summary": "定时任务模块 spzx-job 的 Maven 构建配置,声明 Quartz 调度、MyBatis 及通用模块等依赖。",
+      "tags": ["configuration", "maven", "build-system", "job"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/SpzxJobApplication.java",
+      "type": "file",
+      "name": "SpzxJobApplication.java",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/SpzxJobApplication.java",
+      "summary": "spzx-job 定时任务服务的 Spring Boot 启动类,负责初始化并运行整个调度应用。",
+      "tags": ["entry-point", "spring-boot", "application", "job"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/SpzxJobApplication.java:SpzxJobApplication",
+      "type": "class",
+      "name": "SpzxJobApplication",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/SpzxJobApplication.java",
+      "lineRange": [13, 32],
+      "summary": "定时任务服务的主应用类,通过 @SpringBootApplication 引导 Spring 上下文并启动调度服务。",
+      "tags": ["entry-point", "spring-boot", "application"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/SpzxJobApplication.java:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/SpzxJobApplication.java",
+      "lineRange": [18, 31],
+      "summary": "应用入口方法,调用 SpringApplication.run 启动定时任务服务。",
+      "tags": ["entry-point", "bootstrap"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/config/ScheduleConfig.java",
+      "type": "file",
+      "name": "ScheduleConfig.java",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/config/ScheduleConfig.java",
+      "summary": "定时任务的调度配置类,创建并定制基于数据源的 Quartz SchedulerFactoryBean。",
+      "tags": ["config", "scheduler", "quartz", "spring-bean"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/config/ScheduleConfig.java:ScheduleConfig",
+      "type": "class",
+      "name": "ScheduleConfig",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/config/ScheduleConfig.java",
+      "lineRange": [14, 57],
+      "summary": "调度器配置类,装配 Quartz SchedulerFactoryBean 与数据源、集群及调度行为相关属性。",
+      "tags": ["config", "scheduler", "quartz"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/config/ScheduleConfig.java:schedulerFactoryBean",
+      "type": "function",
+      "name": "schedulerFactoryBean",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/config/ScheduleConfig.java",
+      "lineRange": [17, 56],
+      "summary": "创建 Quartz 调度器工厂 Bean,设置数据源、集群与调度器行为相关属性。",
+      "tags": ["config", "scheduler", "bean-factory"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "type": "file",
+      "name": "SysJobController.java",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "summary": "定时任务管理控制器,提供任务的列表、新增、编辑、启停、执行和删除等 REST 接口。",
+      "tags": ["api-handler", "controller", "scheduler", "job"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:SysJobController",
+      "type": "class",
+      "name": "SysJobController",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "lineRange": [37, 156],
+      "summary": "定时任务 REST 控制器,基于 ISysJobService 暴露任务的增删改查与运行控制接口。",
+      "tags": ["api-handler", "controller", "scheduler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:list",
+      "type": "function",
+      "name": "list",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "lineRange": [46, 52],
+      "summary": "分页查询定时任务列表接口,返回任务数据表。",
+      "tags": ["api-handler", "read", "scheduler"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:export",
+      "type": "function",
+      "name": "export",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "lineRange": [57, 64],
+      "summary": "导出定时任务列表到 Excel 文件。",
+      "tags": ["api-handler", "export", "excel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:getInfo",
+      "type": "function",
+      "name": "getInfo",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "lineRange": [69, 73],
+      "summary": "按 ID 查询定时任务详情接口。",
+      "tags": ["api-handler", "read", "scheduler"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:add",
+      "type": "function",
+      "name": "add",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "lineRange": [78, 97],
+      "summary": "新增定时任务,校验 cron 表达式与调用目标白名单后保存并调度。",
+      "tags": ["api-handler", "create", "validation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:edit",
+      "type": "function",
+      "name": "edit",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "lineRange": [102, 121],
+      "summary": "编辑定时任务,校验 cron 与调用目标后更新任务并重排调度。",
+      "tags": ["api-handler", "update", "validation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:changeStatus",
+      "type": "function",
+      "name": "changeStatus",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "lineRange": [126, 133],
+      "summary": "切换定时任务的启用/暂停状态接口。",
+      "tags": ["api-handler", "update", "scheduler"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:run",
+      "type": "function",
+      "name": "run",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "lineRange": [138, 144],
+      "summary": "手动触发一次定时任务立即执行。",
+      "tags": ["api-handler", "trigger", "scheduler"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:remove",
+      "type": "function",
+      "name": "remove",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "lineRange": [149, 155],
+      "summary": "按 ID 批量删除定时任务接口。",
+      "tags": ["api-handler", "delete", "scheduler"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/SpzxJobApplication.java",
+      "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/SpzxJobApplication.java:SpzxJobApplication",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/SpzxJobApplication.java",
+      "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/SpzxJobApplication.java:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/SpzxJobApplication.java",
+      "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/SpzxJobApplication.java:SpzxJobApplication",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/config/ScheduleConfig.java",
+      "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/config/ScheduleConfig.java:ScheduleConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/config/ScheduleConfig.java",
+      "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/config/ScheduleConfig.java:schedulerFactoryBean",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/config/ScheduleConfig.java",
+      "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/config/ScheduleConfig.java:ScheduleConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:SysJobController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:SysJobController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:list",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:export",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:getInfo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:add",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:edit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:changeStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:remove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:list",
+      "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/service/ISysJobService.java:ISysJobService",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:export",
+      "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/service/ISysJobService.java:ISysJobService",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:getInfo",
+      "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/service/ISysJobService.java:ISysJobService",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:add",
+      "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/service/ISysJobService.java:ISysJobService",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:edit",
+      "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/service/ISysJobService.java:ISysJobService",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:changeStatus",
+      "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/service/ISysJobService.java:ISysJobService",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:run",
+      "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/service/ISysJobService.java:ISysJobService",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:remove",
+      "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/service/ISysJobService.java:ISysJobService",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:add",
+      "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/CronUtils.java:isValid",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java:edit",
+      "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/CronUtils.java:isValid",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

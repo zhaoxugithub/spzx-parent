@@ -1,0 +1,423 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysPostController.java",
+      "type": "file",
+      "name": "SysPostController.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysPostController.java",
+      "summary": "系统岗位管理 REST 控制器，提供岗位列表/导出/详情/新增/编辑/删除及下拉选项接口。",
+      "tags": ["api-handler", "controller", "rest", "post"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java",
+      "type": "file",
+      "name": "SysProfileController.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java",
+      "summary": "个人中心 REST 控制器，提供个人信息查询、资料更新、密码修改与头像上传接口。",
+      "tags": ["api-handler", "controller", "rest", "profile"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysRoleController.java",
+      "type": "file",
+      "name": "SysRoleController.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysRoleController.java",
+      "summary": "系统角色管理 REST 控制器，提供角色列表/导出/详情/新增/编辑/数据权限/状态变更及用户授权接口。",
+      "tags": ["api-handler", "controller", "rest", "rbac"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java",
+      "type": "file",
+      "name": "SysUserController.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java",
+      "summary": "系统用户管理 REST 控制器，提供用户列表/导出/导入/详情/新增/编辑/删除及角色分配等接口。",
+      "tags": ["api-handler", "controller", "rest", "user", "rbac"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserOnlineController.java",
+      "type": "file",
+      "name": "SysUserOnlineController.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserOnlineController.java",
+      "summary": "在线用户管理 REST 控制器，提供在线用户列表查询与强制下线接口（基于 Redis 会话）。",
+      "tags": ["api-handler", "controller", "rest", "monitor"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysConfig.java",
+      "type": "file",
+      "name": "SysConfig.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysConfig.java",
+      "summary": "系统参数配置实体类，映射 sys_config 表字段并提供 getter/setter 与 toString。",
+      "tags": ["data-model", "entity", "domain"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysMenu.java",
+      "type": "file",
+      "name": "SysMenu.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysMenu.java",
+      "summary": "系统菜单实体类，映射 sys_menu 表字段，含树形父子关系、路由组件与权限标识。",
+      "tags": ["data-model", "entity", "domain", "tree"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysNotice.java",
+      "type": "file",
+      "name": "SysNotice.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysNotice.java",
+      "summary": "系统通知公告实体类，映射 sys_notice 表字段（标题/类型/内容/状态）。",
+      "tags": ["data-model", "entity", "domain"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysPost.java",
+      "type": "file",
+      "name": "SysPost.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysPost.java",
+      "summary": "系统岗位实体类，映射 sys_post 表字段（岗位编码/名称/排序/状态）。",
+      "tags": ["data-model", "entity", "domain"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleDept.java",
+      "type": "file",
+      "name": "SysRoleDept.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleDept.java",
+      "summary": "角色-部门关联实体类，映射 sys_role_dept 关联表（roleId, deptId）。",
+      "tags": ["data-model", "entity", "junction"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleMenu.java",
+      "type": "file",
+      "name": "SysRoleMenu.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleMenu.java",
+      "summary": "角色-菜单关联实体类，映射 sys_role_menu 关联表（roleId, menuId）。",
+      "tags": ["data-model", "entity", "junction"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysUserOnline.java",
+      "type": "file",
+      "name": "SysUserOnline.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysUserOnline.java",
+      "summary": "在线用户会话模型类，用于展示 Redis 会话中的在线用户信息（token/IP/浏览器/系统/登录时间）。",
+      "tags": ["data-model", "entity", "monitor", "session"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysPostController.java:SysPostController",
+      "type": "class",
+      "name": "SysPostController",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysPostController.java",
+      "lineRange": [32, 117],
+      "summary": "系统岗位 REST 控制器，管理岗位的增删改查与下拉选项。",
+      "tags": ["controller", "rest", "post"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java:SysProfileController",
+      "type": "class",
+      "name": "SysProfileController",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java",
+      "lineRange": [35, 140],
+      "summary": "个人中心 REST 控制器，处理个人资料、密码与头像更新。",
+      "tags": ["controller", "rest", "profile"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysRoleController.java:SysRoleController",
+      "type": "class",
+      "name": "SysRoleController",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysRoleController.java",
+      "lineRange": [37, 219],
+      "summary": "系统角色 REST 控制器，管理角色 CRUD、数据权限、状态与用户授权。",
+      "tags": ["controller", "rest", "rbac"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java:SysUserController",
+      "type": "class",
+      "name": "SysUserController",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java",
+      "lineRange": [48, 299],
+      "summary": "系统用户 REST 控制器，管理用户 CRUD、导入导出、注册与角色分配。",
+      "tags": ["controller", "rest", "rbac", "user"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserOnlineController.java:SysUserOnlineController",
+      "type": "class",
+      "name": "SysUserOnlineController",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserOnlineController.java",
+      "lineRange": [32, 73],
+      "summary": "在线用户 REST 控制器，基于 Redis 查询在线会话并支持强制下线。",
+      "tags": ["controller", "rest", "monitor"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysConfig.java:SysConfig",
+      "type": "class",
+      "name": "SysConfig",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysConfig.java",
+      "lineRange": [16, 111],
+      "summary": "系统参数配置实体，封装配置键值、类型与审计时间字段。",
+      "tags": ["entity", "domain", "config"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysMenu.java:SysMenu",
+      "type": "class",
+      "name": "SysMenu",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysMenu.java",
+      "lineRange": [17, 259],
+      "summary": "系统菜单实体，包含菜单属性、路由信息与子菜单树结构。",
+      "tags": ["entity", "domain", "tree", "menu"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysNotice.java:SysNotice",
+      "type": "class",
+      "name": "SysNotice",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysNotice.java",
+      "lineRange": [15, 102],
+      "summary": "系统通知公告实体，封装标题/类型/内容/状态字段。",
+      "tags": ["entity", "domain", "notice"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysPost.java:SysPost",
+      "type": "class",
+      "name": "SysPost",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysPost.java",
+      "lineRange": [17, 124],
+      "summary": "系统岗位实体，封装岗位编码/名称/排序/状态字段。",
+      "tags": ["entity", "domain", "post"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleDept.java:SysRoleDept",
+      "type": "class",
+      "name": "SysRoleDept",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleDept.java",
+      "lineRange": [11, 46],
+      "summary": "角色-部门关联实体，存储角色与部门的多对多关联主键。",
+      "tags": ["entity", "junction", "domain"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleMenu.java:SysRoleMenu",
+      "type": "class",
+      "name": "SysRoleMenu",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleMenu.java",
+      "lineRange": [11, 46],
+      "summary": "角色-菜单关联实体，存储角色与菜单的多对多关联主键。",
+      "tags": ["entity", "junction", "domain"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysUserOnline.java:SysUserOnline",
+      "type": "class",
+      "name": "SysUserOnline",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysUserOnline.java",
+      "lineRange": [8, 100],
+      "summary": "在线用户会话模型，展示令牌、IP、浏览器、系统与登录时间等信息。",
+      "tags": ["entity", "monitor", "session"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysPostController.java:add",
+      "type": "function",
+      "name": "add",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysPostController.java",
+      "lineRange": [70, 81],
+      "summary": "校验岗位名称与编码唯一并新增岗位。",
+      "tags": ["api-handler", "create", "post"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysPostController.java:edit",
+      "type": "function",
+      "name": "edit",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysPostController.java",
+      "lineRange": [86, 97],
+      "summary": "校验岗位名称与编码唯一并更新岗位。",
+      "tags": ["api-handler", "update", "post"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java:updateProfile",
+      "type": "function",
+      "name": "updateProfile",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java",
+      "lineRange": [63, 84],
+      "summary": "更新当前用户资料（昵称/邮箱/手机/性别）并校验唯一性、刷新会话。",
+      "tags": ["api-handler", "profile", "update"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java:updatePwd",
+      "type": "function",
+      "name": "updatePwd",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java",
+      "lineRange": [89, 110],
+      "summary": "校验旧密码并加密后更新用户密码，同步刷新登录会话。",
+      "tags": ["api-handler", "password", "update"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java:avatar",
+      "type": "function",
+      "name": "avatar",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java",
+      "lineRange": [115, 139],
+      "summary": "校验头像格式并上传文件，更新用户头像与登录会话。",
+      "tags": ["api-handler", "upload", "profile"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysRoleController.java:add",
+      "type": "function",
+      "name": "add",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysRoleController.java",
+      "lineRange": [79, 91],
+      "summary": "校验角色名称与标识唯一并新增角色。",
+      "tags": ["api-handler", "create", "rbac"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysRoleController.java:edit",
+      "type": "function",
+      "name": "edit",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysRoleController.java",
+      "lineRange": [96, 109],
+      "summary": "校验角色可编辑与数据范围后更新角色及唯一性检查。",
+      "tags": ["api-handler", "update", "rbac"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java:importData",
+      "type": "function",
+      "name": "importData",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java",
+      "lineRange": [89, 98],
+      "summary": "从上传的 Excel 文件导入用户列表，支持更新已有用户。",
+      "tags": ["api-handler", "import", "user"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java:info",
+      "type": "function",
+      "name": "info",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java",
+      "lineRange": [109, 128],
+      "summary": "按用户名查询用户并组装角色与菜单权限生成登录信息。",
+      "tags": ["api-handler", "read", "user", "auth"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java:register",
+      "type": "function",
+      "name": "register",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java",
+      "lineRange": [133, 145],
+      "summary": "开放注册用户，校验注册开关与用户名唯一后创建用户。",
+      "tags": ["api-handler", "register", "user"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java:add",
+      "type": "function",
+      "name": "add",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java",
+      "lineRange": [189, 203],
+      "summary": "校验用户名/手机/邮箱唯一并加密密码后新增用户。",
+      "tags": ["api-handler", "create", "user"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java:edit",
+      "type": "function",
+      "name": "edit",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java",
+      "lineRange": [208, 223],
+      "summary": "校验用户可编辑与唯一性后更新用户信息。",
+      "tags": ["api-handler", "update", "user"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java:resetPwd",
+      "type": "function",
+      "name": "resetPwd",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java",
+      "lineRange": [241, 250],
+      "summary": "校验用户可编辑与数据范围后加密重置用户密码。",
+      "tags": ["api-handler", "password", "user"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java:authRole",
+      "type": "function",
+      "name": "authRole",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java",
+      "lineRange": [268, 277],
+      "summary": "查询用户详情及其已分配角色，剔除内置管理员角色。",
+      "tags": ["api-handler", "rbac", "user", "read"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserOnlineController.java:list",
+      "type": "function",
+      "name": "list",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserOnlineController.java",
+      "lineRange": [41, 61],
+      "summary": "从 Redis 会话键集合中筛选在线用户并按条件组合查询列表。",
+      "tags": ["api-handler", "monitor", "read"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysPostController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysPostController.java:SysPostController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysPostController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysPostController.java:add", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysPostController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysPostController.java:edit", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysPostController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysPostController.java:SysPostController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java:SysProfileController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java:updateProfile", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java:updatePwd", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java:avatar", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java:SysProfileController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysRoleController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysRoleController.java:SysRoleController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysRoleController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysRoleController.java:add", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysRoleController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysRoleController.java:edit", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysRoleController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysRoleController.java:SysRoleController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java:SysUserController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java:importData", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java:info", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java:register", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java:add", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java:edit", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java:resetPwd", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java:authRole", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java:SysUserController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserOnlineController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserOnlineController.java:SysUserOnlineController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserOnlineController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserOnlineController.java:list", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserOnlineController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserOnlineController.java:SysUserOnlineController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysConfig.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysConfig.java:SysConfig", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysConfig.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysConfig.java:SysConfig", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysMenu.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysMenu.java:SysMenu", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysMenu.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysMenu.java:SysMenu", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysNotice.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysNotice.java:SysNotice", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysNotice.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysNotice.java:SysNotice", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysPost.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysPost.java:SysPost", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysPost.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysPost.java:SysPost", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleDept.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleDept.java:SysRoleDept", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleDept.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleDept.java:SysRoleDept", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleMenu.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleMenu.java:SysRoleMenu", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleMenu.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleMenu.java:SysRoleMenu", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysUserOnline.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysUserOnline.java:SysUserOnline", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysUserOnline.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysUserOnline.java:SysUserOnline", "type": "exports", "direction": "forward", "weight": 0.8}
+  ]
+}

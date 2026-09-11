@@ -1,0 +1,3497 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 21,
+  "filesSkipped": [
+    "spzx-modules/spzx-job/src/main/resources/mapper/job/SysJobLogMapper.xml",
+    "spzx-modules/spzx-job/src/main/resources/mapper/job/SysJobMapper.xml",
+    "spzx-modules/spzx-order/pom.xml",
+    "spzx-modules/spzx-payment/pom.xml"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 21,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 21,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 182,
+      "nonEmptyLines": 172,
+      "functions": [
+        {
+          "name": "invokeMethod",
+          "startLine": 23,
+          "endLine": 40,
+          "params": [
+            "sysJob"
+          ]
+        },
+        {
+          "name": "invokeMethod",
+          "startLine": 49,
+          "endLine": 63,
+          "params": [
+            "bean",
+            "methodName",
+            "methodParams"
+          ]
+        },
+        {
+          "name": "isValidClassName",
+          "startLine": 71,
+          "endLine": 74,
+          "params": [
+            "invokeTarget"
+          ]
+        },
+        {
+          "name": "getBeanName",
+          "startLine": 82,
+          "endLine": 86,
+          "params": [
+            "invokeTarget"
+          ]
+        },
+        {
+          "name": "getMethodName",
+          "startLine": 94,
+          "endLine": 98,
+          "params": [
+            "invokeTarget"
+          ]
+        },
+        {
+          "name": "getMethodParams",
+          "startLine": 106,
+          "endLine": 145,
+          "params": [
+            "invokeTarget"
+          ]
+        },
+        {
+          "name": "getMethodParamsType",
+          "startLine": 153,
+          "endLine": 163,
+          "params": [
+            "methodParams"
+          ]
+        },
+        {
+          "name": "getMethodParamsValue",
+          "startLine": 171,
+          "endLine": 181,
+          "params": [
+            "methodParams"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "JobInvokeUtil",
+          "startLine": 16,
+          "endLine": 182,
+          "methods": [
+            "invokeMethod",
+            "invokeMethod",
+            "isValidClassName",
+            "getBeanName",
+            "getMethodName",
+            "getMethodParams",
+            "getMethodParamsType",
+            "getMethodParamsValue"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "invokeMethod",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "isValidClassName",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "getBeanName",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "getMethodName",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "getMethodParams",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "getMethodParamsType",
+          "line": 153,
+          "isDefault": false
+        },
+        {
+          "name": "getMethodParamsValue",
+          "line": 171,
+          "isDefault": false
+        },
+        {
+          "name": "JobInvokeUtil",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "invokeMethod",
+          "callee": "sysJob.getInvokeTarget",
+          "lineNumber": 25
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "getBeanName",
+          "lineNumber": 26
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "getMethodName",
+          "lineNumber": 27
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "getMethodParams",
+          "lineNumber": 28
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "isValidClassName",
+          "lineNumber": 30
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "SpringUtils.getBean",
+          "lineNumber": 32
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "invokeMethod",
+          "lineNumber": 33
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "Class.forName(beanName).getDeclaredConstructor().newInstance",
+          "lineNumber": 37
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "Class.forName(beanName).getDeclaredConstructor",
+          "lineNumber": 37
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "Class.forName",
+          "lineNumber": 37
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "invokeMethod",
+          "lineNumber": 38
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "StringUtils.isNotNull",
+          "lineNumber": 53
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "methodParams.size",
+          "lineNumber": 53
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "bean.getClass().getMethod",
+          "lineNumber": 55
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "bean.getClass",
+          "lineNumber": 55
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "getMethodParamsType",
+          "lineNumber": 55
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "method.invoke",
+          "lineNumber": 56
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "getMethodParamsValue",
+          "lineNumber": 56
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "bean.getClass().getMethod",
+          "lineNumber": 60
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "bean.getClass",
+          "lineNumber": 60
+        },
+        {
+          "caller": "invokeMethod",
+          "callee": "method.invoke",
+          "lineNumber": 61
+        },
+        {
+          "caller": "isValidClassName",
+          "callee": "StringUtils.countMatches",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getBeanName",
+          "callee": "StringUtils.substringBefore",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getBeanName",
+          "callee": "StringUtils.substringBeforeLast",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getMethodName",
+          "callee": "StringUtils.substringBefore",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getMethodName",
+          "callee": "StringUtils.substringAfterLast",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "StringUtils.substringBetween",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "StringUtils.isEmpty",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "methodStr.split",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "new LinkedList<>",
+          "lineNumber": 114
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "StringUtils.trimToEmpty",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "StringUtils.startsWithAny",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "classs.add",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "StringUtils.substring",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "str.length",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "\"true\".equalsIgnoreCase",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "\"false\".equalsIgnoreCase",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "classs.add",
+          "lineNumber": 126
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "Boolean.valueOf",
+          "lineNumber": 126
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "StringUtils.endsWith",
+          "lineNumber": 129
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "classs.add",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "Long.valueOf",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "StringUtils.substring",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "str.length",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "StringUtils.endsWith",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "classs.add",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "Double.valueOf",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "StringUtils.substring",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "str.length",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "classs.add",
+          "lineNumber": 141
+        },
+        {
+          "caller": "getMethodParams",
+          "callee": "Integer.valueOf",
+          "lineNumber": 141
+        },
+        {
+          "caller": "getMethodParamsType",
+          "callee": "methodParams.size",
+          "lineNumber": 155
+        },
+        {
+          "caller": "getMethodParamsValue",
+          "callee": "methodParams.size",
+          "lineNumber": 173
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzDisallowConcurrentExecution.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "doExecute",
+          "startLine": 17,
+          "endLine": 21,
+          "params": [
+            "context",
+            "sysJob"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "QuartzDisallowConcurrentExecution",
+          "startLine": 14,
+          "endLine": 22,
+          "methods": [
+            "doExecute"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "QuartzDisallowConcurrentExecution",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "doExecute",
+          "callee": "JobInvokeUtil.invokeMethod",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzJobExecution.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 17,
+      "functions": [
+        {
+          "name": "doExecute",
+          "startLine": 15,
+          "endLine": 19,
+          "params": [
+            "context",
+            "sysJob"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "QuartzJobExecution",
+          "startLine": 13,
+          "endLine": 20,
+          "methods": [
+            "doExecute"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "QuartzJobExecution",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "doExecute",
+          "callee": "JobInvokeUtil.invokeMethod",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 141,
+      "nonEmptyLines": 128,
+      "functions": [
+        {
+          "name": "getQuartzJobClass",
+          "startLine": 35,
+          "endLine": 39,
+          "params": [
+            "sysJob"
+          ]
+        },
+        {
+          "name": "getTriggerKey",
+          "startLine": 44,
+          "endLine": 47,
+          "params": [
+            "jobId",
+            "jobGroup"
+          ]
+        },
+        {
+          "name": "getJobKey",
+          "startLine": 52,
+          "endLine": 55,
+          "params": [
+            "jobId",
+            "jobGroup"
+          ]
+        },
+        {
+          "name": "createScheduleJob",
+          "startLine": 60,
+          "endLine": 98,
+          "params": [
+            "scheduler",
+            "job"
+          ]
+        },
+        {
+          "name": "handleCronScheduleMisfirePolicy",
+          "startLine": 103,
+          "endLine": 120,
+          "params": [
+            "job",
+            "cb"
+          ]
+        },
+        {
+          "name": "whiteList",
+          "startLine": 128,
+          "endLine": 140,
+          "params": [
+            "invokeTarget"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ScheduleUtils",
+          "startLine": 27,
+          "endLine": 141,
+          "methods": [
+            "getQuartzJobClass",
+            "getTriggerKey",
+            "getJobKey",
+            "createScheduleJob",
+            "handleCronScheduleMisfirePolicy",
+            "whiteList"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getTriggerKey",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "getJobKey",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "createScheduleJob",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "handleCronScheduleMisfirePolicy",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "whiteList",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "ScheduleUtils",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getQuartzJobClass",
+          "callee": "\"0\".equals",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getQuartzJobClass",
+          "callee": "sysJob.getConcurrent",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getTriggerKey",
+          "callee": "TriggerKey.triggerKey",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getJobKey",
+          "callee": "JobKey.jobKey",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "getQuartzJobClass",
+          "lineNumber": 62
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "job.getJobId",
+          "lineNumber": 64
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "job.getJobGroup",
+          "lineNumber": 65
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "JobBuilder.newJob(jobClass).withIdentity(getJobKey(jobId, jobGroup)).build",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "JobBuilder.newJob(jobClass).withIdentity",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "JobBuilder.newJob",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "getJobKey",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "CronScheduleBuilder.cronSchedule",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "job.getCronExpression",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "handleCronScheduleMisfirePolicy",
+          "lineNumber": 70
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "TriggerBuilder.newTrigger().withIdentity(getTriggerKey(jobId, jobGroup))\n                .withSchedule(cronScheduleBuilder).build",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "TriggerBuilder.newTrigger().withIdentity(getTriggerKey(jobId, jobGroup)).withSchedule",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "TriggerBuilder.newTrigger().withIdentity",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "TriggerBuilder.newTrigger",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "getTriggerKey",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "jobDetail.getJobDataMap().put",
+          "lineNumber": 77
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "jobDetail.getJobDataMap",
+          "lineNumber": 77
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "scheduler.checkExists",
+          "lineNumber": 80
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "getJobKey",
+          "lineNumber": 80
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "scheduler.deleteJob",
+          "lineNumber": 83
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "getJobKey",
+          "lineNumber": 83
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "StringUtils.isNotNull",
+          "lineNumber": 87
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "CronUtils.getNextExecution",
+          "lineNumber": 87
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "job.getCronExpression",
+          "lineNumber": 87
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "scheduler.scheduleJob",
+          "lineNumber": 90
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "job.getStatus().equals",
+          "lineNumber": 94
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "job.getStatus",
+          "lineNumber": 94
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "ScheduleConstants.Status.PAUSE.getValue",
+          "lineNumber": 94
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "scheduler.pauseJob",
+          "lineNumber": 96
+        },
+        {
+          "caller": "createScheduleJob",
+          "callee": "ScheduleUtils.getJobKey",
+          "lineNumber": 96
+        },
+        {
+          "caller": "handleCronScheduleMisfirePolicy",
+          "callee": "job.getMisfirePolicy",
+          "lineNumber": 106
+        },
+        {
+          "caller": "handleCronScheduleMisfirePolicy",
+          "callee": "cb.withMisfireHandlingInstructionIgnoreMisfires",
+          "lineNumber": 111
+        },
+        {
+          "caller": "handleCronScheduleMisfirePolicy",
+          "callee": "cb.withMisfireHandlingInstructionFireAndProceed",
+          "lineNumber": 113
+        },
+        {
+          "caller": "handleCronScheduleMisfirePolicy",
+          "callee": "cb.withMisfireHandlingInstructionDoNothing",
+          "lineNumber": 115
+        },
+        {
+          "caller": "handleCronScheduleMisfirePolicy",
+          "callee": "new TaskException",
+          "lineNumber": 117
+        },
+        {
+          "caller": "handleCronScheduleMisfirePolicy",
+          "callee": "job.getMisfirePolicy",
+          "lineNumber": 117
+        },
+        {
+          "caller": "whiteList",
+          "callee": "StringUtils.substringBefore",
+          "lineNumber": 130
+        },
+        {
+          "caller": "whiteList",
+          "callee": "StringUtils.countMatches",
+          "lineNumber": 131
+        },
+        {
+          "caller": "whiteList",
+          "callee": "StringUtils.containsAnyIgnoreCase",
+          "lineNumber": 134
+        },
+        {
+          "caller": "whiteList",
+          "callee": "SpringUtils.getBean",
+          "lineNumber": 136
+        },
+        {
+          "caller": "whiteList",
+          "callee": "StringUtils.split",
+          "lineNumber": 136
+        },
+        {
+          "caller": "whiteList",
+          "callee": "obj.getClass().getPackage().getName",
+          "lineNumber": 137
+        },
+        {
+          "caller": "whiteList",
+          "callee": "obj.getClass().getPackage",
+          "lineNumber": 137
+        },
+        {
+          "caller": "whiteList",
+          "callee": "obj.getClass",
+          "lineNumber": 137
+        },
+        {
+          "caller": "whiteList",
+          "callee": "StringUtils.containsAnyIgnoreCase",
+          "lineNumber": 138
+        },
+        {
+          "caller": "whiteList",
+          "callee": "StringUtils.containsAnyIgnoreCase",
+          "lineNumber": 139
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/SpzxOrderApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 15,
+          "endLine": 27,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SpzxOrderApplication",
+          "startLine": 11,
+          "endLine": 28,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "SpzxOrderApplication",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 16
+        },
+        {
+          "caller": "main",
+          "callee": "System.out.println",
+          "lineNumber": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/CancelOrderMqConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "cancelQueue",
+          "startLine": 17,
+          "endLine": 21,
+          "params": []
+        },
+        {
+          "name": "cancelExchange",
+          "startLine": 23,
+          "endLine": 28,
+          "params": []
+        },
+        {
+          "name": "bindingCancel",
+          "startLine": 30,
+          "endLine": 33,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CancelOrderMqConfig",
+          "startLine": 14,
+          "endLine": 35,
+          "methods": [
+            "cancelQueue",
+            "cancelExchange",
+            "bindingCancel"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "cancelQueue",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "cancelExchange",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "bindingCancel",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "CancelOrderMqConfig",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "cancelQueue",
+          "callee": "new Queue",
+          "lineNumber": 20
+        },
+        {
+          "caller": "cancelExchange",
+          "callee": "new HashMap<String, Object>",
+          "lineNumber": 25
+        },
+        {
+          "caller": "cancelExchange",
+          "callee": "args.put",
+          "lineNumber": 26
+        },
+        {
+          "caller": "cancelExchange",
+          "callee": "new CustomExchange",
+          "lineNumber": 27
+        },
+        {
+          "caller": "bindingCancel",
+          "callee": "BindingBuilder.bind(cancelQueue()).to(cancelExchange()).with(MqConst.ROUTING_CANCEL_ORDER).noargs",
+          "lineNumber": 32
+        },
+        {
+          "caller": "bindingCancel",
+          "callee": "BindingBuilder.bind(cancelQueue()).to(cancelExchange()).with",
+          "lineNumber": 32
+        },
+        {
+          "caller": "bindingCancel",
+          "callee": "BindingBuilder.bind(cancelQueue()).to",
+          "lineNumber": 32
+        },
+        {
+          "caller": "bindingCancel",
+          "callee": "BindingBuilder.bind",
+          "lineNumber": 32
+        },
+        {
+          "caller": "bindingCancel",
+          "callee": "cancelQueue",
+          "lineNumber": 32
+        },
+        {
+          "caller": "bindingCancel",
+          "callee": "cancelExchange",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DeadLetterMqConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "exchange",
+          "startLine": 22,
+          "endLine": 25,
+          "params": []
+        },
+        {
+          "name": "queue1",
+          "startLine": 28,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "binding",
+          "startLine": 42,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "queue2",
+          "startLine": 49,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "binding2",
+          "startLine": 55,
+          "endLine": 59,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "DeadLetterMqConfig",
+          "startLine": 12,
+          "endLine": 60,
+          "methods": [
+            "exchange",
+            "queue1",
+            "binding",
+            "queue2",
+            "binding2"
+          ],
+          "properties": [
+            "exchange_dead",
+            "routing_dead_1",
+            "routing_dead_2",
+            "queue_dead_1",
+            "queue_dead_2"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "exchange_dead",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "routing_dead_1",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "routing_dead_2",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "queue_dead_1",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "queue_dead_2",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "exchange",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "queue1",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "binding",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "queue2",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "binding2",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "DeadLetterMqConfig",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "exchange",
+          "callee": "new DirectExchange",
+          "lineNumber": 24
+        },
+        {
+          "caller": "queue1",
+          "callee": "new HashMap<>",
+          "lineNumber": 31
+        },
+        {
+          "caller": "queue1",
+          "callee": "map.put",
+          "lineNumber": 33
+        },
+        {
+          "caller": "queue1",
+          "callee": "map.put",
+          "lineNumber": 34
+        },
+        {
+          "caller": "queue1",
+          "callee": "map.put",
+          "lineNumber": 36
+        },
+        {
+          "caller": "queue1",
+          "callee": "new Queue",
+          "lineNumber": 38
+        },
+        {
+          "caller": "binding",
+          "callee": "BindingBuilder.bind(queue1()).to(exchange()).with",
+          "lineNumber": 45
+        },
+        {
+          "caller": "binding",
+          "callee": "BindingBuilder.bind(queue1()).to",
+          "lineNumber": 45
+        },
+        {
+          "caller": "binding",
+          "callee": "BindingBuilder.bind",
+          "lineNumber": 45
+        },
+        {
+          "caller": "binding",
+          "callee": "queue1",
+          "lineNumber": 45
+        },
+        {
+          "caller": "binding",
+          "callee": "exchange",
+          "lineNumber": 45
+        },
+        {
+          "caller": "queue2",
+          "callee": "new Queue",
+          "lineNumber": 51
+        },
+        {
+          "caller": "binding2",
+          "callee": "BindingBuilder.bind(queue2()).to(exchange()).with",
+          "lineNumber": 58
+        },
+        {
+          "caller": "binding2",
+          "callee": "BindingBuilder.bind(queue2()).to",
+          "lineNumber": 58
+        },
+        {
+          "caller": "binding2",
+          "callee": "BindingBuilder.bind",
+          "lineNumber": 58
+        },
+        {
+          "caller": "binding2",
+          "callee": "queue2",
+          "lineNumber": 58
+        },
+        {
+          "caller": "binding2",
+          "callee": "exchange",
+          "lineNumber": 58
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DelayedMqConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "delayQeue1",
+          "startLine": 23,
+          "endLine": 27,
+          "params": []
+        },
+        {
+          "name": "delayExchange",
+          "startLine": 29,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "delayBbinding1",
+          "startLine": 36,
+          "endLine": 39,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "DelayedMqConfig",
+          "startLine": 16,
+          "endLine": 40,
+          "methods": [
+            "delayQeue1",
+            "delayExchange",
+            "delayBbinding1"
+          ],
+          "properties": [
+            "exchange_delay",
+            "routing_delay",
+            "queue_delay_1"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "exchange_delay",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "routing_delay",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "queue_delay_1",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "delayQeue1",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "delayExchange",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "delayBbinding1",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "DelayedMqConfig",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "delayQeue1",
+          "callee": "new Queue",
+          "lineNumber": 26
+        },
+        {
+          "caller": "delayExchange",
+          "callee": "new HashMap<String, Object>",
+          "lineNumber": 31
+        },
+        {
+          "caller": "delayExchange",
+          "callee": "args.put",
+          "lineNumber": 32
+        },
+        {
+          "caller": "delayExchange",
+          "callee": "new CustomExchange",
+          "lineNumber": 33
+        },
+        {
+          "caller": "delayBbinding1",
+          "callee": "BindingBuilder.bind(delayQeue1()).to(delayExchange()).with(routing_delay).noargs",
+          "lineNumber": 38
+        },
+        {
+          "caller": "delayBbinding1",
+          "callee": "BindingBuilder.bind(delayQeue1()).to(delayExchange()).with",
+          "lineNumber": 38
+        },
+        {
+          "caller": "delayBbinding1",
+          "callee": "BindingBuilder.bind(delayQeue1()).to",
+          "lineNumber": 38
+        },
+        {
+          "caller": "delayBbinding1",
+          "callee": "BindingBuilder.bind",
+          "lineNumber": 38
+        },
+        {
+          "caller": "delayBbinding1",
+          "callee": "delayQeue1",
+          "lineNumber": 38
+        },
+        {
+          "caller": "delayBbinding1",
+          "callee": "delayExchange",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/MqController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "sendMessage",
+          "startLine": 26,
+          "endLine": 31,
+          "params": []
+        },
+        {
+          "name": "sendConfirmMessage",
+          "startLine": 33,
+          "endLine": 50,
+          "params": []
+        },
+        {
+          "name": "sendDeadLetterMsg",
+          "startLine": 56,
+          "endLine": 62,
+          "params": []
+        },
+        {
+          "name": "sendDelayMsg",
+          "startLine": 64,
+          "endLine": 71,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "MqController",
+          "startLine": 17,
+          "endLine": 72,
+          "methods": [
+            "sendMessage",
+            "sendConfirmMessage",
+            "sendDeadLetterMsg",
+            "sendDelayMsg"
+          ],
+          "properties": [
+            "rabbitService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "sendMessage",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "sendConfirmMessage",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "sendDeadLetterMsg",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "sendDelayMsg",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "MqController",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sendMessage",
+          "callee": "rabbitService.sendMessage",
+          "lineNumber": 29
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "success",
+          "lineNumber": 30
+        },
+        {
+          "caller": "sendConfirmMessage",
+          "callee": "rabbitService.sendMessage",
+          "lineNumber": 48
+        },
+        {
+          "caller": "sendConfirmMessage",
+          "callee": "success",
+          "lineNumber": 49
+        },
+        {
+          "caller": "sendDeadLetterMsg",
+          "callee": "rabbitService.sendMessage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "sendDeadLetterMsg",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "sendDelayMsg",
+          "callee": "rabbitService.sendDelayMessage",
+          "lineNumber": 69
+        },
+        {
+          "caller": "sendDelayMsg",
+          "callee": "success",
+          "lineNumber": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/OrderInfoController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 103,
+      "nonEmptyLines": 92,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 38,
+          "endLine": 45,
+          "params": [
+            "orderInfo"
+          ]
+        },
+        {
+          "name": "export",
+          "startLine": 50,
+          "endLine": 58,
+          "params": [
+            "response",
+            "orderInfo"
+          ]
+        },
+        {
+          "name": "getInfo",
+          "startLine": 63,
+          "endLine": 68,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getOrderTrade",
+          "startLine": 72,
+          "endLine": 78,
+          "params": []
+        },
+        {
+          "name": "submitOrder",
+          "startLine": 80,
+          "endLine": 86,
+          "params": [
+            "orderForm"
+          ]
+        },
+        {
+          "name": "getOrderInfo",
+          "startLine": 88,
+          "endLine": 94,
+          "params": [
+            "orderId"
+          ]
+        },
+        {
+          "name": "getByOrderNo",
+          "startLine": 96,
+          "endLine": 102,
+          "params": [
+            "orderNo"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OrderInfoController",
+          "startLine": 28,
+          "endLine": 103,
+          "methods": [
+            "list",
+            "export",
+            "getInfo",
+            "getOrderTrade",
+            "submitOrder",
+            "getOrderInfo",
+            "getByOrderNo"
+          ],
+          "properties": [
+            "orderInfoService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "export",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "getInfo",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "getOrderTrade",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "submitOrder",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "getOrderInfo",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "getByOrderNo",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "OrderInfoController",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "startPage",
+          "lineNumber": 42
+        },
+        {
+          "caller": "list",
+          "callee": "orderInfoService.selectOrderInfoList",
+          "lineNumber": 43
+        },
+        {
+          "caller": "list",
+          "callee": "getDataTable",
+          "lineNumber": 44
+        },
+        {
+          "caller": "export",
+          "callee": "orderInfoService.selectOrderInfoList",
+          "lineNumber": 55
+        },
+        {
+          "caller": "export",
+          "callee": "new ExcelUtil<OrderInfo>",
+          "lineNumber": 56
+        },
+        {
+          "caller": "export",
+          "callee": "util.exportExcel",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getInfo",
+          "callee": "success",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getInfo",
+          "callee": "orderInfoService.selectOrderInfoById",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "orderInfoService.getOrderTrade",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "success",
+          "lineNumber": 77
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "orderInfoService.submitOrder",
+          "lineNumber": 84
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "success",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getOrderInfo",
+          "callee": "orderInfoService.getById",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getOrderInfo",
+          "callee": "success",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getByOrderNo",
+          "callee": "orderInfoService.getByOrderNo",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getByOrderNo",
+          "callee": "R.ok",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/OrderLog.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 37,
+      "classes": [
+        {
+          "name": "OrderLog",
+          "startLine": 11,
+          "endLine": 44,
+          "methods": [],
+          "properties": [
+            "serialVersionUID",
+            "orderId",
+            "operateUser",
+            "processStatus",
+            "note"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OrderLog",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/OrderForm.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "OrderForm",
+          "startLine": 10,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "tradeNo",
+            "userAddressId",
+            "feightFee",
+            "remark",
+            "orderItemList"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OrderForm",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/TradeVo.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 19,
+      "classes": [
+        {
+          "name": "TradeVo",
+          "startLine": 13,
+          "endLine": 26,
+          "methods": [],
+          "properties": [
+            "totalAmount",
+            "orderItemList",
+            "tradeNo"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TradeVo",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderInfoMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "OrderInfoMapper",
+          "startLine": 12,
+          "endLine": 30,
+          "methods": [
+            "selectOrderInfoList",
+            "selectUserOrderInfoList"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "OrderInfoMapper",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderItemMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 8,
+      "classes": [
+        {
+          "name": "OrderItemMapper",
+          "startLine": 9,
+          "endLine": 12,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "OrderItemMapper",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderLogMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 8,
+      "classes": [
+        {
+          "name": "OrderLogMapper",
+          "startLine": 9,
+          "endLine": 11,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "OrderLogMapper",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 143,
+      "nonEmptyLines": 115,
+      "functions": [
+        {
+          "name": "consumer",
+          "startLine": 31,
+          "endLine": 51,
+          "params": [
+            "msg",
+            "message",
+            "channel"
+          ]
+        },
+        {
+          "name": "confirm",
+          "startLine": 59,
+          "endLine": 70,
+          "params": [
+            "content",
+            "message",
+            "channel"
+          ]
+        },
+        {
+          "name": "getDeadLetterMsg",
+          "startLine": 81,
+          "endLine": 86,
+          "params": [
+            "msg",
+            "message",
+            "channel"
+          ]
+        },
+        {
+          "name": "processCloseOrder",
+          "startLine": 101,
+          "endLine": 111,
+          "params": [
+            "orderId",
+            "message",
+            "channel"
+          ]
+        },
+        {
+          "name": "processPaySucess",
+          "startLine": 121,
+          "endLine": 139,
+          "params": [
+            "orderNo",
+            "message",
+            "channel"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OrderReceiver",
+          "startLine": 21,
+          "endLine": 143,
+          "methods": [
+            "consumer",
+            "confirm",
+            "getDeadLetterMsg",
+            "processCloseOrder",
+            "processPaySucess"
+          ],
+          "properties": [
+            "orderInfoService",
+            "rabbitService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "consumer",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "confirm",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "getDeadLetterMsg",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "processCloseOrder",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "processPaySucess",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "OrderReceiver",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "consumer",
+          "callee": "log.info",
+          "lineNumber": 44
+        },
+        {
+          "caller": "consumer",
+          "callee": "log.info",
+          "lineNumber": 45
+        },
+        {
+          "caller": "consumer",
+          "callee": "channel.basicAck",
+          "lineNumber": 47
+        },
+        {
+          "caller": "consumer",
+          "callee": "message.getMessageProperties().getDeliveryTag",
+          "lineNumber": 47
+        },
+        {
+          "caller": "consumer",
+          "callee": "message.getMessageProperties",
+          "lineNumber": 47
+        },
+        {
+          "caller": "consumer",
+          "callee": "channel.basicNack",
+          "lineNumber": 49
+        },
+        {
+          "caller": "consumer",
+          "callee": "message.getMessageProperties().getDeliveryTag",
+          "lineNumber": 49
+        },
+        {
+          "caller": "consumer",
+          "callee": "message.getMessageProperties",
+          "lineNumber": 49
+        },
+        {
+          "caller": "confirm",
+          "callee": "log.info",
+          "lineNumber": 66
+        },
+        {
+          "caller": "confirm",
+          "callee": "channel.basicAck",
+          "lineNumber": 69
+        },
+        {
+          "caller": "confirm",
+          "callee": "message.getMessageProperties().getDeliveryTag",
+          "lineNumber": 69
+        },
+        {
+          "caller": "confirm",
+          "callee": "message.getMessageProperties",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getDeadLetterMsg",
+          "callee": "log.info",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getDeadLetterMsg",
+          "callee": "channel.basicAck",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getDeadLetterMsg",
+          "callee": "message.getMessageProperties().getDeliveryTag",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getDeadLetterMsg",
+          "callee": "message.getMessageProperties",
+          "lineNumber": 85
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "log.info",
+          "lineNumber": 106
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "orderInfoService.processCloseOrder",
+          "lineNumber": 107
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "Long.parseLong",
+          "lineNumber": 107
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "channel.basicAck",
+          "lineNumber": 110
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "message.getMessageProperties().getDeliveryTag",
+          "lineNumber": 110
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "message.getMessageProperties",
+          "lineNumber": 110
+        },
+        {
+          "caller": "processPaySucess",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 129
+        },
+        {
+          "caller": "processPaySucess",
+          "callee": "log.info",
+          "lineNumber": 130
+        },
+        {
+          "caller": "processPaySucess",
+          "callee": "orderInfoService.processPaySucess",
+          "lineNumber": 132
+        },
+        {
+          "caller": "processPaySucess",
+          "callee": "rabbitService.sendMessage",
+          "lineNumber": 135
+        },
+        {
+          "caller": "processPaySucess",
+          "callee": "channel.basicAck",
+          "lineNumber": 138
+        },
+        {
+          "caller": "processPaySucess",
+          "callee": "message.getMessageProperties().getDeliveryTag",
+          "lineNumber": 138
+        },
+        {
+          "caller": "processPaySucess",
+          "callee": "message.getMessageProperties",
+          "lineNumber": 138
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/service/IOrderInfoService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 50,
+      "classes": [
+        {
+          "name": "IOrderInfoService",
+          "startLine": 10,
+          "endLine": 75,
+          "methods": [
+            "selectOrderInfoList",
+            "selectOrderInfoById",
+            "getOrderTrade",
+            "submitOrder",
+            "processCloseOrder",
+            "getByOrderNo",
+            "processPaySucess"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IOrderInfoService",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 353,
+      "nonEmptyLines": 300,
+      "functions": [
+        {
+          "name": "selectOrderInfoList",
+          "startLine": 78,
+          "endLine": 81,
+          "params": [
+            "orderInfo"
+          ]
+        },
+        {
+          "name": "selectOrderInfoById",
+          "startLine": 89,
+          "endLine": 95,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getOrderTrade",
+          "startLine": 101,
+          "endLine": 137,
+          "params": []
+        },
+        {
+          "name": "generateTradeNo",
+          "startLine": 140,
+          "endLine": 145,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "submitOrder",
+          "startLine": 156,
+          "endLine": 246,
+          "params": [
+            "orderForm"
+          ]
+        },
+        {
+          "name": "saveOrder",
+          "startLine": 249,
+          "endLine": 302,
+          "params": [
+            "orderForm"
+          ]
+        },
+        {
+          "name": "processCloseOrder",
+          "startLine": 308,
+          "endLine": 329,
+          "params": [
+            "orderId"
+          ]
+        },
+        {
+          "name": "getByOrderNo",
+          "startLine": 332,
+          "endLine": 338,
+          "params": [
+            "orderNo"
+          ]
+        },
+        {
+          "name": "processPaySucess",
+          "startLine": 340,
+          "endLine": 352,
+          "params": [
+            "orderNo"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OrderInfoServiceImpl",
+          "startLine": 45,
+          "endLine": 353,
+          "methods": [
+            "selectOrderInfoList",
+            "selectOrderInfoById",
+            "getOrderTrade",
+            "generateTradeNo",
+            "submitOrder",
+            "saveOrder",
+            "processCloseOrder",
+            "getByOrderNo",
+            "processPaySucess"
+          ],
+          "properties": [
+            "orderInfoMapper",
+            "orderItemMapper",
+            "orderLogMapper",
+            "remoteCartService",
+            "redisTemplate",
+            "remoteProductService",
+            "remoteUserAddressService",
+            "rabbitService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "selectOrderInfoList",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "selectOrderInfoById",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "getOrderTrade",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "submitOrder",
+          "line": 156,
+          "isDefault": false
+        },
+        {
+          "name": "processCloseOrder",
+          "line": 308,
+          "isDefault": false
+        },
+        {
+          "name": "getByOrderNo",
+          "line": 332,
+          "isDefault": false
+        },
+        {
+          "name": "processPaySucess",
+          "line": 340,
+          "isDefault": false
+        },
+        {
+          "name": "OrderInfoServiceImpl",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectOrderInfoList",
+          "callee": "orderInfoMapper.selectOrderInfoList",
+          "lineNumber": 80
+        },
+        {
+          "caller": "selectOrderInfoById",
+          "callee": "orderInfoMapper.selectById",
+          "lineNumber": 91
+        },
+        {
+          "caller": "selectOrderInfoById",
+          "callee": "orderItemMapper.selectList",
+          "lineNumber": 92
+        },
+        {
+          "caller": "selectOrderInfoById",
+          "callee": "new LambdaQueryWrapper<OrderItem>().eq",
+          "lineNumber": 92
+        },
+        {
+          "caller": "selectOrderInfoById",
+          "callee": "new LambdaQueryWrapper<OrderItem>",
+          "lineNumber": 92
+        },
+        {
+          "caller": "selectOrderInfoById",
+          "callee": "orderInfo.setOrderItemList",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "SecurityContextHolder.getUserId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "remoteCartService.getCartCheckedList",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "cartCheckedListResult.getCode",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "new ServiceException",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "cartCheckedListResult.getMsg",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "cartCheckedListResult.getData",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "new ServiceException",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "cartInfoList.stream().map((cartInfo -> {\r\n            OrderItem orderItem = new OrderItem();\r\n            BeanUtils.copyProperties(cartInfo, orderItem);\r\n            orderItem.setSkuPrice(cartInfo.getSkuPrice()); //skuPrice可能还是旧价格\r\n            return orderItem;\r\n        })).toList",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "cartInfoList.stream().map",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "cartInfoList.stream",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "new OrderItem",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "BeanUtils.copyProperties",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "orderItem.setSkuPrice",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "cartInfo.getSkuPrice",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "new BigDecimal",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "totalAmount.add",
+          "lineNumber": 126
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "orderItem.getSkuPrice().multiply",
+          "lineNumber": 126
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "orderItem.getSkuPrice",
+          "lineNumber": 126
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "new BigDecimal",
+          "lineNumber": 126
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "orderItem.getSkuNum",
+          "lineNumber": 126
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "generateTradeNo",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "new TradeVo",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "tradeVo.setTotalAmount",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "tradeVo.setOrderItemList",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getOrderTrade",
+          "callee": "tradeVo.setTradeNo",
+          "lineNumber": 135
+        },
+        {
+          "caller": "generateTradeNo",
+          "callee": "UUID.randomUUID().toString().replaceAll",
+          "lineNumber": 141
+        },
+        {
+          "caller": "generateTradeNo",
+          "callee": "UUID.randomUUID().toString",
+          "lineNumber": 141
+        },
+        {
+          "caller": "generateTradeNo",
+          "callee": "UUID.randomUUID",
+          "lineNumber": 141
+        },
+        {
+          "caller": "generateTradeNo",
+          "callee": "redisTemplate.opsForValue().set",
+          "lineNumber": 143
+        },
+        {
+          "caller": "generateTradeNo",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 143
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "SecurityContextHolder.getUserId",
+          "lineNumber": 158
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "orderForm.getTradeNo",
+          "lineNumber": 171
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "new DefaultRedisScript",
+          "lineNumber": 178
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "redisScript.setResultType",
+          "lineNumber": 179
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "redisTemplate.execute",
+          "lineNumber": 180
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "Arrays.asList",
+          "lineNumber": 180
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "new ServiceException",
+          "lineNumber": 182
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "orderForm.getOrderItemList",
+          "lineNumber": 186
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 187
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "new ServiceException",
+          "lineNumber": 188
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "orderItemList.stream().map(orderItem -> orderItem.getSkuId()).toList",
+          "lineNumber": 192
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "orderItemList.stream().map",
+          "lineNumber": 192
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "orderItemList.stream",
+          "lineNumber": 192
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "orderItem.getSkuId",
+          "lineNumber": 192
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "remoteProductService.getSkuPriceList",
+          "lineNumber": 193
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "skuPriceListResult.getCode",
+          "lineNumber": 194
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "new ServiceException",
+          "lineNumber": 195
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "skuPriceListResult.getMsg",
+          "lineNumber": 195
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "skuPriceListResult.getData",
+          "lineNumber": 197
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "skuPriceList.stream().collect",
+          "lineNumber": 199
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "skuPriceList.stream",
+          "lineNumber": 199
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "Collectors.toMap",
+          "lineNumber": 199
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "new StringBuilder",
+          "lineNumber": 201
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "skuIdToSalePriceMap.get",
+          "lineNumber": 203
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "orderItem.getSkuId",
+          "lineNumber": 203
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "orderItem.getSkuPrice().compareTo",
+          "lineNumber": 204
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "orderItem.getSkuPrice",
+          "lineNumber": 204
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "builder.append",
+          "lineNumber": 205
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "orderItem.getSkuName",
+          "lineNumber": 205
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "builder.toString().length",
+          "lineNumber": 208
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "builder.toString",
+          "lineNumber": 208
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "remoteCartService.updateCartPrice",
+          "lineNumber": 210
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "new ServiceException",
+          "lineNumber": 211
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "builder.toString",
+          "lineNumber": 211
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "orderItemList.stream().map(item -> {\r\n            SkuLockVo skuLockVo = new SkuLockVo();\r\n            skuLockVo.setSkuId(item.getSkuId());\r\n            skuLockVo.setSkuNum(item.getSkuNum());\r\n            return skuLockVo;\r\n        }).collect",
+          "lineNumber": 216
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "orderItemList.stream().map",
+          "lineNumber": 216
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "orderItemList.stream",
+          "lineNumber": 216
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "new SkuLockVo",
+          "lineNumber": 217
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "skuLockVo.setSkuId",
+          "lineNumber": 218
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "item.getSkuId",
+          "lineNumber": 218
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "skuLockVo.setSkuNum",
+          "lineNumber": 219
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "item.getSkuNum",
+          "lineNumber": 219
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "Collectors.toList",
+          "lineNumber": 221
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "remoteProductService.checkAndLock(orderForm.getTradeNo(), skuLockVoList, SecurityConstants.INNER).getData",
+          "lineNumber": 222
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "remoteProductService.checkAndLock",
+          "lineNumber": 222
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "orderForm.getTradeNo",
+          "lineNumber": 222
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 223
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "new ServiceException",
+          "lineNumber": 224
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "this.saveOrder",
+          "lineNumber": 230
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "rabbitService.sendMessage",
+          "lineNumber": 233
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "orderForm.getTradeNo",
+          "lineNumber": 233
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "new RuntimeException",
+          "lineNumber": 234
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "remoteCartService.deleteCartCheckedList",
+          "lineNumber": 238
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "rabbitService.sendDelayMessage",
+          "lineNumber": 241
+        },
+        {
+          "caller": "submitOrder",
+          "callee": "String.valueOf",
+          "lineNumber": 243
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "SecurityContextHolder.getUserId",
+          "lineNumber": 252
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "SecurityContextHolder.getUserName",
+          "lineNumber": 253
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "new OrderInfo",
+          "lineNumber": 257
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.setOrderNo",
+          "lineNumber": 259
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderForm.getTradeNo",
+          "lineNumber": 259
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.setUserId",
+          "lineNumber": 260
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.setNickName",
+          "lineNumber": 261
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.setRemark",
+          "lineNumber": 262
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderForm.getRemark",
+          "lineNumber": 262
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "remoteUserAddressService.getUserAddress(orderForm.getUserAddressId(), SecurityConstants.INNER).getData",
+          "lineNumber": 263
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "remoteUserAddressService.getUserAddress",
+          "lineNumber": 263
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderForm.getUserAddressId",
+          "lineNumber": 263
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.setReceiverName",
+          "lineNumber": 264
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "userAddress.getName",
+          "lineNumber": 264
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.setReceiverPhone",
+          "lineNumber": 265
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "userAddress.getPhone",
+          "lineNumber": 265
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.setReceiverTagName",
+          "lineNumber": 266
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "userAddress.getTagName",
+          "lineNumber": 266
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.setReceiverProvince",
+          "lineNumber": 267
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "userAddress.getProvinceCode",
+          "lineNumber": 267
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.setReceiverCity",
+          "lineNumber": 268
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "userAddress.getCityCode",
+          "lineNumber": 268
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.setReceiverDistrict",
+          "lineNumber": 269
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "userAddress.getDistrictCode",
+          "lineNumber": 269
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.setReceiverAddress",
+          "lineNumber": 270
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "userAddress.getFullAddress",
+          "lineNumber": 270
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderForm.getOrderItemList",
+          "lineNumber": 272
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "new BigDecimal",
+          "lineNumber": 273
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "totalAmount.add",
+          "lineNumber": 275
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderItem.getSkuPrice().multiply",
+          "lineNumber": 275
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderItem.getSkuPrice",
+          "lineNumber": 275
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "new BigDecimal",
+          "lineNumber": 275
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderItem.getSkuNum",
+          "lineNumber": 275
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.setTotalAmount",
+          "lineNumber": 277
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.setCouponAmount",
+          "lineNumber": 278
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "new BigDecimal",
+          "lineNumber": 278
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.setOriginalTotalAmount",
+          "lineNumber": 279
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.setFeightFee",
+          "lineNumber": 280
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderForm.getFeightFee",
+          "lineNumber": 280
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.setOrderStatus",
+          "lineNumber": 282
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfoMapper.insert",
+          "lineNumber": 284
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderItem.setOrderId",
+          "lineNumber": 289
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.getId",
+          "lineNumber": 289
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderItemMapper.insert",
+          "lineNumber": 291
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "new OrderLog",
+          "lineNumber": 295
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderLog.setOrderId",
+          "lineNumber": 296
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.getId",
+          "lineNumber": 296
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderLog.setProcessStatus",
+          "lineNumber": 297
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderLog.setNote",
+          "lineNumber": 298
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderLog.setOperateUser",
+          "lineNumber": 299
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderLogMapper.insert",
+          "lineNumber": 300
+        },
+        {
+          "caller": "saveOrder",
+          "callee": "orderInfo.getId",
+          "lineNumber": 301
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "orderInfoMapper.selectById",
+          "lineNumber": 311
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "orderInfo.getOrderStatus().intValue",
+          "lineNumber": 312
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "orderInfo.getOrderStatus",
+          "lineNumber": 312
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "orderInfo.setOrderStatus",
+          "lineNumber": 313
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "orderInfo.setCancelTime",
+          "lineNumber": 314
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "new Date",
+          "lineNumber": 314
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "orderInfo.setCancelReason",
+          "lineNumber": 315
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "orderInfoMapper.updateById",
+          "lineNumber": 316
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "new OrderLog",
+          "lineNumber": 319
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "orderLog.setOrderId",
+          "lineNumber": 320
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "orderInfo.getId",
+          "lineNumber": 320
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "orderLog.setProcessStatus",
+          "lineNumber": 321
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "orderLog.setNote",
+          "lineNumber": 322
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "orderLogMapper.insert",
+          "lineNumber": 323
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "rabbitService.sendMessage",
+          "lineNumber": 327
+        },
+        {
+          "caller": "processCloseOrder",
+          "callee": "orderInfo.getOrderNo",
+          "lineNumber": 327
+        },
+        {
+          "caller": "getByOrderNo",
+          "callee": "orderInfoMapper.selectOne",
+          "lineNumber": 334
+        },
+        {
+          "caller": "getByOrderNo",
+          "callee": "new LambdaQueryWrapper<OrderInfo>().eq",
+          "lineNumber": 334
+        },
+        {
+          "caller": "getByOrderNo",
+          "callee": "new LambdaQueryWrapper<OrderInfo>",
+          "lineNumber": 334
+        },
+        {
+          "caller": "getByOrderNo",
+          "callee": "orderItemMapper.selectList",
+          "lineNumber": 335
+        },
+        {
+          "caller": "getByOrderNo",
+          "callee": "new LambdaQueryWrapper<OrderItem>().eq",
+          "lineNumber": 335
+        },
+        {
+          "caller": "getByOrderNo",
+          "callee": "new LambdaQueryWrapper<OrderItem>",
+          "lineNumber": 335
+        },
+        {
+          "caller": "getByOrderNo",
+          "callee": "orderInfo.getId",
+          "lineNumber": 335
+        },
+        {
+          "caller": "getByOrderNo",
+          "callee": "orderInfo.setOrderItemList",
+          "lineNumber": 336
+        },
+        {
+          "caller": "processPaySucess",
+          "callee": "orderInfoMapper.selectOne",
+          "lineNumber": 343
+        },
+        {
+          "caller": "processPaySucess",
+          "callee": "new LambdaQueryWrapper<OrderInfo>()\r\n                .eq(OrderInfo::getOrderNo, orderNo).select",
+          "lineNumber": 343
+        },
+        {
+          "caller": "processPaySucess",
+          "callee": "new LambdaQueryWrapper<OrderInfo>().eq",
+          "lineNumber": 343
+        },
+        {
+          "caller": "processPaySucess",
+          "callee": "new LambdaQueryWrapper<OrderInfo>",
+          "lineNumber": 343
+        },
+        {
+          "caller": "processPaySucess",
+          "callee": "orderInfo.getOrderStatus().intValue",
+          "lineNumber": 347
+        },
+        {
+          "caller": "processPaySucess",
+          "callee": "orderInfo.getOrderStatus",
+          "lineNumber": 347
+        },
+        {
+          "caller": "processPaySucess",
+          "callee": "orderInfo.setOrderStatus",
+          "lineNumber": 348
+        },
+        {
+          "caller": "processPaySucess",
+          "callee": "orderInfo.setPaymentTime",
+          "lineNumber": 349
+        },
+        {
+          "caller": "processPaySucess",
+          "callee": "new Date",
+          "lineNumber": 349
+        },
+        {
+          "caller": "processPaySucess",
+          "callee": "orderInfoMapper.updateById",
+          "lineNumber": 350
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/test/java/com/spzx/product/test/TransactionalProducer.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 14,
+          "endLine": 40,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TransactionalProducer",
+          "startLine": 11,
+          "endLine": 41,
+          "methods": [
+            "main"
+          ],
+          "properties": [
+            "QUEUE_NAME"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "TransactionalProducer",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "new ConnectionFactory",
+          "lineNumber": 15
+        },
+        {
+          "caller": "main",
+          "callee": "factory.setHost",
+          "lineNumber": 16
+        },
+        {
+          "caller": "main",
+          "callee": "factory.setPort",
+          "lineNumber": 17
+        },
+        {
+          "caller": "main",
+          "callee": "factory.setUsername",
+          "lineNumber": 18
+        },
+        {
+          "caller": "main",
+          "callee": "factory.setPassword",
+          "lineNumber": 19
+        },
+        {
+          "caller": "main",
+          "callee": "factory.newConnection",
+          "lineNumber": 20
+        },
+        {
+          "caller": "main",
+          "callee": "connection.createChannel",
+          "lineNumber": 21
+        },
+        {
+          "caller": "main",
+          "callee": "channel.queueDeclare",
+          "lineNumber": 22
+        },
+        {
+          "caller": "main",
+          "callee": "channel.txSelect",
+          "lineNumber": 24
+        },
+        {
+          "caller": "main",
+          "callee": "channel.basicPublish",
+          "lineNumber": 28
+        },
+        {
+          "caller": "main",
+          "callee": "message.getBytes",
+          "lineNumber": 28
+        },
+        {
+          "caller": "main",
+          "callee": "channel.basicPublish",
+          "lineNumber": 30
+        },
+        {
+          "caller": "main",
+          "callee": "message.getBytes",
+          "lineNumber": 30
+        },
+        {
+          "caller": "main",
+          "callee": "channel.txCommit",
+          "lineNumber": 32
+        },
+        {
+          "caller": "main",
+          "callee": "channel.txRollback",
+          "lineNumber": 34
+        },
+        {
+          "caller": "main",
+          "callee": "System.err.println",
+          "lineNumber": 35
+        },
+        {
+          "caller": "main",
+          "callee": "e.getMessage",
+          "lineNumber": 35
+        },
+        {
+          "caller": "main",
+          "callee": "channel.close",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 15,
+          "endLine": 27,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SpzxPaymentApplication",
+          "startLine": 11,
+          "endLine": 28,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "SpzxPaymentApplication",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 16
+        },
+        {
+          "caller": "main",
+          "callee": "System.out.println",
+          "lineNumber": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "nodes": [
+    {
+      "id": "document:spzx-auth/src/main/resources/banner.txt",
+      "type": "document",
+      "name": "banner.txt",
+      "filePath": "spzx-auth/src/main/resources/banner.txt",
+      "summary": "spzx-auth 认证服务启动时打印的 Spring Boot 启动横幅，展示应用名称与 Spring Boot 版本，并附带 'spzx' 样式的 ASCII 艺术字，用于品牌化启动画面。",
+      "tags": ["spring-boot", "startup-banner", "branding", "documentation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-auth/src/main/resources/bootstrap.yml",
+      "type": "config",
+      "name": "bootstrap.yml",
+      "filePath": "spzx-auth/src/main/resources/bootstrap.yml",
+      "summary": "spzx-auth 认证服务的引导配置文件，设置服务端口 9200、应用名 spzx-auth、激活 dev 环境，并配置 Nacos 服务注册地址与配置中心、挂载共享配置。",
+      "tags": ["configuration", "spring-boot", "nacos", "service-discovery", "config-center"],
+      "complexity": "simple",
+      "languageNotes": "Bootstrap 配置在 Spring 上下文创建前加载，用于从 Nacos 拉取共享配置 application-dev.yml。"
+    },
+    {
+      "id": "config:spzx-auth/src/main/resources/logback.xml",
+      "type": "config",
+      "name": "logback.xml",
+      "filePath": "spzx-auth/src/main/resources/logback.xml",
+      "summary": "spzx-auth 认证服务的日志配置，定义控制台输出与基于时间滚动的 info/error 文件输出，日志格式包含 traceId，并设置 com.spzx 与 Spring 框架的日志级别。",
+      "tags": ["configuration", "logging", "logback", "spring-boot", "monitoring"],
+      "complexity": "moderate",
+      "languageNotes": "使用 %X{traceId:--} 将链路 traceId 写入日志格式；采用 TimeBasedRollingPolicy 按天滚动并保留 60 天。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:spzx-auth/src/main/resources/bootstrap.yml",
+      "target": "file:spzx-auth/src/main/java/com/spzx/auth/SpzxAuthApplication.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-auth/src/main/resources/logback.xml",
+      "target": "file:spzx-auth/src/main/java/com/spzx/auth/SpzxAuthApplication.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:spzx-auth/src/main/resources/banner.txt",
+      "target": "file:spzx-auth/src/main/java/com/spzx/auth/SpzxAuthApplication.java",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

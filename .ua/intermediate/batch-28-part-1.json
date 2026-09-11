@@ -1,0 +1,348 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/ISysFileService.java",
+      "type": "file",
+      "name": "ISysFileService.java",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/ISysFileService.java",
+      "summary": "定义文件上传服务接口，约定通用文件上传契约，供本地/对象存储实现共用。",
+      "tags": ["service", "interface", "file-upload", "contract"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/ISysFileService.java:ISysFileService",
+      "type": "class",
+      "name": "ISysFileService",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/ISysFileService.java",
+      "lineRange": [10, 20],
+      "summary": "文件上传服务接口，声明 uploadFile 方法作为文件存储的统一入口。",
+      "tags": ["service", "interface", "file-upload", "contract"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/LocalSysFileServiceImpl.java",
+      "type": "file",
+      "name": "LocalSysFileServiceImpl.java",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/LocalSysFileServiceImpl.java",
+      "summary": "基于本地磁盘的文件上传实现，将文件保存到配置的本地路径并返回访问域名。",
+      "tags": ["service", "file-upload", "local-storage", "implementation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/LocalSysFileServiceImpl.java:LocalSysFileServiceImpl",
+      "type": "class",
+      "name": "LocalSysFileServiceImpl",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/LocalSysFileServiceImpl.java",
+      "lineRange": [14, 50],
+      "summary": "本地磁盘文件存储实现类，实现 ISysFileService 接口的 uploadFile 方法。",
+      "tags": ["service", "file-upload", "local-storage", "implementation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/MinioSysFileServiceImpl.java",
+      "type": "file",
+      "name": "MinioSysFileServiceImpl.java",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/MinioSysFileServiceImpl.java",
+      "summary": "基于 MinIO 对象存储的文件上传实现，将文件写入 MinIO 桶并返回访问地址。",
+      "tags": ["service", "file-upload", "object-storage", "implementation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/MinioSysFileServiceImpl.java:MinioSysFileServiceImpl",
+      "type": "class",
+      "name": "MinioSysFileServiceImpl",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/MinioSysFileServiceImpl.java",
+      "lineRange": [18, 49],
+      "summary": "MinIO 对象存储文件上传实现类，实现 ISysFileService 接口。",
+      "tags": ["service", "file-upload", "object-storage", "implementation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/MinioSysFileServiceImpl.java:uploadFile",
+      "type": "function",
+      "name": "uploadFile",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/MinioSysFileServiceImpl.java",
+      "lineRange": [34, 48],
+      "summary": "将上传文件写入 MinIO 桶，生成唯一文件名并返回可访问的下载地址。",
+      "tags": ["file-upload", "object-storage", "minio", "service"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java",
+      "type": "file",
+      "name": "FileUploadUtils.java",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java",
+      "summary": "文件上传通用工具类，提供文件名生成、路径拼接、扩展名校验与大小限制等能力。",
+      "tags": ["utility", "file-upload", "validation", "security"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java:FileUploadUtils",
+      "type": "class",
+      "name": "FileUploadUtils",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java",
+      "lineRange": [24, 185],
+      "summary": "文件上传工具类，封装上传、文件名、绝对路径与扩展名校验逻辑。",
+      "tags": ["utility", "file-upload", "validation", "security"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java:upload",
+      "type": "function",
+      "name": "upload",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java",
+      "lineRange": [44, 89],
+      "summary": "重载的上传方法，按基础目录/扩展名校验后写入文件并返回相对路径。",
+      "tags": ["file-upload", "utility", "validation", "serialization"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java:getAbsoluteFile",
+      "type": "function",
+      "name": "getAbsoluteFile",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java",
+      "lineRange": [100, 112],
+      "summary": "根据上传目录与文件名构造并补齐目标的绝对路径，必要时创建父目录。",
+      "tags": ["utility", "file-upload", "path", "filesystem"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java:assertAllowed",
+      "type": "function",
+      "name": "assertAllowed",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java",
+      "lineRange": [127, 165],
+      "summary": "校验上传文件大小与扩展名是否在允许范围内，超限时抛出对应异常。",
+      "tags": ["validation", "file-upload", "security", "exception-handling"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java:isAllowedExtension",
+      "type": "function",
+      "name": "isAllowedExtension",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java",
+      "lineRange": [174, 184],
+      "summary": "判断给定扩展名是否处于允许的扩展名列表内。",
+      "tags": ["validation", "file-upload", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-gen/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-modules/spzx-gen/pom.xml",
+      "summary": "spzx-gen 代码生成模块的 Maven 构建配置，声明 Nacos、Sentinel、Velocity、MySQL 及公共日志等依赖。",
+      "tags": ["configuration", "build-system", "maven", "dependencies"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/SpzxGenApplication.java",
+      "type": "file",
+      "name": "SpzxGenApplication.java",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/SpzxGenApplication.java",
+      "summary": "spzx-gen 服务启动入口，通过 SpringApplication 启动 Spring Boot 应用并打印启动提示。",
+      "tags": ["entry-point", "spring-boot", "application", "startup"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/SpzxGenApplication.java:SpzxGenApplication",
+      "type": "class",
+      "name": "SpzxGenApplication",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/SpzxGenApplication.java",
+      "lineRange": [13, 32],
+      "summary": "spzx-gen 主应用类，包含 main 方法作为服务启动入口。",
+      "tags": ["entry-point", "spring-boot", "application", "startup"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/SpzxGenApplication.java:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/SpzxGenApplication.java",
+      "lineRange": [18, 31],
+      "summary": "启动 spzx-gen Spring Boot 应用并打印启动日志。",
+      "tags": ["entry-point", "startup", "spring-boot", "main"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/config/GenConfig.java",
+      "type": "file",
+      "name": "GenConfig.java",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/config/GenConfig.java",
+      "summary": "代码生成配置属性类，定义作者、包名、是否去掉前缀及表前缀等配置。",
+      "tags": ["config", "code-generator", "configuration", "properties"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/config/GenConfig.java:GenConfig",
+      "type": "class",
+      "name": "GenConfig",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/config/GenConfig.java",
+      "lineRange": [11, 66],
+      "summary": "代码生成配置类，持有生成作者、包名、自动移除前缀与表前缀等配置项。",
+      "tags": ["config", "code-generator", "configuration", "properties"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/controller/GenController.java",
+      "type": "file",
+      "name": "GenController.java",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/controller/GenController.java",
+      "summary": "代码生成 REST 控制器，提供生成表列表、导入、编辑、预览、下载与同步数据库等接口。",
+      "tags": ["api-handler", "controller", "code-generator", "rest"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/controller/GenController.java:GenController",
+      "type": "class",
+      "name": "GenController",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/controller/GenController.java",
+      "lineRange": [36, 211],
+      "summary": "代码生成控制器，暴露代码生成的各项 HTTP 接口并调用生成服务。",
+      "tags": ["api-handler", "controller", "code-generator", "rest"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/controller/GenController.java:getInfo",
+      "type": "function",
+      "name": "getInfo",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/controller/GenController.java",
+      "lineRange": [61, 73],
+      "summary": "查询指定生成表及其列信息，返回表id、表配置与列列表。",
+      "tags": ["api-handler", "query", "code-generator", "rest"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/controller/GenController.java:importTableSave",
+      "type": "function",
+      "name": "importTableSave",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/controller/GenController.java",
+      "lineRange": [103, 113],
+      "summary": "将选中的数据库表导入为代码生成的配置表，支持多表批量导入。",
+      "tags": ["api-handler", "import", "code-generator", "rest"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/domain/GenTable.java",
+      "type": "file",
+      "name": "GenTable.java",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/domain/GenTable.java",
+      "summary": "代码生成表实体类，描述被生成的表元数据、模板分类、主键与列集合等。",
+      "tags": ["data-model", "entity", "code-generator", "domain"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/domain/GenTable.java:GenTable",
+      "type": "class",
+      "name": "GenTable",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/domain/GenTable.java",
+      "lineRange": [16, 383],
+      "summary": "代码生成表实体，承载表名、类名、模板类型、主键、列集合与树形/子表配置。",
+      "tags": ["data-model", "entity", "code-generator", "domain"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/domain/GenTableColumn.java",
+      "type": "file",
+      "name": "GenTableColumn.java",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/domain/GenTableColumn.java",
+      "summary": "代码生成表列实体类，描述列的字段名、类型、Java 映射与录入/查询/列表属性。",
+      "tags": ["data-model", "entity", "code-generator", "domain"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/domain/GenTableColumn.java:GenTableColumn",
+      "type": "class",
+      "name": "GenTableColumn",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/domain/GenTableColumn.java",
+      "lineRange": [13, 374],
+      "summary": "代码生成表列实体，保存列的数据库类型、Java 类型、主键/自增/必填以及录入查询等标志。",
+      "tags": ["data-model", "entity", "code-generator", "domain"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/mapper/GenTableColumnMapper.java",
+      "type": "file",
+      "name": "GenTableColumnMapper.java",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/mapper/GenTableColumnMapper.java",
+      "summary": "表列数据访问接口，定义按表/库查询列及列的新增、更新、删除操作。",
+      "tags": ["data-access", "mapper", "mybatis", "code-generator"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/mapper/GenTableColumnMapper.java:GenTableColumnMapper",
+      "type": "class",
+      "name": "GenTableColumnMapper",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/mapper/GenTableColumnMapper.java",
+      "lineRange": [11, 60],
+      "summary": "表列 MyBatis Mapper 接口，声明列信息的查询与增删改方法。",
+      "tags": ["data-access", "mapper", "mybatis", "code-generator"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/mapper/GenTableMapper.java",
+      "type": "file",
+      "name": "GenTableMapper.java",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/mapper/GenTableMapper.java",
+      "summary": "生成表数据访问接口，定义表列表、库表列表、按 id/名称查询以及表的增删改操作。",
+      "tags": ["data-access", "mapper", "mybatis", "code-generator"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/mapper/GenTableMapper.java:GenTableMapper",
+      "type": "class",
+      "name": "GenTableMapper",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/mapper/GenTableMapper.java",
+      "lineRange": [11, 83],
+      "summary": "生成表 MyBatis Mapper 接口，声明表信息的查询与增删改方法。",
+      "tags": ["data-access", "mapper", "mybatis", "code-generator"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableColumnServiceImpl.java",
+      "type": "file",
+      "name": "GenTableColumnServiceImpl.java",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableColumnServiceImpl.java",
+      "summary": "表列服务实现类，提供列查询及列增删改等业务方法。",
+      "tags": ["service", "implementation", "mybatis", "code-generator"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableColumnServiceImpl.java:GenTableColumnServiceImpl",
+      "type": "class",
+      "name": "GenTableColumnServiceImpl",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableColumnServiceImpl.java",
+      "lineRange": [15, 68],
+      "summary": "表列服务实现，委托 GenTableColumnMapper 完成列数据的存取。",
+      "tags": ["service", "implementation", "mybatis", "code-generator"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/ISysFileService.java", "target": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/ISysFileService.java:ISysFileService", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/LocalSysFileServiceImpl.java", "target": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/LocalSysFileServiceImpl.java:LocalSysFileServiceImpl", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/MinioSysFileServiceImpl.java", "target": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/MinioSysFileServiceImpl.java:MinioSysFileServiceImpl", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/MinioSysFileServiceImpl.java", "target": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/MinioSysFileServiceImpl.java:uploadFile", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java", "target": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java:FileUploadUtils", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java", "target": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java:upload", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java", "target": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java:getAbsoluteFile", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java", "target": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java:assertAllowed", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java", "target": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java:isAllowedExtension", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/SpzxGenApplication.java", "target": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/SpzxGenApplication.java:SpzxGenApplication", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/SpzxGenApplication.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/SpzxGenApplication.java:main", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/config/GenConfig.java", "target": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/config/GenConfig.java:GenConfig", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/controller/GenController.java", "target": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/controller/GenController.java:GenController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/controller/GenController.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/controller/GenController.java:getInfo", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/controller/GenController.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/controller/GenController.java:importTableSave", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/domain/GenTable.java", "target": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/domain/GenTable.java:GenTable", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/domain/GenTableColumn.java", "target": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/domain/GenTableColumn.java:GenTableColumn", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/mapper/GenTableColumnMapper.java", "target": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/mapper/GenTableColumnMapper.java:GenTableColumnMapper", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/mapper/GenTableMapper.java", "target": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/mapper/GenTableMapper.java:GenTableMapper", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableColumnServiceImpl.java", "target": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableColumnServiceImpl.java:GenTableColumnServiceImpl", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/LocalSysFileServiceImpl.java:LocalSysFileServiceImpl", "target": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/ISysFileService.java:ISysFileService", "type": "implements", "direction": "forward", "weight": 0.9},
+    {"source": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/MinioSysFileServiceImpl.java:MinioSysFileServiceImpl", "target": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/ISysFileService.java:ISysFileService", "type": "implements", "direction": "forward", "weight": 0.9},
+    {"source": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableColumnServiceImpl.java:GenTableColumnServiceImpl", "target": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableColumnService.java:IGenTableColumnService", "type": "implements", "direction": "forward", "weight": 0.9},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/LocalSysFileServiceImpl.java", "target": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/MinioSysFileServiceImpl.java", "target": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java", "type": "depends_on", "direction": "forward", "weight": 0.6}
+  ]
+}

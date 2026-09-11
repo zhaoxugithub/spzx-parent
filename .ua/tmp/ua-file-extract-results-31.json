@@ -1,0 +1,2742 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 23,
+  "filesSkipped": [
+    "spzx-modules/spzx-payment/src/main/resources/mapper/payment/PaymentInfoMapper.xml",
+    "spzx-modules/spzx-product/pom.xml"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 23,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 23,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/configure/AlipayConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "setAlipay_public_key",
+          "startLine": 35,
+          "endLine": 38,
+          "params": [
+            "alipay_public_key"
+          ]
+        },
+        {
+          "name": "setReturn_url",
+          "startLine": 40,
+          "endLine": 43,
+          "params": [
+            "return_payment_url"
+          ]
+        },
+        {
+          "name": "setNotify_url",
+          "startLine": 45,
+          "endLine": 48,
+          "params": [
+            "notify_payment_url"
+          ]
+        },
+        {
+          "name": "setReturn_order_url",
+          "startLine": 50,
+          "endLine": 53,
+          "params": [
+            "return_order_url"
+          ]
+        },
+        {
+          "name": "alipayClient",
+          "startLine": 55,
+          "endLine": 59,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AlipayConfig",
+          "startLine": 9,
+          "endLine": 61,
+          "methods": [
+            "setAlipay_public_key",
+            "setReturn_url",
+            "setNotify_url",
+            "setReturn_order_url",
+            "alipayClient"
+          ],
+          "properties": [
+            "alipay_url",
+            "app_private_key",
+            "app_id",
+            "format",
+            "charset",
+            "sign_type",
+            "return_payment_url",
+            "notify_payment_url",
+            "return_order_url",
+            "alipay_public_key"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "format",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "charset",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "sign_type",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "return_payment_url",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "notify_payment_url",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "return_order_url",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "alipay_public_key",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "setAlipay_public_key",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "setReturn_url",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "setNotify_url",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "setReturn_order_url",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "alipayClient",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "AlipayConfig",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "alipayClient",
+          "callee": "new DefaultAlipayClient",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 13,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/controller/AlipayController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 126,
+      "nonEmptyLines": 116,
+      "functions": [
+        {
+          "name": "submitAlipay",
+          "startLine": 40,
+          "endLine": 49,
+          "params": [
+            "orderNo"
+          ]
+        },
+        {
+          "name": "alipayNotify",
+          "startLine": 93,
+          "endLine": 125,
+          "params": [
+            "paramMap",
+            "request"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AlipayController",
+          "startLine": 20,
+          "endLine": 126,
+          "methods": [
+            "submitAlipay",
+            "alipayNotify"
+          ],
+          "properties": [
+            "alipayService",
+            "paymentInfoService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "submitAlipay",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "alipayNotify",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "AlipayController",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "submitAlipay",
+          "callee": "alipayService.submitAlipay",
+          "lineNumber": 46
+        },
+        {
+          "caller": "submitAlipay",
+          "callee": "log.info",
+          "lineNumber": 47
+        },
+        {
+          "caller": "submitAlipay",
+          "callee": "success",
+          "lineNumber": 48
+        },
+        {
+          "caller": "alipayNotify",
+          "callee": "log.info",
+          "lineNumber": 97
+        },
+        {
+          "caller": "alipayNotify",
+          "callee": "log.info",
+          "lineNumber": 98
+        },
+        {
+          "caller": "alipayNotify",
+          "callee": "AlipaySignature.rsaCheckV1",
+          "lineNumber": 101
+        },
+        {
+          "caller": "alipayNotify",
+          "callee": "e.printStackTrace",
+          "lineNumber": 103
+        },
+        {
+          "caller": "alipayNotify",
+          "callee": "paramMap.get",
+          "lineNumber": 107
+        },
+        {
+          "caller": "alipayNotify",
+          "callee": "\"TRADE_SUCCESS\".equals",
+          "lineNumber": 108
+        },
+        {
+          "caller": "alipayNotify",
+          "callee": "\"TRADE_FINISHED\".equals",
+          "lineNumber": 108
+        },
+        {
+          "caller": "alipayNotify",
+          "callee": "paymentInfoService.updatePaymentStatus",
+          "lineNumber": 110
+        },
+        {
+          "caller": "alipayNotify",
+          "callee": "log.error",
+          "lineNumber": 114
+        },
+        {
+          "caller": "alipayNotify",
+          "callee": "paramMap.get",
+          "lineNumber": 115
+        },
+        {
+          "caller": "alipayNotify",
+          "callee": "log.error",
+          "lineNumber": 120
+        },
+        {
+          "caller": "alipayNotify",
+          "callee": "paramMap.get",
+          "lineNumber": 121
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/domain/PaymentInfo.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 71,
+      "classes": [
+        {
+          "name": "PaymentInfo",
+          "startLine": 15,
+          "endLine": 84,
+          "methods": [],
+          "properties": [
+            "serialVersionUID",
+            "userId",
+            "orderNo",
+            "payType",
+            "tradeNo",
+            "amount",
+            "content",
+            "paymentStatus",
+            "callbackTime",
+            "callbackContent"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PaymentInfo",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/mapper/PaymentInfoMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 8,
+      "classes": [
+        {
+          "name": "PaymentInfoMapper",
+          "startLine": 9,
+          "endLine": 12,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PaymentInfoMapper",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/receiver/PaymentReceiver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "PaymentReceiver",
+          "startLine": 8,
+          "endLine": 15,
+          "methods": [],
+          "properties": [
+            "alipayService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PaymentReceiver",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IAlipayService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 4,
+      "classes": [
+        {
+          "name": "IAlipayService",
+          "startLine": 3,
+          "endLine": 6,
+          "methods": [
+            "submitAlipay"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IAlipayService",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IPaymentInfoService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "IPaymentInfoService",
+          "startLine": 11,
+          "endLine": 26,
+          "methods": [
+            "savePayment",
+            "updatePaymentStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IPaymentInfoService",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/AlipayServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "submitAlipay",
+          "startLine": 34,
+          "endLine": 63,
+          "params": [
+            "orderNo"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AlipayServiceImpl",
+          "startLine": 17,
+          "endLine": 64,
+          "methods": [
+            "submitAlipay"
+          ],
+          "properties": [
+            "alipayClient",
+            "paymentInfoService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "submitAlipay",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "AlipayServiceImpl",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "submitAlipay",
+          "callee": "paymentInfoService.savePayment",
+          "lineNumber": 38
+        },
+        {
+          "caller": "submitAlipay",
+          "callee": "new AlipayTradeWapPayRequest",
+          "lineNumber": 42
+        },
+        {
+          "caller": "submitAlipay",
+          "callee": "request.setReturnUrl",
+          "lineNumber": 44
+        },
+        {
+          "caller": "submitAlipay",
+          "callee": "request.setNotifyUrl",
+          "lineNumber": 46
+        },
+        {
+          "caller": "submitAlipay",
+          "callee": "new HashMap<>",
+          "lineNumber": 49
+        },
+        {
+          "caller": "submitAlipay",
+          "callee": "map.put",
+          "lineNumber": 50
+        },
+        {
+          "caller": "submitAlipay",
+          "callee": "paymentInfo.getOrderNo",
+          "lineNumber": 50
+        },
+        {
+          "caller": "submitAlipay",
+          "callee": "map.put",
+          "lineNumber": 51
+        },
+        {
+          "caller": "submitAlipay",
+          "callee": "map.put",
+          "lineNumber": 53
+        },
+        {
+          "caller": "submitAlipay",
+          "callee": "map.put",
+          "lineNumber": 54
+        },
+        {
+          "caller": "submitAlipay",
+          "callee": "paymentInfo.getContent",
+          "lineNumber": 54
+        },
+        {
+          "caller": "submitAlipay",
+          "callee": "request.setBizContent",
+          "lineNumber": 60
+        },
+        {
+          "caller": "submitAlipay",
+          "callee": "JSON.toJSONString",
+          "lineNumber": 60
+        },
+        {
+          "caller": "submitAlipay",
+          "callee": "alipayClient.pageExecute(request).getBody",
+          "lineNumber": 62
+        },
+        {
+          "caller": "submitAlipay",
+          "callee": "alipayClient.pageExecute",
+          "lineNumber": 62
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 70,
+      "functions": [
+        {
+          "name": "savePayment",
+          "startLine": 38,
+          "endLine": 61,
+          "params": [
+            "orderNo"
+          ]
+        },
+        {
+          "name": "updatePaymentStatus",
+          "startLine": 64,
+          "endLine": 81,
+          "params": [
+            "paramMap",
+            "payType"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PaymentInfoServiceImpl",
+          "startLine": 26,
+          "endLine": 82,
+          "methods": [
+            "savePayment",
+            "updatePaymentStatus"
+          ],
+          "properties": [
+            "paymentInfoMapper",
+            "remoteOrderInfoService",
+            "rabbitService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "savePayment",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "updatePaymentStatus",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "PaymentInfoServiceImpl",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "savePayment",
+          "callee": "paymentInfoMapper.selectOne",
+          "lineNumber": 40
+        },
+        {
+          "caller": "savePayment",
+          "callee": "new LambdaQueryWrapper<PaymentInfo>().eq",
+          "lineNumber": 40
+        },
+        {
+          "caller": "savePayment",
+          "callee": "new LambdaQueryWrapper<PaymentInfo>",
+          "lineNumber": 40
+        },
+        {
+          "caller": "savePayment",
+          "callee": "remoteOrderInfoService.getByOrderNo",
+          "lineNumber": 42
+        },
+        {
+          "caller": "savePayment",
+          "callee": "orderInfoResult.getCode",
+          "lineNumber": 43
+        },
+        {
+          "caller": "savePayment",
+          "callee": "new ServiceException",
+          "lineNumber": 44
+        },
+        {
+          "caller": "savePayment",
+          "callee": "orderInfoResult.getMsg",
+          "lineNumber": 44
+        },
+        {
+          "caller": "savePayment",
+          "callee": "orderInfoResult.getData",
+          "lineNumber": 46
+        },
+        {
+          "caller": "savePayment",
+          "callee": "new PaymentInfo",
+          "lineNumber": 48
+        },
+        {
+          "caller": "savePayment",
+          "callee": "paymentInfo.setUserId",
+          "lineNumber": 49
+        },
+        {
+          "caller": "savePayment",
+          "callee": "orderInfo.getUserId",
+          "lineNumber": 49
+        },
+        {
+          "caller": "savePayment",
+          "callee": "orderInfo.getOrderItemList",
+          "lineNumber": 51
+        },
+        {
+          "caller": "savePayment",
+          "callee": "item.getSkuName",
+          "lineNumber": 52
+        },
+        {
+          "caller": "savePayment",
+          "callee": "paymentInfo.setContent",
+          "lineNumber": 54
+        },
+        {
+          "caller": "savePayment",
+          "callee": "paymentInfo.setAmount",
+          "lineNumber": 55
+        },
+        {
+          "caller": "savePayment",
+          "callee": "orderInfo.getTotalAmount",
+          "lineNumber": 55
+        },
+        {
+          "caller": "savePayment",
+          "callee": "paymentInfo.setOrderNo",
+          "lineNumber": 56
+        },
+        {
+          "caller": "savePayment",
+          "callee": "paymentInfo.setPaymentStatus",
+          "lineNumber": 57
+        },
+        {
+          "caller": "savePayment",
+          "callee": "paymentInfoMapper.insert",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updatePaymentStatus",
+          "callee": "paymentInfoMapper.selectOne",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updatePaymentStatus",
+          "callee": "new LambdaQueryWrapper<PaymentInfo>().eq",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updatePaymentStatus",
+          "callee": "new LambdaQueryWrapper<PaymentInfo>",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updatePaymentStatus",
+          "callee": "paramMap.get",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updatePaymentStatus",
+          "callee": "\"1\".equals",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updatePaymentStatus",
+          "callee": "paymentInfo.getPaymentStatus",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updatePaymentStatus",
+          "callee": "paymentInfo.setPayType",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updatePaymentStatus",
+          "callee": "paymentInfo.setPaymentStatus",
+          "lineNumber": 73
+        },
+        {
+          "caller": "updatePaymentStatus",
+          "callee": "paymentInfo.setTradeNo",
+          "lineNumber": 74
+        },
+        {
+          "caller": "updatePaymentStatus",
+          "callee": "paramMap.get",
+          "lineNumber": 74
+        },
+        {
+          "caller": "updatePaymentStatus",
+          "callee": "paymentInfo.setCallbackTime",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updatePaymentStatus",
+          "callee": "new Date",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updatePaymentStatus",
+          "callee": "paymentInfo.setCallbackContent",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updatePaymentStatus",
+          "callee": "JSON.toJSONString",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updatePaymentStatus",
+          "callee": "paymentInfoMapper.updateById",
+          "lineNumber": 77
+        },
+        {
+          "caller": "updatePaymentStatus",
+          "callee": "rabbitService.sendMessage",
+          "lineNumber": 80
+        },
+        {
+          "caller": "updatePaymentStatus",
+          "callee": "paymentInfo.getOrderNo",
+          "lineNumber": 80
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/SpzxProductApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 22,
+          "endLine": 34,
+          "params": [
+            "args"
+          ]
+        },
+        {
+          "name": "run",
+          "startLine": 43,
+          "endLine": 54,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SpzxProductApplication",
+          "startLine": 18,
+          "endLine": 55,
+          "methods": [
+            "main",
+            "run"
+          ],
+          "properties": [
+            "productSkuMapper",
+            "redisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "run",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "SpzxProductApplication",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 23
+        },
+        {
+          "caller": "main",
+          "callee": "System.out.println",
+          "lineNumber": 24
+        },
+        {
+          "caller": "run",
+          "callee": "productSkuMapper.selectList",
+          "lineNumber": 46
+        },
+        {
+          "caller": "run",
+          "callee": "new LambdaQueryWrapper<ProductSku>().eq",
+          "lineNumber": 46
+        },
+        {
+          "caller": "run",
+          "callee": "new LambdaQueryWrapper<ProductSku>",
+          "lineNumber": 46
+        },
+        {
+          "caller": "run",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 47
+        },
+        {
+          "caller": "run",
+          "callee": "productSku.getId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "run",
+          "callee": "redisTemplate.opsForValue().setBit",
+          "lineNumber": 51
+        },
+        {
+          "caller": "run",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 114,
+      "nonEmptyLines": 96,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 49,
+          "endLine": 59,
+          "params": [
+            "brand"
+          ]
+        },
+        {
+          "name": "getById",
+          "startLine": 61,
+          "endLine": 67,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "save",
+          "startLine": 69,
+          "endLine": 77,
+          "params": [
+            "brand"
+          ]
+        },
+        {
+          "name": "update",
+          "startLine": 79,
+          "endLine": 87,
+          "params": [
+            "brand"
+          ]
+        },
+        {
+          "name": "deleteBatch",
+          "startLine": 89,
+          "endLine": 96,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getBrandAll",
+          "startLine": 98,
+          "endLine": 103,
+          "params": []
+        },
+        {
+          "name": "getBrandAllList",
+          "startLine": 107,
+          "endLine": 112,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "BrandController",
+          "startLine": 30,
+          "endLine": 114,
+          "methods": [
+            "list",
+            "getById",
+            "save",
+            "update",
+            "deleteBatch",
+            "getBrandAll",
+            "getBrandAllList"
+          ],
+          "properties": [
+            "brandService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getById",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "save",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "update",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "deleteBatch",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "getBrandAll",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "getBrandAllList",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "BrandController",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "startPage",
+          "lineNumber": 54
+        },
+        {
+          "caller": "list",
+          "callee": "brandService.list",
+          "lineNumber": 56
+        },
+        {
+          "caller": "list",
+          "callee": "getDataTable",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getById",
+          "callee": "brandService.getById",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getById",
+          "callee": "success",
+          "lineNumber": 66
+        },
+        {
+          "caller": "save",
+          "callee": "brand.setCreateBy",
+          "lineNumber": 74
+        },
+        {
+          "caller": "save",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 74
+        },
+        {
+          "caller": "save",
+          "callee": "brandService.save",
+          "lineNumber": 75
+        },
+        {
+          "caller": "save",
+          "callee": "success",
+          "lineNumber": 76
+        },
+        {
+          "caller": "update",
+          "callee": "brand.setUpdateBy",
+          "lineNumber": 84
+        },
+        {
+          "caller": "update",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 84
+        },
+        {
+          "caller": "update",
+          "callee": "brandService.update",
+          "lineNumber": 85
+        },
+        {
+          "caller": "update",
+          "callee": "toAjax",
+          "lineNumber": 86
+        },
+        {
+          "caller": "deleteBatch",
+          "callee": "brandService.deleteBatch",
+          "lineNumber": 94
+        },
+        {
+          "caller": "deleteBatch",
+          "callee": "toAjax",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getBrandAll",
+          "callee": "success",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getBrandAll",
+          "callee": "brandService.selectBrandAll",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getBrandAllList",
+          "callee": "R.ok",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getBrandAllList",
+          "callee": "brandService.selectBrandAll",
+          "lineNumber": 111
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 79,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 32,
+          "endLine": 38,
+          "params": [
+            "categoryBrand"
+          ]
+        },
+        {
+          "name": "getInfo",
+          "startLine": 44,
+          "endLine": 48,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "add",
+          "startLine": 54,
+          "endLine": 59,
+          "params": [
+            "categoryBrand"
+          ]
+        },
+        {
+          "name": "edit",
+          "startLine": 64,
+          "endLine": 69,
+          "params": [
+            "categoryBrand"
+          ]
+        },
+        {
+          "name": "remove",
+          "startLine": 75,
+          "endLine": 79,
+          "params": [
+            "idList"
+          ]
+        },
+        {
+          "name": "selectBrandListByCategoryId",
+          "startLine": 88,
+          "endLine": 92,
+          "params": [
+            "categoryId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CategoryBrandController",
+          "startLine": 21,
+          "endLine": 93,
+          "methods": [
+            "list",
+            "getInfo",
+            "add",
+            "edit",
+            "remove",
+            "selectBrandListByCategoryId"
+          ],
+          "properties": [
+            "categoryBrandService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "getInfo",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "add",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "edit",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "remove",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "selectBrandListByCategoryId",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "CategoryBrandController",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "startPage",
+          "lineNumber": 35
+        },
+        {
+          "caller": "list",
+          "callee": "categoryBrandService.selectCategoryBrandList",
+          "lineNumber": 36
+        },
+        {
+          "caller": "list",
+          "callee": "getDataTable",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getInfo",
+          "callee": "success",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getInfo",
+          "callee": "categoryBrandService.selectCategoryBrandById",
+          "lineNumber": 47
+        },
+        {
+          "caller": "add",
+          "callee": "categoryBrand.setCreateBy",
+          "lineNumber": 57
+        },
+        {
+          "caller": "add",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 57
+        },
+        {
+          "caller": "add",
+          "callee": "toAjax",
+          "lineNumber": 58
+        },
+        {
+          "caller": "add",
+          "callee": "categoryBrandService.insertCategoryBrand",
+          "lineNumber": 58
+        },
+        {
+          "caller": "edit",
+          "callee": "categoryBrand.setUpdateBy",
+          "lineNumber": 67
+        },
+        {
+          "caller": "edit",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 67
+        },
+        {
+          "caller": "edit",
+          "callee": "toAjax",
+          "lineNumber": 68
+        },
+        {
+          "caller": "edit",
+          "callee": "categoryBrandService.updateCategoryBrand",
+          "lineNumber": 68
+        },
+        {
+          "caller": "remove",
+          "callee": "toAjax",
+          "lineNumber": 78
+        },
+        {
+          "caller": "remove",
+          "callee": "categoryBrandService.removeBatchByIds",
+          "lineNumber": 78
+        },
+        {
+          "caller": "selectBrandListByCategoryId",
+          "callee": "success",
+          "lineNumber": 91
+        },
+        {
+          "caller": "selectBrandListByCategoryId",
+          "callee": "categoryBrandService.selectBrandListByCategoryId",
+          "lineNumber": 91
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "treeSelect",
+          "startLine": 30,
+          "endLine": 34,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "export",
+          "startLine": 36,
+          "endLine": 39,
+          "params": [
+            "response"
+          ]
+        },
+        {
+          "name": "importData",
+          "startLine": 42,
+          "endLine": 51,
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "getOneCategory",
+          "startLine": 57,
+          "endLine": 62,
+          "params": []
+        },
+        {
+          "name": "tree",
+          "startLine": 69,
+          "endLine": 73,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CategoryController",
+          "startLine": 22,
+          "endLine": 74,
+          "methods": [
+            "treeSelect",
+            "export",
+            "importData",
+            "getOneCategory",
+            "tree"
+          ],
+          "properties": [
+            "categoryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "treeSelect",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "export",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "importData",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "getOneCategory",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "tree",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "CategoryController",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "treeSelect",
+          "callee": "success",
+          "lineNumber": 33
+        },
+        {
+          "caller": "treeSelect",
+          "callee": "categoryService.treeSelect",
+          "lineNumber": 33
+        },
+        {
+          "caller": "export",
+          "callee": "categoryService.exportData",
+          "lineNumber": 38
+        },
+        {
+          "caller": "importData",
+          "callee": "categoryService.importData",
+          "lineNumber": 45
+        },
+        {
+          "caller": "importData",
+          "callee": "AjaxResult.success",
+          "lineNumber": 46
+        },
+        {
+          "caller": "importData",
+          "callee": "e.printStackTrace",
+          "lineNumber": 48
+        },
+        {
+          "caller": "importData",
+          "callee": "AjaxResult.error",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getOneCategory",
+          "callee": "categoryService.getOneCategory",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getOneCategory",
+          "callee": "R.ok",
+          "lineNumber": 61
+        },
+        {
+          "caller": "tree",
+          "callee": "R.ok",
+          "lineNumber": 72
+        },
+        {
+          "caller": "tree",
+          "callee": "categoryService.tree",
+          "lineNumber": 72
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 231,
+      "nonEmptyLines": 195,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 42,
+          "endLine": 48,
+          "params": [
+            "product"
+          ]
+        },
+        {
+          "name": "add",
+          "startLine": 57,
+          "endLine": 62,
+          "params": [
+            "product"
+          ]
+        },
+        {
+          "name": "getInfo",
+          "startLine": 68,
+          "endLine": 72,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "edit",
+          "startLine": 81,
+          "endLine": 86,
+          "params": [
+            "product"
+          ]
+        },
+        {
+          "name": "remove",
+          "startLine": 95,
+          "endLine": 99,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "updateAuditStatus",
+          "startLine": 102,
+          "endLine": 107,
+          "params": [
+            "id",
+            "auditStatus"
+          ]
+        },
+        {
+          "name": "updateStatus",
+          "startLine": 110,
+          "endLine": 115,
+          "params": [
+            "id",
+            "status"
+          ]
+        },
+        {
+          "name": "getTopSale",
+          "startLine": 121,
+          "endLine": 126,
+          "params": []
+        },
+        {
+          "name": "skuList",
+          "startLine": 130,
+          "endLine": 139,
+          "params": [
+            "pageNum",
+            "pageSize",
+            "skuQuery"
+          ]
+        },
+        {
+          "name": "getProductSku",
+          "startLine": 143,
+          "endLine": 152,
+          "params": [
+            "skuId"
+          ]
+        },
+        {
+          "name": "getProduct",
+          "startLine": 154,
+          "endLine": 159,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getSkuPrice",
+          "startLine": 161,
+          "endLine": 166,
+          "params": [
+            "skuId"
+          ]
+        },
+        {
+          "name": "getProductDetails",
+          "startLine": 168,
+          "endLine": 173,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getSkuSpecValue",
+          "startLine": 175,
+          "endLine": 180,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getSkuStock",
+          "startLine": 182,
+          "endLine": 187,
+          "params": [
+            "skuId"
+          ]
+        },
+        {
+          "name": "getSkuPriceList",
+          "startLine": 197,
+          "endLine": 202,
+          "params": [
+            "skuIdList"
+          ]
+        },
+        {
+          "name": "checkAndLock",
+          "startLine": 214,
+          "endLine": 229,
+          "params": [
+            "orderNo",
+            "skuLockVoList"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ProductController",
+          "startLine": 31,
+          "endLine": 231,
+          "methods": [
+            "list",
+            "add",
+            "getInfo",
+            "edit",
+            "remove",
+            "updateAuditStatus",
+            "updateStatus",
+            "getTopSale",
+            "skuList",
+            "getProductSku",
+            "getProduct",
+            "getSkuPrice",
+            "getProductDetails",
+            "getSkuSpecValue",
+            "getSkuStock",
+            "getSkuPriceList",
+            "checkAndLock"
+          ],
+          "properties": [
+            "productService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "add",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "getInfo",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "edit",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "remove",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "updateAuditStatus",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "updateStatus",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "getTopSale",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "skuList",
+          "line": 130,
+          "isDefault": false
+        },
+        {
+          "name": "getProductSku",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "getProduct",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "getSkuPrice",
+          "line": 161,
+          "isDefault": false
+        },
+        {
+          "name": "getProductDetails",
+          "line": 168,
+          "isDefault": false
+        },
+        {
+          "name": "getSkuSpecValue",
+          "line": 175,
+          "isDefault": false
+        },
+        {
+          "name": "getSkuStock",
+          "line": 182,
+          "isDefault": false
+        },
+        {
+          "name": "getSkuPriceList",
+          "line": 197,
+          "isDefault": false
+        },
+        {
+          "name": "checkAndLock",
+          "line": 214,
+          "isDefault": false
+        },
+        {
+          "name": "ProductController",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "startPage",
+          "lineNumber": 45
+        },
+        {
+          "caller": "list",
+          "callee": "productService.selectProductList",
+          "lineNumber": 46
+        },
+        {
+          "caller": "list",
+          "callee": "getDataTable",
+          "lineNumber": 47
+        },
+        {
+          "caller": "add",
+          "callee": "product.setCreateBy",
+          "lineNumber": 60
+        },
+        {
+          "caller": "add",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 60
+        },
+        {
+          "caller": "add",
+          "callee": "toAjax",
+          "lineNumber": 61
+        },
+        {
+          "caller": "add",
+          "callee": "productService.insertProduct",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getInfo",
+          "callee": "success",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getInfo",
+          "callee": "productService.selectProductById",
+          "lineNumber": 71
+        },
+        {
+          "caller": "edit",
+          "callee": "product.setUpdateBy",
+          "lineNumber": 84
+        },
+        {
+          "caller": "edit",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 84
+        },
+        {
+          "caller": "edit",
+          "callee": "toAjax",
+          "lineNumber": 85
+        },
+        {
+          "caller": "edit",
+          "callee": "productService.updateProduct",
+          "lineNumber": 85
+        },
+        {
+          "caller": "remove",
+          "callee": "toAjax",
+          "lineNumber": 98
+        },
+        {
+          "caller": "remove",
+          "callee": "productService.deleteProductByIds",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updateAuditStatus",
+          "callee": "productService.updateAuditStatus",
+          "lineNumber": 105
+        },
+        {
+          "caller": "updateAuditStatus",
+          "callee": "success",
+          "lineNumber": 106
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "productService.updateStatus",
+          "lineNumber": 113
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "success",
+          "lineNumber": 114
+        },
+        {
+          "caller": "getTopSale",
+          "callee": "R.ok",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getTopSale",
+          "callee": "productService.getTopSale",
+          "lineNumber": 125
+        },
+        {
+          "caller": "skuList",
+          "callee": "PageHelper.startPage",
+          "lineNumber": 135
+        },
+        {
+          "caller": "skuList",
+          "callee": "productService.skuList",
+          "lineNumber": 136
+        },
+        {
+          "caller": "skuList",
+          "callee": "getDataTable",
+          "lineNumber": 137
+        },
+        {
+          "caller": "skuList",
+          "callee": "R.ok",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "productService.getProductSku",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "R.ok",
+          "lineNumber": 151
+        },
+        {
+          "caller": "getProduct",
+          "callee": "R.ok",
+          "lineNumber": 158
+        },
+        {
+          "caller": "getProduct",
+          "callee": "productService.getProduct",
+          "lineNumber": 158
+        },
+        {
+          "caller": "getSkuPrice",
+          "callee": "R.ok",
+          "lineNumber": 165
+        },
+        {
+          "caller": "getSkuPrice",
+          "callee": "productService.getSkuPrice",
+          "lineNumber": 165
+        },
+        {
+          "caller": "getProductDetails",
+          "callee": "R.ok",
+          "lineNumber": 172
+        },
+        {
+          "caller": "getProductDetails",
+          "callee": "productService.getProductDetails",
+          "lineNumber": 172
+        },
+        {
+          "caller": "getSkuSpecValue",
+          "callee": "R.ok",
+          "lineNumber": 179
+        },
+        {
+          "caller": "getSkuSpecValue",
+          "callee": "productService.getSkuSpecValue",
+          "lineNumber": 179
+        },
+        {
+          "caller": "getSkuStock",
+          "callee": "R.ok",
+          "lineNumber": 186
+        },
+        {
+          "caller": "getSkuStock",
+          "callee": "productService.getSkuStock",
+          "lineNumber": 186
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "R.ok",
+          "lineNumber": 201
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "productService.getSkuPriceList",
+          "lineNumber": 201
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "productService.checkAndLock",
+          "lineNumber": 219
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "R.ok",
+          "lineNumber": 220
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "e.printStackTrace",
+          "lineNumber": 223
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "R.ok",
+          "lineNumber": 224
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "e.getMessage",
+          "lineNumber": 224
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "e.printStackTrace",
+          "lineNumber": 226
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "R.ok",
+          "lineNumber": 227
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 18,
+        "functionCount": 17,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 32,
+          "endLine": 38,
+          "params": [
+            "productSpec"
+          ]
+        },
+        {
+          "name": "getInfo",
+          "startLine": 43,
+          "endLine": 47,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "add",
+          "startLine": 52,
+          "endLine": 57,
+          "params": [
+            "productSpec"
+          ]
+        },
+        {
+          "name": "edit",
+          "startLine": 63,
+          "endLine": 68,
+          "params": [
+            "productSpec"
+          ]
+        },
+        {
+          "name": "remove",
+          "startLine": 74,
+          "endLine": 78,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "selectProductSpecListByCategoryId",
+          "startLine": 81,
+          "endLine": 85,
+          "params": [
+            "categoryId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ProductSpecController",
+          "startLine": 21,
+          "endLine": 86,
+          "methods": [
+            "list",
+            "getInfo",
+            "add",
+            "edit",
+            "remove",
+            "selectProductSpecListByCategoryId"
+          ],
+          "properties": [
+            "productSpecService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "getInfo",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "add",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "edit",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "remove",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "selectProductSpecListByCategoryId",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "ProductSpecController",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "startPage",
+          "lineNumber": 35
+        },
+        {
+          "caller": "list",
+          "callee": "productSpecService.selectProductSpecList",
+          "lineNumber": 36
+        },
+        {
+          "caller": "list",
+          "callee": "getDataTable",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getInfo",
+          "callee": "success",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getInfo",
+          "callee": "productSpecService.selectProductSpecById",
+          "lineNumber": 46
+        },
+        {
+          "caller": "add",
+          "callee": "productSpec.setCreateBy",
+          "lineNumber": 55
+        },
+        {
+          "caller": "add",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 55
+        },
+        {
+          "caller": "add",
+          "callee": "toAjax",
+          "lineNumber": 56
+        },
+        {
+          "caller": "add",
+          "callee": "productSpecService.save",
+          "lineNumber": 56
+        },
+        {
+          "caller": "edit",
+          "callee": "productSpec.setUpdateBy",
+          "lineNumber": 66
+        },
+        {
+          "caller": "edit",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 66
+        },
+        {
+          "caller": "edit",
+          "callee": "toAjax",
+          "lineNumber": 67
+        },
+        {
+          "caller": "edit",
+          "callee": "productSpecService.updateById",
+          "lineNumber": 67
+        },
+        {
+          "caller": "remove",
+          "callee": "toAjax",
+          "lineNumber": 77
+        },
+        {
+          "caller": "remove",
+          "callee": "productSpecService.removeBatchByIds",
+          "lineNumber": 77
+        },
+        {
+          "caller": "remove",
+          "callee": "Arrays.asList",
+          "lineNumber": 77
+        },
+        {
+          "caller": "selectProductSpecListByCategoryId",
+          "callee": "success",
+          "lineNumber": 84
+        },
+        {
+          "caller": "selectProductSpecListByCategoryId",
+          "callee": "productSpecService.selectProductSpecListByCategoryId",
+          "lineNumber": 84
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 71,
+      "functions": [
+        {
+          "name": "findPage",
+          "startLine": 27,
+          "endLine": 40,
+          "params": [
+            "pageNum",
+            "pageSize",
+            "productUnit"
+          ]
+        },
+        {
+          "name": "add",
+          "startLine": 45,
+          "endLine": 50,
+          "params": [
+            "productUnit"
+          ]
+        },
+        {
+          "name": "getById",
+          "startLine": 53,
+          "endLine": 57,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "edit",
+          "startLine": 62,
+          "endLine": 67,
+          "params": [
+            "productUnit"
+          ]
+        },
+        {
+          "name": "remove",
+          "startLine": 72,
+          "endLine": 76,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "selectProductUnitAll",
+          "startLine": 79,
+          "endLine": 83,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ProductUnitController",
+          "startLine": 19,
+          "endLine": 84,
+          "methods": [
+            "findPage",
+            "add",
+            "getById",
+            "edit",
+            "remove",
+            "selectProductUnitAll"
+          ],
+          "properties": [
+            "productUnitService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "findPage",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "add",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "getById",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "edit",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "remove",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "selectProductUnitAll",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "ProductUnitController",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "findPage",
+          "callee": "new Page",
+          "lineNumber": 37
+        },
+        {
+          "caller": "findPage",
+          "callee": "productUnitService.findPage",
+          "lineNumber": 38
+        },
+        {
+          "caller": "findPage",
+          "callee": "getDataTable",
+          "lineNumber": 39
+        },
+        {
+          "caller": "add",
+          "callee": "productUnit.setCreateBy",
+          "lineNumber": 48
+        },
+        {
+          "caller": "add",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 48
+        },
+        {
+          "caller": "add",
+          "callee": "toAjax",
+          "lineNumber": 49
+        },
+        {
+          "caller": "add",
+          "callee": "productUnitService.insertProductUnit",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getById",
+          "callee": "success",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getById",
+          "callee": "productUnitService.getById",
+          "lineNumber": 56
+        },
+        {
+          "caller": "edit",
+          "callee": "productUnit.setUpdateBy",
+          "lineNumber": 65
+        },
+        {
+          "caller": "edit",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 65
+        },
+        {
+          "caller": "edit",
+          "callee": "toAjax",
+          "lineNumber": 66
+        },
+        {
+          "caller": "edit",
+          "callee": "productUnitService.updateProductUnit",
+          "lineNumber": 66
+        },
+        {
+          "caller": "remove",
+          "callee": "toAjax",
+          "lineNumber": 75
+        },
+        {
+          "caller": "remove",
+          "callee": "productUnitService.deleteProductUnitByIds",
+          "lineNumber": 75
+        },
+        {
+          "caller": "selectProductUnitAll",
+          "callee": "success",
+          "lineNumber": 82
+        },
+        {
+          "caller": "selectProductUnitAll",
+          "callee": "productUnitService.list",
+          "lineNumber": 82
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/TestController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "testLock",
+          "startLine": 19,
+          "endLine": 23,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "TestController",
+          "startLine": 11,
+          "endLine": 24,
+          "methods": [
+            "testLock"
+          ],
+          "properties": [
+            "testService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testLock",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "TestController",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testLock",
+          "callee": "testService.testLock",
+          "lineNumber": 21
+        },
+        {
+          "caller": "testLock",
+          "callee": "AjaxResult.success",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/Category.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 46,
+      "classes": [
+        {
+          "name": "Category",
+          "startLine": 18,
+          "endLine": 57,
+          "methods": [],
+          "properties": [
+            "serialVersionUID",
+            "name",
+            "imageUrl",
+            "parentId",
+            "status",
+            "orderNum",
+            "hasChildren",
+            "children"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Category",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/CategoryBrand.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "CategoryBrand",
+          "startLine": 14,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "serialVersionUID",
+            "brandId",
+            "categoryId",
+            "categoryName",
+            "brandName",
+            "logo",
+            "categoryIdList"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CategoryBrand",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductSpec.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "ProductSpec",
+          "startLine": 16,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "serialVersionUID",
+            "categoryId",
+            "specName",
+            "specValue",
+            "categoryName",
+            "categoryIdList"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductSpec",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductUnit.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "ProductUnit",
+          "startLine": 12,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "serialVersionUID",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductUnit",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/SkuStock.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "SkuStock",
+          "startLine": 10,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "serialVersionUID",
+            "skuId",
+            "totalNum",
+            "lockNum",
+            "availableNum",
+            "saleNum",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SkuStock",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/vo/CategoryExcelVo.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "CategoryExcelVo",
+          "startLine": 6,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "imageUrl",
+            "parentId",
+            "status",
+            "orderNum"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CategoryExcelVo",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

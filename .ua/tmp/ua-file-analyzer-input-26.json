@@ -1,0 +1,232 @@
+{
+    "projectRoot":  "C:\\Users\\11931\\IdeaProjects\\spzx-parent",
+    "batchFiles":  [
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/config/KaptchaTextCreator.java",
+                           "language":  "java",
+                           "sizeLines":  61,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/config/RouterFunctionConfiguration.java",
+                           "language":  "java",
+                           "sizeLines":  29,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/config/SwaggerProvider.java",
+                           "language":  "java",
+                           "sizeLines":  79,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/config/properties/CaptchaProperties.java",
+                           "language":  "java",
+                           "sizeLines":  28,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/config/properties/IgnoreWhiteProperties.java",
+                           "language":  "java",
+                           "sizeLines":  27,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/config/properties/XssProperties.java",
+                           "language":  "java",
+                           "sizeLines":  33,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/filter/AuthFilter.java",
+                           "language":  "java",
+                           "sizeLines":  135,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/filter/BlackListUrlFilter.java",
+                           "language":  "java",
+                           "sizeLines":  56,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/filter/CacheRequestFilter.java",
+                           "language":  "java",
+                           "sizeLines":  93,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/filter/TraceIdFilter.java",
+                           "language":  "java",
+                           "sizeLines":  47,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java",
+                           "language":  "java",
+                           "sizeLines":  73,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java",
+                           "language":  "java",
+                           "sizeLines":  113,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/handler/GatewayExceptionHandler.java",
+                           "language":  "java",
+                           "sizeLines":  48,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/handler/SentinelFallbackHandler.java",
+                           "language":  "java",
+                           "sizeLines":  35,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/handler/SwaggerHandler.java",
+                           "language":  "java",
+                           "sizeLines":  56,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/handler/ValidateCodeHandler.java",
+                           "language":  "java",
+                           "sizeLines":  37,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/service/ValidateCodeService.java",
+                           "language":  "java",
+                           "sizeLines":  23,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java",
+                           "language":  "java",
+                           "sizeLines":  107,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/pom.xml",
+                           "language":  "xml",
+                           "sizeLines":  60,
+                           "fileCategory":  "config"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-cart/pom.xml",
+                           "language":  "xml",
+                           "sizeLines":  91,
+                           "fileCategory":  "config"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java",
+                           "language":  "java",
+                           "sizeLines":  28,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/controller/CartController.java",
+                           "language":  "java",
+                           "sizeLines":  123,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/ICartService.java",
+                           "language":  "java",
+                           "sizeLines":  66,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+                           "language":  "java",
+                           "sizeLines":  269,
+                           "fileCategory":  "code"
+                       },
+                       {
+                           "path":  "spzx-modules/spzx-channel/pom.xml",
+                           "language":  "xml",
+                           "sizeLines":  99,
+                           "fileCategory":  "config"
+                       }
+                   ],
+    "batchImportData":  {
+                            "spzx-modules/spzx-cart/pom.xml":  [
+
+                                                               ],
+                            "spzx-modules/pom.xml":  [
+
+                                                     ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/config/properties/CaptchaProperties.java":  [
+
+                                                                                                                     ],
+                            "spzx-modules/spzx-channel/pom.xml":  [
+
+                                                                  ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java":  [
+
+                                                                                                  ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/filter/CacheRequestFilter.java":  [
+
+                                                                                                           ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/config/properties/IgnoreWhiteProperties.java":  [
+
+                                                                                                                         ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/handler/GatewayExceptionHandler.java":  [
+
+                                                                                                                 ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/filter/BlackListUrlFilter.java":  [
+
+                                                                                                           ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java":  [
+
+                                                                                                                      ],
+                            "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java":  [
+
+                                                                                                                     ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/handler/SentinelFallbackHandler.java":  [
+
+                                                                                                                 ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/config/KaptchaTextCreator.java":  [
+
+                                                                                                           ],
+                            "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/ICartService.java":  [
+
+                                                                                                             ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/handler/SwaggerHandler.java":  [
+
+                                                                                                        ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/service/ValidateCodeService.java":  [
+
+                                                                                                             ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java":  [
+
+                                                                                                           ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/config/SwaggerProvider.java":  [
+
+                                                                                                        ],
+                            "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/controller/CartController.java":  [
+
+                                                                                                                  ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/filter/AuthFilter.java":  [
+
+                                                                                                   ],
+                            "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java":  [
+
+                                                                                                            ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/handler/ValidateCodeHandler.java":  [
+
+                                                                                                             ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/filter/TraceIdFilter.java":  [
+
+                                                                                                      ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/config/RouterFunctionConfiguration.java":  [
+
+                                                                                                                    ],
+                            "spzx-gateway/src/main/java/com/spzx/gateway/config/properties/XssProperties.java":  [
+
+                                                                                                                 ]
+                        }
+}

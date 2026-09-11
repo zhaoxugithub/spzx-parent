@@ -1,0 +1,558 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/handler/SentinelFallbackHandler.java",
+      "type": "file",
+      "name": "SentinelFallbackHandler.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/handler/SentinelFallbackHandler.java",
+      "summary": "网关 Sentinel 流控降级处理器,当请求被限流或降级时返回统一响应。",
+      "tags": ["gateway", "sentinel", "fallback", "handler"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/handler/SentinelFallbackHandler.java:SentinelFallbackHandler",
+      "type": "class",
+      "name": "SentinelFallbackHandler",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/handler/SentinelFallbackHandler.java",
+      "lineRange": [16, 35],
+      "summary": "Sentinel 网关降级处理器,被限流时返回降级响应。",
+      "tags": ["handler", "sentinel", "fallback"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-gateway/src/main/java/com/spzx/gateway/handler/SentinelFallbackHandler.java:handle",
+      "type": "function",
+      "name": "handle",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/handler/SentinelFallbackHandler.java",
+      "lineRange": [21, 30],
+      "summary": "处理被 Sentinel 限流降级的请求并返回降级响应。",
+      "tags": ["handler", "sentinel", "fallback"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/handler/SwaggerHandler.java",
+      "type": "file",
+      "name": "SwaggerHandler.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/handler/SwaggerHandler.java",
+      "summary": "网关 Swagger 文档路由处理器,消费 Swagger 资源并聚合并对外提供文档。",
+      "tags": ["gateway", "swagger", "documentation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/handler/ValidateCodeHandler.java",
+      "type": "file",
+      "name": "ValidateCodeHandler.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/handler/ValidateCodeHandler.java",
+      "summary": "网关验证码生成处理器,调用验证码服务生成并返回验证码图片。",
+      "tags": ["gateway", "captcha", "handler"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/handler/ValidateCodeHandler.java:ValidateCodeHandler",
+      "type": "class",
+      "name": "ValidateCodeHandler",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/handler/ValidateCodeHandler.java",
+      "lineRange": [22, 37],
+      "summary": "验证码处理器,调用服务生成验证码并返回响应。",
+      "tags": ["handler", "captcha", "gateway"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-gateway/src/main/java/com/spzx/gateway/handler/ValidateCodeHandler.java:handle",
+      "type": "function",
+      "name": "handle",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/handler/ValidateCodeHandler.java",
+      "lineRange": [27, 36],
+      "summary": "调用验证码服务生成验证码并构造响应。",
+      "tags": ["handler", "captcha"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/service/ValidateCodeService.java",
+      "type": "file",
+      "name": "ValidateCodeService.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/service/ValidateCodeService.java",
+      "summary": "验证码服务接口,定义图形验证码的生成与校验契约。",
+      "tags": ["gateway", "service", "interface", "captcha"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/service/ValidateCodeService.java:ValidateCodeService",
+      "type": "class",
+      "name": "ValidateCodeService",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/service/ValidateCodeService.java",
+      "lineRange": [13, 23],
+      "summary": "验证码服务接口,定义生成与校验验证码的抽象方法。",
+      "tags": ["service", "interface", "captcha"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java",
+      "type": "file",
+      "name": "ValidateCodeServiceImpl.java",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java",
+      "summary": "验证码服务实现,基于 Kaptcha 生成验证码图片并将结果写入 Redis 以便校验。",
+      "tags": ["gateway", "service", "captcha", "redis"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java:ValidateCodeServiceImpl",
+      "type": "class",
+      "name": "ValidateCodeServiceImpl",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java",
+      "lineRange": [29, 107],
+      "summary": "验证码服务实现,使用 Kaptcha 生成图片并持久化到 Redis。",
+      "tags": ["service", "captcha", "redis", "impl"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java:createCaptcha",
+      "type": "function",
+      "name": "createCaptcha",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java",
+      "lineRange": [46, 86],
+      "summary": "生成验证码图片,编码为 Base64 并缓存答案到 Redis。",
+      "tags": ["service", "captcha", "redis"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java:checkCaptcha",
+      "type": "function",
+      "name": "checkCaptcha",
+      "filePath": "spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java",
+      "lineRange": [91, 106],
+      "summary": "校验用户提交的验证码是否与缓存答案一致。",
+      "tags": ["service", "captcha", "validation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-modules/pom.xml",
+      "summary": "spzx-modules 聚合模块 POM,统一管理各业务子模块的构建与依赖版本。",
+      "tags": ["maven", "build-system", "configuration"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:spzx-modules/spzx-cart/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-modules/spzx-cart/pom.xml",
+      "summary": "购物车微服务模块的 Maven 配置,声明购物车服务依赖与构建信息。",
+      "tags": ["maven", "build-system", "configuration"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java",
+      "type": "file",
+      "name": "SpzxCartApplication.java",
+      "filePath": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java",
+      "summary": "购物车微服务启动入口类,负责加载并启动购物车服务。",
+      "tags": ["entry-point", "application", "spring-boot"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java:SpzxCartApplication",
+      "type": "class",
+      "name": "SpzxCartApplication",
+      "filePath": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java",
+      "lineRange": [12, 29],
+      "summary": "购物车服务 Spring Boot 启动类,配置工程启动入口。",
+      "tags": ["application", "spring-boot", "entry-point"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java",
+      "lineRange": [16, 28],
+      "summary": "购物车应用入口主方法,启动 Spring Boot 应用。",
+      "tags": ["entry-point", "application"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/controller/CartController.java",
+      "type": "file",
+      "name": "CartController.java",
+      "filePath": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/controller/CartController.java",
+      "summary": "购物车控制器,对外提供加购、购物车列表、勾选、删除等 REST 接口。",
+      "tags": ["controller", "api-handler", "cart"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/controller/CartController.java:CartController",
+      "type": "class",
+      "name": "CartController",
+      "filePath": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/controller/CartController.java",
+      "lineRange": [18, 124],
+      "summary": "购物车 REST 控制器,处理购物车相关的 HTTP 请求。",
+      "tags": ["controller", "api-handler", "cart"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/ICartService.java",
+      "type": "file",
+      "name": "ICartService.java",
+      "filePath": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/ICartService.java",
+      "summary": "购物车业务接口,定义购物车操作的契约方法。",
+      "tags": ["service", "interface", "cart"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/ICartService.java:ICartService",
+      "type": "class",
+      "name": "ICartService",
+      "filePath": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/ICartService.java",
+      "lineRange": [7, 66],
+      "summary": "购物车业务接口,定义购物车操作的方法契约。",
+      "tags": ["service", "interface", "cart"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "type": "file",
+      "name": "CartServiceImpl.java",
+      "filePath": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "summary": "购物车业务实现,基于 Redis Hash 存储购物车数据并通过 Feign 同步商品价格。",
+      "tags": ["service", "redis", "cart", "impl"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:CartServiceImpl",
+      "type": "class",
+      "name": "CartServiceImpl",
+      "filePath": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "lineRange": [27, 270],
+      "summary": "购物车业务实现,基于 Redis Hash 与 Feign 实现购物车 CRUD。",
+      "tags": ["service", "redis", "cart", "impl"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:addToCart",
+      "type": "function",
+      "name": "addToCart",
+      "filePath": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "lineRange": [43, 89],
+      "summary": "将商品加入购物车,更新数量或新建购物车项。",
+      "tags": ["service", "cart", "redis"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:cartList",
+      "type": "function",
+      "name": "cartList",
+      "filePath": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "lineRange": [101, 134],
+      "summary": "查询当前用户购物车列表并刷新商品最新价格。",
+      "tags": ["service", "cart", "redis"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:deleteCart",
+      "type": "function",
+      "name": "deleteCart",
+      "filePath": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "lineRange": [142, 155],
+      "summary": "从购物车中删除指定的商品项。",
+      "tags": ["service", "cart", "redis"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:checkCart",
+      "type": "function",
+      "name": "checkCart",
+      "filePath": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "lineRange": [163, 178],
+      "summary": "更新购物车单项的选中状态。",
+      "tags": ["service", "cart", "update"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:allCheckCart",
+      "type": "function",
+      "name": "allCheckCart",
+      "filePath": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "lineRange": [180, 195],
+      "summary": "批量设置购物车全部商品的选中状态。",
+      "tags": ["service", "cart", "update"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:clearCart",
+      "type": "function",
+      "name": "clearCart",
+      "filePath": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "lineRange": [197, 207],
+      "summary": "清空当前用户的购物车。",
+      "tags": ["service", "cart", "redis"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:getCartCheckedList",
+      "type": "function",
+      "name": "getCartCheckedList",
+      "filePath": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "lineRange": [210, 220],
+      "summary": "获取购物车中已勾选的商品列表。",
+      "tags": ["service", "cart", "query"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:updateCartPrice",
+      "type": "function",
+      "name": "updateCartPrice",
+      "filePath": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "lineRange": [223, 251],
+      "summary": "根据商品最新价格刷新购物车中已勾选商品的售价。",
+      "tags": ["service", "cart", "price"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:deleteCartCheckedList",
+      "type": "function",
+      "name": "deleteCartCheckedList",
+      "filePath": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "lineRange": [254, 269],
+      "summary": "删除购物车中已勾选商品的列表。",
+      "tags": ["service", "cart", "delete"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-channel/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-modules/spzx-channel/pom.xml",
+      "summary": "渠道(BFF)微服务模块的 Maven 配置,声明渠道服务依赖与构建信息。",
+      "tags": ["maven", "build-system", "configuration"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/handler/SentinelFallbackHandler.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/handler/SentinelFallbackHandler.java:SentinelFallbackHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/handler/SentinelFallbackHandler.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/handler/SentinelFallbackHandler.java:SentinelFallbackHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/handler/SentinelFallbackHandler.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/handler/SentinelFallbackHandler.java:handle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/handler/ValidateCodeHandler.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/handler/ValidateCodeHandler.java:ValidateCodeHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/handler/ValidateCodeHandler.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/handler/ValidateCodeHandler.java:ValidateCodeHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/handler/ValidateCodeHandler.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/handler/ValidateCodeHandler.java:handle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/service/ValidateCodeService.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/service/ValidateCodeService.java:ValidateCodeService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/service/ValidateCodeService.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/service/ValidateCodeService.java:ValidateCodeService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java:ValidateCodeServiceImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java",
+      "target": "class:spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java:ValidateCodeServiceImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java:createCaptcha",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java",
+      "target": "function:spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java:checkCaptcha",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "config:spzx-modules/pom.xml",
+      "target": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-modules/spzx-cart/pom.xml",
+      "target": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java",
+      "target": "class:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java:SpzxCartApplication",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java",
+      "target": "class:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java:SpzxCartApplication",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java",
+      "target": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/controller/CartController.java",
+      "target": "class:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/controller/CartController.java:CartController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/controller/CartController.java",
+      "target": "class:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/controller/CartController.java:CartController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/ICartService.java",
+      "target": "class:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/ICartService.java:ICartService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/ICartService.java",
+      "target": "class:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/ICartService.java:ICartService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "target": "class:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:CartServiceImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "target": "class:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:CartServiceImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "target": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:addToCart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "target": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:cartList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "target": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:deleteCart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "target": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:checkCart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "target": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:allCheckCart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "target": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:clearCart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "target": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:getCartCheckedList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "target": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:updateCartPrice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "target": "function:spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java:deleteCartCheckedList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    }
+  ]
+}

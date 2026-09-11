@@ -1,0 +1,1378 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "type": "file",
+      "name": "SysMenuServiceImpl.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "summary": "菜单服务实现,构建菜单树、前端路由并汇集菜单权限标识。",
+      "tags": [
+        "service",
+        "menu",
+        "tree",
+        "router"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysNoticeServiceImpl.java",
+      "type": "file",
+      "name": "SysNoticeServiceImpl.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysNoticeServiceImpl.java",
+      "summary": "通知公告服务实现,提供通知的增删改查与批量删除。",
+      "tags": [
+        "service",
+        "notice",
+        "data-access"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysOperLogServiceImpl.java",
+      "type": "file",
+      "name": "SysOperLogServiceImpl.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysOperLogServiceImpl.java",
+      "summary": "操作日志服务实现,提供操作日志的查询、删除、详情与清理。",
+      "tags": [
+        "service",
+        "log",
+        "audit",
+        "data-access"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java",
+      "type": "file",
+      "name": "SysPermissionServiceImpl.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java",
+      "summary": "权限服务实现,根据登录用户聚合角色与菜单权限标识并处理管理员标识。",
+      "tags": [
+        "service",
+        "permission",
+        "security",
+        "aggregation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPostServiceImpl.java",
+      "type": "file",
+      "name": "SysPostServiceImpl.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPostServiceImpl.java",
+      "summary": "岗位服务实现,提供岗位的增删改查与用户-岗位关联维护。",
+      "tags": [
+        "service",
+        "post",
+        "data-access"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "type": "file",
+      "name": "SysRoleServiceImpl.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "summary": "角色服务实现,管理角色、数据权限范围与用户-角色、角色-菜单关联。",
+      "tags": [
+        "service",
+        "role",
+        "authorization",
+        "data-access"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserOnlineServiceImpl.java",
+      "type": "file",
+      "name": "SysUserOnlineServiceImpl.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserOnlineServiceImpl.java",
+      "summary": "在线用户服务实现,按 IP/用户名查询在线用户并转换为在线用户对象。",
+      "tags": [
+        "service",
+        "online-user",
+        "monitoring",
+        "data-access"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "type": "file",
+      "name": "SysUserServiceImpl.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "summary": "用户服务实现,支持用户管理、导入导出、账户唯一性校验与角色/岗位关联维护。",
+      "tags": [
+        "service",
+        "user",
+        "data-access",
+        "mybatis-plus"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:spzx-modules/spzx-user/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-modules/spzx-user/pom.xml",
+      "summary": "spzx-user 会员模块的 Maven 构建配置,声明 Nacos/Sentinel/MySQL 等依赖与 Spring Boot 打包插件。",
+      "tags": [
+        "configuration",
+        "maven",
+        "build-system",
+        "deployment"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-user/src/main/java/com/spzx/user/SpzxUserApplication.java",
+      "type": "file",
+      "name": "SpzxUserApplication.java",
+      "filePath": "spzx-modules/spzx-user/src/main/java/com/spzx/user/SpzxUserApplication.java",
+      "summary": "会员模块启动类,加载 Spring Boot 应用上下文并启动 spzx-user 服务。",
+      "tags": [
+        "entry-point",
+        "spring-boot",
+        "application"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/RegionController.java",
+      "type": "file",
+      "name": "RegionController.java",
+      "filePath": "spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/RegionController.java",
+      "summary": "地区控制器,按父编码提供地区树下拉选择接口。",
+      "tags": [
+        "controller",
+        "region",
+        "api-handler",
+        "tree"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/SmsController.java",
+      "type": "file",
+      "name": "SmsController.java",
+      "filePath": "spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/SmsController.java",
+      "summary": "短信控制器,提供验证码发送接口。",
+      "tags": [
+        "controller",
+        "sms",
+        "api-handler",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:SysMenuServiceImpl",
+      "type": "class",
+      "name": "SysMenuServiceImpl",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "lineRange": [
+        34,
+        466
+      ],
+      "summary": "菜单服务实现,构建菜单树与前端路由。",
+      "tags": [
+        "service",
+        "menu",
+        "tree",
+        "router"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:selectMenuList",
+      "type": "function",
+      "name": "selectMenuList",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "lineRange": [
+        64,
+        75
+      ],
+      "summary": "按菜单条件与用户过滤查询菜单列表。",
+      "tags": [
+        "service",
+        "menu",
+        "query"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:selectMenuPermsByUserId",
+      "type": "function",
+      "name": "selectMenuPermsByUserId",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "lineRange": [
+        83,
+        93
+      ],
+      "summary": "查询用户拥有的菜单权限标识集合。",
+      "tags": [
+        "service",
+        "menu",
+        "permission",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:selectMenuPermsByRoleId",
+      "type": "function",
+      "name": "selectMenuPermsByRoleId",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "lineRange": [
+        101,
+        111
+      ],
+      "summary": "查询角色拥有的菜单权限标识集合。",
+      "tags": [
+        "service",
+        "menu",
+        "permission",
+        "role"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:selectMenuTreeByUserId",
+      "type": "function",
+      "name": "selectMenuTreeByUserId",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "lineRange": [
+        119,
+        128
+      ],
+      "summary": "按用户构建其可见的菜单树。",
+      "tags": [
+        "service",
+        "menu",
+        "tree",
+        "query"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:buildMenus",
+      "type": "function",
+      "name": "buildMenus",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "lineRange": [
+        148,
+        191
+      ],
+      "summary": "将菜单实体列表构建为前端路由树。",
+      "tags": [
+        "service",
+        "menu",
+        "router",
+        "build"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:buildMenuTree",
+      "type": "function",
+      "name": "buildMenuTree",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "lineRange": [
+        199,
+        215
+      ],
+      "summary": "构建菜单父子树结构。",
+      "tags": [
+        "service",
+        "menu",
+        "tree",
+        "build"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:getRouterPath",
+      "type": "function",
+      "name": "getRouterPath",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "lineRange": [
+        334,
+        349
+      ],
+      "summary": "根据菜单类型计算前端路由路径。",
+      "tags": [
+        "service",
+        "menu",
+        "router",
+        "util"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:getComponent",
+      "type": "function",
+      "name": "getComponent",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "lineRange": [
+        357,
+        367
+      ],
+      "summary": "根据菜单组件名计算前端组件引用。",
+      "tags": [
+        "service",
+        "menu",
+        "router",
+        "util"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:getChildPerms",
+      "type": "function",
+      "name": "getChildPerms",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "lineRange": [
+        406,
+        417
+      ],
+      "summary": "递归获取指定父菜单下的子菜单权限树。",
+      "tags": [
+        "service",
+        "menu",
+        "recursion",
+        "permission"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:recursionFn",
+      "type": "function",
+      "name": "recursionFn",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "lineRange": [
+        425,
+        434
+      ],
+      "summary": "递归查找菜单子树。",
+      "tags": [
+        "service",
+        "menu",
+        "recursion",
+        "tree"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:getChildList",
+      "type": "function",
+      "name": "getChildList",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "lineRange": [
+        439,
+        449
+      ],
+      "summary": "获取直接子菜单列表。",
+      "tags": [
+        "service",
+        "menu",
+        "tree",
+        "query"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysNoticeServiceImpl.java:SysNoticeServiceImpl",
+      "type": "class",
+      "name": "SysNoticeServiceImpl",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysNoticeServiceImpl.java",
+      "lineRange": [
+        16,
+        86
+      ],
+      "summary": "通知公告服务实现,提供通知增删改查。",
+      "tags": [
+        "service",
+        "notice",
+        "data-access"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysOperLogServiceImpl.java:SysOperLogServiceImpl",
+      "type": "class",
+      "name": "SysOperLogServiceImpl",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysOperLogServiceImpl.java",
+      "lineRange": [
+        16,
+        72
+      ],
+      "summary": "操作日志服务实现,提供日志查询与清理。",
+      "tags": [
+        "service",
+        "log",
+        "audit",
+        "data-access"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java:SysPermissionServiceImpl",
+      "type": "class",
+      "name": "SysPermissionServiceImpl",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java",
+      "lineRange": [
+        21,
+        74
+      ],
+      "summary": "权限服务实现,聚合角色与菜单权限标识。",
+      "tags": [
+        "service",
+        "permission",
+        "security",
+        "aggregation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java:getRolePermission",
+      "type": "function",
+      "name": "getRolePermission",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java",
+      "lineRange": [
+        35,
+        45
+      ],
+      "summary": "获取用户在角色中拥有的权限标识。",
+      "tags": [
+        "service",
+        "permission",
+        "role",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java:getMenuPermission",
+      "type": "function",
+      "name": "getMenuPermission",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java",
+      "lineRange": [
+        53,
+        73
+      ],
+      "summary": "获取用户菜单权限标识并处理管理员标识。",
+      "tags": [
+        "service",
+        "permission",
+        "menu",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPostServiceImpl.java:SysPostServiceImpl",
+      "type": "class",
+      "name": "SysPostServiceImpl",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPostServiceImpl.java",
+      "lineRange": [
+        20,
+        163
+      ],
+      "summary": "岗位服务实现,提供岗位增删改查与关联维护。",
+      "tags": [
+        "service",
+        "post",
+        "data-access"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPostServiceImpl.java:deletePostByIds",
+      "type": "function",
+      "name": "deletePostByIds",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPostServiceImpl.java",
+      "lineRange": [
+        131,
+        140
+      ],
+      "summary": "批量删除岗位并校验是否已分配用户。",
+      "tags": [
+        "service",
+        "post",
+        "delete",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:SysRoleServiceImpl",
+      "type": "class",
+      "name": "SysRoleServiceImpl",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "lineRange": [
+        34,
+        385
+      ],
+      "summary": "角色服务实现,管理角色、数据权限与授权关联。",
+      "tags": [
+        "service",
+        "role",
+        "authorization",
+        "data-access"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:selectRolesByUserId",
+      "type": "function",
+      "name": "selectRolesByUserId",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "lineRange": [
+        66,
+        79
+      ],
+      "summary": "查询用户拥有的角色列表。",
+      "tags": [
+        "service",
+        "role",
+        "query",
+        "user"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:selectRolePermissionByUserId",
+      "type": "function",
+      "name": "selectRolePermissionByUserId",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "lineRange": [
+        87,
+        97
+      ],
+      "summary": "查询用户角色权限标识集合。",
+      "tags": [
+        "service",
+        "role",
+        "permission",
+        "user"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:checkRoleDataScope",
+      "type": "function",
+      "name": "checkRoleDataScope",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "lineRange": [
+        180,
+        190
+      ],
+      "summary": "校验角色是否在当前用户数据权限范围内。",
+      "tags": [
+        "service",
+        "role",
+        "data-scope",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:authDataScope",
+      "type": "function",
+      "name": "authDataScope",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "lineRange": [
+        250,
+        259
+      ],
+      "summary": "为角色分配数据权限范围并保存关联。",
+      "tags": [
+        "service",
+        "role",
+        "data-scope",
+        "authorize"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:insertRoleMenu",
+      "type": "function",
+      "name": "insertRoleMenu",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "lineRange": [
+        266,
+        280
+      ],
+      "summary": "保存角色与菜单的关联关系。",
+      "tags": [
+        "service",
+        "role",
+        "menu",
+        "relation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:insertRoleDept",
+      "type": "function",
+      "name": "insertRoleDept",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "lineRange": [
+        287,
+        301
+      ],
+      "summary": "保存角色与部门的数据权限关联。",
+      "tags": [
+        "service",
+        "role",
+        "dept",
+        "relation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:deleteRoleByIds",
+      "type": "function",
+      "name": "deleteRoleByIds",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "lineRange": [
+        325,
+        341
+      ],
+      "summary": "批量删除角色并清理其菜单/部门关联。",
+      "tags": [
+        "service",
+        "role",
+        "delete",
+        "cleanup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:insertAuthUsers",
+      "type": "function",
+      "name": "insertAuthUsers",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "lineRange": [
+        373,
+        384
+      ],
+      "summary": "为角色批量分配用户。",
+      "tags": [
+        "service",
+        "role",
+        "user",
+        "authorize"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserOnlineServiceImpl.java:SysUserOnlineServiceImpl",
+      "type": "class",
+      "name": "SysUserOnlineServiceImpl",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserOnlineServiceImpl.java",
+      "lineRange": [
+        14,
+        80
+      ],
+      "summary": "在线用户服务实现,查询并转换在线用户。",
+      "tags": [
+        "service",
+        "online-user",
+        "monitoring"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserOnlineServiceImpl.java:loginUserToUserOnline",
+      "type": "function",
+      "name": "loginUserToUserOnline",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserOnlineServiceImpl.java",
+      "lineRange": [
+        68,
+        79
+      ],
+      "summary": "将登录用户转换为在线用户对象。",
+      "tags": [
+        "service",
+        "online-user",
+        "conversion",
+        "monitoring"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java:SysUserServiceImpl",
+      "type": "class",
+      "name": "SysUserServiceImpl",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "lineRange": [
+        39,
+        492
+      ],
+      "summary": "用户服务实现,支持用户管理与导入导出。",
+      "tags": [
+        "service",
+        "user",
+        "data-access",
+        "mybatis-plus"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java:checkUserDataScope",
+      "type": "function",
+      "name": "checkUserDataScope",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "lineRange": [
+        217,
+        227
+      ],
+      "summary": "校验用户是否在当前用户数据权限范围内。",
+      "tags": [
+        "service",
+        "user",
+        "data-scope",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java:insertUser",
+      "type": "function",
+      "name": "insertUser",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "lineRange": [
+        235,
+        245
+      ],
+      "summary": "新增用户并保存角色与岗位关联。",
+      "tags": [
+        "service",
+        "user",
+        "insert",
+        "relation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java:updateUser",
+      "type": "function",
+      "name": "updateUser",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "lineRange": [
+        264,
+        277
+      ],
+      "summary": "更新用户信息并同步角色、岗位关联。",
+      "tags": [
+        "service",
+        "user",
+        "update",
+        "relation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java:insertUserRole",
+      "type": "function",
+      "name": "insertUserRole",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "lineRange": [
+        384,
+        396
+      ],
+      "summary": "保存用户与角色的关联关系。",
+      "tags": [
+        "service",
+        "user",
+        "role",
+        "relation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java:insertUserPost",
+      "type": "function",
+      "name": "insertUserPost",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "lineRange": [
+        363,
+        376
+      ],
+      "summary": "保存用户与岗位的关联关系,并在异常时回滚事务。",
+      "tags": [
+        "service",
+        "user",
+        "post",
+        "relation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java:deleteUserByIds",
+      "type": "function",
+      "name": "deleteUserByIds",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "lineRange": [
+        420,
+        432
+      ],
+      "summary": "批量删除用户并清理其角色、岗位关联。",
+      "tags": [
+        "service",
+        "user",
+        "delete",
+        "cleanup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java:importUser",
+      "type": "function",
+      "name": "importUser",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "lineRange": [
+        442,
+        490
+      ],
+      "summary": "批量导入用户数据,支持唯一性校验与更新。",
+      "tags": [
+        "service",
+        "user",
+        "import",
+        "data-access"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-modules/spzx-user/src/main/java/com/spzx/user/SpzxUserApplication.java:SpzxUserApplication",
+      "type": "class",
+      "name": "SpzxUserApplication",
+      "filePath": "spzx-modules/spzx-user/src/main/java/com/spzx/user/SpzxUserApplication.java",
+      "lineRange": [
+        12,
+        31
+      ],
+      "summary": "会员模块 Spring Boot 启动类,负责引导应用上下文。",
+      "tags": [
+        "entry-point",
+        "application",
+        "spring-boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-user/src/main/java/com/spzx/user/SpzxUserApplication.java:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "spzx-modules/spzx-user/src/main/java/com/spzx/user/SpzxUserApplication.java",
+      "lineRange": [
+        17,
+        30
+      ],
+      "summary": "Spring Boot 应用入口,启动会员服务。",
+      "tags": [
+        "entry-point",
+        "application",
+        "bootstrap"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/RegionController.java:RegionController",
+      "type": "class",
+      "name": "RegionController",
+      "filePath": "spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/RegionController.java",
+      "lineRange": [
+        12,
+        24
+      ],
+      "summary": "地区控制器,暴露地区树接口。",
+      "tags": [
+        "controller",
+        "region",
+        "api-handler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/SmsController.java:SmsController",
+      "type": "class",
+      "name": "SmsController",
+      "filePath": "spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/SmsController.java",
+      "lineRange": [
+        24,
+        49
+      ],
+      "summary": "短信控制器,暴露验证码发送接口。",
+      "tags": [
+        "controller",
+        "sms",
+        "api-handler"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/SmsController.java:sendCode",
+      "type": "function",
+      "name": "sendCode",
+      "filePath": "spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/SmsController.java",
+      "lineRange": [
+        36,
+        47
+      ],
+      "summary": "发送短信验证码到指定手机号。",
+      "tags": [
+        "controller",
+        "sms",
+        "verification",
+        "api-handler"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:SysMenuServiceImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:selectMenuList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:selectMenuPermsByUserId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:selectMenuPermsByRoleId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:selectMenuTreeByUserId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:buildMenus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:buildMenuTree",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:getRouterPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:getComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:getChildPerms",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:recursionFn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:getChildList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysNoticeServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysNoticeServiceImpl.java:SysNoticeServiceImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysOperLogServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysOperLogServiceImpl.java:SysOperLogServiceImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java:SysPermissionServiceImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java:getRolePermission",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java:getMenuPermission",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPostServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPostServiceImpl.java:SysPostServiceImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPostServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPostServiceImpl.java:deletePostByIds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:SysRoleServiceImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:selectRolesByUserId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:selectRolePermissionByUserId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:checkRoleDataScope",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:authDataScope",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:insertRoleMenu",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:insertRoleDept",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:deleteRoleByIds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:insertAuthUsers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserOnlineServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserOnlineServiceImpl.java:SysUserOnlineServiceImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserOnlineServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserOnlineServiceImpl.java:loginUserToUserOnline",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java:SysUserServiceImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java:checkUserDataScope",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java:insertUser",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java:updateUser",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java:insertUserRole",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java:insertUserPost",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java:deleteUserByIds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java:importUser",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-user/src/main/java/com/spzx/user/SpzxUserApplication.java",
+      "target": "class:spzx-modules/spzx-user/src/main/java/com/spzx/user/SpzxUserApplication.java:SpzxUserApplication",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-user/src/main/java/com/spzx/user/SpzxUserApplication.java",
+      "target": "function:spzx-modules/spzx-user/src/main/java/com/spzx/user/SpzxUserApplication.java:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/RegionController.java",
+      "target": "class:spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/RegionController.java:RegionController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/SmsController.java",
+      "target": "class:spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/SmsController.java:SmsController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/SmsController.java",
+      "target": "function:spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/SmsController.java:sendCode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:SysMenuServiceImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysNoticeServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysNoticeServiceImpl.java:SysNoticeServiceImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysOperLogServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysOperLogServiceImpl.java:SysOperLogServiceImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java:SysPermissionServiceImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPostServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPostServiceImpl.java:SysPostServiceImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:SysRoleServiceImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserOnlineServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserOnlineServiceImpl.java:SysUserOnlineServiceImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java:SysUserServiceImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-user/src/main/java/com/spzx/user/SpzxUserApplication.java",
+      "target": "class:spzx-modules/spzx-user/src/main/java/com/spzx/user/SpzxUserApplication.java:SpzxUserApplication",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/RegionController.java",
+      "target": "class:spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/RegionController.java:RegionController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/SmsController.java",
+      "target": "class:spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/SmsController.java:SmsController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java:SysMenuServiceImpl",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysMenuService.java:ISysMenuService",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysNoticeServiceImpl.java:SysNoticeServiceImpl",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysNoticeService.java:ISysNoticeService",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysOperLogServiceImpl.java:SysOperLogServiceImpl",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysOperLogService.java:ISysOperLogService",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java:SysPermissionServiceImpl",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPermissionService.java:ISysPermissionService",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPostServiceImpl.java:SysPostServiceImpl",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPostService.java:ISysPostService",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java:SysRoleServiceImpl",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysRoleService.java:ISysRoleService",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserOnlineServiceImpl.java:SysUserOnlineServiceImpl",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserOnlineService.java:ISysUserOnlineService",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java:SysUserServiceImpl",
+      "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserService.java:ISysUserService",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "config:spzx-modules/spzx-user/pom.xml",
+      "target": "file:spzx-modules/spzx-user/src/main/java/com/spzx/user/SpzxUserApplication.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

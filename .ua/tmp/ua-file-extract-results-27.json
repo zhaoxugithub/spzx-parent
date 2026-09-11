@@ -1,0 +1,1867 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 24,
+  "filesSkipped": [
+    "spzx-modules/spzx-file/pom.xml"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 24,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 24,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/SpzxChannelApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 16,
+          "endLine": 28,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SpzxChannelApplication",
+          "startLine": 11,
+          "endLine": 29,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "SpzxChannelApplication",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 17
+        },
+        {
+          "caller": "main",
+          "callee": "System.out.println",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/configure/ThreadPoolConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "init",
+          "startLine": 17,
+          "endLine": 44,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ThreadPoolConfig",
+          "startLine": 14,
+          "endLine": 46,
+          "methods": [
+            "init"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "init",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "ThreadPoolConfig",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "init",
+          "callee": "Runtime.getRuntime().availableProcessors",
+          "lineNumber": 21
+        },
+        {
+          "caller": "init",
+          "callee": "Runtime.getRuntime",
+          "lineNumber": 21
+        },
+        {
+          "caller": "init",
+          "callee": "new ThreadPoolExecutor",
+          "lineNumber": 22
+        },
+        {
+          "caller": "init",
+          "callee": "new ArrayBlockingQueue<>",
+          "lineNumber": 27
+        },
+        {
+          "caller": "init",
+          "callee": "Executors.defaultThreadFactory",
+          "lineNumber": 28
+        },
+        {
+          "caller": "init",
+          "callee": "System.out.println",
+          "lineNumber": 30
+        },
+        {
+          "caller": "init",
+          "callee": "Thread.sleep",
+          "lineNumber": 32
+        },
+        {
+          "caller": "init",
+          "callee": "executor.submit",
+          "lineNumber": 36
+        },
+        {
+          "caller": "init",
+          "callee": "threadPoolExecutor.prestartAllCoreThreads",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/BrandController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "selectBrandAll",
+          "startLine": 18,
+          "endLine": 22,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "BrandController",
+          "startLine": 12,
+          "endLine": 23,
+          "methods": [
+            "selectBrandAll"
+          ],
+          "properties": [
+            "brandService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "selectBrandAll",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "BrandController",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectBrandAll",
+          "callee": "success",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectBrandAll",
+          "callee": "brandService.getBrandAll",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/CategoryController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "tree",
+          "startLine": 26,
+          "endLine": 31,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CategoryController",
+          "startLine": 17,
+          "endLine": 32,
+          "methods": [
+            "tree"
+          ],
+          "properties": [
+            "categoryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "tree",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "CategoryController",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "tree",
+          "callee": "categoryService.tree",
+          "lineNumber": 29
+        },
+        {
+          "caller": "tree",
+          "callee": "success",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/IndexController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "index",
+          "startLine": 25,
+          "endLine": 31,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "IndexController",
+          "startLine": 16,
+          "endLine": 33,
+          "methods": [
+            "index"
+          ],
+          "properties": [
+            "indexService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "index",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "IndexController",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "index",
+          "callee": "indexService.index",
+          "lineNumber": 29
+        },
+        {
+          "caller": "index",
+          "callee": "success",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ItemController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "item",
+          "startLine": 25,
+          "endLine": 29,
+          "params": [
+            "skuId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ItemController",
+          "startLine": 14,
+          "endLine": 31,
+          "methods": [
+            "item"
+          ],
+          "properties": [
+            "itemService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "item",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "ItemController",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "item",
+          "callee": "success",
+          "lineNumber": 28
+        },
+        {
+          "caller": "item",
+          "callee": "itemService.item",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ListController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "skuList",
+          "startLine": 23,
+          "endLine": 33,
+          "params": [
+            "pageNum",
+            "pageSize",
+            "skuQuery"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ListController",
+          "startLine": 15,
+          "endLine": 35,
+          "methods": [
+            "skuList"
+          ],
+          "properties": [
+            "listService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "skuList",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ListController",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "skuList",
+          "callee": "listService.selectProductSkuList",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/domain/ItemVo.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "ItemVo",
+          "startLine": 14,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "productSku",
+            "product",
+            "skuPrice",
+            "sliderUrlList",
+            "detailsImageUrlList",
+            "specValueList",
+            "skuStockVo",
+            "skuSpecValueMap"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ItemVo",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IBrandService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 6,
+      "classes": [
+        {
+          "name": "IBrandService",
+          "startLine": 7,
+          "endLine": 9,
+          "methods": [
+            "getBrandAll"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IBrandService",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/ICategoryService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 6,
+      "classes": [
+        {
+          "name": "ICategoryService",
+          "startLine": 7,
+          "endLine": 9,
+          "methods": [
+            "tree"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ICategoryService",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IIndexService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 5,
+      "classes": [
+        {
+          "name": "IIndexService",
+          "startLine": 5,
+          "endLine": 7,
+          "methods": [
+            "index"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IIndexService",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IItemService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 6,
+      "classes": [
+        {
+          "name": "IItemService",
+          "startLine": 7,
+          "endLine": 9,
+          "methods": [
+            "item"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IItemService",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IListService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "classes": [
+        {
+          "name": "IListService",
+          "startLine": 6,
+          "endLine": 8,
+          "methods": [
+            "selectProductSkuList"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IListService",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/BrandServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "getBrandAll",
+          "startLine": 20,
+          "endLine": 27,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "BrandServiceImpl",
+          "startLine": 14,
+          "endLine": 28,
+          "methods": [
+            "getBrandAll"
+          ],
+          "properties": [
+            "remoteBrandService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getBrandAll",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "BrandServiceImpl",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getBrandAll",
+          "callee": "remoteBrandService.getBrandAllList",
+          "lineNumber": 22
+        },
+        {
+          "caller": "getBrandAll",
+          "callee": "brandAllListResult.getCode",
+          "lineNumber": 23
+        },
+        {
+          "caller": "getBrandAll",
+          "callee": "new ServiceException",
+          "lineNumber": 24
+        },
+        {
+          "caller": "getBrandAll",
+          "callee": "brandAllListResult.getMsg",
+          "lineNumber": 24
+        },
+        {
+          "caller": "getBrandAll",
+          "callee": "brandAllListResult.getData",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/CategoryServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "tree",
+          "startLine": 20,
+          "endLine": 27,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CategoryServiceImpl",
+          "startLine": 14,
+          "endLine": 28,
+          "methods": [
+            "tree"
+          ],
+          "properties": [
+            "remoteCategoryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "tree",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "CategoryServiceImpl",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "tree",
+          "callee": "remoteCategoryService.tree",
+          "lineNumber": 22
+        },
+        {
+          "caller": "tree",
+          "callee": "treeListResult.getCode",
+          "lineNumber": 23
+        },
+        {
+          "caller": "tree",
+          "callee": "new ServiceException",
+          "lineNumber": 24
+        },
+        {
+          "caller": "tree",
+          "callee": "treeListResult.getMsg",
+          "lineNumber": 24
+        },
+        {
+          "caller": "tree",
+          "callee": "treeListResult.getData",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/IndexServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 40,
+      "functions": [
+        {
+          "name": "index",
+          "startLine": 27,
+          "endLine": 47,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "IndexServiceImpl",
+          "startLine": 18,
+          "endLine": 48,
+          "methods": [
+            "index"
+          ],
+          "properties": [
+            "remoteCategoryService",
+            "remoteProductService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "index",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "IndexServiceImpl",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "index",
+          "callee": "remoteCategoryService.getOneCategory",
+          "lineNumber": 30
+        },
+        {
+          "caller": "index",
+          "callee": "oneCategoryListResult.getCode",
+          "lineNumber": 31
+        },
+        {
+          "caller": "index",
+          "callee": "new ServiceException",
+          "lineNumber": 32
+        },
+        {
+          "caller": "index",
+          "callee": "oneCategoryListResult.getMsg",
+          "lineNumber": 32
+        },
+        {
+          "caller": "index",
+          "callee": "remoteProductService.getTopSale",
+          "lineNumber": 36
+        },
+        {
+          "caller": "index",
+          "callee": "topSaleListResult.getCode",
+          "lineNumber": 37
+        },
+        {
+          "caller": "index",
+          "callee": "new ServiceException",
+          "lineNumber": 38
+        },
+        {
+          "caller": "index",
+          "callee": "topSaleListResult.getMsg",
+          "lineNumber": 38
+        },
+        {
+          "caller": "index",
+          "callee": "new HashMap<>",
+          "lineNumber": 42
+        },
+        {
+          "caller": "index",
+          "callee": "map.put",
+          "lineNumber": 43
+        },
+        {
+          "caller": "index",
+          "callee": "oneCategoryListResult.getData",
+          "lineNumber": 43
+        },
+        {
+          "caller": "index",
+          "callee": "map.put",
+          "lineNumber": 44
+        },
+        {
+          "caller": "index",
+          "callee": "topSaleListResult.getData",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ItemServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 132,
+      "nonEmptyLines": 112,
+      "functions": [
+        {
+          "name": "item",
+          "startLine": 39,
+          "endLine": 131,
+          "params": [
+            "skuId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ItemServiceImpl",
+          "startLine": 26,
+          "endLine": 132,
+          "methods": [
+            "item"
+          ],
+          "properties": [
+            "remoteProductService",
+            "redisTemplate",
+            "threadPoolExecutor"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "item",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "ItemServiceImpl",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "item",
+          "callee": "redisTemplate.opsForValue().getBit",
+          "lineNumber": 44
+        },
+        {
+          "caller": "item",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 44
+        },
+        {
+          "caller": "item",
+          "callee": "new ServiceException",
+          "lineNumber": 46
+        },
+        {
+          "caller": "item",
+          "callee": "new ItemVo",
+          "lineNumber": 49
+        },
+        {
+          "caller": "item",
+          "callee": "CompletableFuture.supplyAsync",
+          "lineNumber": 52
+        },
+        {
+          "caller": "item",
+          "callee": "remoteProductService.getProductSku",
+          "lineNumber": 53
+        },
+        {
+          "caller": "item",
+          "callee": "productSkuResult.getCode",
+          "lineNumber": 54
+        },
+        {
+          "caller": "item",
+          "callee": "new ServiceException",
+          "lineNumber": 55
+        },
+        {
+          "caller": "item",
+          "callee": "productSkuResult.getMsg",
+          "lineNumber": 55
+        },
+        {
+          "caller": "item",
+          "callee": "productSkuResult.getData",
+          "lineNumber": 57
+        },
+        {
+          "caller": "item",
+          "callee": "itemVo.setProductSku",
+          "lineNumber": 58
+        },
+        {
+          "caller": "item",
+          "callee": "productSkuCompletableFuture.thenAcceptAsync",
+          "lineNumber": 63
+        },
+        {
+          "caller": "item",
+          "callee": "remoteProductService.getProduct",
+          "lineNumber": 64
+        },
+        {
+          "caller": "item",
+          "callee": "productSku.getProductId",
+          "lineNumber": 64
+        },
+        {
+          "caller": "item",
+          "callee": "productResult.getCode",
+          "lineNumber": 65
+        },
+        {
+          "caller": "item",
+          "callee": "new ServiceException",
+          "lineNumber": 66
+        },
+        {
+          "caller": "item",
+          "callee": "productResult.getMsg",
+          "lineNumber": 66
+        },
+        {
+          "caller": "item",
+          "callee": "productResult.getData",
+          "lineNumber": 68
+        },
+        {
+          "caller": "item",
+          "callee": "itemVo.setProduct",
+          "lineNumber": 69
+        },
+        {
+          "caller": "item",
+          "callee": "itemVo.setSliderUrlList",
+          "lineNumber": 70
+        },
+        {
+          "caller": "item",
+          "callee": "Arrays.asList",
+          "lineNumber": 70
+        },
+        {
+          "caller": "item",
+          "callee": "product.getSliderUrls().split",
+          "lineNumber": 70
+        },
+        {
+          "caller": "item",
+          "callee": "product.getSliderUrls",
+          "lineNumber": 70
+        },
+        {
+          "caller": "item",
+          "callee": "itemVo.setSpecValueList",
+          "lineNumber": 72
+        },
+        {
+          "caller": "item",
+          "callee": "JSON.parseArray",
+          "lineNumber": 72
+        },
+        {
+          "caller": "item",
+          "callee": "product.getSpecValue",
+          "lineNumber": 72
+        },
+        {
+          "caller": "item",
+          "callee": "CompletableFuture.runAsync",
+          "lineNumber": 77
+        },
+        {
+          "caller": "item",
+          "callee": "remoteProductService.getSkuPrice",
+          "lineNumber": 78
+        },
+        {
+          "caller": "item",
+          "callee": "skuPriceResult.getCode",
+          "lineNumber": 79
+        },
+        {
+          "caller": "item",
+          "callee": "new ServiceException",
+          "lineNumber": 80
+        },
+        {
+          "caller": "item",
+          "callee": "skuPriceResult.getMsg",
+          "lineNumber": 80
+        },
+        {
+          "caller": "item",
+          "callee": "skuPriceResult.getData",
+          "lineNumber": 82
+        },
+        {
+          "caller": "item",
+          "callee": "itemVo.setSkuPrice",
+          "lineNumber": 83
+        },
+        {
+          "caller": "item",
+          "callee": "productSkuCompletableFuture.thenAcceptAsync",
+          "lineNumber": 88
+        },
+        {
+          "caller": "item",
+          "callee": "remoteProductService.getProductDetails",
+          "lineNumber": 89
+        },
+        {
+          "caller": "item",
+          "callee": "productSku.getProductId",
+          "lineNumber": 89
+        },
+        {
+          "caller": "item",
+          "callee": "productDetailsResult.getCode",
+          "lineNumber": 90
+        },
+        {
+          "caller": "item",
+          "callee": "new ServiceException",
+          "lineNumber": 91
+        },
+        {
+          "caller": "item",
+          "callee": "productDetailsResult.getMsg",
+          "lineNumber": 91
+        },
+        {
+          "caller": "item",
+          "callee": "productDetailsResult.getData",
+          "lineNumber": 93
+        },
+        {
+          "caller": "item",
+          "callee": "itemVo.setDetailsImageUrlList",
+          "lineNumber": 94
+        },
+        {
+          "caller": "item",
+          "callee": "Arrays.asList",
+          "lineNumber": 94
+        },
+        {
+          "caller": "item",
+          "callee": "productDetails.getImageUrls().split",
+          "lineNumber": 94
+        },
+        {
+          "caller": "item",
+          "callee": "productDetails.getImageUrls",
+          "lineNumber": 94
+        },
+        {
+          "caller": "item",
+          "callee": "productSkuCompletableFuture.thenAcceptAsync",
+          "lineNumber": 99
+        },
+        {
+          "caller": "item",
+          "callee": "remoteProductService.getSkuSpecValue",
+          "lineNumber": 100
+        },
+        {
+          "caller": "item",
+          "callee": "productSku.getProductId",
+          "lineNumber": 100
+        },
+        {
+          "caller": "item",
+          "callee": "skuSpecValueResult.getCode",
+          "lineNumber": 101
+        },
+        {
+          "caller": "item",
+          "callee": "new ServiceException",
+          "lineNumber": 102
+        },
+        {
+          "caller": "item",
+          "callee": "skuSpecValueResult.getMsg",
+          "lineNumber": 102
+        },
+        {
+          "caller": "item",
+          "callee": "skuSpecValueResult.getData",
+          "lineNumber": 104
+        },
+        {
+          "caller": "item",
+          "callee": "itemVo.setSkuSpecValueMap",
+          "lineNumber": 105
+        },
+        {
+          "caller": "item",
+          "callee": "productSkuCompletableFuture.thenAcceptAsync",
+          "lineNumber": 110
+        },
+        {
+          "caller": "item",
+          "callee": "remoteProductService.getSkuStock",
+          "lineNumber": 111
+        },
+        {
+          "caller": "item",
+          "callee": "skuStockResult.getCode",
+          "lineNumber": 112
+        },
+        {
+          "caller": "item",
+          "callee": "new ServiceException",
+          "lineNumber": 113
+        },
+        {
+          "caller": "item",
+          "callee": "skuStockResult.getMsg",
+          "lineNumber": 113
+        },
+        {
+          "caller": "item",
+          "callee": "skuStockResult.getData",
+          "lineNumber": 115
+        },
+        {
+          "caller": "item",
+          "callee": "itemVo.setSkuStockVo",
+          "lineNumber": 116
+        },
+        {
+          "caller": "item",
+          "callee": "productSku.setStockNum",
+          "lineNumber": 117
+        },
+        {
+          "caller": "item",
+          "callee": "skuStockVo.getAvailableNum",
+          "lineNumber": 117
+        },
+        {
+          "caller": "item",
+          "callee": "CompletableFuture.allOf(\r\n                productSkuCompletableFuture,\r\n                productCompletableFuture,\r\n                skuPriceCompletableFuture,\r\n                productDetailsCompletableFuture,\r\n                skuSpecValueMapCompletableFuture,\r\n                skuStockVoCompletableFuture\r\n        ).join",
+          "lineNumber": 121
+        },
+        {
+          "caller": "item",
+          "callee": "CompletableFuture.allOf",
+          "lineNumber": 121
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ListServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "selectProductSkuList",
+          "startLine": 20,
+          "endLine": 27,
+          "params": [
+            "pageNum",
+            "pageSize",
+            "skuQuery"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ListServiceImpl",
+          "startLine": 13,
+          "endLine": 28,
+          "methods": [
+            "selectProductSkuList"
+          ],
+          "properties": [
+            "remoteProductService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "selectProductSkuList",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "ListServiceImpl",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectProductSkuList",
+          "callee": "remoteProductService.skuList",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectProductSkuList",
+          "callee": "tableDataInfoResult.getCode",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectProductSkuList",
+          "callee": "new ServiceException",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectProductSkuList",
+          "callee": "tableDataInfoResult.getMsg",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectProductSkuList",
+          "callee": "tableDataInfoResult.getData",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/test/java/com/spzx/channel/test/LongTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 8,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 4,
+          "endLine": 9,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LongTest",
+          "startLine": 3,
+          "endLine": 10,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "LongTest",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "Integer.valueOf",
+          "lineNumber": 5
+        },
+        {
+          "caller": "main",
+          "callee": "Integer.valueOf",
+          "lineNumber": 6
+        },
+        {
+          "caller": "main",
+          "callee": "System.out.println",
+          "lineNumber": 7
+        },
+        {
+          "caller": "main",
+          "callee": "a.intValue",
+          "lineNumber": 7
+        },
+        {
+          "caller": "main",
+          "callee": "b.intValue",
+          "lineNumber": 7
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/SpzxFileApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 15,
+          "endLine": 28,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SpzxFileApplication",
+          "startLine": 12,
+          "endLine": 29,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "SpzxFileApplication",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 17
+        },
+        {
+          "caller": "main",
+          "callee": "System.out.println",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/config/MinioConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 68,
+      "functions": [
+        {
+          "name": "getUrl",
+          "startLine": 37,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "setUrl",
+          "startLine": 42,
+          "endLine": 45,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "getAccessKey",
+          "startLine": 47,
+          "endLine": 50,
+          "params": []
+        },
+        {
+          "name": "setAccessKey",
+          "startLine": 52,
+          "endLine": 55,
+          "params": [
+            "accessKey"
+          ]
+        },
+        {
+          "name": "getSecretKey",
+          "startLine": 57,
+          "endLine": 60,
+          "params": []
+        },
+        {
+          "name": "setSecretKey",
+          "startLine": 62,
+          "endLine": 65,
+          "params": [
+            "secretKey"
+          ]
+        },
+        {
+          "name": "getBucketName",
+          "startLine": 67,
+          "endLine": 70,
+          "params": []
+        },
+        {
+          "name": "setBucketName",
+          "startLine": 72,
+          "endLine": 75,
+          "params": [
+            "bucketName"
+          ]
+        },
+        {
+          "name": "getMinioClient",
+          "startLine": 77,
+          "endLine": 81,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "MinioConfig",
+          "startLine": 13,
+          "endLine": 82,
+          "methods": [
+            "getUrl",
+            "setUrl",
+            "getAccessKey",
+            "setAccessKey",
+            "getSecretKey",
+            "setSecretKey",
+            "getBucketName",
+            "setBucketName",
+            "getMinioClient"
+          ],
+          "properties": [
+            "url",
+            "accessKey",
+            "secretKey",
+            "bucketName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getUrl",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "setUrl",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "getAccessKey",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "setAccessKey",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "getSecretKey",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "setSecretKey",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "getBucketName",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "setBucketName",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "getMinioClient",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "MinioConfig",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getMinioClient",
+          "callee": "MinioClient.builder().endpoint(url).credentials(accessKey, secretKey).build",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getMinioClient",
+          "callee": "MinioClient.builder().endpoint(url).credentials",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getMinioClient",
+          "callee": "MinioClient.builder().endpoint",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getMinioClient",
+          "callee": "MinioClient.builder",
+          "lineNumber": 80
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "addResourceHandlers",
+          "startLine": 30,
+          "endLine": 36,
+          "params": [
+            "registry"
+          ]
+        },
+        {
+          "name": "addCorsMappings",
+          "startLine": 41,
+          "endLine": 49,
+          "params": [
+            "registry"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ResourcesConfig",
+          "startLine": 15,
+          "endLine": 50,
+          "methods": [
+            "addResourceHandlers",
+            "addCorsMappings"
+          ],
+          "properties": [
+            "localFilePath",
+            "localFilePrefix"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "localFilePrefix",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "addResourceHandlers",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "addCorsMappings",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "ResourcesConfig",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "addResourceHandlers",
+          "callee": "registry.addResourceHandler(localFilePrefix + \"/**\").addResourceLocations",
+          "lineNumber": 34
+        },
+        {
+          "caller": "addResourceHandlers",
+          "callee": "registry.addResourceHandler",
+          "lineNumber": 34
+        },
+        {
+          "caller": "addCorsMappings",
+          "callee": "registry.addMapping(localFilePrefix  + \"/**\")\n                // 设置允许跨域请求的域名\n                .allowedOrigins(\"*\").allowedMethods",
+          "lineNumber": 44
+        },
+        {
+          "caller": "addCorsMappings",
+          "callee": "registry.addMapping(localFilePrefix  + \"/**\").allowedOrigins",
+          "lineNumber": 44
+        },
+        {
+          "caller": "addCorsMappings",
+          "callee": "registry.addMapping",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/controller/SysFileController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 55,
+      "functions": [
+        {
+          "name": "upload",
+          "startLine": 41,
+          "endLine": 58,
+          "params": [
+            "file"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysFileController",
+          "startLine": 21,
+          "endLine": 59,
+          "methods": [
+            "upload"
+          ],
+          "properties": [
+            "log",
+            "sysFileService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "upload",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "SysFileController",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "upload",
+          "callee": "sysFileService.uploadFile",
+          "lineNumber": 47
+        },
+        {
+          "caller": "upload",
+          "callee": "new SysFile",
+          "lineNumber": 48
+        },
+        {
+          "caller": "upload",
+          "callee": "sysFile.setName",
+          "lineNumber": 49
+        },
+        {
+          "caller": "upload",
+          "callee": "FileUtils.getName",
+          "lineNumber": 49
+        },
+        {
+          "caller": "upload",
+          "callee": "sysFile.setUrl",
+          "lineNumber": 50
+        },
+        {
+          "caller": "upload",
+          "callee": "R.ok",
+          "lineNumber": 51
+        },
+        {
+          "caller": "upload",
+          "callee": "log.error",
+          "lineNumber": 55
+        },
+        {
+          "caller": "upload",
+          "callee": "R.fail",
+          "lineNumber": 56
+        },
+        {
+          "caller": "upload",
+          "callee": "e.getMessage",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/FastDfsSysFileServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 46,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

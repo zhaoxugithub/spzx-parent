@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "SPZX 业务模块 × 库表总览",
+    "locale": "zh-CN",
+    "output": "doc/archify/spzx-modules-tables.html",
+    "viewBox": [1080, 470],
+    "quality_profile": "showcase",
+    "views": [
+      { "id": "modules",  "label": "业务模块×库表", "focus": ["system","product","user","order","payment","sysdb","bizdb"], "note": "每个业务服务对应其落库." },
+      { "id": "tables",   "label": "库表明细",    "focus": ["sysdb","bizdb"], "note": "各库包含的表." }
+    ]
+  },
+  "components": [
+    { "id": "system",  "type": "backend",  "label": "系统管理",  "sublabel": "spzx-system :9201",  "pos": [40, 110],  "size": [170, 64] },
+    { "id": "product", "type": "backend",  "label": "商品服务",  "sublabel": "spzx-product :9205", "pos": [250, 110], "size": [170, 64] },
+    { "id": "user",    "type": "backend",  "label": "会员服务",  "sublabel": "spzx-user :9206",    "pos": [460, 110], "size": [170, 64] },
+    { "id": "order",   "type": "backend",  "label": "订单服务",  "sublabel": "spzx-order :9207",   "pos": [670, 110], "size": [170, 64] },
+    { "id": "payment", "type": "backend",  "label": "支付服务",  "sublabel": "spzx-payment :9210", "pos": [880, 110], "size": [170, 64] },
+
+    { "id": "sysdb",   "type": "database", "label": "MySQL 系统库", "sublabel": "15 张 sys_* 表", "pos": [40, 320],  "size": [200, 76] },
+    { "id": "bizdb",   "type": "database", "label": "MySQL 业务库", "sublabel": "商品/会员/订单/支付各库表", "pos": [250, 320], "size": [760, 76] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "业务服务层", "wraps": ["system","product","user","order","payment"] },
+    { "kind": "security-group", "label": "数据层(库)", "wraps": ["sysdb","bizdb"] }
+  ],
+  "connections": [
+    { "id": "system-db",  "from": "system",  "to": "sysdb",  "label": "JDBC", "fromSide": "bottom", "toSide": "top", "labelDy": 30 },
+    { "id": "product-db", "from": "product", "to": "bizdb",  "label": "JDBC 商品", "fromSide": "bottom", "toSide": "top", "labelAt": [250, 285] },
+    { "id": "user-db",    "from": "user",    "to": "bizdb",  "label": "JDBC 会员", "fromSide": "bottom", "toSide": "top", "labelAt": [460, 285] },
+    { "id": "order-db",   "from": "order",   "to": "bizdb",  "label": "JDBC 订单", "fromSide": "bottom", "toSide": "top", "labelAt": [670, 285] },
+    { "id": "payment-db", "from": "payment", "to": "bizdb",  "label": "JDBC 支付", "fromSide": "bottom", "toSide": "top", "labelAt": [880, 285] }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "业务模块(9 个业务服务)",
+      "items": [
+        "网关(8080) 认证(9200) 系统(9201) 商品(9205) 会员(9206) 订单(9207) H5聚合(9208) 购物车(9209) 支付(9210)",
+        "channel 为 H5 BFF 聚合商品(无库); 购物车纯 Redis",
+        "服务间调用: auth→system/user, order→cart/product/user, channel→product, payment→order(@InnerAuth)"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "库与表",
+      "items": [
+        "系统库: sys_user/role/menu/dept/dict/config/post/notice/oper_log/logininfor + 5 关联表",
+        "业务库: 商品(product/product_sku/product_details/category/brand/category_brand/product_spec/product_unit/sku_stock)、会员(user_info/user_address/region)、订单(order_info/order_item/order_log)、支付(payment_info)、代码生成(gen_*)、任务(sys_job/sys_job_log)",
+        "Redis: 会话/验证码/购物车/结算号/密码锁定; 各业务服务一个 MySQL 库"
+      ]
+    },
+    {
+      "dot": "orange",
+      "title": "MQ / 支付宝",
+      "items": [
+        "RabbitMQ: order→延迟关单/解锁, payment→支付成功, 商品消费 spzx.minus/unlock",
+        "支付宝: payment→WAP 支付, 回调 RSA2 验签",
+        "数据源/交换机队列见 Nacos application-dev.yml"
+      ]
+    }
+  ]
+}

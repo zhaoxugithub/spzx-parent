@@ -1,0 +1,466 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java",
+      "type": "file",
+      "name": "GenTableServiceImpl.java",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java",
+      "summary": "代码生成核心服务实现，负责生成表的导入、校验、预览与代码生成下载。",
+      "tags": ["service", "implementation", "code-generator", "core"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:GenTableServiceImpl",
+      "type": "class",
+      "name": "GenTableServiceImpl",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java",
+      "lineRange": [45, 521],
+      "summary": "代码生成服务实现类，实现 IGenTableService 并协调 Mapper、GenUtils 与 Velocity 模板完成代码生成。",
+      "tags": ["service", "implementation", "code-generator", "core"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:updateGenTable",
+      "type": "function",
+      "name": "updateGenTable",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java",
+      "lineRange": [123, 137],
+      "summary": "更新生成表配置及其列信息，保存 JSON 序列化后的树形配置。",
+      "tags": ["service", "update", "code-generator", "persistence"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:importGenTable",
+      "type": "function",
+      "name": "importGenTable",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java",
+      "lineRange": [158, 186],
+      "summary": "批量导入数据库表，初始化表与列字段并写入生成配置表。",
+      "tags": ["service", "import", "code-generator", "persistence"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:previewCode",
+      "type": "function",
+      "name": "previewCode",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java",
+      "lineRange": [194, 219],
+      "summary": "渲染指定表的代码生成模板，返回各模板文件名与生成内容的预览。",
+      "tags": ["service", "preview", "code-generator", "velocity"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:generatorCode",
+      "type": "function",
+      "name": "generatorCode",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java",
+      "lineRange": [242, 391],
+      "summary": "按模板渲染生成代码并写入指定路径或压缩包，是生成流程的核心方法。",
+      "tags": ["service", "generate", "code-generator", "velocity"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:synchDb",
+      "type": "function",
+      "name": "synchDb",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java",
+      "lineRange": [284, 332],
+      "summary": "将数据库最新表结构同步到生成配置，新增/更新/删除对应列记录。",
+      "tags": ["service", "sync", "code-generator", "database"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:downloadCode",
+      "type": "function",
+      "name": "downloadCode",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java",
+      "lineRange": [227, 351],
+      "summary": "将生成的代码打包为 zip 并提供下载。",
+      "tags": ["service", "download", "code-generator", "zip"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:validateEdit",
+      "type": "function",
+      "name": "validateEdit",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java",
+      "lineRange": [398, 429],
+      "summary": "校验生成表编辑配置，检查树形/子表等必填参数是否合法。",
+      "tags": ["service", "validation", "code-generator", "business-logic"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:setPkColumn",
+      "type": "function",
+      "name": "setPkColumn",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java",
+      "lineRange": [436, 465],
+      "summary": "从表列中解析主键列并设置到主表/子表对象。",
+      "tags": ["service", "util", "code-generator", "metadata"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:setTableFromOptions",
+      "type": "function",
+      "name": "setTableFromOptions",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java",
+      "lineRange": [486, 503],
+      "summary": "从 JSON options 解析树形代码、父级编码、菜单等配置并填充到表对象。",
+      "tags": ["service", "util", "code-generator", "parse"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableColumnService.java",
+      "type": "file",
+      "name": "IGenTableColumnService.java",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableColumnService.java",
+      "summary": "表列服务接口，声明列查询与增删改的方法签名。",
+      "tags": ["service", "interface", "code-generator", "contract"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableColumnService.java:IGenTableColumnService",
+      "type": "class",
+      "name": "IGenTableColumnService",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableColumnService.java",
+      "lineRange": [11, 44],
+      "summary": "表列服务接口，定义按表查询、插入、更新与删除列的方法。",
+      "tags": ["service", "interface", "code-generator", "contract"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableService.java",
+      "type": "file",
+      "name": "IGenTableService.java",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableService.java",
+      "summary": "代码生成服务接口，定义生成表查询、导入、校验、预览与代码生成等契约。",
+      "tags": ["service", "interface", "code-generator", "contract"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableService.java:IGenTableService",
+      "type": "class",
+      "name": "IGenTableService",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableService.java",
+      "lineRange": [12, 121],
+      "summary": "代码生成服务接口，声明生成表列表、库表、导入、预览、下载与代码生成方法。",
+      "tags": ["service", "interface", "code-generator", "contract"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java",
+      "type": "file",
+      "name": "GenUtils.java",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java",
+      "summary": "代码生成工具类，负责表的初始化、列字段映射、类名/业务名转换与数据库类型解析。",
+      "tags": ["utility", "code-generator", "conversion", "mapping"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java:GenUtils",
+      "type": "class",
+      "name": "GenUtils",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java",
+      "lineRange": [16, 258],
+      "summary": "代码生成工具类，提供表与列的初始化字段、类名/业务名转换及类型长度解析。",
+      "tags": ["utility", "code-generator", "conversion", "mapping"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java:initTable",
+      "type": "function",
+      "name": "initTable",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java",
+      "lineRange": [21, 30],
+      "summary": "初始化生成表对象的类名、包名、模块名、业务名及功能名等字段。",
+      "tags": ["utility", "init", "code-generator", "mapping"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java:initColumnField",
+      "type": "function",
+      "name": "initColumnField",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java",
+      "lineRange": [35, 131],
+      "summary": "根据数据库列类型与字段名初始化 Java 类型、字段名、查询/列表/录入等属性。",
+      "tags": ["utility", "code-generator", "mapping", "conversion"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java:convertClassName",
+      "type": "function",
+      "name": "convertClassName",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java",
+      "lineRange": [178, 188],
+      "summary": "将表名转换为类名（驼峰），按配置自动移除前缀并替换分隔符。",
+      "tags": ["utility", "code-generator", "naming", "conversion"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java:replaceFirst",
+      "type": "function",
+      "name": "replaceFirst",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java",
+      "lineRange": [197, 209],
+      "summary": "将字符串中首个匹配的分隔符前缀替换为指定值。",
+      "tags": ["utility", "string", "code-generator", "conversion"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java:getDbType",
+      "type": "function",
+      "name": "getDbType",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java",
+      "lineRange": [228, 238],
+      "summary": "从数据库列类型中提取主类型名。",
+      "tags": ["utility", "code-generator", "parsing", "metadata"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java:getColumnLength",
+      "type": "function",
+      "name": "getColumnLength",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java",
+      "lineRange": [246, 257],
+      "summary": "从列类型截取长度信息并转为整数。",
+      "tags": ["utility", "code-generator", "parsing", "metadata"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityInitializer.java",
+      "type": "file",
+      "name": "VelocityInitializer.java",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityInitializer.java",
+      "summary": "Velocity 模板引擎初始化类，配置资源加载器与编码并触发初始化。",
+      "tags": ["utility", "velocity", "code-generator", "initialization"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityInitializer.java:VelocityInitializer",
+      "type": "class",
+      "name": "VelocityInitializer",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityInitializer.java",
+      "lineRange": [12, 34],
+      "summary": "初始化 Velocity 引擎，设置资源加载器与编码属性。",
+      "tags": ["utility", "velocity", "code-generator", "initialization"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityInitializer.java:initVelocity",
+      "type": "function",
+      "name": "initVelocity",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityInitializer.java",
+      "lineRange": [17, 33],
+      "summary": "配置并初始化 Velocity，加载 vm 模板目录、设置编码并注册类路径资源加载器。",
+      "tags": ["utility", "velocity", "code-generator", "initialization"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java",
+      "type": "file",
+      "name": "VelocityUtils.java",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java",
+      "summary": "Velocity 模板上下文工具类，构建生成代码所需的数据上下文、模板列表与文件名。",
+      "tags": ["utility", "velocity", "code-generator", "template"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:VelocityUtils",
+      "type": "class",
+      "name": "VelocityUtils",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java",
+      "lineRange": [21, 408],
+      "summary": "Velocity 工具类，负责生成模板上下文、模板列表、文件名及目录/权限等数据。",
+      "tags": ["utility", "velocity", "code-generator", "template"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:prepareContext",
+      "type": "function",
+      "name": "prepareContext",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java",
+      "lineRange": [37, 74],
+      "summary": "构建 VelocityContext，填充表名、类名、包名、模块、权限及列等生成上下文数据。",
+      "tags": ["utility", "velocity", "code-generator", "context"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:setTreeVelocityContext",
+      "type": "function",
+      "name": "setTreeVelocityContext",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java",
+      "lineRange": [84, 104],
+      "summary": "为树形模板设置树编码、父编码、树名称与展开列等上下文变量。",
+      "tags": ["utility", "velocity", "code-generator", "tree"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:setSubVelocityContext",
+      "type": "function",
+      "name": "setSubVelocityContext",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java",
+      "lineRange": [106, 122],
+      "summary": "为子表模板设置子表信息上下文变量。",
+      "tags": ["utility", "velocity", "code-generator", "sub-table"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:getTemplateList",
+      "type": "function",
+      "name": "getTemplateList",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java",
+      "lineRange": [130, 160],
+      "summary": "按模板分类与前端类型返回需要生成的模板文件名列表。",
+      "tags": ["utility", "velocity", "code-generator", "template"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:getFileName",
+      "type": "function",
+      "name": "getFileName",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java",
+      "lineRange": [165, 227],
+      "summary": "根据模板与生成表计算输出文件的包路径与文件名。",
+      "tags": ["utility", "velocity", "code-generator", "naming"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:getImportList",
+      "type": "function",
+      "name": "getImportList",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java",
+      "lineRange": [247, 269],
+      "summary": "根据列 Java 类型生成实体所需的 import 列表。",
+      "tags": ["utility", "velocity", "code-generator", "imports"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:getDicts",
+      "type": "function",
+      "name": "getDicts",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java",
+      "lineRange": [277, 288],
+      "summary": "收集主表与子表中需要字典的列类型，生成去重后的字典列表。",
+      "tags": ["utility", "velocity", "code-generator", "dict"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:addDicts",
+      "type": "function",
+      "name": "addDicts",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java",
+      "lineRange": [296, 307],
+      "summary": "将带字典类型的列加入字典集合，避免重复。",
+      "tags": ["utility", "velocity", "code-generator", "dict"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:getExpandColumn",
+      "type": "function",
+      "name": "getExpandColumn",
+      "filePath": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java",
+      "lineRange": [388, 407],
+      "summary": "解析树形展开列配置，返回默认展开的列名。",
+      "tags": ["utility", "velocity", "code-generator", "tree"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:spzx-modules/spzx-gen/src/main/resources/mapper/generator/GenTableColumnMapper.xml",
+      "type": "config",
+      "name": "GenTableColumnMapper.xml",
+      "filePath": "spzx-modules/spzx-gen/src/main/resources/mapper/generator/GenTableColumnMapper.xml",
+      "summary": "表列 Mapper 的 MyBatis 映射文件，定义结果映射及列查询、插入、更新、删除 SQL。",
+      "tags": ["configuration", "mapper", "mybatis", "sql"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:spzx-modules/spzx-gen/src/main/resources/mapper/generator/GenTableMapper.xml",
+      "type": "config",
+      "name": "GenTableMapper.xml",
+      "filePath": "spzx-modules/spzx-gen/src/main/resources/mapper/generator/GenTableMapper.xml",
+      "summary": "生成表 Mapper 的 MyBatis 映射文件，定义表查询、库表列表、导入及增删改 SQL。",
+      "tags": ["configuration", "mapper", "mybatis", "sql"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/resources/vm/java/controller.java.vm",
+      "type": "file",
+      "name": "controller.java.vm",
+      "filePath": "spzx-modules/spzx-gen/src/main/resources/vm/java/controller.java.vm",
+      "summary": "代码生成控制器 Velocity 模板，生成基于 BaseController 的 REST 控制器源码。",
+      "tags": ["template", "velocity", "code-generator", "controller"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/resources/vm/java/domain.java.vm",
+      "type": "file",
+      "name": "domain.java.vm",
+      "filePath": "spzx-modules/spzx-gen/src/main/resources/vm/java/domain.java.vm",
+      "summary": "代码生成实体类 Velocity 模板，生成带 @Data 与 Schema 注解的领域对象源码。",
+      "tags": ["template", "velocity", "code-generator", "domain"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/resources/vm/java/mapper.java.vm",
+      "type": "file",
+      "name": "mapper.java.vm",
+      "filePath": "spzx-modules/spzx-gen/src/main/resources/vm/java/mapper.java.vm",
+      "summary": "代码生成 Mapper 接口 Velocity 模板，生成继承 BaseMapper 的数据访问接口。",
+      "tags": ["template", "velocity", "code-generator", "mapper"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-gen/src/main/resources/vm/java/service.java.vm",
+      "type": "file",
+      "name": "service.java.vm",
+      "filePath": "spzx-modules/spzx-gen/src/main/resources/vm/java/service.java.vm",
+      "summary": "代码生成 Service 接口 Velocity 模板，生成继承 IService 的业务接口。",
+      "tags": ["template", "velocity", "code-generator", "service"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java", "target": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:GenTableServiceImpl", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:updateGenTable", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:importGenTable", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:previewCode", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:generatorCode", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:synchDb", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:downloadCode", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:validateEdit", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:setPkColumn", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:setTableFromOptions", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableColumnService.java", "target": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableColumnService.java:IGenTableColumnService", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableService.java", "target": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableService.java:IGenTableService", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java", "target": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java:GenUtils", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java:initTable", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java:initColumnField", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java:convertClassName", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java:replaceFirst", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java:getDbType", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java:getColumnLength", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityInitializer.java", "target": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityInitializer.java:VelocityInitializer", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityInitializer.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityInitializer.java:initVelocity", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java", "target": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:VelocityUtils", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:prepareContext", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:setTreeVelocityContext", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:setSubVelocityContext", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:getTemplateList", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:getFileName", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:getImportList", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:getDicts", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:addDicts", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:getExpandColumn", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:GenTableServiceImpl", "target": "class:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableService.java:IGenTableService", "type": "implements", "direction": "forward", "weight": 0.9},
+    {"source": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:importGenTable", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java:initTable", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:importGenTable", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java:initColumnField", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:previewCode", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityInitializer.java:initVelocity", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:previewCode", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:prepareContext", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:previewCode", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:getTemplateList", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:generatorCode", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityInitializer.java:initVelocity", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:generatorCode", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:prepareContext", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:generatorCode", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:getTemplateList", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:generatorCode", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java:getFileName", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java:synchDb", "target": "function:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java:initColumnField", "type": "calls", "direction": "forward", "weight": 0.8}
+  ]
+}

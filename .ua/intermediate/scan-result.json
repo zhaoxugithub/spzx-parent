@@ -1,0 +1,3255 @@
+{
+  "scriptCompleted": true,
+  "contentDigest": "6b4842b9c8550768f17b1794ec3af02904ad9f806b4b4b30aa5832b0ced02a5b",
+  "files": [
+    {
+      "path": "CLAUDE.md",
+      "language": "markdown",
+      "sizeLines": 144,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "sizeLines": 131,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "pom.xml",
+      "language": "xml",
+      "sizeLines": 360,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-api/pom.xml",
+      "language": "xml",
+      "sizeLines": 26,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-api/spzx-api-cart/pom.xml",
+      "language": "xml",
+      "sizeLines": 28,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/RemoteCartService.java",
+      "language": "java",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/domain/CartInfo.java",
+      "language": "java",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/factory/RemoteCartFallbackFactory.java",
+      "language": "java",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-cart/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "language": "imports",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-order/pom.xml",
+      "language": "xml",
+      "sizeLines": 31,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/RemoteOrderInfoService.java",
+      "language": "java",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/domain/OrderInfo.java",
+      "language": "java",
+      "sizeLines": 175,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/domain/OrderItem.java",
+      "language": "java",
+      "sizeLines": 59,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/factory/RemoteOrderInfoFallbackFactory.java",
+      "language": "java",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-order/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "language": "imports",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-product/pom.xml",
+      "language": "xml",
+      "sizeLines": 33,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteBrandService.java",
+      "language": "java",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteCategoryService.java",
+      "language": "java",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteProductService.java",
+      "language": "java",
+      "sizeLines": 89,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/Brand.java",
+      "language": "java",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/Product.java",
+      "language": "java",
+      "sizeLines": 116,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/ProductDetails.java",
+      "language": "java",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/ProductSku.java",
+      "language": "java",
+      "sizeLines": 61,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/CategoryVo.java",
+      "language": "java",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuLockVo.java",
+      "language": "java",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuPrice.java",
+      "language": "java",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuQuery.java",
+      "language": "java",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuStockVo.java",
+      "language": "java",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/factory/RemoteBrandFallbackFactory.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/factory/RemoteCategoryFallbackFacgtory.java",
+      "language": "java",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/factory/RemoteProductFallbackFactory.java",
+      "language": "java",
+      "sizeLines": 89,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-product/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "language": "imports",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-system/pom.xml",
+      "language": "xml",
+      "sizeLines": 28,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/RemoteFileService.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/RemoteLogService.java",
+      "language": "java",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/RemoteUserService.java",
+      "language": "java",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/domain/SysDept.java",
+      "language": "java",
+      "sizeLines": 203,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/domain/SysDictData.java",
+      "language": "java",
+      "sizeLines": 176,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/domain/SysDictType.java",
+      "language": "java",
+      "sizeLines": 96,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/domain/SysFile.java",
+      "language": "java",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/domain/SysLogininfor.java",
+      "language": "java",
+      "sizeLines": 102,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/domain/SysOperLog.java",
+      "language": "java",
+      "sizeLines": 255,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/domain/SysRole.java",
+      "language": "java",
+      "sizeLines": 241,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/domain/SysUser.java",
+      "language": "java",
+      "sizeLines": 323,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/factory/RemoteFileFallbackFactory.java",
+      "language": "java",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/factory/RemoteLogFallbackFactory.java",
+      "language": "java",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/factory/RemoteUserFallbackFactory.java",
+      "language": "java",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/java/com/spzx/system/api/model/LoginUser.java",
+      "language": "java",
+      "sizeLines": 158,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-system/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "language": "imports",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-user/pom.xml",
+      "language": "xml",
+      "sizeLines": 32,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-api/spzx-api-user/src/main/java/com/spzx/user/api/RemoteUserAddressService.java",
+      "language": "java",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-user/src/main/java/com/spzx/user/api/RemoteUserInfoService.java",
+      "language": "java",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-user/src/main/java/com/spzx/user/api/factory/RemoteUserAddressFallbackFactory.java",
+      "language": "java",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-user/src/main/java/com/spzx/user/api/factory/RemoteUserInfoFallbackFactory.java",
+      "language": "java",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-user/src/main/java/com/spzx/user/domain/UpdateUserLogin.java",
+      "language": "java",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-user/src/main/java/com/spzx/user/domain/UserAddress.java",
+      "language": "java",
+      "sizeLines": 86,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-user/src/main/java/com/spzx/user/domain/UserInfo.java",
+      "language": "java",
+      "sizeLines": 94,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-user/src/main/java/com/spzx/user/domain/UserInfoVo.java",
+      "language": "java",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-api/spzx-api-user/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "language": "imports",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-auth/pom.xml",
+      "language": "xml",
+      "sizeLines": 79,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-auth/src/main/java/com/spzx/auth/SpzxAuthApplication.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-auth/src/main/java/com/spzx/auth/controller/H5TokenController.java",
+      "language": "java",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-auth/src/main/java/com/spzx/auth/controller/TokenController.java",
+      "language": "java",
+      "sizeLines": 71,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-auth/src/main/java/com/spzx/auth/form/LoginBody.java",
+      "language": "java",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-auth/src/main/java/com/spzx/auth/form/RegisterBody.java",
+      "language": "java",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-auth/src/main/java/com/spzx/auth/service/H5LoginService.java",
+      "language": "java",
+      "sizeLines": 145,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-auth/src/main/java/com/spzx/auth/service/SysLoginService.java",
+      "language": "java",
+      "sizeLines": 142,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-auth/src/main/java/com/spzx/auth/service/SysPasswordService.java",
+      "language": "java",
+      "sizeLines": 71,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-auth/src/main/java/com/spzx/auth/service/SysRecordLogService.java",
+      "language": "java",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-auth/src/main/resources/banner.txt",
+      "language": "txt",
+      "sizeLines": 9,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "spzx-auth/src/main/resources/bootstrap.yml",
+      "language": "yaml",
+      "sizeLines": 25,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-auth/src/main/resources/logback.xml",
+      "language": "xml",
+      "sizeLines": 74,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-common/pom.xml",
+      "language": "xml",
+      "sizeLines": 29,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/pom.xml",
+      "language": "xml",
+      "sizeLines": 163,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/annotation/Excel.java",
+      "language": "java",
+      "sizeLines": 182,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/annotation/Excels.java",
+      "language": "java",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/config/MybatisPlusConfig.java",
+      "language": "java",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/constant/CacheConstants.java",
+      "language": "java",
+      "sizeLines": 59,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/constant/Constants.java",
+      "language": "java",
+      "sizeLines": 135,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/constant/GenConstants.java",
+      "language": "java",
+      "sizeLines": 117,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/constant/HttpStatus.java",
+      "language": "java",
+      "sizeLines": 94,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/constant/ScheduleConstants.java",
+      "language": "java",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/constant/SecurityConstants.java",
+      "language": "java",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/constant/ServiceNameConstants.java",
+      "language": "java",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/constant/TokenConstants.java",
+      "language": "java",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/constant/UserConstants.java",
+      "language": "java",
+      "sizeLines": 80,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/context/SecurityContextHolder.java",
+      "language": "java",
+      "sizeLines": 85,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/domain/R.java",
+      "language": "java",
+      "sizeLines": 115,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/enums/UserStatus.java",
+      "language": "java",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/CaptchaException.java",
+      "language": "java",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/CheckedException.java",
+      "language": "java",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/DemoModeException.java",
+      "language": "java",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/GlobalException.java",
+      "language": "java",
+      "sizeLines": 58,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/InnerAuthException.java",
+      "language": "java",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/PreAuthorizeException.java",
+      "language": "java",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/ServiceException.java",
+      "language": "java",
+      "sizeLines": 74,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/UtilException.java",
+      "language": "java",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/auth/NotLoginException.java",
+      "language": "java",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/auth/NotPermissionException.java",
+      "language": "java",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/auth/NotRoleException.java",
+      "language": "java",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/base/BaseException.java",
+      "language": "java",
+      "sizeLines": 79,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/file/FileException.java",
+      "language": "java",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/file/FileNameLengthLimitExceededException.java",
+      "language": "java",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/file/FileSizeLimitExceededException.java",
+      "language": "java",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/file/FileUploadException.java",
+      "language": "java",
+      "sizeLines": 61,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/file/InvalidExtensionException.java",
+      "language": "java",
+      "sizeLines": 80,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/job/TaskException.java",
+      "language": "java",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/user/CaptchaExpireException.java",
+      "language": "java",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/user/UserException.java",
+      "language": "java",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/user/UserPasswordNotMatchException.java",
+      "language": "java",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/interceptor/MybatisSqlLogInterceptor.java",
+      "language": "java",
+      "sizeLines": 192,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/text/CharsetKit.java",
+      "language": "java",
+      "sizeLines": 86,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/text/Convert.java",
+      "language": "java",
+      "sizeLines": 1012,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/text/StrFormatter.java",
+      "language": "java",
+      "sizeLines": 92,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/DateUtils.java",
+      "language": "java",
+      "sizeLines": 183,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ExceptionUtil.java",
+      "language": "java",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/HttpUtils.java",
+      "language": "java",
+      "sizeLines": 311,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/JwtUtils.java",
+      "language": "java",
+      "sizeLines": 114,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/PageUtils.java",
+      "language": "java",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ServletUtils.java",
+      "language": "java",
+      "sizeLines": 333,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/SpringUtils.java",
+      "language": "java",
+      "sizeLines": 114,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/StringUtils.java",
+      "language": "java",
+      "sizeLines": 561,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/bean/BeanUtils.java",
+      "language": "java",
+      "sizeLines": 110,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/bean/BeanValidators.java",
+      "language": "java",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileTypeUtils.java",
+      "language": "java",
+      "sizeLines": 95,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/FileUtils.java",
+      "language": "java",
+      "sizeLines": 253,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/ImageUtils.java",
+      "language": "java",
+      "sizeLines": 84,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/file/MimeTypeUtils.java",
+      "language": "java",
+      "sizeLines": 59,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/EscapeUtil.java",
+      "language": "java",
+      "sizeLines": 167,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/html/HTMLFilter.java",
+      "language": "java",
+      "sizeLines": 570,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/ip/IpUtils.java",
+      "language": "java",
+      "sizeLines": 382,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/poi/ExcelHandlerAdapter.java",
+      "language": "java",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/poi/ExcelUtil.java",
+      "language": "java",
+      "sizeLines": 1256,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/reflect/ReflectUtils.java",
+      "language": "java",
+      "sizeLines": 410,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/sign/Base64.java",
+      "language": "java",
+      "sizeLines": 291,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/sql/SqlUtil.java",
+      "language": "java",
+      "sizeLines": 70,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/uuid/IdUtils.java",
+      "language": "java",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/uuid/Seq.java",
+      "language": "java",
+      "sizeLines": 86,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/utils/uuid/UUID.java",
+      "language": "java",
+      "sizeLines": 484,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/controller/BaseController.java",
+      "language": "java",
+      "sizeLines": 147,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/domain/AjaxResult.java",
+      "language": "java",
+      "sizeLines": 216,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/domain/BaseEntity.java",
+      "language": "java",
+      "sizeLines": 149,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/domain/TreeEntity.java",
+      "language": "java",
+      "sizeLines": 79,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/PageDomain.java",
+      "language": "java",
+      "sizeLines": 101,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableDataInfo.java",
+      "language": "java",
+      "sizeLines": 85,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/web/page/TableSupport.java",
+      "language": "java",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/xss/Xss.java",
+      "language": "java",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/xss/XssValidator.java",
+      "language": "java",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "language": "imports",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-datascope/pom.xml",
+      "language": "xml",
+      "sizeLines": 27,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/annotation/DataScope.java",
+      "language": "java",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-datascope/src/main/java/com/spzx/common/datascope/aspect/DataScopeAspect.java",
+      "language": "java",
+      "sizeLines": 149,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-datascope/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "language": "imports",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-datasource/pom.xml",
+      "language": "xml",
+      "sizeLines": 35,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-common/spzx-common-datasource/src/main/java/com/spzx/common/datasource/annotation/Master.java",
+      "language": "java",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-datasource/src/main/java/com/spzx/common/datasource/annotation/Slave.java",
+      "language": "java",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-log/pom.xml",
+      "language": "xml",
+      "sizeLines": 27,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/annotation/Log.java",
+      "language": "java",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "language": "java",
+      "sizeLines": 220,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessStatus.java",
+      "language": "java",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessType.java",
+      "language": "java",
+      "sizeLines": 59,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/OperatorType.java",
+      "language": "java",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/filter/PropertyPreExcludeFilter.java",
+      "language": "java",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/service/AsyncLogService.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-log/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "language": "imports",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-rabbit/pom.xml",
+      "language": "xml",
+      "sizeLines": 51,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java",
+      "language": "java",
+      "sizeLines": 111,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/constant/MqConst.java",
+      "language": "java",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/entity/GuiguCorrelationData.java",
+      "language": "java",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java",
+      "language": "java",
+      "sizeLines": 84,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-rabbit/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "language": "imports",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-redis/pom.xml",
+      "language": "xml",
+      "sizeLines": 33,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/annotation/GuiguCache.java",
+      "language": "java",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/cache/GuiguCacheAspect.java",
+      "language": "java",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java",
+      "language": "java",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/RedisConfig.java",
+      "language": "java",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/service/RedisService.java",
+      "language": "java",
+      "sizeLines": 243,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-redis/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "language": "imports",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-seata/pom.xml",
+      "language": "xml",
+      "sizeLines": 27,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/pom.xml",
+      "language": "xml",
+      "sizeLines": 50,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/EnableCustomConfig.java",
+      "language": "java",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/EnableRyFeignClients.java",
+      "language": "java",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/InnerAuth.java",
+      "language": "java",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/Logical.java",
+      "language": "java",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresLogin.java",
+      "language": "java",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresPermissions.java",
+      "language": "java",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresRoles.java",
+      "language": "java",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/InnerAuthAspect.java",
+      "language": "java",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java",
+      "language": "java",
+      "sizeLines": 90,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "language": "java",
+      "sizeLines": 326,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthUtil.java",
+      "language": "java",
+      "sizeLines": 151,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/ApplicationConfig.java",
+      "language": "java",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/WebMvcConfig.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignAutoConfiguration.java",
+      "language": "java",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignRequestInterceptor.java",
+      "language": "java",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/filter/TraceIdFilter.java",
+      "language": "java",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/handler/GlobalExceptionHandler.java",
+      "language": "java",
+      "sizeLines": 159,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/interceptor/HeaderInterceptor.java",
+      "language": "java",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java",
+      "language": "java",
+      "sizeLines": 158,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/DictUtils.java",
+      "language": "java",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/SecurityUtils.java",
+      "language": "java",
+      "sizeLines": 105,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "language": "imports",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/pom.xml",
+      "language": "xml",
+      "sizeLines": 104,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/SpzxGatewayApplication.java",
+      "language": "java",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java",
+      "language": "java",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/config/GatewayConfig.java",
+      "language": "java",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/config/KaptchaTextCreator.java",
+      "language": "java",
+      "sizeLines": 61,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/config/RouterFunctionConfiguration.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/config/SwaggerProvider.java",
+      "language": "java",
+      "sizeLines": 79,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/config/properties/CaptchaProperties.java",
+      "language": "java",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/config/properties/IgnoreWhiteProperties.java",
+      "language": "java",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/config/properties/XssProperties.java",
+      "language": "java",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/filter/AuthFilter.java",
+      "language": "java",
+      "sizeLines": 135,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/filter/BlackListUrlFilter.java",
+      "language": "java",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/filter/CacheRequestFilter.java",
+      "language": "java",
+      "sizeLines": 93,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/filter/TraceIdFilter.java",
+      "language": "java",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java",
+      "language": "java",
+      "sizeLines": 73,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java",
+      "language": "java",
+      "sizeLines": 113,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/handler/GatewayExceptionHandler.java",
+      "language": "java",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/handler/SentinelFallbackHandler.java",
+      "language": "java",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/handler/SwaggerHandler.java",
+      "language": "java",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/handler/ValidateCodeHandler.java",
+      "language": "java",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/service/ValidateCodeService.java",
+      "language": "java",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java",
+      "language": "java",
+      "sizeLines": 107,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-gateway/src/main/resources/banner.txt",
+      "language": "txt",
+      "sizeLines": 9,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "spzx-gateway/src/main/resources/bootstrap.yml",
+      "language": "yaml",
+      "sizeLines": 43,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-gateway/src/main/resources/logback.xml",
+      "language": "xml",
+      "sizeLines": 74,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/pom.xml",
+      "language": "xml",
+      "sizeLines": 60,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-cart/pom.xml",
+      "language": "xml",
+      "sizeLines": 91,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java",
+      "language": "java",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/controller/CartController.java",
+      "language": "java",
+      "sizeLines": 123,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/ICartService.java",
+      "language": "java",
+      "sizeLines": 66,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "language": "java",
+      "sizeLines": 269,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-cart/src/main/resources/banner.txt",
+      "language": "txt",
+      "sizeLines": 9,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "spzx-modules/spzx-cart/src/main/resources/bootstrap.yml",
+      "language": "yaml",
+      "sizeLines": 29,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-cart/src/main/resources/logback.xml",
+      "language": "xml",
+      "sizeLines": 73,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/pom.xml",
+      "language": "xml",
+      "sizeLines": 99,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/SpzxChannelApplication.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/configure/ThreadPoolConfig.java",
+      "language": "java",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/BrandController.java",
+      "language": "java",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/CategoryController.java",
+      "language": "java",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/IndexController.java",
+      "language": "java",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ItemController.java",
+      "language": "java",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ListController.java",
+      "language": "java",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/domain/ItemVo.java",
+      "language": "java",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IBrandService.java",
+      "language": "java",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/ICategoryService.java",
+      "language": "java",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IIndexService.java",
+      "language": "java",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IItemService.java",
+      "language": "java",
+      "sizeLines": 8,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IListService.java",
+      "language": "java",
+      "sizeLines": 8,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/BrandServiceImpl.java",
+      "language": "java",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/CategoryServiceImpl.java",
+      "language": "java",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/IndexServiceImpl.java",
+      "language": "java",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ItemServiceImpl.java",
+      "language": "java",
+      "sizeLines": 131,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ListServiceImpl.java",
+      "language": "java",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/resources/banner.txt",
+      "language": "txt",
+      "sizeLines": 9,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/resources/bootstrap.yml",
+      "language": "yaml",
+      "sizeLines": 26,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/main/resources/logback.xml",
+      "language": "xml",
+      "sizeLines": 73,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-channel/src/test/java/com/spzx/channel/test/LongTest.java",
+      "language": "java",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-file/pom.xml",
+      "language": "xml",
+      "sizeLines": 82,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/SpzxFileApplication.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/config/MinioConfig.java",
+      "language": "java",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java",
+      "language": "java",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/controller/SysFileController.java",
+      "language": "java",
+      "sizeLines": 59,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/FastDfsSysFileServiceImpl.java",
+      "language": "java",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/ISysFileService.java",
+      "language": "java",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/LocalSysFileServiceImpl.java",
+      "language": "java",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/MinioSysFileServiceImpl.java",
+      "language": "java",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java",
+      "language": "java",
+      "sizeLines": 185,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/resources/banner.txt",
+      "language": "txt",
+      "sizeLines": 9,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/resources/bootstrap.yml",
+      "language": "yaml",
+      "sizeLines": 27,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/resources/logback.xml",
+      "language": "xml",
+      "sizeLines": 74,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/pom.xml",
+      "language": "xml",
+      "sizeLines": 81,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/SpzxGenApplication.java",
+      "language": "java",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/config/GenConfig.java",
+      "language": "java",
+      "sizeLines": 66,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/controller/GenController.java",
+      "language": "java",
+      "sizeLines": 211,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/domain/GenTable.java",
+      "language": "java",
+      "sizeLines": 383,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/domain/GenTableColumn.java",
+      "language": "java",
+      "sizeLines": 374,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/mapper/GenTableColumnMapper.java",
+      "language": "java",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/mapper/GenTableMapper.java",
+      "language": "java",
+      "sizeLines": 83,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableColumnServiceImpl.java",
+      "language": "java",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java",
+      "language": "java",
+      "sizeLines": 521,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableColumnService.java",
+      "language": "java",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableService.java",
+      "language": "java",
+      "sizeLines": 121,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java",
+      "language": "java",
+      "sizeLines": 258,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityInitializer.java",
+      "language": "java",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java",
+      "language": "java",
+      "sizeLines": 408,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/resources/banner.txt",
+      "language": "txt",
+      "sizeLines": 9,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/resources/bootstrap.yml",
+      "language": "yaml",
+      "sizeLines": 27,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/resources/logback.xml",
+      "language": "xml",
+      "sizeLines": 74,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/resources/mapper/generator/GenTableColumnMapper.xml",
+      "language": "xml",
+      "sizeLines": 127,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/resources/mapper/generator/GenTableMapper.xml",
+      "language": "xml",
+      "sizeLines": 206,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/resources/vm/java/controller.java.vm",
+      "language": "vm",
+      "sizeLines": 125,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/resources/vm/java/domain.java.vm",
+      "language": "vm",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/resources/vm/java/mapper.java.vm",
+      "language": "vm",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/resources/vm/java/service.java.vm",
+      "language": "vm",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/resources/vm/java/serviceImpl.java.vm",
+      "language": "vm",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/resources/vm/java/sub-domain.java.vm",
+      "language": "vm",
+      "sizeLines": 76,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/resources/vm/js/api.js.vm",
+      "language": "vm",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/resources/vm/sql/sql.vm",
+      "language": "vm",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/resources/vm/vue/index-tree.vue.vm",
+      "language": "vm",
+      "sizeLines": 505,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/resources/vm/vue/index.vue.vm",
+      "language": "vm",
+      "sizeLines": 602,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/resources/vm/vue/v3/index-tree.vue.vm",
+      "language": "vm",
+      "sizeLines": 474,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/resources/vm/vue/v3/index.vue.vm",
+      "language": "vm",
+      "sizeLines": 590,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/resources/vm/xml/mapper.xml.vm",
+      "language": "vm",
+      "sizeLines": 58,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/pom.xml",
+      "language": "xml",
+      "sizeLines": 87,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/SpzxJobApplication.java",
+      "language": "java",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/config/ScheduleConfig.java",
+      "language": "java",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobController.java",
+      "language": "java",
+      "sizeLines": 156,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/controller/SysJobLogController.java",
+      "language": "java",
+      "sizeLines": 86,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/domain/SysJob.java",
+      "language": "java",
+      "sizeLines": 171,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/domain/SysJobLog.java",
+      "language": "java",
+      "sizeLines": 155,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/mapper/SysJobLogMapper.java",
+      "language": "java",
+      "sizeLines": 64,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/mapper/SysJobMapper.java",
+      "language": "java",
+      "sizeLines": 67,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/service/ISysJobLogService.java",
+      "language": "java",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/service/ISysJobService.java",
+      "language": "java",
+      "sizeLines": 102,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/service/SysJobLogServiceImpl.java",
+      "language": "java",
+      "sizeLines": 86,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/service/SysJobServiceImpl.java",
+      "language": "java",
+      "sizeLines": 260,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/task/RyTask.java",
+      "language": "java",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/AbstractQuartzJob.java",
+      "language": "java",
+      "sizeLines": 106,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/CronUtils.java",
+      "language": "java",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java",
+      "language": "java",
+      "sizeLines": 182,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzDisallowConcurrentExecution.java",
+      "language": "java",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzJobExecution.java",
+      "language": "java",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java",
+      "language": "java",
+      "sizeLines": 141,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/resources/banner.txt",
+      "language": "txt",
+      "sizeLines": 9,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/resources/bootstrap.yml",
+      "language": "yaml",
+      "sizeLines": 27,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/resources/logback.xml",
+      "language": "xml",
+      "sizeLines": 74,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/resources/mapper/job/SysJobLogMapper.xml",
+      "language": "xml",
+      "sizeLines": 93,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-job/src/main/resources/mapper/job/SysJobMapper.xml",
+      "language": "xml",
+      "sizeLines": 111,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-order/pom.xml",
+      "language": "xml",
+      "sizeLines": 97,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/SpzxOrderApplication.java",
+      "language": "java",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/CancelOrderMqConfig.java",
+      "language": "java",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DeadLetterMqConfig.java",
+      "language": "java",
+      "sizeLines": 59,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DelayedMqConfig.java",
+      "language": "java",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/MqController.java",
+      "language": "java",
+      "sizeLines": 71,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/OrderInfoController.java",
+      "language": "java",
+      "sizeLines": 102,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/OrderLog.java",
+      "language": "java",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/OrderForm.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/TradeVo.java",
+      "language": "java",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderInfoMapper.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderItemMapper.java",
+      "language": "java",
+      "sizeLines": 11,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderLogMapper.java",
+      "language": "java",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java",
+      "language": "java",
+      "sizeLines": 142,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/service/IOrderInfoService.java",
+      "language": "java",
+      "sizeLines": 74,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java",
+      "language": "java",
+      "sizeLines": 352,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/resources/banner.txt",
+      "language": "txt",
+      "sizeLines": 9,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/resources/bootstrap.yml",
+      "language": "yaml",
+      "sizeLines": 26,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/resources/logback.xml",
+      "language": "xml",
+      "sizeLines": 73,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/resources/mapper/order/OrderInfoMapper.xml",
+      "language": "xml",
+      "sizeLines": 43,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/resources/mapper/order/OrderItemMapper.xml",
+      "language": "xml",
+      "sizeLines": 14,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/main/resources/mapper/order/OrderLogMapper.xml",
+      "language": "xml",
+      "sizeLines": 15,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-order/src/test/java/com/spzx/product/test/TransactionalProducer.java",
+      "language": "java",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-payment/pom.xml",
+      "language": "xml",
+      "sizeLines": 103,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java",
+      "language": "java",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/configure/AlipayConfig.java",
+      "language": "java",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/controller/AlipayController.java",
+      "language": "java",
+      "sizeLines": 125,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/domain/PaymentInfo.java",
+      "language": "java",
+      "sizeLines": 83,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/mapper/PaymentInfoMapper.java",
+      "language": "java",
+      "sizeLines": 11,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/receiver/PaymentReceiver.java",
+      "language": "java",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IAlipayService.java",
+      "language": "java",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/IPaymentInfoService.java",
+      "language": "java",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/AlipayServiceImpl.java",
+      "language": "java",
+      "sizeLines": 64,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/service/impl/PaymentInfoServiceImpl.java",
+      "language": "java",
+      "sizeLines": 81,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/resources/banner.txt",
+      "language": "txt",
+      "sizeLines": 9,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/resources/bootstrap.yml",
+      "language": "yaml",
+      "sizeLines": 26,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/resources/logback.xml",
+      "language": "xml",
+      "sizeLines": 73,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-payment/src/main/resources/mapper/payment/PaymentInfoMapper.xml",
+      "language": "xml",
+      "sizeLines": 14,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-product/pom.xml",
+      "language": "xml",
+      "sizeLines": 113,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/SpzxProductApplication.java",
+      "language": "java",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/BrandController.java",
+      "language": "java",
+      "sizeLines": 114,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "language": "java",
+      "sizeLines": 92,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java",
+      "language": "java",
+      "sizeLines": 73,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "language": "java",
+      "sizeLines": 230,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "language": "java",
+      "sizeLines": 85,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "language": "java",
+      "sizeLines": 84,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/TestController.java",
+      "language": "java",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/Category.java",
+      "language": "java",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/CategoryBrand.java",
+      "language": "java",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductSpec.java",
+      "language": "java",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductUnit.java",
+      "language": "java",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/SkuStock.java",
+      "language": "java",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/vo/CategoryExcelVo.java",
+      "language": "java",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java",
+      "language": "java",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/BrandMapper.java",
+      "language": "java",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryBrandMapper.java",
+      "language": "java",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryMapper.java",
+      "language": "java",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductDetailsMapper.java",
+      "language": "java",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductMapper.java",
+      "language": "java",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSkuMapper.java",
+      "language": "java",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSpecMapper.java",
+      "language": "java",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductUnitMapper.java",
+      "language": "java",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/SkuStockMapper.java",
+      "language": "java",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java",
+      "language": "java",
+      "sizeLines": 67,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/IBrandService.java",
+      "language": "java",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/ICategoryBrandService.java",
+      "language": "java",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/ICategoryService.java",
+      "language": "java",
+      "sizeLines": 61,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/IProductService.java",
+      "language": "java",
+      "sizeLines": 120,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/IProductSpecService.java",
+      "language": "java",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/IProductUnitService.java",
+      "language": "java",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/TestService.java",
+      "language": "java",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/impl/BrandServiceImpl.java",
+      "language": "java",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/impl/CategoryBrandServiceImpl.java",
+      "language": "java",
+      "sizeLines": 78,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/impl/CategoryServiceImpl.java",
+      "language": "java",
+      "sizeLines": 153,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/impl/ProductServiceImpl.java",
+      "language": "java",
+      "sizeLines": 600,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/impl/ProductSpecServiceImpl.java",
+      "language": "java",
+      "sizeLines": 58,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/impl/ProductUnitServiceImpl.java",
+      "language": "java",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/impl/TestServiceImpl.java",
+      "language": "java",
+      "sizeLines": 186,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/resources/banner.txt",
+      "language": "txt",
+      "sizeLines": 9,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/resources/bootstrap.yml",
+      "language": "yaml",
+      "sizeLines": 29,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/resources/logback.xml",
+      "language": "xml",
+      "sizeLines": 73,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/resources/mapper/product/BrandMapper.xml",
+      "language": "xml",
+      "sizeLines": 56,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/resources/mapper/product/CategoryBrandMapper.xml",
+      "language": "xml",
+      "sizeLines": 38,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/resources/mapper/product/CategoryMapper.xml",
+      "language": "xml",
+      "sizeLines": 6,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductMapper.xml",
+      "language": "xml",
+      "sizeLines": 33,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductSkuMapper.xml",
+      "language": "xml",
+      "sizeLines": 71,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductSpecMapper.xml",
+      "language": "xml",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductUnitMapper.xml",
+      "language": "xml",
+      "sizeLines": 6,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/resources/mapper/product/SkuStockMapper.xml",
+      "language": "xml",
+      "sizeLines": 41,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/test/java/com/spzx/product/test/EasyExcelTest.java",
+      "language": "java",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/test/java/com/spzx/product/test/ExcelListener.java",
+      "language": "java",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/test/java/com/spzx/product/test/TransmittableThreadLocalExample.java",
+      "language": "java",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/pom.xml",
+      "language": "xml",
+      "sizeLines": 94,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/SpzxSystemApplication.java",
+      "language": "java",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysConfigController.java",
+      "language": "java",
+      "sizeLines": 123,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java",
+      "language": "java",
+      "sizeLines": 123,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictDataController.java",
+      "language": "java",
+      "sizeLines": 114,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictTypeController.java",
+      "language": "java",
+      "sizeLines": 122,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysLogininforController.java",
+      "language": "java",
+      "sizeLines": 86,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java",
+      "language": "java",
+      "sizeLines": 141,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysNoticeController.java",
+      "language": "java",
+      "sizeLines": 87,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysOperlogController.java",
+      "language": "java",
+      "sizeLines": 73,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysPostController.java",
+      "language": "java",
+      "sizeLines": 117,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java",
+      "language": "java",
+      "sizeLines": 140,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysRoleController.java",
+      "language": "java",
+      "sizeLines": 219,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java",
+      "language": "java",
+      "sizeLines": 299,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserOnlineController.java",
+      "language": "java",
+      "sizeLines": 73,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysConfig.java",
+      "language": "java",
+      "sizeLines": 111,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysMenu.java",
+      "language": "java",
+      "sizeLines": 259,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysNotice.java",
+      "language": "java",
+      "sizeLines": 102,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysPost.java",
+      "language": "java",
+      "sizeLines": 124,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleDept.java",
+      "language": "java",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleMenu.java",
+      "language": "java",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysUserOnline.java",
+      "language": "java",
+      "sizeLines": 100,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysUserPost.java",
+      "language": "java",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysUserRole.java",
+      "language": "java",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/vo/MetaVo.java",
+      "language": "java",
+      "sizeLines": 106,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/vo/RouterVo.java",
+      "language": "java",
+      "sizeLines": 148,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/vo/TreeSelect.java",
+      "language": "java",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysConfigMapper.java",
+      "language": "java",
+      "sizeLines": 76,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysDeptMapper.java",
+      "language": "java",
+      "sizeLines": 118,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysDictDataMapper.java",
+      "language": "java",
+      "sizeLines": 95,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysDictTypeMapper.java",
+      "language": "java",
+      "sizeLines": 83,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysLogininforMapper.java",
+      "language": "java",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysMenuMapper.java",
+      "language": "java",
+      "sizeLines": 125,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysNoticeMapper.java",
+      "language": "java",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysOperLogMapper.java",
+      "language": "java",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysPostMapper.java",
+      "language": "java",
+      "sizeLines": 99,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysRoleDeptMapper.java",
+      "language": "java",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysRoleMapper.java",
+      "language": "java",
+      "sizeLines": 107,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysRoleMenuMapper.java",
+      "language": "java",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysUserMapper.java",
+      "language": "java",
+      "sizeLines": 127,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysUserPostMapper.java",
+      "language": "java",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysUserRoleMapper.java",
+      "language": "java",
+      "sizeLines": 62,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysConfigService.java",
+      "language": "java",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysDeptService.java",
+      "language": "java",
+      "sizeLines": 124,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysDictDataService.java",
+      "language": "java",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysDictTypeService.java",
+      "language": "java",
+      "sizeLines": 98,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysLogininforService.java",
+      "language": "java",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysMenuService.java",
+      "language": "java",
+      "sizeLines": 144,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysNoticeService.java",
+      "language": "java",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysOperLogService.java",
+      "language": "java",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPermissionService.java",
+      "language": "java",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysPostService.java",
+      "language": "java",
+      "sizeLines": 99,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysRoleService.java",
+      "language": "java",
+      "sizeLines": 173,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserOnlineService.java",
+      "language": "java",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/ISysUserService.java",
+      "language": "java",
+      "sizeLines": 206,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysConfigServiceImpl.java",
+      "language": "java",
+      "sizeLines": 192,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDeptServiceImpl.java",
+      "language": "java",
+      "sizeLines": 304,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictDataServiceImpl.java",
+      "language": "java",
+      "sizeLines": 102,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysDictTypeServiceImpl.java",
+      "language": "java",
+      "sizeLines": 202,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysLogininforServiceImpl.java",
+      "language": "java",
+      "sizeLines": 61,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysMenuServiceImpl.java",
+      "language": "java",
+      "sizeLines": 466,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysNoticeServiceImpl.java",
+      "language": "java",
+      "sizeLines": 86,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysOperLogServiceImpl.java",
+      "language": "java",
+      "sizeLines": 72,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPermissionServiceImpl.java",
+      "language": "java",
+      "sizeLines": 74,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysPostServiceImpl.java",
+      "language": "java",
+      "sizeLines": 163,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysRoleServiceImpl.java",
+      "language": "java",
+      "sizeLines": 385,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserOnlineServiceImpl.java",
+      "language": "java",
+      "sizeLines": 80,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/service/impl/SysUserServiceImpl.java",
+      "language": "java",
+      "sizeLines": 492,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/resources/banner.txt",
+      "language": "txt",
+      "sizeLines": 9,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/resources/bootstrap.yml",
+      "language": "yaml",
+      "sizeLines": 27,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/resources/logback.xml",
+      "language": "xml",
+      "sizeLines": 74,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysConfigMapper.xml",
+      "language": "xml",
+      "sizeLines": 117,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysDeptMapper.xml",
+      "language": "xml",
+      "sizeLines": 157,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysDictDataMapper.xml",
+      "language": "xml",
+      "sizeLines": 124,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysDictTypeMapper.xml",
+      "language": "xml",
+      "sizeLines": 105,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysLogininforMapper.xml",
+      "language": "xml",
+      "sizeLines": 54,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysMenuMapper.xml",
+      "language": "xml",
+      "sizeLines": 202,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysNoticeMapper.xml",
+      "language": "xml",
+      "sizeLines": 89,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysOperLogMapper.xml",
+      "language": "xml",
+      "sizeLines": 86,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysPostMapper.xml",
+      "language": "xml",
+      "sizeLines": 122,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleDeptMapper.xml",
+      "language": "xml",
+      "sizeLines": 34,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleMapper.xml",
+      "language": "xml",
+      "sizeLines": 152,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleMenuMapper.xml",
+      "language": "xml",
+      "sizeLines": 34,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserMapper.xml",
+      "language": "xml",
+      "sizeLines": 221,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserPostMapper.xml",
+      "language": "xml",
+      "sizeLines": 34,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserRoleMapper.xml",
+      "language": "xml",
+      "sizeLines": 44,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-user/pom.xml",
+      "language": "xml",
+      "sizeLines": 91,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/java/com/spzx/user/SpzxUserApplication.java",
+      "language": "java",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/RegionController.java",
+      "language": "java",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/SmsController.java",
+      "language": "java",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/UserAddressController.java",
+      "language": "java",
+      "sizeLines": 79,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/java/com/spzx/user/controller/UserInfoController.java",
+      "language": "java",
+      "sizeLines": 120,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/java/com/spzx/user/domain/Region.java",
+      "language": "java",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/java/com/spzx/user/mapper/RegionMapper.java",
+      "language": "java",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/java/com/spzx/user/mapper/UserAddressMapper.java",
+      "language": "java",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/java/com/spzx/user/mapper/UserInfoMapper.java",
+      "language": "java",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/java/com/spzx/user/service/IRegionService.java",
+      "language": "java",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/java/com/spzx/user/service/ISmsService.java",
+      "language": "java",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/java/com/spzx/user/service/IUserAddressService.java",
+      "language": "java",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/java/com/spzx/user/service/IUserInfoService.java",
+      "language": "java",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/java/com/spzx/user/service/impl/RegionServiceImpl.java",
+      "language": "java",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/java/com/spzx/user/service/impl/SmsServiceImpl.java",
+      "language": "java",
+      "sizeLines": 52,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/java/com/spzx/user/service/impl/UserAddressServiceImpl.java",
+      "language": "java",
+      "sizeLines": 92,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/java/com/spzx/user/service/impl/UserInfoServiceImpl.java",
+      "language": "java",
+      "sizeLines": 78,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/resources/banner.txt",
+      "language": "txt",
+      "sizeLines": 23,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/resources/bootstrap.yml",
+      "language": "yaml",
+      "sizeLines": 26,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/resources/logback.xml",
+      "language": "xml",
+      "sizeLines": 73,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/resources/mapper/user/UserAddressMapper.xml",
+      "language": "xml",
+      "sizeLines": 31,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-modules/spzx-user/src/main/resources/mapper/user/UserInfoMapper.xml",
+      "language": "xml",
+      "sizeLines": 31,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-visual/pom.xml",
+      "language": "xml",
+      "sizeLines": 22,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-visual/spzx-monitor/pom.xml",
+      "language": "xml",
+      "sizeLines": 75,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-visual/spzx-monitor/src/main/java/com/spzx/modules/monitor/SpzxMonitorApplication.java",
+      "language": "java",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-visual/spzx-monitor/src/main/java/com/spzx/modules/monitor/config/WebSecurityConfigurer.java",
+      "language": "java",
+      "sizeLines": 51,
+      "fileCategory": "code"
+    },
+    {
+      "path": "spzx-visual/spzx-monitor/src/main/resources/banner.txt",
+      "language": "txt",
+      "sizeLines": 9,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "spzx-visual/spzx-monitor/src/main/resources/bootstrap.yml",
+      "language": "yaml",
+      "sizeLines": 25,
+      "fileCategory": "config"
+    },
+    {
+      "path": "spzx-visual/spzx-monitor/src/main/resources/logback.xml",
+      "language": "xml",
+      "sizeLines": 74,
+      "fileCategory": "config"
+    }
+  ],
+  "totalFiles": 538,
+  "filteredByIgnore": 228,
+  "estimatedComplexity": "very-large",
+  "failures": [],
+  "stats": {
+    "filesScanned": 538,
+    "byCategory": {
+      "docs": 15,
+      "config": 90,
+      "code": 433
+    },
+    "byLanguage": {
+      "markdown": 2,
+      "xml": 77,
+      "java": 409,
+      "imports": 11,
+      "txt": 13,
+      "yaml": 13,
+      "vm": 13
+    }
+  }
+}

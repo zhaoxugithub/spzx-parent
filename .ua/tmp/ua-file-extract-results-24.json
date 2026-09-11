@@ -1,0 +1,2262 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 17,
+  "filesSkipped": [
+    "spzx-common/spzx-common-log/pom.xml",
+    "spzx-common/spzx-common-log/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+    "spzx-common/spzx-common-rabbit/pom.xml",
+    "spzx-common/spzx-common-rabbit/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+    "spzx-common/spzx-common-redis/pom.xml",
+    "spzx-common/spzx-common-redis/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+    "spzx-common/spzx-common-seata/pom.xml",
+    "spzx-common/spzx-common-security/pom.xml"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 17,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 17,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/annotation/Log.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 41,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 220,
+      "nonEmptyLines": 204,
+      "functions": [
+        {
+          "name": "boBefore",
+          "startLine": 60,
+          "endLine": 63,
+          "params": [
+            "joinPoint",
+            "controllerLog"
+          ]
+        },
+        {
+          "name": "doAfterReturning",
+          "startLine": 70,
+          "endLine": 73,
+          "params": [
+            "joinPoint",
+            "controllerLog",
+            "jsonResult"
+          ]
+        },
+        {
+          "name": "doAfterThrowing",
+          "startLine": 81,
+          "endLine": 84,
+          "params": [
+            "joinPoint",
+            "controllerLog",
+            "e"
+          ]
+        },
+        {
+          "name": "handleLog",
+          "startLine": 86,
+          "endLine": 123,
+          "params": [
+            "joinPoint",
+            "controllerLog",
+            "e",
+            "jsonResult"
+          ]
+        },
+        {
+          "name": "getControllerMethodDescription",
+          "startLine": 132,
+          "endLine": 148,
+          "params": [
+            "joinPoint",
+            "log",
+            "operLog",
+            "jsonResult"
+          ]
+        },
+        {
+          "name": "setRequestValue",
+          "startLine": 156,
+          "endLine": 166,
+          "params": [
+            "joinPoint",
+            "operLog",
+            "excludeParamNames"
+          ]
+        },
+        {
+          "name": "argsArrayToString",
+          "startLine": 171,
+          "endLine": 185,
+          "params": [
+            "paramsArray",
+            "excludeParamNames"
+          ]
+        },
+        {
+          "name": "excludePropertyPreFilter",
+          "startLine": 190,
+          "endLine": 192,
+          "params": [
+            "excludeParamNames"
+          ]
+        },
+        {
+          "name": "isFilterObject",
+          "startLine": 200,
+          "endLine": 219,
+          "params": [
+            "o"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LogAspect",
+          "startLine": 38,
+          "endLine": 220,
+          "methods": [
+            "boBefore",
+            "doAfterReturning",
+            "doAfterThrowing",
+            "handleLog",
+            "getControllerMethodDescription",
+            "setRequestValue",
+            "argsArrayToString",
+            "excludePropertyPreFilter",
+            "isFilterObject"
+          ],
+          "properties": [
+            "log",
+            "EXCLUDE_PROPERTIES",
+            "TIME_THREADLOCAL",
+            "asyncLogService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "EXCLUDE_PROPERTIES",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "boBefore",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "doAfterReturning",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "doAfterThrowing",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "getControllerMethodDescription",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "excludePropertyPreFilter",
+          "line": 190,
+          "isDefault": false
+        },
+        {
+          "name": "isFilterObject",
+          "line": 200,
+          "isDefault": false
+        },
+        {
+          "name": "LogAspect",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "boBefore",
+          "callee": "TIME_THREADLOCAL.set",
+          "lineNumber": 62
+        },
+        {
+          "caller": "boBefore",
+          "callee": "System.currentTimeMillis",
+          "lineNumber": 62
+        },
+        {
+          "caller": "doAfterReturning",
+          "callee": "handleLog",
+          "lineNumber": 72
+        },
+        {
+          "caller": "doAfterThrowing",
+          "callee": "handleLog",
+          "lineNumber": 83
+        },
+        {
+          "caller": "handleLog",
+          "callee": "new SysOperLog",
+          "lineNumber": 89
+        },
+        {
+          "caller": "handleLog",
+          "callee": "operLog.setStatus",
+          "lineNumber": 90
+        },
+        {
+          "caller": "handleLog",
+          "callee": "BusinessStatus.SUCCESS.ordinal",
+          "lineNumber": 90
+        },
+        {
+          "caller": "handleLog",
+          "callee": "IpUtils.getIpAddr",
+          "lineNumber": 92
+        },
+        {
+          "caller": "handleLog",
+          "callee": "operLog.setOperIp",
+          "lineNumber": 93
+        },
+        {
+          "caller": "handleLog",
+          "callee": "operLog.setOperUrl",
+          "lineNumber": 94
+        },
+        {
+          "caller": "handleLog",
+          "callee": "StringUtils.substring",
+          "lineNumber": 94
+        },
+        {
+          "caller": "handleLog",
+          "callee": "ServletUtils.getRequest().getRequestURI",
+          "lineNumber": 94
+        },
+        {
+          "caller": "handleLog",
+          "callee": "ServletUtils.getRequest",
+          "lineNumber": 94
+        },
+        {
+          "caller": "handleLog",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 95
+        },
+        {
+          "caller": "handleLog",
+          "callee": "StringUtils.isNotBlank",
+          "lineNumber": 96
+        },
+        {
+          "caller": "handleLog",
+          "callee": "operLog.setOperName",
+          "lineNumber": 97
+        },
+        {
+          "caller": "handleLog",
+          "callee": "operLog.setStatus",
+          "lineNumber": 101
+        },
+        {
+          "caller": "handleLog",
+          "callee": "BusinessStatus.FAIL.ordinal",
+          "lineNumber": 101
+        },
+        {
+          "caller": "handleLog",
+          "callee": "operLog.setErrorMsg",
+          "lineNumber": 102
+        },
+        {
+          "caller": "handleLog",
+          "callee": "StringUtils.substring",
+          "lineNumber": 102
+        },
+        {
+          "caller": "handleLog",
+          "callee": "e.getMessage",
+          "lineNumber": 102
+        },
+        {
+          "caller": "handleLog",
+          "callee": "joinPoint.getTarget().getClass().getName",
+          "lineNumber": 105
+        },
+        {
+          "caller": "handleLog",
+          "callee": "joinPoint.getTarget().getClass",
+          "lineNumber": 105
+        },
+        {
+          "caller": "handleLog",
+          "callee": "joinPoint.getTarget",
+          "lineNumber": 105
+        },
+        {
+          "caller": "handleLog",
+          "callee": "joinPoint.getSignature().getName",
+          "lineNumber": 106
+        },
+        {
+          "caller": "handleLog",
+          "callee": "joinPoint.getSignature",
+          "lineNumber": 106
+        },
+        {
+          "caller": "handleLog",
+          "callee": "operLog.setMethod",
+          "lineNumber": 107
+        },
+        {
+          "caller": "handleLog",
+          "callee": "operLog.setRequestMethod",
+          "lineNumber": 109
+        },
+        {
+          "caller": "handleLog",
+          "callee": "ServletUtils.getRequest().getMethod",
+          "lineNumber": 109
+        },
+        {
+          "caller": "handleLog",
+          "callee": "ServletUtils.getRequest",
+          "lineNumber": 109
+        },
+        {
+          "caller": "handleLog",
+          "callee": "getControllerMethodDescription",
+          "lineNumber": 111
+        },
+        {
+          "caller": "handleLog",
+          "callee": "operLog.setCostTime",
+          "lineNumber": 113
+        },
+        {
+          "caller": "handleLog",
+          "callee": "System.currentTimeMillis",
+          "lineNumber": 113
+        },
+        {
+          "caller": "handleLog",
+          "callee": "TIME_THREADLOCAL.get",
+          "lineNumber": 113
+        },
+        {
+          "caller": "handleLog",
+          "callee": "asyncLogService.saveSysLog",
+          "lineNumber": 115
+        },
+        {
+          "caller": "handleLog",
+          "callee": "log.error",
+          "lineNumber": 118
+        },
+        {
+          "caller": "handleLog",
+          "callee": "exp.getMessage",
+          "lineNumber": 118
+        },
+        {
+          "caller": "handleLog",
+          "callee": "exp.printStackTrace",
+          "lineNumber": 119
+        },
+        {
+          "caller": "handleLog",
+          "callee": "TIME_THREADLOCAL.remove",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getControllerMethodDescription",
+          "callee": "operLog.setBusinessType",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getControllerMethodDescription",
+          "callee": "log.businessType().ordinal",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getControllerMethodDescription",
+          "callee": "log.businessType",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getControllerMethodDescription",
+          "callee": "operLog.setTitle",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getControllerMethodDescription",
+          "callee": "log.title",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getControllerMethodDescription",
+          "callee": "operLog.setOperatorType",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getControllerMethodDescription",
+          "callee": "log.operatorType().ordinal",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getControllerMethodDescription",
+          "callee": "log.operatorType",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getControllerMethodDescription",
+          "callee": "log.isSaveRequestData",
+          "lineNumber": 140
+        },
+        {
+          "caller": "getControllerMethodDescription",
+          "callee": "setRequestValue",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getControllerMethodDescription",
+          "callee": "log.excludeParamNames",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getControllerMethodDescription",
+          "callee": "log.isSaveResponseData",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getControllerMethodDescription",
+          "callee": "StringUtils.isNotNull",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getControllerMethodDescription",
+          "callee": "operLog.setJsonResult",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getControllerMethodDescription",
+          "callee": "StringUtils.substring",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getControllerMethodDescription",
+          "callee": "JSON.toJSONString",
+          "lineNumber": 146
+        },
+        {
+          "caller": "setRequestValue",
+          "callee": "operLog.getRequestMethod",
+          "lineNumber": 157
+        },
+        {
+          "caller": "setRequestValue",
+          "callee": "ServletUtils.getParamMap",
+          "lineNumber": 158
+        },
+        {
+          "caller": "setRequestValue",
+          "callee": "ServletUtils.getRequest",
+          "lineNumber": 158
+        },
+        {
+          "caller": "setRequestValue",
+          "callee": "StringUtils.isEmpty",
+          "lineNumber": 159
+        },
+        {
+          "caller": "setRequestValue",
+          "callee": "HttpMethod.PUT.name().equals",
+          "lineNumber": 160
+        },
+        {
+          "caller": "setRequestValue",
+          "callee": "HttpMethod.PUT.name",
+          "lineNumber": 160
+        },
+        {
+          "caller": "setRequestValue",
+          "callee": "HttpMethod.POST.name().equals",
+          "lineNumber": 160
+        },
+        {
+          "caller": "setRequestValue",
+          "callee": "HttpMethod.POST.name",
+          "lineNumber": 160
+        },
+        {
+          "caller": "setRequestValue",
+          "callee": "argsArrayToString",
+          "lineNumber": 161
+        },
+        {
+          "caller": "setRequestValue",
+          "callee": "joinPoint.getArgs",
+          "lineNumber": 161
+        },
+        {
+          "caller": "setRequestValue",
+          "callee": "operLog.setOperParam",
+          "lineNumber": 162
+        },
+        {
+          "caller": "setRequestValue",
+          "callee": "StringUtils.substring",
+          "lineNumber": 162
+        },
+        {
+          "caller": "setRequestValue",
+          "callee": "operLog.setOperParam",
+          "lineNumber": 164
+        },
+        {
+          "caller": "setRequestValue",
+          "callee": "StringUtils.substring",
+          "lineNumber": 164
+        },
+        {
+          "caller": "setRequestValue",
+          "callee": "JSON.toJSONString",
+          "lineNumber": 164
+        },
+        {
+          "caller": "setRequestValue",
+          "callee": "excludePropertyPreFilter",
+          "lineNumber": 164
+        },
+        {
+          "caller": "argsArrayToString",
+          "callee": "StringUtils.isNotNull",
+          "lineNumber": 175
+        },
+        {
+          "caller": "argsArrayToString",
+          "callee": "isFilterObject",
+          "lineNumber": 175
+        },
+        {
+          "caller": "argsArrayToString",
+          "callee": "JSON.toJSONString",
+          "lineNumber": 177
+        },
+        {
+          "caller": "argsArrayToString",
+          "callee": "excludePropertyPreFilter",
+          "lineNumber": 177
+        },
+        {
+          "caller": "argsArrayToString",
+          "callee": "jsonObj.toString",
+          "lineNumber": 178
+        },
+        {
+          "caller": "argsArrayToString",
+          "callee": "params.trim",
+          "lineNumber": 184
+        },
+        {
+          "caller": "excludePropertyPreFilter",
+          "callee": "new PropertyPreExcludeFilter().addExcludes",
+          "lineNumber": 191
+        },
+        {
+          "caller": "excludePropertyPreFilter",
+          "callee": "new PropertyPreExcludeFilter",
+          "lineNumber": 191
+        },
+        {
+          "caller": "excludePropertyPreFilter",
+          "callee": "ArrayUtils.addAll",
+          "lineNumber": 191
+        },
+        {
+          "caller": "isFilterObject",
+          "callee": "o.getClass",
+          "lineNumber": 202
+        },
+        {
+          "caller": "isFilterObject",
+          "callee": "clazz.isArray",
+          "lineNumber": 203
+        },
+        {
+          "caller": "isFilterObject",
+          "callee": "clazz.getComponentType().isAssignableFrom",
+          "lineNumber": 204
+        },
+        {
+          "caller": "isFilterObject",
+          "callee": "clazz.getComponentType",
+          "lineNumber": 204
+        },
+        {
+          "caller": "isFilterObject",
+          "callee": "Collection.class.isAssignableFrom",
+          "lineNumber": 205
+        },
+        {
+          "caller": "isFilterObject",
+          "callee": "Map.class.isAssignableFrom",
+          "lineNumber": 210
+        },
+        {
+          "caller": "isFilterObject",
+          "callee": "map.entrySet",
+          "lineNumber": 212
+        },
+        {
+          "caller": "isFilterObject",
+          "callee": "entry.getValue",
+          "lineNumber": 214
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessStatus.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "BusinessStatus",
+          "startLine": 9,
+          "endLine": 20,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BusinessStatus",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessType.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 49,
+      "classes": [
+        {
+          "name": "BusinessType",
+          "startLine": 8,
+          "endLine": 59,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BusinessType",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/OperatorType.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "OperatorType",
+          "startLine": 8,
+          "endLine": 24,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "OperatorType",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/filter/PropertyPreExcludeFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "PropertyPreExcludeFilter",
+          "startLine": 12,
+          "endLine": 14,
+          "params": []
+        },
+        {
+          "name": "addExcludes",
+          "startLine": 16,
+          "endLine": 23,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "PropertyPreExcludeFilter",
+          "startLine": 10,
+          "endLine": 24,
+          "methods": [
+            "PropertyPreExcludeFilter",
+            "addExcludes"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PropertyPreExcludeFilter",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "addExcludes",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "PropertyPreExcludeFilter",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "addExcludes",
+          "callee": "this.getExcludes().add",
+          "lineNumber": 20
+        },
+        {
+          "caller": "addExcludes",
+          "callee": "this.getExcludes",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/service/AsyncLogService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "saveSysLog",
+          "startLine": 24,
+          "endLine": 28,
+          "params": [
+            "sysOperLog"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AsyncLogService",
+          "startLine": 15,
+          "endLine": 29,
+          "methods": [
+            "saveSysLog"
+          ],
+          "properties": [
+            "remoteLogService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "saveSysLog",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "AsyncLogService",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "saveSysLog",
+          "callee": "remoteLogService.saveLog",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 90,
+      "functions": [
+        {
+          "name": "onApplicationEvent",
+          "startLine": 33,
+          "endLine": 36,
+          "params": [
+            "event"
+          ]
+        },
+        {
+          "name": "setUpInitRabbitTemplete",
+          "startLine": 41,
+          "endLine": 84,
+          "params": []
+        },
+        {
+          "name": "retrySendMsg",
+          "startLine": 87,
+          "endLine": 108,
+          "params": [
+            "correlationData"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RabbitInitConfigApplicationListener",
+          "startLine": 22,
+          "endLine": 111,
+          "methods": [
+            "onApplicationEvent",
+            "setUpInitRabbitTemplete",
+            "retrySendMsg"
+          ],
+          "properties": [
+            "rabbitTemplate",
+            "redisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "onApplicationEvent",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "RabbitInitConfigApplicationListener",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "onApplicationEvent",
+          "callee": "this.setUpInitRabbitTemplete",
+          "lineNumber": 35
+        },
+        {
+          "caller": "setUpInitRabbitTemplete",
+          "callee": "rabbitTemplate.setConfirmCallback",
+          "lineNumber": 44
+        },
+        {
+          "caller": "setUpInitRabbitTemplete",
+          "callee": "log.info",
+          "lineNumber": 47
+        },
+        {
+          "caller": "setUpInitRabbitTemplete",
+          "callee": "log.info",
+          "lineNumber": 49
+        },
+        {
+          "caller": "setUpInitRabbitTemplete",
+          "callee": "log.info",
+          "lineNumber": 51
+        },
+        {
+          "caller": "setUpInitRabbitTemplete",
+          "callee": "log.error",
+          "lineNumber": 52
+        },
+        {
+          "caller": "setUpInitRabbitTemplete",
+          "callee": "this.retrySendMsg",
+          "lineNumber": 56
+        },
+        {
+          "caller": "setUpInitRabbitTemplete",
+          "callee": "rabbitTemplate.setReturnsCallback",
+          "lineNumber": 61
+        },
+        {
+          "caller": "setUpInitRabbitTemplete",
+          "callee": "log.info",
+          "lineNumber": 67
+        },
+        {
+          "caller": "setUpInitRabbitTemplete",
+          "callee": "returnedMessage.getMessage()\r\n                    .getMessageProperties().getHeader",
+          "lineNumber": 70
+        },
+        {
+          "caller": "setUpInitRabbitTemplete",
+          "callee": "returnedMessage.getMessage().getMessageProperties",
+          "lineNumber": 70
+        },
+        {
+          "caller": "setUpInitRabbitTemplete",
+          "callee": "returnedMessage.getMessage",
+          "lineNumber": 70
+        },
+        {
+          "caller": "setUpInitRabbitTemplete",
+          "callee": "redisTemplate.opsForValue().get",
+          "lineNumber": 72
+        },
+        {
+          "caller": "setUpInitRabbitTemplete",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 72
+        },
+        {
+          "caller": "setUpInitRabbitTemplete",
+          "callee": "JSON.parseObject",
+          "lineNumber": 73
+        },
+        {
+          "caller": "setUpInitRabbitTemplete",
+          "callee": "correlationData.isDelay",
+          "lineNumber": 76
+        },
+        {
+          "caller": "setUpInitRabbitTemplete",
+          "callee": "this.retrySendMsg",
+          "lineNumber": 80
+        },
+        {
+          "caller": "retrySendMsg",
+          "callee": "guiguCorrelationData.getRetryCount",
+          "lineNumber": 89
+        },
+        {
+          "caller": "retrySendMsg",
+          "callee": "log.error",
+          "lineNumber": 92
+        },
+        {
+          "caller": "retrySendMsg",
+          "callee": "guiguCorrelationData.setRetryCount",
+          "lineNumber": 96
+        },
+        {
+          "caller": "retrySendMsg",
+          "callee": "redisTemplate.opsForValue().set",
+          "lineNumber": 99
+        },
+        {
+          "caller": "retrySendMsg",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 99
+        },
+        {
+          "caller": "retrySendMsg",
+          "callee": "guiguCorrelationData.getId",
+          "lineNumber": 99
+        },
+        {
+          "caller": "retrySendMsg",
+          "callee": "JSON.toJSONString",
+          "lineNumber": 100
+        },
+        {
+          "caller": "retrySendMsg",
+          "callee": "rabbitTemplate.convertAndSend",
+          "lineNumber": 103
+        },
+        {
+          "caller": "retrySendMsg",
+          "callee": "guiguCorrelationData.getExchange",
+          "lineNumber": 103
+        },
+        {
+          "caller": "retrySendMsg",
+          "callee": "guiguCorrelationData.getRoutingKey",
+          "lineNumber": 104
+        },
+        {
+          "caller": "retrySendMsg",
+          "callee": "guiguCorrelationData.getMessage",
+          "lineNumber": 105
+        },
+        {
+          "caller": "retrySendMsg",
+          "callee": "log.info",
+          "lineNumber": 107
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/constant/MqConst.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 38,
+      "classes": [
+        {
+          "name": "MqConst",
+          "startLine": 3,
+          "endLine": 46,
+          "methods": [],
+          "properties": [
+            "EXCHANGE_TEST",
+            "ROUTING_TEST",
+            "ROUTING_CONFIRM",
+            "QUEUE_TEST",
+            "QUEUE_CONFIRM",
+            "EXCHANGE_PRODUCT",
+            "ROUTING_UNLOCK",
+            "ROUTING_MINUS",
+            "QUEUE_UNLOCK",
+            "QUEUE_MINUS",
+            "EXCHANGE_PAYMENT_PAY",
+            "ROUTING_PAYMENT_PAY",
+            "ROUTING_PAYMENT_CLOSE",
+            "QUEUE_PAYMENT_PAY",
+            "QUEUE_PAYMENT_CLOSE",
+            "EXCHANGE_CANCEL_ORDER",
+            "ROUTING_CANCEL_ORDER",
+            "QUEUE_CANCEL_ORDER",
+            "CANCEL_ORDER_DELAY_TIME"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "EXCHANGE_TEST",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "ROUTING_TEST",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "ROUTING_CONFIRM",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "QUEUE_TEST",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "QUEUE_CONFIRM",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "EXCHANGE_PRODUCT",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "ROUTING_UNLOCK",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "ROUTING_MINUS",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "QUEUE_UNLOCK",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "QUEUE_MINUS",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "EXCHANGE_PAYMENT_PAY",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "ROUTING_PAYMENT_PAY",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "ROUTING_PAYMENT_CLOSE",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "QUEUE_PAYMENT_PAY",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "QUEUE_PAYMENT_CLOSE",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "EXCHANGE_CANCEL_ORDER",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "ROUTING_CANCEL_ORDER",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "QUEUE_CANCEL_ORDER",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "CANCEL_ORDER_DELAY_TIME",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "MqConst",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 20,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/entity/GuiguCorrelationData.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "GuiguCorrelationData",
+          "startLine": 9,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "message",
+            "exchange",
+            "routingKey",
+            "retryCount",
+            "isDelay",
+            "delayTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "GuiguCorrelationData",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "sendMessage",
+          "startLine": 29,
+          "endLine": 49,
+          "params": [
+            "exchange",
+            "routingKey",
+            "message"
+          ]
+        },
+        {
+          "name": "sendDelayMessage",
+          "startLine": 60,
+          "endLine": 83,
+          "params": [
+            "exchange",
+            "routingKey",
+            "message",
+            "delayTime"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RabbitService",
+          "startLine": 13,
+          "endLine": 85,
+          "methods": [
+            "sendMessage",
+            "sendDelayMessage"
+          ],
+          "properties": [
+            "rabbitTemplate",
+            "redisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "sendMessage",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "sendDelayMessage",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "RabbitService",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sendMessage",
+          "callee": "UUID.randomUUID().toString().replaceAll",
+          "lineNumber": 33
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "UUID.randomUUID().toString",
+          "lineNumber": 33
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "UUID.randomUUID",
+          "lineNumber": 33
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "new GuiguCorrelationData",
+          "lineNumber": 34
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "guiguCorrelationData.setId",
+          "lineNumber": 35
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "guiguCorrelationData.setMessage",
+          "lineNumber": 36
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "guiguCorrelationData.setExchange",
+          "lineNumber": 37
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "guiguCorrelationData.setRoutingKey",
+          "lineNumber": 38
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "redisTemplate.opsForValue().set",
+          "lineNumber": 41
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 41
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "JSON.toJSONString",
+          "lineNumber": 41
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "rabbitTemplate.convertAndSend",
+          "lineNumber": 44
+        },
+        {
+          "caller": "sendDelayMessage",
+          "callee": "new GuiguCorrelationData",
+          "lineNumber": 62
+        },
+        {
+          "caller": "sendDelayMessage",
+          "callee": "UUID.randomUUID().toString().replaceAll",
+          "lineNumber": 63
+        },
+        {
+          "caller": "sendDelayMessage",
+          "callee": "UUID.randomUUID().toString",
+          "lineNumber": 63
+        },
+        {
+          "caller": "sendDelayMessage",
+          "callee": "UUID.randomUUID",
+          "lineNumber": 63
+        },
+        {
+          "caller": "sendDelayMessage",
+          "callee": "correlationData.setId",
+          "lineNumber": 64
+        },
+        {
+          "caller": "sendDelayMessage",
+          "callee": "correlationData.setMessage",
+          "lineNumber": 65
+        },
+        {
+          "caller": "sendDelayMessage",
+          "callee": "correlationData.setExchange",
+          "lineNumber": 66
+        },
+        {
+          "caller": "sendDelayMessage",
+          "callee": "correlationData.setRoutingKey",
+          "lineNumber": 67
+        },
+        {
+          "caller": "sendDelayMessage",
+          "callee": "correlationData.setDelay",
+          "lineNumber": 68
+        },
+        {
+          "caller": "sendDelayMessage",
+          "callee": "correlationData.setDelayTime",
+          "lineNumber": 69
+        },
+        {
+          "caller": "sendDelayMessage",
+          "callee": "redisTemplate.opsForValue().set",
+          "lineNumber": 73
+        },
+        {
+          "caller": "sendDelayMessage",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 73
+        },
+        {
+          "caller": "sendDelayMessage",
+          "callee": "JSON.toJSONString",
+          "lineNumber": 73
+        },
+        {
+          "caller": "sendDelayMessage",
+          "callee": "rabbitTemplate.convertAndSend",
+          "lineNumber": 76
+        },
+        {
+          "caller": "sendDelayMessage",
+          "callee": "message1.getMessageProperties().setDelay",
+          "lineNumber": 77
+        },
+        {
+          "caller": "sendDelayMessage",
+          "callee": "message1.getMessageProperties",
+          "lineNumber": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/annotation/GuiguCache.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 21,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/cache/GuiguCacheAspect.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "guiguCache",
+          "startLine": 25,
+          "endLine": 29,
+          "params": [
+            "joinPoint",
+            "guiguCache"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GuiguCacheAspect",
+          "startLine": 16,
+          "endLine": 30,
+          "methods": [
+            "guiguCache"
+          ],
+          "properties": [
+            "redisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "guiguCache",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "GuiguCacheAspect",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "guiguCache",
+          "callee": "joinPoint.proceed",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "FastJson2JsonRedisSerializer",
+          "startLine": 25,
+          "endLine": 28,
+          "params": [
+            "clazz"
+          ]
+        },
+        {
+          "name": "serialize",
+          "startLine": 30,
+          "endLine": 36,
+          "params": [
+            "t"
+          ]
+        },
+        {
+          "name": "deserialize",
+          "startLine": 38,
+          "endLine": 46,
+          "params": [
+            "bytes"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FastJson2JsonRedisSerializer",
+          "startLine": 18,
+          "endLine": 47,
+          "methods": [
+            "FastJson2JsonRedisSerializer",
+            "serialize",
+            "deserialize"
+          ],
+          "properties": [
+            "DEFAULT_CHARSET",
+            "AUTO_TYPE_FILTER",
+            "clazz"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DEFAULT_CHARSET",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "FastJson2JsonRedisSerializer",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "serialize",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "deserialize",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "FastJson2JsonRedisSerializer",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "serialize",
+          "callee": "JSON.toJSONString(t, JSONWriter.Feature.WriteClassName).getBytes",
+          "lineNumber": 35
+        },
+        {
+          "caller": "serialize",
+          "callee": "JSON.toJSONString",
+          "lineNumber": 35
+        },
+        {
+          "caller": "deserialize",
+          "callee": "new String",
+          "lineNumber": 43
+        },
+        {
+          "caller": "deserialize",
+          "callee": "JSON.parseObject",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/RedisConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "redisTemplate",
+          "startLine": 22,
+          "endLine": 41,
+          "params": [
+            "connectionFactory"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RedisConfig",
+          "startLine": 18,
+          "endLine": 42,
+          "methods": [
+            "redisTemplate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "redisTemplate",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "RedisConfig",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "redisTemplate",
+          "callee": "new RedisTemplate<>",
+          "lineNumber": 25
+        },
+        {
+          "caller": "redisTemplate",
+          "callee": "template.setConnectionFactory",
+          "lineNumber": 26
+        },
+        {
+          "caller": "redisTemplate",
+          "callee": "new FastJson2JsonRedisSerializer",
+          "lineNumber": 29
+        },
+        {
+          "caller": "redisTemplate",
+          "callee": "template.setKeySerializer",
+          "lineNumber": 32
+        },
+        {
+          "caller": "redisTemplate",
+          "callee": "new StringRedisSerializer",
+          "lineNumber": 32
+        },
+        {
+          "caller": "redisTemplate",
+          "callee": "template.setValueSerializer",
+          "lineNumber": 33
+        },
+        {
+          "caller": "redisTemplate",
+          "callee": "template.setHashKeySerializer",
+          "lineNumber": 36
+        },
+        {
+          "caller": "redisTemplate",
+          "callee": "new StringRedisSerializer",
+          "lineNumber": 36
+        },
+        {
+          "caller": "redisTemplate",
+          "callee": "template.setHashValueSerializer",
+          "lineNumber": 37
+        },
+        {
+          "caller": "redisTemplate",
+          "callee": "template.afterPropertiesSet",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/service/RedisService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 243,
+      "nonEmptyLines": 220,
+      "functions": [
+        {
+          "name": "setCacheObject",
+          "startLine": 30,
+          "endLine": 32,
+          "params": [
+            "key",
+            "value"
+          ]
+        },
+        {
+          "name": "setCacheObject",
+          "startLine": 42,
+          "endLine": 44,
+          "params": [
+            "key",
+            "value",
+            "timeout",
+            "timeUnit"
+          ]
+        },
+        {
+          "name": "expire",
+          "startLine": 53,
+          "endLine": 55,
+          "params": [
+            "key",
+            "timeout"
+          ]
+        },
+        {
+          "name": "expire",
+          "startLine": 65,
+          "endLine": 67,
+          "params": [
+            "key",
+            "timeout",
+            "unit"
+          ]
+        },
+        {
+          "name": "getExpire",
+          "startLine": 75,
+          "endLine": 77,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "hasKey",
+          "startLine": 85,
+          "endLine": 87,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "getCacheObject",
+          "startLine": 95,
+          "endLine": 98,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "deleteObject",
+          "startLine": 105,
+          "endLine": 107,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "deleteObject",
+          "startLine": 115,
+          "endLine": 117,
+          "params": [
+            "collection"
+          ]
+        },
+        {
+          "name": "setCacheList",
+          "startLine": 126,
+          "endLine": 129,
+          "params": [
+            "key",
+            "dataList"
+          ]
+        },
+        {
+          "name": "getCacheList",
+          "startLine": 137,
+          "endLine": 139,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "setCacheSet",
+          "startLine": 148,
+          "endLine": 155,
+          "params": [
+            "key",
+            "dataSet"
+          ]
+        },
+        {
+          "name": "getCacheSet",
+          "startLine": 163,
+          "endLine": 165,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "setCacheMap",
+          "startLine": 173,
+          "endLine": 177,
+          "params": [
+            "key",
+            "dataMap"
+          ]
+        },
+        {
+          "name": "getCacheMap",
+          "startLine": 185,
+          "endLine": 187,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "setCacheMapValue",
+          "startLine": 196,
+          "endLine": 198,
+          "params": [
+            "key",
+            "hKey",
+            "value"
+          ]
+        },
+        {
+          "name": "getCacheMapValue",
+          "startLine": 207,
+          "endLine": 210,
+          "params": [
+            "key",
+            "hKey"
+          ]
+        },
+        {
+          "name": "getMultiCacheMapValue",
+          "startLine": 219,
+          "endLine": 221,
+          "params": [
+            "key",
+            "hKeys"
+          ]
+        },
+        {
+          "name": "deleteCacheMapValue",
+          "startLine": 230,
+          "endLine": 232,
+          "params": [
+            "key",
+            "hKey"
+          ]
+        },
+        {
+          "name": "keys",
+          "startLine": 240,
+          "endLine": 242,
+          "params": [
+            "pattern"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RedisService",
+          "startLine": 18,
+          "endLine": 243,
+          "methods": [
+            "setCacheObject",
+            "setCacheObject",
+            "expire",
+            "expire",
+            "getExpire",
+            "hasKey",
+            "getCacheObject",
+            "deleteObject",
+            "deleteObject",
+            "setCacheList",
+            "getCacheList",
+            "setCacheSet",
+            "getCacheSet",
+            "setCacheMap",
+            "getCacheMap",
+            "setCacheMapValue",
+            "getCacheMapValue",
+            "getMultiCacheMapValue",
+            "deleteCacheMapValue",
+            "keys"
+          ],
+          "properties": [
+            "redisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "redisTemplate",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "setCacheObject",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "setCacheObject",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "expire",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "expire",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "getExpire",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "hasKey",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "getCacheObject",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "deleteObject",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "deleteObject",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "setCacheList",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "getCacheList",
+          "line": 137,
+          "isDefault": false
+        },
+        {
+          "name": "setCacheSet",
+          "line": 148,
+          "isDefault": false
+        },
+        {
+          "name": "getCacheSet",
+          "line": 163,
+          "isDefault": false
+        },
+        {
+          "name": "setCacheMap",
+          "line": 173,
+          "isDefault": false
+        },
+        {
+          "name": "getCacheMap",
+          "line": 185,
+          "isDefault": false
+        },
+        {
+          "name": "setCacheMapValue",
+          "line": 196,
+          "isDefault": false
+        },
+        {
+          "name": "getCacheMapValue",
+          "line": 207,
+          "isDefault": false
+        },
+        {
+          "name": "getMultiCacheMapValue",
+          "line": 219,
+          "isDefault": false
+        },
+        {
+          "name": "deleteCacheMapValue",
+          "line": 230,
+          "isDefault": false
+        },
+        {
+          "name": "keys",
+          "line": 240,
+          "isDefault": false
+        },
+        {
+          "name": "RedisService",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "setCacheObject",
+          "callee": "redisTemplate.opsForValue().set",
+          "lineNumber": 31
+        },
+        {
+          "caller": "setCacheObject",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 31
+        },
+        {
+          "caller": "setCacheObject",
+          "callee": "redisTemplate.opsForValue().set",
+          "lineNumber": 43
+        },
+        {
+          "caller": "setCacheObject",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 43
+        },
+        {
+          "caller": "expire",
+          "callee": "expire",
+          "lineNumber": 54
+        },
+        {
+          "caller": "expire",
+          "callee": "redisTemplate.expire",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getExpire",
+          "callee": "redisTemplate.getExpire",
+          "lineNumber": 76
+        },
+        {
+          "caller": "hasKey",
+          "callee": "redisTemplate.hasKey",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getCacheObject",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getCacheObject",
+          "callee": "operation.get",
+          "lineNumber": 97
+        },
+        {
+          "caller": "deleteObject",
+          "callee": "redisTemplate.delete",
+          "lineNumber": 106
+        },
+        {
+          "caller": "deleteObject",
+          "callee": "redisTemplate.delete",
+          "lineNumber": 116
+        },
+        {
+          "caller": "setCacheList",
+          "callee": "redisTemplate.opsForList().rightPushAll",
+          "lineNumber": 127
+        },
+        {
+          "caller": "setCacheList",
+          "callee": "redisTemplate.opsForList",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getCacheList",
+          "callee": "redisTemplate.opsForList().range",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getCacheList",
+          "callee": "redisTemplate.opsForList",
+          "lineNumber": 138
+        },
+        {
+          "caller": "setCacheSet",
+          "callee": "redisTemplate.boundSetOps",
+          "lineNumber": 149
+        },
+        {
+          "caller": "setCacheSet",
+          "callee": "dataSet.iterator",
+          "lineNumber": 150
+        },
+        {
+          "caller": "setCacheSet",
+          "callee": "it.hasNext",
+          "lineNumber": 151
+        },
+        {
+          "caller": "setCacheSet",
+          "callee": "setOperation.add",
+          "lineNumber": 152
+        },
+        {
+          "caller": "setCacheSet",
+          "callee": "it.next",
+          "lineNumber": 152
+        },
+        {
+          "caller": "getCacheSet",
+          "callee": "redisTemplate.opsForSet().members",
+          "lineNumber": 164
+        },
+        {
+          "caller": "getCacheSet",
+          "callee": "redisTemplate.opsForSet",
+          "lineNumber": 164
+        },
+        {
+          "caller": "setCacheMap",
+          "callee": "redisTemplate.opsForHash().putAll",
+          "lineNumber": 175
+        },
+        {
+          "caller": "setCacheMap",
+          "callee": "redisTemplate.opsForHash",
+          "lineNumber": 175
+        },
+        {
+          "caller": "getCacheMap",
+          "callee": "redisTemplate.opsForHash().entries",
+          "lineNumber": 186
+        },
+        {
+          "caller": "getCacheMap",
+          "callee": "redisTemplate.opsForHash",
+          "lineNumber": 186
+        },
+        {
+          "caller": "setCacheMapValue",
+          "callee": "redisTemplate.opsForHash().put",
+          "lineNumber": 197
+        },
+        {
+          "caller": "setCacheMapValue",
+          "callee": "redisTemplate.opsForHash",
+          "lineNumber": 197
+        },
+        {
+          "caller": "getCacheMapValue",
+          "callee": "redisTemplate.opsForHash",
+          "lineNumber": 208
+        },
+        {
+          "caller": "getCacheMapValue",
+          "callee": "opsForHash.get",
+          "lineNumber": 209
+        },
+        {
+          "caller": "getMultiCacheMapValue",
+          "callee": "redisTemplate.opsForHash().multiGet",
+          "lineNumber": 220
+        },
+        {
+          "caller": "getMultiCacheMapValue",
+          "callee": "redisTemplate.opsForHash",
+          "lineNumber": 220
+        },
+        {
+          "caller": "deleteCacheMapValue",
+          "callee": "redisTemplate.opsForHash().delete",
+          "lineNumber": 231
+        },
+        {
+          "caller": "deleteCacheMapValue",
+          "callee": "redisTemplate.opsForHash",
+          "lineNumber": 231
+        },
+        {
+          "caller": "keys",
+          "callee": "redisTemplate.keys",
+          "lineNumber": 241
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 22,
+        "functionCount": 20,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/EnableCustomConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 29,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

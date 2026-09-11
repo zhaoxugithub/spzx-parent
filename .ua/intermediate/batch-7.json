@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "document:spzx-modules/spzx-gen/src/main/resources/banner.txt",
+      "type": "document",
+      "name": "banner.txt",
+      "filePath": "spzx-modules/spzx-gen/src/main/resources/banner.txt",
+      "summary": "spzx-gen 代码生成服务的 Spring Boot 启动横幅，包含应用名与版本占位符及 ASCII 艺术 Logo，用于控制台启动时展示服务信息。",
+      "tags": ["documentation", "spring-boot", "banner"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-gen/src/main/resources/bootstrap.yml",
+      "type": "config",
+      "name": "bootstrap.yml",
+      "filePath": "spzx-modules/spzx-gen/src/main/resources/bootstrap.yml",
+      "summary": "spzx-gen 代码生成服务的 Spring Cloud 启动配置，声明端口 9202、应用名 spzx-gen 与 dev 环境，并接入 Nacos 服务注册与配置中心及共享配置。",
+      "tags": ["configuration", "spring-cloud", "nacos", "bootstrap"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-gen/src/main/resources/logback.xml",
+      "type": "config",
+      "name": "logback.xml",
+      "filePath": "spzx-modules/spzx-gen/src/main/resources/logback.xml",
+      "summary": "spzx-gen 服务的 Logback 日志配置，采用控制台与按天滚动的文件（info/error 分级）双输出，日志格式含 traceId 并保留 60 天。",
+      "tags": ["configuration", "logging", "logback", "observability"],
+      "complexity": "moderate",
+      "languageNotes": "通过 RollingFileAppender 按时间维度每天滚动日志，并按 LevelFilter 将 INFO/ERROR 分流到不同文件。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:spzx-modules/spzx-gen/src/main/resources/bootstrap.yml",
+      "target": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/SpzxGenApplication.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-modules/spzx-gen/src/main/resources/logback.xml",
+      "target": "file:spzx-modules/spzx-gen/src/main/java/com/spzx/gen/SpzxGenApplication.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

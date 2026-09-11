@@ -1,0 +1,33 @@
+{
+  "nodes": [
+    {
+      "id": "document:spzx-gateway/src/main/resources/banner.txt",
+      "type": "document",
+      "name": "banner.txt",
+      "filePath": "spzx-gateway/src/main/resources/banner.txt",
+      "summary": "网关服务启动时在控制台打印的 ASCII 艺术横幅，展示 Spring Boot 版本与应用名称，便于运维人员快速识别启动的服务。",
+      "tags": ["documentation", "banner", "startup", "gateway"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-gateway/src/main/resources/bootstrap.yml",
+      "type": "config",
+      "name": "bootstrap.yml",
+      "filePath": "spzx-gateway/src/main/resources/bootstrap.yml",
+      "summary": "网关服务的 Spring Cloud 引导配置，指定应用名 spzx-gateway 与 8080 端口，接入 Nacos 注册中心和配置中心并加载共享配置，同时启用 Sentinel 网关限流规则的数据源。",
+      "tags": ["configuration", "spring-cloud", "nacos", "sentinel", "gateway"],
+      "complexity": "simple",
+      "languageNotes": "设置 web-application-type: reactive 表明这是响应式网关；通过 sentinel.datasource 将网关限流规则持久化到 Nacos。"
+    },
+    {
+      "id": "config:spzx-gateway/src/main/resources/logback.xml",
+      "type": "config",
+      "name": "logback.xml",
+      "filePath": "spzx-gateway/src/main/resources/logback.xml",
+      "summary": "网关服务的 Logback 日志配置，定义控制台输出以及按天滚动、保留 60 天的 info/error 文件日志，并携带 traceId 追踪链路，同时设置 com.spzx 与 Spring 框架的日志级别。",
+      "tags": ["configuration", "logging", "logback", "monitoring"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": []
+}

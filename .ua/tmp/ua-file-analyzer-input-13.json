@@ -1,0 +1,23 @@
+{
+  "projectRoot": "C:\\Users\\11931\\IdeaProjects\\spzx-parent",
+  "batchFiles": [
+    {"path": "spzx-modules/spzx-product/src/main/resources/mapper/product/BrandMapper.xml", "language": "xml", "sizeLines": 56, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-product/src/main/resources/mapper/product/CategoryBrandMapper.xml", "language": "xml", "sizeLines": 38, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-product/src/main/resources/mapper/product/CategoryMapper.xml", "language": "xml", "sizeLines": 6, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductMapper.xml", "language": "xml", "sizeLines": 33, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductSkuMapper.xml", "language": "xml", "sizeLines": 71, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductSpecMapper.xml", "language": "xml", "sizeLines": 24, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductUnitMapper.xml", "language": "xml", "sizeLines": 6, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-product/src/main/resources/mapper/product/SkuStockMapper.xml", "language": "xml", "sizeLines": 41, "fileCategory": "config"}
+  ],
+  "batchImportData": {
+    "spzx-modules/spzx-product/src/main/resources/mapper/product/BrandMapper.xml": [],
+    "spzx-modules/spzx-product/src/main/resources/mapper/product/CategoryBrandMapper.xml": [],
+    "spzx-modules/spzx-product/src/main/resources/mapper/product/CategoryMapper.xml": [],
+    "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductMapper.xml": [],
+    "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductSkuMapper.xml": [],
+    "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductSpecMapper.xml": [],
+    "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductUnitMapper.xml": [],
+    "spzx-modules/spzx-product/src/main/resources/mapper/product/SkuStockMapper.xml": []
+  }
+}

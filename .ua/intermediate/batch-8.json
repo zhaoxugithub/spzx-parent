@@ -1,0 +1,33 @@
+{
+  "nodes": [
+    {
+      "id": "document:spzx-modules/spzx-job/src/main/resources/banner.txt",
+      "type": "document",
+      "name": "banner.txt",
+      "filePath": "spzx-modules/spzx-job/src/main/resources/banner.txt",
+      "summary": "spzx-job 服务的 Spring Boot 启动横幅(banner),使用 ASCII 艺术字展示应用名称,并在启动时打印 Spring Boot 版本与应用名,用于控制台展示。",
+      "tags": ["documentation", "spring-boot", "banner", "startup"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-job/src/main/resources/bootstrap.yml",
+      "type": "config",
+      "name": "bootstrap.yml",
+      "filePath": "spzx-modules/spzx-job/src/main/resources/bootstrap.yml",
+      "summary": "spzx-job 定时任务服务的 Spring Boot 引导配置,定义服务名 spzx-job 与端口 9203,并接入 Nacos 注册中心与配置中心,复用 dev 环境的共享配置。",
+      "tags": ["configuration", "spring-cloud", "nacos", "bootstrap"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-job/src/main/resources/logback.xml",
+      "type": "config",
+      "name": "logback.xml",
+      "filePath": "spzx-modules/spzx-job/src/main/resources/logback.xml",
+      "summary": "spzx-job 服务的 Logback 日志配置,定义控制台、INFO 与 ERROR 三类 appender,按日期滚动写入 logs/spzx-job 目录,并设定 com.spzx 与 Spring 框架的日志级别。",
+      "tags": ["configuration", "logging", "logback", "monitoring"],
+      "complexity": "moderate",
+      "languageNotes": "通过 LevelFilter 将 INFO 与 ERROR 分离到独立滚动文件,日志格式包含 traceId 以支持链路追踪。"
+    }
+  ],
+  "edges": []
+}

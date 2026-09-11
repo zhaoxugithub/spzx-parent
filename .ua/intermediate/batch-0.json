@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "document:CLAUDE.md",
+      "type": "document",
+      "name": "CLAUDE.md",
+      "filePath": "CLAUDE.md",
+      "summary": "面向 AI 编码代理（Claude Code）的项目指南，概述 SPZX（尚硅谷甄选）微服务平台的构建运行方式、服务架构、模块组织与关键架构模式（认证、RBAC、配置、RabbitMQ、SkyWalking 等）。",
+      "tags": ["文档", "架构", "微服务", "项目指南"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "项目入口文档，介绍 RuoYi v3.6.3 微服务版本的技术栈、系统模块结构、内置功能列表以及在线体验入口。",
+      "tags": ["文档", "入口", "概述", "微服务"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "pom.xml",
+      "summary": "Maven 父 POM，统一管理 Spring Boot/Spring Cloud Alibaba 微服务的版本、依赖与插件，并聚合 spzx-auth、spzx-gateway、spzx-modules 等子模块，是整个平台构建与依赖管理的总入口。",
+      "tags": ["配置", "构建系统", "maven", "依赖管理"],
+      "complexity": "complex",
+      "languageNotes": "通过 Maven 属性（如 ${nacos.addr}）统一管理共享配置，构建时开启资源过滤以替换 bootstrap.yml 中的占位符；并强制指定 Druid 版本，解决 JDK 21 下 seata 传递依赖中的 system 依赖问题。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:CLAUDE.md",
+      "target": "document:README.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "config:pom.xml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

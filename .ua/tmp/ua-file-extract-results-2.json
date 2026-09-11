@@ -1,0 +1,47 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 1,
+  "filesSkipped": [
+    "spzx-auth/src/main/resources/banner.txt",
+    "spzx-auth/src/main/resources/logback.xml"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 1,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 1
+    }
+  },
+  "results": [
+    {
+      "path": "spzx-auth/src/main/resources/bootstrap.yml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 25,
+      "nonEmptyLines": 24,
+      "sections": [
+        {
+          "heading": "server",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "spring",
+          "level": 1,
+          "line": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    }
+  ]
+}

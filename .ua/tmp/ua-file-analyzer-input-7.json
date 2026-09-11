@@ -1,0 +1,34 @@
+{
+    "projectRoot":  "C:\\Users\\11931\\IdeaProjects\\spzx-parent",
+    "batchImportData":  {
+                            "spzx-modules/spzx-gen/src/main/resources/logback.xml":  [
+
+                                                                                     ],
+                            "spzx-modules/spzx-gen/src/main/resources/banner.txt":  [
+
+                                                                                    ],
+                            "spzx-modules/spzx-gen/src/main/resources/bootstrap.yml":  [
+
+                                                                                       ]
+                        },
+    "batchFiles":  [
+                       {
+                           "fileCategory":  "docs",
+                           "path":  "spzx-modules/spzx-gen/src/main/resources/banner.txt",
+                           "language":  "txt",
+                           "sizeLines":  9
+                       },
+                       {
+                           "fileCategory":  "config",
+                           "path":  "spzx-modules/spzx-gen/src/main/resources/bootstrap.yml",
+                           "language":  "yaml",
+                           "sizeLines":  27
+                       },
+                       {
+                           "fileCategory":  "config",
+                           "path":  "spzx-modules/spzx-gen/src/main/resources/logback.xml",
+                           "language":  "xml",
+                           "sizeLines":  74
+                       }
+                   ]
+}

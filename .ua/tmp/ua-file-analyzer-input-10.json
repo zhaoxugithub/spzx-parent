@@ -1,0 +1,13 @@
+{
+  "projectRoot": "C:\\Users\\11931\\IdeaProjects\\spzx-parent",
+  "batchFiles": [
+    {"path": "spzx-modules/spzx-order/src/main/resources/mapper/order/OrderInfoMapper.xml", "language": "xml", "sizeLines": 43, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-order/src/main/resources/mapper/order/OrderItemMapper.xml", "language": "xml", "sizeLines": 14, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-order/src/main/resources/mapper/order/OrderLogMapper.xml", "language": "xml", "sizeLines": 15, "fileCategory": "config"}
+  ],
+  "batchImportData": {
+    "spzx-modules/spzx-order/src/main/resources/mapper/order/OrderInfoMapper.xml": [],
+    "spzx-modules/spzx-order/src/main/resources/mapper/order/OrderItemMapper.xml": [],
+    "spzx-modules/spzx-order/src/main/resources/mapper/order/OrderLogMapper.xml": []
+  }
+}

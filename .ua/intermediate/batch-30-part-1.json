@@ -1,0 +1,368 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java",
+      "type": "file",
+      "name": "JobInvokeUtil.java",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java",
+      "summary": "定时任务调度工具类，负责根据 invokeTarget 字符串解析并反射调用目标 Bean 的方法，并转换方法参数类型。",
+      "tags": ["utility", "scheduler", "reflection", "job-execution"],
+      "complexity": "moderate",
+      "languageNotes": "大量使用反射（Class.forName、Method.invoke）与 StringUtils 解析方法签名。"
+    },
+    {
+      "id": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzDisallowConcurrentExecution.java",
+      "type": "file",
+      "name": "QuartzDisallowConcurrentExecution.java",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzDisallowConcurrentExecution.java",
+      "summary": "禁止并发执行的 Quartz Job 实现，调度时调用 JobInvokeUtil 反射执行任务方法。",
+      "tags": ["scheduler", "job-execution", "quartz", "concurrent"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzJobExecution.java",
+      "type": "file",
+      "name": "QuartzJobExecution.java",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzJobExecution.java",
+      "summary": "常规 Quartz Job 执行类，允许并发执行并委托给 JobInvokeUtil 完成方法调用。",
+      "tags": ["scheduler", "job-execution", "quartz", "concurrent"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java",
+      "type": "file",
+      "name": "ScheduleUtils.java",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java",
+      "summary": "Quartz 调度工具类，负责创建/删除调度任务、设置 Cron 与误触发策略，并校验调用目标白名单。",
+      "tags": ["utility", "scheduler", "quartz", "cron"],
+      "complexity": "moderate",
+      "languageNotes": "使用 Quartz JobBuilder/TriggerBuilder 链式构建 JobDetail 与触发器。"
+    },
+    {
+      "id": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/SpzxOrderApplication.java",
+      "type": "file",
+      "name": "SpzxOrderApplication.java",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/SpzxOrderApplication.java",
+      "summary": "订单服务的 Spring Boot 启动类，负责启动应用上下文并加载 Nacos 配置。",
+      "tags": ["entry-point", "spring-boot", "application", "order-service"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/CancelOrderMqConfig.java",
+      "type": "file",
+      "name": "CancelOrderMqConfig.java",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/CancelOrderMqConfig.java",
+      "summary": "RabbitMQ 取消订单延迟队列配置，定义延迟交换机、队列与路由绑定。",
+      "tags": ["configuration", "rabbitmq", "message-queue", "order"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DeadLetterMqConfig.java",
+      "type": "file",
+      "name": "DeadLetterMqConfig.java",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DeadLetterMqConfig.java",
+      "summary": "RabbitMQ 死信交换机配置，定义死信交换机、两条死信队列及绑定关系。",
+      "tags": ["configuration", "rabbitmq", "message-queue", "dead-letter"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DelayedMqConfig.java",
+      "type": "file",
+      "name": "DelayedMqConfig.java",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DelayedMqConfig.java",
+      "summary": "RabbitMQ 延迟消息交换机配置，定义延迟交换机、延迟队列及其绑定。",
+      "tags": ["configuration", "rabbitmq", "message-queue", "delay"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/MqController.java",
+      "type": "file",
+      "name": "MqController.java",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/MqController.java",
+      "summary": "RabbitMQ 测试控制器，提供发送普通、确认、死信与延迟消息的接口。",
+      "tags": ["api-handler", "rabbitmq", "controller", "message-queue"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/OrderInfoController.java",
+      "type": "file",
+      "name": "OrderInfoController.java",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/OrderInfoController.java",
+      "summary": "订单信息 REST 控制器，提供订单列表、导出、下单、订单详情与按单号查询等接口。",
+      "tags": ["api-handler", "controller", "order", "rest"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:spzx-modules/spzx-job/src/main/resources/mapper/job/SysJobLogMapper.xml",
+      "type": "config",
+      "name": "SysJobLogMapper.xml",
+      "filePath": "spzx-modules/spzx-job/src/main/resources/mapper/job/SysJobLogMapper.xml",
+      "summary": "定时任务日志表的 MyBatis 映射文件，定义 sys_job_log 的查询、插入、删除与清空操作。",
+      "tags": ["configuration", "mybatis", "sql", "job-log", "database"],
+      "complexity": "moderate",
+      "languageNotes": "使用 MyBatis 动态 SQL（if / foreach）与 resultMap 映射查询结果。"
+    },
+    {
+      "id": "config:spzx-modules/spzx-job/src/main/resources/mapper/job/SysJobMapper.xml",
+      "type": "config",
+      "name": "SysJobMapper.xml",
+      "filePath": "spzx-modules/spzx-job/src/main/resources/mapper/job/SysJobMapper.xml",
+      "summary": "定时任务表的 MyBatis 映射文件，定义 sys_job 的 CRUD 查询与动态条件过滤。",
+      "tags": ["configuration", "mybatis", "sql", "job", "database"],
+      "complexity": "moderate",
+      "languageNotes": "使用 MyBatis 动态 SQL（if / foreach）与 resultMap 映射查询结果。"
+    },
+    {
+      "id": "config:spzx-modules/spzx-order/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-modules/spzx-order/pom.xml",
+      "summary": "订单模块的 Maven 构建配置，声明 Nacos、Sentinel、MySQL、DataScope、Log 与 RabbitMQ 依赖及打包插件。",
+      "tags": ["configuration", "maven", "build-system", "dependency", "order"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java:JobInvokeUtil",
+      "type": "class",
+      "name": "JobInvokeUtil",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java",
+      "lineRange": [16, 182],
+      "summary": "定时任务反射调用工具类，解析 invokeTarget 并反射执行目标 Bean 的方法。",
+      "tags": ["utility", "scheduler", "reflection", "job-execution"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzDisallowConcurrentExecution.java:QuartzDisallowConcurrentExecution",
+      "type": "class",
+      "name": "QuartzDisallowConcurrentExecution",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzDisallowConcurrentExecution.java",
+      "lineRange": [14, 22],
+      "summary": "禁止并发执行的 Quartz 任务类，拒绝同一任务并发运行。",
+      "tags": ["scheduler", "job-execution", "quartz", "concurrent"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzJobExecution.java:QuartzJobExecution",
+      "type": "class",
+      "name": "QuartzJobExecution",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzJobExecution.java",
+      "lineRange": [13, 20],
+      "summary": "常规 Quartz 任务执行类，允许并发并委托反射执行任务方法。",
+      "tags": ["scheduler", "job-execution", "quartz", "concurrent"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java:ScheduleUtils",
+      "type": "class",
+      "name": "ScheduleUtils",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java",
+      "lineRange": [27, 141],
+      "summary": "Quartz 调度工具类，封装调度的创建、删除、Cron 策略与白名单校验。",
+      "tags": ["utility", "scheduler", "quartz", "cron"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/SpzxOrderApplication.java:SpzxOrderApplication",
+      "type": "class",
+      "name": "SpzxOrderApplication",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/SpzxOrderApplication.java",
+      "lineRange": [11, 28],
+      "summary": "订单服务 Spring Boot 启动类，负责引导应用依赖注入与启动。",
+      "tags": ["entry-point", "spring-boot", "application", "order-service"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/CancelOrderMqConfig.java:CancelOrderMqConfig",
+      "type": "class",
+      "name": "CancelOrderMqConfig",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/CancelOrderMqConfig.java",
+      "lineRange": [14, 35],
+      "summary": "取消订单 RabbitMQ 配置类，声明延迟交换机、队列与绑定 Bean。",
+      "tags": ["configuration", "rabbitmq", "message-queue", "order"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DeadLetterMqConfig.java:DeadLetterMqConfig",
+      "type": "class",
+      "name": "DeadLetterMqConfig",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DeadLetterMqConfig.java",
+      "lineRange": [12, 60],
+      "summary": "RabbitMQ 死信交换机配置类，定义死信交换机、两条队列及绑定关系。",
+      "tags": ["configuration", "rabbitmq", "message-queue", "dead-letter"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DelayedMqConfig.java:DelayedMqConfig",
+      "type": "class",
+      "name": "DelayedMqConfig",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DelayedMqConfig.java",
+      "lineRange": [16, 40],
+      "summary": "RabbitMQ 延迟消息交换机配置类，定义延迟交换机、队列与绑定 Bean。",
+      "tags": ["configuration", "rabbitmq", "message-queue", "delay"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/MqController.java:MqController",
+      "type": "class",
+      "name": "MqController",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/MqController.java",
+      "lineRange": [17, 72],
+      "summary": "RabbitMQ 测试控制器，提供发送多种消息的 REST 接口。",
+      "tags": ["api-handler", "rabbitmq", "controller", "message-queue"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/OrderInfoController.java:OrderInfoController",
+      "type": "class",
+      "name": "OrderInfoController",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/OrderInfoController.java",
+      "lineRange": [28, 103],
+      "summary": "订单信息 REST 控制器，暴露订单管理相关接口。",
+      "tags": ["api-handler", "controller", "order", "rest"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java:invokeMethod",
+      "type": "function",
+      "name": "invokeMethod",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java",
+      "lineRange": [23, 63],
+      "summary": "根据 invokeTarget 解析 Bean 与方法，通过 Spring 容器或反射调用目标方法。",
+      "tags": ["utility", "reflection", "scheduler", "invoke"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java:getMethodParams",
+      "type": "function",
+      "name": "getMethodParams",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java",
+      "lineRange": [106, 145],
+      "summary": "解析 invokeTarget 中的参数部分，并根据类型（Boolean/Long/Double/Integer）返回参数值列表。",
+      "tags": ["utility", "reflection", "parsing", "scheduler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java:getMethodParamsType",
+      "type": "function",
+      "name": "getMethodParamsType",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java",
+      "lineRange": [153, 163],
+      "summary": "根据参数值推导对应的方法参数 Class 类型数组。",
+      "tags": ["utility", "reflection", "type", "scheduler"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java:getMethodParamsValue",
+      "type": "function",
+      "name": "getMethodParamsValue",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java",
+      "lineRange": [171, 181],
+      "summary": "按参数类型转换得到反射调用所需的实际参数值数组。",
+      "tags": ["utility", "reflection", "parsing", "scheduler"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java:createScheduleJob",
+      "type": "function",
+      "name": "createScheduleJob",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java",
+      "lineRange": [60, 98],
+      "summary": "根据任务信息构建 Quartz JobDetail 与 Cron 触发器，并创建或更新调度任务。",
+      "tags": ["utility", "scheduler", "quartz", "cron"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java:handleCronScheduleMisfirePolicy",
+      "type": "function",
+      "name": "handleCronScheduleMisfirePolicy",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java",
+      "lineRange": [103, 120],
+      "summary": "根据任务的误触发策略设置 Cron 调度的 misfire 处理指令。",
+      "tags": ["utility", "scheduler", "quartz", "cron"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java:whiteList",
+      "type": "function",
+      "name": "whiteList",
+      "filePath": "spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java",
+      "lineRange": [128, 140],
+      "summary": "校验调用目标的包名是否在白名单内，防止调用非法 Bean。",
+      "tags": ["utility", "security", "scheduler", "validation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/SpzxOrderApplication.java:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/SpzxOrderApplication.java",
+      "lineRange": [15, 27],
+      "summary": "订单服务应用入口，启动 Spring Boot 应用。",
+      "tags": ["entry-point", "spring-boot", "application", "main"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DeadLetterMqConfig.java:queue1",
+      "type": "function",
+      "name": "queue1",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DeadLetterMqConfig.java",
+      "lineRange": [28, 39],
+      "summary": "创建死信消息队列 Bean，并配置死信转发参数（x-dead-letter-*）。",
+      "tags": ["configuration", "rabbitmq", "message-queue", "dead-letter"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/MqController.java:sendConfirmMessage",
+      "type": "function",
+      "name": "sendConfirmMessage",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/MqController.java",
+      "lineRange": [33, 50],
+      "summary": "发送需要确认回调的 RabbitMQ 消息，用于验证消息确认机制。",
+      "tags": ["api-handler", "rabbitmq", "controller", "message-queue"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java", "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java:JobInvokeUtil", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java", "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java:invokeMethod", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java", "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java:getMethodParams", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java", "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java:getMethodParamsType", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java", "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java:getMethodParamsValue", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java", "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java:JobInvokeUtil", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java", "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java:invokeMethod", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java", "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java:getMethodParams", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java", "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java:getMethodParamsType", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java", "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/JobInvokeUtil.java:getMethodParamsValue", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzDisallowConcurrentExecution.java", "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzDisallowConcurrentExecution.java:QuartzDisallowConcurrentExecution", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzDisallowConcurrentExecution.java", "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzDisallowConcurrentExecution.java:QuartzDisallowConcurrentExecution", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzJobExecution.java", "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzJobExecution.java:QuartzJobExecution", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzJobExecution.java", "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/QuartzJobExecution.java:QuartzJobExecution", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java", "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java:ScheduleUtils", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java", "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java:createScheduleJob", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java", "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java:handleCronScheduleMisfirePolicy", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java", "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java:whiteList", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java", "target": "class:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java:ScheduleUtils", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java", "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java:createScheduleJob", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java", "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java:handleCronScheduleMisfirePolicy", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java", "target": "function:spzx-modules/spzx-job/src/main/java/com/spzx/job/util/ScheduleUtils.java:whiteList", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/SpzxOrderApplication.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/SpzxOrderApplication.java:SpzxOrderApplication", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/SpzxOrderApplication.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/SpzxOrderApplication.java:main", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/SpzxOrderApplication.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/SpzxOrderApplication.java:SpzxOrderApplication", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/SpzxOrderApplication.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/SpzxOrderApplication.java:main", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/CancelOrderMqConfig.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/CancelOrderMqConfig.java:CancelOrderMqConfig", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/CancelOrderMqConfig.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/CancelOrderMqConfig.java:CancelOrderMqConfig", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DeadLetterMqConfig.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DeadLetterMqConfig.java:DeadLetterMqConfig", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DeadLetterMqConfig.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DeadLetterMqConfig.java:queue1", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DeadLetterMqConfig.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DeadLetterMqConfig.java:DeadLetterMqConfig", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DeadLetterMqConfig.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DeadLetterMqConfig.java:queue1", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DelayedMqConfig.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DelayedMqConfig.java:DelayedMqConfig", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DelayedMqConfig.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/configure/DelayedMqConfig.java:DelayedMqConfig", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/MqController.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/MqController.java:MqController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/MqController.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/MqController.java:sendConfirmMessage", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/MqController.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/MqController.java:MqController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/MqController.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/MqController.java:sendConfirmMessage", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/OrderInfoController.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/OrderInfoController.java:OrderInfoController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/OrderInfoController.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/controller/OrderInfoController.java:OrderInfoController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "config:spzx-modules/spzx-order/pom.xml", "target": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/SpzxOrderApplication.java", "type": "configures", "direction": "forward", "weight": 0.6}
+  ]
+}

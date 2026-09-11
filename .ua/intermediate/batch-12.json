@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {
+      "id": "document:spzx-modules/spzx-product/src/main/resources/banner.txt",
+      "type": "document",
+      "name": "banner.txt",
+      "filePath": "spzx-modules/spzx-product/src/main/resources/banner.txt",
+      "summary": "spzx-product 服务启动时在控制台打印的 Spring Boot 横幅文本，展示 Spring Boot 版本与应用名称，并配以 SPZX 风格的 ASCII 图形。",
+      "tags": ["documentation", "banner", "spring-boot", "startup"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-product/src/main/resources/bootstrap.yml",
+      "type": "config",
+      "name": "bootstrap.yml",
+      "filePath": "spzx-modules/spzx-product/src/main/resources/bootstrap.yml",
+      "summary": "spzx-product 服务的 Nacos 引导配置：监听 9205 端口、应用名为 spzx-product、激活 dev 环境，并注册到 Nacos 发现与配置中心，拉取共享配置 application-dev.yml。",
+      "tags": ["configuration", "spring-boot", "nacos", "microservice"],
+      "complexity": "simple",
+      "languageNotes": "基于 Nacos 的 bootstrap 配置，通过 shared-configs 引用共享配置文件。"
+    },
+    {
+      "id": "config:spzx-modules/spzx-product/src/main/resources/logback.xml",
+      "type": "config",
+      "name": "logback.xml",
+      "filePath": "spzx-modules/spzx-product/src/main/resources/logback.xml",
+      "summary": "spzx-product 服务的 Logback 日志配置，定义了控制台、info 与 error 滚动文件三个 appender，日志按天滚动保留 60 天，并在日志格式中携带 traceId。",
+      "tags": ["configuration", "logging", "logback", "spring-boot"],
+      "complexity": "moderate",
+      "languageNotes": "使用 RollingFileAppender 配合 LevelFilter 分级输出 info/error 日志，输出格式包含 %X{traceId} 用于链路追踪。"
+    }
+  ],
+  "edges": []
+}

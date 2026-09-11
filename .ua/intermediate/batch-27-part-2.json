@@ -1,0 +1,370 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/BrandServiceImpl.java",
+      "type": "file",
+      "name": "BrandServiceImpl.java",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/BrandServiceImpl.java",
+      "summary": "品牌服务实现类，通过远程品牌服务获取全部品牌列表并处理结果。",
+      "tags": ["service", "impl", "brand", "bff"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/BrandServiceImpl.java:BrandServiceImpl",
+      "type": "class",
+      "name": "BrandServiceImpl",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/BrandServiceImpl.java",
+      "lineRange": [14, 28],
+      "summary": "品牌服务实现，基于远程品牌服务（Feign）查询品牌列表并做结果校验。",
+      "tags": ["service", "impl", "brand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/BrandServiceImpl.java:getBrandAll",
+      "type": "function",
+      "name": "getBrandAll",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/BrandServiceImpl.java",
+      "lineRange": [20, 27],
+      "summary": "调用远程品牌服务获取全部品牌列表，校验返回码并在失败时抛出服务异常。",
+      "tags": ["service", "query", "brand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/CategoryServiceImpl.java",
+      "type": "file",
+      "name": "CategoryServiceImpl.java",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/CategoryServiceImpl.java",
+      "summary": "分类服务实现类，通过远程分类服务获取分类树并处理结果。",
+      "tags": ["service", "impl", "category"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/CategoryServiceImpl.java:CategoryServiceImpl",
+      "type": "class",
+      "name": "CategoryServiceImpl",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/CategoryServiceImpl.java",
+      "lineRange": [14, 28],
+      "summary": "分类服务实现，基于远程分类服务（Feign）获取分类树并做结果校验。",
+      "tags": ["service", "impl", "category"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/CategoryServiceImpl.java:tree",
+      "type": "function",
+      "name": "tree",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/CategoryServiceImpl.java",
+      "lineRange": [20, 27],
+      "summary": "调用远程分类服务获取分类树，校验返回码并在失败时抛出服务异常。",
+      "tags": ["service", "query", "category"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/IndexServiceImpl.java",
+      "type": "file",
+      "name": "IndexServiceImpl.java",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/IndexServiceImpl.java",
+      "summary": "首页服务实现类，聚合一级分类与热销商品数据作为首页接口返回。",
+      "tags": ["service", "impl", "home", "aggregation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/IndexServiceImpl.java:IndexServiceImpl",
+      "type": "class",
+      "name": "IndexServiceImpl",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/IndexServiceImpl.java",
+      "lineRange": [18, 48],
+      "summary": "首页服务实现，通过远程分类与商品服务聚合首页展示数据。",
+      "tags": ["service", "impl", "home"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/IndexServiceImpl.java:index",
+      "type": "function",
+      "name": "index",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/IndexServiceImpl.java",
+      "lineRange": [27, 47],
+      "summary": "获取一级分类与热销商品列表，校验远程调用结果后组装为首页数据映射。",
+      "tags": ["service", "query", "aggregation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ItemServiceImpl.java",
+      "type": "file",
+      "name": "ItemServiceImpl.java",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ItemServiceImpl.java",
+      "summary": "商品详情服务实现类，异步并行聚合 SKU、商品、价格、详情图、规格与库存数据组装商品详情。",
+      "tags": ["service", "impl", "product", "async"],
+      "complexity": "moderate",
+      "languageNotes": "使用 CompletableFuture 以异步方式并行调用多个远程服务，并用 allOf().join 汇聚结果。"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ItemServiceImpl.java:ItemServiceImpl",
+      "type": "class",
+      "name": "ItemServiceImpl",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ItemServiceImpl.java",
+      "lineRange": [26, 132],
+      "summary": "商品详情服务实现，通过 Redis 布隆过滤与多路远程服务异步聚合组装 ItemVo。",
+      "tags": ["service", "impl", "product", "async"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ItemServiceImpl.java:item",
+      "type": "function",
+      "name": "item",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ItemServiceImpl.java",
+      "lineRange": [39, 131],
+      "summary": "异步并发获取商品 SKU、商品、价格、详情图、规格与库存，组装成完整商品详情并写回库存。",
+      "tags": ["service", "async", "aggregation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ListServiceImpl.java",
+      "type": "file",
+      "name": "ListServiceImpl.java",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ListServiceImpl.java",
+      "summary": "商品列表服务实现类，通过远程商品服务分页查询 SKU 列表并处理结果。",
+      "tags": ["service", "impl", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ListServiceImpl.java:ListServiceImpl",
+      "type": "class",
+      "name": "ListServiceImpl",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ListServiceImpl.java",
+      "lineRange": [13, 28],
+      "summary": "商品列表服务实现，基于远程商品服务（Feign）分页查询 SKU 列表并校验结果。",
+      "tags": ["service", "impl", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ListServiceImpl.java:selectProductSkuList",
+      "type": "function",
+      "name": "selectProductSkuList",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ListServiceImpl.java",
+      "lineRange": [20, 27],
+      "summary": "调用远程商品服务分页查询 SKU 列表，校验返回码并在失败时抛出服务异常。",
+      "tags": ["service", "query", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-channel/src/test/java/com/spzx/channel/test/LongTest.java",
+      "type": "file",
+      "name": "LongTest.java",
+      "filePath": "spzx-modules/spzx-channel/src/test/java/com/spzx/channel/test/LongTest.java",
+      "summary": "频道服务测试目录下的简单入口类，演示基础整型运算与打印输出。",
+      "tags": ["test", "demo", "entry-point"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/test/java/com/spzx/channel/test/LongTest.java:LongTest",
+      "type": "class",
+      "name": "LongTest",
+      "filePath": "spzx-modules/spzx-channel/src/test/java/com/spzx/channel/test/LongTest.java",
+      "lineRange": [3, 10],
+      "summary": "测试目录下的简单演示类，包含一个 main 方法执行基础运算。",
+      "tags": ["test", "demo"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-channel/src/test/java/com/spzx/channel/test/LongTest.java:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "spzx-modules/spzx-channel/src/test/java/com/spzx/channel/test/LongTest.java",
+      "lineRange": [4, 9],
+      "summary": "演示用主方法，将两个字符串转为整型相加后打印结果。",
+      "tags": ["demo", "entry-point"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-file/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-modules/spzx-file/pom.xml",
+      "summary": "spzx-file 文件服务的 Maven 构建配置，声明 Nacos、Sentinel、FastDFS、Minio 及 spzx-api-system 等依赖与 Spring Boot 打包插件。",
+      "tags": ["configuration", "maven", "build-system", "dependencies"],
+      "complexity": "moderate",
+      "languageNotes": "继承 spzx-modules 父 POM，通过 spring-boot-maven-plugin 的 repackage 生成可执行 JAR。"
+    },
+    {
+      "id": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/SpzxFileApplication.java",
+      "type": "file",
+      "name": "SpzxFileApplication.java",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/SpzxFileApplication.java",
+      "summary": "spzx-file 文件服务的 Spring Boot 启动入口类，负责启动应用并输出启动提示。",
+      "tags": ["entry-point", "spring-boot", "service"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/SpzxFileApplication.java:SpzxFileApplication",
+      "type": "class",
+      "name": "SpzxFileApplication",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/SpzxFileApplication.java",
+      "lineRange": [12, 29],
+      "summary": "文件服务的启动引导类，通过主方法启动 Spring Boot 应用。",
+      "tags": ["entry-point", "spring-boot", "service"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/SpzxFileApplication.java:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/SpzxFileApplication.java",
+      "lineRange": [15, 28],
+      "summary": "应用入口方法，调用 SpringApplication.run 启动 spzx-file 服务并打印启动日志。",
+      "tags": ["entry-point", "spring-boot", "boot"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/MinioConfig.java",
+      "type": "file",
+      "name": "MinioConfig.java",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/config/MinioConfig.java",
+      "summary": "Minio 存储配置类，绑定访问地址、密钥与桶名并通过构建器创建 MinioClient Bean。",
+      "tags": ["config", "minio", "storage", "bean"],
+      "complexity": "moderate",
+      "languageNotes": "通过 @ConfigurationProperties 绑定配置项，并暴露 @Bean 构建 MinioClient。"
+    },
+    {
+      "id": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/MinioConfig.java:MinioConfig",
+      "type": "class",
+      "name": "MinioConfig",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/config/MinioConfig.java",
+      "lineRange": [13, 82],
+      "summary": "Minio 对象存储配置类，绑定连接参数并构建 MinioClient。",
+      "tags": ["config", "minio", "storage"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/MinioConfig.java:getMinioClient",
+      "type": "function",
+      "name": "getMinioClient",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/config/MinioConfig.java",
+      "lineRange": [77, 81],
+      "summary": "基于配置的地址与密钥构建并返回 MinioClient 实例。",
+      "tags": ["factory", "minio", "storage"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java",
+      "type": "file",
+      "name": "ResourcesConfig.java",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java",
+      "summary": "文件服务 Web 资源配置类，配置本地文件静态资源映射与 CORS 跨域访问策略。",
+      "tags": ["config", "web", "resources", "cors"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java:ResourcesConfig",
+      "type": "class",
+      "name": "ResourcesConfig",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java",
+      "lineRange": [15, 50],
+      "summary": "资源与跨域配置类，注册静态资源处理器并设置允许跨域的策略。",
+      "tags": ["config", "web", "resources"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java:addResourceHandlers",
+      "type": "function",
+      "name": "addResourceHandlers",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java",
+      "lineRange": [30, 36],
+      "summary": "将本地文件目录映射为静态资源访问路径，供外部直接访问上传文件。",
+      "tags": ["config", "resources", "static"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java:addCorsMappings",
+      "type": "function",
+      "name": "addCorsMappings",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java",
+      "lineRange": [41, 49],
+      "summary": "为本地文件资源路径配置跨域访问策略，允许任意来源与方法访问。",
+      "tags": ["config", "cors", "resources"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/controller/SysFileController.java",
+      "type": "file",
+      "name": "SysFileController.java",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/controller/SysFileController.java",
+      "summary": "文件服务控制器，提供文件上传接口并返回文件名称与访问地址。",
+      "tags": ["api-handler", "controller", "upload"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/controller/SysFileController.java:SysFileController",
+      "type": "class",
+      "name": "SysFileController",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/controller/SysFileController.java",
+      "lineRange": [21, 59],
+      "summary": "文件上传控制器，对外提供上传接口并记录操作日志。",
+      "tags": ["api-handler", "controller", "upload"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/controller/SysFileController.java:upload",
+      "type": "function",
+      "name": "upload",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/controller/SysFileController.java",
+      "lineRange": [41, 58],
+      "summary": "处理文件上传请求，调用文件服务保存文件并构造 SysFile 后返回名称与访问地址。",
+      "tags": ["api-handler", "upload", "file"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/service/FastDfsSysFileServiceImpl.java",
+      "type": "file",
+      "name": "FastDfsSysFileServiceImpl.java",
+      "filePath": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/FastDfsSysFileServiceImpl.java",
+      "summary": "FastDFS 文件存储实现类的注释占位文件，整份源代码均处于注释状态，未提供可用实现。",
+      "tags": ["service", "fastdfs", "storage", "stub"],
+      "complexity": "simple",
+      "languageNotes": "文件全部内容被注释，实际实现被停用，需另见其他文件存储实现。"
+    }
+  ],
+  "edges": [
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/BrandServiceImpl.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/BrandServiceImpl.java:BrandServiceImpl", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/BrandServiceImpl.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/BrandServiceImpl.java:BrandServiceImpl", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/BrandServiceImpl.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/BrandServiceImpl.java:getBrandAll", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/BrandServiceImpl.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/BrandServiceImpl.java:getBrandAll", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/CategoryServiceImpl.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/CategoryServiceImpl.java:CategoryServiceImpl", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/CategoryServiceImpl.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/CategoryServiceImpl.java:CategoryServiceImpl", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/CategoryServiceImpl.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/CategoryServiceImpl.java:tree", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/CategoryServiceImpl.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/CategoryServiceImpl.java:tree", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/IndexServiceImpl.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/IndexServiceImpl.java:IndexServiceImpl", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/IndexServiceImpl.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/IndexServiceImpl.java:IndexServiceImpl", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/IndexServiceImpl.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/IndexServiceImpl.java:index", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/IndexServiceImpl.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/IndexServiceImpl.java:index", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ItemServiceImpl.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ItemServiceImpl.java:ItemServiceImpl", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ItemServiceImpl.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ItemServiceImpl.java:ItemServiceImpl", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ItemServiceImpl.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ItemServiceImpl.java:item", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ItemServiceImpl.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ItemServiceImpl.java:item", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ListServiceImpl.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ListServiceImpl.java:ListServiceImpl", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ListServiceImpl.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ListServiceImpl.java:ListServiceImpl", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ListServiceImpl.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ListServiceImpl.java:selectProductSkuList", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ListServiceImpl.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/impl/ListServiceImpl.java:selectProductSkuList", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/test/java/com/spzx/channel/test/LongTest.java", "target": "class:spzx-modules/spzx-channel/src/test/java/com/spzx/channel/test/LongTest.java:LongTest", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/test/java/com/spzx/channel/test/LongTest.java", "target": "class:spzx-modules/spzx-channel/src/test/java/com/spzx/channel/test/LongTest.java:LongTest", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/test/java/com/spzx/channel/test/LongTest.java", "target": "function:spzx-modules/spzx-channel/src/test/java/com/spzx/channel/test/LongTest.java:main", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/test/java/com/spzx/channel/test/LongTest.java", "target": "function:spzx-modules/spzx-channel/src/test/java/com/spzx/channel/test/LongTest.java:main", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/SpzxFileApplication.java", "target": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/SpzxFileApplication.java:SpzxFileApplication", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/SpzxFileApplication.java", "target": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/SpzxFileApplication.java:SpzxFileApplication", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/SpzxFileApplication.java", "target": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/SpzxFileApplication.java:main", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/SpzxFileApplication.java", "target": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/SpzxFileApplication.java:main", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/MinioConfig.java", "target": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/MinioConfig.java:MinioConfig", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/MinioConfig.java", "target": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/MinioConfig.java:MinioConfig", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/MinioConfig.java", "target": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/MinioConfig.java:getMinioClient", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/MinioConfig.java", "target": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/MinioConfig.java:getMinioClient", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java", "target": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java:ResourcesConfig", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java", "target": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java:ResourcesConfig", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java", "target": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java:addResourceHandlers", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java", "target": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java:addResourceHandlers", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java", "target": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java:addCorsMappings", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java", "target": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/config/ResourcesConfig.java:addCorsMappings", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/controller/SysFileController.java", "target": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/controller/SysFileController.java:SysFileController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/controller/SysFileController.java", "target": "class:spzx-modules/spzx-file/src/main/java/com/spzx/file/controller/SysFileController.java:SysFileController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/controller/SysFileController.java", "target": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/controller/SysFileController.java:upload", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-file/src/main/java/com/spzx/file/controller/SysFileController.java", "target": "function:spzx-modules/spzx-file/src/main/java/com/spzx/file/controller/SysFileController.java:upload", "type": "exports", "direction": "forward", "weight": 0.8}
+  ]
+}

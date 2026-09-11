@@ -1,0 +1,26 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 0,
+  "filesSkipped": [
+    "spzx-modules/spzx-product/src/main/resources/mapper/product/BrandMapper.xml",
+    "spzx-modules/spzx-product/src/main/resources/mapper/product/CategoryBrandMapper.xml",
+    "spzx-modules/spzx-product/src/main/resources/mapper/product/CategoryMapper.xml",
+    "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductMapper.xml",
+    "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductSkuMapper.xml",
+    "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductSpecMapper.xml",
+    "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductUnitMapper.xml",
+    "spzx-modules/spzx-product/src/main/resources/mapper/product/SkuStockMapper.xml"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 0,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": []
+}

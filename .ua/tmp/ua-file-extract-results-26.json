@@ -1,0 +1,3414 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 22,
+  "filesSkipped": [
+    "spzx-modules/pom.xml",
+    "spzx-modules/spzx-cart/pom.xml",
+    "spzx-modules/spzx-channel/pom.xml"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 22,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 22,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/config/KaptchaTextCreator.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 57,
+      "functions": [
+        {
+          "name": "getText",
+          "startLine": 15,
+          "endLine": 60,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "KaptchaTextCreator",
+          "startLine": 12,
+          "endLine": 61,
+          "methods": [
+            "getText"
+          ],
+          "properties": [
+            "CNUMBERS"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getText",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "KaptchaTextCreator",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getText",
+          "callee": "new Random",
+          "lineNumber": 18
+        },
+        {
+          "caller": "getText",
+          "callee": "random.nextInt",
+          "lineNumber": 19
+        },
+        {
+          "caller": "getText",
+          "callee": "random.nextInt",
+          "lineNumber": 20
+        },
+        {
+          "caller": "getText",
+          "callee": "new StringBuilder",
+          "lineNumber": 21
+        },
+        {
+          "caller": "getText",
+          "callee": "random.nextInt",
+          "lineNumber": 22
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 25
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 26
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 27
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 32
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 33
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.append",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getText",
+          "callee": "suChinese.toString",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/config/RouterFunctionConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "routerFunction",
+          "startLine": 22,
+          "endLine": 28,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "RouterFunctionConfiguration",
+          "startLine": 17,
+          "endLine": 29,
+          "methods": [
+            "routerFunction"
+          ],
+          "properties": [
+            "validateCodeHandler"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "routerFunction",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "RouterFunctionConfiguration",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "routerFunction",
+          "callee": "RouterFunctions.route",
+          "lineNumber": 25
+        },
+        {
+          "caller": "routerFunction",
+          "callee": "RequestPredicates.GET(\"/code\").and",
+          "lineNumber": 26
+        },
+        {
+          "caller": "routerFunction",
+          "callee": "RequestPredicates.GET",
+          "lineNumber": 26
+        },
+        {
+          "caller": "routerFunction",
+          "callee": "RequestPredicates.accept",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/config/SwaggerProvider.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 79,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/config/properties/CaptchaProperties.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "CaptchaProperties",
+          "startLine": 14,
+          "endLine": 28,
+          "methods": [],
+          "properties": [
+            "enabled",
+            "type"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CaptchaProperties",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/config/properties/IgnoreWhiteProperties.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "IgnoreWhiteProperties",
+          "startLine": 17,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "whites"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IgnoreWhiteProperties",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/config/properties/XssProperties.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "XssProperties",
+          "startLine": 17,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "enabled",
+            "excludeUrls"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "XssProperties",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/filter/AuthFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 135,
+      "nonEmptyLines": 119,
+      "functions": [
+        {
+          "name": "filter",
+          "startLine": 45,
+          "endLine": 87,
+          "params": [
+            "exchange",
+            "chain"
+          ]
+        },
+        {
+          "name": "addHeader",
+          "startLine": 89,
+          "endLine": 96,
+          "params": [
+            "mutate",
+            "name",
+            "value"
+          ]
+        },
+        {
+          "name": "removeHeader",
+          "startLine": 98,
+          "endLine": 100,
+          "params": [
+            "mutate",
+            "name"
+          ]
+        },
+        {
+          "name": "unauthorizedResponse",
+          "startLine": 102,
+          "endLine": 108,
+          "params": [
+            "exchange",
+            "msg"
+          ]
+        },
+        {
+          "name": "getTokenKey",
+          "startLine": 113,
+          "endLine": 115,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "getToken",
+          "startLine": 120,
+          "endLine": 128,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "getOrder",
+          "startLine": 131,
+          "endLine": 134,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AuthFilter",
+          "startLine": 33,
+          "endLine": 135,
+          "methods": [
+            "filter",
+            "addHeader",
+            "removeHeader",
+            "unauthorizedResponse",
+            "getTokenKey",
+            "getToken",
+            "getOrder"
+          ],
+          "properties": [
+            "log",
+            "ignoreWhite",
+            "redisService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "filter",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "getOrder",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "AuthFilter",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest",
+          "lineNumber": 47
+        },
+        {
+          "caller": "filter",
+          "callee": "request.mutate",
+          "lineNumber": 48
+        },
+        {
+          "caller": "filter",
+          "callee": "request.getURI().getPath",
+          "lineNumber": 52
+        },
+        {
+          "caller": "filter",
+          "callee": "request.getURI",
+          "lineNumber": 52
+        },
+        {
+          "caller": "filter",
+          "callee": "StringUtils.matches",
+          "lineNumber": 54
+        },
+        {
+          "caller": "filter",
+          "callee": "ignoreWhite.getWhites",
+          "lineNumber": 54
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 55
+        },
+        {
+          "caller": "filter",
+          "callee": "getToken",
+          "lineNumber": 59
+        },
+        {
+          "caller": "filter",
+          "callee": "StringUtils.isEmpty",
+          "lineNumber": 60
+        },
+        {
+          "caller": "filter",
+          "callee": "unauthorizedResponse",
+          "lineNumber": 61
+        },
+        {
+          "caller": "filter",
+          "callee": "JwtUtils.parseToken",
+          "lineNumber": 65
+        },
+        {
+          "caller": "filter",
+          "callee": "unauthorizedResponse",
+          "lineNumber": 67
+        },
+        {
+          "caller": "filter",
+          "callee": "JwtUtils.getUserKey",
+          "lineNumber": 69
+        },
+        {
+          "caller": "filter",
+          "callee": "redisService.hasKey",
+          "lineNumber": 70
+        },
+        {
+          "caller": "filter",
+          "callee": "getTokenKey",
+          "lineNumber": 70
+        },
+        {
+          "caller": "filter",
+          "callee": "unauthorizedResponse",
+          "lineNumber": 72
+        },
+        {
+          "caller": "filter",
+          "callee": "JwtUtils.getUserId",
+          "lineNumber": 74
+        },
+        {
+          "caller": "filter",
+          "callee": "JwtUtils.getUserName",
+          "lineNumber": 75
+        },
+        {
+          "caller": "filter",
+          "callee": "StringUtils.isEmpty",
+          "lineNumber": 76
+        },
+        {
+          "caller": "filter",
+          "callee": "StringUtils.isEmpty",
+          "lineNumber": 76
+        },
+        {
+          "caller": "filter",
+          "callee": "unauthorizedResponse",
+          "lineNumber": 77
+        },
+        {
+          "caller": "filter",
+          "callee": "addHeader",
+          "lineNumber": 81
+        },
+        {
+          "caller": "filter",
+          "callee": "addHeader",
+          "lineNumber": 82
+        },
+        {
+          "caller": "filter",
+          "callee": "addHeader",
+          "lineNumber": 83
+        },
+        {
+          "caller": "filter",
+          "callee": "removeHeader",
+          "lineNumber": 85
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 86
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.mutate().request(mutate.build()).build",
+          "lineNumber": 86
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.mutate().request",
+          "lineNumber": 86
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.mutate",
+          "lineNumber": 86
+        },
+        {
+          "caller": "filter",
+          "callee": "mutate.build",
+          "lineNumber": 86
+        },
+        {
+          "caller": "addHeader",
+          "callee": "value.toString",
+          "lineNumber": 93
+        },
+        {
+          "caller": "addHeader",
+          "callee": "ServletUtils.urlEncode",
+          "lineNumber": 94
+        },
+        {
+          "caller": "addHeader",
+          "callee": "mutate.header",
+          "lineNumber": 95
+        },
+        {
+          "caller": "removeHeader",
+          "callee": "mutate.headers(httpHeaders -> httpHeaders.remove(name)).build",
+          "lineNumber": 99
+        },
+        {
+          "caller": "removeHeader",
+          "callee": "mutate.headers",
+          "lineNumber": 99
+        },
+        {
+          "caller": "removeHeader",
+          "callee": "httpHeaders.remove",
+          "lineNumber": 99
+        },
+        {
+          "caller": "unauthorizedResponse",
+          "callee": "exchange.getRequest().getHeaders().getFirst",
+          "lineNumber": 103
+        },
+        {
+          "caller": "unauthorizedResponse",
+          "callee": "exchange.getRequest().getHeaders",
+          "lineNumber": 103
+        },
+        {
+          "caller": "unauthorizedResponse",
+          "callee": "exchange.getRequest",
+          "lineNumber": 103
+        },
+        {
+          "caller": "unauthorizedResponse",
+          "callee": "MDC.put",
+          "lineNumber": 104
+        },
+        {
+          "caller": "unauthorizedResponse",
+          "callee": "log.error",
+          "lineNumber": 105
+        },
+        {
+          "caller": "unauthorizedResponse",
+          "callee": "exchange.getRequest().getPath",
+          "lineNumber": 105
+        },
+        {
+          "caller": "unauthorizedResponse",
+          "callee": "exchange.getRequest",
+          "lineNumber": 105
+        },
+        {
+          "caller": "unauthorizedResponse",
+          "callee": "MDC.clear",
+          "lineNumber": 106
+        },
+        {
+          "caller": "unauthorizedResponse",
+          "callee": "ServletUtils.webFluxResponseWriter",
+          "lineNumber": 107
+        },
+        {
+          "caller": "unauthorizedResponse",
+          "callee": "exchange.getResponse",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getToken",
+          "callee": "request.getHeaders().getFirst",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getToken",
+          "callee": "request.getHeaders",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getToken",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 123
+        },
+        {
+          "caller": "getToken",
+          "callee": "token.startsWith",
+          "lineNumber": 123
+        },
+        {
+          "caller": "getToken",
+          "callee": "token.replaceFirst",
+          "lineNumber": 125
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/filter/BlackListUrlFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "apply",
+          "startLine": 20,
+          "endLine": 31,
+          "params": [
+            "config"
+          ]
+        },
+        {
+          "name": "BlackListUrlFilter",
+          "startLine": 33,
+          "endLine": 35,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "BlackListUrlFilter",
+          "startLine": 18,
+          "endLine": 56,
+          "methods": [
+            "apply",
+            "BlackListUrlFilter"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "apply",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "BlackListUrlFilter",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "BlackListUrlFilter",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "apply",
+          "callee": "exchange.getRequest().getURI().getPath",
+          "lineNumber": 24
+        },
+        {
+          "caller": "apply",
+          "callee": "exchange.getRequest().getURI",
+          "lineNumber": 24
+        },
+        {
+          "caller": "apply",
+          "callee": "exchange.getRequest",
+          "lineNumber": 24
+        },
+        {
+          "caller": "apply",
+          "callee": "config.matchBlacklist",
+          "lineNumber": 25
+        },
+        {
+          "caller": "apply",
+          "callee": "ServletUtils.webFluxResponseWriter",
+          "lineNumber": 26
+        },
+        {
+          "caller": "apply",
+          "callee": "exchange.getResponse",
+          "lineNumber": 26
+        },
+        {
+          "caller": "apply",
+          "callee": "chain.filter",
+          "lineNumber": 29
+        },
+        {
+          "caller": "matchBlacklist",
+          "callee": "blacklistUrlPattern.isEmpty",
+          "lineNumber": 44
+        },
+        {
+          "caller": "matchBlacklist",
+          "callee": "blacklistUrlPattern.stream().anyMatch",
+          "lineNumber": 44
+        },
+        {
+          "caller": "matchBlacklist",
+          "callee": "blacklistUrlPattern.stream",
+          "lineNumber": 44
+        },
+        {
+          "caller": "matchBlacklist",
+          "callee": "p.matcher(url).find",
+          "lineNumber": 44
+        },
+        {
+          "caller": "matchBlacklist",
+          "callee": "p.matcher",
+          "lineNumber": 44
+        },
+        {
+          "caller": "setBlacklistUrl",
+          "callee": "this.blacklistUrlPattern.clear",
+          "lineNumber": 49
+        },
+        {
+          "caller": "setBlacklistUrl",
+          "callee": "this.blacklistUrl.forEach",
+          "lineNumber": 50
+        },
+        {
+          "caller": "setBlacklistUrl",
+          "callee": "this.blacklistUrlPattern.add",
+          "lineNumber": 51
+        },
+        {
+          "caller": "setBlacklistUrl",
+          "callee": "Pattern.compile",
+          "lineNumber": 51
+        },
+        {
+          "caller": "setBlacklistUrl",
+          "callee": "url.replaceAll",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/filter/CacheRequestFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 85,
+      "functions": [
+        {
+          "name": "CacheRequestFilter",
+          "startLine": 25,
+          "endLine": 27,
+          "params": []
+        },
+        {
+          "name": "name",
+          "startLine": 29,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "apply",
+          "startLine": 34,
+          "endLine": 54,
+          "params": [
+            "config"
+          ]
+        },
+        {
+          "name": "shortcutFieldOrder",
+          "startLine": 83,
+          "endLine": 86,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CacheRequestFilter",
+          "startLine": 23,
+          "endLine": 93,
+          "methods": [
+            "CacheRequestFilter",
+            "name",
+            "apply",
+            "shortcutFieldOrder"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CacheRequestFilter",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "name",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "apply",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "shortcutFieldOrder",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "CacheRequestFilter",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "apply",
+          "callee": "exchange.getRequest().getMethod",
+          "lineNumber": 37
+        },
+        {
+          "caller": "apply",
+          "callee": "exchange.getRequest",
+          "lineNumber": 37
+        },
+        {
+          "caller": "apply",
+          "callee": "chain.filter",
+          "lineNumber": 39
+        },
+        {
+          "caller": "apply",
+          "callee": "ServerWebExchangeUtils.cacheRequestBodyAndRequest",
+          "lineNumber": 41
+        },
+        {
+          "caller": "apply",
+          "callee": "exchange.getRequest",
+          "lineNumber": 43
+        },
+        {
+          "caller": "apply",
+          "callee": "chain.filter",
+          "lineNumber": 44
+        },
+        {
+          "caller": "apply",
+          "callee": "chain.filter",
+          "lineNumber": 46
+        },
+        {
+          "caller": "apply",
+          "callee": "exchange.mutate().request(serverHttpRequest).build",
+          "lineNumber": 46
+        },
+        {
+          "caller": "apply",
+          "callee": "exchange.mutate().request",
+          "lineNumber": 46
+        },
+        {
+          "caller": "apply",
+          "callee": "exchange.mutate",
+          "lineNumber": 46
+        },
+        {
+          "caller": "apply",
+          "callee": "config.getOrder",
+          "lineNumber": 49
+        },
+        {
+          "caller": "apply",
+          "callee": "new OrderedGatewayFilter",
+          "lineNumber": 53
+        },
+        {
+          "caller": "shortcutFieldOrder",
+          "callee": "Collections.singletonList",
+          "lineNumber": 85
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/filter/TraceIdFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "filter",
+          "startLine": 29,
+          "endLine": 41,
+          "params": [
+            "exchange",
+            "chain"
+          ]
+        },
+        {
+          "name": "getOrder",
+          "startLine": 43,
+          "endLine": 46,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "TraceIdFilter",
+          "startLine": 24,
+          "endLine": 47,
+          "methods": [
+            "filter",
+            "getOrder"
+          ],
+          "properties": [
+            "log"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "filter",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "getOrder",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "TraceIdFilter",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "filter",
+          "callee": "UUID.randomUUID().toString().replace",
+          "lineNumber": 31
+        },
+        {
+          "caller": "filter",
+          "callee": "UUID.randomUUID().toString",
+          "lineNumber": 31
+        },
+        {
+          "caller": "filter",
+          "callee": "UUID.randomUUID",
+          "lineNumber": 31
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest().mutate()\r\n                .header(\"X-Trace-Id\", traceId).build",
+          "lineNumber": 32
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest().mutate().header",
+          "lineNumber": 32
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest().mutate",
+          "lineNumber": 32
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest",
+          "lineNumber": 32
+        },
+        {
+          "caller": "filter",
+          "callee": "MDC.put",
+          "lineNumber": 36
+        },
+        {
+          "caller": "filter",
+          "callee": "log.info",
+          "lineNumber": 37
+        },
+        {
+          "caller": "filter",
+          "callee": "request.getURI().getPath",
+          "lineNumber": 37
+        },
+        {
+          "caller": "filter",
+          "callee": "request.getURI",
+          "lineNumber": 37
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter(exchange.mutate().request(request).build()).doFinally",
+          "lineNumber": 39
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 39
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.mutate().request(request).build",
+          "lineNumber": 39
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.mutate().request",
+          "lineNumber": 39
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.mutate",
+          "lineNumber": 39
+        },
+        {
+          "caller": "filter",
+          "callee": "MDC.clear",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/filter/ValidateCodeFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "apply",
+          "startLine": 41,
+          "endLine": 60,
+          "params": [
+            "config"
+          ]
+        },
+        {
+          "name": "resolveBodyFromRequest",
+          "startLine": 62,
+          "endLine": 72,
+          "params": [
+            "serverHttpRequest"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ValidateCodeFilter",
+          "startLine": 27,
+          "endLine": 73,
+          "methods": [
+            "apply",
+            "resolveBodyFromRequest"
+          ],
+          "properties": [
+            "VALIDATE_URL",
+            "validateCodeService",
+            "captchaProperties",
+            "CODE",
+            "UUID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "apply",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "ValidateCodeFilter",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "apply",
+          "callee": "exchange.getRequest",
+          "lineNumber": 44
+        },
+        {
+          "caller": "apply",
+          "callee": "StringUtils.equalsAnyIgnoreCase",
+          "lineNumber": 47
+        },
+        {
+          "caller": "apply",
+          "callee": "request.getURI().getPath",
+          "lineNumber": 47
+        },
+        {
+          "caller": "apply",
+          "callee": "request.getURI",
+          "lineNumber": 47
+        },
+        {
+          "caller": "apply",
+          "callee": "captchaProperties.getEnabled",
+          "lineNumber": 47
+        },
+        {
+          "caller": "apply",
+          "callee": "chain.filter",
+          "lineNumber": 48
+        },
+        {
+          "caller": "apply",
+          "callee": "resolveBodyFromRequest",
+          "lineNumber": 52
+        },
+        {
+          "caller": "apply",
+          "callee": "JSON.parseObject",
+          "lineNumber": 53
+        },
+        {
+          "caller": "apply",
+          "callee": "validateCodeService.checkCaptcha",
+          "lineNumber": 54
+        },
+        {
+          "caller": "apply",
+          "callee": "obj.getString",
+          "lineNumber": 54
+        },
+        {
+          "caller": "apply",
+          "callee": "obj.getString",
+          "lineNumber": 54
+        },
+        {
+          "caller": "apply",
+          "callee": "ServletUtils.webFluxResponseWriter",
+          "lineNumber": 56
+        },
+        {
+          "caller": "apply",
+          "callee": "exchange.getResponse",
+          "lineNumber": 56
+        },
+        {
+          "caller": "apply",
+          "callee": "e.getMessage",
+          "lineNumber": 56
+        },
+        {
+          "caller": "apply",
+          "callee": "chain.filter",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolveBodyFromRequest",
+          "callee": "serverHttpRequest.getBody",
+          "lineNumber": 64
+        },
+        {
+          "caller": "resolveBodyFromRequest",
+          "callee": "new AtomicReference<>",
+          "lineNumber": 65
+        },
+        {
+          "caller": "resolveBodyFromRequest",
+          "callee": "body.subscribe",
+          "lineNumber": 66
+        },
+        {
+          "caller": "resolveBodyFromRequest",
+          "callee": "StandardCharsets.UTF_8.decode",
+          "lineNumber": 67
+        },
+        {
+          "caller": "resolveBodyFromRequest",
+          "callee": "buffer.asByteBuffer",
+          "lineNumber": 67
+        },
+        {
+          "caller": "resolveBodyFromRequest",
+          "callee": "DataBufferUtils.release",
+          "lineNumber": 68
+        },
+        {
+          "caller": "resolveBodyFromRequest",
+          "callee": "bodyRef.set",
+          "lineNumber": 69
+        },
+        {
+          "caller": "resolveBodyFromRequest",
+          "callee": "charBuffer.toString",
+          "lineNumber": 69
+        },
+        {
+          "caller": "resolveBodyFromRequest",
+          "callee": "bodyRef.get",
+          "lineNumber": 71
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/filter/XssFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "filter",
+          "startLine": 37,
+          "endLine": 61,
+          "params": [
+            "exchange",
+            "chain"
+          ]
+        },
+        {
+          "name": "requestDecorator",
+          "startLine": 63,
+          "endLine": 97,
+          "params": [
+            "exchange"
+          ]
+        },
+        {
+          "name": "isJsonRequest",
+          "startLine": 104,
+          "endLine": 107,
+          "params": [
+            "exchange"
+          ]
+        },
+        {
+          "name": "getOrder",
+          "startLine": 109,
+          "endLine": 112,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "XssFilter",
+          "startLine": 30,
+          "endLine": 113,
+          "methods": [
+            "filter",
+            "requestDecorator",
+            "isJsonRequest",
+            "getOrder"
+          ],
+          "properties": [
+            "xss"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "filter",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "isJsonRequest",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "getOrder",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "XssFilter",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest",
+          "lineNumber": 39
+        },
+        {
+          "caller": "filter",
+          "callee": "xss.getEnabled",
+          "lineNumber": 41
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 42
+        },
+        {
+          "caller": "filter",
+          "callee": "request.getMethod",
+          "lineNumber": 45
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 47
+        },
+        {
+          "caller": "filter",
+          "callee": "isJsonRequest",
+          "lineNumber": 50
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 51
+        },
+        {
+          "caller": "filter",
+          "callee": "request.getURI().getPath",
+          "lineNumber": 54
+        },
+        {
+          "caller": "filter",
+          "callee": "request.getURI",
+          "lineNumber": 54
+        },
+        {
+          "caller": "filter",
+          "callee": "StringUtils.matches",
+          "lineNumber": 55
+        },
+        {
+          "caller": "filter",
+          "callee": "xss.getExcludeUrls",
+          "lineNumber": 55
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 56
+        },
+        {
+          "caller": "filter",
+          "callee": "requestDecorator",
+          "lineNumber": 58
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 59
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.mutate().request(httpRequestDecorator).build",
+          "lineNumber": 59
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.mutate().request",
+          "lineNumber": 59
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.mutate",
+          "lineNumber": 59
+        },
+        {
+          "caller": "requestDecorator",
+          "callee": "new ServerHttpRequestDecorator",
+          "lineNumber": 64
+        },
+        {
+          "caller": "requestDecorator",
+          "callee": "exchange.getRequest",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getBody",
+          "callee": "super.getBody",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getBody",
+          "callee": "body.buffer().map",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getBody",
+          "callee": "body.buffer",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getBody",
+          "callee": "new DefaultDataBufferFactory",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getBody",
+          "callee": "dataBufferFactory.join",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getBody",
+          "callee": "join.readableByteCount",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getBody",
+          "callee": "join.read",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getBody",
+          "callee": "DataBufferUtils.release",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getBody",
+          "callee": "new String",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getBody",
+          "callee": "EscapeUtil.clean",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getBody",
+          "callee": "bodyStr.getBytes",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getBody",
+          "callee": "new NettyDataBufferFactory",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getBody",
+          "callee": "nettyDataBufferFactory.allocateBuffer",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getBody",
+          "callee": "buffer.write",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getHeaders",
+          "callee": "new HttpHeaders",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getHeaders",
+          "callee": "httpHeaders.putAll",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getHeaders",
+          "callee": "super.getHeaders",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getHeaders",
+          "callee": "httpHeaders.remove",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getHeaders",
+          "callee": "httpHeaders.set",
+          "lineNumber": 92
+        },
+        {
+          "caller": "isJsonRequest",
+          "callee": "exchange.getRequest().getHeaders().getFirst",
+          "lineNumber": 105
+        },
+        {
+          "caller": "isJsonRequest",
+          "callee": "exchange.getRequest().getHeaders",
+          "lineNumber": 105
+        },
+        {
+          "caller": "isJsonRequest",
+          "callee": "exchange.getRequest",
+          "lineNumber": 105
+        },
+        {
+          "caller": "isJsonRequest",
+          "callee": "StringUtils.startsWithIgnoreCase",
+          "lineNumber": 106
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/handler/GatewayExceptionHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 40,
+      "functions": [
+        {
+          "name": "handle",
+          "startLine": 25,
+          "endLine": 47,
+          "params": [
+            "exchange",
+            "ex"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GatewayExceptionHandler",
+          "startLine": 20,
+          "endLine": 48,
+          "methods": [
+            "handle"
+          ],
+          "properties": [
+            "log"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "handle",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "GatewayExceptionHandler",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handle",
+          "callee": "exchange.getResponse",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handle",
+          "callee": "exchange.getResponse().isCommitted",
+          "lineNumber": 29
+        },
+        {
+          "caller": "handle",
+          "callee": "exchange.getResponse",
+          "lineNumber": 29
+        },
+        {
+          "caller": "handle",
+          "callee": "Mono.error",
+          "lineNumber": 30
+        },
+        {
+          "caller": "handle",
+          "callee": "responseStatusException.getMessage",
+          "lineNumber": 39
+        },
+        {
+          "caller": "handle",
+          "callee": "log.error",
+          "lineNumber": 44
+        },
+        {
+          "caller": "handle",
+          "callee": "exchange.getRequest().getPath",
+          "lineNumber": 44
+        },
+        {
+          "caller": "handle",
+          "callee": "exchange.getRequest",
+          "lineNumber": 44
+        },
+        {
+          "caller": "handle",
+          "callee": "ex.getMessage",
+          "lineNumber": 44
+        },
+        {
+          "caller": "handle",
+          "callee": "ServletUtils.webFluxResponseWriter",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/handler/SentinelFallbackHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "writeResponse",
+          "startLine": 17,
+          "endLine": 19,
+          "params": [
+            "response",
+            "exchange"
+          ]
+        },
+        {
+          "name": "handle",
+          "startLine": 21,
+          "endLine": 30,
+          "params": [
+            "exchange",
+            "ex"
+          ]
+        },
+        {
+          "name": "handleBlockedRequest",
+          "startLine": 32,
+          "endLine": 34,
+          "params": [
+            "exchange",
+            "throwable"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SentinelFallbackHandler",
+          "startLine": 16,
+          "endLine": 35,
+          "methods": [
+            "writeResponse",
+            "handle",
+            "handleBlockedRequest"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "handle",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "SentinelFallbackHandler",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "writeResponse",
+          "callee": "ServletUtils.webFluxResponseWriter",
+          "lineNumber": 18
+        },
+        {
+          "caller": "writeResponse",
+          "callee": "exchange.getResponse",
+          "lineNumber": 18
+        },
+        {
+          "caller": "handle",
+          "callee": "exchange.getResponse().isCommitted",
+          "lineNumber": 23
+        },
+        {
+          "caller": "handle",
+          "callee": "exchange.getResponse",
+          "lineNumber": 23
+        },
+        {
+          "caller": "handle",
+          "callee": "Mono.error",
+          "lineNumber": 24
+        },
+        {
+          "caller": "handle",
+          "callee": "BlockException.isBlockException",
+          "lineNumber": 26
+        },
+        {
+          "caller": "handle",
+          "callee": "Mono.error",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handle",
+          "callee": "handleBlockedRequest(exchange, ex).flatMap",
+          "lineNumber": 29
+        },
+        {
+          "caller": "handle",
+          "callee": "handleBlockedRequest",
+          "lineNumber": 29
+        },
+        {
+          "caller": "handle",
+          "callee": "writeResponse",
+          "lineNumber": 29
+        },
+        {
+          "caller": "handleBlockedRequest",
+          "callee": "GatewayCallbackManager.getBlockHandler().handleRequest",
+          "lineNumber": 33
+        },
+        {
+          "caller": "handleBlockedRequest",
+          "callee": "GatewayCallbackManager.getBlockHandler",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/handler/SwaggerHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 56,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/handler/ValidateCodeHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "handle",
+          "startLine": 27,
+          "endLine": 36,
+          "params": [
+            "serverRequest"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ValidateCodeHandler",
+          "startLine": 22,
+          "endLine": 37,
+          "methods": [
+            "handle"
+          ],
+          "properties": [
+            "validateCodeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "handle",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "ValidateCodeHandler",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handle",
+          "callee": "validateCodeService.createCaptcha",
+          "lineNumber": 31
+        },
+        {
+          "caller": "handle",
+          "callee": "Mono.error",
+          "lineNumber": 33
+        },
+        {
+          "caller": "handle",
+          "callee": "ServerResponse.status(HttpStatus.OK).body",
+          "lineNumber": 35
+        },
+        {
+          "caller": "handle",
+          "callee": "ServerResponse.status",
+          "lineNumber": 35
+        },
+        {
+          "caller": "handle",
+          "callee": "BodyInserters.fromValue",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/service/ValidateCodeService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 19,
+      "classes": [
+        {
+          "name": "ValidateCodeService",
+          "startLine": 13,
+          "endLine": 23,
+          "methods": [
+            "createCaptcha",
+            "checkCaptcha"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ValidateCodeService",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/service/impl/ValidateCodeServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 107,
+      "nonEmptyLines": 93,
+      "functions": [
+        {
+          "name": "createCaptcha",
+          "startLine": 46,
+          "endLine": 86,
+          "params": []
+        },
+        {
+          "name": "checkCaptcha",
+          "startLine": 91,
+          "endLine": 106,
+          "params": [
+            "code",
+            "uuid"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ValidateCodeServiceImpl",
+          "startLine": 29,
+          "endLine": 107,
+          "methods": [
+            "createCaptcha",
+            "checkCaptcha"
+          ],
+          "properties": [
+            "captchaProducer",
+            "captchaProducerMath",
+            "redisService",
+            "captchaProperties"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createCaptcha",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "checkCaptcha",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "ValidateCodeServiceImpl",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createCaptcha",
+          "callee": "AjaxResult.success",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "captchaProperties.getEnabled",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "ajax.put",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "IdUtils.simpleUUID",
+          "lineNumber": 56
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "captchaProperties.getType",
+          "lineNumber": 62
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "\"math\".equals",
+          "lineNumber": 64
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "captchaProducerMath.createText",
+          "lineNumber": 65
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "capText.substring",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "capText.lastIndexOf",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "capText.substring",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "capText.lastIndexOf",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "captchaProducerMath.createImage",
+          "lineNumber": 68
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "\"char\".equals",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "captchaProducer.createText",
+          "lineNumber": 70
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "captchaProducer.createImage",
+          "lineNumber": 71
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "redisService.setCacheObject",
+          "lineNumber": 74
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "new FastByteArrayOutputStream",
+          "lineNumber": 76
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "ImageIO.write",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "AjaxResult.error",
+          "lineNumber": 80
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "e.getMessage",
+          "lineNumber": 80
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "ajax.put",
+          "lineNumber": 83
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "ajax.put",
+          "lineNumber": 84
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "Base64.encode",
+          "lineNumber": 84
+        },
+        {
+          "caller": "createCaptcha",
+          "callee": "os.toByteArray",
+          "lineNumber": 84
+        },
+        {
+          "caller": "checkCaptcha",
+          "callee": "StringUtils.isEmpty",
+          "lineNumber": 93
+        },
+        {
+          "caller": "checkCaptcha",
+          "callee": "new CaptchaException",
+          "lineNumber": 94
+        },
+        {
+          "caller": "checkCaptcha",
+          "callee": "StringUtils.isEmpty",
+          "lineNumber": 96
+        },
+        {
+          "caller": "checkCaptcha",
+          "callee": "new CaptchaException",
+          "lineNumber": 97
+        },
+        {
+          "caller": "checkCaptcha",
+          "callee": "redisService.getCacheObject",
+          "lineNumber": 100
+        },
+        {
+          "caller": "checkCaptcha",
+          "callee": "redisService.deleteObject",
+          "lineNumber": 101
+        },
+        {
+          "caller": "checkCaptcha",
+          "callee": "code.equalsIgnoreCase",
+          "lineNumber": 103
+        },
+        {
+          "caller": "checkCaptcha",
+          "callee": "new CaptchaException",
+          "lineNumber": 104
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/SpzxCartApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 16,
+          "endLine": 28,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SpzxCartApplication",
+          "startLine": 12,
+          "endLine": 29,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "SpzxCartApplication",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 17
+        },
+        {
+          "caller": "main",
+          "callee": "System.out.println",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/controller/CartController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 124,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "addToCart",
+          "startLine": 33,
+          "endLine": 40,
+          "params": [
+            "skuId",
+            "skuNum"
+          ]
+        },
+        {
+          "name": "cartList",
+          "startLine": 43,
+          "endLine": 49,
+          "params": []
+        },
+        {
+          "name": "deleteCart",
+          "startLine": 52,
+          "endLine": 58,
+          "params": [
+            "skuId"
+          ]
+        },
+        {
+          "name": "checkCart",
+          "startLine": 61,
+          "endLine": 68,
+          "params": [
+            "skuId",
+            "isChecked"
+          ]
+        },
+        {
+          "name": "allCheckCart",
+          "startLine": 71,
+          "endLine": 78,
+          "params": [
+            "isChecked"
+          ]
+        },
+        {
+          "name": "clearCart",
+          "startLine": 81,
+          "endLine": 87,
+          "params": []
+        },
+        {
+          "name": "getCartCheckedList",
+          "startLine": 100,
+          "endLine": 107,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "updateCartPrice",
+          "startLine": 110,
+          "endLine": 115,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "deleteCartCheckedList",
+          "startLine": 118,
+          "endLine": 123,
+          "params": [
+            "userId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CartController",
+          "startLine": 18,
+          "endLine": 124,
+          "methods": [
+            "addToCart",
+            "cartList",
+            "deleteCart",
+            "checkCart",
+            "allCheckCart",
+            "clearCart",
+            "getCartCheckedList",
+            "updateCartPrice",
+            "deleteCartCheckedList"
+          ],
+          "properties": [
+            "cartService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "addToCart",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "cartList",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "deleteCart",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "checkCart",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "allCheckCart",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "clearCart",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "getCartCheckedList",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "updateCartPrice",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "deleteCartCheckedList",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "CartController",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "addToCart",
+          "callee": "cartService.addToCart",
+          "lineNumber": 38
+        },
+        {
+          "caller": "addToCart",
+          "callee": "success",
+          "lineNumber": 39
+        },
+        {
+          "caller": "cartList",
+          "callee": "cartService.cartList",
+          "lineNumber": 47
+        },
+        {
+          "caller": "cartList",
+          "callee": "success",
+          "lineNumber": 48
+        },
+        {
+          "caller": "deleteCart",
+          "callee": "cartService.deleteCart",
+          "lineNumber": 56
+        },
+        {
+          "caller": "deleteCart",
+          "callee": "success",
+          "lineNumber": 57
+        },
+        {
+          "caller": "checkCart",
+          "callee": "cartService.checkCart",
+          "lineNumber": 66
+        },
+        {
+          "caller": "checkCart",
+          "callee": "success",
+          "lineNumber": 67
+        },
+        {
+          "caller": "allCheckCart",
+          "callee": "cartService.allCheckCart",
+          "lineNumber": 76
+        },
+        {
+          "caller": "allCheckCart",
+          "callee": "success",
+          "lineNumber": 77
+        },
+        {
+          "caller": "clearCart",
+          "callee": "cartService.clearCart",
+          "lineNumber": 85
+        },
+        {
+          "caller": "clearCart",
+          "callee": "success",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getCartCheckedList",
+          "callee": "cartService.getCartCheckedList",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getCartCheckedList",
+          "callee": "R.ok",
+          "lineNumber": 106
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "R.ok",
+          "lineNumber": 114
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "cartService.updateCartPrice",
+          "lineNumber": 114
+        },
+        {
+          "caller": "deleteCartCheckedList",
+          "callee": "R.ok",
+          "lineNumber": 122
+        },
+        {
+          "caller": "deleteCartCheckedList",
+          "callee": "cartService.deleteCartCheckedList",
+          "lineNumber": 122
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/ICartService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 54,
+      "classes": [
+        {
+          "name": "ICartService",
+          "startLine": 7,
+          "endLine": 66,
+          "methods": [
+            "addToCart",
+            "cartList",
+            "deleteCart",
+            "checkCart",
+            "allCheckCart",
+            "clearCart",
+            "getCartCheckedList",
+            "updateCartPrice",
+            "deleteCartCheckedList"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ICartService",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-cart/src/main/java/com/spzx/cart/service/impl/CartServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 270,
+      "nonEmptyLines": 228,
+      "functions": [
+        {
+          "name": "addToCart",
+          "startLine": 43,
+          "endLine": 89,
+          "params": [
+            "skuId",
+            "skuNum"
+          ]
+        },
+        {
+          "name": "getCartKey",
+          "startLine": 92,
+          "endLine": 94,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "cartList",
+          "startLine": 101,
+          "endLine": 134,
+          "params": []
+        },
+        {
+          "name": "deleteCart",
+          "startLine": 142,
+          "endLine": 155,
+          "params": [
+            "skuId"
+          ]
+        },
+        {
+          "name": "checkCart",
+          "startLine": 163,
+          "endLine": 178,
+          "params": [
+            "skuId",
+            "isChecked"
+          ]
+        },
+        {
+          "name": "allCheckCart",
+          "startLine": 180,
+          "endLine": 195,
+          "params": [
+            "isChecked"
+          ]
+        },
+        {
+          "name": "clearCart",
+          "startLine": 197,
+          "endLine": 207,
+          "params": []
+        },
+        {
+          "name": "getCartCheckedList",
+          "startLine": 210,
+          "endLine": 220,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "updateCartPrice",
+          "startLine": 223,
+          "endLine": 251,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "deleteCartCheckedList",
+          "startLine": 254,
+          "endLine": 269,
+          "params": [
+            "userId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CartServiceImpl",
+          "startLine": 27,
+          "endLine": 270,
+          "methods": [
+            "addToCart",
+            "getCartKey",
+            "cartList",
+            "deleteCart",
+            "checkCart",
+            "allCheckCart",
+            "clearCart",
+            "getCartCheckedList",
+            "updateCartPrice",
+            "deleteCartCheckedList"
+          ],
+          "properties": [
+            "redisTemplate",
+            "remoteProductService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "addToCart",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "cartList",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "deleteCart",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "checkCart",
+          "line": 163,
+          "isDefault": false
+        },
+        {
+          "name": "allCheckCart",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "clearCart",
+          "line": 197,
+          "isDefault": false
+        },
+        {
+          "name": "getCartCheckedList",
+          "line": 210,
+          "isDefault": false
+        },
+        {
+          "name": "updateCartPrice",
+          "line": 223,
+          "isDefault": false
+        },
+        {
+          "name": "deleteCartCheckedList",
+          "line": 254,
+          "isDefault": false
+        },
+        {
+          "name": "CartServiceImpl",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "addToCart",
+          "callee": "SecurityContextHolder.getUserId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "addToCart",
+          "callee": "getCartKey",
+          "lineNumber": 47
+        },
+        {
+          "caller": "addToCart",
+          "callee": "String.valueOf",
+          "lineNumber": 50
+        },
+        {
+          "caller": "addToCart",
+          "callee": "redisTemplate.boundHashOps",
+          "lineNumber": 53
+        },
+        {
+          "caller": "addToCart",
+          "callee": "boundHashOperations.hasKey",
+          "lineNumber": 56
+        },
+        {
+          "caller": "addToCart",
+          "callee": "boundHashOperations.get",
+          "lineNumber": 57
+        },
+        {
+          "caller": "addToCart",
+          "callee": "cartInfo.getSkuNum",
+          "lineNumber": 58
+        },
+        {
+          "caller": "addToCart",
+          "callee": "cartInfo.setSkuNum",
+          "lineNumber": 59
+        },
+        {
+          "caller": "addToCart",
+          "callee": "cartInfo.setUpdateTime",
+          "lineNumber": 60
+        },
+        {
+          "caller": "addToCart",
+          "callee": "new Date",
+          "lineNumber": 60
+        },
+        {
+          "caller": "addToCart",
+          "callee": "boundHashOperations.put",
+          "lineNumber": 61
+        },
+        {
+          "caller": "addToCart",
+          "callee": "boundHashOperations.size",
+          "lineNumber": 64
+        },
+        {
+          "caller": "addToCart",
+          "callee": "new ServiceException",
+          "lineNumber": 66
+        },
+        {
+          "caller": "addToCart",
+          "callee": "new CartInfo",
+          "lineNumber": 69
+        },
+        {
+          "caller": "addToCart",
+          "callee": "cartInfo.setUserId",
+          "lineNumber": 70
+        },
+        {
+          "caller": "addToCart",
+          "callee": "cartInfo.setSkuId",
+          "lineNumber": 71
+        },
+        {
+          "caller": "addToCart",
+          "callee": "remoteProductService.getProductSku",
+          "lineNumber": 74
+        },
+        {
+          "caller": "addToCart",
+          "callee": "productSkuResult.getCode",
+          "lineNumber": 75
+        },
+        {
+          "caller": "addToCart",
+          "callee": "new ServiceException",
+          "lineNumber": 76
+        },
+        {
+          "caller": "addToCart",
+          "callee": "productSkuResult.getMsg",
+          "lineNumber": 76
+        },
+        {
+          "caller": "addToCart",
+          "callee": "productSkuResult.getData",
+          "lineNumber": 78
+        },
+        {
+          "caller": "addToCart",
+          "callee": "cartInfo.setCartPrice",
+          "lineNumber": 79
+        },
+        {
+          "caller": "addToCart",
+          "callee": "productSku.getSalePrice",
+          "lineNumber": 79
+        },
+        {
+          "caller": "addToCart",
+          "callee": "cartInfo.setSkuPrice",
+          "lineNumber": 80
+        },
+        {
+          "caller": "addToCart",
+          "callee": "productSku.getSalePrice",
+          "lineNumber": 80
+        },
+        {
+          "caller": "addToCart",
+          "callee": "cartInfo.setSkuNum",
+          "lineNumber": 81
+        },
+        {
+          "caller": "addToCart",
+          "callee": "cartInfo.setThumbImg",
+          "lineNumber": 82
+        },
+        {
+          "caller": "addToCart",
+          "callee": "productSku.getThumbImg",
+          "lineNumber": 82
+        },
+        {
+          "caller": "addToCart",
+          "callee": "cartInfo.setSkuName",
+          "lineNumber": 83
+        },
+        {
+          "caller": "addToCart",
+          "callee": "productSku.getSkuName",
+          "lineNumber": 83
+        },
+        {
+          "caller": "addToCart",
+          "callee": "cartInfo.setIsChecked",
+          "lineNumber": 84
+        },
+        {
+          "caller": "addToCart",
+          "callee": "cartInfo.setCreateTime",
+          "lineNumber": 85
+        },
+        {
+          "caller": "addToCart",
+          "callee": "new Date",
+          "lineNumber": 85
+        },
+        {
+          "caller": "addToCart",
+          "callee": "boundHashOperations.put",
+          "lineNumber": 87
+        },
+        {
+          "caller": "cartList",
+          "callee": "SecurityContextHolder.getUserId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "cartList",
+          "callee": "getCartKey",
+          "lineNumber": 105
+        },
+        {
+          "caller": "cartList",
+          "callee": "redisTemplate.boundHashOps",
+          "lineNumber": 107
+        },
+        {
+          "caller": "cartList",
+          "callee": "boundHashOperations.values",
+          "lineNumber": 108
+        },
+        {
+          "caller": "cartList",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 109
+        },
+        {
+          "caller": "cartList",
+          "callee": "new ArrayList<>",
+          "lineNumber": 110
+        },
+        {
+          "caller": "cartList",
+          "callee": "cartInfoList.stream().sorted((o1, o2) -> o2.getCreateTime().compareTo(o1.getCreateTime())).toList",
+          "lineNumber": 114
+        },
+        {
+          "caller": "cartList",
+          "callee": "cartInfoList.stream().sorted",
+          "lineNumber": 114
+        },
+        {
+          "caller": "cartList",
+          "callee": "cartInfoList.stream",
+          "lineNumber": 114
+        },
+        {
+          "caller": "cartList",
+          "callee": "o2.getCreateTime().compareTo",
+          "lineNumber": 114
+        },
+        {
+          "caller": "cartList",
+          "callee": "o2.getCreateTime",
+          "lineNumber": 114
+        },
+        {
+          "caller": "cartList",
+          "callee": "o1.getCreateTime",
+          "lineNumber": 114
+        },
+        {
+          "caller": "cartList",
+          "callee": "cartInfoList.stream().map(CartInfo::getSkuId).toList",
+          "lineNumber": 118
+        },
+        {
+          "caller": "cartList",
+          "callee": "cartInfoList.stream().map",
+          "lineNumber": 118
+        },
+        {
+          "caller": "cartList",
+          "callee": "cartInfoList.stream",
+          "lineNumber": 118
+        },
+        {
+          "caller": "cartList",
+          "callee": "remoteProductService.getSkuPriceList",
+          "lineNumber": 119
+        },
+        {
+          "caller": "cartList",
+          "callee": "skuPriceListResult.getCode",
+          "lineNumber": 120
+        },
+        {
+          "caller": "cartList",
+          "callee": "new ServiceException",
+          "lineNumber": 121
+        },
+        {
+          "caller": "cartList",
+          "callee": "skuPriceListResult.getMsg",
+          "lineNumber": 121
+        },
+        {
+          "caller": "cartList",
+          "callee": "skuPriceListResult.getData",
+          "lineNumber": 123
+        },
+        {
+          "caller": "cartList",
+          "callee": "skuPriceList.stream().collect",
+          "lineNumber": 125
+        },
+        {
+          "caller": "cartList",
+          "callee": "skuPriceList.stream",
+          "lineNumber": 125
+        },
+        {
+          "caller": "cartList",
+          "callee": "Collectors.toMap",
+          "lineNumber": 125
+        },
+        {
+          "caller": "cartList",
+          "callee": "cartInfo.setSkuPrice",
+          "lineNumber": 130
+        },
+        {
+          "caller": "cartList",
+          "callee": "skuIdToSalePriceMap.get",
+          "lineNumber": 130
+        },
+        {
+          "caller": "cartList",
+          "callee": "cartInfo.getSkuId",
+          "lineNumber": 130
+        },
+        {
+          "caller": "deleteCart",
+          "callee": "SecurityContextHolder.getUserId",
+          "lineNumber": 145
+        },
+        {
+          "caller": "deleteCart",
+          "callee": "getCartKey",
+          "lineNumber": 146
+        },
+        {
+          "caller": "deleteCart",
+          "callee": "String.valueOf",
+          "lineNumber": 149
+        },
+        {
+          "caller": "deleteCart",
+          "callee": "redisTemplate.boundHashOps",
+          "lineNumber": 151
+        },
+        {
+          "caller": "deleteCart",
+          "callee": "boundHashOperations.hasKey",
+          "lineNumber": 152
+        },
+        {
+          "caller": "deleteCart",
+          "callee": "boundHashOperations.delete",
+          "lineNumber": 153
+        },
+        {
+          "caller": "checkCart",
+          "callee": "SecurityContextHolder.getUserId",
+          "lineNumber": 166
+        },
+        {
+          "caller": "checkCart",
+          "callee": "getCartKey",
+          "lineNumber": 167
+        },
+        {
+          "caller": "checkCart",
+          "callee": "String.valueOf",
+          "lineNumber": 170
+        },
+        {
+          "caller": "checkCart",
+          "callee": "redisTemplate.boundHashOps",
+          "lineNumber": 172
+        },
+        {
+          "caller": "checkCart",
+          "callee": "boundHashOperations.hasKey",
+          "lineNumber": 173
+        },
+        {
+          "caller": "checkCart",
+          "callee": "boundHashOperations.get",
+          "lineNumber": 174
+        },
+        {
+          "caller": "checkCart",
+          "callee": "cartInfo.setIsChecked",
+          "lineNumber": 175
+        },
+        {
+          "caller": "checkCart",
+          "callee": "boundHashOperations.put",
+          "lineNumber": 176
+        },
+        {
+          "caller": "allCheckCart",
+          "callee": "SecurityContextHolder.getUserId",
+          "lineNumber": 183
+        },
+        {
+          "caller": "allCheckCart",
+          "callee": "getCartKey",
+          "lineNumber": 184
+        },
+        {
+          "caller": "allCheckCart",
+          "callee": "redisTemplate.boundHashOps",
+          "lineNumber": 186
+        },
+        {
+          "caller": "allCheckCart",
+          "callee": "boundHashOperations.values",
+          "lineNumber": 188
+        },
+        {
+          "caller": "allCheckCart",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 189
+        },
+        {
+          "caller": "allCheckCart",
+          "callee": "cartInfo.setIsChecked",
+          "lineNumber": 191
+        },
+        {
+          "caller": "allCheckCart",
+          "callee": "boundHashOperations.put",
+          "lineNumber": 192
+        },
+        {
+          "caller": "allCheckCart",
+          "callee": "cartInfo.getSkuId().toString",
+          "lineNumber": 192
+        },
+        {
+          "caller": "allCheckCart",
+          "callee": "cartInfo.getSkuId",
+          "lineNumber": 192
+        },
+        {
+          "caller": "clearCart",
+          "callee": "SecurityContextHolder.getUserId",
+          "lineNumber": 200
+        },
+        {
+          "caller": "clearCart",
+          "callee": "getCartKey",
+          "lineNumber": 201
+        },
+        {
+          "caller": "clearCart",
+          "callee": "redisTemplate.hasKey",
+          "lineNumber": 203
+        },
+        {
+          "caller": "clearCart",
+          "callee": "redisTemplate.delete",
+          "lineNumber": 204
+        },
+        {
+          "caller": "getCartCheckedList",
+          "callee": "getCartKey",
+          "lineNumber": 212
+        },
+        {
+          "caller": "getCartCheckedList",
+          "callee": "redisTemplate.boundHashOps",
+          "lineNumber": 213
+        },
+        {
+          "caller": "getCartCheckedList",
+          "callee": "boundHashOperations.values",
+          "lineNumber": 214
+        },
+        {
+          "caller": "getCartCheckedList",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 216
+        },
+        {
+          "caller": "getCartCheckedList",
+          "callee": "cartInfoList.stream().filter(cartInfo -> cartInfo.getIsChecked() == 1).toList",
+          "lineNumber": 217
+        },
+        {
+          "caller": "getCartCheckedList",
+          "callee": "cartInfoList.stream().filter",
+          "lineNumber": 217
+        },
+        {
+          "caller": "getCartCheckedList",
+          "callee": "cartInfoList.stream",
+          "lineNumber": 217
+        },
+        {
+          "caller": "getCartCheckedList",
+          "callee": "cartInfo.getIsChecked",
+          "lineNumber": 217
+        },
+        {
+          "caller": "getCartCheckedList",
+          "callee": "new ArrayList<>",
+          "lineNumber": 219
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "getCartKey",
+          "lineNumber": 226
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "redisTemplate.boundHashOps",
+          "lineNumber": 227
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "boundHashOperations.values",
+          "lineNumber": 228
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 230
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "cartInfoList.stream().filter(cartInfo -> cartInfo.getIsChecked() == 1).toList",
+          "lineNumber": 231
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "cartInfoList.stream().filter",
+          "lineNumber": 231
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "cartInfoList.stream",
+          "lineNumber": 231
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "cartInfo.getIsChecked",
+          "lineNumber": 231
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 232
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "checkedCartInfoList.stream().map(cartInfo -> cartInfo.getSkuId()).toList",
+          "lineNumber": 233
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "checkedCartInfoList.stream().map",
+          "lineNumber": 233
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "checkedCartInfoList.stream",
+          "lineNumber": 233
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "cartInfo.getSkuId",
+          "lineNumber": 233
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "remoteProductService.getSkuPriceList",
+          "lineNumber": 234
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "skuPriceListResult.getCode",
+          "lineNumber": 235
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "new ServiceException",
+          "lineNumber": 236
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "skuPriceListResult.getMsg",
+          "lineNumber": 236
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "skuPriceListResult.getData",
+          "lineNumber": 238
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "skuPriceList.stream().collect",
+          "lineNumber": 239
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "skuPriceList.stream",
+          "lineNumber": 239
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "Collectors.toMap",
+          "lineNumber": 239
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "skuIdToSalePriceMap.get",
+          "lineNumber": 241
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "checkedCartInfo.getSkuId",
+          "lineNumber": 241
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "checkedCartInfo.setSkuPrice",
+          "lineNumber": 242
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "checkedCartInfo.setCartPrice",
+          "lineNumber": 243
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "boundHashOperations.put",
+          "lineNumber": 244
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "checkedCartInfo.getSkuId().toString",
+          "lineNumber": 244
+        },
+        {
+          "caller": "updateCartPrice",
+          "callee": "checkedCartInfo.getSkuId",
+          "lineNumber": 244
+        },
+        {
+          "caller": "deleteCartCheckedList",
+          "callee": "getCartKey",
+          "lineNumber": 257
+        },
+        {
+          "caller": "deleteCartCheckedList",
+          "callee": "redisTemplate.boundHashOps",
+          "lineNumber": 258
+        },
+        {
+          "caller": "deleteCartCheckedList",
+          "callee": "boundHashOperations.values",
+          "lineNumber": 259
+        },
+        {
+          "caller": "deleteCartCheckedList",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 260
+        },
+        {
+          "caller": "deleteCartCheckedList",
+          "callee": "cartInfo.getIsChecked",
+          "lineNumber": 262
+        },
+        {
+          "caller": "deleteCartCheckedList",
+          "callee": "boundHashOperations.delete",
+          "lineNumber": 263
+        },
+        {
+          "caller": "deleteCartCheckedList",
+          "callee": "cartInfo.getSkuId().toString",
+          "lineNumber": 263
+        },
+        {
+          "caller": "deleteCartCheckedList",
+          "callee": "cartInfo.getSkuId",
+          "lineNumber": 263
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    }
+  ]
+}

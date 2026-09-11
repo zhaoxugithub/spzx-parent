@@ -1,0 +1,21 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 0,
+  "filesSkipped": [
+    "spzx-modules/spzx-order/src/main/resources/mapper/order/OrderInfoMapper.xml",
+    "spzx-modules/spzx-order/src/main/resources/mapper/order/OrderItemMapper.xml",
+    "spzx-modules/spzx-order/src/main/resources/mapper/order/OrderLogMapper.xml"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 0,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": []
+}

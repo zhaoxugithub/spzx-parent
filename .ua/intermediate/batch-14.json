@@ -1,0 +1,248 @@
+{
+  "nodes": [
+    {
+      "id": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysConfigMapper.xml",
+      "type": "config",
+      "name": "SysConfigMapper.xml",
+      "filePath": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysConfigMapper.xml",
+      "summary": "spzx-system 模块中系统参数配置(sys_config)表的 MyBatis 映射文件,定义配置项的分页列表、按 key 查询、唯一性校验以及新增、更新、单删/批量删除等 SQL,绑定到 SysConfigMapper 接口。",
+      "tags": ["mybatis", "mapper", "configuration", "sql", "crud"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysDeptMapper.xml",
+      "type": "config",
+      "name": "SysDeptMapper.xml",
+      "filePath": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysDeptMapper.xml",
+      "summary": "部门(sys_dept)表的 MyBatis 映射文件,提供部门列表(含数据范围过滤)、按角色查询部门、子节点/正常子节点统计、名称唯一性校验以及增删改、批量更新祖先链等 SQL,绑定到 SysDeptMapper 接口。",
+      "tags": ["mybatis", "mapper", "department", "sql", "tree"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysDictDataMapper.xml",
+      "type": "config",
+      "name": "SysDictDataMapper.xml",
+      "filePath": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysDictDataMapper.xml",
+      "summary": "字典数据(sys_dict_data)表的 MyBatis 映射文件,提供字典项列表、按字典类型查询启用项、按类型/值查标签、类型下计数以及新增、更新、单删/批量删除等 SQL,绑定到 SysDictDataMapper 接口。",
+      "tags": ["mybatis", "mapper", "dictionary", "sql", "crud"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysDictTypeMapper.xml",
+      "type": "config",
+      "name": "SysDictTypeMapper.xml",
+      "filePath": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysDictTypeMapper.xml",
+      "summary": "字典类型(sys_dict_type)表的 MyBatis 映射文件,提供字典类型列表(含时间范围检索)、全部、按 id/类型查询、类型唯一性校验以及新增、更新、单删/批量删除等 SQL,绑定到 SysDictTypeMapper 接口。",
+      "tags": ["mybatis", "mapper", "dictionary", "sql", "crud"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysLogininforMapper.xml",
+      "type": "config",
+      "name": "SysLogininforMapper.xml",
+      "filePath": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysLogininforMapper.xml",
+      "summary": "登录日志(sys_logininfor)表的 MyBatis 映射文件,提供登录记录写入、分页列表(含 IP/状态/用户名/时间条件)、批量删除以及清空表等 SQL,绑定到 SysLogininforMapper 接口。",
+      "tags": ["mybatis", "mapper", "login-log", "sql", "audit"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysMenuMapper.xml",
+      "type": "config",
+      "name": "SysMenuMapper.xml",
+      "filePath": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysMenuMapper.xml",
+      "summary": "菜单权限(sys_menu)表的 MyBatis 映射文件,提供菜单树、按用户/角色查询菜单与权限标识、子菜单判断、名称唯一性校验以及新增、更新、删除等 SQL,绑定到 SysMenuMapper 接口,是 RBAC 权限核心映射。",
+      "tags": ["mybatis", "mapper", "menu", "permission", "sql"],
+      "complexity": "complex",
+      "languageNotes": "通过多次 left join sys_role_menu/sys_user_role/sys_role 实现按用户的菜单与权限查询。"
+    },
+    {
+      "id": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysNoticeMapper.xml",
+      "type": "config",
+      "name": "SysNoticeMapper.xml",
+      "filePath": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysNoticeMapper.xml",
+      "summary": "通知公告(sys_notice)表的 MyBatis 映射文件,提供公告列表、详情、新增、更新、单删/批量删除等 SQL,绑定到 SysNoticeMapper 接口。",
+      "tags": ["mybatis", "mapper", "notice", "sql", "crud"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysOperLogMapper.xml",
+      "type": "config",
+      "name": "SysOperLogMapper.xml",
+      "filePath": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysOperLogMapper.xml",
+      "summary": "操作日志(sys_oper_log)表的 MyBatis 映射文件,提供日志写入、分页列表(含 IP/标题/业务类型/状态条件)、详情、批量删除以及清空表等 SQL,绑定到 SysOperLogMapper 接口。",
+      "tags": ["mybatis", "mapper", "operation-log", "sql", "audit"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysPostMapper.xml",
+      "type": "config",
+      "name": "SysPostMapper.xml",
+      "filePath": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysPostMapper.xml",
+      "summary": "岗位(sys_post)表的 MyBatis 映射文件,提供岗位列表、全部、按用户/用户名查询岗位、编码/名称唯一性校验以及新增、更新、单删/批量删除等 SQL,绑定到 SysPostMapper 接口。",
+      "tags": ["mybatis", "mapper", "post", "sql", "crud"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleDeptMapper.xml",
+      "type": "config",
+      "name": "SysRoleDeptMapper.xml",
+      "filePath": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleDeptMapper.xml",
+      "summary": "角色-部门关联(sys_role_dept)表的 MyBatis 映射文件,提供按角色删除、按部门计数以及批量插入等 SQL,绑定到 SysRoleDeptMapper 接口。",
+      "tags": ["mybatis", "mapper", "role-dept", "sql", "association"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleMapper.xml",
+      "type": "config",
+      "name": "SysRoleMapper.xml",
+      "filePath": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleMapper.xml",
+      "summary": "角色(sys_role)表的 MyBatis 映射文件,提供角色列表(含数据范围过滤)、按用户/用户名查询角色、名称/key 唯一性校验以及新增、更新、逻辑删除(设为 del_flag=2)等 SQL,绑定到 SysRoleMapper 接口。",
+      "tags": ["mybatis", "mapper", "role", "rbac", "sql"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleMenuMapper.xml",
+      "type": "config",
+      "name": "SysRoleMenuMapper.xml",
+      "filePath": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleMenuMapper.xml",
+      "summary": "角色-菜单关联(sys_role_menu)表的 MyBatis 映射文件,提供菜单是否被角色引用、按角色删除以及批量插入等 SQL,绑定到 SysRoleMenuMapper 接口。",
+      "tags": ["mybatis", "mapper", "role-menu", "sql", "association"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserMapper.xml",
+      "type": "config",
+      "name": "SysUserMapper.xml",
+      "filePath": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserMapper.xml",
+      "summary": "用户(sys_user)表的 MyBatis 映射文件,提供用户列表(含部门树/数据范围过滤)、已分配/未分配用户查询、用户名/手机/邮箱唯一性校验以及新增、更新、改状态/头像/密码、逻辑删除等 SQL,并通过 association/collection 关联部门与角色,绑定到 SysUserMapper 接口。",
+      "tags": ["mybatis", "mapper", "user", "rbac", "sql"],
+      "complexity": "complex",
+      "languageNotes": "使用嵌套 resultMap(deptResult/RoleResult)实现用户到部门、角色的级联映射。"
+    },
+    {
+      "id": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserPostMapper.xml",
+      "type": "config",
+      "name": "SysUserPostMapper.xml",
+      "filePath": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserPostMapper.xml",
+      "summary": "用户-岗位关联(sys_user_post)表的 MyBatis 映射文件,提供按用户删除、按岗位计数以及批量插入等 SQL,绑定到 SysUserPostMapper 接口。",
+      "tags": ["mybatis", "mapper", "user-post", "sql", "association"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserRoleMapper.xml",
+      "type": "config",
+      "name": "SysUserRoleMapper.xml",
+      "filePath": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserRoleMapper.xml",
+      "summary": "用户-角色关联(sys_user_role)表的 MyBatis 映射文件,提供按用户删除、按角色计数、批量插入以及按用户/角色单删、批量删除等 SQL,绑定到 SysUserRoleMapper 接口。",
+      "tags": ["mybatis", "mapper", "user-role", "sql", "rbac"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysConfigMapper.xml",
+      "target": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysConfigMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysDeptMapper.xml",
+      "target": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysDeptMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysDictDataMapper.xml",
+      "target": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysDictDataMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysDictTypeMapper.xml",
+      "target": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysDictTypeMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysLogininforMapper.xml",
+      "target": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysLogininforMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysMenuMapper.xml",
+      "target": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysMenuMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysNoticeMapper.xml",
+      "target": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysNoticeMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysOperLogMapper.xml",
+      "target": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysOperLogMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysPostMapper.xml",
+      "target": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysPostMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleDeptMapper.xml",
+      "target": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysRoleDeptMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleMapper.xml",
+      "target": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysRoleMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleMenuMapper.xml",
+      "target": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysRoleMenuMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserMapper.xml",
+      "target": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysUserMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserPostMapper.xml",
+      "target": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysUserPostMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserRoleMapper.xml",
+      "target": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/mapper/SysUserRoleMapper.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

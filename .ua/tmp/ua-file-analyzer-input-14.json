@@ -1,0 +1,37 @@
+{
+  "projectRoot": "C:\\Users\\11931\\IdeaProjects\\spzx-parent",
+  "batchFiles": [
+    {"path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysConfigMapper.xml", "language": "xml", "sizeLines": 117, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysDeptMapper.xml", "language": "xml", "sizeLines": 157, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysDictDataMapper.xml", "language": "xml", "sizeLines": 124, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysDictTypeMapper.xml", "language": "xml", "sizeLines": 105, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysLogininforMapper.xml", "language": "xml", "sizeLines": 54, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysMenuMapper.xml", "language": "xml", "sizeLines": 202, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysNoticeMapper.xml", "language": "xml", "sizeLines": 89, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysOperLogMapper.xml", "language": "xml", "sizeLines": 86, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysPostMapper.xml", "language": "xml", "sizeLines": 122, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleDeptMapper.xml", "language": "xml", "sizeLines": 34, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleMapper.xml", "language": "xml", "sizeLines": 152, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleMenuMapper.xml", "language": "xml", "sizeLines": 34, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserMapper.xml", "language": "xml", "sizeLines": 221, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserPostMapper.xml", "language": "xml", "sizeLines": 34, "fileCategory": "config"},
+    {"path": "spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserRoleMapper.xml", "language": "xml", "sizeLines": 44, "fileCategory": "config"}
+  ],
+  "batchImportData": {
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysConfigMapper.xml": [],
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysDeptMapper.xml": [],
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysDictDataMapper.xml": [],
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysDictTypeMapper.xml": [],
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysLogininforMapper.xml": [],
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysMenuMapper.xml": [],
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysNoticeMapper.xml": [],
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysOperLogMapper.xml": [],
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysPostMapper.xml": [],
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleDeptMapper.xml": [],
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleMapper.xml": [],
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleMenuMapper.xml": [],
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserMapper.xml": [],
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserPostMapper.xml": [],
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserRoleMapper.xml": []
+  }
+}

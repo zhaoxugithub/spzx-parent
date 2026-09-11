@@ -1,0 +1,3639 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 23,
+  "filesSkipped": [
+    "spzx-common/spzx-common-security/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+    "spzx-gateway/pom.xml"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 23,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 23,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/EnableRyFeignClients.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 21,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/InnerAuth.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 17,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/Logical.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "Logical",
+          "startLine": 9,
+          "endLine": 20,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Logical",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresLogin.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresPermissions.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 23,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/RequiresRoles.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 23,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/InnerAuthAspect.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "innerAround",
+          "startLine": 22,
+          "endLine": 37,
+          "params": [
+            "point",
+            "innerAuth"
+          ]
+        },
+        {
+          "name": "getOrder",
+          "startLine": 43,
+          "endLine": 46,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "InnerAuthAspect",
+          "startLine": 19,
+          "endLine": 47,
+          "methods": [
+            "innerAround",
+            "getOrder"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "innerAround",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "getOrder",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "InnerAuthAspect",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "innerAround",
+          "callee": "ServletUtils.getRequest().getHeader",
+          "lineNumber": 24
+        },
+        {
+          "caller": "innerAround",
+          "callee": "ServletUtils.getRequest",
+          "lineNumber": 24
+        },
+        {
+          "caller": "innerAround",
+          "callee": "StringUtils.equals",
+          "lineNumber": 26
+        },
+        {
+          "caller": "innerAround",
+          "callee": "new InnerAuthException",
+          "lineNumber": 27
+        },
+        {
+          "caller": "innerAround",
+          "callee": "ServletUtils.getRequest().getHeader",
+          "lineNumber": 30
+        },
+        {
+          "caller": "innerAround",
+          "callee": "ServletUtils.getRequest",
+          "lineNumber": 30
+        },
+        {
+          "caller": "innerAround",
+          "callee": "ServletUtils.getRequest().getHeader",
+          "lineNumber": 31
+        },
+        {
+          "caller": "innerAround",
+          "callee": "ServletUtils.getRequest",
+          "lineNumber": 31
+        },
+        {
+          "caller": "innerAround",
+          "callee": "innerAuth.isUser",
+          "lineNumber": 33
+        },
+        {
+          "caller": "innerAround",
+          "callee": "StringUtils.isEmpty",
+          "lineNumber": 33
+        },
+        {
+          "caller": "innerAround",
+          "callee": "StringUtils.isEmpty",
+          "lineNumber": 33
+        },
+        {
+          "caller": "innerAround",
+          "callee": "new InnerAuthException",
+          "lineNumber": 34
+        },
+        {
+          "caller": "innerAround",
+          "callee": "point.proceed",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/aspect/PreAuthorizeAspect.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 81,
+      "functions": [
+        {
+          "name": "PreAuthorizeAspect",
+          "startLine": 29,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "pointcut",
+          "startLine": 42,
+          "endLine": 44,
+          "params": []
+        },
+        {
+          "name": "around",
+          "startLine": 53,
+          "endLine": 66,
+          "params": [
+            "joinPoint"
+          ]
+        },
+        {
+          "name": "checkMethodAnnotation",
+          "startLine": 71,
+          "endLine": 89,
+          "params": [
+            "method"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PreAuthorizeAspect",
+          "startLine": 22,
+          "endLine": 90,
+          "methods": [
+            "PreAuthorizeAspect",
+            "pointcut",
+            "around",
+            "checkMethodAnnotation"
+          ],
+          "properties": [
+            "POINTCUT_SIGN"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PreAuthorizeAspect",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "POINTCUT_SIGN",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "pointcut",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "around",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "checkMethodAnnotation",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "PreAuthorizeAspect",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "around",
+          "callee": "joinPoint.getSignature",
+          "lineNumber": 56
+        },
+        {
+          "caller": "around",
+          "callee": "checkMethodAnnotation",
+          "lineNumber": 58
+        },
+        {
+          "caller": "around",
+          "callee": "signature.getMethod",
+          "lineNumber": 58
+        },
+        {
+          "caller": "around",
+          "callee": "joinPoint.proceed",
+          "lineNumber": 61
+        },
+        {
+          "caller": "checkMethodAnnotation",
+          "callee": "method.getAnnotation",
+          "lineNumber": 73
+        },
+        {
+          "caller": "checkMethodAnnotation",
+          "callee": "AuthUtil.checkLogin",
+          "lineNumber": 75
+        },
+        {
+          "caller": "checkMethodAnnotation",
+          "callee": "method.getAnnotation",
+          "lineNumber": 79
+        },
+        {
+          "caller": "checkMethodAnnotation",
+          "callee": "AuthUtil.checkRole",
+          "lineNumber": 81
+        },
+        {
+          "caller": "checkMethodAnnotation",
+          "callee": "method.getAnnotation",
+          "lineNumber": 85
+        },
+        {
+          "caller": "checkMethodAnnotation",
+          "callee": "AuthUtil.checkPermi",
+          "lineNumber": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthLogic.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 326,
+      "nonEmptyLines": 298,
+      "functions": [
+        {
+          "name": "logout",
+          "startLine": 43,
+          "endLine": 49,
+          "params": []
+        },
+        {
+          "name": "logoutByToken",
+          "startLine": 54,
+          "endLine": 56,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "checkLogin",
+          "startLine": 61,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "getLoginUser",
+          "startLine": 70,
+          "endLine": 80,
+          "params": []
+        },
+        {
+          "name": "getLoginUser",
+          "startLine": 88,
+          "endLine": 90,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "verifyLoginUserExpire",
+          "startLine": 97,
+          "endLine": 99,
+          "params": [
+            "loginUser"
+          ]
+        },
+        {
+          "name": "hasPermi",
+          "startLine": 107,
+          "endLine": 109,
+          "params": [
+            "permission"
+          ]
+        },
+        {
+          "name": "checkPermi",
+          "startLine": 117,
+          "endLine": 121,
+          "params": [
+            "permission"
+          ]
+        },
+        {
+          "name": "checkPermi",
+          "startLine": 128,
+          "endLine": 137,
+          "params": [
+            "requiresPermissions"
+          ]
+        },
+        {
+          "name": "checkPermiAnd",
+          "startLine": 144,
+          "endLine": 153,
+          "params": []
+        },
+        {
+          "name": "checkPermiOr",
+          "startLine": 160,
+          "endLine": 170,
+          "params": []
+        },
+        {
+          "name": "hasRole",
+          "startLine": 178,
+          "endLine": 180,
+          "params": [
+            "role"
+          ]
+        },
+        {
+          "name": "checkRole",
+          "startLine": 187,
+          "endLine": 191,
+          "params": [
+            "role"
+          ]
+        },
+        {
+          "name": "checkRole",
+          "startLine": 198,
+          "endLine": 204,
+          "params": [
+            "requiresRoles"
+          ]
+        },
+        {
+          "name": "checkRoleAnd",
+          "startLine": 211,
+          "endLine": 220,
+          "params": []
+        },
+        {
+          "name": "checkRoleOr",
+          "startLine": 227,
+          "endLine": 238,
+          "params": []
+        },
+        {
+          "name": "checkByAnnotation",
+          "startLine": 245,
+          "endLine": 247,
+          "params": [
+            "at"
+          ]
+        },
+        {
+          "name": "checkByAnnotation",
+          "startLine": 254,
+          "endLine": 261,
+          "params": [
+            "at"
+          ]
+        },
+        {
+          "name": "checkByAnnotation",
+          "startLine": 268,
+          "endLine": 275,
+          "params": [
+            "at"
+          ]
+        },
+        {
+          "name": "getRoleList",
+          "startLine": 282,
+          "endLine": 289,
+          "params": []
+        },
+        {
+          "name": "getPermiList",
+          "startLine": 296,
+          "endLine": 303,
+          "params": []
+        },
+        {
+          "name": "hasPermi",
+          "startLine": 312,
+          "endLine": 314,
+          "params": [
+            "authorities",
+            "permission"
+          ]
+        },
+        {
+          "name": "hasRole",
+          "startLine": 323,
+          "endLine": 325,
+          "params": [
+            "roles",
+            "role"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AuthLogic",
+          "startLine": 27,
+          "endLine": 326,
+          "methods": [
+            "logout",
+            "logoutByToken",
+            "checkLogin",
+            "getLoginUser",
+            "getLoginUser",
+            "verifyLoginUserExpire",
+            "hasPermi",
+            "checkPermi",
+            "checkPermi",
+            "checkPermiAnd",
+            "checkPermiOr",
+            "hasRole",
+            "checkRole",
+            "checkRole",
+            "checkRoleAnd",
+            "checkRoleOr",
+            "checkByAnnotation",
+            "checkByAnnotation",
+            "checkByAnnotation",
+            "getRoleList",
+            "getPermiList",
+            "hasPermi",
+            "hasRole"
+          ],
+          "properties": [
+            "ALL_PERMISSION",
+            "SUPER_ADMIN",
+            "tokenService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "tokenService",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "logout",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "logoutByToken",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "checkLogin",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginUser",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginUser",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "verifyLoginUserExpire",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "hasPermi",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "checkPermi",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "checkPermi",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "checkPermiAnd",
+          "line": 144,
+          "isDefault": false
+        },
+        {
+          "name": "checkPermiOr",
+          "line": 160,
+          "isDefault": false
+        },
+        {
+          "name": "hasRole",
+          "line": 178,
+          "isDefault": false
+        },
+        {
+          "name": "checkRole",
+          "line": 187,
+          "isDefault": false
+        },
+        {
+          "name": "checkRole",
+          "line": 198,
+          "isDefault": false
+        },
+        {
+          "name": "checkRoleAnd",
+          "line": 211,
+          "isDefault": false
+        },
+        {
+          "name": "checkRoleOr",
+          "line": 227,
+          "isDefault": false
+        },
+        {
+          "name": "checkByAnnotation",
+          "line": 245,
+          "isDefault": false
+        },
+        {
+          "name": "checkByAnnotation",
+          "line": 254,
+          "isDefault": false
+        },
+        {
+          "name": "checkByAnnotation",
+          "line": 268,
+          "isDefault": false
+        },
+        {
+          "name": "getRoleList",
+          "line": 282,
+          "isDefault": false
+        },
+        {
+          "name": "getPermiList",
+          "line": 296,
+          "isDefault": false
+        },
+        {
+          "name": "hasPermi",
+          "line": 312,
+          "isDefault": false
+        },
+        {
+          "name": "hasRole",
+          "line": 323,
+          "isDefault": false
+        },
+        {
+          "name": "AuthLogic",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "logout",
+          "callee": "SecurityUtils.getToken",
+          "lineNumber": 44
+        },
+        {
+          "caller": "logout",
+          "callee": "logoutByToken",
+          "lineNumber": 48
+        },
+        {
+          "caller": "logoutByToken",
+          "callee": "tokenService.delLoginUser",
+          "lineNumber": 55
+        },
+        {
+          "caller": "checkLogin",
+          "callee": "getLoginUser",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "SecurityUtils.getToken",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "new NotLoginException",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "SecurityUtils.getLoginUser",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "new NotLoginException",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "tokenService.getLoginUser",
+          "lineNumber": 89
+        },
+        {
+          "caller": "verifyLoginUserExpire",
+          "callee": "tokenService.verifyToken",
+          "lineNumber": 98
+        },
+        {
+          "caller": "hasPermi",
+          "callee": "hasPermi",
+          "lineNumber": 108
+        },
+        {
+          "caller": "hasPermi",
+          "callee": "getPermiList",
+          "lineNumber": 108
+        },
+        {
+          "caller": "checkPermi",
+          "callee": "hasPermi",
+          "lineNumber": 118
+        },
+        {
+          "caller": "checkPermi",
+          "callee": "getPermiList",
+          "lineNumber": 118
+        },
+        {
+          "caller": "checkPermi",
+          "callee": "new NotPermissionException",
+          "lineNumber": 119
+        },
+        {
+          "caller": "checkPermi",
+          "callee": "SecurityContextHolder.setPermission",
+          "lineNumber": 129
+        },
+        {
+          "caller": "checkPermi",
+          "callee": "StringUtils.join",
+          "lineNumber": 129
+        },
+        {
+          "caller": "checkPermi",
+          "callee": "requiresPermissions.value",
+          "lineNumber": 129
+        },
+        {
+          "caller": "checkPermi",
+          "callee": "requiresPermissions.logical",
+          "lineNumber": 131
+        },
+        {
+          "caller": "checkPermi",
+          "callee": "checkPermiAnd",
+          "lineNumber": 132
+        },
+        {
+          "caller": "checkPermi",
+          "callee": "requiresPermissions.value",
+          "lineNumber": 132
+        },
+        {
+          "caller": "checkPermi",
+          "callee": "checkPermiOr",
+          "lineNumber": 135
+        },
+        {
+          "caller": "checkPermi",
+          "callee": "requiresPermissions.value",
+          "lineNumber": 135
+        },
+        {
+          "caller": "checkPermiAnd",
+          "callee": "getPermiList",
+          "lineNumber": 146
+        },
+        {
+          "caller": "checkPermiAnd",
+          "callee": "hasPermi",
+          "lineNumber": 149
+        },
+        {
+          "caller": "checkPermiAnd",
+          "callee": "new NotPermissionException",
+          "lineNumber": 150
+        },
+        {
+          "caller": "checkPermiOr",
+          "callee": "getPermiList",
+          "lineNumber": 161
+        },
+        {
+          "caller": "checkPermiOr",
+          "callee": "hasPermi",
+          "lineNumber": 163
+        },
+        {
+          "caller": "checkPermiOr",
+          "callee": "new NotPermissionException",
+          "lineNumber": 168
+        },
+        {
+          "caller": "hasRole",
+          "callee": "hasRole",
+          "lineNumber": 179
+        },
+        {
+          "caller": "hasRole",
+          "callee": "getRoleList",
+          "lineNumber": 179
+        },
+        {
+          "caller": "checkRole",
+          "callee": "hasRole",
+          "lineNumber": 188
+        },
+        {
+          "caller": "checkRole",
+          "callee": "new NotRoleException",
+          "lineNumber": 189
+        },
+        {
+          "caller": "checkRole",
+          "callee": "requiresRoles.logical",
+          "lineNumber": 199
+        },
+        {
+          "caller": "checkRole",
+          "callee": "checkRoleAnd",
+          "lineNumber": 200
+        },
+        {
+          "caller": "checkRole",
+          "callee": "requiresRoles.value",
+          "lineNumber": 200
+        },
+        {
+          "caller": "checkRole",
+          "callee": "checkRoleOr",
+          "lineNumber": 202
+        },
+        {
+          "caller": "checkRole",
+          "callee": "requiresRoles.value",
+          "lineNumber": 202
+        },
+        {
+          "caller": "checkRoleAnd",
+          "callee": "getRoleList",
+          "lineNumber": 213
+        },
+        {
+          "caller": "checkRoleAnd",
+          "callee": "hasRole",
+          "lineNumber": 216
+        },
+        {
+          "caller": "checkRoleAnd",
+          "callee": "new NotRoleException",
+          "lineNumber": 217
+        },
+        {
+          "caller": "checkRoleOr",
+          "callee": "getRoleList",
+          "lineNumber": 228
+        },
+        {
+          "caller": "checkRoleOr",
+          "callee": "hasRole",
+          "lineNumber": 231
+        },
+        {
+          "caller": "checkRoleOr",
+          "callee": "new NotRoleException",
+          "lineNumber": 236
+        },
+        {
+          "caller": "checkByAnnotation",
+          "callee": "this.checkLogin",
+          "lineNumber": 246
+        },
+        {
+          "caller": "checkByAnnotation",
+          "callee": "at.value",
+          "lineNumber": 255
+        },
+        {
+          "caller": "checkByAnnotation",
+          "callee": "at.logical",
+          "lineNumber": 256
+        },
+        {
+          "caller": "checkByAnnotation",
+          "callee": "this.checkRoleAnd",
+          "lineNumber": 257
+        },
+        {
+          "caller": "checkByAnnotation",
+          "callee": "this.checkRoleOr",
+          "lineNumber": 259
+        },
+        {
+          "caller": "checkByAnnotation",
+          "callee": "at.value",
+          "lineNumber": 269
+        },
+        {
+          "caller": "checkByAnnotation",
+          "callee": "at.logical",
+          "lineNumber": 270
+        },
+        {
+          "caller": "checkByAnnotation",
+          "callee": "this.checkPermiAnd",
+          "lineNumber": 271
+        },
+        {
+          "caller": "checkByAnnotation",
+          "callee": "this.checkPermiOr",
+          "lineNumber": 273
+        },
+        {
+          "caller": "getRoleList",
+          "callee": "getLoginUser",
+          "lineNumber": 284
+        },
+        {
+          "caller": "getRoleList",
+          "callee": "loginUser.getRoles",
+          "lineNumber": 285
+        },
+        {
+          "caller": "getRoleList",
+          "callee": "new HashSet<String>",
+          "lineNumber": 287
+        },
+        {
+          "caller": "getPermiList",
+          "callee": "getLoginUser",
+          "lineNumber": 298
+        },
+        {
+          "caller": "getPermiList",
+          "callee": "loginUser.getPermissions",
+          "lineNumber": 299
+        },
+        {
+          "caller": "getPermiList",
+          "callee": "new HashSet<String>",
+          "lineNumber": 301
+        },
+        {
+          "caller": "hasPermi",
+          "callee": "authorities.stream().filter(StringUtils::hasText).anyMatch",
+          "lineNumber": 313
+        },
+        {
+          "caller": "hasPermi",
+          "callee": "authorities.stream().filter",
+          "lineNumber": 313
+        },
+        {
+          "caller": "hasPermi",
+          "callee": "authorities.stream",
+          "lineNumber": 313
+        },
+        {
+          "caller": "hasPermi",
+          "callee": "ALL_PERMISSION.equals",
+          "lineNumber": 313
+        },
+        {
+          "caller": "hasPermi",
+          "callee": "PatternMatchUtils.simpleMatch",
+          "lineNumber": 313
+        },
+        {
+          "caller": "hasRole",
+          "callee": "roles.stream().filter(StringUtils::hasText).anyMatch",
+          "lineNumber": 324
+        },
+        {
+          "caller": "hasRole",
+          "callee": "roles.stream().filter",
+          "lineNumber": 324
+        },
+        {
+          "caller": "hasRole",
+          "callee": "roles.stream",
+          "lineNumber": 324
+        },
+        {
+          "caller": "hasRole",
+          "callee": "SUPER_ADMIN.equals",
+          "lineNumber": 324
+        },
+        {
+          "caller": "hasRole",
+          "callee": "PatternMatchUtils.simpleMatch",
+          "lineNumber": 324
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 25,
+        "functionCount": 23,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/auth/AuthUtil.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 151,
+      "nonEmptyLines": 134,
+      "functions": [
+        {
+          "name": "logout",
+          "startLine": 21,
+          "endLine": 23,
+          "params": []
+        },
+        {
+          "name": "logoutByToken",
+          "startLine": 30,
+          "endLine": 32,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "checkLogin",
+          "startLine": 37,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "getLoginUser",
+          "startLine": 47,
+          "endLine": 49,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "verifyLoginUserExpire",
+          "startLine": 56,
+          "endLine": 58,
+          "params": [
+            "loginUser"
+          ]
+        },
+        {
+          "name": "hasRole",
+          "startLine": 66,
+          "endLine": 68,
+          "params": [
+            "role"
+          ]
+        },
+        {
+          "name": "checkRole",
+          "startLine": 75,
+          "endLine": 77,
+          "params": [
+            "role"
+          ]
+        },
+        {
+          "name": "checkRole",
+          "startLine": 84,
+          "endLine": 86,
+          "params": [
+            "requiresRoles"
+          ]
+        },
+        {
+          "name": "checkRoleAnd",
+          "startLine": 93,
+          "endLine": 95,
+          "params": []
+        },
+        {
+          "name": "checkRoleOr",
+          "startLine": 102,
+          "endLine": 104,
+          "params": []
+        },
+        {
+          "name": "hasPermi",
+          "startLine": 112,
+          "endLine": 114,
+          "params": [
+            "permission"
+          ]
+        },
+        {
+          "name": "checkPermi",
+          "startLine": 121,
+          "endLine": 123,
+          "params": [
+            "permission"
+          ]
+        },
+        {
+          "name": "checkPermi",
+          "startLine": 130,
+          "endLine": 132,
+          "params": [
+            "requiresPermissions"
+          ]
+        },
+        {
+          "name": "checkPermiAnd",
+          "startLine": 139,
+          "endLine": 141,
+          "params": []
+        },
+        {
+          "name": "checkPermiOr",
+          "startLine": 148,
+          "endLine": 150,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AuthUtil",
+          "startLine": 12,
+          "endLine": 151,
+          "methods": [
+            "logout",
+            "logoutByToken",
+            "checkLogin",
+            "getLoginUser",
+            "verifyLoginUserExpire",
+            "hasRole",
+            "checkRole",
+            "checkRole",
+            "checkRoleAnd",
+            "checkRoleOr",
+            "hasPermi",
+            "checkPermi",
+            "checkPermi",
+            "checkPermiAnd",
+            "checkPermiOr"
+          ],
+          "properties": [
+            "authLogic"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "authLogic",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "logout",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "logoutByToken",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "checkLogin",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginUser",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "verifyLoginUserExpire",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "hasRole",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "checkRole",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "checkRole",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "checkRoleAnd",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "checkRoleOr",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "hasPermi",
+          "line": 112,
+          "isDefault": false
+        },
+        {
+          "name": "checkPermi",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "checkPermi",
+          "line": 130,
+          "isDefault": false
+        },
+        {
+          "name": "checkPermiAnd",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "checkPermiOr",
+          "line": 148,
+          "isDefault": false
+        },
+        {
+          "name": "AuthUtil",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "logout",
+          "callee": "authLogic.logout",
+          "lineNumber": 22
+        },
+        {
+          "caller": "logoutByToken",
+          "callee": "authLogic.logoutByToken",
+          "lineNumber": 31
+        },
+        {
+          "caller": "checkLogin",
+          "callee": "authLogic.checkLogin",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "authLogic.getLoginUser",
+          "lineNumber": 48
+        },
+        {
+          "caller": "verifyLoginUserExpire",
+          "callee": "authLogic.verifyLoginUserExpire",
+          "lineNumber": 57
+        },
+        {
+          "caller": "hasRole",
+          "callee": "authLogic.hasRole",
+          "lineNumber": 67
+        },
+        {
+          "caller": "checkRole",
+          "callee": "authLogic.checkRole",
+          "lineNumber": 76
+        },
+        {
+          "caller": "checkRole",
+          "callee": "authLogic.checkRole",
+          "lineNumber": 85
+        },
+        {
+          "caller": "checkRoleAnd",
+          "callee": "authLogic.checkRoleAnd",
+          "lineNumber": 94
+        },
+        {
+          "caller": "checkRoleOr",
+          "callee": "authLogic.checkRoleOr",
+          "lineNumber": 103
+        },
+        {
+          "caller": "hasPermi",
+          "callee": "authLogic.hasPermi",
+          "lineNumber": 113
+        },
+        {
+          "caller": "checkPermi",
+          "callee": "authLogic.checkPermi",
+          "lineNumber": 122
+        },
+        {
+          "caller": "checkPermi",
+          "callee": "authLogic.checkPermi",
+          "lineNumber": 131
+        },
+        {
+          "caller": "checkPermiAnd",
+          "callee": "authLogic.checkPermiAnd",
+          "lineNumber": 140
+        },
+        {
+          "caller": "checkPermiOr",
+          "callee": "authLogic.checkPermiOr",
+          "lineNumber": 149
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 17,
+        "functionCount": 15,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/ApplicationConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "jacksonObjectMapperCustomization",
+          "startLine": 19,
+          "endLine": 22,
+          "params": []
+        },
+        {
+          "name": "traceIdFilterRegistration",
+          "startLine": 28,
+          "endLine": 35,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ApplicationConfig",
+          "startLine": 15,
+          "endLine": 36,
+          "methods": [
+            "jacksonObjectMapperCustomization",
+            "traceIdFilterRegistration"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "jacksonObjectMapperCustomization",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "traceIdFilterRegistration",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "ApplicationConfig",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "jacksonObjectMapperCustomization",
+          "callee": "jacksonObjectMapperBuilder.timeZone",
+          "lineNumber": 21
+        },
+        {
+          "caller": "jacksonObjectMapperCustomization",
+          "callee": "TimeZone.getDefault",
+          "lineNumber": 21
+        },
+        {
+          "caller": "traceIdFilterRegistration",
+          "callee": "new FilterRegistrationBean<>",
+          "lineNumber": 30
+        },
+        {
+          "caller": "traceIdFilterRegistration",
+          "callee": "registration.setFilter",
+          "lineNumber": 31
+        },
+        {
+          "caller": "traceIdFilterRegistration",
+          "callee": "new TraceIdFilter",
+          "lineNumber": 31
+        },
+        {
+          "caller": "traceIdFilterRegistration",
+          "callee": "registration.addUrlPatterns",
+          "lineNumber": 32
+        },
+        {
+          "caller": "traceIdFilterRegistration",
+          "callee": "registration.setOrder",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/config/WebMvcConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "addInterceptors",
+          "startLine": 18,
+          "endLine": 21,
+          "params": [
+            "registry"
+          ]
+        },
+        {
+          "name": "getHeaderInterceptor",
+          "startLine": 26,
+          "endLine": 28,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "WebMvcConfig",
+          "startLine": 12,
+          "endLine": 29,
+          "methods": [
+            "addInterceptors",
+            "getHeaderInterceptor"
+          ],
+          "properties": [
+            "excludeUrls"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "excludeUrls",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "addInterceptors",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "getHeaderInterceptor",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "WebMvcConfig",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor(getHeaderInterceptor()).addPathPatterns(\"/**\").excludePathPatterns(excludeUrls).order",
+          "lineNumber": 20
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor(getHeaderInterceptor()).addPathPatterns(\"/**\").excludePathPatterns",
+          "lineNumber": 20
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor(getHeaderInterceptor()).addPathPatterns",
+          "lineNumber": 20
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "registry.addInterceptor",
+          "lineNumber": 20
+        },
+        {
+          "caller": "addInterceptors",
+          "callee": "getHeaderInterceptor",
+          "lineNumber": 20
+        },
+        {
+          "caller": "getHeaderInterceptor",
+          "callee": "new HeaderInterceptor",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignAutoConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 16,
+      "functions": [
+        {
+          "name": "requestInterceptor",
+          "startLine": 14,
+          "endLine": 17,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "FeignAutoConfiguration",
+          "startLine": 12,
+          "endLine": 18,
+          "methods": [
+            "requestInterceptor"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "requestInterceptor",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "FeignAutoConfiguration",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "requestInterceptor",
+          "callee": "new FeignRequestInterceptor",
+          "lineNumber": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/feign/FeignRequestInterceptor.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "apply",
+          "startLine": 21,
+          "endLine": 53,
+          "params": [
+            "requestTemplate"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FeignRequestInterceptor",
+          "startLine": 19,
+          "endLine": 54,
+          "methods": [
+            "apply"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "apply",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "FeignRequestInterceptor",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "apply",
+          "callee": "ServletUtils.getRequest",
+          "lineNumber": 23
+        },
+        {
+          "caller": "apply",
+          "callee": "StringUtils.isNotNull",
+          "lineNumber": 24
+        },
+        {
+          "caller": "apply",
+          "callee": "ServletUtils.getHeaders",
+          "lineNumber": 25
+        },
+        {
+          "caller": "apply",
+          "callee": "headers.get",
+          "lineNumber": 27
+        },
+        {
+          "caller": "apply",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 28
+        },
+        {
+          "caller": "apply",
+          "callee": "requestTemplate.header",
+          "lineNumber": 29
+        },
+        {
+          "caller": "apply",
+          "callee": "headers.get",
+          "lineNumber": 31
+        },
+        {
+          "caller": "apply",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 32
+        },
+        {
+          "caller": "apply",
+          "callee": "requestTemplate.header",
+          "lineNumber": 33
+        },
+        {
+          "caller": "apply",
+          "callee": "headers.get",
+          "lineNumber": 35
+        },
+        {
+          "caller": "apply",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 36
+        },
+        {
+          "caller": "apply",
+          "callee": "requestTemplate.header",
+          "lineNumber": 37
+        },
+        {
+          "caller": "apply",
+          "callee": "headers.get",
+          "lineNumber": 39
+        },
+        {
+          "caller": "apply",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 40
+        },
+        {
+          "caller": "apply",
+          "callee": "requestTemplate.header",
+          "lineNumber": 41
+        },
+        {
+          "caller": "apply",
+          "callee": "headers.get",
+          "lineNumber": 45
+        },
+        {
+          "caller": "apply",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 46
+        },
+        {
+          "caller": "apply",
+          "callee": "requestTemplate.header",
+          "lineNumber": 47
+        },
+        {
+          "caller": "apply",
+          "callee": "requestTemplate.header",
+          "lineNumber": 51
+        },
+        {
+          "caller": "apply",
+          "callee": "IpUtils.getIpAddr",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/filter/TraceIdFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "init",
+          "startLine": 30,
+          "endLine": 32,
+          "params": [
+            "filterConfig"
+          ]
+        },
+        {
+          "name": "doFilter",
+          "startLine": 34,
+          "endLine": 48,
+          "params": [
+            "request",
+            "response",
+            "chain"
+          ]
+        },
+        {
+          "name": "destroy",
+          "startLine": 50,
+          "endLine": 52,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "TraceIdFilter",
+          "startLine": 26,
+          "endLine": 53,
+          "methods": [
+            "init",
+            "doFilter",
+            "destroy"
+          ],
+          "properties": [
+            "log"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "init",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "doFilter",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "destroy",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "TraceIdFilter",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "doFilter",
+          "callee": "httpRequest.getHeader",
+          "lineNumber": 39
+        },
+        {
+          "caller": "doFilter",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 40
+        },
+        {
+          "caller": "doFilter",
+          "callee": "MDC.put",
+          "lineNumber": 41
+        },
+        {
+          "caller": "doFilter",
+          "callee": "log.debug",
+          "lineNumber": 43
+        },
+        {
+          "caller": "doFilter",
+          "callee": "httpRequest.getRequestURI",
+          "lineNumber": 43
+        },
+        {
+          "caller": "doFilter",
+          "callee": "chain.doFilter",
+          "lineNumber": 44
+        },
+        {
+          "caller": "doFilter",
+          "callee": "MDC.clear",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/handler/GlobalExceptionHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 159,
+      "nonEmptyLines": 145,
+      "functions": [
+        {
+          "name": "handleNotPermissionException",
+          "startLine": 35,
+          "endLine": 41,
+          "params": [
+            "e",
+            "request"
+          ]
+        },
+        {
+          "name": "handleNotRoleException",
+          "startLine": 46,
+          "endLine": 52,
+          "params": [
+            "e",
+            "request"
+          ]
+        },
+        {
+          "name": "handleHttpRequestMethodNotSupported",
+          "startLine": 57,
+          "endLine": 63,
+          "params": [
+            "e",
+            "request"
+          ]
+        },
+        {
+          "name": "handleServiceException",
+          "startLine": 68,
+          "endLine": 74,
+          "params": [
+            "e",
+            "request"
+          ]
+        },
+        {
+          "name": "handleMissingPathVariableException",
+          "startLine": 79,
+          "endLine": 85,
+          "params": [
+            "e",
+            "request"
+          ]
+        },
+        {
+          "name": "handleMethodArgumentTypeMismatchException",
+          "startLine": 90,
+          "endLine": 96,
+          "params": [
+            "e",
+            "request"
+          ]
+        },
+        {
+          "name": "handleRuntimeException",
+          "startLine": 101,
+          "endLine": 107,
+          "params": [
+            "e",
+            "request"
+          ]
+        },
+        {
+          "name": "handleException",
+          "startLine": 112,
+          "endLine": 118,
+          "params": [
+            "e",
+            "request"
+          ]
+        },
+        {
+          "name": "handleBindException",
+          "startLine": 123,
+          "endLine": 129,
+          "params": [
+            "e"
+          ]
+        },
+        {
+          "name": "handleMethodArgumentNotValidException",
+          "startLine": 134,
+          "endLine": 140,
+          "params": [
+            "e"
+          ]
+        },
+        {
+          "name": "handleInnerAuthException",
+          "startLine": 145,
+          "endLine": 149,
+          "params": [
+            "e"
+          ]
+        },
+        {
+          "name": "handleDemoModeException",
+          "startLine": 154,
+          "endLine": 158,
+          "params": [
+            "e"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GlobalExceptionHandler",
+          "startLine": 27,
+          "endLine": 159,
+          "methods": [
+            "handleNotPermissionException",
+            "handleNotRoleException",
+            "handleHttpRequestMethodNotSupported",
+            "handleServiceException",
+            "handleMissingPathVariableException",
+            "handleMethodArgumentTypeMismatchException",
+            "handleRuntimeException",
+            "handleException",
+            "handleBindException",
+            "handleMethodArgumentNotValidException",
+            "handleInnerAuthException",
+            "handleDemoModeException"
+          ],
+          "properties": [
+            "log"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "handleNotPermissionException",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "handleNotRoleException",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "handleHttpRequestMethodNotSupported",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "handleServiceException",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "handleMissingPathVariableException",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "handleMethodArgumentTypeMismatchException",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "handleRuntimeException",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "handleException",
+          "line": 112,
+          "isDefault": false
+        },
+        {
+          "name": "handleBindException",
+          "line": 123,
+          "isDefault": false
+        },
+        {
+          "name": "handleMethodArgumentNotValidException",
+          "line": 134,
+          "isDefault": false
+        },
+        {
+          "name": "handleInnerAuthException",
+          "line": 145,
+          "isDefault": false
+        },
+        {
+          "name": "handleDemoModeException",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "GlobalExceptionHandler",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handleNotPermissionException",
+          "callee": "request.getRequestURI",
+          "lineNumber": 38
+        },
+        {
+          "caller": "handleNotPermissionException",
+          "callee": "log.error",
+          "lineNumber": 39
+        },
+        {
+          "caller": "handleNotPermissionException",
+          "callee": "e.getMessage",
+          "lineNumber": 39
+        },
+        {
+          "caller": "handleNotPermissionException",
+          "callee": "AjaxResult.error",
+          "lineNumber": 40
+        },
+        {
+          "caller": "handleNotRoleException",
+          "callee": "request.getRequestURI",
+          "lineNumber": 49
+        },
+        {
+          "caller": "handleNotRoleException",
+          "callee": "log.error",
+          "lineNumber": 50
+        },
+        {
+          "caller": "handleNotRoleException",
+          "callee": "e.getMessage",
+          "lineNumber": 50
+        },
+        {
+          "caller": "handleNotRoleException",
+          "callee": "AjaxResult.error",
+          "lineNumber": 51
+        },
+        {
+          "caller": "handleHttpRequestMethodNotSupported",
+          "callee": "request.getRequestURI",
+          "lineNumber": 60
+        },
+        {
+          "caller": "handleHttpRequestMethodNotSupported",
+          "callee": "log.error",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleHttpRequestMethodNotSupported",
+          "callee": "e.getMethod",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleHttpRequestMethodNotSupported",
+          "callee": "AjaxResult.error",
+          "lineNumber": 62
+        },
+        {
+          "caller": "handleHttpRequestMethodNotSupported",
+          "callee": "e.getMessage",
+          "lineNumber": 62
+        },
+        {
+          "caller": "handleServiceException",
+          "callee": "log.error",
+          "lineNumber": 71
+        },
+        {
+          "caller": "handleServiceException",
+          "callee": "e.getMessage",
+          "lineNumber": 71
+        },
+        {
+          "caller": "handleServiceException",
+          "callee": "e.getCode",
+          "lineNumber": 72
+        },
+        {
+          "caller": "handleServiceException",
+          "callee": "StringUtils.isNotNull",
+          "lineNumber": 73
+        },
+        {
+          "caller": "handleServiceException",
+          "callee": "AjaxResult.error",
+          "lineNumber": 73
+        },
+        {
+          "caller": "handleServiceException",
+          "callee": "e.getMessage",
+          "lineNumber": 73
+        },
+        {
+          "caller": "handleServiceException",
+          "callee": "AjaxResult.error",
+          "lineNumber": 73
+        },
+        {
+          "caller": "handleServiceException",
+          "callee": "e.getMessage",
+          "lineNumber": 73
+        },
+        {
+          "caller": "handleMissingPathVariableException",
+          "callee": "request.getRequestURI",
+          "lineNumber": 82
+        },
+        {
+          "caller": "handleMissingPathVariableException",
+          "callee": "log.error",
+          "lineNumber": 83
+        },
+        {
+          "caller": "handleMissingPathVariableException",
+          "callee": "AjaxResult.error",
+          "lineNumber": 84
+        },
+        {
+          "caller": "handleMissingPathVariableException",
+          "callee": "String.format",
+          "lineNumber": 84
+        },
+        {
+          "caller": "handleMissingPathVariableException",
+          "callee": "e.getVariableName",
+          "lineNumber": 84
+        },
+        {
+          "caller": "handleMethodArgumentTypeMismatchException",
+          "callee": "request.getRequestURI",
+          "lineNumber": 93
+        },
+        {
+          "caller": "handleMethodArgumentTypeMismatchException",
+          "callee": "log.error",
+          "lineNumber": 94
+        },
+        {
+          "caller": "handleMethodArgumentTypeMismatchException",
+          "callee": "AjaxResult.error",
+          "lineNumber": 95
+        },
+        {
+          "caller": "handleMethodArgumentTypeMismatchException",
+          "callee": "String.format",
+          "lineNumber": 95
+        },
+        {
+          "caller": "handleMethodArgumentTypeMismatchException",
+          "callee": "e.getName",
+          "lineNumber": 95
+        },
+        {
+          "caller": "handleMethodArgumentTypeMismatchException",
+          "callee": "e.getRequiredType().getName",
+          "lineNumber": 95
+        },
+        {
+          "caller": "handleMethodArgumentTypeMismatchException",
+          "callee": "e.getRequiredType",
+          "lineNumber": 95
+        },
+        {
+          "caller": "handleMethodArgumentTypeMismatchException",
+          "callee": "e.getValue",
+          "lineNumber": 95
+        },
+        {
+          "caller": "handleRuntimeException",
+          "callee": "request.getRequestURI",
+          "lineNumber": 104
+        },
+        {
+          "caller": "handleRuntimeException",
+          "callee": "log.error",
+          "lineNumber": 105
+        },
+        {
+          "caller": "handleRuntimeException",
+          "callee": "AjaxResult.error",
+          "lineNumber": 106
+        },
+        {
+          "caller": "handleRuntimeException",
+          "callee": "e.getMessage",
+          "lineNumber": 106
+        },
+        {
+          "caller": "handleException",
+          "callee": "request.getRequestURI",
+          "lineNumber": 115
+        },
+        {
+          "caller": "handleException",
+          "callee": "log.error",
+          "lineNumber": 116
+        },
+        {
+          "caller": "handleException",
+          "callee": "AjaxResult.error",
+          "lineNumber": 117
+        },
+        {
+          "caller": "handleException",
+          "callee": "e.getMessage",
+          "lineNumber": 117
+        },
+        {
+          "caller": "handleBindException",
+          "callee": "log.error",
+          "lineNumber": 126
+        },
+        {
+          "caller": "handleBindException",
+          "callee": "e.getMessage",
+          "lineNumber": 126
+        },
+        {
+          "caller": "handleBindException",
+          "callee": "e.getAllErrors().get(0).getDefaultMessage",
+          "lineNumber": 127
+        },
+        {
+          "caller": "handleBindException",
+          "callee": "e.getAllErrors().get",
+          "lineNumber": 127
+        },
+        {
+          "caller": "handleBindException",
+          "callee": "e.getAllErrors",
+          "lineNumber": 127
+        },
+        {
+          "caller": "handleBindException",
+          "callee": "AjaxResult.error",
+          "lineNumber": 128
+        },
+        {
+          "caller": "handleMethodArgumentNotValidException",
+          "callee": "log.error",
+          "lineNumber": 137
+        },
+        {
+          "caller": "handleMethodArgumentNotValidException",
+          "callee": "e.getMessage",
+          "lineNumber": 137
+        },
+        {
+          "caller": "handleMethodArgumentNotValidException",
+          "callee": "e.getBindingResult().getFieldError().getDefaultMessage",
+          "lineNumber": 138
+        },
+        {
+          "caller": "handleMethodArgumentNotValidException",
+          "callee": "e.getBindingResult().getFieldError",
+          "lineNumber": 138
+        },
+        {
+          "caller": "handleMethodArgumentNotValidException",
+          "callee": "e.getBindingResult",
+          "lineNumber": 138
+        },
+        {
+          "caller": "handleMethodArgumentNotValidException",
+          "callee": "AjaxResult.error",
+          "lineNumber": 139
+        },
+        {
+          "caller": "handleInnerAuthException",
+          "callee": "AjaxResult.error",
+          "lineNumber": 148
+        },
+        {
+          "caller": "handleInnerAuthException",
+          "callee": "e.getMessage",
+          "lineNumber": 148
+        },
+        {
+          "caller": "handleDemoModeException",
+          "callee": "AjaxResult.error",
+          "lineNumber": 157
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 13,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/interceptor/HeaderInterceptor.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "preHandle",
+          "startLine": 22,
+          "endLine": 42,
+          "params": [
+            "request",
+            "response",
+            "handler"
+          ]
+        },
+        {
+          "name": "afterCompletion",
+          "startLine": 44,
+          "endLine": 48,
+          "params": [
+            "request",
+            "response",
+            "handler",
+            "ex"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HeaderInterceptor",
+          "startLine": 21,
+          "endLine": 49,
+          "methods": [
+            "preHandle",
+            "afterCompletion"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "preHandle",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "afterCompletion",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "HeaderInterceptor",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "preHandle",
+          "callee": "SecurityContextHolder.setUserId",
+          "lineNumber": 29
+        },
+        {
+          "caller": "preHandle",
+          "callee": "ServletUtils.getHeader",
+          "lineNumber": 29
+        },
+        {
+          "caller": "preHandle",
+          "callee": "SecurityContextHolder.setUserName",
+          "lineNumber": 30
+        },
+        {
+          "caller": "preHandle",
+          "callee": "ServletUtils.getHeader",
+          "lineNumber": 30
+        },
+        {
+          "caller": "preHandle",
+          "callee": "SecurityContextHolder.setUserKey",
+          "lineNumber": 31
+        },
+        {
+          "caller": "preHandle",
+          "callee": "ServletUtils.getHeader",
+          "lineNumber": 31
+        },
+        {
+          "caller": "preHandle",
+          "callee": "SecurityUtils.getToken",
+          "lineNumber": 33
+        },
+        {
+          "caller": "preHandle",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 34
+        },
+        {
+          "caller": "preHandle",
+          "callee": "AuthUtil.getLoginUser",
+          "lineNumber": 35
+        },
+        {
+          "caller": "preHandle",
+          "callee": "StringUtils.isNotNull",
+          "lineNumber": 36
+        },
+        {
+          "caller": "preHandle",
+          "callee": "AuthUtil.verifyLoginUserExpire",
+          "lineNumber": 37
+        },
+        {
+          "caller": "preHandle",
+          "callee": "SecurityContextHolder.set",
+          "lineNumber": 38
+        },
+        {
+          "caller": "afterCompletion",
+          "callee": "SecurityContextHolder.remove",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/service/TokenService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 158,
+      "nonEmptyLines": 138,
+      "functions": [
+        {
+          "name": "createToken",
+          "startLine": 48,
+          "endLine": 69,
+          "params": [
+            "loginUser"
+          ]
+        },
+        {
+          "name": "getLoginUser",
+          "startLine": 76,
+          "endLine": 78,
+          "params": []
+        },
+        {
+          "name": "getLoginUser",
+          "startLine": 85,
+          "endLine": 89,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "getLoginUser",
+          "startLine": 96,
+          "endLine": 108,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "setLoginUser",
+          "startLine": 113,
+          "endLine": 117,
+          "params": [
+            "loginUser"
+          ]
+        },
+        {
+          "name": "delLoginUser",
+          "startLine": 122,
+          "endLine": 127,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "verifyToken",
+          "startLine": 134,
+          "endLine": 140,
+          "params": [
+            "loginUser"
+          ]
+        },
+        {
+          "name": "refreshToken",
+          "startLine": 147,
+          "endLine": 153,
+          "params": [
+            "loginUser"
+          ]
+        },
+        {
+          "name": "getTokenKey",
+          "startLine": 155,
+          "endLine": 157,
+          "params": [
+            "token"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TokenService",
+          "startLine": 28,
+          "endLine": 158,
+          "methods": [
+            "createToken",
+            "getLoginUser",
+            "getLoginUser",
+            "getLoginUser",
+            "setLoginUser",
+            "delLoginUser",
+            "verifyToken",
+            "refreshToken",
+            "getTokenKey"
+          ],
+          "properties": [
+            "log",
+            "redisService",
+            "MILLIS_SECOND",
+            "MILLIS_MINUTE",
+            "expireTime",
+            "ACCESS_TOKEN",
+            "MILLIS_MINUTE_TEN"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createToken",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginUser",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginUser",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginUser",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "setLoginUser",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "delLoginUser",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "verifyToken",
+          "line": 134,
+          "isDefault": false
+        },
+        {
+          "name": "refreshToken",
+          "line": 147,
+          "isDefault": false
+        },
+        {
+          "name": "TokenService",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createToken",
+          "callee": "IdUtils.fastUUID",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createToken",
+          "callee": "loginUser.getUserid",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createToken",
+          "callee": "loginUser.getUsername",
+          "lineNumber": 51
+        },
+        {
+          "caller": "createToken",
+          "callee": "loginUser.setToken",
+          "lineNumber": 52
+        },
+        {
+          "caller": "createToken",
+          "callee": "loginUser.setIpaddr",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createToken",
+          "callee": "IpUtils.getIpAddr",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createToken",
+          "callee": "refreshToken",
+          "lineNumber": 56
+        },
+        {
+          "caller": "createToken",
+          "callee": "new HashMap<String, Object>",
+          "lineNumber": 59
+        },
+        {
+          "caller": "createToken",
+          "callee": "claimsMap.put",
+          "lineNumber": 60
+        },
+        {
+          "caller": "createToken",
+          "callee": "claimsMap.put",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createToken",
+          "callee": "claimsMap.put",
+          "lineNumber": 62
+        },
+        {
+          "caller": "createToken",
+          "callee": "new HashMap<String, Object>",
+          "lineNumber": 65
+        },
+        {
+          "caller": "createToken",
+          "callee": "rspMap.put",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createToken",
+          "callee": "JwtUtils.createToken",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createToken",
+          "callee": "rspMap.put",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "getLoginUser",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "ServletUtils.getRequest",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "SecurityUtils.getToken",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "getLoginUser",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "JwtUtils.getUserKey",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "redisService.getCacheObject",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "getTokenKey",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "log.error",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "e.getMessage",
+          "lineNumber": 105
+        },
+        {
+          "caller": "setLoginUser",
+          "callee": "StringUtils.isNotNull",
+          "lineNumber": 114
+        },
+        {
+          "caller": "setLoginUser",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 114
+        },
+        {
+          "caller": "setLoginUser",
+          "callee": "loginUser.getToken",
+          "lineNumber": 114
+        },
+        {
+          "caller": "setLoginUser",
+          "callee": "refreshToken",
+          "lineNumber": 115
+        },
+        {
+          "caller": "delLoginUser",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 123
+        },
+        {
+          "caller": "delLoginUser",
+          "callee": "JwtUtils.getUserKey",
+          "lineNumber": 124
+        },
+        {
+          "caller": "delLoginUser",
+          "callee": "redisService.deleteObject",
+          "lineNumber": 125
+        },
+        {
+          "caller": "delLoginUser",
+          "callee": "getTokenKey",
+          "lineNumber": 125
+        },
+        {
+          "caller": "verifyToken",
+          "callee": "loginUser.getExpireTime",
+          "lineNumber": 135
+        },
+        {
+          "caller": "verifyToken",
+          "callee": "System.currentTimeMillis",
+          "lineNumber": 136
+        },
+        {
+          "caller": "verifyToken",
+          "callee": "refreshToken",
+          "lineNumber": 138
+        },
+        {
+          "caller": "refreshToken",
+          "callee": "loginUser.setLoginTime",
+          "lineNumber": 148
+        },
+        {
+          "caller": "refreshToken",
+          "callee": "System.currentTimeMillis",
+          "lineNumber": 148
+        },
+        {
+          "caller": "refreshToken",
+          "callee": "loginUser.setExpireTime",
+          "lineNumber": 149
+        },
+        {
+          "caller": "refreshToken",
+          "callee": "loginUser.getLoginTime",
+          "lineNumber": 149
+        },
+        {
+          "caller": "refreshToken",
+          "callee": "getTokenKey",
+          "lineNumber": 151
+        },
+        {
+          "caller": "refreshToken",
+          "callee": "loginUser.getToken",
+          "lineNumber": 151
+        },
+        {
+          "caller": "refreshToken",
+          "callee": "redisService.setCacheObject",
+          "lineNumber": 152
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/DictUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 69,
+      "functions": [
+        {
+          "name": "setDictCache",
+          "startLine": 25,
+          "endLine": 28,
+          "params": [
+            "key",
+            "dictDatas"
+          ]
+        },
+        {
+          "name": "getDictCache",
+          "startLine": 36,
+          "endLine": 44,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "removeDictCache",
+          "startLine": 51,
+          "endLine": 54,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "clearDictCache",
+          "startLine": 59,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "getCacheKey",
+          "startLine": 71,
+          "endLine": 74,
+          "params": [
+            "configKey"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DictUtils",
+          "startLine": 17,
+          "endLine": 75,
+          "methods": [
+            "setDictCache",
+            "getDictCache",
+            "removeDictCache",
+            "clearDictCache",
+            "getCacheKey"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "setDictCache",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "getDictCache",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "removeDictCache",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "clearDictCache",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "getCacheKey",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "DictUtils",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "setDictCache",
+          "callee": "SpringUtils.getBean(RedisService.class).setCacheObject",
+          "lineNumber": 27
+        },
+        {
+          "caller": "setDictCache",
+          "callee": "SpringUtils.getBean",
+          "lineNumber": 27
+        },
+        {
+          "caller": "setDictCache",
+          "callee": "getCacheKey",
+          "lineNumber": 27
+        },
+        {
+          "caller": "getDictCache",
+          "callee": "SpringUtils.getBean(RedisService.class).getCacheObject",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getDictCache",
+          "callee": "SpringUtils.getBean",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getDictCache",
+          "callee": "getCacheKey",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getDictCache",
+          "callee": "StringUtils.isNotNull",
+          "lineNumber": 39
+        },
+        {
+          "caller": "getDictCache",
+          "callee": "arrayCache.toList",
+          "lineNumber": 41
+        },
+        {
+          "caller": "removeDictCache",
+          "callee": "SpringUtils.getBean(RedisService.class).deleteObject",
+          "lineNumber": 53
+        },
+        {
+          "caller": "removeDictCache",
+          "callee": "SpringUtils.getBean",
+          "lineNumber": 53
+        },
+        {
+          "caller": "removeDictCache",
+          "callee": "getCacheKey",
+          "lineNumber": 53
+        },
+        {
+          "caller": "clearDictCache",
+          "callee": "SpringUtils.getBean(RedisService.class).keys",
+          "lineNumber": 61
+        },
+        {
+          "caller": "clearDictCache",
+          "callee": "SpringUtils.getBean",
+          "lineNumber": 61
+        },
+        {
+          "caller": "clearDictCache",
+          "callee": "SpringUtils.getBean(RedisService.class).deleteObject",
+          "lineNumber": 62
+        },
+        {
+          "caller": "clearDictCache",
+          "callee": "SpringUtils.getBean",
+          "lineNumber": 62
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/utils/SecurityUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 105,
+      "nonEmptyLines": 94,
+      "functions": [
+        {
+          "name": "getUserId",
+          "startLine": 21,
+          "endLine": 23,
+          "params": []
+        },
+        {
+          "name": "getUsername",
+          "startLine": 28,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "getUserKey",
+          "startLine": 35,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "getLoginUser",
+          "startLine": 42,
+          "endLine": 44,
+          "params": []
+        },
+        {
+          "name": "getToken",
+          "startLine": 49,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "getToken",
+          "startLine": 56,
+          "endLine": 60,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "replaceTokenPrefix",
+          "startLine": 65,
+          "endLine": 71,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "isAdmin",
+          "startLine": 79,
+          "endLine": 81,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "encryptPassword",
+          "startLine": 89,
+          "endLine": 92,
+          "params": [
+            "password"
+          ]
+        },
+        {
+          "name": "matchesPassword",
+          "startLine": 101,
+          "endLine": 104,
+          "params": [
+            "rawPassword",
+            "encodedPassword"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityUtils",
+          "startLine": 17,
+          "endLine": 105,
+          "methods": [
+            "getUserId",
+            "getUsername",
+            "getUserKey",
+            "getLoginUser",
+            "getToken",
+            "getToken",
+            "replaceTokenPrefix",
+            "isAdmin",
+            "encryptPassword",
+            "matchesPassword"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getUserId",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "getUsername",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "getUserKey",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginUser",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "getToken",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getToken",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "replaceTokenPrefix",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "isAdmin",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "encryptPassword",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "matchesPassword",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityUtils",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getUserId",
+          "callee": "SecurityContextHolder.getUserId",
+          "lineNumber": 22
+        },
+        {
+          "caller": "getUsername",
+          "callee": "SecurityContextHolder.getUserName",
+          "lineNumber": 29
+        },
+        {
+          "caller": "getUserKey",
+          "callee": "SecurityContextHolder.getUserKey",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "SecurityContextHolder.get",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getToken",
+          "callee": "getToken",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getToken",
+          "callee": "ServletUtils.getRequest",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getToken",
+          "callee": "request.getHeader",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getToken",
+          "callee": "replaceTokenPrefix",
+          "lineNumber": 59
+        },
+        {
+          "caller": "replaceTokenPrefix",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 67
+        },
+        {
+          "caller": "replaceTokenPrefix",
+          "callee": "token.startsWith",
+          "lineNumber": 67
+        },
+        {
+          "caller": "replaceTokenPrefix",
+          "callee": "token.replaceFirst",
+          "lineNumber": 68
+        },
+        {
+          "caller": "encryptPassword",
+          "callee": "new BCryptPasswordEncoder",
+          "lineNumber": 90
+        },
+        {
+          "caller": "encryptPassword",
+          "callee": "passwordEncoder.encode",
+          "lineNumber": 91
+        },
+        {
+          "caller": "matchesPassword",
+          "callee": "new BCryptPasswordEncoder",
+          "lineNumber": 102
+        },
+        {
+          "caller": "matchesPassword",
+          "callee": "passwordEncoder.matches",
+          "lineNumber": 103
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/SpzxGatewayApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 14,
+          "endLine": 26,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SpzxGatewayApplication",
+          "startLine": 12,
+          "endLine": 27,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "SpzxGatewayApplication",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 15
+        },
+        {
+          "caller": "main",
+          "callee": "System.out.println",
+          "lineNumber": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/config/CaptchaConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 77,
+      "functions": [
+        {
+          "name": "getKaptchaBean",
+          "startLine": 19,
+          "endLine": 44,
+          "params": []
+        },
+        {
+          "name": "getKaptchaBeanMath",
+          "startLine": 46,
+          "endLine": 81,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CaptchaConfig",
+          "startLine": 17,
+          "endLine": 82,
+          "methods": [
+            "getKaptchaBean",
+            "getKaptchaBeanMath"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getKaptchaBean",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "getKaptchaBeanMath",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "CaptchaConfig",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getKaptchaBean",
+          "callee": "new DefaultKaptcha",
+          "lineNumber": 21
+        },
+        {
+          "caller": "getKaptchaBean",
+          "callee": "new Properties",
+          "lineNumber": 22
+        },
+        {
+          "caller": "getKaptchaBean",
+          "callee": "properties.setProperty",
+          "lineNumber": 24
+        },
+        {
+          "caller": "getKaptchaBean",
+          "callee": "properties.setProperty",
+          "lineNumber": 26
+        },
+        {
+          "caller": "getKaptchaBean",
+          "callee": "properties.setProperty",
+          "lineNumber": 28
+        },
+        {
+          "caller": "getKaptchaBean",
+          "callee": "properties.setProperty",
+          "lineNumber": 30
+        },
+        {
+          "caller": "getKaptchaBean",
+          "callee": "properties.setProperty",
+          "lineNumber": 32
+        },
+        {
+          "caller": "getKaptchaBean",
+          "callee": "properties.setProperty",
+          "lineNumber": 34
+        },
+        {
+          "caller": "getKaptchaBean",
+          "callee": "properties.setProperty",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getKaptchaBean",
+          "callee": "properties.setProperty",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getKaptchaBean",
+          "callee": "properties.setProperty",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getKaptchaBean",
+          "callee": "new Config",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getKaptchaBean",
+          "callee": "defaultKaptcha.setConfig",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getKaptchaBeanMath",
+          "callee": "new DefaultKaptcha",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getKaptchaBeanMath",
+          "callee": "new Properties",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getKaptchaBeanMath",
+          "callee": "properties.setProperty",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getKaptchaBeanMath",
+          "callee": "properties.setProperty",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getKaptchaBeanMath",
+          "callee": "properties.setProperty",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getKaptchaBeanMath",
+          "callee": "properties.setProperty",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getKaptchaBeanMath",
+          "callee": "properties.setProperty",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getKaptchaBeanMath",
+          "callee": "properties.setProperty",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getKaptchaBeanMath",
+          "callee": "properties.setProperty",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getKaptchaBeanMath",
+          "callee": "properties.setProperty",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getKaptchaBeanMath",
+          "callee": "properties.setProperty",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getKaptchaBeanMath",
+          "callee": "properties.setProperty",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getKaptchaBeanMath",
+          "callee": "properties.setProperty",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getKaptchaBeanMath",
+          "callee": "properties.setProperty",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getKaptchaBeanMath",
+          "callee": "properties.setProperty",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getKaptchaBeanMath",
+          "callee": "properties.setProperty",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getKaptchaBeanMath",
+          "callee": "new Config",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getKaptchaBeanMath",
+          "callee": "defaultKaptcha.setConfig",
+          "lineNumber": 79
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-gateway/src/main/java/com/spzx/gateway/config/GatewayConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "sentinelGatewayExceptionHandler",
+          "startLine": 16,
+          "endLine": 20,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "GatewayConfig",
+          "startLine": 14,
+          "endLine": 21,
+          "methods": [
+            "sentinelGatewayExceptionHandler"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "sentinelGatewayExceptionHandler",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "GatewayConfig",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sentinelGatewayExceptionHandler",
+          "callee": "new SentinelFallbackHandler",
+          "lineNumber": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}

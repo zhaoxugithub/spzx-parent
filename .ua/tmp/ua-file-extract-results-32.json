@@ -1,0 +1,3733 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 25,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 25,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "buildTree",
+          "startLine": 18,
+          "endLine": 29,
+          "params": [
+            "allCategoryVolist"
+          ]
+        },
+        {
+          "name": "findChildren",
+          "startLine": 40,
+          "endLine": 53,
+          "params": [
+            "categoryVo",
+            "allCategoryVolist"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CategoryHelper",
+          "startLine": 12,
+          "endLine": 54,
+          "methods": [
+            "buildTree",
+            "findChildren"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "buildTree",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "CategoryHelper",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "buildTree",
+          "callee": "new ArrayList<>",
+          "lineNumber": 19
+        },
+        {
+          "caller": "buildTree",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 20
+        },
+        {
+          "caller": "buildTree",
+          "callee": "categoryVo.getParentId().intValue",
+          "lineNumber": 22
+        },
+        {
+          "caller": "buildTree",
+          "callee": "categoryVo.getParentId",
+          "lineNumber": 22
+        },
+        {
+          "caller": "buildTree",
+          "callee": "findChildren",
+          "lineNumber": 23
+        },
+        {
+          "caller": "buildTree",
+          "callee": "categoryVoList.add",
+          "lineNumber": 24
+        },
+        {
+          "caller": "findChildren",
+          "callee": "categoryVo.setChildren",
+          "lineNumber": 41
+        },
+        {
+          "caller": "findChildren",
+          "callee": "new ArrayList<>",
+          "lineNumber": 41
+        },
+        {
+          "caller": "findChildren",
+          "callee": "categoryVo.getId().intValue",
+          "lineNumber": 46
+        },
+        {
+          "caller": "findChildren",
+          "callee": "categoryVo.getId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "findChildren",
+          "callee": "vo.getParentId().intValue",
+          "lineNumber": 46
+        },
+        {
+          "caller": "findChildren",
+          "callee": "vo.getParentId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "findChildren",
+          "callee": "findChildren",
+          "lineNumber": 47
+        },
+        {
+          "caller": "findChildren",
+          "callee": "categoryVo.getChildren().add",
+          "lineNumber": 48
+        },
+        {
+          "caller": "findChildren",
+          "callee": "categoryVo.getChildren",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/BrandMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "BrandMapper",
+          "startLine": 8,
+          "endLine": 20,
+          "methods": [
+            "list",
+            "getById",
+            "insert",
+            "update",
+            "deleteBatch",
+            "selectBrandAll"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BrandMapper",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryBrandMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "CategoryBrandMapper",
+          "startLine": 12,
+          "endLine": 18,
+          "methods": [
+            "selectCategoryBrandList",
+            "selectBrandListByCategoryId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CategoryBrandMapper",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 8,
+      "classes": [
+        {
+          "name": "CategoryMapper",
+          "startLine": 9,
+          "endLine": 11,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CategoryMapper",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductDetailsMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 8,
+      "classes": [
+        {
+          "name": "ProductDetailsMapper",
+          "startLine": 9,
+          "endLine": 10,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductDetailsMapper",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "ProductMapper",
+          "startLine": 11,
+          "endLine": 21,
+          "methods": [
+            "selectProductList"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductMapper",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSkuMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "ProductSkuMapper",
+          "startLine": 12,
+          "endLine": 16,
+          "methods": [
+            "getTopSale",
+            "skuList"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductSkuMapper",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSpecMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "ProductSpecMapper",
+          "startLine": 11,
+          "endLine": 21,
+          "methods": [
+            "selectProductSpecList"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductSpecMapper",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductUnitMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 5,
+      "classes": [
+        {
+          "name": "ProductUnitMapper",
+          "startLine": 6,
+          "endLine": 7,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductUnitMapper",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/SkuStockMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "SkuStockMapper",
+          "startLine": 10,
+          "endLine": 20,
+          "methods": [
+            "check",
+            "lock",
+            "unlock",
+            "minus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SkuStockMapper",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "unlock",
+          "startLine": 30,
+          "endLine": 43,
+          "params": [
+            "orderNo",
+            "message",
+            "channel"
+          ]
+        },
+        {
+          "name": "minus",
+          "startLine": 51,
+          "endLine": 67,
+          "params": [
+            "orderNo",
+            "channel",
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ProductReceiver",
+          "startLine": 17,
+          "endLine": 68,
+          "methods": [
+            "unlock",
+            "minus"
+          ],
+          "properties": [
+            "productService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "unlock",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "minus",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "ProductReceiver",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "unlock",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 37
+        },
+        {
+          "caller": "unlock",
+          "callee": "log.info",
+          "lineNumber": 38
+        },
+        {
+          "caller": "unlock",
+          "callee": "productService.unlock",
+          "lineNumber": 40
+        },
+        {
+          "caller": "unlock",
+          "callee": "channel.basicAck",
+          "lineNumber": 42
+        },
+        {
+          "caller": "unlock",
+          "callee": "message.getMessageProperties().getDeliveryTag",
+          "lineNumber": 42
+        },
+        {
+          "caller": "unlock",
+          "callee": "message.getMessageProperties",
+          "lineNumber": 42
+        },
+        {
+          "caller": "minus",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 59
+        },
+        {
+          "caller": "minus",
+          "callee": "log.info",
+          "lineNumber": 60
+        },
+        {
+          "caller": "minus",
+          "callee": "productService.minus",
+          "lineNumber": 62
+        },
+        {
+          "caller": "minus",
+          "callee": "channel.basicAck",
+          "lineNumber": 66
+        },
+        {
+          "caller": "minus",
+          "callee": "message.getMessageProperties().getDeliveryTag",
+          "lineNumber": 66
+        },
+        {
+          "caller": "minus",
+          "callee": "message.getMessageProperties",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/IBrandService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "IBrandService",
+          "startLine": 11,
+          "endLine": 54,
+          "methods": [
+            "list",
+            "getById",
+            "save",
+            "update",
+            "deleteBatch",
+            "selectBrandAll"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IBrandService",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/ICategoryBrandService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 40,
+      "classes": [
+        {
+          "name": "ICategoryBrandService",
+          "startLine": 12,
+          "endLine": 48,
+          "methods": [
+            "selectCategoryBrandList",
+            "selectCategoryBrandById",
+            "insertCategoryBrand",
+            "updateCategoryBrand",
+            "selectBrandListByCategoryId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ICategoryBrandService",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/ICategoryService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 52,
+      "classes": [
+        {
+          "name": "ICategoryService",
+          "startLine": 17,
+          "endLine": 62,
+          "methods": [
+            "treeSelect",
+            "getAllCategoryIdList",
+            "exportData",
+            "importData",
+            "getOneCategory",
+            "tree"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ICategoryService",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/IProductService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 121,
+      "nonEmptyLines": 96,
+      "classes": [
+        {
+          "name": "IProductService",
+          "startLine": 18,
+          "endLine": 121,
+          "methods": [
+            "selectProductList",
+            "insertProduct",
+            "selectProductById",
+            "updateProduct",
+            "deleteProductByIds",
+            "updateAuditStatus",
+            "updateStatus",
+            "getTopSale",
+            "skuList",
+            "getProductSku",
+            "getProduct",
+            "getSkuPrice",
+            "getProductDetails",
+            "getSkuSpecValue",
+            "getSkuStock",
+            "getSkuPriceList",
+            "checkAndLock",
+            "unlock",
+            "minus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IProductService",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/IProductSpecService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "IProductSpecService",
+          "startLine": 11,
+          "endLine": 34,
+          "methods": [
+            "selectProductSpecList",
+            "selectProductSpecById",
+            "selectProductSpecListByCategoryId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IProductSpecService",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/IProductUnitService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "IProductUnitService",
+          "startLine": 7,
+          "endLine": 36,
+          "methods": [
+            "findPage",
+            "insertProductUnit",
+            "updateProductUnit",
+            "deleteProductUnitByIds"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IProductUnitService",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/TestService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 4,
+      "classes": [
+        {
+          "name": "TestService",
+          "startLine": 3,
+          "endLine": 5,
+          "methods": [
+            "testLock"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestService",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/impl/BrandServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 17,
+          "endLine": 20,
+          "params": [
+            "brand"
+          ]
+        },
+        {
+          "name": "getById",
+          "startLine": 22,
+          "endLine": 25,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "save",
+          "startLine": 27,
+          "endLine": 33,
+          "params": [
+            "brand"
+          ]
+        },
+        {
+          "name": "update",
+          "startLine": 36,
+          "endLine": 39,
+          "params": [
+            "brand"
+          ]
+        },
+        {
+          "name": "deleteBatch",
+          "startLine": 41,
+          "endLine": 44,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "selectBrandAll",
+          "startLine": 46,
+          "endLine": 49,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "BrandServiceImpl",
+          "startLine": 11,
+          "endLine": 50,
+          "methods": [
+            "list",
+            "getById",
+            "save",
+            "update",
+            "deleteBatch",
+            "selectBrandAll"
+          ],
+          "properties": [
+            "brandMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "getById",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "save",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "update",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "deleteBatch",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "selectBrandAll",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "BrandServiceImpl",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "brandMapper.list",
+          "lineNumber": 19
+        },
+        {
+          "caller": "getById",
+          "callee": "brandMapper.getById",
+          "lineNumber": 24
+        },
+        {
+          "caller": "save",
+          "callee": "System.out.println",
+          "lineNumber": 29
+        },
+        {
+          "caller": "save",
+          "callee": "brand.getId",
+          "lineNumber": 29
+        },
+        {
+          "caller": "save",
+          "callee": "brandMapper.insert",
+          "lineNumber": 30
+        },
+        {
+          "caller": "save",
+          "callee": "System.out.println",
+          "lineNumber": 31
+        },
+        {
+          "caller": "save",
+          "callee": "brand.getId",
+          "lineNumber": 31
+        },
+        {
+          "caller": "update",
+          "callee": "brandMapper.update",
+          "lineNumber": 38
+        },
+        {
+          "caller": "deleteBatch",
+          "callee": "brandMapper.deleteBatch",
+          "lineNumber": 43
+        },
+        {
+          "caller": "selectBrandAll",
+          "callee": "brandMapper.selectBrandAll",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/impl/CategoryBrandServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "selectCategoryBrandList",
+          "startLine": 28,
+          "endLine": 31,
+          "params": [
+            "categoryBrand"
+          ]
+        },
+        {
+          "name": "selectCategoryBrandById",
+          "startLine": 33,
+          "endLine": 39,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "insertCategoryBrand",
+          "startLine": 42,
+          "endLine": 52,
+          "params": [
+            "categoryBrand"
+          ]
+        },
+        {
+          "name": "updateCategoryBrand",
+          "startLine": 55,
+          "endLine": 71,
+          "params": [
+            "categoryBrand"
+          ]
+        },
+        {
+          "name": "selectBrandListByCategoryId",
+          "startLine": 74,
+          "endLine": 77,
+          "params": [
+            "categoryId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CategoryBrandServiceImpl",
+          "startLine": 19,
+          "endLine": 78,
+          "methods": [
+            "selectCategoryBrandList",
+            "selectCategoryBrandById",
+            "insertCategoryBrand",
+            "updateCategoryBrand",
+            "selectBrandListByCategoryId"
+          ],
+          "properties": [
+            "categoryBrandMapper",
+            "categoryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "selectCategoryBrandList",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "selectCategoryBrandById",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "insertCategoryBrand",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "updateCategoryBrand",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "selectBrandListByCategoryId",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "CategoryBrandServiceImpl",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectCategoryBrandList",
+          "callee": "categoryBrandMapper.selectCategoryBrandList",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectCategoryBrandById",
+          "callee": "categoryBrandMapper.selectById",
+          "lineNumber": 35
+        },
+        {
+          "caller": "selectCategoryBrandById",
+          "callee": "categoryBrand.setCategoryIdList",
+          "lineNumber": 37
+        },
+        {
+          "caller": "selectCategoryBrandById",
+          "callee": "categoryService.getAllCategoryIdList",
+          "lineNumber": 37
+        },
+        {
+          "caller": "selectCategoryBrandById",
+          "callee": "categoryBrand.getCategoryId",
+          "lineNumber": 37
+        },
+        {
+          "caller": "insertCategoryBrand",
+          "callee": "categoryBrandMapper.selectOne",
+          "lineNumber": 45
+        },
+        {
+          "caller": "insertCategoryBrand",
+          "callee": "new LambdaQueryWrapper<CategoryBrand>()\r\n                .eq(CategoryBrand::getBrandId, categoryBrand.getBrandId()).eq",
+          "lineNumber": 45
+        },
+        {
+          "caller": "insertCategoryBrand",
+          "callee": "new LambdaQueryWrapper<CategoryBrand>().eq",
+          "lineNumber": 45
+        },
+        {
+          "caller": "insertCategoryBrand",
+          "callee": "new LambdaQueryWrapper<CategoryBrand>",
+          "lineNumber": 45
+        },
+        {
+          "caller": "insertCategoryBrand",
+          "callee": "categoryBrand.getBrandId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "insertCategoryBrand",
+          "callee": "categoryBrand.getCategoryId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "insertCategoryBrand",
+          "callee": "new ServiceException",
+          "lineNumber": 49
+        },
+        {
+          "caller": "insertCategoryBrand",
+          "callee": "categoryBrandMapper.insert",
+          "lineNumber": 51
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "categoryBrandMapper.selectById",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "categoryBrand.getId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "categoryBrand.getBrandId().longValue",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "categoryBrand.getBrandId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "categoryBrandDB.getBrandId().longValue",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "categoryBrandDB.getBrandId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "categoryBrand.getCategoryId().longValue",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "categoryBrand.getCategoryId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "categoryBrandDB.getCategoryId().longValue",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "categoryBrandDB.getCategoryId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "new ServiceException",
+          "lineNumber": 61
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "categoryBrandMapper.selectCount",
+          "lineNumber": 64
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "new LambdaQueryWrapper<CategoryBrand>()\r\n                .eq(CategoryBrand::getBrandId, categoryBrand.getBrandId()).eq",
+          "lineNumber": 64
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "new LambdaQueryWrapper<CategoryBrand>().eq",
+          "lineNumber": 64
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "new LambdaQueryWrapper<CategoryBrand>",
+          "lineNumber": 64
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "categoryBrand.getBrandId",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "categoryBrand.getCategoryId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "new ServiceException",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateCategoryBrand",
+          "callee": "categoryBrandMapper.updateById",
+          "lineNumber": 70
+        },
+        {
+          "caller": "selectBrandListByCategoryId",
+          "callee": "categoryBrandMapper.selectBrandListByCategoryId",
+          "lineNumber": 76
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/impl/CategoryServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 154,
+      "nonEmptyLines": 135,
+      "functions": [
+        {
+          "name": "treeSelect",
+          "startLine": 34,
+          "endLine": 49,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getAllCategoryIdList",
+          "startLine": 51,
+          "endLine": 63,
+          "params": [
+            "categoryId"
+          ]
+        },
+        {
+          "name": "getParentCategory",
+          "startLine": 76,
+          "endLine": 83,
+          "params": [
+            "categoryId",
+            "categoryList"
+          ]
+        },
+        {
+          "name": "exportData",
+          "startLine": 86,
+          "endLine": 111,
+          "params": [
+            "response"
+          ]
+        },
+        {
+          "name": "importData",
+          "startLine": 114,
+          "endLine": 126,
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "getOneCategory",
+          "startLine": 129,
+          "endLine": 139,
+          "params": []
+        },
+        {
+          "name": "tree",
+          "startLine": 141,
+          "endLine": 153,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CategoryServiceImpl",
+          "startLine": 28,
+          "endLine": 154,
+          "methods": [
+            "treeSelect",
+            "getAllCategoryIdList",
+            "getParentCategory",
+            "exportData",
+            "importData",
+            "getOneCategory",
+            "tree"
+          ],
+          "properties": [
+            "categoryMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "treeSelect",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "getAllCategoryIdList",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "exportData",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "importData",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "getOneCategory",
+          "line": 129,
+          "isDefault": false
+        },
+        {
+          "name": "tree",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "CategoryServiceImpl",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "treeSelect",
+          "callee": "categoryMapper.selectList",
+          "lineNumber": 37
+        },
+        {
+          "caller": "treeSelect",
+          "callee": "new LambdaQueryWrapper<Category>().select",
+          "lineNumber": 38
+        },
+        {
+          "caller": "treeSelect",
+          "callee": "new LambdaQueryWrapper<Category>",
+          "lineNumber": 38
+        },
+        {
+          "caller": "treeSelect",
+          "callee": "allCategoryList.stream()\r\n                .map(Category::getParentId)\r\n                .filter(java.util.Objects::nonNull).collect",
+          "lineNumber": 39
+        },
+        {
+          "caller": "treeSelect",
+          "callee": "allCategoryList.stream()\r\n                .map(Category::getParentId).filter",
+          "lineNumber": 39
+        },
+        {
+          "caller": "treeSelect",
+          "callee": "allCategoryList.stream().map",
+          "lineNumber": 39
+        },
+        {
+          "caller": "treeSelect",
+          "callee": "allCategoryList.stream",
+          "lineNumber": 39
+        },
+        {
+          "caller": "treeSelect",
+          "callee": "Collectors.toSet",
+          "lineNumber": 42
+        },
+        {
+          "caller": "treeSelect",
+          "callee": "categoryMapper.selectList",
+          "lineNumber": 44
+        },
+        {
+          "caller": "treeSelect",
+          "callee": "new LambdaQueryWrapper<Category>().eq",
+          "lineNumber": 45
+        },
+        {
+          "caller": "treeSelect",
+          "callee": "new LambdaQueryWrapper<Category>",
+          "lineNumber": 45
+        },
+        {
+          "caller": "treeSelect",
+          "callee": "categoryList.forEach",
+          "lineNumber": 47
+        },
+        {
+          "caller": "treeSelect",
+          "callee": "category.setHasChildren",
+          "lineNumber": 47
+        },
+        {
+          "caller": "treeSelect",
+          "callee": "parentIdSet.contains",
+          "lineNumber": 47
+        },
+        {
+          "caller": "treeSelect",
+          "callee": "category.getId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getAllCategoryIdList",
+          "callee": "new ArrayList<>",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getAllCategoryIdList",
+          "callee": "this.getParentCategory",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getAllCategoryIdList",
+          "callee": "new ArrayList<Category>",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getAllCategoryIdList",
+          "callee": "categoryList.size",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getAllCategoryIdList",
+          "callee": "categoryList.get",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getAllCategoryIdList",
+          "callee": "categoryIdList.add",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getAllCategoryIdList",
+          "callee": "category.getId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getParentCategory",
+          "callee": "categoryMapper.selectById",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getParentCategory",
+          "callee": "categoryList.add",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getParentCategory",
+          "callee": "getParentCategory",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getParentCategory",
+          "callee": "category.getParentId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "exportData",
+          "callee": "response.setContentType",
+          "lineNumber": 89
+        },
+        {
+          "caller": "exportData",
+          "callee": "response.setCharacterEncoding",
+          "lineNumber": 90
+        },
+        {
+          "caller": "exportData",
+          "callee": "URLEncoder.encode",
+          "lineNumber": 94
+        },
+        {
+          "caller": "exportData",
+          "callee": "response.setHeader",
+          "lineNumber": 95
+        },
+        {
+          "caller": "exportData",
+          "callee": "response.setHeader",
+          "lineNumber": 96
+        },
+        {
+          "caller": "exportData",
+          "callee": "categoryMapper.selectList",
+          "lineNumber": 99
+        },
+        {
+          "caller": "exportData",
+          "callee": "new ArrayList<>",
+          "lineNumber": 100
+        },
+        {
+          "caller": "exportData",
+          "callee": "categoryList.size",
+          "lineNumber": 100
+        },
+        {
+          "caller": "exportData",
+          "callee": "new CategoryExcelVo",
+          "lineNumber": 104
+        },
+        {
+          "caller": "exportData",
+          "callee": "BeanUtils.copyProperties",
+          "lineNumber": 105
+        },
+        {
+          "caller": "exportData",
+          "callee": "categoryExcelVoList.add",
+          "lineNumber": 106
+        },
+        {
+          "caller": "exportData",
+          "callee": "EasyExcel.write(response.getOutputStream(), CategoryExcelVo.class).sheet(\"分类数据\").doWrite",
+          "lineNumber": 110
+        },
+        {
+          "caller": "exportData",
+          "callee": "EasyExcel.write(response.getOutputStream(), CategoryExcelVo.class).sheet",
+          "lineNumber": 110
+        },
+        {
+          "caller": "exportData",
+          "callee": "EasyExcel.write",
+          "lineNumber": 110
+        },
+        {
+          "caller": "exportData",
+          "callee": "response.getOutputStream",
+          "lineNumber": 110
+        },
+        {
+          "caller": "importData",
+          "callee": "EasyExcel.read(file.getInputStream()).head(CategoryExcelVo.class).sheet().doReadSync",
+          "lineNumber": 116
+        },
+        {
+          "caller": "importData",
+          "callee": "EasyExcel.read(file.getInputStream()).head(CategoryExcelVo.class).sheet",
+          "lineNumber": 116
+        },
+        {
+          "caller": "importData",
+          "callee": "EasyExcel.read(file.getInputStream()).head",
+          "lineNumber": 116
+        },
+        {
+          "caller": "importData",
+          "callee": "EasyExcel.read",
+          "lineNumber": 116
+        },
+        {
+          "caller": "importData",
+          "callee": "file.getInputStream",
+          "lineNumber": 116
+        },
+        {
+          "caller": "importData",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 117
+        },
+        {
+          "caller": "importData",
+          "callee": "new ArrayList<>",
+          "lineNumber": 118
+        },
+        {
+          "caller": "importData",
+          "callee": "categoryExcelVoList.size",
+          "lineNumber": 118
+        },
+        {
+          "caller": "importData",
+          "callee": "new Category",
+          "lineNumber": 120
+        },
+        {
+          "caller": "importData",
+          "callee": "BeanUtils.copyProperties",
+          "lineNumber": 121
+        },
+        {
+          "caller": "importData",
+          "callee": "categoryList.add",
+          "lineNumber": 122
+        },
+        {
+          "caller": "importData",
+          "callee": "this.saveBatch",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getOneCategory",
+          "callee": "categoryMapper.selectList",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getOneCategory",
+          "callee": "new LambdaQueryWrapper<Category>().eq",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getOneCategory",
+          "callee": "new LambdaQueryWrapper<Category>",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getOneCategory",
+          "callee": "oneCategoryList.stream().map((category) -> {\r\n            CategoryVo vo = new CategoryVo();\r\n            BeanUtils.copyProperties(category, vo);\r\n            return vo;\r\n        }).toList",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getOneCategory",
+          "callee": "oneCategoryList.stream().map",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getOneCategory",
+          "callee": "oneCategoryList.stream",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getOneCategory",
+          "callee": "new CategoryVo",
+          "lineNumber": 135
+        },
+        {
+          "caller": "getOneCategory",
+          "callee": "BeanUtils.copyProperties",
+          "lineNumber": 136
+        },
+        {
+          "caller": "tree",
+          "callee": "this.list",
+          "lineNumber": 144
+        },
+        {
+          "caller": "tree",
+          "callee": "allList.stream().map((category) -> {\r\n            CategoryVo vo = new CategoryVo();\r\n            BeanUtils.copyProperties(category, vo);\r\n            return vo;\r\n        }).toList",
+          "lineNumber": 145
+        },
+        {
+          "caller": "tree",
+          "callee": "allList.stream().map",
+          "lineNumber": 145
+        },
+        {
+          "caller": "tree",
+          "callee": "allList.stream",
+          "lineNumber": 145
+        },
+        {
+          "caller": "tree",
+          "callee": "new CategoryVo",
+          "lineNumber": 146
+        },
+        {
+          "caller": "tree",
+          "callee": "BeanUtils.copyProperties",
+          "lineNumber": 147
+        },
+        {
+          "caller": "tree",
+          "callee": "CategoryHelper.buildTree",
+          "lineNumber": 151
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/impl/ProductServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 601,
+      "nonEmptyLines": 503,
+      "functions": [
+        {
+          "name": "selectProductList",
+          "startLine": 67,
+          "endLine": 70,
+          "params": [
+            "product"
+          ]
+        },
+        {
+          "name": "insertProduct",
+          "startLine": 73,
+          "endLine": 108,
+          "params": [
+            "product"
+          ]
+        },
+        {
+          "name": "selectProductById",
+          "startLine": 111,
+          "endLine": 140,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "updateProduct",
+          "startLine": 143,
+          "endLine": 193,
+          "params": [
+            "product"
+          ]
+        },
+        {
+          "name": "deleteProductByIds",
+          "startLine": 227,
+          "endLine": 245,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "updateAuditStatus",
+          "startLine": 248,
+          "endLine": 260,
+          "params": [
+            "id",
+            "auditStatus"
+          ]
+        },
+        {
+          "name": "updateStatus",
+          "startLine": 262,
+          "endLine": 312,
+          "params": [
+            "id",
+            "status"
+          ]
+        },
+        {
+          "name": "getTopSale",
+          "startLine": 315,
+          "endLine": 318,
+          "params": []
+        },
+        {
+          "name": "skuList",
+          "startLine": 321,
+          "endLine": 324,
+          "params": [
+            "skuQuery"
+          ]
+        },
+        {
+          "name": "getProductSku",
+          "startLine": 336,
+          "endLine": 384,
+          "params": [
+            "skuId"
+          ]
+        },
+        {
+          "name": "getSkuFromDB",
+          "startLine": 387,
+          "endLine": 390,
+          "params": [
+            "skuId"
+          ]
+        },
+        {
+          "name": "getProduct",
+          "startLine": 400,
+          "endLine": 403,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getSkuPrice",
+          "startLine": 406,
+          "endLine": 413,
+          "params": [
+            "skuId"
+          ]
+        },
+        {
+          "name": "getProductDetails",
+          "startLine": 416,
+          "endLine": 419,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getSkuSpecValue",
+          "startLine": 434,
+          "endLine": 442,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getSkuStock",
+          "startLine": 445,
+          "endLine": 451,
+          "params": [
+            "skuId"
+          ]
+        },
+        {
+          "name": "getSkuPriceList",
+          "startLine": 456,
+          "endLine": 474,
+          "params": [
+            "skuIdList"
+          ]
+        },
+        {
+          "name": "checkAndLock",
+          "startLine": 486,
+          "endLine": 541,
+          "params": [
+            "orderNo",
+            "skuLockVoList"
+          ]
+        },
+        {
+          "name": "unlock",
+          "startLine": 543,
+          "endLine": 571,
+          "params": [
+            "orderNo"
+          ]
+        },
+        {
+          "name": "minus",
+          "startLine": 574,
+          "endLine": 600,
+          "params": [
+            "orderNo"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ProductServiceImpl",
+          "startLine": 37,
+          "endLine": 601,
+          "methods": [
+            "selectProductList",
+            "insertProduct",
+            "selectProductById",
+            "updateProduct",
+            "deleteProductByIds",
+            "updateAuditStatus",
+            "updateStatus",
+            "getTopSale",
+            "skuList",
+            "getProductSku",
+            "getSkuFromDB",
+            "getProduct",
+            "getSkuPrice",
+            "getProductDetails",
+            "getSkuSpecValue",
+            "getSkuStock",
+            "getSkuPriceList",
+            "checkAndLock",
+            "unlock",
+            "minus"
+          ],
+          "properties": [
+            "productMapper",
+            "productSkuMapper",
+            "productDetailsMapper",
+            "skuStockMapper",
+            "redisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "selectProductList",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "insertProduct",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "selectProductById",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "updateProduct",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "deleteProductByIds",
+          "line": 227,
+          "isDefault": false
+        },
+        {
+          "name": "updateAuditStatus",
+          "line": 248,
+          "isDefault": false
+        },
+        {
+          "name": "updateStatus",
+          "line": 262,
+          "isDefault": false
+        },
+        {
+          "name": "getTopSale",
+          "line": 315,
+          "isDefault": false
+        },
+        {
+          "name": "skuList",
+          "line": 321,
+          "isDefault": false
+        },
+        {
+          "name": "getProductSku",
+          "line": 336,
+          "isDefault": false
+        },
+        {
+          "name": "getProduct",
+          "line": 400,
+          "isDefault": false
+        },
+        {
+          "name": "getSkuPrice",
+          "line": 406,
+          "isDefault": false
+        },
+        {
+          "name": "getProductDetails",
+          "line": 416,
+          "isDefault": false
+        },
+        {
+          "name": "getSkuSpecValue",
+          "line": 434,
+          "isDefault": false
+        },
+        {
+          "name": "getSkuStock",
+          "line": 445,
+          "isDefault": false
+        },
+        {
+          "name": "getSkuPriceList",
+          "line": 456,
+          "isDefault": false
+        },
+        {
+          "name": "checkAndLock",
+          "line": 486,
+          "isDefault": false
+        },
+        {
+          "name": "unlock",
+          "line": 543,
+          "isDefault": false
+        },
+        {
+          "name": "minus",
+          "line": 574,
+          "isDefault": false
+        },
+        {
+          "name": "ProductServiceImpl",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectProductList",
+          "callee": "productMapper.selectProductList",
+          "lineNumber": 69
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "productMapper.insert",
+          "lineNumber": 76
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "product.getProductSkuList",
+          "lineNumber": 79
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 80
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "new ServiceException",
+          "lineNumber": 81
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "productSkuList.size",
+          "lineNumber": 83
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "productSkuList.get",
+          "lineNumber": 85
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "productSku.setSkuCode",
+          "lineNumber": 86
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "product.getId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "productSku.setSkuName",
+          "lineNumber": 87
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "product.getName",
+          "lineNumber": 87
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "productSku.getSkuSpec",
+          "lineNumber": 87
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "productSku.setProductId",
+          "lineNumber": 88
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "product.getId",
+          "lineNumber": 88
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "productSkuMapper.insert",
+          "lineNumber": 89
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "new SkuStock",
+          "lineNumber": 92
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "skuStock.setSkuId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "productSku.getId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "skuStock.setTotalNum",
+          "lineNumber": 94
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "productSku.getStockNum",
+          "lineNumber": 94
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "skuStock.setLockNum",
+          "lineNumber": 95
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "skuStock.setAvailableNum",
+          "lineNumber": 96
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "productSku.getStockNum",
+          "lineNumber": 96
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "skuStock.setSaleNum",
+          "lineNumber": 97
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "skuStockMapper.insert",
+          "lineNumber": 98
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "new ProductDetails",
+          "lineNumber": 102
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "productDetails.setImageUrls",
+          "lineNumber": 103
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "String.join",
+          "lineNumber": 103
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "product.getDetailsImageUrlList",
+          "lineNumber": 103
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "productDetails.setProductId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "product.getId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "insertProduct",
+          "callee": "productDetailsMapper.insert",
+          "lineNumber": 105
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "productMapper.selectById",
+          "lineNumber": 114
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "productSkuMapper.selectList",
+          "lineNumber": 118
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "new LambdaQueryWrapper<ProductSku>().eq",
+          "lineNumber": 118
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "new LambdaQueryWrapper<ProductSku>",
+          "lineNumber": 118
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "productSkuList.stream().map(productSku -> productSku.getId()).toList",
+          "lineNumber": 119
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "productSkuList.stream().map",
+          "lineNumber": 119
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "productSkuList.stream",
+          "lineNumber": 119
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "productSku.getId",
+          "lineNumber": 119
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "skuStockMapper.selectList",
+          "lineNumber": 123
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "new LambdaQueryWrapper<SkuStock>().in",
+          "lineNumber": 123
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "new LambdaQueryWrapper<SkuStock>",
+          "lineNumber": 123
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "skuStockList.stream().collect",
+          "lineNumber": 125
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "skuStockList.stream",
+          "lineNumber": 125
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "Collectors.toMap",
+          "lineNumber": 125
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "productSkuList.forEach",
+          "lineNumber": 126
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "productSku.setStockNum",
+          "lineNumber": 128
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "skuIdToTatalNumMap.get",
+          "lineNumber": 128
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "productSku.getId",
+          "lineNumber": 128
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "product.setProductSkuList",
+          "lineNumber": 131
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "productDetailsMapper.selectOne",
+          "lineNumber": 134
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "new LambdaQueryWrapper<ProductDetails>().eq",
+          "lineNumber": 134
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "new LambdaQueryWrapper<ProductDetails>",
+          "lineNumber": 134
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "productDetails.getImageUrls",
+          "lineNumber": 135
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "imageUrls.split",
+          "lineNumber": 136
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "product.setDetailsImageUrlList",
+          "lineNumber": 137
+        },
+        {
+          "caller": "selectProductById",
+          "callee": "Arrays.asList",
+          "lineNumber": 137
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "product.getProductSkuList",
+          "lineNumber": 148
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "productSkuList.stream().map(ProductSku::getId).toList",
+          "lineNumber": 149
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "productSkuList.stream().map",
+          "lineNumber": 149
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "productSkuList.stream",
+          "lineNumber": 149
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "redisTemplate.delete",
+          "lineNumber": 153
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "productMapper.updateById",
+          "lineNumber": 158
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 161
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "new ServiceException",
+          "lineNumber": 162
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "productSkuList.forEach",
+          "lineNumber": 164
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "productSkuMapper.updateById",
+          "lineNumber": 165
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "skuStockMapper.selectOne",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "new LambdaQueryWrapper<SkuStock>().eq",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "new LambdaQueryWrapper<SkuStock>",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "productSku.getId",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "skuStock.setTotalNum",
+          "lineNumber": 169
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "productSku.getStockNum",
+          "lineNumber": 169
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "skuStock.setAvailableNum",
+          "lineNumber": 170
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "skuStock.getTotalNum",
+          "lineNumber": 170
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "skuStock.getLockNum",
+          "lineNumber": 170
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "skuStockMapper.updateById",
+          "lineNumber": 171
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "productDetailsMapper.selectOne",
+          "lineNumber": 175
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "new LambdaQueryWrapper<ProductDetails>().eq",
+          "lineNumber": 176
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "new LambdaQueryWrapper<ProductDetails>",
+          "lineNumber": 176
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "product.getId",
+          "lineNumber": 176
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "productDetails.setImageUrls",
+          "lineNumber": 177
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "String.join",
+          "lineNumber": 177
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "product.getDetailsImageUrlList",
+          "lineNumber": 177
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "productDetailsMapper.updateById",
+          "lineNumber": 178
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "Thread.sleep",
+          "lineNumber": 183
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "e.printStackTrace",
+          "lineNumber": 185
+        },
+        {
+          "caller": "updateProduct",
+          "callee": "redisTemplate.delete",
+          "lineNumber": 189
+        },
+        {
+          "caller": "deleteProductByIds",
+          "callee": "productMapper.deleteBatchIds",
+          "lineNumber": 231
+        },
+        {
+          "caller": "deleteProductByIds",
+          "callee": "Arrays.asList",
+          "lineNumber": 231
+        },
+        {
+          "caller": "deleteProductByIds",
+          "callee": "productSkuMapper.selectList",
+          "lineNumber": 234
+        },
+        {
+          "caller": "deleteProductByIds",
+          "callee": "new LambdaQueryWrapper<ProductSku>().in",
+          "lineNumber": 234
+        },
+        {
+          "caller": "deleteProductByIds",
+          "callee": "new LambdaQueryWrapper<ProductSku>",
+          "lineNumber": 234
+        },
+        {
+          "caller": "deleteProductByIds",
+          "callee": "Arrays.asList",
+          "lineNumber": 234
+        },
+        {
+          "caller": "deleteProductByIds",
+          "callee": "productSkuList.stream().map(ProductSku::getId).toList",
+          "lineNumber": 235
+        },
+        {
+          "caller": "deleteProductByIds",
+          "callee": "productSkuList.stream().map",
+          "lineNumber": 235
+        },
+        {
+          "caller": "deleteProductByIds",
+          "callee": "productSkuList.stream",
+          "lineNumber": 235
+        },
+        {
+          "caller": "deleteProductByIds",
+          "callee": "productSkuMapper.deleteBatchIds",
+          "lineNumber": 236
+        },
+        {
+          "caller": "deleteProductByIds",
+          "callee": "skuStockMapper.delete",
+          "lineNumber": 239
+        },
+        {
+          "caller": "deleteProductByIds",
+          "callee": "new LambdaQueryWrapper<SkuStock>().in",
+          "lineNumber": 239
+        },
+        {
+          "caller": "deleteProductByIds",
+          "callee": "new LambdaQueryWrapper<SkuStock>",
+          "lineNumber": 239
+        },
+        {
+          "caller": "deleteProductByIds",
+          "callee": "productDetailsMapper.delete",
+          "lineNumber": 243
+        },
+        {
+          "caller": "deleteProductByIds",
+          "callee": "new LambdaQueryWrapper<ProductDetails>().in",
+          "lineNumber": 243
+        },
+        {
+          "caller": "deleteProductByIds",
+          "callee": "new LambdaQueryWrapper<ProductDetails>",
+          "lineNumber": 243
+        },
+        {
+          "caller": "deleteProductByIds",
+          "callee": "Arrays.asList",
+          "lineNumber": 243
+        },
+        {
+          "caller": "updateAuditStatus",
+          "callee": "new Product",
+          "lineNumber": 250
+        },
+        {
+          "caller": "updateAuditStatus",
+          "callee": "product.setId",
+          "lineNumber": 251
+        },
+        {
+          "caller": "updateAuditStatus",
+          "callee": "product.setAuditStatus",
+          "lineNumber": 253
+        },
+        {
+          "caller": "updateAuditStatus",
+          "callee": "product.setAuditMessage",
+          "lineNumber": 254
+        },
+        {
+          "caller": "updateAuditStatus",
+          "callee": "product.setAuditStatus",
+          "lineNumber": 256
+        },
+        {
+          "caller": "updateAuditStatus",
+          "callee": "product.setAuditMessage",
+          "lineNumber": 257
+        },
+        {
+          "caller": "updateAuditStatus",
+          "callee": "productMapper.updateById",
+          "lineNumber": 259
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "new Product",
+          "lineNumber": 265
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "product.setId",
+          "lineNumber": 266
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "product.setStatus",
+          "lineNumber": 268
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "new ProductSku",
+          "lineNumber": 269
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "productSkuUpdate.setStatus",
+          "lineNumber": 271
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "productSkuMapper.update",
+          "lineNumber": 272
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "new LambdaUpdateWrapper<ProductSku>().eq",
+          "lineNumber": 272
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "new LambdaUpdateWrapper<ProductSku>",
+          "lineNumber": 272
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "productSkuMapper.selectList",
+          "lineNumber": 275
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "new LambdaQueryWrapper<ProductSku>()\r\n                            .eq(ProductSku::getStatus, 1).eq",
+          "lineNumber": 276
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "new LambdaQueryWrapper<ProductSku>().eq",
+          "lineNumber": 276
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "new LambdaQueryWrapper<ProductSku>",
+          "lineNumber": 276
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 279
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "productSku.getId",
+          "lineNumber": 282
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "redisTemplate.opsForValue().setBit",
+          "lineNumber": 283
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 283
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "productSkuMapper.selectList",
+          "lineNumber": 289
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "new LambdaQueryWrapper<ProductSku>()\r\n                            .eq(ProductSku::getStatus, 1).eq",
+          "lineNumber": 290
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "new LambdaQueryWrapper<ProductSku>().eq",
+          "lineNumber": 290
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "new LambdaQueryWrapper<ProductSku>",
+          "lineNumber": 290
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 293
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "productSku.getId",
+          "lineNumber": 296
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "redisTemplate.opsForValue().setBit",
+          "lineNumber": 298
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 298
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "redisTemplate.delete",
+          "lineNumber": 300
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "product.setStatus",
+          "lineNumber": 304
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "new ProductSku",
+          "lineNumber": 305
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "productSkuUpdate.setStatus",
+          "lineNumber": 307
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "productSkuMapper.update",
+          "lineNumber": 308
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "new LambdaUpdateWrapper<ProductSku>().eq",
+          "lineNumber": 308
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "new LambdaUpdateWrapper<ProductSku>",
+          "lineNumber": 308
+        },
+        {
+          "caller": "updateStatus",
+          "callee": "productMapper.updateById",
+          "lineNumber": 311
+        },
+        {
+          "caller": "getTopSale",
+          "callee": "productSkuMapper.getTopSale",
+          "lineNumber": 317
+        },
+        {
+          "caller": "skuList",
+          "callee": "productSkuMapper.skuList",
+          "lineNumber": 323
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "redisTemplate.opsForValue().get",
+          "lineNumber": 341
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 341
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "log.info",
+          "lineNumber": 343
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "UUID.randomUUID().toString().replaceAll",
+          "lineNumber": 348
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "UUID.randomUUID().toString",
+          "lineNumber": 348
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "UUID.randomUUID",
+          "lineNumber": 348
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "redisTemplate.opsForValue().setIfAbsent",
+          "lineNumber": 349
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 349
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "getSkuFromDB",
+          "lineNumber": 353
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "new Random().nextInt",
+          "lineNumber": 354
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "new Random",
+          "lineNumber": 354
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "redisTemplate.opsForValue().set",
+          "lineNumber": 356
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 356
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "new DefaultRedisScript<Long>",
+          "lineNumber": 365
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "redisScript.setScriptText",
+          "lineNumber": 366
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "redisScript.setResultType",
+          "lineNumber": 367
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "redisTemplate.execute",
+          "lineNumber": 368
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "Arrays.asList",
+          "lineNumber": 368
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "log.info",
+          "lineNumber": 369
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "Thread.sleep",
+          "lineNumber": 374
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "e.printStackTrace",
+          "lineNumber": 376
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "this.getProductSku",
+          "lineNumber": 378
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "e.printStackTrace",
+          "lineNumber": 381
+        },
+        {
+          "caller": "getProductSku",
+          "callee": "getSkuFromDB",
+          "lineNumber": 382
+        },
+        {
+          "caller": "getSkuFromDB",
+          "callee": "productSkuMapper.selectById",
+          "lineNumber": 388
+        },
+        {
+          "caller": "getProduct",
+          "callee": "productMapper.selectById",
+          "lineNumber": 402
+        },
+        {
+          "caller": "getSkuPrice",
+          "callee": "productSkuMapper.selectOne",
+          "lineNumber": 408
+        },
+        {
+          "caller": "getSkuPrice",
+          "callee": "new LambdaQueryWrapper<ProductSku>()\r\n                .eq(ProductSku::getId, skuId).select",
+          "lineNumber": 408
+        },
+        {
+          "caller": "getSkuPrice",
+          "callee": "new LambdaQueryWrapper<ProductSku>().eq",
+          "lineNumber": 408
+        },
+        {
+          "caller": "getSkuPrice",
+          "callee": "new LambdaQueryWrapper<ProductSku>",
+          "lineNumber": 408
+        },
+        {
+          "caller": "getSkuPrice",
+          "callee": "new SkuPrice",
+          "lineNumber": 410
+        },
+        {
+          "caller": "getSkuPrice",
+          "callee": "BeanUtils.copyProperties",
+          "lineNumber": 411
+        },
+        {
+          "caller": "getProductDetails",
+          "callee": "productDetailsMapper.selectOne",
+          "lineNumber": 418
+        },
+        {
+          "caller": "getProductDetails",
+          "callee": "new LambdaQueryWrapper<ProductDetails>().eq",
+          "lineNumber": 418
+        },
+        {
+          "caller": "getProductDetails",
+          "callee": "new LambdaQueryWrapper<ProductDetails>",
+          "lineNumber": 418
+        },
+        {
+          "caller": "getSkuSpecValue",
+          "callee": "productSkuMapper.selectList",
+          "lineNumber": 436
+        },
+        {
+          "caller": "getSkuSpecValue",
+          "callee": "new LambdaQueryWrapper<ProductSku>().eq(ProductSku::getProductId, id).select",
+          "lineNumber": 436
+        },
+        {
+          "caller": "getSkuSpecValue",
+          "callee": "new LambdaQueryWrapper<ProductSku>().eq",
+          "lineNumber": 436
+        },
+        {
+          "caller": "getSkuSpecValue",
+          "callee": "new LambdaQueryWrapper<ProductSku>",
+          "lineNumber": 436
+        },
+        {
+          "caller": "getSkuSpecValue",
+          "callee": "new HashMap<>",
+          "lineNumber": 437
+        },
+        {
+          "caller": "getSkuSpecValue",
+          "callee": "productSkuList.forEach",
+          "lineNumber": 438
+        },
+        {
+          "caller": "getSkuSpecValue",
+          "callee": "skuSpecValueMap.put",
+          "lineNumber": 439
+        },
+        {
+          "caller": "getSkuSpecValue",
+          "callee": "item.getSkuSpec",
+          "lineNumber": 439
+        },
+        {
+          "caller": "getSkuSpecValue",
+          "callee": "item.getId",
+          "lineNumber": 439
+        },
+        {
+          "caller": "getSkuStock",
+          "callee": "skuStockMapper.selectOne",
+          "lineNumber": 447
+        },
+        {
+          "caller": "getSkuStock",
+          "callee": "new LambdaQueryWrapper<SkuStock>().eq",
+          "lineNumber": 447
+        },
+        {
+          "caller": "getSkuStock",
+          "callee": "new LambdaQueryWrapper<SkuStock>",
+          "lineNumber": 447
+        },
+        {
+          "caller": "getSkuStock",
+          "callee": "new SkuStockVo",
+          "lineNumber": 448
+        },
+        {
+          "caller": "getSkuStock",
+          "callee": "BeanUtils.copyProperties",
+          "lineNumber": 449
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 458
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "new ArrayList<SkuPrice>",
+          "lineNumber": 459
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "productSkuMapper.selectList",
+          "lineNumber": 461
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "new LambdaQueryWrapper<ProductSku>().in(ProductSku::getId, skuIdList).select",
+          "lineNumber": 462
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "new LambdaQueryWrapper<ProductSku>().in",
+          "lineNumber": 462
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "new LambdaQueryWrapper<ProductSku>",
+          "lineNumber": 462
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 464
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "new ArrayList<SkuPrice>",
+          "lineNumber": 465
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "skuList.stream().map((sku) -> {\r\n            SkuPrice skuPrice = new SkuPrice();\r\n            skuPrice.setSkuId(sku.getId());\r\n            skuPrice.setSalePrice(sku.getSalePrice());\r\n            skuPrice.setMarketPrice(sku.getMarketPrice());\r\n            return skuPrice;\r\n        }).toList",
+          "lineNumber": 467
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "skuList.stream().map",
+          "lineNumber": 467
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "skuList.stream",
+          "lineNumber": 467
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "new SkuPrice",
+          "lineNumber": 468
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "skuPrice.setSkuId",
+          "lineNumber": 469
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "sku.getId",
+          "lineNumber": 469
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "skuPrice.setSalePrice",
+          "lineNumber": 470
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "sku.getSalePrice",
+          "lineNumber": 470
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "skuPrice.setMarketPrice",
+          "lineNumber": 471
+        },
+        {
+          "caller": "getSkuPriceList",
+          "callee": "sku.getMarketPrice",
+          "lineNumber": 471
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "redisTemplate.opsForValue().setIfAbsent",
+          "lineNumber": 492
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 492
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "redisTemplate.hasKey",
+          "lineNumber": 494
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 502
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "new StringBuilder",
+          "lineNumber": 505
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "skuStockMapper.check",
+          "lineNumber": 507
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "skuLockVo.getSkuId",
+          "lineNumber": 507
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "skuLockVo.getSkuNum",
+          "lineNumber": 507
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "builder.append",
+          "lineNumber": 509
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "skuLockVo.getSkuId",
+          "lineNumber": 509
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 514
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "builder.toString",
+          "lineNumber": 514
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "redisTemplate.delete",
+          "lineNumber": 515
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "builder.toString",
+          "lineNumber": 516
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "skuStockMapper.lock",
+          "lineNumber": 521
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "skuLockVo.getSkuId",
+          "lineNumber": 521
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "skuLockVo.getSkuNum",
+          "lineNumber": 521
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "redisTemplate.delete",
+          "lineNumber": 523
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "new ServiceException",
+          "lineNumber": 524
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "redisTemplate.opsForValue().set",
+          "lineNumber": 534
+        },
+        {
+          "caller": "checkAndLock",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 534
+        },
+        {
+          "caller": "unlock",
+          "callee": "redisTemplate.opsForValue().setIfAbsent",
+          "lineNumber": 550
+        },
+        {
+          "caller": "unlock",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 550
+        },
+        {
+          "caller": "unlock",
+          "callee": "redisTemplate.opsForValue().get",
+          "lineNumber": 556
+        },
+        {
+          "caller": "unlock",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 556
+        },
+        {
+          "caller": "unlock",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 557
+        },
+        {
+          "caller": "unlock",
+          "callee": "skuStockMapper.unlock",
+          "lineNumber": 563
+        },
+        {
+          "caller": "unlock",
+          "callee": "skuLockVo.getSkuId",
+          "lineNumber": 563
+        },
+        {
+          "caller": "unlock",
+          "callee": "skuLockVo.getSkuNum",
+          "lineNumber": 563
+        },
+        {
+          "caller": "unlock",
+          "callee": "new ServiceException",
+          "lineNumber": 565
+        },
+        {
+          "caller": "unlock",
+          "callee": "redisTemplate.delete",
+          "lineNumber": 570
+        },
+        {
+          "caller": "minus",
+          "callee": "redisTemplate.opsForValue().setIfAbsent",
+          "lineNumber": 579
+        },
+        {
+          "caller": "minus",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 579
+        },
+        {
+          "caller": "minus",
+          "callee": "redisTemplate.opsForValue().get",
+          "lineNumber": 585
+        },
+        {
+          "caller": "minus",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 585
+        },
+        {
+          "caller": "minus",
+          "callee": "CollectionUtils.isEmpty",
+          "lineNumber": 586
+        },
+        {
+          "caller": "minus",
+          "callee": "skuStockMapper.minus",
+          "lineNumber": 592
+        },
+        {
+          "caller": "minus",
+          "callee": "skuLockVo.getSkuId",
+          "lineNumber": 592
+        },
+        {
+          "caller": "minus",
+          "callee": "skuLockVo.getSkuNum",
+          "lineNumber": 592
+        },
+        {
+          "caller": "minus",
+          "callee": "new ServiceException",
+          "lineNumber": 594
+        },
+        {
+          "caller": "minus",
+          "callee": "redisTemplate.delete",
+          "lineNumber": 599
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 20,
+        "functionCount": 20,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/impl/ProductSpecServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 50,
+      "functions": [
+        {
+          "name": "selectProductSpecList",
+          "startLine": 32,
+          "endLine": 35,
+          "params": [
+            "productSpec"
+          ]
+        },
+        {
+          "name": "selectProductSpecById",
+          "startLine": 44,
+          "endLine": 51,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "selectProductSpecListByCategoryId",
+          "startLine": 53,
+          "endLine": 58,
+          "params": [
+            "categoryId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ProductSpecServiceImpl",
+          "startLine": 17,
+          "endLine": 59,
+          "methods": [
+            "selectProductSpecList",
+            "selectProductSpecById",
+            "selectProductSpecListByCategoryId"
+          ],
+          "properties": [
+            "productSpecMapper",
+            "categoryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "selectProductSpecList",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "selectProductSpecById",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "selectProductSpecListByCategoryId",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ProductSpecServiceImpl",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectProductSpecList",
+          "callee": "productSpecMapper.selectProductSpecList",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectProductSpecById",
+          "callee": "productSpecMapper.selectById",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectProductSpecById",
+          "callee": "categoryService.getAllCategoryIdList",
+          "lineNumber": 48
+        },
+        {
+          "caller": "selectProductSpecById",
+          "callee": "productSpec.getCategoryId",
+          "lineNumber": 48
+        },
+        {
+          "caller": "selectProductSpecById",
+          "callee": "productSpec.setCategoryIdList",
+          "lineNumber": 49
+        },
+        {
+          "caller": "selectProductSpecListByCategoryId",
+          "callee": "productSpecMapper.selectList",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectProductSpecListByCategoryId",
+          "callee": "new LambdaQueryWrapper<ProductSpec>().eq",
+          "lineNumber": 56
+        },
+        {
+          "caller": "selectProductSpecListByCategoryId",
+          "callee": "new LambdaQueryWrapper<ProductSpec>",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/impl/ProductUnitServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "findPage",
+          "startLine": 24,
+          "endLine": 34,
+          "params": [
+            "pageParam",
+            "productUnit"
+          ]
+        },
+        {
+          "name": "insertProductUnit",
+          "startLine": 36,
+          "endLine": 40,
+          "params": [
+            "productUnit"
+          ]
+        },
+        {
+          "name": "updateProductUnit",
+          "startLine": 43,
+          "endLine": 47,
+          "params": [
+            "productUnit"
+          ]
+        },
+        {
+          "name": "deleteProductUnitByIds",
+          "startLine": 50,
+          "endLine": 54,
+          "params": [
+            "ids"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ProductUnitServiceImpl",
+          "startLine": 16,
+          "endLine": 55,
+          "methods": [
+            "findPage",
+            "insertProductUnit",
+            "updateProductUnit",
+            "deleteProductUnitByIds"
+          ],
+          "properties": [
+            "productUnitMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "findPage",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "insertProductUnit",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "updateProductUnit",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "deleteProductUnitByIds",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "ProductUnitServiceImpl",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "findPage",
+          "callee": "new LambdaQueryWrapper<>",
+          "lineNumber": 26
+        },
+        {
+          "caller": "findPage",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 27
+        },
+        {
+          "caller": "findPage",
+          "callee": "productUnit.getName",
+          "lineNumber": 27
+        },
+        {
+          "caller": "findPage",
+          "callee": "queryWrapper.like",
+          "lineNumber": 28
+        },
+        {
+          "caller": "findPage",
+          "callee": "productUnit.getName",
+          "lineNumber": 28
+        },
+        {
+          "caller": "findPage",
+          "callee": "productUnitMapper.selectPage",
+          "lineNumber": 31
+        },
+        {
+          "caller": "insertProductUnit",
+          "callee": "productUnitMapper.insert",
+          "lineNumber": 38
+        },
+        {
+          "caller": "updateProductUnit",
+          "callee": "productUnitMapper.updateById",
+          "lineNumber": 45
+        },
+        {
+          "caller": "deleteProductUnitByIds",
+          "callee": "productUnitMapper.deleteBatchIds",
+          "lineNumber": 52
+        },
+        {
+          "caller": "deleteProductUnitByIds",
+          "callee": "Arrays.asList",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/impl/TestServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 186,
+      "nonEmptyLines": 137,
+      "functions": [
+        {
+          "name": "testLock",
+          "startLine": 52,
+          "endLine": 106,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "TestServiceImpl",
+          "startLine": 14,
+          "endLine": 186,
+          "methods": [
+            "testLock"
+          ],
+          "properties": [
+            "stringRedisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testLock",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "TestServiceImpl",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testLock",
+          "callee": "UUID.randomUUID().toString().replaceAll",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testLock",
+          "callee": "UUID.randomUUID().toString",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testLock",
+          "callee": "UUID.randomUUID",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testLock",
+          "callee": "stringRedisTemplate.opsForValue().setIfAbsent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "testLock",
+          "callee": "stringRedisTemplate.opsForValue",
+          "lineNumber": 61
+        },
+        {
+          "caller": "testLock",
+          "callee": "this.stringRedisTemplate.opsForValue().get",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testLock",
+          "callee": "this.stringRedisTemplate.opsForValue",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testLock",
+          "callee": "StringUtils.isBlank",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testLock",
+          "callee": "Integer.parseInt",
+          "lineNumber": 71
+        },
+        {
+          "caller": "testLock",
+          "callee": "this.stringRedisTemplate.opsForValue().set",
+          "lineNumber": 73
+        },
+        {
+          "caller": "testLock",
+          "callee": "this.stringRedisTemplate.opsForValue",
+          "lineNumber": 73
+        },
+        {
+          "caller": "testLock",
+          "callee": "String.valueOf",
+          "lineNumber": 73
+        },
+        {
+          "caller": "testLock",
+          "callee": "new DefaultRedisScript<>",
+          "lineNumber": 87
+        },
+        {
+          "caller": "testLock",
+          "callee": "redisScript.setScriptText",
+          "lineNumber": 88
+        },
+        {
+          "caller": "testLock",
+          "callee": "redisScript.setResultType",
+          "lineNumber": 89
+        },
+        {
+          "caller": "testLock",
+          "callee": "stringRedisTemplate.execute",
+          "lineNumber": 91
+        },
+        {
+          "caller": "testLock",
+          "callee": "Arrays.asList",
+          "lineNumber": 91
+        },
+        {
+          "caller": "testLock",
+          "callee": "System.out.println",
+          "lineNumber": 93
+        },
+        {
+          "caller": "testLock",
+          "callee": "System.out.println",
+          "lineNumber": 95
+        },
+        {
+          "caller": "testLock",
+          "callee": "Thread.sleep",
+          "lineNumber": 100
+        },
+        {
+          "caller": "testLock",
+          "callee": "e.printStackTrace",
+          "lineNumber": 102
+        },
+        {
+          "caller": "testLock",
+          "callee": "this.testLock",
+          "lineNumber": 104
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,948 @@
+{
+  "nodes": [
+    {
+      "id": "config:spzx-common/spzx-common-log/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-common/spzx-common-log/pom.xml",
+      "summary": "spzx-common-log 日志记录模块的 Maven 构建描述文件,继承父工程 spzx-common 并声明对 spzx-common-security 的依赖。",
+      "tags": ["configuration", "maven", "build-system", "日志"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-common/spzx-common-rabbit/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-common/spzx-common-rabbit/pom.xml",
+      "summary": "spzx-common-rabbit 消息队列模块的 Maven 构建描述文件,引入 spring-cloud-starter-bus-amqp、fastjson2 及 spzx-common-redis 等依赖。",
+      "tags": ["configuration", "maven", "build-system", "rabbitmq"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-common/spzx-common-redis/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-common/spzx-common-redis/pom.xml",
+      "summary": "spzx-common-redis 缓存模块的 Maven 构建描述文件,引入 spring-boot-starter-data-redis 与 spzx-common-core 依赖。",
+      "tags": ["configuration", "maven", "build-system", "redis"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-common/spzx-common-seata/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-common/spzx-common-seata/pom.xml",
+      "summary": "spzx-common-seata 分布式事务模块的 Maven 构建描述文件,引入 spring-cloud-starter-alibaba-seata 依赖。",
+      "tags": ["configuration", "maven", "build-system", "seata"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-common/spzx-common-security/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-common/spzx-common-security/pom.xml",
+      "summary": "spzx-common-security 安全模块的 Maven 构建描述文件,引入 spring-webmvc、spzx-api-system 与 spzx-common-redis 依赖,并配置 Java 17 编译。",
+      "tags": ["configuration", "maven", "build-system", "security"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-log/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "type": "file",
+      "name": "AutoConfiguration.imports",
+      "filePath": "spzx-common/spzx-common-log/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "summary": "Spring Boot 自动配置注册文件,将 AsyncLogService 与 LogAspect 注册为 Bean 以启用日志记录切面。",
+      "tags": ["configuration", "spring", "autoconfiguration", "日志"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-rabbit/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "type": "file",
+      "name": "AutoConfiguration.imports",
+      "filePath": "spzx-common/spzx-common-rabbit/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "summary": "Spring Boot 自动配置注册文件,将 RabbitService 与 RabbitInitConfigApplicationListener 注册为 Bean 以启用 RabbitMQ 消息能力。",
+      "tags": ["configuration", "spring", "autoconfiguration", "rabbitmq"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-redis/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "type": "file",
+      "name": "AutoConfiguration.imports",
+      "filePath": "spzx-common/spzx-common-redis/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "summary": "Spring Boot 自动配置注册文件,将 RedisConfig、RedisService 与 GuiguCacheAspect 注册为 Bean 以启用 Redis 缓存能力。",
+      "tags": ["configuration", "spring", "autoconfiguration", "redis"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/annotation/Log.java",
+      "type": "file",
+      "name": "Log.java",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/annotation/Log.java",
+      "summary": "@Log 自定义注解,用于在 Controller 方法上标记操作日志记录(标题、业务类型、操作者类型等),由 LogAspect 切面消费。",
+      "tags": ["annotation", "日志", "切面", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "type": "file",
+      "name": "LogAspect.java",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "summary": "操作日志记录切面,通过 AOP 前置/后置/异常通知捕获 Controller 方法调用,构建 SysOperLog 并异步记录到远程日志服务。",
+      "tags": ["aspect", "aop", "日志", "api-handler", "切面"],
+      "complexity": "complex",
+      "languageNotes": "Spring AOP 切面,使用 @Around/@Before/@AfterReturning/@AfterThrowing 通知织入方法调用过程,并通过 Fastjson 序列化请求/响应参数。"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessStatus.java",
+      "type": "file",
+      "name": "BusinessStatus.java",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessStatus.java",
+      "summary": "操作日志业务状态枚举,定义成功(SUCCESS)与失败(FAIL)两种状态,用于标记日志执行结果。",
+      "tags": ["枚举", "日志", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessType.java",
+      "type": "file",
+      "name": "BusinessType.java",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessType.java",
+      "summary": "操作日志业务类型枚举,覆盖新增、修改、删除、导出、授权等常见操作类型。",
+      "tags": ["枚举", "日志", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/OperatorType.java",
+      "type": "file",
+      "name": "OperatorType.java",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/OperatorType.java",
+      "summary": "操作者类型枚举,区分管理端(ADMIN)与移动端/用户端(MANAGE、MOBILE)操作来源。",
+      "tags": ["枚举", "日志", "security", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/filter/PropertyPreExcludeFilter.java",
+      "type": "file",
+      "name": "PropertyPreExcludeFilter.java",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/filter/PropertyPreExcludeFilter.java",
+      "summary": "Fastjson 序列化属性排除过滤器,支持向 JSON 序列化排除对象中添加需过滤的字段名,用于忽略敏感/无关属性。",
+      "tags": ["utility", "json", "serialization", "过滤"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/service/AsyncLogService.java",
+      "type": "file",
+      "name": "AsyncLogService.java",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/service/AsyncLogService.java",
+      "summary": "异步日志服务,通过远程日志 Feign 客户端(RPC)将操作日志异步保存到系统服务。",
+      "tags": ["service", "异步", "日志", "feign"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java",
+      "type": "file",
+      "name": "RabbitInitConfigApplicationListener.java",
+      "filePath": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java",
+      "summary": "RabbitTemplate 初始化监听器,应用启动时配置消息确认与返回回调,并在发送失败时基于 Redis 计数进行重发。",
+      "tags": ["rabbitmq", "配置", "回调", "消息", "service"],
+      "complexity": "moderate",
+      "languageNotes": "通过 Redis 存储消息关联数据实现发送失败重试,是消息可靠性保障的核心组件。"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/constant/MqConst.java",
+      "type": "file",
+      "name": "MqConst.java",
+      "filePath": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/constant/MqConst.java",
+      "summary": "RabbitMQ 消息常量类,集中定义各业务交换机、路由键、队列名称及延迟时间的常量。",
+      "tags": ["常量", "rabbitmq", "配置", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/entity/GuiguCorrelationData.java",
+      "type": "file",
+      "name": "GuiguCorrelationData.java",
+      "filePath": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/entity/GuiguCorrelationData.java",
+      "summary": "RabbitMQ 消息关联数据实体,携带消息体、交换机、路由键、重试次数及延迟属性,用于消息确认与重试。",
+      "tags": ["data-model", "rabbitmq", "消息", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java",
+      "type": "file",
+      "name": "RabbitService.java",
+      "filePath": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java",
+      "summary": "RabbitMQ 消息发送封装服务,提供普通消息与延迟消息发送能力,并将消息关联数据缓存到 Redis 以支持确认重试。",
+      "tags": ["rabbitmq", "service", "消息", "delay"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/annotation/GuiguCache.java",
+      "type": "file",
+      "name": "GuiguCache.java",
+      "filePath": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/annotation/GuiguCache.java",
+      "summary": "@GuiguCache 自定义注解,用于方法级 Redis 缓存,由 GuiguCacheAspect 切面处理缓存键与过期时间。",
+      "tags": ["annotation", "缓存", "redis", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/cache/GuiguCacheAspect.java",
+      "type": "file",
+      "name": "GuiguCacheAspect.java",
+      "filePath": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/cache/GuiguCacheAspect.java",
+      "summary": "GuiguCache 缓存切面,拦截带 @GuiguCache 注解的方法,按注解配置将结果缓存到 Redis。",
+      "tags": ["aspect", "aop", "缓存", "redis"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java",
+      "type": "file",
+      "name": "FastJson2JsonRedisSerializer.java",
+      "filePath": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java",
+      "summary": "基于 Fastjson2 的 Redis 序列化器,重写序列化/反序列化以支持泛型对象与类名信息保留。",
+      "tags": ["redis", "serialization", "json", "序列化"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/RedisConfig.java",
+      "type": "file",
+      "name": "RedisConfig.java",
+      "filePath": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/RedisConfig.java",
+      "summary": "Redis 配置类,定义 RedisTemplate Bean,设置键/值序列化器与连接工厂。",
+      "tags": ["redis", "配置", "template", "config"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/service/RedisService.java",
+      "type": "file",
+      "name": "RedisService.java",
+      "filePath": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/service/RedisService.java",
+      "summary": "Redis 通用操作服务,封装字符串、列表、集合、哈希等常用缓存读写、过期与删除操作。",
+      "tags": ["redis", "service", "缓存", "utility"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/EnableCustomConfig.java",
+      "type": "file",
+      "name": "EnableCustomConfig.java",
+      "filePath": "spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/EnableCustomConfig.java",
+      "summary": "@EnableCustomConfig 组合注解,用于一站式开启自定义安全与配置(导入自定义配置组件)。",
+      "tags": ["annotation", "组合注解", "security", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:LogAspect",
+      "type": "class",
+      "name": "LogAspect",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "lineRange": [38, 220],
+      "summary": "操作日志记录切面类,将带 @Log 注解方法的前后执行、异常与结果封装为 SysOperLog 并异步保存。",
+      "tags": ["aspect", "aop", "日志", "切面"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:boBefore",
+      "type": "function",
+      "name": "boBefore",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "lineRange": [60, 63],
+      "summary": "前置通知,记录方法执行起始时间,用于计算操作耗时。",
+      "tags": ["aop", "日志", "计时"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:doAfterReturning",
+      "type": "function",
+      "name": "doAfterReturning",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "lineRange": [70, 73],
+      "summary": "后置返回通知,方法正常返回后触发日志处理。",
+      "tags": ["aop", "日志", "切面"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:doAfterThrowing",
+      "type": "function",
+      "name": "doAfterThrowing",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "lineRange": [81, 84],
+      "summary": "异常通知,方法抛出异常时触发日志处理并记录错误信息。",
+      "tags": ["aop", "日志", "异常"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:handleLog",
+      "type": "function",
+      "name": "handleLog",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "lineRange": [86, 123],
+      "summary": "核心日志处理方法,组装操作日志对象并异步保存,同时记录耗时与错误信息。",
+      "tags": ["日志", "切面", "异步", "api-handler"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:getControllerMethodDescription",
+      "type": "function",
+      "name": "getControllerMethodDescription",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "lineRange": [132, 148],
+      "summary": "从 @Log 注解及返回值中提取方法描述、业务/操作类型与请求/响应数据。",
+      "tags": ["日志", "注解", "元数据"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:setRequestValue",
+      "type": "function",
+      "name": "setRequestValue",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "lineRange": [156, 166],
+      "summary": "根据请求方法与排除参数名,序列化请求参数写入操作日志。",
+      "tags": ["日志", "序列化", "请求"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:argsArrayToString",
+      "type": "function",
+      "name": "argsArrayToString",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "lineRange": [171, 185],
+      "summary": "将请求参数数组序列化为 JSON 字符串,过滤敏感对象。",
+      "tags": ["日志", "序列化", "请求"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:isFilterObject",
+      "type": "function",
+      "name": "isFilterObject",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "lineRange": [200, 219],
+      "summary": "判断对象是否为需要序列化过滤的数组、集合或 Map 类型。",
+      "tags": ["日志", "序列化", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessStatus.java:BusinessStatus",
+      "type": "class",
+      "name": "BusinessStatus",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessStatus.java",
+      "lineRange": [9, 20],
+      "summary": "业务状态枚举(成功/失败),用于标记操作日志的执行结果。",
+      "tags": ["枚举", "日志", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessType.java:BusinessType",
+      "type": "class",
+      "name": "BusinessType",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessType.java",
+      "lineRange": [8, 59],
+      "summary": "业务类型枚举,覆盖新增、修改、删除、授权等常见操作类型。",
+      "tags": ["枚举", "日志", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/OperatorType.java:OperatorType",
+      "type": "class",
+      "name": "OperatorType",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/OperatorType.java",
+      "lineRange": [8, 24],
+      "summary": "操作者类型枚举,区分管理端与移动端操作来源。",
+      "tags": ["枚举", "日志", "security"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/filter/PropertyPreExcludeFilter.java:PropertyPreExcludeFilter",
+      "type": "class",
+      "name": "PropertyPreExcludeFilter",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/filter/PropertyPreExcludeFilter.java",
+      "lineRange": [10, 24],
+      "summary": "Fastjson 序列化属性排除过滤器,收集需过滤的字段名。",
+      "tags": ["json", "serialization", "过滤"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/filter/PropertyPreExcludeFilter.java:addExcludes",
+      "type": "function",
+      "name": "addExcludes",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/filter/PropertyPreExcludeFilter.java",
+      "lineRange": [16, 23],
+      "summary": "向过滤器排除集添加需过滤的字段名。",
+      "tags": ["json", "serialization", "过滤"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/service/AsyncLogService.java:AsyncLogService",
+      "type": "class",
+      "name": "AsyncLogService",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/service/AsyncLogService.java",
+      "lineRange": [15, 29],
+      "summary": "异步日志保存服务,通过远程 Feign 客户端记录操作日志。",
+      "tags": ["service", "异步", "日志", "feign"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/service/AsyncLogService.java:saveSysLog",
+      "type": "function",
+      "name": "saveSysLog",
+      "filePath": "spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/service/AsyncLogService.java",
+      "lineRange": [24, 28],
+      "summary": "异步调用远程日志服务保存操作日志。",
+      "tags": ["异步", "日志", "feign"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java:RabbitInitConfigApplicationListener",
+      "type": "class",
+      "name": "RabbitInitConfigApplicationListener",
+      "filePath": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java",
+      "lineRange": [22, 111],
+      "summary": "RabbitTemplate 初始化与应用配置监听器,配置消息回调并处理发送失败的重新投递。",
+      "tags": ["rabbitmq", "配置", "监听", "消息"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java:onApplicationEvent",
+      "type": "function",
+      "name": "onApplicationEvent",
+      "filePath": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java",
+      "lineRange": [33, 36],
+      "summary": "应用启动事件处理,触发 RabbitTemplate 初始化。",
+      "tags": ["rabbitmq", "监听", "启动"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java:setUpInitRabbitTemplete",
+      "type": "function",
+      "name": "setUpInitRabbitTemplete",
+      "filePath": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java",
+      "lineRange": [41, 84],
+      "summary": "配置 RabbitTemplate 的确认与返回回调,并在发送失败时调用重发逻辑。",
+      "tags": ["rabbitmq", "配置", "回调"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java:retrySendMsg",
+      "type": "function",
+      "name": "retrySendMsg",
+      "filePath": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java",
+      "lineRange": [87, 108],
+      "summary": "根据关联数据与重试次数,将失败消息重新发送到 RabbitMQ。",
+      "tags": ["rabbitmq", "重试", "消息"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/constant/MqConst.java:MqConst",
+      "type": "class",
+      "name": "MqConst",
+      "filePath": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/constant/MqConst.java",
+      "lineRange": [3, 46],
+      "summary": "RabbitMQ 交换机/队列/路由键常量定义类。",
+      "tags": ["常量", "rabbitmq", "配置", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/entity/GuiguCorrelationData.java:GuiguCorrelationData",
+      "type": "class",
+      "name": "GuiguCorrelationData",
+      "filePath": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/entity/GuiguCorrelationData.java",
+      "lineRange": [9, 24],
+      "summary": "RabbitMQ 消息关联数据实体,用于消息确认与重试。",
+      "tags": ["data-model", "rabbitmq", "实体"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java:RabbitService",
+      "type": "class",
+      "name": "RabbitService",
+      "filePath": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java",
+      "lineRange": [13, 85],
+      "summary": "RabbitMQ 消息发送封装服务,支持普通与延迟消息。",
+      "tags": ["rabbitmq", "service", "消息"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java:sendMessage",
+      "type": "function",
+      "name": "sendMessage",
+      "filePath": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java",
+      "lineRange": [29, 49],
+      "summary": "发送普通消息,生成关联数据并缓存到 Redis 后投递到指定交换机。",
+      "tags": ["rabbitmq", "消息", "发送"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java:sendDelayMessage",
+      "type": "function",
+      "name": "sendDelayMessage",
+      "filePath": "spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java",
+      "lineRange": [60, 83],
+      "summary": "发送延迟消息,设置延迟时间并通过 Redis 缓存关联数据后投递。",
+      "tags": ["rabbitmq", "延迟", "消息"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/cache/GuiguCacheAspect.java:GuiguCacheAspect",
+      "type": "class",
+      "name": "GuiguCacheAspect",
+      "filePath": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/cache/GuiguCacheAspect.java",
+      "lineRange": [16, 30],
+      "summary": "GuiguCache 缓存切面,将带 @GuiguCache 注解的方法结果缓存到 Redis。",
+      "tags": ["aspect", "aop", "缓存", "redis"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/cache/GuiguCacheAspect.java:guiguCache",
+      "type": "function",
+      "name": "guiguCache",
+      "filePath": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/cache/GuiguCacheAspect.java",
+      "lineRange": [25, 29],
+      "summary": "环绕通知,按 @GuiguCache 注解配置将方法结果写入 Redis 缓存。",
+      "tags": ["aop", "缓存", "redis"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java:FastJson2JsonRedisSerializer",
+      "type": "class",
+      "name": "FastJson2JsonRedisSerializer",
+      "filePath": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java",
+      "lineRange": [18, 47],
+      "summary": "基于 Fastjson2 的 Redis 序列化器,处理泛型对象与类名信息。",
+      "tags": ["redis", "serialization", "json"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java:serialize",
+      "type": "function",
+      "name": "serialize",
+      "filePath": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java",
+      "lineRange": [30, 36],
+      "summary": "将对象序列化为 JSON 字节数组,携带类名信息。",
+      "tags": ["redis", "serialization", "json"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java:deserialize",
+      "type": "function",
+      "name": "deserialize",
+      "filePath": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java",
+      "lineRange": [38, 46],
+      "summary": "将 JSON 字节数组反序列化为指定类型的对象。",
+      "tags": ["redis", "serialization", "json"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/RedisConfig.java:RedisConfig",
+      "type": "class",
+      "name": "RedisConfig",
+      "filePath": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/RedisConfig.java",
+      "lineRange": [18, 42],
+      "summary": "Redis 配置类,定义 RedisTemplate Bean。",
+      "tags": ["redis", "配置", "config"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/RedisConfig.java:redisTemplate",
+      "type": "function",
+      "name": "redisTemplate",
+      "filePath": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/RedisConfig.java",
+      "lineRange": [22, 41],
+      "summary": "定义 RedisTemplate Bean,配置键/值序列化器与连接工厂。",
+      "tags": ["redis", "配置", "template"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/service/RedisService.java:RedisService",
+      "type": "class",
+      "name": "RedisService",
+      "filePath": "spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/service/RedisService.java",
+      "lineRange": [18, 243],
+      "summary": "Redis 通用缓存操作服务封装,提供字符串、列表、集合、哈希等读写与过期删除能力。",
+      "tags": ["redis", "service", "缓存", "utility"],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "target": "class:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:LogAspect",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "target": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:boBefore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "target": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:doAfterReturning",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "target": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:doAfterThrowing",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "target": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:handleLog",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "target": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:getControllerMethodDescription",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "target": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:setRequestValue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "target": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:argsArrayToString",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "target": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:isFilterObject",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessStatus.java",
+      "target": "class:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessStatus.java:BusinessStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessType.java",
+      "target": "class:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessType.java:BusinessType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/OperatorType.java",
+      "target": "class:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/OperatorType.java:OperatorType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/filter/PropertyPreExcludeFilter.java",
+      "target": "class:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/filter/PropertyPreExcludeFilter.java:PropertyPreExcludeFilter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/filter/PropertyPreExcludeFilter.java",
+      "target": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/filter/PropertyPreExcludeFilter.java:addExcludes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/service/AsyncLogService.java",
+      "target": "class:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/service/AsyncLogService.java:AsyncLogService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/service/AsyncLogService.java",
+      "target": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/service/AsyncLogService.java:saveSysLog",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java",
+      "target": "class:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java:RabbitInitConfigApplicationListener",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java",
+      "target": "function:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java:onApplicationEvent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java",
+      "target": "function:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java:setUpInitRabbitTemplete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java",
+      "target": "function:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java:retrySendMsg",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/constant/MqConst.java",
+      "target": "class:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/constant/MqConst.java:MqConst",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/entity/GuiguCorrelationData.java",
+      "target": "class:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/entity/GuiguCorrelationData.java:GuiguCorrelationData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java",
+      "target": "class:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java:RabbitService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java",
+      "target": "function:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java:sendMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java",
+      "target": "function:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java:sendDelayMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/cache/GuiguCacheAspect.java",
+      "target": "class:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/cache/GuiguCacheAspect.java:GuiguCacheAspect",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/cache/GuiguCacheAspect.java",
+      "target": "function:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/cache/GuiguCacheAspect.java:guiguCache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java",
+      "target": "class:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java:FastJson2JsonRedisSerializer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java",
+      "target": "function:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java:serialize",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java",
+      "target": "function:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java:deserialize",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/RedisConfig.java",
+      "target": "class:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/RedisConfig.java:RedisConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/RedisConfig.java",
+      "target": "function:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/RedisConfig.java:redisTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/service/RedisService.java",
+      "target": "class:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/service/RedisService.java:RedisService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "target": "class:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:LogAspect",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessStatus.java",
+      "target": "class:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessStatus.java:BusinessStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessType.java",
+      "target": "class:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/BusinessType.java:BusinessType",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/OperatorType.java",
+      "target": "class:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/enums/OperatorType.java:OperatorType",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/filter/PropertyPreExcludeFilter.java",
+      "target": "class:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/filter/PropertyPreExcludeFilter.java:PropertyPreExcludeFilter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/service/AsyncLogService.java",
+      "target": "class:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/service/AsyncLogService.java:AsyncLogService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java",
+      "target": "class:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java:RabbitInitConfigApplicationListener",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/constant/MqConst.java",
+      "target": "class:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/constant/MqConst.java:MqConst",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/entity/GuiguCorrelationData.java",
+      "target": "class:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/entity/GuiguCorrelationData.java:GuiguCorrelationData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java",
+      "target": "class:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java:RabbitService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/cache/GuiguCacheAspect.java",
+      "target": "class:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/cache/GuiguCacheAspect.java:GuiguCacheAspect",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java",
+      "target": "class:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java:FastJson2JsonRedisSerializer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/RedisConfig.java",
+      "target": "class:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/RedisConfig.java:RedisConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/service/RedisService.java",
+      "target": "class:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/service/RedisService.java:RedisService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java:handleLog",
+      "target": "function:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/service/AsyncLogService.java:saveSysLog",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java:RabbitService",
+      "target": "class:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/entity/GuiguCorrelationData.java:GuiguCorrelationData",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "class:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/config/RabbitInitConfigApplicationListener.java:RabbitInitConfigApplicationListener",
+      "target": "class:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/entity/GuiguCorrelationData.java:GuiguCorrelationData",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "class:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/RedisConfig.java:RedisConfig",
+      "target": "class:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/configure/FastJson2JsonRedisSerializer.java:FastJson2JsonRedisSerializer",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-common/spzx-common-log/pom.xml",
+      "target": "file:spzx-common/spzx-common-log/src/main/java/com/spzx/common/log/aspect/LogAspect.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-common/spzx-common-rabbit/pom.xml",
+      "target": "file:spzx-common/spzx-common-rabbit/src/main/java/com/spzx/common/rabbit/service/RabbitService.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-common/spzx-common-redis/pom.xml",
+      "target": "file:spzx-common/spzx-common-redis/src/main/java/com/spzx/common/redis/service/RedisService.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:spzx-common/spzx-common-security/pom.xml",
+      "target": "file:spzx-common/spzx-common-security/src/main/java/com/spzx/common/security/annotation/EnableCustomConfig.java",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

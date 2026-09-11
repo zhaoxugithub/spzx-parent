@@ -1,0 +1,132 @@
+{
+  "nodes": [
+    {
+      "id": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/BrandMapper.xml",
+      "type": "config",
+      "name": "BrandMapper.xml",
+      "filePath": "spzx-modules/spzx-product/src/main/resources/mapper/product/BrandMapper.xml",
+      "summary": "定义品牌(brand)表的 MyBatis 映射，包含列表查询(按名称模糊)、按 ID 查询、新增、更新以及批量逻辑删除(置 del_flag)等操作。",
+      "tags": ["mybatis", "mapper", "brand", "sql", "database"],
+      "complexity": "moderate",
+      "languageNotes": "用 select/insert/update/delete 四类语句完整映射 BrandMapper 接口，删除采用逻辑删除而非物理删除。"
+    },
+    {
+      "id": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/CategoryBrandMapper.xml",
+      "type": "config",
+      "name": "CategoryBrandMapper.xml",
+      "filePath": "spzx-modules/spzx-product/src/main/resources/mapper/product/CategoryBrandMapper.xml",
+      "summary": "定义商品分类与品牌关联表(category_brand)的 MyBatis 映射，提供关联分类/品牌的列表查询以及按分类查询品牌的 SQL。",
+      "tags": ["mybatis", "mapper", "category-brand", "sql", "database"],
+      "complexity": "moderate",
+      "languageNotes": "通过 left join 同时关联 category 与 brand 两张表,并复用 selectCategoryBrandVo 提取公共字段。"
+    },
+    {
+      "id": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/CategoryMapper.xml",
+      "type": "config",
+      "name": "CategoryMapper.xml",
+      "filePath": "spzx-modules/spzx-product/src/main/resources/mapper/product/CategoryMapper.xml",
+      "summary": "空的 MyBatis 映射文件，仅声明 CategoryMapper 命名空间，未包含任何 SQL 语句(分类相关操作可能由注解或其他映射实现)。",
+      "tags": ["mybatis", "mapper", "category", "stub", "sql"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/ProductMapper.xml",
+      "type": "config",
+      "name": "ProductMapper.xml",
+      "filePath": "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductMapper.xml",
+      "summary": "定义商品(product)表的 MyBatis 映射，提供关联品牌与三级分类的多表联查列表查询，支持按名称、品牌及各级分类筛选。",
+      "tags": ["mybatis", "mapper", "product", "sql", "database"],
+      "complexity": "moderate",
+      "languageNotes": "一次查询同时 left join brand 与三级 category,并返回各自的 name 作为冗余展示字段。"
+    },
+    {
+      "id": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/ProductSkuMapper.xml",
+      "type": "config",
+      "name": "ProductSkuMapper.xml",
+      "filePath": "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductSkuMapper.xml",
+      "summary": "定义商品 SKU(product_sku)表的 MyBatis 映射，提供热销榜单查询(按销量取前 20)以及可按关键字/品牌/分类筛选并排序的 SKU 列表查询。",
+      "tags": ["mybatis", "mapper", "product-sku", "sql", "database"],
+      "complexity": "moderate",
+      "languageNotes": "skuList 通过多个 <if> 动态拼接筛选条件,并使用 <if> 依据 order 参数切换排序方式。"
+    },
+    {
+      "id": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/ProductSpecMapper.xml",
+      "type": "config",
+      "name": "ProductSpecMapper.xml",
+      "filePath": "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductSpecMapper.xml",
+      "summary": "定义商品规格(product_spec)表的 MyBatis 映射，提供关联分类的规格列表查询，支持按分类与规格名进行筛选。",
+      "tags": ["mybatis", "mapper", "product-spec", "sql", "database"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/ProductUnitMapper.xml",
+      "type": "config",
+      "name": "ProductUnitMapper.xml",
+      "filePath": "spzx-modules/spzx-product/src/main/resources/mapper/product/ProductUnitMapper.xml",
+      "summary": "空的 MyBatis 映射文件，仅声明 ProductUnitMapper 命名空间，未包含任何 SQL 语句。",
+      "tags": ["mybatis", "mapper", "product-unit", "stub", "sql"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/SkuStockMapper.xml",
+      "type": "config",
+      "name": "SkuStockMapper.xml",
+      "filePath": "spzx-modules/spzx-product/src/main/resources/mapper/product/SkuStockMapper.xml",
+      "summary": "定义 SKU 库存(sku_stock)表的 MyBatis 映射，提供带行锁的库存校验(select for update)以及库存锁定、解锁和扣减等操作。",
+      "tags": ["mybatis", "mapper", "sku-stock", "inventory", "sql"],
+      "complexity": "moderate",
+      "languageNotes": "check 使用 for update 数据库行锁实现互斥,lock/unlock/minus 对 available_num、lock_num、sale_num 做增减。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/BrandMapper.xml",
+      "target": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/CategoryBrandMapper.xml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/CategoryMapper.xml",
+      "target": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/CategoryBrandMapper.xml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/CategoryMapper.xml",
+      "target": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/ProductSpecMapper.xml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/BrandMapper.xml",
+      "target": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/ProductMapper.xml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/CategoryMapper.xml",
+      "target": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/ProductMapper.xml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/ProductMapper.xml",
+      "target": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/ProductSkuMapper.xml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/ProductSkuMapper.xml",
+      "target": "config:spzx-modules/spzx-product/src/main/resources/mapper/product/SkuStockMapper.xml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

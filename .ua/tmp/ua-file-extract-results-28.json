@@ -1,0 +1,6525 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 18,
+  "filesSkipped": [
+    "spzx-modules/spzx-gen/pom.xml",
+    "spzx-modules/spzx-gen/src/main/resources/mapper/generator/GenTableColumnMapper.xml",
+    "spzx-modules/spzx-gen/src/main/resources/mapper/generator/GenTableMapper.xml",
+    "spzx-modules/spzx-gen/src/main/resources/vm/java/controller.java.vm",
+    "spzx-modules/spzx-gen/src/main/resources/vm/java/domain.java.vm",
+    "spzx-modules/spzx-gen/src/main/resources/vm/java/mapper.java.vm",
+    "spzx-modules/spzx-gen/src/main/resources/vm/java/service.java.vm"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 18,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 18,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/ISysFileService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "ISysFileService",
+          "startLine": 10,
+          "endLine": 20,
+          "methods": [
+            "uploadFile"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ISysFileService",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/LocalSysFileServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "uploadFile",
+          "startLine": 43,
+          "endLine": 49,
+          "params": [
+            "file"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LocalSysFileServiceImpl",
+          "startLine": 14,
+          "endLine": 50,
+          "methods": [
+            "uploadFile"
+          ],
+          "properties": [
+            "localFilePrefix",
+            "domain",
+            "localFilePath"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "localFilePrefix",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "domain",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "uploadFile",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "LocalSysFileServiceImpl",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "uploadFile",
+          "callee": "FileUploadUtils.upload",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/service/MinioSysFileServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "uploadFile",
+          "startLine": 34,
+          "endLine": 48,
+          "params": [
+            "file"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MinioSysFileServiceImpl",
+          "startLine": 18,
+          "endLine": 49,
+          "methods": [
+            "uploadFile"
+          ],
+          "properties": [
+            "minioConfig",
+            "client"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "uploadFile",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "MinioSysFileServiceImpl",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "uploadFile",
+          "callee": "FileUploadUtils.extractFilename",
+          "lineNumber": 37
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "file.getInputStream",
+          "lineNumber": 38
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "PutObjectArgs.builder()\n                .bucket(minioConfig.getBucketName())\n                .object(fileName)\n                .stream(inputStream, file.getSize(), -1)\n                .contentType(file.getContentType()).build",
+          "lineNumber": 39
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "PutObjectArgs.builder()\n                .bucket(minioConfig.getBucketName())\n                .object(fileName)\n                .stream(inputStream, file.getSize(), -1).contentType",
+          "lineNumber": 39
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "PutObjectArgs.builder()\n                .bucket(minioConfig.getBucketName())\n                .object(fileName).stream",
+          "lineNumber": 39
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "PutObjectArgs.builder()\n                .bucket(minioConfig.getBucketName()).object",
+          "lineNumber": 39
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "PutObjectArgs.builder().bucket",
+          "lineNumber": 39
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "PutObjectArgs.builder",
+          "lineNumber": 39
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "minioConfig.getBucketName",
+          "lineNumber": 40
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "file.getSize",
+          "lineNumber": 42
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "file.getContentType",
+          "lineNumber": 43
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "client.putObject",
+          "lineNumber": 45
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "IoUtils.closeQuietly",
+          "lineNumber": 46
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "minioConfig.getUrl",
+          "lineNumber": 47
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "minioConfig.getBucketName",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-file/src/main/java/com/spzx/file/utils/FileUploadUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 185,
+      "nonEmptyLines": 170,
+      "functions": [
+        {
+          "name": "upload",
+          "startLine": 44,
+          "endLine": 58,
+          "params": [
+            "baseDir",
+            "file"
+          ]
+        },
+        {
+          "name": "upload",
+          "startLine": 72,
+          "endLine": 89,
+          "params": [
+            "baseDir",
+            "file",
+            "allowedExtension"
+          ]
+        },
+        {
+          "name": "extractFilename",
+          "startLine": 94,
+          "endLine": 98,
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "getAbsoluteFile",
+          "startLine": 100,
+          "endLine": 112,
+          "params": [
+            "uploadDir",
+            "fileName"
+          ]
+        },
+        {
+          "name": "getPathFileName",
+          "startLine": 114,
+          "endLine": 118,
+          "params": [
+            "fileName"
+          ]
+        },
+        {
+          "name": "assertAllowed",
+          "startLine": 127,
+          "endLine": 165,
+          "params": [
+            "file",
+            "allowedExtension"
+          ]
+        },
+        {
+          "name": "isAllowedExtension",
+          "startLine": 174,
+          "endLine": 184,
+          "params": [
+            "extension",
+            "allowedExtension"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FileUploadUtils",
+          "startLine": 24,
+          "endLine": 185,
+          "methods": [
+            "upload",
+            "upload",
+            "extractFilename",
+            "getAbsoluteFile",
+            "getPathFileName",
+            "assertAllowed",
+            "isAllowedExtension"
+          ],
+          "properties": [
+            "DEFAULT_MAX_SIZE",
+            "DEFAULT_FILE_NAME_LENGTH"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DEFAULT_MAX_SIZE",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_FILE_NAME_LENGTH",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "upload",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "upload",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "extractFilename",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "assertAllowed",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "isAllowedExtension",
+          "line": 174,
+          "isDefault": false
+        },
+        {
+          "name": "FileUploadUtils",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "upload",
+          "callee": "upload",
+          "lineNumber": 48
+        },
+        {
+          "caller": "upload",
+          "callee": "new IOException",
+          "lineNumber": 52
+        },
+        {
+          "caller": "upload",
+          "callee": "fe.getDefaultMessage",
+          "lineNumber": 52
+        },
+        {
+          "caller": "upload",
+          "callee": "new IOException",
+          "lineNumber": 56
+        },
+        {
+          "caller": "upload",
+          "callee": "e.getMessage",
+          "lineNumber": 56
+        },
+        {
+          "caller": "upload",
+          "callee": "Objects.requireNonNull(file.getOriginalFilename()).length",
+          "lineNumber": 76
+        },
+        {
+          "caller": "upload",
+          "callee": "Objects.requireNonNull",
+          "lineNumber": 76
+        },
+        {
+          "caller": "upload",
+          "callee": "file.getOriginalFilename",
+          "lineNumber": 76
+        },
+        {
+          "caller": "upload",
+          "callee": "new FileNameLengthLimitExceededException",
+          "lineNumber": 79
+        },
+        {
+          "caller": "upload",
+          "callee": "assertAllowed",
+          "lineNumber": 82
+        },
+        {
+          "caller": "upload",
+          "callee": "extractFilename",
+          "lineNumber": 84
+        },
+        {
+          "caller": "upload",
+          "callee": "getAbsoluteFile(baseDir, fileName).getAbsolutePath",
+          "lineNumber": 86
+        },
+        {
+          "caller": "upload",
+          "callee": "getAbsoluteFile",
+          "lineNumber": 86
+        },
+        {
+          "caller": "upload",
+          "callee": "file.transferTo",
+          "lineNumber": 87
+        },
+        {
+          "caller": "upload",
+          "callee": "Paths.get",
+          "lineNumber": 87
+        },
+        {
+          "caller": "upload",
+          "callee": "getPathFileName",
+          "lineNumber": 88
+        },
+        {
+          "caller": "extractFilename",
+          "callee": "StringUtils.format",
+          "lineNumber": 96
+        },
+        {
+          "caller": "extractFilename",
+          "callee": "DateUtils.datePath",
+          "lineNumber": 96
+        },
+        {
+          "caller": "extractFilename",
+          "callee": "FilenameUtils.getBaseName",
+          "lineNumber": 97
+        },
+        {
+          "caller": "extractFilename",
+          "callee": "file.getOriginalFilename",
+          "lineNumber": 97
+        },
+        {
+          "caller": "extractFilename",
+          "callee": "Seq.getId",
+          "lineNumber": 97
+        },
+        {
+          "caller": "extractFilename",
+          "callee": "FileTypeUtils.getExtension",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getAbsoluteFile",
+          "callee": "new File",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getAbsoluteFile",
+          "callee": "desc.exists",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getAbsoluteFile",
+          "callee": "desc.getParentFile().exists",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getAbsoluteFile",
+          "callee": "desc.getParentFile",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getAbsoluteFile",
+          "callee": "desc.getParentFile().mkdirs",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getAbsoluteFile",
+          "callee": "desc.getParentFile",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getAbsoluteFile",
+          "callee": "desc.isAbsolute",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getAbsoluteFile",
+          "callee": "desc.getAbsoluteFile",
+          "lineNumber": 111
+        },
+        {
+          "caller": "assertAllowed",
+          "callee": "file.getSize",
+          "lineNumber": 130
+        },
+        {
+          "caller": "assertAllowed",
+          "callee": "new FileSizeLimitExceededException",
+          "lineNumber": 133
+        },
+        {
+          "caller": "assertAllowed",
+          "callee": "file.getOriginalFilename",
+          "lineNumber": 136
+        },
+        {
+          "caller": "assertAllowed",
+          "callee": "FileTypeUtils.getExtension",
+          "lineNumber": 137
+        },
+        {
+          "caller": "assertAllowed",
+          "callee": "isAllowedExtension",
+          "lineNumber": 138
+        },
+        {
+          "caller": "assertAllowed",
+          "callee": "new InvalidExtensionException.InvalidImageExtensionException",
+          "lineNumber": 142
+        },
+        {
+          "caller": "assertAllowed",
+          "callee": "new InvalidExtensionException.InvalidFlashExtensionException",
+          "lineNumber": 147
+        },
+        {
+          "caller": "assertAllowed",
+          "callee": "new InvalidExtensionException.InvalidMediaExtensionException",
+          "lineNumber": 152
+        },
+        {
+          "caller": "assertAllowed",
+          "callee": "new InvalidExtensionException.InvalidVideoExtensionException",
+          "lineNumber": 157
+        },
+        {
+          "caller": "assertAllowed",
+          "callee": "new InvalidExtensionException",
+          "lineNumber": 162
+        },
+        {
+          "caller": "isAllowedExtension",
+          "callee": "str.equalsIgnoreCase",
+          "lineNumber": 178
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/SpzxGenApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 18,
+          "endLine": 31,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SpzxGenApplication",
+          "startLine": 13,
+          "endLine": 32,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "SpzxGenApplication",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 20
+        },
+        {
+          "caller": "main",
+          "callee": "System.out.println",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/config/GenConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "getAuthor",
+          "startLine": 27,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "setAuthor",
+          "startLine": 32,
+          "endLine": 35,
+          "params": [
+            "author"
+          ]
+        },
+        {
+          "name": "getPackageName",
+          "startLine": 37,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "setPackageName",
+          "startLine": 42,
+          "endLine": 45,
+          "params": [
+            "packageName"
+          ]
+        },
+        {
+          "name": "getAutoRemovePre",
+          "startLine": 47,
+          "endLine": 50,
+          "params": []
+        },
+        {
+          "name": "setAutoRemovePre",
+          "startLine": 52,
+          "endLine": 55,
+          "params": [
+            "autoRemovePre"
+          ]
+        },
+        {
+          "name": "getTablePrefix",
+          "startLine": 57,
+          "endLine": 60,
+          "params": []
+        },
+        {
+          "name": "setTablePrefix",
+          "startLine": 62,
+          "endLine": 65,
+          "params": [
+            "tablePrefix"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GenConfig",
+          "startLine": 11,
+          "endLine": 66,
+          "methods": [
+            "getAuthor",
+            "setAuthor",
+            "getPackageName",
+            "setPackageName",
+            "getAutoRemovePre",
+            "setAutoRemovePre",
+            "getTablePrefix",
+            "setTablePrefix"
+          ],
+          "properties": [
+            "author",
+            "packageName",
+            "autoRemovePre",
+            "tablePrefix"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "author",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "packageName",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "autoRemovePre",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "tablePrefix",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "getAuthor",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "setAuthor",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "getPackageName",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "setPackageName",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "getAutoRemovePre",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "setAutoRemovePre",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "getTablePrefix",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "setTablePrefix",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "GenConfig",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 13,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/controller/GenController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 211,
+      "nonEmptyLines": 195,
+      "functions": [
+        {
+          "name": "genList",
+          "startLine": 49,
+          "endLine": 56,
+          "params": [
+            "genTable"
+          ]
+        },
+        {
+          "name": "getInfo",
+          "startLine": 61,
+          "endLine": 73,
+          "params": [
+            "tableId"
+          ]
+        },
+        {
+          "name": "dataList",
+          "startLine": 78,
+          "endLine": 85,
+          "params": [
+            "genTable"
+          ]
+        },
+        {
+          "name": "columnList",
+          "startLine": 90,
+          "endLine": 98,
+          "params": [
+            "tableId"
+          ]
+        },
+        {
+          "name": "importTableSave",
+          "startLine": 103,
+          "endLine": 113,
+          "params": [
+            "tables"
+          ]
+        },
+        {
+          "name": "editSave",
+          "startLine": 118,
+          "endLine": 126,
+          "params": [
+            "genTable"
+          ]
+        },
+        {
+          "name": "remove",
+          "startLine": 131,
+          "endLine": 138,
+          "params": [
+            "tableIds"
+          ]
+        },
+        {
+          "name": "preview",
+          "startLine": 143,
+          "endLine": 149,
+          "params": [
+            "tableId"
+          ]
+        },
+        {
+          "name": "download",
+          "startLine": 154,
+          "endLine": 161,
+          "params": [
+            "response",
+            "tableName"
+          ]
+        },
+        {
+          "name": "genCode",
+          "startLine": 166,
+          "endLine": 173,
+          "params": [
+            "tableName"
+          ]
+        },
+        {
+          "name": "synchDb",
+          "startLine": 178,
+          "endLine": 185,
+          "params": [
+            "tableName"
+          ]
+        },
+        {
+          "name": "batchGenCode",
+          "startLine": 190,
+          "endLine": 198,
+          "params": [
+            "response",
+            "tables"
+          ]
+        },
+        {
+          "name": "genCode",
+          "startLine": 203,
+          "endLine": 210,
+          "params": [
+            "response",
+            "data"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GenController",
+          "startLine": 36,
+          "endLine": 211,
+          "methods": [
+            "genList",
+            "getInfo",
+            "dataList",
+            "columnList",
+            "importTableSave",
+            "editSave",
+            "remove",
+            "preview",
+            "download",
+            "genCode",
+            "synchDb",
+            "batchGenCode",
+            "genCode"
+          ],
+          "properties": [
+            "genTableService",
+            "genTableColumnService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "genList",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getInfo",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "dataList",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "columnList",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "importTableSave",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "editSave",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "remove",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "preview",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "download",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "genCode",
+          "line": 166,
+          "isDefault": false
+        },
+        {
+          "name": "synchDb",
+          "line": 178,
+          "isDefault": false
+        },
+        {
+          "name": "batchGenCode",
+          "line": 190,
+          "isDefault": false
+        },
+        {
+          "name": "GenController",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "genList",
+          "callee": "startPage",
+          "lineNumber": 53
+        },
+        {
+          "caller": "genList",
+          "callee": "genTableService.selectGenTableList",
+          "lineNumber": 54
+        },
+        {
+          "caller": "genList",
+          "callee": "getDataTable",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getInfo",
+          "callee": "genTableService.selectGenTableById",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getInfo",
+          "callee": "genTableService.selectGenTableAll",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getInfo",
+          "callee": "genTableColumnService.selectGenTableColumnListByTableId",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getInfo",
+          "callee": "new HashMap<String, Object>",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getInfo",
+          "callee": "map.put",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getInfo",
+          "callee": "map.put",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getInfo",
+          "callee": "map.put",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getInfo",
+          "callee": "success",
+          "lineNumber": 72
+        },
+        {
+          "caller": "dataList",
+          "callee": "startPage",
+          "lineNumber": 82
+        },
+        {
+          "caller": "dataList",
+          "callee": "genTableService.selectDbTableList",
+          "lineNumber": 83
+        },
+        {
+          "caller": "dataList",
+          "callee": "getDataTable",
+          "lineNumber": 84
+        },
+        {
+          "caller": "columnList",
+          "callee": "new TableDataInfo",
+          "lineNumber": 93
+        },
+        {
+          "caller": "columnList",
+          "callee": "genTableColumnService.selectGenTableColumnListByTableId",
+          "lineNumber": 94
+        },
+        {
+          "caller": "columnList",
+          "callee": "dataInfo.setRows",
+          "lineNumber": 95
+        },
+        {
+          "caller": "columnList",
+          "callee": "dataInfo.setTotal",
+          "lineNumber": 96
+        },
+        {
+          "caller": "columnList",
+          "callee": "list.size",
+          "lineNumber": 96
+        },
+        {
+          "caller": "importTableSave",
+          "callee": "Convert.toStrArray",
+          "lineNumber": 108
+        },
+        {
+          "caller": "importTableSave",
+          "callee": "genTableService.selectDbTableListByNames",
+          "lineNumber": 110
+        },
+        {
+          "caller": "importTableSave",
+          "callee": "genTableService.importGenTable",
+          "lineNumber": 111
+        },
+        {
+          "caller": "importTableSave",
+          "callee": "success",
+          "lineNumber": 112
+        },
+        {
+          "caller": "editSave",
+          "callee": "genTableService.validateEdit",
+          "lineNumber": 123
+        },
+        {
+          "caller": "editSave",
+          "callee": "genTableService.updateGenTable",
+          "lineNumber": 124
+        },
+        {
+          "caller": "editSave",
+          "callee": "success",
+          "lineNumber": 125
+        },
+        {
+          "caller": "remove",
+          "callee": "genTableService.deleteGenTableByIds",
+          "lineNumber": 136
+        },
+        {
+          "caller": "remove",
+          "callee": "success",
+          "lineNumber": 137
+        },
+        {
+          "caller": "preview",
+          "callee": "genTableService.previewCode",
+          "lineNumber": 147
+        },
+        {
+          "caller": "preview",
+          "callee": "success",
+          "lineNumber": 148
+        },
+        {
+          "caller": "download",
+          "callee": "genTableService.downloadCode",
+          "lineNumber": 159
+        },
+        {
+          "caller": "download",
+          "callee": "genCode",
+          "lineNumber": 160
+        },
+        {
+          "caller": "genCode",
+          "callee": "genTableService.generatorCode",
+          "lineNumber": 171
+        },
+        {
+          "caller": "genCode",
+          "callee": "success",
+          "lineNumber": 172
+        },
+        {
+          "caller": "synchDb",
+          "callee": "genTableService.synchDb",
+          "lineNumber": 183
+        },
+        {
+          "caller": "synchDb",
+          "callee": "success",
+          "lineNumber": 184
+        },
+        {
+          "caller": "batchGenCode",
+          "callee": "Convert.toStrArray",
+          "lineNumber": 195
+        },
+        {
+          "caller": "batchGenCode",
+          "callee": "genTableService.downloadCode",
+          "lineNumber": 196
+        },
+        {
+          "caller": "batchGenCode",
+          "callee": "genCode",
+          "lineNumber": 197
+        },
+        {
+          "caller": "genCode",
+          "callee": "response.reset",
+          "lineNumber": 205
+        },
+        {
+          "caller": "genCode",
+          "callee": "response.setHeader",
+          "lineNumber": 206
+        },
+        {
+          "caller": "genCode",
+          "callee": "response.addHeader",
+          "lineNumber": 207
+        },
+        {
+          "caller": "genCode",
+          "callee": "response.setContentType",
+          "lineNumber": 208
+        },
+        {
+          "caller": "genCode",
+          "callee": "IOUtils.write",
+          "lineNumber": 209
+        },
+        {
+          "caller": "genCode",
+          "callee": "response.getOutputStream",
+          "lineNumber": 209
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 13,
+        "functionCount": 13,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/domain/GenTable.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 383,
+      "nonEmptyLines": 303,
+      "functions": [
+        {
+          "name": "getTableId",
+          "startLine": 101,
+          "endLine": 104,
+          "params": []
+        },
+        {
+          "name": "setTableId",
+          "startLine": 106,
+          "endLine": 109,
+          "params": [
+            "tableId"
+          ]
+        },
+        {
+          "name": "getTableName",
+          "startLine": 111,
+          "endLine": 114,
+          "params": []
+        },
+        {
+          "name": "setTableName",
+          "startLine": 116,
+          "endLine": 119,
+          "params": [
+            "tableName"
+          ]
+        },
+        {
+          "name": "getTableComment",
+          "startLine": 121,
+          "endLine": 124,
+          "params": []
+        },
+        {
+          "name": "setTableComment",
+          "startLine": 126,
+          "endLine": 129,
+          "params": [
+            "tableComment"
+          ]
+        },
+        {
+          "name": "getSubTableName",
+          "startLine": 131,
+          "endLine": 134,
+          "params": []
+        },
+        {
+          "name": "setSubTableName",
+          "startLine": 136,
+          "endLine": 139,
+          "params": [
+            "subTableName"
+          ]
+        },
+        {
+          "name": "getSubTableFkName",
+          "startLine": 141,
+          "endLine": 144,
+          "params": []
+        },
+        {
+          "name": "setSubTableFkName",
+          "startLine": 146,
+          "endLine": 149,
+          "params": [
+            "subTableFkName"
+          ]
+        },
+        {
+          "name": "getClassName",
+          "startLine": 151,
+          "endLine": 154,
+          "params": []
+        },
+        {
+          "name": "setClassName",
+          "startLine": 156,
+          "endLine": 159,
+          "params": [
+            "className"
+          ]
+        },
+        {
+          "name": "getTplCategory",
+          "startLine": 161,
+          "endLine": 164,
+          "params": []
+        },
+        {
+          "name": "setTplCategory",
+          "startLine": 166,
+          "endLine": 169,
+          "params": [
+            "tplCategory"
+          ]
+        },
+        {
+          "name": "getTplWebType",
+          "startLine": 171,
+          "endLine": 174,
+          "params": []
+        },
+        {
+          "name": "setTplWebType",
+          "startLine": 176,
+          "endLine": 179,
+          "params": [
+            "tplWebType"
+          ]
+        },
+        {
+          "name": "getPackageName",
+          "startLine": 181,
+          "endLine": 184,
+          "params": []
+        },
+        {
+          "name": "setPackageName",
+          "startLine": 186,
+          "endLine": 189,
+          "params": [
+            "packageName"
+          ]
+        },
+        {
+          "name": "getModuleName",
+          "startLine": 191,
+          "endLine": 194,
+          "params": []
+        },
+        {
+          "name": "setModuleName",
+          "startLine": 196,
+          "endLine": 199,
+          "params": [
+            "moduleName"
+          ]
+        },
+        {
+          "name": "getBusinessName",
+          "startLine": 201,
+          "endLine": 204,
+          "params": []
+        },
+        {
+          "name": "setBusinessName",
+          "startLine": 206,
+          "endLine": 209,
+          "params": [
+            "businessName"
+          ]
+        },
+        {
+          "name": "getFunctionName",
+          "startLine": 211,
+          "endLine": 214,
+          "params": []
+        },
+        {
+          "name": "setFunctionName",
+          "startLine": 216,
+          "endLine": 219,
+          "params": [
+            "functionName"
+          ]
+        },
+        {
+          "name": "getFunctionAuthor",
+          "startLine": 221,
+          "endLine": 224,
+          "params": []
+        },
+        {
+          "name": "setFunctionAuthor",
+          "startLine": 226,
+          "endLine": 229,
+          "params": [
+            "functionAuthor"
+          ]
+        },
+        {
+          "name": "getGenType",
+          "startLine": 231,
+          "endLine": 234,
+          "params": []
+        },
+        {
+          "name": "setGenType",
+          "startLine": 236,
+          "endLine": 239,
+          "params": [
+            "genType"
+          ]
+        },
+        {
+          "name": "getGenPath",
+          "startLine": 241,
+          "endLine": 244,
+          "params": []
+        },
+        {
+          "name": "setGenPath",
+          "startLine": 246,
+          "endLine": 249,
+          "params": [
+            "genPath"
+          ]
+        },
+        {
+          "name": "getPkColumn",
+          "startLine": 251,
+          "endLine": 254,
+          "params": []
+        },
+        {
+          "name": "setPkColumn",
+          "startLine": 256,
+          "endLine": 259,
+          "params": [
+            "pkColumn"
+          ]
+        },
+        {
+          "name": "getSubTable",
+          "startLine": 261,
+          "endLine": 264,
+          "params": []
+        },
+        {
+          "name": "setSubTable",
+          "startLine": 266,
+          "endLine": 269,
+          "params": [
+            "subTable"
+          ]
+        },
+        {
+          "name": "getColumns",
+          "startLine": 270,
+          "endLine": 273,
+          "params": []
+        },
+        {
+          "name": "setColumns",
+          "startLine": 275,
+          "endLine": 278,
+          "params": [
+            "columns"
+          ]
+        },
+        {
+          "name": "getOptions",
+          "startLine": 280,
+          "endLine": 283,
+          "params": []
+        },
+        {
+          "name": "setOptions",
+          "startLine": 285,
+          "endLine": 288,
+          "params": [
+            "options"
+          ]
+        },
+        {
+          "name": "getTreeCode",
+          "startLine": 290,
+          "endLine": 293,
+          "params": []
+        },
+        {
+          "name": "setTreeCode",
+          "startLine": 295,
+          "endLine": 298,
+          "params": [
+            "treeCode"
+          ]
+        },
+        {
+          "name": "getTreeParentCode",
+          "startLine": 300,
+          "endLine": 303,
+          "params": []
+        },
+        {
+          "name": "setTreeParentCode",
+          "startLine": 305,
+          "endLine": 308,
+          "params": [
+            "treeParentCode"
+          ]
+        },
+        {
+          "name": "getTreeName",
+          "startLine": 310,
+          "endLine": 313,
+          "params": []
+        },
+        {
+          "name": "setTreeName",
+          "startLine": 315,
+          "endLine": 318,
+          "params": [
+            "treeName"
+          ]
+        },
+        {
+          "name": "getParentMenuId",
+          "startLine": 320,
+          "endLine": 323,
+          "params": []
+        },
+        {
+          "name": "setParentMenuId",
+          "startLine": 325,
+          "endLine": 328,
+          "params": [
+            "parentMenuId"
+          ]
+        },
+        {
+          "name": "getParentMenuName",
+          "startLine": 330,
+          "endLine": 333,
+          "params": []
+        },
+        {
+          "name": "setParentMenuName",
+          "startLine": 335,
+          "endLine": 338,
+          "params": [
+            "parentMenuName"
+          ]
+        },
+        {
+          "name": "isSub",
+          "startLine": 340,
+          "endLine": 343,
+          "params": []
+        },
+        {
+          "name": "isSub",
+          "startLine": 345,
+          "endLine": 348,
+          "params": [
+            "tplCategory"
+          ]
+        },
+        {
+          "name": "isTree",
+          "startLine": 349,
+          "endLine": 352,
+          "params": []
+        },
+        {
+          "name": "isTree",
+          "startLine": 354,
+          "endLine": 357,
+          "params": [
+            "tplCategory"
+          ]
+        },
+        {
+          "name": "isCrud",
+          "startLine": 359,
+          "endLine": 362,
+          "params": []
+        },
+        {
+          "name": "isCrud",
+          "startLine": 364,
+          "endLine": 367,
+          "params": [
+            "tplCategory"
+          ]
+        },
+        {
+          "name": "isSuperColumn",
+          "startLine": 369,
+          "endLine": 372,
+          "params": [
+            "javaField"
+          ]
+        },
+        {
+          "name": "isSuperColumn",
+          "startLine": 374,
+          "endLine": 382,
+          "params": [
+            "tplCategory",
+            "javaField"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GenTable",
+          "startLine": 16,
+          "endLine": 383,
+          "methods": [
+            "getTableId",
+            "setTableId",
+            "getTableName",
+            "setTableName",
+            "getTableComment",
+            "setTableComment",
+            "getSubTableName",
+            "setSubTableName",
+            "getSubTableFkName",
+            "setSubTableFkName",
+            "getClassName",
+            "setClassName",
+            "getTplCategory",
+            "setTplCategory",
+            "getTplWebType",
+            "setTplWebType",
+            "getPackageName",
+            "setPackageName",
+            "getModuleName",
+            "setModuleName",
+            "getBusinessName",
+            "setBusinessName",
+            "getFunctionName",
+            "setFunctionName",
+            "getFunctionAuthor",
+            "setFunctionAuthor",
+            "getGenType",
+            "setGenType",
+            "getGenPath",
+            "setGenPath",
+            "getPkColumn",
+            "setPkColumn",
+            "getSubTable",
+            "setSubTable",
+            "getColumns",
+            "setColumns",
+            "getOptions",
+            "setOptions",
+            "getTreeCode",
+            "setTreeCode",
+            "getTreeParentCode",
+            "setTreeParentCode",
+            "getTreeName",
+            "setTreeName",
+            "getParentMenuId",
+            "setParentMenuId",
+            "getParentMenuName",
+            "setParentMenuName",
+            "isSub",
+            "isSub",
+            "isTree",
+            "isTree",
+            "isCrud",
+            "isCrud",
+            "isSuperColumn",
+            "isSuperColumn"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "tableId",
+            "tableName",
+            "tableComment",
+            "subTableName",
+            "subTableFkName",
+            "className",
+            "tplCategory",
+            "tplWebType",
+            "packageName",
+            "moduleName",
+            "businessName",
+            "functionName",
+            "functionAuthor",
+            "genType",
+            "genPath",
+            "pkColumn",
+            "subTable",
+            "columns",
+            "options",
+            "treeCode",
+            "treeParentCode",
+            "treeName",
+            "parentMenuId",
+            "parentMenuName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getTableId",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "setTableId",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "getTableName",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "setTableName",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "getTableComment",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "setTableComment",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "getSubTableName",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "setSubTableName",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "getSubTableFkName",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "setSubTableFkName",
+          "line": 146,
+          "isDefault": false
+        },
+        {
+          "name": "getClassName",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "setClassName",
+          "line": 156,
+          "isDefault": false
+        },
+        {
+          "name": "getTplCategory",
+          "line": 161,
+          "isDefault": false
+        },
+        {
+          "name": "setTplCategory",
+          "line": 166,
+          "isDefault": false
+        },
+        {
+          "name": "getTplWebType",
+          "line": 171,
+          "isDefault": false
+        },
+        {
+          "name": "setTplWebType",
+          "line": 176,
+          "isDefault": false
+        },
+        {
+          "name": "getPackageName",
+          "line": 181,
+          "isDefault": false
+        },
+        {
+          "name": "setPackageName",
+          "line": 186,
+          "isDefault": false
+        },
+        {
+          "name": "getModuleName",
+          "line": 191,
+          "isDefault": false
+        },
+        {
+          "name": "setModuleName",
+          "line": 196,
+          "isDefault": false
+        },
+        {
+          "name": "getBusinessName",
+          "line": 201,
+          "isDefault": false
+        },
+        {
+          "name": "setBusinessName",
+          "line": 206,
+          "isDefault": false
+        },
+        {
+          "name": "getFunctionName",
+          "line": 211,
+          "isDefault": false
+        },
+        {
+          "name": "setFunctionName",
+          "line": 216,
+          "isDefault": false
+        },
+        {
+          "name": "getFunctionAuthor",
+          "line": 221,
+          "isDefault": false
+        },
+        {
+          "name": "setFunctionAuthor",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "getGenType",
+          "line": 231,
+          "isDefault": false
+        },
+        {
+          "name": "setGenType",
+          "line": 236,
+          "isDefault": false
+        },
+        {
+          "name": "getGenPath",
+          "line": 241,
+          "isDefault": false
+        },
+        {
+          "name": "setGenPath",
+          "line": 246,
+          "isDefault": false
+        },
+        {
+          "name": "getPkColumn",
+          "line": 251,
+          "isDefault": false
+        },
+        {
+          "name": "setPkColumn",
+          "line": 256,
+          "isDefault": false
+        },
+        {
+          "name": "getSubTable",
+          "line": 261,
+          "isDefault": false
+        },
+        {
+          "name": "setSubTable",
+          "line": 266,
+          "isDefault": false
+        },
+        {
+          "name": "getColumns",
+          "line": 270,
+          "isDefault": false
+        },
+        {
+          "name": "setColumns",
+          "line": 275,
+          "isDefault": false
+        },
+        {
+          "name": "getOptions",
+          "line": 280,
+          "isDefault": false
+        },
+        {
+          "name": "setOptions",
+          "line": 285,
+          "isDefault": false
+        },
+        {
+          "name": "getTreeCode",
+          "line": 290,
+          "isDefault": false
+        },
+        {
+          "name": "setTreeCode",
+          "line": 295,
+          "isDefault": false
+        },
+        {
+          "name": "getTreeParentCode",
+          "line": 300,
+          "isDefault": false
+        },
+        {
+          "name": "setTreeParentCode",
+          "line": 305,
+          "isDefault": false
+        },
+        {
+          "name": "getTreeName",
+          "line": 310,
+          "isDefault": false
+        },
+        {
+          "name": "setTreeName",
+          "line": 315,
+          "isDefault": false
+        },
+        {
+          "name": "getParentMenuId",
+          "line": 320,
+          "isDefault": false
+        },
+        {
+          "name": "setParentMenuId",
+          "line": 325,
+          "isDefault": false
+        },
+        {
+          "name": "getParentMenuName",
+          "line": 330,
+          "isDefault": false
+        },
+        {
+          "name": "setParentMenuName",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "isSub",
+          "line": 340,
+          "isDefault": false
+        },
+        {
+          "name": "isSub",
+          "line": 345,
+          "isDefault": false
+        },
+        {
+          "name": "isTree",
+          "line": 349,
+          "isDefault": false
+        },
+        {
+          "name": "isTree",
+          "line": 354,
+          "isDefault": false
+        },
+        {
+          "name": "isCrud",
+          "line": 359,
+          "isDefault": false
+        },
+        {
+          "name": "isCrud",
+          "line": 364,
+          "isDefault": false
+        },
+        {
+          "name": "isSuperColumn",
+          "line": 369,
+          "isDefault": false
+        },
+        {
+          "name": "isSuperColumn",
+          "line": 374,
+          "isDefault": false
+        },
+        {
+          "name": "GenTable",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isSub",
+          "callee": "isSub",
+          "lineNumber": 342
+        },
+        {
+          "caller": "isSub",
+          "callee": "StringUtils.equals",
+          "lineNumber": 347
+        },
+        {
+          "caller": "isTree",
+          "callee": "isTree",
+          "lineNumber": 351
+        },
+        {
+          "caller": "isTree",
+          "callee": "StringUtils.equals",
+          "lineNumber": 356
+        },
+        {
+          "caller": "isCrud",
+          "callee": "isCrud",
+          "lineNumber": 361
+        },
+        {
+          "caller": "isCrud",
+          "callee": "StringUtils.equals",
+          "lineNumber": 366
+        },
+        {
+          "caller": "isSuperColumn",
+          "callee": "isSuperColumn",
+          "lineNumber": 371
+        },
+        {
+          "caller": "isSuperColumn",
+          "callee": "isTree",
+          "lineNumber": 376
+        },
+        {
+          "caller": "isSuperColumn",
+          "callee": "StringUtils.equalsAnyIgnoreCase",
+          "lineNumber": 378
+        },
+        {
+          "caller": "isSuperColumn",
+          "callee": "ArrayUtils.addAll",
+          "lineNumber": 379
+        },
+        {
+          "caller": "isSuperColumn",
+          "callee": "StringUtils.equalsAnyIgnoreCase",
+          "lineNumber": 381
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 57,
+        "functionCount": 56,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/domain/GenTableColumn.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 374,
+      "nonEmptyLines": 297,
+      "functions": [
+        {
+          "name": "setColumnId",
+          "startLine": 72,
+          "endLine": 75,
+          "params": [
+            "columnId"
+          ]
+        },
+        {
+          "name": "getColumnId",
+          "startLine": 77,
+          "endLine": 80,
+          "params": []
+        },
+        {
+          "name": "setTableId",
+          "startLine": 82,
+          "endLine": 85,
+          "params": [
+            "tableId"
+          ]
+        },
+        {
+          "name": "getTableId",
+          "startLine": 87,
+          "endLine": 90,
+          "params": []
+        },
+        {
+          "name": "setColumnName",
+          "startLine": 92,
+          "endLine": 95,
+          "params": [
+            "columnName"
+          ]
+        },
+        {
+          "name": "getColumnName",
+          "startLine": 97,
+          "endLine": 100,
+          "params": []
+        },
+        {
+          "name": "setColumnComment",
+          "startLine": 102,
+          "endLine": 105,
+          "params": [
+            "columnComment"
+          ]
+        },
+        {
+          "name": "getColumnComment",
+          "startLine": 107,
+          "endLine": 110,
+          "params": []
+        },
+        {
+          "name": "setColumnType",
+          "startLine": 112,
+          "endLine": 115,
+          "params": [
+            "columnType"
+          ]
+        },
+        {
+          "name": "getColumnType",
+          "startLine": 117,
+          "endLine": 120,
+          "params": []
+        },
+        {
+          "name": "setJavaType",
+          "startLine": 122,
+          "endLine": 125,
+          "params": [
+            "javaType"
+          ]
+        },
+        {
+          "name": "getJavaType",
+          "startLine": 127,
+          "endLine": 130,
+          "params": []
+        },
+        {
+          "name": "setJavaField",
+          "startLine": 132,
+          "endLine": 135,
+          "params": [
+            "javaField"
+          ]
+        },
+        {
+          "name": "getJavaField",
+          "startLine": 137,
+          "endLine": 140,
+          "params": []
+        },
+        {
+          "name": "getCapJavaField",
+          "startLine": 142,
+          "endLine": 145,
+          "params": []
+        },
+        {
+          "name": "setIsPk",
+          "startLine": 147,
+          "endLine": 150,
+          "params": [
+            "isPk"
+          ]
+        },
+        {
+          "name": "getIsPk",
+          "startLine": 152,
+          "endLine": 155,
+          "params": []
+        },
+        {
+          "name": "isPk",
+          "startLine": 157,
+          "endLine": 160,
+          "params": []
+        },
+        {
+          "name": "isPk",
+          "startLine": 162,
+          "endLine": 165,
+          "params": [
+            "isPk"
+          ]
+        },
+        {
+          "name": "getIsIncrement",
+          "startLine": 167,
+          "endLine": 170,
+          "params": []
+        },
+        {
+          "name": "setIsIncrement",
+          "startLine": 172,
+          "endLine": 175,
+          "params": [
+            "isIncrement"
+          ]
+        },
+        {
+          "name": "isIncrement",
+          "startLine": 177,
+          "endLine": 180,
+          "params": []
+        },
+        {
+          "name": "isIncrement",
+          "startLine": 182,
+          "endLine": 185,
+          "params": [
+            "isIncrement"
+          ]
+        },
+        {
+          "name": "setIsRequired",
+          "startLine": 187,
+          "endLine": 190,
+          "params": [
+            "isRequired"
+          ]
+        },
+        {
+          "name": "getIsRequired",
+          "startLine": 192,
+          "endLine": 195,
+          "params": []
+        },
+        {
+          "name": "isRequired",
+          "startLine": 197,
+          "endLine": 200,
+          "params": []
+        },
+        {
+          "name": "isRequired",
+          "startLine": 202,
+          "endLine": 205,
+          "params": [
+            "isRequired"
+          ]
+        },
+        {
+          "name": "setIsInsert",
+          "startLine": 207,
+          "endLine": 210,
+          "params": [
+            "isInsert"
+          ]
+        },
+        {
+          "name": "getIsInsert",
+          "startLine": 212,
+          "endLine": 215,
+          "params": []
+        },
+        {
+          "name": "isInsert",
+          "startLine": 217,
+          "endLine": 220,
+          "params": []
+        },
+        {
+          "name": "isInsert",
+          "startLine": 222,
+          "endLine": 225,
+          "params": [
+            "isInsert"
+          ]
+        },
+        {
+          "name": "setIsEdit",
+          "startLine": 227,
+          "endLine": 230,
+          "params": [
+            "isEdit"
+          ]
+        },
+        {
+          "name": "getIsEdit",
+          "startLine": 232,
+          "endLine": 235,
+          "params": []
+        },
+        {
+          "name": "isEdit",
+          "startLine": 237,
+          "endLine": 240,
+          "params": []
+        },
+        {
+          "name": "isEdit",
+          "startLine": 242,
+          "endLine": 245,
+          "params": [
+            "isEdit"
+          ]
+        },
+        {
+          "name": "setIsList",
+          "startLine": 247,
+          "endLine": 250,
+          "params": [
+            "isList"
+          ]
+        },
+        {
+          "name": "getIsList",
+          "startLine": 252,
+          "endLine": 255,
+          "params": []
+        },
+        {
+          "name": "isList",
+          "startLine": 257,
+          "endLine": 260,
+          "params": []
+        },
+        {
+          "name": "isList",
+          "startLine": 262,
+          "endLine": 265,
+          "params": [
+            "isList"
+          ]
+        },
+        {
+          "name": "setIsQuery",
+          "startLine": 267,
+          "endLine": 270,
+          "params": [
+            "isQuery"
+          ]
+        },
+        {
+          "name": "getIsQuery",
+          "startLine": 272,
+          "endLine": 275,
+          "params": []
+        },
+        {
+          "name": "isQuery",
+          "startLine": 277,
+          "endLine": 280,
+          "params": []
+        },
+        {
+          "name": "isQuery",
+          "startLine": 282,
+          "endLine": 285,
+          "params": [
+            "isQuery"
+          ]
+        },
+        {
+          "name": "setQueryType",
+          "startLine": 287,
+          "endLine": 290,
+          "params": [
+            "queryType"
+          ]
+        },
+        {
+          "name": "getQueryType",
+          "startLine": 292,
+          "endLine": 295,
+          "params": []
+        },
+        {
+          "name": "getHtmlType",
+          "startLine": 297,
+          "endLine": 300,
+          "params": []
+        },
+        {
+          "name": "setHtmlType",
+          "startLine": 302,
+          "endLine": 305,
+          "params": [
+            "htmlType"
+          ]
+        },
+        {
+          "name": "setDictType",
+          "startLine": 307,
+          "endLine": 310,
+          "params": [
+            "dictType"
+          ]
+        },
+        {
+          "name": "getDictType",
+          "startLine": 312,
+          "endLine": 315,
+          "params": []
+        },
+        {
+          "name": "setSort",
+          "startLine": 317,
+          "endLine": 320,
+          "params": [
+            "sort"
+          ]
+        },
+        {
+          "name": "getSort",
+          "startLine": 322,
+          "endLine": 325,
+          "params": []
+        },
+        {
+          "name": "isSuperColumn",
+          "startLine": 327,
+          "endLine": 330,
+          "params": []
+        },
+        {
+          "name": "isSuperColumn",
+          "startLine": 332,
+          "endLine": 339,
+          "params": [
+            "javaField"
+          ]
+        },
+        {
+          "name": "isUsableColumn",
+          "startLine": 341,
+          "endLine": 344,
+          "params": []
+        },
+        {
+          "name": "isUsableColumn",
+          "startLine": 346,
+          "endLine": 350,
+          "params": [
+            "javaField"
+          ]
+        },
+        {
+          "name": "readConverterExp",
+          "startLine": 352,
+          "endLine": 373,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "GenTableColumn",
+          "startLine": 13,
+          "endLine": 374,
+          "methods": [
+            "setColumnId",
+            "getColumnId",
+            "setTableId",
+            "getTableId",
+            "setColumnName",
+            "getColumnName",
+            "setColumnComment",
+            "getColumnComment",
+            "setColumnType",
+            "getColumnType",
+            "setJavaType",
+            "getJavaType",
+            "setJavaField",
+            "getJavaField",
+            "getCapJavaField",
+            "setIsPk",
+            "getIsPk",
+            "isPk",
+            "isPk",
+            "getIsIncrement",
+            "setIsIncrement",
+            "isIncrement",
+            "isIncrement",
+            "setIsRequired",
+            "getIsRequired",
+            "isRequired",
+            "isRequired",
+            "setIsInsert",
+            "getIsInsert",
+            "isInsert",
+            "isInsert",
+            "setIsEdit",
+            "getIsEdit",
+            "isEdit",
+            "isEdit",
+            "setIsList",
+            "getIsList",
+            "isList",
+            "isList",
+            "setIsQuery",
+            "getIsQuery",
+            "isQuery",
+            "isQuery",
+            "setQueryType",
+            "getQueryType",
+            "getHtmlType",
+            "setHtmlType",
+            "setDictType",
+            "getDictType",
+            "setSort",
+            "getSort",
+            "isSuperColumn",
+            "isSuperColumn",
+            "isUsableColumn",
+            "isUsableColumn",
+            "readConverterExp"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "columnId",
+            "tableId",
+            "columnName",
+            "columnComment",
+            "columnType",
+            "javaType",
+            "javaField",
+            "isPk",
+            "isIncrement",
+            "isRequired",
+            "isInsert",
+            "isEdit",
+            "isList",
+            "isQuery",
+            "queryType",
+            "htmlType",
+            "dictType",
+            "sort"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "setColumnId",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "getColumnId",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "setTableId",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "getTableId",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "setColumnName",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "getColumnName",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "setColumnComment",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "getColumnComment",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "setColumnType",
+          "line": 112,
+          "isDefault": false
+        },
+        {
+          "name": "getColumnType",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "setJavaType",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "getJavaType",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "setJavaField",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "getJavaField",
+          "line": 137,
+          "isDefault": false
+        },
+        {
+          "name": "getCapJavaField",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "setIsPk",
+          "line": 147,
+          "isDefault": false
+        },
+        {
+          "name": "getIsPk",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "isPk",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "isPk",
+          "line": 162,
+          "isDefault": false
+        },
+        {
+          "name": "getIsIncrement",
+          "line": 167,
+          "isDefault": false
+        },
+        {
+          "name": "setIsIncrement",
+          "line": 172,
+          "isDefault": false
+        },
+        {
+          "name": "isIncrement",
+          "line": 177,
+          "isDefault": false
+        },
+        {
+          "name": "isIncrement",
+          "line": 182,
+          "isDefault": false
+        },
+        {
+          "name": "setIsRequired",
+          "line": 187,
+          "isDefault": false
+        },
+        {
+          "name": "getIsRequired",
+          "line": 192,
+          "isDefault": false
+        },
+        {
+          "name": "isRequired",
+          "line": 197,
+          "isDefault": false
+        },
+        {
+          "name": "isRequired",
+          "line": 202,
+          "isDefault": false
+        },
+        {
+          "name": "setIsInsert",
+          "line": 207,
+          "isDefault": false
+        },
+        {
+          "name": "getIsInsert",
+          "line": 212,
+          "isDefault": false
+        },
+        {
+          "name": "isInsert",
+          "line": 217,
+          "isDefault": false
+        },
+        {
+          "name": "isInsert",
+          "line": 222,
+          "isDefault": false
+        },
+        {
+          "name": "setIsEdit",
+          "line": 227,
+          "isDefault": false
+        },
+        {
+          "name": "getIsEdit",
+          "line": 232,
+          "isDefault": false
+        },
+        {
+          "name": "isEdit",
+          "line": 237,
+          "isDefault": false
+        },
+        {
+          "name": "isEdit",
+          "line": 242,
+          "isDefault": false
+        },
+        {
+          "name": "setIsList",
+          "line": 247,
+          "isDefault": false
+        },
+        {
+          "name": "getIsList",
+          "line": 252,
+          "isDefault": false
+        },
+        {
+          "name": "isList",
+          "line": 257,
+          "isDefault": false
+        },
+        {
+          "name": "isList",
+          "line": 262,
+          "isDefault": false
+        },
+        {
+          "name": "setIsQuery",
+          "line": 267,
+          "isDefault": false
+        },
+        {
+          "name": "getIsQuery",
+          "line": 272,
+          "isDefault": false
+        },
+        {
+          "name": "isQuery",
+          "line": 277,
+          "isDefault": false
+        },
+        {
+          "name": "isQuery",
+          "line": 282,
+          "isDefault": false
+        },
+        {
+          "name": "setQueryType",
+          "line": 287,
+          "isDefault": false
+        },
+        {
+          "name": "getQueryType",
+          "line": 292,
+          "isDefault": false
+        },
+        {
+          "name": "getHtmlType",
+          "line": 297,
+          "isDefault": false
+        },
+        {
+          "name": "setHtmlType",
+          "line": 302,
+          "isDefault": false
+        },
+        {
+          "name": "setDictType",
+          "line": 307,
+          "isDefault": false
+        },
+        {
+          "name": "getDictType",
+          "line": 312,
+          "isDefault": false
+        },
+        {
+          "name": "setSort",
+          "line": 317,
+          "isDefault": false
+        },
+        {
+          "name": "getSort",
+          "line": 322,
+          "isDefault": false
+        },
+        {
+          "name": "isSuperColumn",
+          "line": 327,
+          "isDefault": false
+        },
+        {
+          "name": "isSuperColumn",
+          "line": 332,
+          "isDefault": false
+        },
+        {
+          "name": "isUsableColumn",
+          "line": 341,
+          "isDefault": false
+        },
+        {
+          "name": "isUsableColumn",
+          "line": 346,
+          "isDefault": false
+        },
+        {
+          "name": "readConverterExp",
+          "line": 352,
+          "isDefault": false
+        },
+        {
+          "name": "GenTableColumn",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getCapJavaField",
+          "callee": "StringUtils.capitalize",
+          "lineNumber": 144
+        },
+        {
+          "caller": "isPk",
+          "callee": "isPk",
+          "lineNumber": 159
+        },
+        {
+          "caller": "isPk",
+          "callee": "StringUtils.equals",
+          "lineNumber": 164
+        },
+        {
+          "caller": "isIncrement",
+          "callee": "isIncrement",
+          "lineNumber": 179
+        },
+        {
+          "caller": "isIncrement",
+          "callee": "StringUtils.equals",
+          "lineNumber": 184
+        },
+        {
+          "caller": "isRequired",
+          "callee": "isRequired",
+          "lineNumber": 199
+        },
+        {
+          "caller": "isRequired",
+          "callee": "StringUtils.equals",
+          "lineNumber": 204
+        },
+        {
+          "caller": "isInsert",
+          "callee": "isInsert",
+          "lineNumber": 219
+        },
+        {
+          "caller": "isInsert",
+          "callee": "StringUtils.equals",
+          "lineNumber": 224
+        },
+        {
+          "caller": "isEdit",
+          "callee": "isInsert",
+          "lineNumber": 239
+        },
+        {
+          "caller": "isEdit",
+          "callee": "StringUtils.equals",
+          "lineNumber": 244
+        },
+        {
+          "caller": "isList",
+          "callee": "isList",
+          "lineNumber": 259
+        },
+        {
+          "caller": "isList",
+          "callee": "StringUtils.equals",
+          "lineNumber": 264
+        },
+        {
+          "caller": "isQuery",
+          "callee": "isQuery",
+          "lineNumber": 279
+        },
+        {
+          "caller": "isQuery",
+          "callee": "StringUtils.equals",
+          "lineNumber": 284
+        },
+        {
+          "caller": "isSuperColumn",
+          "callee": "isSuperColumn",
+          "lineNumber": 329
+        },
+        {
+          "caller": "isSuperColumn",
+          "callee": "StringUtils.equalsAnyIgnoreCase",
+          "lineNumber": 334
+        },
+        {
+          "caller": "isUsableColumn",
+          "callee": "isUsableColumn",
+          "lineNumber": 343
+        },
+        {
+          "caller": "isUsableColumn",
+          "callee": "StringUtils.equalsAnyIgnoreCase",
+          "lineNumber": 349
+        },
+        {
+          "caller": "readConverterExp",
+          "callee": "StringUtils.substringBetween",
+          "lineNumber": 354
+        },
+        {
+          "caller": "readConverterExp",
+          "callee": "new StringBuffer",
+          "lineNumber": 355
+        },
+        {
+          "caller": "readConverterExp",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 356
+        },
+        {
+          "caller": "readConverterExp",
+          "callee": "remarks.split",
+          "lineNumber": 358
+        },
+        {
+          "caller": "readConverterExp",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 360
+        },
+        {
+          "caller": "readConverterExp",
+          "callee": "value.subSequence",
+          "lineNumber": 362
+        },
+        {
+          "caller": "readConverterExp",
+          "callee": "value.substring",
+          "lineNumber": 363
+        },
+        {
+          "caller": "readConverterExp",
+          "callee": "sb.append(\"\").append(startStr).append(\"=\").append(endStr).append",
+          "lineNumber": 364
+        },
+        {
+          "caller": "readConverterExp",
+          "callee": "sb.append(\"\").append(startStr).append(\"=\").append",
+          "lineNumber": 364
+        },
+        {
+          "caller": "readConverterExp",
+          "callee": "sb.append(\"\").append(startStr).append",
+          "lineNumber": 364
+        },
+        {
+          "caller": "readConverterExp",
+          "callee": "sb.append(\"\").append",
+          "lineNumber": 364
+        },
+        {
+          "caller": "readConverterExp",
+          "callee": "sb.append",
+          "lineNumber": 364
+        },
+        {
+          "caller": "readConverterExp",
+          "callee": "sb.deleteCharAt(sb.length() - 1).toString",
+          "lineNumber": 367
+        },
+        {
+          "caller": "readConverterExp",
+          "callee": "sb.deleteCharAt",
+          "lineNumber": 367
+        },
+        {
+          "caller": "readConverterExp",
+          "callee": "sb.length",
+          "lineNumber": 367
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 57,
+        "functionCount": 56,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/mapper/GenTableColumnMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 53,
+      "classes": [
+        {
+          "name": "GenTableColumnMapper",
+          "startLine": 11,
+          "endLine": 60,
+          "methods": [
+            "selectDbTableColumnsByName",
+            "selectGenTableColumnListByTableId",
+            "insertGenTableColumn",
+            "updateGenTableColumn",
+            "deleteGenTableColumns",
+            "deleteGenTableColumnByIds"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "GenTableColumnMapper",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/mapper/GenTableMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 73,
+      "classes": [
+        {
+          "name": "GenTableMapper",
+          "startLine": 11,
+          "endLine": 83,
+          "methods": [
+            "selectGenTableList",
+            "selectDbTableList",
+            "selectDbTableListByNames",
+            "selectGenTableAll",
+            "selectGenTableById",
+            "selectGenTableByName",
+            "insertGenTable",
+            "updateGenTable",
+            "deleteGenTableByIds"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "GenTableMapper",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableColumnServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "selectGenTableColumnListByTableId",
+          "startLine": 27,
+          "endLine": 31,
+          "params": [
+            "tableId"
+          ]
+        },
+        {
+          "name": "insertGenTableColumn",
+          "startLine": 39,
+          "endLine": 43,
+          "params": [
+            "genTableColumn"
+          ]
+        },
+        {
+          "name": "updateGenTableColumn",
+          "startLine": 51,
+          "endLine": 55,
+          "params": [
+            "genTableColumn"
+          ]
+        },
+        {
+          "name": "deleteGenTableColumnByIds",
+          "startLine": 63,
+          "endLine": 67,
+          "params": [
+            "ids"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GenTableColumnServiceImpl",
+          "startLine": 15,
+          "endLine": 68,
+          "methods": [
+            "selectGenTableColumnListByTableId",
+            "insertGenTableColumn",
+            "updateGenTableColumn",
+            "deleteGenTableColumnByIds"
+          ],
+          "properties": [
+            "genTableColumnMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "selectGenTableColumnListByTableId",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "insertGenTableColumn",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "updateGenTableColumn",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "deleteGenTableColumnByIds",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "GenTableColumnServiceImpl",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectGenTableColumnListByTableId",
+          "callee": "genTableColumnMapper.selectGenTableColumnListByTableId",
+          "lineNumber": 30
+        },
+        {
+          "caller": "insertGenTableColumn",
+          "callee": "genTableColumnMapper.insertGenTableColumn",
+          "lineNumber": 42
+        },
+        {
+          "caller": "updateGenTableColumn",
+          "callee": "genTableColumnMapper.updateGenTableColumn",
+          "lineNumber": 54
+        },
+        {
+          "caller": "deleteGenTableColumnByIds",
+          "callee": "genTableColumnMapper.deleteGenTableColumnByIds",
+          "lineNumber": 66
+        },
+        {
+          "caller": "deleteGenTableColumnByIds",
+          "callee": "Convert.toLongArray",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/GenTableServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 521,
+      "nonEmptyLines": 486,
+      "functions": [
+        {
+          "name": "selectGenTableById",
+          "startLine": 62,
+          "endLine": 68,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "selectGenTableList",
+          "startLine": 76,
+          "endLine": 80,
+          "params": [
+            "genTable"
+          ]
+        },
+        {
+          "name": "selectDbTableList",
+          "startLine": 88,
+          "endLine": 92,
+          "params": [
+            "genTable"
+          ]
+        },
+        {
+          "name": "selectDbTableListByNames",
+          "startLine": 100,
+          "endLine": 104,
+          "params": [
+            "tableNames"
+          ]
+        },
+        {
+          "name": "selectGenTableAll",
+          "startLine": 111,
+          "endLine": 115,
+          "params": []
+        },
+        {
+          "name": "updateGenTable",
+          "startLine": 123,
+          "endLine": 137,
+          "params": [
+            "genTable"
+          ]
+        },
+        {
+          "name": "deleteGenTableByIds",
+          "startLine": 145,
+          "endLine": 151,
+          "params": [
+            "tableIds"
+          ]
+        },
+        {
+          "name": "importGenTable",
+          "startLine": 158,
+          "endLine": 186,
+          "params": [
+            "tableList"
+          ]
+        },
+        {
+          "name": "previewCode",
+          "startLine": 194,
+          "endLine": 219,
+          "params": [
+            "tableId"
+          ]
+        },
+        {
+          "name": "downloadCode",
+          "startLine": 227,
+          "endLine": 235,
+          "params": [
+            "tableName"
+          ]
+        },
+        {
+          "name": "generatorCode",
+          "startLine": 242,
+          "endLine": 277,
+          "params": [
+            "tableName"
+          ]
+        },
+        {
+          "name": "synchDb",
+          "startLine": 284,
+          "endLine": 332,
+          "params": [
+            "tableName"
+          ]
+        },
+        {
+          "name": "downloadCode",
+          "startLine": 340,
+          "endLine": 351,
+          "params": [
+            "tableNames"
+          ]
+        },
+        {
+          "name": "generatorCode",
+          "startLine": 356,
+          "endLine": 391,
+          "params": [
+            "tableName",
+            "zip"
+          ]
+        },
+        {
+          "name": "validateEdit",
+          "startLine": 398,
+          "endLine": 429,
+          "params": [
+            "genTable"
+          ]
+        },
+        {
+          "name": "setPkColumn",
+          "startLine": 436,
+          "endLine": 465,
+          "params": [
+            "table"
+          ]
+        },
+        {
+          "name": "setSubTable",
+          "startLine": 472,
+          "endLine": 479,
+          "params": [
+            "table"
+          ]
+        },
+        {
+          "name": "setTableFromOptions",
+          "startLine": 486,
+          "endLine": 503,
+          "params": [
+            "genTable"
+          ]
+        },
+        {
+          "name": "getGenPath",
+          "startLine": 512,
+          "endLine": 520,
+          "params": [
+            "table",
+            "template"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GenTableServiceImpl",
+          "startLine": 45,
+          "endLine": 521,
+          "methods": [
+            "selectGenTableById",
+            "selectGenTableList",
+            "selectDbTableList",
+            "selectDbTableListByNames",
+            "selectGenTableAll",
+            "updateGenTable",
+            "deleteGenTableByIds",
+            "importGenTable",
+            "previewCode",
+            "downloadCode",
+            "generatorCode",
+            "synchDb",
+            "downloadCode",
+            "generatorCode",
+            "validateEdit",
+            "setPkColumn",
+            "setSubTable",
+            "setTableFromOptions",
+            "getGenPath"
+          ],
+          "properties": [
+            "log",
+            "genTableMapper",
+            "genTableColumnMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "selectGenTableById",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "selectGenTableList",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "selectDbTableList",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "selectDbTableListByNames",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "selectGenTableAll",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "updateGenTable",
+          "line": 123,
+          "isDefault": false
+        },
+        {
+          "name": "deleteGenTableByIds",
+          "line": 145,
+          "isDefault": false
+        },
+        {
+          "name": "importGenTable",
+          "line": 158,
+          "isDefault": false
+        },
+        {
+          "name": "previewCode",
+          "line": 194,
+          "isDefault": false
+        },
+        {
+          "name": "downloadCode",
+          "line": 227,
+          "isDefault": false
+        },
+        {
+          "name": "generatorCode",
+          "line": 242,
+          "isDefault": false
+        },
+        {
+          "name": "synchDb",
+          "line": 284,
+          "isDefault": false
+        },
+        {
+          "name": "downloadCode",
+          "line": 340,
+          "isDefault": false
+        },
+        {
+          "name": "validateEdit",
+          "line": 398,
+          "isDefault": false
+        },
+        {
+          "name": "setPkColumn",
+          "line": 436,
+          "isDefault": false
+        },
+        {
+          "name": "setSubTable",
+          "line": 472,
+          "isDefault": false
+        },
+        {
+          "name": "setTableFromOptions",
+          "line": 486,
+          "isDefault": false
+        },
+        {
+          "name": "getGenPath",
+          "line": 512,
+          "isDefault": false
+        },
+        {
+          "name": "GenTableServiceImpl",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectGenTableById",
+          "callee": "genTableMapper.selectGenTableById",
+          "lineNumber": 65
+        },
+        {
+          "caller": "selectGenTableById",
+          "callee": "setTableFromOptions",
+          "lineNumber": 66
+        },
+        {
+          "caller": "selectGenTableList",
+          "callee": "genTableMapper.selectGenTableList",
+          "lineNumber": 79
+        },
+        {
+          "caller": "selectDbTableList",
+          "callee": "genTableMapper.selectDbTableList",
+          "lineNumber": 91
+        },
+        {
+          "caller": "selectDbTableListByNames",
+          "callee": "genTableMapper.selectDbTableListByNames",
+          "lineNumber": 103
+        },
+        {
+          "caller": "selectGenTableAll",
+          "callee": "genTableMapper.selectGenTableAll",
+          "lineNumber": 114
+        },
+        {
+          "caller": "updateGenTable",
+          "callee": "JSON.toJSONString",
+          "lineNumber": 127
+        },
+        {
+          "caller": "updateGenTable",
+          "callee": "genTable.getParams",
+          "lineNumber": 127
+        },
+        {
+          "caller": "updateGenTable",
+          "callee": "genTable.setOptions",
+          "lineNumber": 128
+        },
+        {
+          "caller": "updateGenTable",
+          "callee": "genTableMapper.updateGenTable",
+          "lineNumber": 129
+        },
+        {
+          "caller": "updateGenTable",
+          "callee": "genTable.getColumns",
+          "lineNumber": 132
+        },
+        {
+          "caller": "updateGenTable",
+          "callee": "genTableColumnMapper.updateGenTableColumn",
+          "lineNumber": 134
+        },
+        {
+          "caller": "deleteGenTableByIds",
+          "callee": "genTableMapper.deleteGenTableByIds",
+          "lineNumber": 149
+        },
+        {
+          "caller": "deleteGenTableByIds",
+          "callee": "genTableColumnMapper.deleteGenTableColumnByIds",
+          "lineNumber": 150
+        },
+        {
+          "caller": "importGenTable",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 162
+        },
+        {
+          "caller": "importGenTable",
+          "callee": "table.getTableName",
+          "lineNumber": 167
+        },
+        {
+          "caller": "importGenTable",
+          "callee": "GenUtils.initTable",
+          "lineNumber": 168
+        },
+        {
+          "caller": "importGenTable",
+          "callee": "genTableMapper.insertGenTable",
+          "lineNumber": 169
+        },
+        {
+          "caller": "importGenTable",
+          "callee": "genTableColumnMapper.selectDbTableColumnsByName",
+          "lineNumber": 173
+        },
+        {
+          "caller": "importGenTable",
+          "callee": "GenUtils.initColumnField",
+          "lineNumber": 176
+        },
+        {
+          "caller": "importGenTable",
+          "callee": "genTableColumnMapper.insertGenTableColumn",
+          "lineNumber": 177
+        },
+        {
+          "caller": "importGenTable",
+          "callee": "new ServiceException",
+          "lineNumber": 184
+        },
+        {
+          "caller": "importGenTable",
+          "callee": "e.getMessage",
+          "lineNumber": 184
+        },
+        {
+          "caller": "previewCode",
+          "callee": "new LinkedHashMap<>",
+          "lineNumber": 197
+        },
+        {
+          "caller": "previewCode",
+          "callee": "genTableMapper.selectGenTableById",
+          "lineNumber": 199
+        },
+        {
+          "caller": "previewCode",
+          "callee": "setSubTable",
+          "lineNumber": 201
+        },
+        {
+          "caller": "previewCode",
+          "callee": "setPkColumn",
+          "lineNumber": 203
+        },
+        {
+          "caller": "previewCode",
+          "callee": "VelocityInitializer.initVelocity",
+          "lineNumber": 204
+        },
+        {
+          "caller": "previewCode",
+          "callee": "VelocityUtils.prepareContext",
+          "lineNumber": 206
+        },
+        {
+          "caller": "previewCode",
+          "callee": "VelocityUtils.getTemplateList",
+          "lineNumber": 209
+        },
+        {
+          "caller": "previewCode",
+          "callee": "table.getTplCategory",
+          "lineNumber": 209
+        },
+        {
+          "caller": "previewCode",
+          "callee": "table.getTplWebType",
+          "lineNumber": 209
+        },
+        {
+          "caller": "previewCode",
+          "callee": "new StringWriter",
+          "lineNumber": 213
+        },
+        {
+          "caller": "previewCode",
+          "callee": "Velocity.getTemplate",
+          "lineNumber": 214
+        },
+        {
+          "caller": "previewCode",
+          "callee": "tpl.merge",
+          "lineNumber": 215
+        },
+        {
+          "caller": "previewCode",
+          "callee": "dataMap.put",
+          "lineNumber": 216
+        },
+        {
+          "caller": "previewCode",
+          "callee": "sw.toString",
+          "lineNumber": 216
+        },
+        {
+          "caller": "downloadCode",
+          "callee": "new ByteArrayOutputStream",
+          "lineNumber": 230
+        },
+        {
+          "caller": "downloadCode",
+          "callee": "new ZipOutputStream",
+          "lineNumber": 231
+        },
+        {
+          "caller": "downloadCode",
+          "callee": "generatorCode",
+          "lineNumber": 232
+        },
+        {
+          "caller": "downloadCode",
+          "callee": "IOUtils.closeQuietly",
+          "lineNumber": 233
+        },
+        {
+          "caller": "downloadCode",
+          "callee": "outputStream.toByteArray",
+          "lineNumber": 234
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "genTableMapper.selectGenTableByName",
+          "lineNumber": 246
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "setSubTable",
+          "lineNumber": 248
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "setPkColumn",
+          "lineNumber": 250
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "VelocityInitializer.initVelocity",
+          "lineNumber": 252
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "VelocityUtils.prepareContext",
+          "lineNumber": 254
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "VelocityUtils.getTemplateList",
+          "lineNumber": 257
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "table.getTplCategory",
+          "lineNumber": 257
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "table.getTplWebType",
+          "lineNumber": 257
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "StringUtils.containsAny",
+          "lineNumber": 260
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "new StringWriter",
+          "lineNumber": 263
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "Velocity.getTemplate",
+          "lineNumber": 264
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "tpl.merge",
+          "lineNumber": 265
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "getGenPath",
+          "lineNumber": 268
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "FileUtils.writeStringToFile",
+          "lineNumber": 269
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "new File",
+          "lineNumber": 269
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "sw.toString",
+          "lineNumber": 269
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "new ServiceException",
+          "lineNumber": 273
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "table.getTableName",
+          "lineNumber": 273
+        },
+        {
+          "caller": "synchDb",
+          "callee": "genTableMapper.selectGenTableByName",
+          "lineNumber": 288
+        },
+        {
+          "caller": "synchDb",
+          "callee": "table.getColumns",
+          "lineNumber": 289
+        },
+        {
+          "caller": "synchDb",
+          "callee": "tableColumns.stream().collect",
+          "lineNumber": 290
+        },
+        {
+          "caller": "synchDb",
+          "callee": "tableColumns.stream",
+          "lineNumber": 290
+        },
+        {
+          "caller": "synchDb",
+          "callee": "Collectors.toMap",
+          "lineNumber": 290
+        },
+        {
+          "caller": "synchDb",
+          "callee": "Function.identity",
+          "lineNumber": 290
+        },
+        {
+          "caller": "synchDb",
+          "callee": "genTableColumnMapper.selectDbTableColumnsByName",
+          "lineNumber": 292
+        },
+        {
+          "caller": "synchDb",
+          "callee": "StringUtils.isEmpty",
+          "lineNumber": 293
+        },
+        {
+          "caller": "synchDb",
+          "callee": "new ServiceException",
+          "lineNumber": 295
+        },
+        {
+          "caller": "synchDb",
+          "callee": "dbTableColumns.stream().map(GenTableColumn::getColumnName).collect",
+          "lineNumber": 297
+        },
+        {
+          "caller": "synchDb",
+          "callee": "dbTableColumns.stream().map",
+          "lineNumber": 297
+        },
+        {
+          "caller": "synchDb",
+          "callee": "dbTableColumns.stream",
+          "lineNumber": 297
+        },
+        {
+          "caller": "synchDb",
+          "callee": "Collectors.toList",
+          "lineNumber": 297
+        },
+        {
+          "caller": "synchDb",
+          "callee": "dbTableColumns.forEach",
+          "lineNumber": 299
+        },
+        {
+          "caller": "synchDb",
+          "callee": "GenUtils.initColumnField",
+          "lineNumber": 300
+        },
+        {
+          "caller": "synchDb",
+          "callee": "tableColumnMap.containsKey",
+          "lineNumber": 301
+        },
+        {
+          "caller": "synchDb",
+          "callee": "column.getColumnName",
+          "lineNumber": 301
+        },
+        {
+          "caller": "synchDb",
+          "callee": "tableColumnMap.get",
+          "lineNumber": 303
+        },
+        {
+          "caller": "synchDb",
+          "callee": "column.getColumnName",
+          "lineNumber": 303
+        },
+        {
+          "caller": "synchDb",
+          "callee": "column.setColumnId",
+          "lineNumber": 304
+        },
+        {
+          "caller": "synchDb",
+          "callee": "prevColumn.getColumnId",
+          "lineNumber": 304
+        },
+        {
+          "caller": "synchDb",
+          "callee": "column.isList",
+          "lineNumber": 305
+        },
+        {
+          "caller": "synchDb",
+          "callee": "column.setDictType",
+          "lineNumber": 308
+        },
+        {
+          "caller": "synchDb",
+          "callee": "prevColumn.getDictType",
+          "lineNumber": 308
+        },
+        {
+          "caller": "synchDb",
+          "callee": "column.setQueryType",
+          "lineNumber": 309
+        },
+        {
+          "caller": "synchDb",
+          "callee": "prevColumn.getQueryType",
+          "lineNumber": 309
+        },
+        {
+          "caller": "synchDb",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 311
+        },
+        {
+          "caller": "synchDb",
+          "callee": "prevColumn.getIsRequired",
+          "lineNumber": 311
+        },
+        {
+          "caller": "synchDb",
+          "callee": "column.isPk",
+          "lineNumber": 311
+        },
+        {
+          "caller": "synchDb",
+          "callee": "column.isInsert",
+          "lineNumber": 312
+        },
+        {
+          "caller": "synchDb",
+          "callee": "column.isEdit",
+          "lineNumber": 312
+        },
+        {
+          "caller": "synchDb",
+          "callee": "column.isUsableColumn",
+          "lineNumber": 313
+        },
+        {
+          "caller": "synchDb",
+          "callee": "column.isSuperColumn",
+          "lineNumber": 313
+        },
+        {
+          "caller": "synchDb",
+          "callee": "column.setIsRequired",
+          "lineNumber": 316
+        },
+        {
+          "caller": "synchDb",
+          "callee": "prevColumn.getIsRequired",
+          "lineNumber": 316
+        },
+        {
+          "caller": "synchDb",
+          "callee": "column.setHtmlType",
+          "lineNumber": 317
+        },
+        {
+          "caller": "synchDb",
+          "callee": "prevColumn.getHtmlType",
+          "lineNumber": 317
+        },
+        {
+          "caller": "synchDb",
+          "callee": "genTableColumnMapper.updateGenTableColumn",
+          "lineNumber": 319
+        },
+        {
+          "caller": "synchDb",
+          "callee": "genTableColumnMapper.insertGenTableColumn",
+          "lineNumber": 323
+        },
+        {
+          "caller": "synchDb",
+          "callee": "tableColumns.stream().filter(column -> !dbTableColumnNames.contains(column.getColumnName())).collect",
+          "lineNumber": 327
+        },
+        {
+          "caller": "synchDb",
+          "callee": "tableColumns.stream().filter",
+          "lineNumber": 327
+        },
+        {
+          "caller": "synchDb",
+          "callee": "tableColumns.stream",
+          "lineNumber": 327
+        },
+        {
+          "caller": "synchDb",
+          "callee": "dbTableColumnNames.contains",
+          "lineNumber": 327
+        },
+        {
+          "caller": "synchDb",
+          "callee": "column.getColumnName",
+          "lineNumber": 327
+        },
+        {
+          "caller": "synchDb",
+          "callee": "Collectors.toList",
+          "lineNumber": 327
+        },
+        {
+          "caller": "synchDb",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 328
+        },
+        {
+          "caller": "synchDb",
+          "callee": "genTableColumnMapper.deleteGenTableColumns",
+          "lineNumber": 330
+        },
+        {
+          "caller": "downloadCode",
+          "callee": "new ByteArrayOutputStream",
+          "lineNumber": 343
+        },
+        {
+          "caller": "downloadCode",
+          "callee": "new ZipOutputStream",
+          "lineNumber": 344
+        },
+        {
+          "caller": "downloadCode",
+          "callee": "generatorCode",
+          "lineNumber": 347
+        },
+        {
+          "caller": "downloadCode",
+          "callee": "IOUtils.closeQuietly",
+          "lineNumber": 349
+        },
+        {
+          "caller": "downloadCode",
+          "callee": "outputStream.toByteArray",
+          "lineNumber": 350
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "genTableMapper.selectGenTableByName",
+          "lineNumber": 359
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "setSubTable",
+          "lineNumber": 361
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "setPkColumn",
+          "lineNumber": 363
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "VelocityInitializer.initVelocity",
+          "lineNumber": 365
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "VelocityUtils.prepareContext",
+          "lineNumber": 367
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "VelocityUtils.getTemplateList",
+          "lineNumber": 370
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "table.getTplCategory",
+          "lineNumber": 370
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "table.getTplWebType",
+          "lineNumber": 370
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "new StringWriter",
+          "lineNumber": 374
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "Velocity.getTemplate",
+          "lineNumber": 375
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "tpl.merge",
+          "lineNumber": 376
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "zip.putNextEntry",
+          "lineNumber": 380
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "new ZipEntry",
+          "lineNumber": 380
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "VelocityUtils.getFileName",
+          "lineNumber": 380
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "IOUtils.write",
+          "lineNumber": 381
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "sw.toString",
+          "lineNumber": 381
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "IOUtils.closeQuietly",
+          "lineNumber": 382
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "zip.flush",
+          "lineNumber": 383
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "zip.closeEntry",
+          "lineNumber": 384
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "log.error",
+          "lineNumber": 388
+        },
+        {
+          "caller": "generatorCode",
+          "callee": "table.getTableName",
+          "lineNumber": 388
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "GenConstants.TPL_TREE.equals",
+          "lineNumber": 401
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "genTable.getTplCategory",
+          "lineNumber": 401
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "JSON.toJSONString",
+          "lineNumber": 403
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "genTable.getParams",
+          "lineNumber": 403
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "JSON.parseObject",
+          "lineNumber": 404
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "StringUtils.isEmpty",
+          "lineNumber": 405
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "paramsObj.getString",
+          "lineNumber": 405
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "new ServiceException",
+          "lineNumber": 407
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "StringUtils.isEmpty",
+          "lineNumber": 409
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "paramsObj.getString",
+          "lineNumber": 409
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "new ServiceException",
+          "lineNumber": 411
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "StringUtils.isEmpty",
+          "lineNumber": 413
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "paramsObj.getString",
+          "lineNumber": 413
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "new ServiceException",
+          "lineNumber": 415
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "GenConstants.TPL_SUB.equals",
+          "lineNumber": 417
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "genTable.getTplCategory",
+          "lineNumber": 417
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "StringUtils.isEmpty",
+          "lineNumber": 419
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "genTable.getSubTableName",
+          "lineNumber": 419
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "new ServiceException",
+          "lineNumber": 421
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "StringUtils.isEmpty",
+          "lineNumber": 423
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "genTable.getSubTableFkName",
+          "lineNumber": 423
+        },
+        {
+          "caller": "validateEdit",
+          "callee": "new ServiceException",
+          "lineNumber": 425
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "table.getColumns",
+          "lineNumber": 438
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "column.isPk",
+          "lineNumber": 440
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "table.setPkColumn",
+          "lineNumber": 442
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "StringUtils.isNull",
+          "lineNumber": 446
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "table.getPkColumn",
+          "lineNumber": 446
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "table.setPkColumn",
+          "lineNumber": 448
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "table.getColumns().get",
+          "lineNumber": 448
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "table.getColumns",
+          "lineNumber": 448
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "GenConstants.TPL_SUB.equals",
+          "lineNumber": 450
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "table.getTplCategory",
+          "lineNumber": 450
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "table.getSubTable().getColumns",
+          "lineNumber": 452
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "table.getSubTable",
+          "lineNumber": 452
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "column.isPk",
+          "lineNumber": 454
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "table.getSubTable().setPkColumn",
+          "lineNumber": 456
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "table.getSubTable",
+          "lineNumber": 456
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "StringUtils.isNull",
+          "lineNumber": 460
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "table.getSubTable().getPkColumn",
+          "lineNumber": 460
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "table.getSubTable",
+          "lineNumber": 460
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "table.getSubTable().setPkColumn",
+          "lineNumber": 462
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "table.getSubTable",
+          "lineNumber": 462
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "table.getSubTable().getColumns().get",
+          "lineNumber": 462
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "table.getSubTable().getColumns",
+          "lineNumber": 462
+        },
+        {
+          "caller": "setPkColumn",
+          "callee": "table.getSubTable",
+          "lineNumber": 462
+        },
+        {
+          "caller": "setSubTable",
+          "callee": "table.getSubTableName",
+          "lineNumber": 474
+        },
+        {
+          "caller": "setSubTable",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 475
+        },
+        {
+          "caller": "setSubTable",
+          "callee": "table.setSubTable",
+          "lineNumber": 477
+        },
+        {
+          "caller": "setSubTable",
+          "callee": "genTableMapper.selectGenTableByName",
+          "lineNumber": 477
+        },
+        {
+          "caller": "setTableFromOptions",
+          "callee": "JSON.parseObject",
+          "lineNumber": 488
+        },
+        {
+          "caller": "setTableFromOptions",
+          "callee": "genTable.getOptions",
+          "lineNumber": 488
+        },
+        {
+          "caller": "setTableFromOptions",
+          "callee": "StringUtils.isNotNull",
+          "lineNumber": 489
+        },
+        {
+          "caller": "setTableFromOptions",
+          "callee": "paramsObj.getString",
+          "lineNumber": 491
+        },
+        {
+          "caller": "setTableFromOptions",
+          "callee": "paramsObj.getString",
+          "lineNumber": 492
+        },
+        {
+          "caller": "setTableFromOptions",
+          "callee": "paramsObj.getString",
+          "lineNumber": 493
+        },
+        {
+          "caller": "setTableFromOptions",
+          "callee": "paramsObj.getString",
+          "lineNumber": 494
+        },
+        {
+          "caller": "setTableFromOptions",
+          "callee": "paramsObj.getString",
+          "lineNumber": 495
+        },
+        {
+          "caller": "setTableFromOptions",
+          "callee": "genTable.setTreeCode",
+          "lineNumber": 497
+        },
+        {
+          "caller": "setTableFromOptions",
+          "callee": "genTable.setTreeParentCode",
+          "lineNumber": 498
+        },
+        {
+          "caller": "setTableFromOptions",
+          "callee": "genTable.setTreeName",
+          "lineNumber": 499
+        },
+        {
+          "caller": "setTableFromOptions",
+          "callee": "genTable.setParentMenuId",
+          "lineNumber": 500
+        },
+        {
+          "caller": "setTableFromOptions",
+          "callee": "genTable.setParentMenuName",
+          "lineNumber": 501
+        },
+        {
+          "caller": "getGenPath",
+          "callee": "table.getGenPath",
+          "lineNumber": 514
+        },
+        {
+          "caller": "getGenPath",
+          "callee": "StringUtils.equals",
+          "lineNumber": 515
+        },
+        {
+          "caller": "getGenPath",
+          "callee": "System.getProperty",
+          "lineNumber": 517
+        },
+        {
+          "caller": "getGenPath",
+          "callee": "VelocityUtils.getFileName",
+          "lineNumber": 517
+        },
+        {
+          "caller": "getGenPath",
+          "callee": "VelocityUtils.getFileName",
+          "lineNumber": 519
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 19,
+        "functionCount": 19,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableColumnService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 39,
+      "classes": [
+        {
+          "name": "IGenTableColumnService",
+          "startLine": 11,
+          "endLine": 44,
+          "methods": [
+            "selectGenTableColumnListByTableId",
+            "insertGenTableColumn",
+            "updateGenTableColumn",
+            "deleteGenTableColumnByIds"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IGenTableColumnService",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/service/IGenTableService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 121,
+      "nonEmptyLines": 106,
+      "classes": [
+        {
+          "name": "IGenTableService",
+          "startLine": 12,
+          "endLine": 121,
+          "methods": [
+            "selectGenTableList",
+            "selectDbTableList",
+            "selectDbTableListByNames",
+            "selectGenTableAll",
+            "selectGenTableById",
+            "updateGenTable",
+            "deleteGenTableByIds",
+            "importGenTable",
+            "previewCode",
+            "downloadCode",
+            "generatorCode",
+            "synchDb",
+            "downloadCode",
+            "validateEdit"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IGenTableService",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/GenUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 258,
+      "nonEmptyLines": 242,
+      "functions": [
+        {
+          "name": "initTable",
+          "startLine": 21,
+          "endLine": 30,
+          "params": [
+            "genTable",
+            "operName"
+          ]
+        },
+        {
+          "name": "initColumnField",
+          "startLine": 35,
+          "endLine": 131,
+          "params": [
+            "column",
+            "table"
+          ]
+        },
+        {
+          "name": "arraysContains",
+          "startLine": 140,
+          "endLine": 143,
+          "params": [
+            "arr",
+            "targetValue"
+          ]
+        },
+        {
+          "name": "getModuleName",
+          "startLine": 151,
+          "endLine": 156,
+          "params": [
+            "packageName"
+          ]
+        },
+        {
+          "name": "getBusinessName",
+          "startLine": 164,
+          "endLine": 170,
+          "params": [
+            "tableName"
+          ]
+        },
+        {
+          "name": "convertClassName",
+          "startLine": 178,
+          "endLine": 188,
+          "params": [
+            "tableName"
+          ]
+        },
+        {
+          "name": "replaceFirst",
+          "startLine": 197,
+          "endLine": 209,
+          "params": [
+            "replacementm",
+            "searchList"
+          ]
+        },
+        {
+          "name": "replaceText",
+          "startLine": 217,
+          "endLine": 220,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "getDbType",
+          "startLine": 228,
+          "endLine": 238,
+          "params": [
+            "columnType"
+          ]
+        },
+        {
+          "name": "getColumnLength",
+          "startLine": 246,
+          "endLine": 257,
+          "params": [
+            "columnType"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GenUtils",
+          "startLine": 16,
+          "endLine": 258,
+          "methods": [
+            "initTable",
+            "initColumnField",
+            "arraysContains",
+            "getModuleName",
+            "getBusinessName",
+            "convertClassName",
+            "replaceFirst",
+            "replaceText",
+            "getDbType",
+            "getColumnLength"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "initTable",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "initColumnField",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "arraysContains",
+          "line": 140,
+          "isDefault": false
+        },
+        {
+          "name": "getModuleName",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "getBusinessName",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "convertClassName",
+          "line": 178,
+          "isDefault": false
+        },
+        {
+          "name": "replaceFirst",
+          "line": 197,
+          "isDefault": false
+        },
+        {
+          "name": "replaceText",
+          "line": 217,
+          "isDefault": false
+        },
+        {
+          "name": "getDbType",
+          "line": 228,
+          "isDefault": false
+        },
+        {
+          "name": "getColumnLength",
+          "line": 246,
+          "isDefault": false
+        },
+        {
+          "name": "GenUtils",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "initTable",
+          "callee": "genTable.setClassName",
+          "lineNumber": 23
+        },
+        {
+          "caller": "initTable",
+          "callee": "convertClassName",
+          "lineNumber": 23
+        },
+        {
+          "caller": "initTable",
+          "callee": "genTable.getTableName",
+          "lineNumber": 23
+        },
+        {
+          "caller": "initTable",
+          "callee": "genTable.setPackageName",
+          "lineNumber": 24
+        },
+        {
+          "caller": "initTable",
+          "callee": "GenConfig.getPackageName",
+          "lineNumber": 24
+        },
+        {
+          "caller": "initTable",
+          "callee": "genTable.setModuleName",
+          "lineNumber": 25
+        },
+        {
+          "caller": "initTable",
+          "callee": "getModuleName",
+          "lineNumber": 25
+        },
+        {
+          "caller": "initTable",
+          "callee": "GenConfig.getPackageName",
+          "lineNumber": 25
+        },
+        {
+          "caller": "initTable",
+          "callee": "genTable.setBusinessName",
+          "lineNumber": 26
+        },
+        {
+          "caller": "initTable",
+          "callee": "getBusinessName",
+          "lineNumber": 26
+        },
+        {
+          "caller": "initTable",
+          "callee": "genTable.getTableName",
+          "lineNumber": 26
+        },
+        {
+          "caller": "initTable",
+          "callee": "genTable.setFunctionName",
+          "lineNumber": 27
+        },
+        {
+          "caller": "initTable",
+          "callee": "replaceText",
+          "lineNumber": 27
+        },
+        {
+          "caller": "initTable",
+          "callee": "genTable.getTableComment",
+          "lineNumber": 27
+        },
+        {
+          "caller": "initTable",
+          "callee": "genTable.setFunctionAuthor",
+          "lineNumber": 28
+        },
+        {
+          "caller": "initTable",
+          "callee": "GenConfig.getAuthor",
+          "lineNumber": 28
+        },
+        {
+          "caller": "initTable",
+          "callee": "genTable.setCreateBy",
+          "lineNumber": 29
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "getDbType",
+          "lineNumber": 37
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.getColumnType",
+          "lineNumber": 37
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.getColumnName",
+          "lineNumber": 38
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setTableId",
+          "lineNumber": 39
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "table.getTableId",
+          "lineNumber": 39
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setCreateBy",
+          "lineNumber": 40
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "table.getCreateBy",
+          "lineNumber": 40
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setJavaField",
+          "lineNumber": 42
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "StringUtils.toCamelCase",
+          "lineNumber": 42
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setJavaType",
+          "lineNumber": 44
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setQueryType",
+          "lineNumber": 45
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "arraysContains",
+          "lineNumber": 47
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "arraysContains",
+          "lineNumber": 47
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "getColumnLength",
+          "lineNumber": 50
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.getColumnType",
+          "lineNumber": 50
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "arraysContains",
+          "lineNumber": 51
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setHtmlType",
+          "lineNumber": 52
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "arraysContains",
+          "lineNumber": 54
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setJavaType",
+          "lineNumber": 56
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setHtmlType",
+          "lineNumber": 57
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "arraysContains",
+          "lineNumber": 59
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setHtmlType",
+          "lineNumber": 61
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "StringUtils.split",
+          "lineNumber": 64
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "StringUtils.substringBetween",
+          "lineNumber": 64
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.getColumnType",
+          "lineNumber": 64
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "Integer.parseInt",
+          "lineNumber": 65
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setJavaType",
+          "lineNumber": 67
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "Integer.parseInt",
+          "lineNumber": 70
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setJavaType",
+          "lineNumber": 72
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setJavaType",
+          "lineNumber": 77
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setIsInsert",
+          "lineNumber": 82
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "arraysContains",
+          "lineNumber": 85
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.isPk",
+          "lineNumber": 85
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setIsEdit",
+          "lineNumber": 87
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "arraysContains",
+          "lineNumber": 90
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.isPk",
+          "lineNumber": 90
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setIsList",
+          "lineNumber": 92
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "arraysContains",
+          "lineNumber": 95
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.isPk",
+          "lineNumber": 95
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setIsQuery",
+          "lineNumber": 97
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "StringUtils.endsWithIgnoreCase",
+          "lineNumber": 101
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setQueryType",
+          "lineNumber": 103
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "StringUtils.endsWithIgnoreCase",
+          "lineNumber": 106
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setHtmlType",
+          "lineNumber": 108
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "StringUtils.endsWithIgnoreCase",
+          "lineNumber": 111
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "StringUtils.endsWithIgnoreCase",
+          "lineNumber": 112
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setHtmlType",
+          "lineNumber": 114
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "StringUtils.endsWithIgnoreCase",
+          "lineNumber": 117
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setHtmlType",
+          "lineNumber": 119
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "StringUtils.endsWithIgnoreCase",
+          "lineNumber": 122
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setHtmlType",
+          "lineNumber": 124
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "StringUtils.endsWithIgnoreCase",
+          "lineNumber": 127
+        },
+        {
+          "caller": "initColumnField",
+          "callee": "column.setHtmlType",
+          "lineNumber": 129
+        },
+        {
+          "caller": "arraysContains",
+          "callee": "Arrays.asList(arr).contains",
+          "lineNumber": 142
+        },
+        {
+          "caller": "arraysContains",
+          "callee": "Arrays.asList",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getModuleName",
+          "callee": "packageName.lastIndexOf",
+          "lineNumber": 153
+        },
+        {
+          "caller": "getModuleName",
+          "callee": "packageName.length",
+          "lineNumber": 154
+        },
+        {
+          "caller": "getModuleName",
+          "callee": "StringUtils.substring",
+          "lineNumber": 155
+        },
+        {
+          "caller": "getBusinessName",
+          "callee": "StringUtils.uncapitalize",
+          "lineNumber": 169
+        },
+        {
+          "caller": "getBusinessName",
+          "callee": "convertClassName",
+          "lineNumber": 169
+        },
+        {
+          "caller": "convertClassName",
+          "callee": "GenConfig.getAutoRemovePre",
+          "lineNumber": 180
+        },
+        {
+          "caller": "convertClassName",
+          "callee": "GenConfig.getTablePrefix",
+          "lineNumber": 181
+        },
+        {
+          "caller": "convertClassName",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 182
+        },
+        {
+          "caller": "convertClassName",
+          "callee": "StringUtils.split",
+          "lineNumber": 184
+        },
+        {
+          "caller": "convertClassName",
+          "callee": "replaceFirst",
+          "lineNumber": 185
+        },
+        {
+          "caller": "convertClassName",
+          "callee": "StringUtils.convertToCamelCase",
+          "lineNumber": 187
+        },
+        {
+          "caller": "replaceFirst",
+          "callee": "replacementm.startsWith",
+          "lineNumber": 202
+        },
+        {
+          "caller": "replaceFirst",
+          "callee": "replacementm.replaceFirst",
+          "lineNumber": 204
+        },
+        {
+          "caller": "replaceText",
+          "callee": "RegExUtils.replaceAll",
+          "lineNumber": 219
+        },
+        {
+          "caller": "getDbType",
+          "callee": "StringUtils.indexOf",
+          "lineNumber": 230
+        },
+        {
+          "caller": "getDbType",
+          "callee": "StringUtils.substringBefore",
+          "lineNumber": 232
+        },
+        {
+          "caller": "getColumnLength",
+          "callee": "StringUtils.indexOf",
+          "lineNumber": 248
+        },
+        {
+          "caller": "getColumnLength",
+          "callee": "StringUtils.substringBetween",
+          "lineNumber": 250
+        },
+        {
+          "caller": "getColumnLength",
+          "callee": "Integer.valueOf",
+          "lineNumber": 251
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityInitializer.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "initVelocity",
+          "startLine": 17,
+          "endLine": 33,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "VelocityInitializer",
+          "startLine": 12,
+          "endLine": 34,
+          "methods": [
+            "initVelocity"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "initVelocity",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "VelocityInitializer",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "initVelocity",
+          "callee": "new Properties",
+          "lineNumber": 19
+        },
+        {
+          "caller": "initVelocity",
+          "callee": "p.setProperty",
+          "lineNumber": 23
+        },
+        {
+          "caller": "initVelocity",
+          "callee": "p.setProperty",
+          "lineNumber": 25
+        },
+        {
+          "caller": "initVelocity",
+          "callee": "Velocity.init",
+          "lineNumber": 27
+        },
+        {
+          "caller": "initVelocity",
+          "callee": "new RuntimeException",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-gen/src/main/java/com/spzx/gen/util/VelocityUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 408,
+      "nonEmptyLines": 383,
+      "functions": [
+        {
+          "name": "prepareContext",
+          "startLine": 37,
+          "endLine": 74,
+          "params": [
+            "genTable"
+          ]
+        },
+        {
+          "name": "setMenuVelocityContext",
+          "startLine": 76,
+          "endLine": 82,
+          "params": [
+            "context",
+            "genTable"
+          ]
+        },
+        {
+          "name": "setTreeVelocityContext",
+          "startLine": 84,
+          "endLine": 104,
+          "params": [
+            "context",
+            "genTable"
+          ]
+        },
+        {
+          "name": "setSubVelocityContext",
+          "startLine": 106,
+          "endLine": 122,
+          "params": [
+            "context",
+            "genTable"
+          ]
+        },
+        {
+          "name": "getTemplateList",
+          "startLine": 130,
+          "endLine": 160,
+          "params": [
+            "tplCategory",
+            "tplWebType"
+          ]
+        },
+        {
+          "name": "getFileName",
+          "startLine": 165,
+          "endLine": 227,
+          "params": [
+            "template",
+            "genTable"
+          ]
+        },
+        {
+          "name": "getPackagePrefix",
+          "startLine": 235,
+          "endLine": 239,
+          "params": [
+            "packageName"
+          ]
+        },
+        {
+          "name": "getImportList",
+          "startLine": 247,
+          "endLine": 269,
+          "params": [
+            "genTable"
+          ]
+        },
+        {
+          "name": "getDicts",
+          "startLine": 277,
+          "endLine": 288,
+          "params": [
+            "genTable"
+          ]
+        },
+        {
+          "name": "addDicts",
+          "startLine": 296,
+          "endLine": 307,
+          "params": [
+            "dicts",
+            "columns"
+          ]
+        },
+        {
+          "name": "getPermissionPrefix",
+          "startLine": 316,
+          "endLine": 319,
+          "params": [
+            "moduleName",
+            "businessName"
+          ]
+        },
+        {
+          "name": "getParentMenuId",
+          "startLine": 327,
+          "endLine": 335,
+          "params": [
+            "paramsObj"
+          ]
+        },
+        {
+          "name": "getTreecode",
+          "startLine": 343,
+          "endLine": 350,
+          "params": [
+            "paramsObj"
+          ]
+        },
+        {
+          "name": "getTreeParentCode",
+          "startLine": 358,
+          "endLine": 365,
+          "params": [
+            "paramsObj"
+          ]
+        },
+        {
+          "name": "getTreeName",
+          "startLine": 373,
+          "endLine": 380,
+          "params": [
+            "paramsObj"
+          ]
+        },
+        {
+          "name": "getExpandColumn",
+          "startLine": 388,
+          "endLine": 407,
+          "params": [
+            "genTable"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "VelocityUtils",
+          "startLine": 21,
+          "endLine": 408,
+          "methods": [
+            "prepareContext",
+            "setMenuVelocityContext",
+            "setTreeVelocityContext",
+            "setSubVelocityContext",
+            "getTemplateList",
+            "getFileName",
+            "getPackagePrefix",
+            "getImportList",
+            "getDicts",
+            "addDicts",
+            "getPermissionPrefix",
+            "getParentMenuId",
+            "getTreecode",
+            "getTreeParentCode",
+            "getTreeName",
+            "getExpandColumn"
+          ],
+          "properties": [
+            "PROJECT_PATH",
+            "MYBATIS_PATH",
+            "DEFAULT_PARENT_MENU_ID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "prepareContext",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "setMenuVelocityContext",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "setTreeVelocityContext",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "setSubVelocityContext",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "getTemplateList",
+          "line": 130,
+          "isDefault": false
+        },
+        {
+          "name": "getFileName",
+          "line": 165,
+          "isDefault": false
+        },
+        {
+          "name": "getPackagePrefix",
+          "line": 235,
+          "isDefault": false
+        },
+        {
+          "name": "getImportList",
+          "line": 247,
+          "isDefault": false
+        },
+        {
+          "name": "getDicts",
+          "line": 277,
+          "isDefault": false
+        },
+        {
+          "name": "addDicts",
+          "line": 296,
+          "isDefault": false
+        },
+        {
+          "name": "getPermissionPrefix",
+          "line": 316,
+          "isDefault": false
+        },
+        {
+          "name": "getParentMenuId",
+          "line": 327,
+          "isDefault": false
+        },
+        {
+          "name": "getTreecode",
+          "line": 343,
+          "isDefault": false
+        },
+        {
+          "name": "getTreeParentCode",
+          "line": 358,
+          "isDefault": false
+        },
+        {
+          "name": "getTreeName",
+          "line": 373,
+          "isDefault": false
+        },
+        {
+          "name": "getExpandColumn",
+          "line": 388,
+          "isDefault": false
+        },
+        {
+          "name": "VelocityUtils",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "prepareContext",
+          "callee": "genTable.getModuleName",
+          "lineNumber": 39
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "genTable.getBusinessName",
+          "lineNumber": 40
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "genTable.getPackageName",
+          "lineNumber": 41
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "genTable.getTplCategory",
+          "lineNumber": 42
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "genTable.getFunctionName",
+          "lineNumber": 43
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "new VelocityContext",
+          "lineNumber": 45
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "velocityContext.put",
+          "lineNumber": 46
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "genTable.getTplCategory",
+          "lineNumber": 46
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "velocityContext.put",
+          "lineNumber": 47
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "genTable.getTableName",
+          "lineNumber": 47
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "velocityContext.put",
+          "lineNumber": 48
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 48
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "velocityContext.put",
+          "lineNumber": 49
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "genTable.getClassName",
+          "lineNumber": 49
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "velocityContext.put",
+          "lineNumber": 50
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "StringUtils.uncapitalize",
+          "lineNumber": 50
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "genTable.getClassName",
+          "lineNumber": 50
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "velocityContext.put",
+          "lineNumber": 51
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "genTable.getModuleName",
+          "lineNumber": 51
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "velocityContext.put",
+          "lineNumber": 52
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "StringUtils.capitalize",
+          "lineNumber": 52
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "genTable.getBusinessName",
+          "lineNumber": 52
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "velocityContext.put",
+          "lineNumber": 53
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "genTable.getBusinessName",
+          "lineNumber": 53
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "velocityContext.put",
+          "lineNumber": 54
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "getPackagePrefix",
+          "lineNumber": 54
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "velocityContext.put",
+          "lineNumber": 55
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "velocityContext.put",
+          "lineNumber": 56
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "genTable.getFunctionAuthor",
+          "lineNumber": 56
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "velocityContext.put",
+          "lineNumber": 57
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "DateUtils.getDate",
+          "lineNumber": 57
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "velocityContext.put",
+          "lineNumber": 58
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "genTable.getPkColumn",
+          "lineNumber": 58
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "velocityContext.put",
+          "lineNumber": 59
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "getImportList",
+          "lineNumber": 59
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "velocityContext.put",
+          "lineNumber": 60
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "getPermissionPrefix",
+          "lineNumber": 60
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "velocityContext.put",
+          "lineNumber": 61
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "genTable.getColumns",
+          "lineNumber": 61
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "velocityContext.put",
+          "lineNumber": 62
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "velocityContext.put",
+          "lineNumber": 63
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "getDicts",
+          "lineNumber": 63
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "setMenuVelocityContext",
+          "lineNumber": 64
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "GenConstants.TPL_TREE.equals",
+          "lineNumber": 65
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "setTreeVelocityContext",
+          "lineNumber": 67
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "GenConstants.TPL_SUB.equals",
+          "lineNumber": 69
+        },
+        {
+          "caller": "prepareContext",
+          "callee": "setSubVelocityContext",
+          "lineNumber": 71
+        },
+        {
+          "caller": "setMenuVelocityContext",
+          "callee": "genTable.getOptions",
+          "lineNumber": 78
+        },
+        {
+          "caller": "setMenuVelocityContext",
+          "callee": "JSON.parseObject",
+          "lineNumber": 79
+        },
+        {
+          "caller": "setMenuVelocityContext",
+          "callee": "getParentMenuId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "setMenuVelocityContext",
+          "callee": "context.put",
+          "lineNumber": 81
+        },
+        {
+          "caller": "setTreeVelocityContext",
+          "callee": "genTable.getOptions",
+          "lineNumber": 86
+        },
+        {
+          "caller": "setTreeVelocityContext",
+          "callee": "JSON.parseObject",
+          "lineNumber": 87
+        },
+        {
+          "caller": "setTreeVelocityContext",
+          "callee": "getTreecode",
+          "lineNumber": 88
+        },
+        {
+          "caller": "setTreeVelocityContext",
+          "callee": "getTreeParentCode",
+          "lineNumber": 89
+        },
+        {
+          "caller": "setTreeVelocityContext",
+          "callee": "getTreeName",
+          "lineNumber": 90
+        },
+        {
+          "caller": "setTreeVelocityContext",
+          "callee": "context.put",
+          "lineNumber": 92
+        },
+        {
+          "caller": "setTreeVelocityContext",
+          "callee": "context.put",
+          "lineNumber": 93
+        },
+        {
+          "caller": "setTreeVelocityContext",
+          "callee": "context.put",
+          "lineNumber": 94
+        },
+        {
+          "caller": "setTreeVelocityContext",
+          "callee": "context.put",
+          "lineNumber": 95
+        },
+        {
+          "caller": "setTreeVelocityContext",
+          "callee": "getExpandColumn",
+          "lineNumber": 95
+        },
+        {
+          "caller": "setTreeVelocityContext",
+          "callee": "paramsObj.containsKey",
+          "lineNumber": 96
+        },
+        {
+          "caller": "setTreeVelocityContext",
+          "callee": "context.put",
+          "lineNumber": 98
+        },
+        {
+          "caller": "setTreeVelocityContext",
+          "callee": "paramsObj.getString",
+          "lineNumber": 98
+        },
+        {
+          "caller": "setTreeVelocityContext",
+          "callee": "paramsObj.containsKey",
+          "lineNumber": 100
+        },
+        {
+          "caller": "setTreeVelocityContext",
+          "callee": "context.put",
+          "lineNumber": 102
+        },
+        {
+          "caller": "setTreeVelocityContext",
+          "callee": "paramsObj.getString",
+          "lineNumber": 102
+        },
+        {
+          "caller": "setSubVelocityContext",
+          "callee": "genTable.getSubTable",
+          "lineNumber": 108
+        },
+        {
+          "caller": "setSubVelocityContext",
+          "callee": "genTable.getSubTableName",
+          "lineNumber": 109
+        },
+        {
+          "caller": "setSubVelocityContext",
+          "callee": "genTable.getSubTableFkName",
+          "lineNumber": 110
+        },
+        {
+          "caller": "setSubVelocityContext",
+          "callee": "genTable.getSubTable().getClassName",
+          "lineNumber": 111
+        },
+        {
+          "caller": "setSubVelocityContext",
+          "callee": "genTable.getSubTable",
+          "lineNumber": 111
+        },
+        {
+          "caller": "setSubVelocityContext",
+          "callee": "StringUtils.convertToCamelCase",
+          "lineNumber": 112
+        },
+        {
+          "caller": "setSubVelocityContext",
+          "callee": "context.put",
+          "lineNumber": 114
+        },
+        {
+          "caller": "setSubVelocityContext",
+          "callee": "context.put",
+          "lineNumber": 115
+        },
+        {
+          "caller": "setSubVelocityContext",
+          "callee": "context.put",
+          "lineNumber": 116
+        },
+        {
+          "caller": "setSubVelocityContext",
+          "callee": "context.put",
+          "lineNumber": 117
+        },
+        {
+          "caller": "setSubVelocityContext",
+          "callee": "context.put",
+          "lineNumber": 118
+        },
+        {
+          "caller": "setSubVelocityContext",
+          "callee": "StringUtils.uncapitalize",
+          "lineNumber": 118
+        },
+        {
+          "caller": "setSubVelocityContext",
+          "callee": "context.put",
+          "lineNumber": 119
+        },
+        {
+          "caller": "setSubVelocityContext",
+          "callee": "context.put",
+          "lineNumber": 120
+        },
+        {
+          "caller": "setSubVelocityContext",
+          "callee": "StringUtils.uncapitalize",
+          "lineNumber": 120
+        },
+        {
+          "caller": "setSubVelocityContext",
+          "callee": "context.put",
+          "lineNumber": 121
+        },
+        {
+          "caller": "setSubVelocityContext",
+          "callee": "getImportList",
+          "lineNumber": 121
+        },
+        {
+          "caller": "setSubVelocityContext",
+          "callee": "genTable.getSubTable",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getTemplateList",
+          "callee": "\"element-ui\".equals",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getTemplateList",
+          "callee": "new ArrayList<String>",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getTemplateList",
+          "callee": "templates.add",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getTemplateList",
+          "callee": "templates.add",
+          "lineNumber": 139
+        },
+        {
+          "caller": "getTemplateList",
+          "callee": "templates.add",
+          "lineNumber": 140
+        },
+        {
+          "caller": "getTemplateList",
+          "callee": "templates.add",
+          "lineNumber": 141
+        },
+        {
+          "caller": "getTemplateList",
+          "callee": "templates.add",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getTemplateList",
+          "callee": "templates.add",
+          "lineNumber": 143
+        },
+        {
+          "caller": "getTemplateList",
+          "callee": "templates.add",
+          "lineNumber": 144
+        },
+        {
+          "caller": "getTemplateList",
+          "callee": "templates.add",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getTemplateList",
+          "callee": "GenConstants.TPL_CRUD.equals",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getTemplateList",
+          "callee": "templates.add",
+          "lineNumber": 148
+        },
+        {
+          "caller": "getTemplateList",
+          "callee": "GenConstants.TPL_TREE.equals",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getTemplateList",
+          "callee": "templates.add",
+          "lineNumber": 152
+        },
+        {
+          "caller": "getTemplateList",
+          "callee": "GenConstants.TPL_SUB.equals",
+          "lineNumber": 154
+        },
+        {
+          "caller": "getTemplateList",
+          "callee": "templates.add",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getTemplateList",
+          "callee": "templates.add",
+          "lineNumber": 157
+        },
+        {
+          "caller": "getFileName",
+          "callee": "genTable.getPackageName",
+          "lineNumber": 170
+        },
+        {
+          "caller": "getFileName",
+          "callee": "genTable.getModuleName",
+          "lineNumber": 172
+        },
+        {
+          "caller": "getFileName",
+          "callee": "genTable.getClassName",
+          "lineNumber": 174
+        },
+        {
+          "caller": "getFileName",
+          "callee": "genTable.getBusinessName",
+          "lineNumber": 176
+        },
+        {
+          "caller": "getFileName",
+          "callee": "StringUtils.replace",
+          "lineNumber": 178
+        },
+        {
+          "caller": "getFileName",
+          "callee": "template.contains",
+          "lineNumber": 182
+        },
+        {
+          "caller": "getFileName",
+          "callee": "StringUtils.format",
+          "lineNumber": 184
+        },
+        {
+          "caller": "getFileName",
+          "callee": "template.contains",
+          "lineNumber": 186
+        },
+        {
+          "caller": "getFileName",
+          "callee": "StringUtils.equals",
+          "lineNumber": 186
+        },
+        {
+          "caller": "getFileName",
+          "callee": "genTable.getTplCategory",
+          "lineNumber": 186
+        },
+        {
+          "caller": "getFileName",
+          "callee": "StringUtils.format",
+          "lineNumber": 188
+        },
+        {
+          "caller": "getFileName",
+          "callee": "genTable.getSubTable().getClassName",
+          "lineNumber": 188
+        },
+        {
+          "caller": "getFileName",
+          "callee": "genTable.getSubTable",
+          "lineNumber": 188
+        },
+        {
+          "caller": "getFileName",
+          "callee": "template.contains",
+          "lineNumber": 190
+        },
+        {
+          "caller": "getFileName",
+          "callee": "StringUtils.format",
+          "lineNumber": 192
+        },
+        {
+          "caller": "getFileName",
+          "callee": "template.contains",
+          "lineNumber": 194
+        },
+        {
+          "caller": "getFileName",
+          "callee": "StringUtils.format",
+          "lineNumber": 196
+        },
+        {
+          "caller": "getFileName",
+          "callee": "template.contains",
+          "lineNumber": 198
+        },
+        {
+          "caller": "getFileName",
+          "callee": "StringUtils.format",
+          "lineNumber": 200
+        },
+        {
+          "caller": "getFileName",
+          "callee": "template.contains",
+          "lineNumber": 202
+        },
+        {
+          "caller": "getFileName",
+          "callee": "StringUtils.format",
+          "lineNumber": 204
+        },
+        {
+          "caller": "getFileName",
+          "callee": "template.contains",
+          "lineNumber": 206
+        },
+        {
+          "caller": "getFileName",
+          "callee": "StringUtils.format",
+          "lineNumber": 208
+        },
+        {
+          "caller": "getFileName",
+          "callee": "template.contains",
+          "lineNumber": 210
+        },
+        {
+          "caller": "getFileName",
+          "callee": "template.contains",
+          "lineNumber": 214
+        },
+        {
+          "caller": "getFileName",
+          "callee": "StringUtils.format",
+          "lineNumber": 216
+        },
+        {
+          "caller": "getFileName",
+          "callee": "template.contains",
+          "lineNumber": 218
+        },
+        {
+          "caller": "getFileName",
+          "callee": "StringUtils.format",
+          "lineNumber": 220
+        },
+        {
+          "caller": "getFileName",
+          "callee": "template.contains",
+          "lineNumber": 222
+        },
+        {
+          "caller": "getFileName",
+          "callee": "StringUtils.format",
+          "lineNumber": 224
+        },
+        {
+          "caller": "getPackagePrefix",
+          "callee": "packageName.lastIndexOf",
+          "lineNumber": 237
+        },
+        {
+          "caller": "getPackagePrefix",
+          "callee": "StringUtils.substring",
+          "lineNumber": 238
+        },
+        {
+          "caller": "getImportList",
+          "callee": "genTable.getColumns",
+          "lineNumber": 249
+        },
+        {
+          "caller": "getImportList",
+          "callee": "genTable.getSubTable",
+          "lineNumber": 250
+        },
+        {
+          "caller": "getImportList",
+          "callee": "new HashSet<String>",
+          "lineNumber": 251
+        },
+        {
+          "caller": "getImportList",
+          "callee": "StringUtils.isNotNull",
+          "lineNumber": 252
+        },
+        {
+          "caller": "getImportList",
+          "callee": "importList.add",
+          "lineNumber": 254
+        },
+        {
+          "caller": "getImportList",
+          "callee": "column.isSuperColumn",
+          "lineNumber": 258
+        },
+        {
+          "caller": "getImportList",
+          "callee": "GenConstants.TYPE_DATE.equals",
+          "lineNumber": 258
+        },
+        {
+          "caller": "getImportList",
+          "callee": "column.getJavaType",
+          "lineNumber": 258
+        },
+        {
+          "caller": "getImportList",
+          "callee": "importList.add",
+          "lineNumber": 260
+        },
+        {
+          "caller": "getImportList",
+          "callee": "importList.add",
+          "lineNumber": 261
+        },
+        {
+          "caller": "getImportList",
+          "callee": "column.isSuperColumn",
+          "lineNumber": 263
+        },
+        {
+          "caller": "getImportList",
+          "callee": "GenConstants.TYPE_BIGDECIMAL.equals",
+          "lineNumber": 263
+        },
+        {
+          "caller": "getImportList",
+          "callee": "column.getJavaType",
+          "lineNumber": 263
+        },
+        {
+          "caller": "getImportList",
+          "callee": "importList.add",
+          "lineNumber": 265
+        },
+        {
+          "caller": "getDicts",
+          "callee": "genTable.getColumns",
+          "lineNumber": 279
+        },
+        {
+          "caller": "getDicts",
+          "callee": "new HashSet<String>",
+          "lineNumber": 280
+        },
+        {
+          "caller": "getDicts",
+          "callee": "addDicts",
+          "lineNumber": 281
+        },
+        {
+          "caller": "getDicts",
+          "callee": "StringUtils.isNotNull",
+          "lineNumber": 282
+        },
+        {
+          "caller": "getDicts",
+          "callee": "genTable.getSubTable",
+          "lineNumber": 282
+        },
+        {
+          "caller": "getDicts",
+          "callee": "genTable.getSubTable().getColumns",
+          "lineNumber": 284
+        },
+        {
+          "caller": "getDicts",
+          "callee": "genTable.getSubTable",
+          "lineNumber": 284
+        },
+        {
+          "caller": "getDicts",
+          "callee": "addDicts",
+          "lineNumber": 285
+        },
+        {
+          "caller": "getDicts",
+          "callee": "StringUtils.join",
+          "lineNumber": 287
+        },
+        {
+          "caller": "addDicts",
+          "callee": "column.isSuperColumn",
+          "lineNumber": 300
+        },
+        {
+          "caller": "addDicts",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 300
+        },
+        {
+          "caller": "addDicts",
+          "callee": "column.getDictType",
+          "lineNumber": 300
+        },
+        {
+          "caller": "addDicts",
+          "callee": "StringUtils.equalsAny",
+          "lineNumber": 300
+        },
+        {
+          "caller": "addDicts",
+          "callee": "column.getHtmlType",
+          "lineNumber": 301
+        },
+        {
+          "caller": "addDicts",
+          "callee": "dicts.add",
+          "lineNumber": 304
+        },
+        {
+          "caller": "addDicts",
+          "callee": "column.getDictType",
+          "lineNumber": 304
+        },
+        {
+          "caller": "getPermissionPrefix",
+          "callee": "StringUtils.format",
+          "lineNumber": 318
+        },
+        {
+          "caller": "getParentMenuId",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 329
+        },
+        {
+          "caller": "getParentMenuId",
+          "callee": "paramsObj.containsKey",
+          "lineNumber": 329
+        },
+        {
+          "caller": "getParentMenuId",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 330
+        },
+        {
+          "caller": "getParentMenuId",
+          "callee": "paramsObj.getString",
+          "lineNumber": 330
+        },
+        {
+          "caller": "getParentMenuId",
+          "callee": "paramsObj.getString",
+          "lineNumber": 332
+        },
+        {
+          "caller": "getTreecode",
+          "callee": "paramsObj.containsKey",
+          "lineNumber": 345
+        },
+        {
+          "caller": "getTreecode",
+          "callee": "StringUtils.toCamelCase",
+          "lineNumber": 347
+        },
+        {
+          "caller": "getTreecode",
+          "callee": "paramsObj.getString",
+          "lineNumber": 347
+        },
+        {
+          "caller": "getTreeParentCode",
+          "callee": "paramsObj.containsKey",
+          "lineNumber": 360
+        },
+        {
+          "caller": "getTreeParentCode",
+          "callee": "StringUtils.toCamelCase",
+          "lineNumber": 362
+        },
+        {
+          "caller": "getTreeParentCode",
+          "callee": "paramsObj.getString",
+          "lineNumber": 362
+        },
+        {
+          "caller": "getTreeName",
+          "callee": "paramsObj.containsKey",
+          "lineNumber": 375
+        },
+        {
+          "caller": "getTreeName",
+          "callee": "StringUtils.toCamelCase",
+          "lineNumber": 377
+        },
+        {
+          "caller": "getTreeName",
+          "callee": "paramsObj.getString",
+          "lineNumber": 377
+        },
+        {
+          "caller": "getExpandColumn",
+          "callee": "genTable.getOptions",
+          "lineNumber": 390
+        },
+        {
+          "caller": "getExpandColumn",
+          "callee": "JSON.parseObject",
+          "lineNumber": 391
+        },
+        {
+          "caller": "getExpandColumn",
+          "callee": "paramsObj.getString",
+          "lineNumber": 392
+        },
+        {
+          "caller": "getExpandColumn",
+          "callee": "genTable.getColumns",
+          "lineNumber": 394
+        },
+        {
+          "caller": "getExpandColumn",
+          "callee": "column.isList",
+          "lineNumber": 396
+        },
+        {
+          "caller": "getExpandColumn",
+          "callee": "column.getColumnName",
+          "lineNumber": 399
+        },
+        {
+          "caller": "getExpandColumn",
+          "callee": "columnName.equals",
+          "lineNumber": 400
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 17,
+        "functionCount": 16,
+        "classCount": 1
+      }
+    }
+  ]
+}

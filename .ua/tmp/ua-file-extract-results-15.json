@@ -1,0 +1,33 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 0,
+  "filesSkipped": [
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysConfigMapper.xml",
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysDeptMapper.xml",
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysDictDataMapper.xml",
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysDictTypeMapper.xml",
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysLogininforMapper.xml",
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysMenuMapper.xml",
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysNoticeMapper.xml",
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysOperLogMapper.xml",
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysPostMapper.xml",
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleDeptMapper.xml",
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleMapper.xml",
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysRoleMenuMapper.xml",
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserMapper.xml",
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserPostMapper.xml",
+    "spzx-modules/spzx-system/src/main/resources/mapper/system/SysUserRoleMapper.xml"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 0,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": []
+}

@@ -1,0 +1,1099 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "type": "file",
+      "name": "CategoryBrandController.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "summary": "分类与品牌关联控制器,提供分类品牌关联的分页列表、详情、新增、编辑、删除及按分类查询品牌接口。",
+      "tags": ["api-handler", "controller", "category-brand", "crud"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java:CategoryBrandController",
+      "type": "class",
+      "name": "CategoryBrandController",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "lineRange": [21, 93],
+      "summary": "分类品牌关联 REST 控制器,暴露分类品牌列表、详情、新增、编辑、删除及按分类查询品牌的接口。",
+      "tags": ["api-handler", "controller", "category-brand"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java:list",
+      "type": "function",
+      "name": "list",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "lineRange": [32, 38],
+      "summary": "分页查询分类品牌关联列表并返回表格数据。",
+      "tags": ["api-handler", "controller", "query"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java:getInfo",
+      "type": "function",
+      "name": "getInfo",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "lineRange": [44, 48],
+      "summary": "按主键查询单条分类品牌关联详情。",
+      "tags": ["api-handler", "controller"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java:add",
+      "type": "function",
+      "name": "add",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "lineRange": [54, 59],
+      "summary": "新增分类品牌关联记录。",
+      "tags": ["api-handler", "controller", "create"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java:edit",
+      "type": "function",
+      "name": "edit",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "lineRange": [64, 69],
+      "summary": "更新分类品牌关联记录。",
+      "tags": ["api-handler", "controller", "update"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java:remove",
+      "type": "function",
+      "name": "remove",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "lineRange": [75, 79],
+      "summary": "按 id 列表批量删除分类品牌关联。",
+      "tags": ["api-handler", "controller", "delete"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java:selectBrandListByCategoryId",
+      "type": "function",
+      "name": "selectBrandListByCategoryId",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "lineRange": [88, 92],
+      "summary": "按分类 id 查询其关联的品牌列表。",
+      "tags": ["api-handler", "controller", "category-brand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java",
+      "type": "file",
+      "name": "CategoryController.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java",
+      "summary": "商品分类控制器,提供分类树形选择、导出、导入、一级分类查询及分类树接口。",
+      "tags": ["api-handler", "controller", "category", "tree"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java:CategoryController",
+      "type": "class",
+      "name": "CategoryController",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java",
+      "lineRange": [22, 74],
+      "summary": "商品分类 REST 控制器,暴露分类树选择、导出、导入、一级分类查询及分类树接口。",
+      "tags": ["api-handler", "controller", "category"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java:treeSelect",
+      "type": "function",
+      "name": "treeSelect",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java",
+      "lineRange": [30, 34],
+      "summary": "返回分类树形选择结构。",
+      "tags": ["api-handler", "controller", "category", "tree"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java:export",
+      "type": "function",
+      "name": "export",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java",
+      "lineRange": [36, 39],
+      "summary": "导出商品分类数据到 Excel 文件。",
+      "tags": ["api-handler", "controller", "category", "export"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java:importData",
+      "type": "function",
+      "name": "importData",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java",
+      "lineRange": [42, 51],
+      "summary": "从上传的 Excel 文件导入商品分类数据,并返回导入结果。",
+      "tags": ["api-handler", "controller", "category", "import"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java:getOneCategory",
+      "type": "function",
+      "name": "getOneCategory",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java",
+      "lineRange": [57, 62],
+      "summary": "返回一级分类列表,供内部调用。",
+      "tags": ["api-handler", "controller", "category"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java:tree",
+      "type": "function",
+      "name": "tree",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java",
+      "lineRange": [69, 73],
+      "summary": "返回商品分类树结构。",
+      "tags": ["api-handler", "controller", "category", "tree"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "type": "file",
+      "name": "ProductController.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "summary": "商品主控制器,提供商品/SKU 的增删改查、审核与上架状态、sku 列表、价格、库存、详情及校验锁定等接口。",
+      "tags": ["api-handler", "controller", "product", "sku", "crud"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:ProductController",
+      "type": "class",
+      "name": "ProductController",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "lineRange": [31, 231],
+      "summary": "商品 REST 控制器,暴露商品管理及 SKU 相关查询、价格、库存与锁库存接口。",
+      "tags": ["api-handler", "controller", "product", "sku"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:list",
+      "type": "function",
+      "name": "list",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "lineRange": [42, 48],
+      "summary": "分页查询商品列表并返回表格数据。",
+      "tags": ["api-handler", "controller", "product", "query"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:add",
+      "type": "function",
+      "name": "add",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "lineRange": [57, 62],
+      "summary": "新增商品,记录创建人后写入商品数据。",
+      "tags": ["api-handler", "controller", "product", "create"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:getInfo",
+      "type": "function",
+      "name": "getInfo",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "lineRange": [68, 72],
+      "summary": "按 id 查询商品详情。",
+      "tags": ["api-handler", "controller", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:edit",
+      "type": "function",
+      "name": "edit",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "lineRange": [81, 86],
+      "summary": "更新商品信息,记录更新人后保存修改。",
+      "tags": ["api-handler", "controller", "product", "update"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:remove",
+      "type": "function",
+      "name": "remove",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "lineRange": [95, 99],
+      "summary": "按 id 列表批量删除商品。",
+      "tags": ["api-handler", "controller", "product", "delete"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:updateAuditStatus",
+      "type": "function",
+      "name": "updateAuditStatus",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "lineRange": [102, 107],
+      "summary": "更新商品的审核状态。",
+      "tags": ["api-handler", "controller", "product", "audit"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:updateStatus",
+      "type": "function",
+      "name": "updateStatus",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "lineRange": [110, 115],
+      "summary": "更新商品的上架/下架状态。",
+      "tags": ["api-handler", "controller", "product", "status"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:getTopSale",
+      "type": "function",
+      "name": "getTopSale",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "lineRange": [121, 126],
+      "summary": "返回热销商品列表。",
+      "tags": ["api-handler", "controller", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:skuList",
+      "type": "function",
+      "name": "skuList",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "lineRange": [130, 139],
+      "summary": "分页查询 SKU 列表,支持按查询条件过滤。",
+      "tags": ["api-handler", "controller", "sku", "query"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:getProductSku",
+      "type": "function",
+      "name": "getProductSku",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "lineRange": [143, 152],
+      "summary": "按 SKU id 查询 SKU 详情。",
+      "tags": ["api-handler", "controller", "sku"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:getProduct",
+      "type": "function",
+      "name": "getProduct",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "lineRange": [154, 159],
+      "summary": "按 id 查询商品数据。",
+      "tags": ["api-handler", "controller", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:getSkuPrice",
+      "type": "function",
+      "name": "getSkuPrice",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "lineRange": [161, 166],
+      "summary": "按 SKU id 查询 SKU 价格。",
+      "tags": ["api-handler", "controller", "sku", "price"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:getProductDetails",
+      "type": "function",
+      "name": "getProductDetails",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "lineRange": [168, 173],
+      "summary": "查询商品详情信息。",
+      "tags": ["api-handler", "controller", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:getSkuSpecValue",
+      "type": "function",
+      "name": "getSkuSpecValue",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "lineRange": [175, 180],
+      "summary": "按 SKU id 查询 SKU 规格值。",
+      "tags": ["api-handler", "controller", "sku", "spec"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:getSkuStock",
+      "type": "function",
+      "name": "getSkuStock",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "lineRange": [182, 187],
+      "summary": "按 SKU id 查询 SKU 库存。",
+      "tags": ["api-handler", "controller", "sku", "stock"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:getSkuPriceList",
+      "type": "function",
+      "name": "getSkuPriceList",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "lineRange": [197, 202],
+      "summary": "按 SKU id 列表批量查询价格。",
+      "tags": ["api-handler", "controller", "sku", "price"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:checkAndLock",
+      "type": "function",
+      "name": "checkAndLock",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "lineRange": [214, 229],
+      "summary": "校验并锁定 SKU 库存,供下单场景调用,失败时返回错误信息。",
+      "tags": ["api-handler", "controller", "sku", "stock", "lock"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "type": "file",
+      "name": "ProductSpecController.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "summary": "商品规格控制器,提供规格的分页查询、详情、新增、编辑、删除及按分类查询规格接口。",
+      "tags": ["api-handler", "controller", "product-spec", "crud"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java:ProductSpecController",
+      "type": "class",
+      "name": "ProductSpecController",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "lineRange": [21, 86],
+      "summary": "商品规格 REST 控制器,暴露规格列表、详情、新增、编辑、删除及按分类查询规格的接口。",
+      "tags": ["api-handler", "controller", "product-spec"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java:list",
+      "type": "function",
+      "name": "list",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "lineRange": [32, 38],
+      "summary": "分页查询商品规格列表并返回表格数据。",
+      "tags": ["api-handler", "controller", "query"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java:getInfo",
+      "type": "function",
+      "name": "getInfo",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "lineRange": [43, 47],
+      "summary": "按主键查询商品规格详情。",
+      "tags": ["api-handler", "controller"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java:add",
+      "type": "function",
+      "name": "add",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "lineRange": [52, 57],
+      "summary": "新增商品规格,记录创建人后写入规格数据。",
+      "tags": ["api-handler", "controller", "create"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java:edit",
+      "type": "function",
+      "name": "edit",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "lineRange": [63, 68],
+      "summary": "更新商品规格信息。",
+      "tags": ["api-handler", "controller", "update"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java:remove",
+      "type": "function",
+      "name": "remove",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "lineRange": [74, 78],
+      "summary": "按 id 列表批量删除商品规格。",
+      "tags": ["api-handler", "controller", "delete"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java:selectProductSpecListByCategoryId",
+      "type": "function",
+      "name": "selectProductSpecListByCategoryId",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "lineRange": [81, 85],
+      "summary": "按分类 id 查询其关联的商品规格列表。",
+      "tags": ["api-handler", "controller", "product-spec"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "type": "file",
+      "name": "ProductUnitController.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "summary": "商品单位控制器,提供单位的分页查询、详情、新增、编辑、删除及全量单位接口。",
+      "tags": ["api-handler", "controller", "product-unit", "crud"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java:ProductUnitController",
+      "type": "class",
+      "name": "ProductUnitController",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "lineRange": [19, 84],
+      "summary": "商品单位 REST 控制器,暴露单位分页、详情、新增、编辑、删除及全量单位接口。",
+      "tags": ["api-handler", "controller", "product-unit"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java:findPage",
+      "type": "function",
+      "name": "findPage",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "lineRange": [27, 40],
+      "summary": "分页查询商品单位列表并返回表格数据。",
+      "tags": ["api-handler", "controller", "query"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java:add",
+      "type": "function",
+      "name": "add",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "lineRange": [45, 50],
+      "summary": "新增商品单位,记录创建人后写入单位数据。",
+      "tags": ["api-handler", "controller", "create"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java:getById",
+      "type": "function",
+      "name": "getById",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "lineRange": [53, 57],
+      "summary": "按主键查询商品单位详情。",
+      "tags": ["api-handler", "controller"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java:edit",
+      "type": "function",
+      "name": "edit",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "lineRange": [62, 67],
+      "summary": "更新商品单位信息。",
+      "tags": ["api-handler", "controller", "update"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java:remove",
+      "type": "function",
+      "name": "remove",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "lineRange": [72, 76],
+      "summary": "按 id 列表批量删除商品单位。",
+      "tags": ["api-handler", "controller", "delete"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java:selectProductUnitAll",
+      "type": "function",
+      "name": "selectProductUnitAll",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "lineRange": [79, 83],
+      "summary": "返回全部商品单位列表。",
+      "tags": ["api-handler", "controller", "product-unit"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/TestController.java",
+      "type": "file",
+      "name": "TestController.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/TestController.java",
+      "summary": "测试控制器,提供用于验证分布式锁功能的测试接口。",
+      "tags": ["api-handler", "controller", "test", "lock"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/TestController.java:TestController",
+      "type": "class",
+      "name": "TestController",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/TestController.java",
+      "lineRange": [11, 24],
+      "summary": "测试 REST 控制器,暴露分布式锁测试接口。",
+      "tags": ["api-handler", "controller", "test"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/TestController.java:testLock",
+      "type": "function",
+      "name": "testLock",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/TestController.java",
+      "lineRange": [19, 23],
+      "summary": "调用测试服务验证分布式锁逻辑并返回执行结果。",
+      "tags": ["api-handler", "controller", "test", "lock"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/Category.java",
+      "type": "file",
+      "name": "Category.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/Category.java",
+      "summary": "商品分类实体类,映射分类表,包含名称、图片、父分类、状态、排序及子分类等字段。",
+      "tags": ["data-model", "entity", "category"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/Category.java:Category",
+      "type": "class",
+      "name": "Category",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/Category.java",
+      "lineRange": [18, 57],
+      "summary": "商品分类实体,持久化分类名称、图片、父分类、状态、排序及子分类集合。",
+      "tags": ["data-model", "entity", "category"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/CategoryBrand.java",
+      "type": "file",
+      "name": "CategoryBrand.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/CategoryBrand.java",
+      "summary": "分类品牌关联实体类,映射分类与品牌关联表,同时携带名称与 logo 冗余字段。",
+      "tags": ["data-model", "entity", "category-brand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/CategoryBrand.java:CategoryBrand",
+      "type": "class",
+      "name": "CategoryBrand",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/CategoryBrand.java",
+      "lineRange": [14, 42],
+      "summary": "分类品牌关联实体,记录分类与品牌关系及其名称、logo、分类 id 列表。",
+      "tags": ["data-model", "entity", "category-brand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductSpec.java",
+      "type": "file",
+      "name": "ProductSpec.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductSpec.java",
+      "summary": "商品规格实体类,映射规格表,记录分类、规格名、规格值及分类名称等字段。",
+      "tags": ["data-model", "entity", "product-spec"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductSpec.java:ProductSpec",
+      "type": "class",
+      "name": "ProductSpec",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductSpec.java",
+      "lineRange": [16, 42],
+      "summary": "商品规格实体,持久化分类 id、规格名、规格值及分类名称与分类 id 列表。",
+      "tags": ["data-model", "entity", "product-spec"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductUnit.java",
+      "type": "file",
+      "name": "ProductUnit.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductUnit.java",
+      "summary": "商品单位实体类,映射单位表,记录单位名称。",
+      "tags": ["data-model", "entity", "product-unit"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductUnit.java:ProductUnit",
+      "type": "class",
+      "name": "ProductUnit",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductUnit.java",
+      "lineRange": [12, 24],
+      "summary": "商品单位实体,持久化单位名称。",
+      "tags": ["data-model", "entity", "product-unit"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/SkuStock.java",
+      "type": "file",
+      "name": "SkuStock.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/SkuStock.java",
+      "summary": "SKU 库存实体类,映射库存表,记录 SKU 的总量、锁定、可用与销量及状态。",
+      "tags": ["data-model", "entity", "sku", "stock"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/SkuStock.java:SkuStock",
+      "type": "class",
+      "name": "SkuStock",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/SkuStock.java",
+      "lineRange": [10, 33],
+      "summary": "SKU 库存实体,持久化 SKU 的总量、锁定数量、可用数量、销量与状态。",
+      "tags": ["data-model", "entity", "sku", "stock"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/vo/CategoryExcelVo.java",
+      "type": "file",
+      "name": "CategoryExcelVo.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/vo/CategoryExcelVo.java",
+      "summary": "商品分类 Excel 导入导出值对象,定义分类数据的列字段。",
+      "tags": ["data-model", "vo", "category", "excel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/vo/CategoryExcelVo.java:CategoryExcelVo",
+      "type": "class",
+      "name": "CategoryExcelVo",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/vo/CategoryExcelVo.java",
+      "lineRange": [6, 27],
+      "summary": "商品分类 Excel 值对象,承载分类 id、名称、图片、父分类、状态与排序等导入导出字段。",
+      "tags": ["data-model", "vo", "category", "excel"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java:CategoryBrandController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java:CategoryBrandController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java:list",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java:getInfo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java:add",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java:edit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java:remove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryBrandController.java:selectBrandListByCategoryId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java:CategoryController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java:CategoryController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java:treeSelect",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java:export",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java:importData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java:getOneCategory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/CategoryController.java:tree",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:ProductController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:ProductController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:list",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:add",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:getInfo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:edit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:remove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:updateAuditStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:updateStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:getTopSale",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:skuList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:getProductSku",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:getProduct",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:getSkuPrice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:getProductDetails",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:getSkuSpecValue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:getSkuStock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:getSkuPriceList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductController.java:checkAndLock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java:ProductSpecController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java:ProductSpecController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java:list",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java:getInfo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java:add",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java:edit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java:remove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductSpecController.java:selectProductSpecListByCategoryId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java:ProductUnitController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java:ProductUnitController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java:findPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java:add",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java:getById",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java:edit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java:remove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/ProductUnitController.java:selectProductUnitAll",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/TestController.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/TestController.java:TestController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/TestController.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/TestController.java:TestController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/TestController.java",
+      "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/controller/TestController.java:testLock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/Category.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/Category.java:Category",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/Category.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/Category.java:Category",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/CategoryBrand.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/CategoryBrand.java:CategoryBrand",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/CategoryBrand.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/CategoryBrand.java:CategoryBrand",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductSpec.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductSpec.java:ProductSpec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductSpec.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductSpec.java:ProductSpec",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductUnit.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductUnit.java:ProductUnit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductUnit.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/ProductUnit.java:ProductUnit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/SkuStock.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/SkuStock.java:SkuStock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/SkuStock.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/SkuStock.java:SkuStock",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/vo/CategoryExcelVo.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/vo/CategoryExcelVo.java:CategoryExcelVo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/vo/CategoryExcelVo.java",
+      "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/domain/vo/CategoryExcelVo.java:CategoryExcelVo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

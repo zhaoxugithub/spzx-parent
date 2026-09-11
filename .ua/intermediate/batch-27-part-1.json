@@ -1,0 +1,366 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/SpzxChannelApplication.java",
+      "type": "file",
+      "name": "SpzxChannelApplication.java",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/SpzxChannelApplication.java",
+      "summary": "spzx-channel 频道服务的 Spring Boot 启动入口类，负责启动应用并输出启动提示。",
+      "tags": ["entry-point", "spring-boot", "service"],
+      "complexity": "simple",
+      "languageNotes": "标准 Spring Boot 启动类，通过 @SpringBootApplication 与 SpringApplication.run 引导应用。"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/SpzxChannelApplication.java:SpzxChannelApplication",
+      "type": "class",
+      "name": "SpzxChannelApplication",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/SpzxChannelApplication.java",
+      "lineRange": [11, 29],
+      "summary": "频道服务的启动引导类，通过主方法启动 Spring Boot 应用。",
+      "tags": ["entry-point", "spring-boot", "service"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/SpzxChannelApplication.java:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/SpzxChannelApplication.java",
+      "lineRange": [16, 28],
+      "summary": "应用入口方法，调用 SpringApplication.run 启动 spzx-channel 服务并打印启动日志。",
+      "tags": ["entry-point", "spring-boot", "boot"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/configure/ThreadPoolConfig.java",
+      "type": "file",
+      "name": "ThreadPoolConfig.java",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/configure/ThreadPoolConfig.java",
+      "summary": "定义频道服务使用的线程池 Bean，基于可用 CPU 核心数构建可调优的 ThreadPoolExecutor。",
+      "tags": ["config", "thread-pool", "concurrency"],
+      "complexity": "simple",
+      "languageNotes": "通过 @Configuration 注册线程池 Bean，并结合 ArrayBlockingQueue 与预启动核心线程。"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/configure/ThreadPoolConfig.java:ThreadPoolConfig",
+      "type": "class",
+      "name": "ThreadPoolConfig",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/configure/ThreadPoolConfig.java",
+      "lineRange": [14, 46],
+      "summary": "线程池配置类，负责创建并初始化供服务使用的线程池执行器。",
+      "tags": ["config", "thread-pool", "concurrency"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/configure/ThreadPoolConfig.java:init",
+      "type": "function",
+      "name": "init",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/configure/ThreadPoolConfig.java",
+      "lineRange": [17, 44],
+      "summary": "初始化线程池执行器，根据可用处理器数量设置核心/最大线程数，配置有界队列并预启动核心线程。",
+      "tags": ["config", "thread-pool", "executor"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/BrandController.java",
+      "type": "file",
+      "name": "BrandController.java",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/BrandController.java",
+      "summary": "频道服务品牌控制器，提供查询全部品牌列表的 REST 接口（BFF 聚合层）。",
+      "tags": ["api-handler", "controller", "bff"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/BrandController.java:BrandController",
+      "type": "class",
+      "name": "BrandController",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/BrandController.java",
+      "lineRange": [12, 23],
+      "summary": "品牌控制器，对外暴露品牌列表查询接口，委托品牌服务处理。",
+      "tags": ["api-handler", "controller", "brand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/BrandController.java:selectBrandAll",
+      "type": "function",
+      "name": "selectBrandAll",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/BrandController.java",
+      "lineRange": [18, 22],
+      "summary": "查询全部品牌列表的接口处理方法，调用品牌服务并返回统一成功响应。",
+      "tags": ["api-handler", "query", "brand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/CategoryController.java",
+      "type": "file",
+      "name": "CategoryController.java",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/CategoryController.java",
+      "summary": "频道服务分类控制器，提供查询商品分类树的 REST 接口。",
+      "tags": ["api-handler", "controller", "category"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/CategoryController.java:CategoryController",
+      "type": "class",
+      "name": "CategoryController",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/CategoryController.java",
+      "lineRange": [17, 32],
+      "summary": "分类控制器，对外暴露分类树查询接口并委托分类服务处理。",
+      "tags": ["api-handler", "controller", "category"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/CategoryController.java:tree",
+      "type": "function",
+      "name": "tree",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/CategoryController.java",
+      "lineRange": [26, 31],
+      "summary": "查询分类树的接口处理方法，调用分类服务获取分类层级结构并返回成功响应。",
+      "tags": ["api-handler", "query", "category"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/IndexController.java",
+      "type": "file",
+      "name": "IndexController.java",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/IndexController.java",
+      "summary": "频道服务首页控制器，提供首页聚合数据的 REST 接口。",
+      "tags": ["api-handler", "controller", "home"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/IndexController.java:IndexController",
+      "type": "class",
+      "name": "IndexController",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/IndexController.java",
+      "lineRange": [16, 33],
+      "summary": "首页控制器，对外暴露首页数据接口并委托首页服务处理。",
+      "tags": ["api-handler", "controller", "home"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/IndexController.java:index",
+      "type": "function",
+      "name": "index",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/IndexController.java",
+      "lineRange": [25, 31],
+      "summary": "获取首页聚合数据的接口处理方法，调用首页服务并返回统一成功响应。",
+      "tags": ["api-handler", "query", "home"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ItemController.java",
+      "type": "file",
+      "name": "ItemController.java",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ItemController.java",
+      "summary": "频道服务商品详情控制器，提供按 SKU 查询商品详情的 REST 接口。",
+      "tags": ["api-handler", "controller", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ItemController.java:ItemController",
+      "type": "class",
+      "name": "ItemController",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ItemController.java",
+      "lineRange": [14, 31],
+      "summary": "商品详情控制器，对外暴露商品详情接口并委托商品详情服务处理。",
+      "tags": ["api-handler", "controller", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ItemController.java:item",
+      "type": "function",
+      "name": "item",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ItemController.java",
+      "lineRange": [25, 29],
+      "summary": "按 SKU 查询商品详情的接口处理方法，调用商品详情服务并返回统一成功响应。",
+      "tags": ["api-handler", "query", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ListController.java",
+      "type": "file",
+      "name": "ListController.java",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ListController.java",
+      "summary": "频道服务商品列表控制器，提供分页查询 SKU 列表的 REST 接口。",
+      "tags": ["api-handler", "controller", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ListController.java:ListController",
+      "type": "class",
+      "name": "ListController",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ListController.java",
+      "lineRange": [15, 35],
+      "summary": "商品列表控制器，对外暴露 SKU 分页查询接口并委托列表服务处理。",
+      "tags": ["api-handler", "controller", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ListController.java:skuList",
+      "type": "function",
+      "name": "skuList",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ListController.java",
+      "lineRange": [23, 33],
+      "summary": "分页查询 SKU 列表的接口处理方法，接收分页参数与查询条件并调用列表服务。",
+      "tags": ["api-handler", "query", "pagination"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/domain/ItemVo.java",
+      "type": "file",
+      "name": "ItemVo.java",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/domain/ItemVo.java",
+      "summary": "商品详情视图对象，聚合 SKU、商品、价格、轮播图、详情图、规格与库存等展示数据。",
+      "tags": ["data-model", "vo", "product"],
+      "complexity": "simple",
+      "languageNotes": "基于 Lombok 的轻量 VO，聚合多个服务返回的商品展示字段。"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/domain/ItemVo.java:ItemVo",
+      "type": "class",
+      "name": "ItemVo",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/domain/ItemVo.java",
+      "lineRange": [14, 42],
+      "summary": "商品详情聚合视图对象，包含商品 SKU、商品、价格、图片、规格与库存等展示字段。",
+      "tags": ["data-model", "vo", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IBrandService.java",
+      "type": "file",
+      "name": "IBrandService.java",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IBrandService.java",
+      "summary": "品牌服务接口，定义查询全部品牌列表的契约供实现类使用。",
+      "tags": ["interface", "service", "brand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IBrandService.java:IBrandService",
+      "type": "class",
+      "name": "IBrandService",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IBrandService.java",
+      "lineRange": [7, 9],
+      "summary": "品牌服务接口，声明查询全部品牌的方法契约。",
+      "tags": ["interface", "service", "brand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/ICategoryService.java",
+      "type": "file",
+      "name": "ICategoryService.java",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/ICategoryService.java",
+      "summary": "分类服务接口，定义查询商品分类树的契约供实现类使用。",
+      "tags": ["interface", "service", "category"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/ICategoryService.java:ICategoryService",
+      "type": "class",
+      "name": "ICategoryService",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/ICategoryService.java",
+      "lineRange": [7, 9],
+      "summary": "分类服务接口，声明查询分类树的方法契约。",
+      "tags": ["interface", "service", "category"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IIndexService.java",
+      "type": "file",
+      "name": "IIndexService.java",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IIndexService.java",
+      "summary": "首页服务接口，定义获取首页聚合数据的契约供实现类使用。",
+      "tags": ["interface", "service", "home"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IIndexService.java:IIndexService",
+      "type": "class",
+      "name": "IIndexService",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IIndexService.java",
+      "lineRange": [5, 7],
+      "summary": "首页服务接口，声明获取首页聚合数据的方法契约。",
+      "tags": ["interface", "service", "home"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IItemService.java",
+      "type": "file",
+      "name": "IItemService.java",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IItemService.java",
+      "summary": "商品详情服务接口，定义按 SKU 查询商品详情的契约供实现类使用。",
+      "tags": ["interface", "service", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IItemService.java:IItemService",
+      "type": "class",
+      "name": "IItemService",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IItemService.java",
+      "lineRange": [7, 9],
+      "summary": "商品详情服务接口，声明查询商品详情的方法契约。",
+      "tags": ["interface", "service", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IListService.java",
+      "type": "file",
+      "name": "IListService.java",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IListService.java",
+      "summary": "商品列表服务接口，定义分页查询 SKU 列表的契约供实现类使用。",
+      "tags": ["interface", "service", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IListService.java:IListService",
+      "type": "class",
+      "name": "IListService",
+      "filePath": "spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IListService.java",
+      "lineRange": [6, 8],
+      "summary": "商品列表服务接口，声明分页查询 SKU 列表的方法契约。",
+      "tags": ["interface", "service", "product"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/SpzxChannelApplication.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/SpzxChannelApplication.java:SpzxChannelApplication", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/SpzxChannelApplication.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/SpzxChannelApplication.java:SpzxChannelApplication", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/SpzxChannelApplication.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/SpzxChannelApplication.java:main", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/SpzxChannelApplication.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/SpzxChannelApplication.java:main", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/configure/ThreadPoolConfig.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/configure/ThreadPoolConfig.java:ThreadPoolConfig", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/configure/ThreadPoolConfig.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/configure/ThreadPoolConfig.java:ThreadPoolConfig", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/configure/ThreadPoolConfig.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/configure/ThreadPoolConfig.java:init", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/configure/ThreadPoolConfig.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/configure/ThreadPoolConfig.java:init", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/BrandController.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/BrandController.java:BrandController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/BrandController.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/BrandController.java:BrandController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/BrandController.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/BrandController.java:selectBrandAll", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/BrandController.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/BrandController.java:selectBrandAll", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/CategoryController.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/CategoryController.java:CategoryController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/CategoryController.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/CategoryController.java:CategoryController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/CategoryController.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/CategoryController.java:tree", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/CategoryController.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/CategoryController.java:tree", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/IndexController.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/IndexController.java:IndexController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/IndexController.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/IndexController.java:IndexController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/IndexController.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/IndexController.java:index", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/IndexController.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/IndexController.java:index", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ItemController.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ItemController.java:ItemController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ItemController.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ItemController.java:ItemController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ItemController.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ItemController.java:item", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ItemController.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ItemController.java:item", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ListController.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ListController.java:ListController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ListController.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ListController.java:ListController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ListController.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ListController.java:skuList", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ListController.java", "target": "function:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/controller/ListController.java:skuList", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/domain/ItemVo.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/domain/ItemVo.java:ItemVo", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/domain/ItemVo.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/domain/ItemVo.java:ItemVo", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IBrandService.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IBrandService.java:IBrandService", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IBrandService.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IBrandService.java:IBrandService", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/ICategoryService.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/ICategoryService.java:ICategoryService", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/ICategoryService.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/ICategoryService.java:ICategoryService", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IIndexService.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IIndexService.java:IIndexService", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IIndexService.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IIndexService.java:IIndexService", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IItemService.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IItemService.java:IItemService", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IItemService.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IItemService.java:IItemService", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IListService.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IListService.java:IListService", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IListService.java", "target": "class:spzx-modules/spzx-channel/src/main/java/com/spzx/channel/service/IListService.java:IListService", "type": "exports", "direction": "forward", "weight": 0.8}
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "nodes": [
+    {
+      "id": "document:spzx-modules/spzx-channel/src/main/resources/banner.txt",
+      "type": "document",
+      "name": "banner.txt",
+      "filePath": "spzx-modules/spzx-channel/src/main/resources/banner.txt",
+      "summary": "渠道聚合网关(spzx-channel)服务的 Spring Boot 启动横幅(ASCII 艺术图),展示 Spring Boot 版本与应用名称。",
+      "tags": ["documentation", "banner", "spring-boot", "startup"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-channel/src/main/resources/bootstrap.yml",
+      "type": "config",
+      "name": "bootstrap.yml",
+      "filePath": "spzx-modules/spzx-channel/src/main/resources/bootstrap.yml",
+      "summary": "spzx-channel(渠道/聚合网关)服务的 Spring Cloud 启动配置,设置端口 9208、服务名 spzx-channel、dev 环境,并接入 Nacos 注册中心与配置中心。",
+      "tags": ["configuration", "spring-cloud", "nacos", "service-config"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-channel/src/main/resources/logback.xml",
+      "type": "config",
+      "name": "logback.xml",
+      "filePath": "spzx-modules/spzx-channel/src/main/resources/logback.xml",
+      "summary": "spzx-channel 服务的 Logback 日志配置,定义含 traceId 的日志格式、控制台与按天滚动的 info/error 文件日志输出,以及包级日志级别控制。",
+      "tags": ["configuration", "logging", "logback", "infrastructure"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": []
+}

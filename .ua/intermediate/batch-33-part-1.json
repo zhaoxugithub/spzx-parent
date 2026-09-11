@@ -1,0 +1,419 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/EasyExcelTest.java",
+      "type": "file",
+      "name": "EasyExcelTest.java",
+      "filePath": "spzx-modules/spzx-product/src/test/java/com/spzx/product/test/EasyExcelTest.java",
+      "summary": "商品分类(Category)数据的 EasyExcel 导出与导入单元测试，验证分类数据写入 xlsx 及从 xlsx 读取的完整流程。",
+      "tags": ["test", "easyexcel", "excel", "import-export", "integration-test"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/ExcelListener.java",
+      "type": "file",
+      "name": "ExcelListener.java",
+      "filePath": "spzx-modules/spzx-product/src/test/java/com/spzx/product/test/ExcelListener.java",
+      "summary": "EasyExcel 读取监听器实现，逐行收集导入数据并在全部解析完成后打印汇总信息。",
+      "tags": ["test", "easyexcel", "listener", "excel-import"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/TransmittableThreadLocalExample.java",
+      "type": "file",
+      "name": "TransmittableThreadLocalExample.java",
+      "filePath": "spzx-modules/spzx-product/src/test/java/com/spzx/product/test/TransmittableThreadLocalExample.java",
+      "summary": "TransmittableThreadLocal 传递性线程本地变量示例，演示子线程如何继承并隔离父线程共享的业务上下文。",
+      "tags": ["test", "threadlocal", "concurrency", "example"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-system/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-modules/spzx-system/pom.xml",
+      "summary": "spzx-system 系统管理模块的 Maven 构建配置，声明 Nacos 注册/配置、Sentinel、Actuator、MySQL 及公共数据权限与日志等依赖。",
+      "tags": ["configuration", "maven", "build-system", "module"],
+      "complexity": "simple",
+      "languageNotes": "Java 17 编译目标，父模块为 spzx-modules，使用 spring-boot-maven-plugin 重打包。"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/SpzxSystemApplication.java",
+      "type": "file",
+      "name": "SpzxSystemApplication.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/SpzxSystemApplication.java",
+      "summary": "spzx-system 系统管理微服务的 Spring Boot 启动类，负责初始化并运行应用上下文。",
+      "tags": ["entry-point", "spring-boot", "application"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysConfigController.java",
+      "type": "file",
+      "name": "SysConfigController.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysConfigController.java",
+      "summary": "系统参数配置管理 REST 控制器，提供参数列表/导出/详情/新增/编辑/删除及刷新缓存接口。",
+      "tags": ["api-handler", "controller", "rest", "config"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java",
+      "type": "file",
+      "name": "SysDeptController.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java",
+      "summary": "系统部门管理 REST 控制器，负责部门列表/树查询、新增、编辑与删除（含数据范围与父子关系校验）。",
+      "tags": ["api-handler", "controller", "rest", "org"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictDataController.java",
+      "type": "file",
+      "name": "SysDictDataController.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictDataController.java",
+      "summary": "系统字典数据管理 REST 控制器，提供字典数据列表/导出/详情、按字典类型查询及增删改接口。",
+      "tags": ["api-handler", "controller", "rest", "dictionary"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictTypeController.java",
+      "type": "file",
+      "name": "SysDictTypeController.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictTypeController.java",
+      "summary": "系统字典类型管理 REST 控制器，负责字典类型列表/导出/新增/编辑/删除、缓存刷新与下拉选项接口。",
+      "tags": ["api-handler", "controller", "rest", "dictionary"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysLogininforController.java",
+      "type": "file",
+      "name": "SysLogininforController.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysLogininforController.java",
+      "summary": "系统登录日志管理 REST 控制器，提供登录日志列表/导出/删除/清空以及解锁用户（清除密码错误缓存）接口。",
+      "tags": ["api-handler", "controller", "rest", "log"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java",
+      "type": "file",
+      "name": "SysMenuController.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java",
+      "summary": "系统菜单管理 REST 控制器，提供菜单列表/详情/树选择/角色菜单树、增删改及动态路由生成接口。",
+      "tags": ["api-handler", "controller", "rest", "menu"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysNoticeController.java",
+      "type": "file",
+      "name": "SysNoticeController.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysNoticeController.java",
+      "summary": "系统通知公告管理 REST 控制器，提供公告列表/详情/新增/编辑/删除接口。",
+      "tags": ["api-handler", "controller", "rest", "notice"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysOperlogController.java",
+      "type": "file",
+      "name": "SysOperlogController.java",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysOperlogController.java",
+      "summary": "操作日志管理 REST 控制器，提供操作日志列表/导出/删除/清空及新增接口。",
+      "tags": ["api-handler", "controller", "rest", "log"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/EasyExcelTest.java:EasyExcelTest",
+      "type": "class",
+      "name": "EasyExcelTest",
+      "filePath": "spzx-modules/spzx-product/src/test/java/com/spzx/product/test/EasyExcelTest.java",
+      "lineRange": [17, 53],
+      "summary": "商品分类 EasyExcel 导出/导入测试类，注入 categoryService 完成分类数据读写验证。",
+      "tags": ["test", "easyexcel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/ExcelListener.java:ExcelListener",
+      "type": "class",
+      "name": "ExcelListener",
+      "filePath": "spzx-modules/spzx-product/src/test/java/com/spzx/product/test/ExcelListener.java",
+      "lineRange": [15, 48],
+      "summary": "EasyExcel 读取监听器实现，逐行收集数据并获取最终列表。",
+      "tags": ["test", "easyexcel", "listener"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/TransmittableThreadLocalExample.java:TransmittableThreadLocalExample",
+      "type": "class",
+      "name": "TransmittableThreadLocalExample",
+      "filePath": "spzx-modules/spzx-product/src/test/java/com/spzx/product/test/TransmittableThreadLocalExample.java",
+      "lineRange": [8, 32],
+      "summary": "TransmittableThreadLocal 传递性线程本地变量示例类，通过 main 演示父子线程上下文继承。",
+      "tags": ["demo", "threadlocal", "concurrency"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/SpzxSystemApplication.java:SpzxSystemApplication",
+      "type": "class",
+      "name": "SpzxSystemApplication",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/SpzxSystemApplication.java",
+      "lineRange": [13, 32],
+      "summary": "spzx-system 服务的 Spring Boot 应用入口类，标注启动注解并运行应用。",
+      "tags": ["entry-point", "spring-boot"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysConfigController.java:SysConfigController",
+      "type": "class",
+      "name": "SysConfigController",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysConfigController.java",
+      "lineRange": [32, 123],
+      "summary": "系统参数配置 REST 控制器，封装参数管理的增删改查与缓存刷新逻辑。",
+      "tags": ["controller", "rest", "config"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java:SysDeptController",
+      "type": "class",
+      "name": "SysDeptController",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java",
+      "lineRange": [33, 123],
+      "summary": "系统部门管理 REST 控制器，负责部门的树形查询与增删改及数据范围校验。",
+      "tags": ["controller", "rest", "org"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictDataController.java:SysDictDataController",
+      "type": "class",
+      "name": "SysDictDataController",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictDataController.java",
+      "lineRange": [35, 114],
+      "summary": "系统字典数据 REST 控制器，管理字典数据项及其按字典类型的查询。",
+      "tags": ["controller", "rest", "dictionary"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictTypeController.java:SysDictTypeController",
+      "type": "class",
+      "name": "SysDictTypeController",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictTypeController.java",
+      "lineRange": [32, 122],
+      "summary": "系统字典类型 REST 控制器，管理字典类型及其缓存刷新与选项接口。",
+      "tags": ["controller", "rest", "dictionary"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysLogininforController.java:SysLogininforController",
+      "type": "class",
+      "name": "SysLogininforController",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysLogininforController.java",
+      "lineRange": [32, 86],
+      "summary": "系统登录日志 REST 控制器，提供登录日志查看与用户解锁。",
+      "tags": ["controller", "rest", "log"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java:SysMenuController",
+      "type": "class",
+      "name": "SysMenuController",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java",
+      "lineRange": [31, 141],
+      "summary": "系统菜单 REST 控制器，管理菜单树、角色菜单选择与前端动态路由。",
+      "tags": ["controller", "rest", "menu"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysNoticeController.java:SysNoticeController",
+      "type": "class",
+      "name": "SysNoticeController",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysNoticeController.java",
+      "lineRange": [30, 87],
+      "summary": "系统通知公告 REST 控制器，管理公告的增删改查。",
+      "tags": ["controller", "rest", "notice"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysOperlogController.java:SysOperlogController",
+      "type": "class",
+      "name": "SysOperlogController",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysOperlogController.java",
+      "lineRange": [30, 73],
+      "summary": "操作日志 REST 控制器，提供操作日志查看/导出/清理。",
+      "tags": ["controller", "rest", "log"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/EasyExcelTest.java:testExport",
+      "type": "function",
+      "name": "testExport",
+      "filePath": "spzx-modules/spzx-product/src/test/java/com/spzx/product/test/EasyExcelTest.java",
+      "lineRange": [24, 38],
+      "summary": "查询全部分类并映射为 CategoryExcelVo 后写入 xlsx，验证导出流程。",
+      "tags": ["test", "export", "easyexcel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/EasyExcelTest.java:testImport",
+      "type": "function",
+      "name": "testImport",
+      "filePath": "spzx-modules/spzx-product/src/test/java/com/spzx/product/test/EasyExcelTest.java",
+      "lineRange": [40, 52],
+      "summary": "注册 ExcelListener 从 xlsx 读取分类数据并输出，验证导入流程。",
+      "tags": ["test", "import", "easyexcel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/TransmittableThreadLocalExample.java:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "spzx-modules/spzx-product/src/test/java/com/spzx/product/test/TransmittableThreadLocalExample.java",
+      "lineRange": [13, 31],
+      "summary": "设置 TTL 上下文、启动子线程演示上下文继承与隔离，并验证主线程隔离。",
+      "tags": ["demo", "threadlocal", "concurrency"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/SpzxSystemApplication.java:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/SpzxSystemApplication.java",
+      "lineRange": [18, 31],
+      "summary": "启动 Spring Boot 应用并打印启动提示信息。",
+      "tags": ["entry-point", "bootstrap"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysConfigController.java:add",
+      "type": "function",
+      "name": "add",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysConfigController.java",
+      "lineRange": [77, 86],
+      "summary": "校验参数名唯一并新增系统参数配置。",
+      "tags": ["api-handler", "create", "config"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysConfigController.java:edit",
+      "type": "function",
+      "name": "edit",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysConfigController.java",
+      "lineRange": [91, 100],
+      "summary": "校验参数名唯一并更新系统参数配置。",
+      "tags": ["api-handler", "update", "config"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java:add",
+      "type": "function",
+      "name": "add",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java",
+      "lineRange": [76, 85],
+      "summary": "校验部门名称唯一并新增部门。",
+      "tags": ["api-handler", "create", "org"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java:edit",
+      "type": "function",
+      "name": "edit",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java",
+      "lineRange": [90, 105],
+      "summary": "编辑部门并校验名称唯一、父级关系与状态联动。",
+      "tags": ["api-handler", "update", "org"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java:remove",
+      "type": "function",
+      "name": "remove",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java",
+      "lineRange": [110, 122],
+      "summary": "删除部门并校验是否存在子部门或关联用户。",
+      "tags": ["api-handler", "delete", "org"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictTypeController.java:add",
+      "type": "function",
+      "name": "add",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictTypeController.java",
+      "lineRange": [67, 76],
+      "summary": "校验字典类型唯一并新增字典类型。",
+      "tags": ["api-handler", "create", "dictionary"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictTypeController.java:edit",
+      "type": "function",
+      "name": "edit",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictTypeController.java",
+      "lineRange": [81, 90],
+      "summary": "校验字典类型唯一并更新字典类型。",
+      "tags": ["api-handler", "update", "dictionary"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java:add",
+      "type": "function",
+      "name": "add",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java",
+      "lineRange": [83, 94],
+      "summary": "校验菜单名称唯一与外部链接 URL 合法性后新增菜单。",
+      "tags": ["api-handler", "create", "menu"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java:edit",
+      "type": "function",
+      "name": "edit",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java",
+      "lineRange": [99, 112],
+      "summary": "编辑菜单并校验名称唯一、URL 及父子级关系。",
+      "tags": ["api-handler", "update", "menu"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java:remove",
+      "type": "function",
+      "name": "remove",
+      "filePath": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java",
+      "lineRange": [117, 128],
+      "summary": "删除菜单并校验是否存在子菜单或角色引用。",
+      "tags": ["api-handler", "delete", "menu"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {"source": "file:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/EasyExcelTest.java", "target": "class:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/EasyExcelTest.java:EasyExcelTest", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/EasyExcelTest.java", "target": "function:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/EasyExcelTest.java:testExport", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/EasyExcelTest.java", "target": "function:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/EasyExcelTest.java:testImport", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/ExcelListener.java", "target": "class:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/ExcelListener.java:ExcelListener", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/TransmittableThreadLocalExample.java", "target": "class:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/TransmittableThreadLocalExample.java:TransmittableThreadLocalExample", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/TransmittableThreadLocalExample.java", "target": "function:spzx-modules/spzx-product/src/test/java/com/spzx/product/test/TransmittableThreadLocalExample.java:main", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/SpzxSystemApplication.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/SpzxSystemApplication.java:SpzxSystemApplication", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/SpzxSystemApplication.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/SpzxSystemApplication.java:main", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/SpzxSystemApplication.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/SpzxSystemApplication.java:SpzxSystemApplication", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysConfigController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysConfigController.java:SysConfigController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysConfigController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysConfigController.java:add", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysConfigController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysConfigController.java:edit", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysConfigController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysConfigController.java:SysConfigController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java:SysDeptController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java:add", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java:edit", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java:remove", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java:SysDeptController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictDataController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictDataController.java:SysDictDataController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictDataController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictDataController.java:SysDictDataController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictTypeController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictTypeController.java:SysDictTypeController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictTypeController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictTypeController.java:add", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictTypeController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictTypeController.java:edit", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictTypeController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictTypeController.java:SysDictTypeController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysLogininforController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysLogininforController.java:SysLogininforController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysLogininforController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysLogininforController.java:SysLogininforController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java:SysMenuController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java:add", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java:edit", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java", "target": "function:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java:remove", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java:SysMenuController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysNoticeController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysNoticeController.java:SysNoticeController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysNoticeController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysNoticeController.java:SysNoticeController", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysOperlogController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysOperlogController.java:SysOperlogController", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysOperlogController.java", "target": "class:spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysOperlogController.java:SysOperlogController", "type": "exports", "direction": "forward", "weight": 0.8}
+  ]
+}

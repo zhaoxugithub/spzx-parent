@@ -1,0 +1,383 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/OrderLog.java",
+      "type": "file",
+      "name": "OrderLog.java",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/OrderLog.java",
+      "summary": "订单日志实体类，记录订单处理状态、操作人与备注信息。",
+      "tags": ["data-model", "entity", "order", "domain"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/OrderForm.java",
+      "type": "file",
+      "name": "OrderForm.java",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/OrderForm.java",
+      "summary": "下单请求表单 VO，包含交易号、收货地址、运费与订单项列表。",
+      "tags": ["data-model", "vo", "order", "form"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/TradeVo.java",
+      "type": "file",
+      "name": "TradeVo.java",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/TradeVo.java",
+      "summary": "订单结算视图对象，包含总金额、订单项列表与交易号。",
+      "tags": ["data-model", "vo", "order", "trade"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderInfoMapper.java",
+      "type": "file",
+      "name": "OrderInfoMapper.java",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderInfoMapper.java",
+      "summary": "订单信息 MyBatis-Plus Mapper 接口，提供订单列表查询与用户订单列表查询。",
+      "tags": ["data-model", "mapper", "mybatis", "order"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderItemMapper.java",
+      "type": "file",
+      "name": "OrderItemMapper.java",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderItemMapper.java",
+      "summary": "订单明细 MyBatis-Plus Mapper 接口，用于订单项数据访问。",
+      "tags": ["data-model", "mapper", "mybatis", "order"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderLogMapper.java",
+      "type": "file",
+      "name": "OrderLogMapper.java",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderLogMapper.java",
+      "summary": "订单日志 MyBatis-Plus Mapper 接口，用于订单日志数据访问。",
+      "tags": ["data-model", "mapper", "mybatis", "order"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java",
+      "type": "file",
+      "name": "OrderReceiver.java",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java",
+      "summary": "订单消息消费者，处理普通消息、确认消息、死信及延迟取消订单消息。",
+      "tags": ["event-handler", "rabbitmq", "message-queue", "order"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/IOrderInfoService.java",
+      "type": "file",
+      "name": "IOrderInfoService.java",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/service/IOrderInfoService.java",
+      "summary": "订单信息服务接口，定义订单查询、下单、关闭与支付成功处理等契约。",
+      "tags": ["service", "interface", "order", "business-logic"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java",
+      "type": "file",
+      "name": "OrderInfoServiceImpl.java",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java",
+      "summary": "订单信息服务实现，包含结算单生成、下单校验、库存锁定、订单保存及支付/关闭处理。",
+      "tags": ["service", "order", "business-logic", "implementation"],
+      "complexity": "complex",
+      "languageNotes": "综合使用 Redis 脚本、Feign 远程调用、RabbitMQ 消息与 MyBatis-Plus 进行订单事务处理。"
+    },
+    {
+      "id": "file:spzx-modules/spzx-order/src/test/java/com/spzx/product/test/TransactionalProducer.java",
+      "type": "file",
+      "name": "TransactionalProducer.java",
+      "filePath": "spzx-modules/spzx-order/src/test/java/com/spzx/product/test/TransactionalProducer.java",
+      "summary": "测试类，演示 RabbitMQ 事务消息发送的提交与回滚行为。",
+      "tags": ["test", "rabbitmq", "message-queue", "transaction"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-payment/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-modules/spzx-payment/pom.xml",
+      "summary": "支付模块的 Maven 构建配置，声明 Nacos、Sentinel、MySQL、支付宝 SDK 与 RabbitMQ 依赖及打包插件。",
+      "tags": ["configuration", "maven", "build-system", "dependency", "payment"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java",
+      "type": "file",
+      "name": "SpzxPaymentApplication.java",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java",
+      "summary": "支付服务的 Spring Boot 启动类，负责启动应用上下文并加载 Nacos 配置。",
+      "tags": ["entry-point", "spring-boot", "application", "payment-service"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/OrderLog.java:OrderLog",
+      "type": "class",
+      "name": "OrderLog",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/OrderLog.java",
+      "lineRange": [11, 44],
+      "summary": "订单日志实体，记录处理状态与操作备注。",
+      "tags": ["data-model", "entity", "order", "domain"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/OrderForm.java:OrderForm",
+      "type": "class",
+      "name": "OrderForm",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/OrderForm.java",
+      "lineRange": [10, 30],
+      "summary": "下单请求表单 VO，包含交易、收货与订单项信息。",
+      "tags": ["data-model", "vo", "order", "form"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/TradeVo.java:TradeVo",
+      "type": "class",
+      "name": "TradeVo",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/TradeVo.java",
+      "lineRange": [13, 26],
+      "summary": "订单结算视图对象，封装总金额、订单项与交易号。",
+      "tags": ["data-model", "vo", "order", "trade"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderInfoMapper.java:OrderInfoMapper",
+      "type": "class",
+      "name": "OrderInfoMapper",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderInfoMapper.java",
+      "lineRange": [12, 30],
+      "summary": "订单信息 Mapper 接口，提供定制的订单列表查询。",
+      "tags": ["data-model", "mapper", "mybatis", "order"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderItemMapper.java:OrderItemMapper",
+      "type": "class",
+      "name": "OrderItemMapper",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderItemMapper.java",
+      "lineRange": [9, 12],
+      "summary": "订单明细 Mapper 接口。",
+      "tags": ["data-model", "mapper", "mybatis", "order"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderLogMapper.java:OrderLogMapper",
+      "type": "class",
+      "name": "OrderLogMapper",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderLogMapper.java",
+      "lineRange": [9, 11],
+      "summary": "订单日志 Mapper 接口。",
+      "tags": ["data-model", "mapper", "mybatis", "order"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java:OrderReceiver",
+      "type": "class",
+      "name": "OrderReceiver",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java",
+      "lineRange": [21, 143],
+      "summary": "RabbitMQ 订单消息监听器，消费并处理各类订单消息。",
+      "tags": ["event-handler", "rabbitmq", "message-queue", "order"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/IOrderInfoService.java:IOrderInfoService",
+      "type": "class",
+      "name": "IOrderInfoService",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/service/IOrderInfoService.java",
+      "lineRange": [10, 75],
+      "summary": "订单服务接口，定义订单查询与下单相关的业务契约。",
+      "tags": ["service", "interface", "order", "business-logic"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:OrderInfoServiceImpl",
+      "type": "class",
+      "name": "OrderInfoServiceImpl",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java",
+      "lineRange": [45, 353],
+      "summary": "订单服务实现类，实现下单、结算、库存锁定与支付处理等核心逻辑。",
+      "tags": ["service", "order", "business-logic", "implementation"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:spzx-modules/spzx-order/src/test/java/com/spzx/product/test/TransactionalProducer.java:TransactionalProducer",
+      "type": "class",
+      "name": "TransactionalProducer",
+      "filePath": "spzx-modules/spzx-order/src/test/java/com/spzx/product/test/TransactionalProducer.java",
+      "lineRange": [11, 41],
+      "summary": "测试用 RabbitMQ 事务生产者，演示事务提交与回滚。",
+      "tags": ["test", "rabbitmq", "message-queue", "transaction"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java:SpzxPaymentApplication",
+      "type": "class",
+      "name": "SpzxPaymentApplication",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java",
+      "lineRange": [11, 28],
+      "summary": "支付服务 Spring Boot 启动类。",
+      "tags": ["entry-point", "spring-boot", "application", "payment-service"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java:consumer",
+      "type": "function",
+      "name": "consumer",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java",
+      "lineRange": [31, 51],
+      "summary": "消费普通订单消息，处理消息并执行 basicAck/basicNack 确认或拒绝。",
+      "tags": ["event-handler", "rabbitmq", "consumer", "message-queue"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java:confirm",
+      "type": "function",
+      "name": "confirm",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java",
+      "lineRange": [59, 70],
+      "summary": "处理消息确认回调，执行 basicAck 确认消息接收。",
+      "tags": ["event-handler", "rabbitmq", "consumer", "message-queue"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java:processCloseOrder",
+      "type": "function",
+      "name": "processCloseOrder",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java",
+      "lineRange": [101, 111],
+      "summary": "处理延迟取消订单消息，调用订单服务关闭指定订单。",
+      "tags": ["event-handler", "rabbitmq", "order", "message-queue"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java:processPaySucess",
+      "type": "function",
+      "name": "processPaySucess",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java",
+      "lineRange": [121, 139],
+      "summary": "处理支付成功消息，更新订单状态并发送后续消息。",
+      "tags": ["event-handler", "rabbitmq", "payment", "message-queue"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:getOrderTrade",
+      "type": "function",
+      "name": "getOrderTrade",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java",
+      "lineRange": [101, 137],
+      "summary": "根据用户选中的购物车数据生成订单结算单，计算总金额并生成交易号。",
+      "tags": ["service", "order", "business-logic", "calculation"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:submitOrder",
+      "type": "function",
+      "name": "submitOrder",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java",
+      "lineRange": [156, 246],
+      "summary": "提交订单，校验并锁定库存、复核价格并保存订单及发送延迟取消消息。",
+      "tags": ["service", "order", "business-logic", "transaction"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:saveOrder",
+      "type": "function",
+      "name": "saveOrder",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java",
+      "lineRange": [249, 302],
+      "summary": "根据下单表单与收货地址保存订单主表、明细与订单日志。",
+      "tags": ["service", "order", "business-logic", "persistence"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:processCloseOrder",
+      "type": "function",
+      "name": "processCloseOrder",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java",
+      "lineRange": [308, 329],
+      "summary": "关闭超时未支付订单，更新订单状态、记录日志并释放库存。",
+      "tags": ["service", "order", "business-logic", "transaction"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:processPaySucess",
+      "type": "function",
+      "name": "processPaySucess",
+      "filePath": "spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java",
+      "lineRange": [340, 352],
+      "summary": "处理支付成功，将订单状态更新为已支付并记录支付时间。",
+      "tags": ["service", "order", "payment", "business-logic"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-order/src/test/java/com/spzx/product/test/TransactionalProducer.java:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "spzx-modules/spzx-order/src/test/java/com/spzx/product/test/TransactionalProducer.java",
+      "lineRange": [14, 40],
+      "summary": "测试入口，建立 RabbitMQ 连接并演示事务消息的提交与回滚。",
+      "tags": ["test", "rabbitmq", "message-queue", "main"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java",
+      "lineRange": [15, 27],
+      "summary": "支付服务应用入口，启动 Spring Boot 应用。",
+      "tags": ["entry-point", "spring-boot", "application", "main"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/OrderLog.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/OrderLog.java:OrderLog", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/OrderLog.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/OrderLog.java:OrderLog", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/OrderForm.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/OrderForm.java:OrderForm", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/OrderForm.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/OrderForm.java:OrderForm", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/TradeVo.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/TradeVo.java:TradeVo", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/TradeVo.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/domain/vo/TradeVo.java:TradeVo", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderInfoMapper.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderInfoMapper.java:OrderInfoMapper", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderInfoMapper.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderInfoMapper.java:OrderInfoMapper", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderItemMapper.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderItemMapper.java:OrderItemMapper", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderItemMapper.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderItemMapper.java:OrderItemMapper", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderLogMapper.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderLogMapper.java:OrderLogMapper", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderLogMapper.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/mapper/OrderLogMapper.java:OrderLogMapper", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java:OrderReceiver", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java:consumer", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java:confirm", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java:processCloseOrder", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java:processPaySucess", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java:OrderReceiver", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java:consumer", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java:confirm", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java:processCloseOrder", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java:processPaySucess", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/IOrderInfoService.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/IOrderInfoService.java:IOrderInfoService", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/IOrderInfoService.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/IOrderInfoService.java:IOrderInfoService", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:OrderInfoServiceImpl", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:getOrderTrade", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:submitOrder", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:saveOrder", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:processCloseOrder", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:processPaySucess", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:OrderInfoServiceImpl", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:getOrderTrade", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:submitOrder", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:saveOrder", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:processCloseOrder", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:processPaySucess", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/test/java/com/spzx/product/test/TransactionalProducer.java", "target": "class:spzx-modules/spzx-order/src/test/java/com/spzx/product/test/TransactionalProducer.java:TransactionalProducer", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/test/java/com/spzx/product/test/TransactionalProducer.java", "target": "function:spzx-modules/spzx-order/src/test/java/com/spzx/product/test/TransactionalProducer.java:main", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-order/src/test/java/com/spzx/product/test/TransactionalProducer.java", "target": "class:spzx-modules/spzx-order/src/test/java/com/spzx/product/test/TransactionalProducer.java:TransactionalProducer", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-order/src/test/java/com/spzx/product/test/TransactionalProducer.java", "target": "function:spzx-modules/spzx-order/src/test/java/com/spzx/product/test/TransactionalProducer.java:main", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java", "target": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java:SpzxPaymentApplication", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java", "target": "function:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java:main", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java", "target": "class:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java:SpzxPaymentApplication", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java", "target": "function:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java:main", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:OrderInfoServiceImpl", "target": "class:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/IOrderInfoService.java:IOrderInfoService", "type": "implements", "direction": "forward", "weight": 0.9},
+    {"source": "config:spzx-modules/spzx-payment/pom.xml", "target": "file:spzx-modules/spzx-payment/src/main/java/com/spzx/payment/SpzxPaymentApplication.java", "type": "configures", "direction": "forward", "weight": 0.6},
+    {"source": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java:processCloseOrder", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:processCloseOrder", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/receiver/OrderReceiver.java:processPaySucess", "target": "function:spzx-modules/spzx-order/src/main/java/com/spzx/order/service/impl/OrderInfoServiceImpl.java:processPaySucess", "type": "calls", "direction": "forward", "weight": 0.8}
+  ]
+}

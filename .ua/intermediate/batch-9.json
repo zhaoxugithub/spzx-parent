@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "document:spzx-modules/spzx-order/src/main/resources/banner.txt",
+      "type": "document",
+      "name": "banner.txt",
+      "filePath": "spzx-modules/spzx-order/src/main/resources/banner.txt",
+      "summary": "spzx-order 订单服务的 Spring Boot 启动横幅,以 ASCII 艺术展示“SPZX”应用标识,并动态显示 Spring Boot 版本与应用名称。",
+      "tags": ["documentation", "spring-boot", "startup-banner"],
+      "complexity": "simple",
+      "languageNotes": "Spring Boot 启动时读取 banner.txt,借助 ${spring-boot.version} 与 ${spring.application.name} 占位符渲染动态信息。"
+    },
+    {
+      "id": "config:spzx-modules/spzx-order/src/main/resources/bootstrap.yml",
+      "type": "config",
+      "name": "bootstrap.yml",
+      "filePath": "spzx-modules/spzx-order/src/main/resources/bootstrap.yml",
+      "summary": "spzx-order 订单服务的 Spring Cloud 启动配置,设置端口 9207、应用名 spzx-order,并接入 Nacos 服务发现与配置中心,通过共享配置加载 application-dev.yml。",
+      "tags": ["configuration", "spring-boot", "nacos", "service-discovery"],
+      "complexity": "simple",
+      "languageNotes": "使用 Bootstrap 配置在应用启动早期注册到 Nacos discovery 与 config,并引用共享配置 application-${profile}.yml。"
+    },
+    {
+      "id": "config:spzx-modules/spzx-order/src/main/resources/logback.xml",
+      "type": "config",
+      "name": "logback.xml",
+      "filePath": "spzx-modules/spzx-order/src/main/resources/logback.xml",
+      "summary": "spzx-order 订单服务的日志配置,定义控制台、info 与 error 滚动文件等 appender,按时间与级别输出日志,并携带 traceId 链路标识以便全链路追踪。",
+      "tags": ["configuration", "logging", "logback", "monitoring"],
+      "complexity": "moderate",
+      "languageNotes": "使用 Logback RollingFileAppender 按天滚动、保留 60 天,并通过 LevelFilter 按 INFO/ERROR 级别分流到不同日志文件。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:spzx-modules/spzx-order/src/main/resources/banner.txt",
+      "target": "config:spzx-modules/spzx-order/src/main/resources/bootstrap.yml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:spzx-modules/spzx-order/src/main/resources/banner.txt",
+      "target": "config:spzx-modules/spzx-order/src/main/resources/logback.xml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:spzx-modules/spzx-order/src/main/resources/bootstrap.yml",
+      "target": "config:spzx-modules/spzx-order/src/main/resources/logback.xml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

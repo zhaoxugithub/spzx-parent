@@ -1,0 +1,485 @@
+{
+  "nodes": [
+    {
+      "id": "config:spzx-api/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-api/pom.xml",
+      "summary": "spzx-api 接口模块的 Maven 父 POM，聚合 spzx-api-system、product、user、cart、order 五个接口子模块。",
+      "tags": ["configuration", "maven", "build-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-api/spzx-api-cart/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-api/spzx-api-cart/pom.xml",
+      "summary": "spzx-api-cart 购物车接口模块的 Maven 配置，继承 spzx-api 父 POM，依赖 spzx-common-core 核心库。",
+      "tags": ["configuration", "maven", "build-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-api/spzx-api-order/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-api/spzx-api-order/pom.xml",
+      "summary": "spzx-api-order 订单接口模块的 Maven 配置，继承 spzx-api 父 POM，依赖 spzx-common-core 核心库。",
+      "tags": ["configuration", "maven", "build-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-api/spzx-api-product/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "spzx-api/spzx-api-product/pom.xml",
+      "summary": "spzx-api-product 商品接口模块的 Maven 配置，继承 spzx-api 父 POM，依赖 spzx-common-core 核心库。",
+      "tags": ["configuration", "maven", "build-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-cart/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "type": "file",
+      "name": "org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "filePath": "spzx-api/spzx-api-cart/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "summary": "Spring Boot 自动配置注册文件（购物车 API 模块），当前为空，用于声明可自动装配的配置类。",
+      "tags": ["configuration", "spring-boot", "spring"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-order/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "type": "file",
+      "name": "org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "filePath": "spzx-api/spzx-api-order/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "summary": "Spring Boot 自动配置注册文件（订单 API 模块），当前为空，用于声明可自动装配的配置类。",
+      "tags": ["configuration", "spring-boot", "spring"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/RemoteCartService.java",
+      "type": "file",
+      "name": "RemoteCartService.java",
+      "filePath": "spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/RemoteCartService.java",
+      "summary": "购物车 API 模块的 Feign 远程服务接口定义，供其它服务调用购物车相关操作。",
+      "tags": ["api-handler", "feign", "service", "remote-api"],
+      "complexity": "simple",
+      "languageNotes": "使用 @FeignClient 定义的跨服务远程调用接口，方法签名暴露为远程能力。"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/domain/CartInfo.java",
+      "type": "file",
+      "name": "CartInfo.java",
+      "filePath": "spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/domain/CartInfo.java",
+      "summary": "购物车条目数据模型，作为购物车服务与调用方之间的数据传输对象。",
+      "tags": ["data-model", "domain", "cart"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/factory/RemoteCartFallbackFactory.java",
+      "type": "file",
+      "name": "RemoteCartFallbackFactory.java",
+      "filePath": "spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/factory/RemoteCartFallbackFactory.java",
+      "summary": "购物车远程服务的降级容错工厂，在 Feign 调用异常时返回兜底结果。",
+      "tags": ["factory", "fallback", "resilience", "service"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/RemoteOrderInfoService.java",
+      "type": "file",
+      "name": "RemoteOrderInfoService.java",
+      "filePath": "spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/RemoteOrderInfoService.java",
+      "summary": "订单 API 模块的 Feign 远程服务接口，提供按订单号查询订单的能力。",
+      "tags": ["api-handler", "feign", "service", "remote-api"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/domain/OrderInfo.java",
+      "type": "file",
+      "name": "OrderInfo.java",
+      "filePath": "spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/domain/OrderInfo.java",
+      "summary": "订单核心数据模型，描述订单主信息、金额与收货详情，供订单服务对外共享。",
+      "tags": ["data-model", "domain", "order"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/domain/OrderItem.java",
+      "type": "file",
+      "name": "OrderItem.java",
+      "filePath": "spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/domain/OrderItem.java",
+      "summary": "订单明细数据模型，定义订单内各 SKU 的采购记录。",
+      "tags": ["data-model", "domain", "order"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/factory/RemoteOrderInfoFallbackFactory.java",
+      "type": "file",
+      "name": "RemoteOrderInfoFallbackFactory.java",
+      "filePath": "spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/factory/RemoteOrderInfoFallbackFactory.java",
+      "summary": "订单远程服务的降级容错工厂，Feign 调用失败时返回兜底结果。",
+      "tags": ["factory", "fallback", "resilience", "service"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteBrandService.java",
+      "type": "file",
+      "name": "RemoteBrandService.java",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteBrandService.java",
+      "summary": "商品 API 模块的品牌远程服务接口，提供品牌列表查询。",
+      "tags": ["api-handler", "feign", "service", "remote-api"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteCategoryService.java",
+      "type": "file",
+      "name": "RemoteCategoryService.java",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteCategoryService.java",
+      "summary": "商品 API 模块的分类远程服务接口，提供一级分类与分类树查询。",
+      "tags": ["api-handler", "feign", "service", "remote-api"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteProductService.java",
+      "type": "file",
+      "name": "RemoteProductService.java",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteProductService.java",
+      "summary": "商品 API 模块的核心远程服务接口，封装商品、SKU、价格、库存与锁库存等能力。",
+      "tags": ["api-handler", "feign", "service", "remote-api"],
+      "complexity": "moderate",
+      "languageNotes": "Feign 接口集中声明了热销榜、SKU 查询、价格/库存及分布式锁库存等十余个远程方法。"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/Brand.java",
+      "type": "file",
+      "name": "Brand.java",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/Brand.java",
+      "summary": "品牌数据模型，承载品牌名称与 logo 等字段。",
+      "tags": ["data-model", "domain", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/Product.java",
+      "type": "file",
+      "name": "Product.java",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/Product.java",
+      "summary": "商品主数据模型，描述商品分类、品牌、规格与 SKU 列表。",
+      "tags": ["data-model", "domain", "product"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/ProductDetails.java",
+      "type": "file",
+      "name": "ProductDetails.java",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/ProductDetails.java",
+      "summary": "商品详情数据模型，保存商品详情的图片集。",
+      "tags": ["data-model", "domain", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/ProductSku.java",
+      "type": "file",
+      "name": "ProductSku.java",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/ProductSku.java",
+      "summary": "商品 SKU 数据模型，定义 SKU 的销售价格、库存与规格等属性。",
+      "tags": ["data-model", "domain", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/CategoryVo.java",
+      "type": "file",
+      "name": "CategoryVo.java",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/CategoryVo.java",
+      "summary": "分类视图对象，用于向前端返回层级分类树。",
+      "tags": ["view-object", "data-model", "category"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuLockVo.java",
+      "type": "file",
+      "name": "SkuLockVo.java",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuLockVo.java",
+      "summary": "SKU 锁库存视图对象，承载锁库存的请求/响应数据。",
+      "tags": ["view-object", "data-model", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuPrice.java",
+      "type": "file",
+      "name": "SkuPrice.java",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuPrice.java",
+      "summary": "SKU 价格视图对象，用于价格查询与展示。",
+      "tags": ["view-object", "data-model", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuQuery.java",
+      "type": "file",
+      "name": "SkuQuery.java",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuQuery.java",
+      "summary": "SKU 查询参数视图对象，封装商品列表检索条件。",
+      "tags": ["view-object", "data-model", "query-params"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuStockVo.java",
+      "type": "file",
+      "name": "SkuStockVo.java",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuStockVo.java",
+      "summary": "SKU 库存视图对象，返回库存与销量信息。",
+      "tags": ["view-object", "data-model", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/RemoteCartService.java:RemoteCartService",
+      "type": "class",
+      "name": "RemoteCartService",
+      "filePath": "spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/RemoteCartService.java",
+      "lineRange": [16, 34],
+      "summary": "购物车远程调用 Feign 接口，声明获取已勾选清单、更新价格、删除已勾选清单等方法。",
+      "tags": ["api-handler", "feign", "remote-api"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/domain/CartInfo.java:CartInfo",
+      "type": "class",
+      "name": "CartInfo",
+      "filePath": "spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/domain/CartInfo.java",
+      "lineRange": [9, 39],
+      "summary": "购物车条目领域对象，记录用户、SKU、价格、数量、勾选状态等字段。",
+      "tags": ["data-model", "domain", "cart"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/factory/RemoteCartFallbackFactory.java:RemoteCartFallbackFactory",
+      "type": "class",
+      "name": "RemoteCartFallbackFactory",
+      "filePath": "spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/factory/RemoteCartFallbackFactory.java",
+      "lineRange": [14, 41],
+      "summary": "购物车接口的降级工厂，实现 FallbackFactory 并返回容错的 RemoteCartService 实现。",
+      "tags": ["factory", "fallback", "resilience"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/RemoteOrderInfoService.java:RemoteOrderInfoService",
+      "type": "class",
+      "name": "RemoteOrderInfoService",
+      "filePath": "spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/RemoteOrderInfoService.java",
+      "lineRange": [13, 20],
+      "summary": "订单远程调用 Feign 接口，提供按订单号查询订单的方法。",
+      "tags": ["api-handler", "feign", "remote-api"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/domain/OrderInfo.java:OrderInfo",
+      "type": "class",
+      "name": "OrderInfo",
+      "filePath": "spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/domain/OrderInfo.java",
+      "lineRange": [17, 176],
+      "summary": "订单主领域对象，包含订单金额、收货人、物流状态及订单明细列表等字段。",
+      "tags": ["data-model", "domain", "order"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/domain/OrderItem.java:OrderItem",
+      "type": "class",
+      "name": "OrderItem",
+      "filePath": "spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/domain/OrderItem.java",
+      "lineRange": [13, 60],
+      "summary": "订单明细领域对象，记录订单下每个 SKU 的名称、单价、数量等信息。",
+      "tags": ["data-model", "domain", "order"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/factory/RemoteOrderInfoFallbackFactory.java:RemoteOrderInfoFallbackFactory",
+      "type": "class",
+      "name": "RemoteOrderInfoFallbackFactory",
+      "filePath": "spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/factory/RemoteOrderInfoFallbackFactory.java",
+      "lineRange": [11, 29],
+      "summary": "订单接口的降级工厂，远程调用失败时返回 fail 结果。",
+      "tags": ["factory", "fallback", "resilience"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteBrandService.java:RemoteBrandService",
+      "type": "class",
+      "name": "RemoteBrandService",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteBrandService.java",
+      "lineRange": [14, 19],
+      "summary": "品牌远程调用 Feign 接口，提供查询全部品牌列表的方法。",
+      "tags": ["api-handler", "feign", "remote-api"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteCategoryService.java:RemoteCategoryService",
+      "type": "class",
+      "name": "RemoteCategoryService",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteCategoryService.java",
+      "lineRange": [21, 40],
+      "summary": "分类远程调用 Feign 接口，提供查询一级分类与分类树的方法。",
+      "tags": ["api-handler", "feign", "remote-api"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteProductService.java:RemoteProductService",
+      "type": "class",
+      "name": "RemoteProductService",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteProductService.java",
+      "lineRange": [22, 89],
+      "summary": "商品远程调用 Feign 接口，声明热销榜、SKU 列表、商品详情、价格、库存及锁库存等接口。",
+      "tags": ["api-handler", "feign", "remote-api"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/Brand.java:Brand",
+      "type": "class",
+      "name": "Brand",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/Brand.java",
+      "lineRange": [12, 27],
+      "summary": "品牌领域对象，包含品牌名称与 logo 信息。",
+      "tags": ["data-model", "domain", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/Product.java:Product",
+      "type": "class",
+      "name": "Product",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/Product.java",
+      "lineRange": [13, 117],
+      "summary": "商品主领域对象，包含分类、品牌、规格、状态及 SKU 与详情图列表等字段。",
+      "tags": ["data-model", "domain", "product"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/ProductDetails.java:ProductDetails",
+      "type": "class",
+      "name": "ProductDetails",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/ProductDetails.java",
+      "lineRange": [10, 28],
+      "summary": "商品详情领域对象，记录商品图片 URL 列表。",
+      "tags": ["data-model", "domain", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/ProductSku.java:ProductSku",
+      "type": "class",
+      "name": "ProductSku",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/ProductSku.java",
+      "lineRange": [13, 62],
+      "summary": "商品 SKU 领域对象，包含 skuCode、价格、库存、销量等销售属性。",
+      "tags": ["data-model", "domain", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/CategoryVo.java:CategoryVo",
+      "type": "class",
+      "name": "CategoryVo",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/CategoryVo.java",
+      "lineRange": [7, 31],
+      "summary": "分类树视图对象，用于级联分类展示，含子分类 children。",
+      "tags": ["view-object", "data-model", "category"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuLockVo.java:SkuLockVo",
+      "type": "class",
+      "name": "SkuLockVo",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuLockVo.java",
+      "lineRange": [5, 17],
+      "summary": "SKU 锁库存视图对象，记录 skuId、锁定量与是否有库存。",
+      "tags": ["view-object", "data-model", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuPrice.java:SkuPrice",
+      "type": "class",
+      "name": "SkuPrice",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuPrice.java",
+      "lineRange": [8, 19],
+      "summary": "SKU 价格视图对象，记录 skuId 与实际售价、市场价。",
+      "tags": ["view-object", "data-model", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuQuery.java:SkuQuery",
+      "type": "class",
+      "name": "SkuQuery",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuQuery.java",
+      "lineRange": [9, 29],
+      "summary": "SKU 查询视图对象，封装关键词、品牌、分类及排序条件。",
+      "tags": ["view-object", "data-model", "query-params"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuStockVo.java:SkuStockVo",
+      "type": "class",
+      "name": "SkuStockVo",
+      "filePath": "spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuStockVo.java",
+      "lineRange": [5, 21],
+      "summary": "SKU 库存视图对象，记录可用库存与销量。",
+      "tags": ["view-object", "data-model", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/factory/RemoteCartFallbackFactory.java:create",
+      "type": "function",
+      "name": "create",
+      "filePath": "spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/factory/RemoteCartFallbackFactory.java",
+      "lineRange": [19, 40],
+      "summary": "实现 FallbackFactory 的 create 方法，返回降级后的 RemoteCartService 容错实现。",
+      "tags": ["factory", "fallback", "resilience"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/factory/RemoteOrderInfoFallbackFactory.java:create",
+      "type": "function",
+      "name": "create",
+      "filePath": "spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/factory/RemoteOrderInfoFallbackFactory.java",
+      "lineRange": [16, 28],
+      "summary": "实现 FallbackFactory 的 create 方法，返回降级后的 RemoteOrderInfoService 容错实现。",
+      "tags": ["factory", "fallback", "resilience"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {"source": "file:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/RemoteCartService.java", "target": "class:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/RemoteCartService.java:RemoteCartService", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/domain/CartInfo.java", "target": "class:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/domain/CartInfo.java:CartInfo", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/factory/RemoteCartFallbackFactory.java", "target": "class:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/factory/RemoteCartFallbackFactory.java:RemoteCartFallbackFactory", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/factory/RemoteCartFallbackFactory.java", "target": "function:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/factory/RemoteCartFallbackFactory.java:create", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/RemoteOrderInfoService.java", "target": "class:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/RemoteOrderInfoService.java:RemoteOrderInfoService", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/domain/OrderInfo.java", "target": "class:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/domain/OrderInfo.java:OrderInfo", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/domain/OrderItem.java", "target": "class:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/domain/OrderItem.java:OrderItem", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/factory/RemoteOrderInfoFallbackFactory.java", "target": "class:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/factory/RemoteOrderInfoFallbackFactory.java:RemoteOrderInfoFallbackFactory", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/factory/RemoteOrderInfoFallbackFactory.java", "target": "function:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/factory/RemoteOrderInfoFallbackFactory.java:create", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteBrandService.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteBrandService.java:RemoteBrandService", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteCategoryService.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteCategoryService.java:RemoteCategoryService", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteProductService.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteProductService.java:RemoteProductService", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/Brand.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/Brand.java:Brand", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/Product.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/Product.java:Product", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/ProductDetails.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/ProductDetails.java:ProductDetails", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/ProductSku.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/ProductSku.java:ProductSku", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/CategoryVo.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/CategoryVo.java:CategoryVo", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuLockVo.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuLockVo.java:SkuLockVo", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuPrice.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuPrice.java:SkuPrice", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuQuery.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuQuery.java:SkuQuery", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuStockVo.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuStockVo.java:SkuStockVo", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/RemoteCartService.java", "target": "class:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/RemoteCartService.java:RemoteCartService", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/domain/CartInfo.java", "target": "class:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/domain/CartInfo.java:CartInfo", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/factory/RemoteCartFallbackFactory.java", "target": "class:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/factory/RemoteCartFallbackFactory.java:RemoteCartFallbackFactory", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/factory/RemoteCartFallbackFactory.java", "target": "function:spzx-api/spzx-api-cart/src/main/java/com/spzx/cart/api/factory/RemoteCartFallbackFactory.java:create", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/RemoteOrderInfoService.java", "target": "class:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/RemoteOrderInfoService.java:RemoteOrderInfoService", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/domain/OrderInfo.java", "target": "class:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/domain/OrderInfo.java:OrderInfo", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/domain/OrderItem.java", "target": "class:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/domain/OrderItem.java:OrderItem", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/factory/RemoteOrderInfoFallbackFactory.java", "target": "class:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/factory/RemoteOrderInfoFallbackFactory.java:RemoteOrderInfoFallbackFactory", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/factory/RemoteOrderInfoFallbackFactory.java", "target": "function:spzx-api/spzx-api-order/src/main/java/com/spzx/order/api/factory/RemoteOrderInfoFallbackFactory.java:create", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteBrandService.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteBrandService.java:RemoteBrandService", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteCategoryService.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteCategoryService.java:RemoteCategoryService", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteProductService.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/RemoteProductService.java:RemoteProductService", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/Brand.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/Brand.java:Brand", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/Product.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/Product.java:Product", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/ProductDetails.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/ProductDetails.java:ProductDetails", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/ProductSku.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/ProductSku.java:ProductSku", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/CategoryVo.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/CategoryVo.java:CategoryVo", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuLockVo.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuLockVo.java:SkuLockVo", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuPrice.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuPrice.java:SkuPrice", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuQuery.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuQuery.java:SkuQuery", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuStockVo.java", "target": "class:spzx-api/spzx-api-product/src/main/java/com/spzx/product/api/domain/vo/SkuStockVo.java:SkuStockVo", "type": "exports", "direction": "forward", "weight": 0.8}
+  ]
+}

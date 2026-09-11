@@ -1,0 +1,326 @@
+{
+  "nodes": [
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java",
+      "type": "file",
+      "name": "CategoryHelper.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java",
+      "summary": "分类树构建辅助类，将扁平分类列表递归组装为父子层级树，供商品分类服务复用。",
+      "tags": ["helper", "category", "tree", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java:CategoryHelper",
+      "type": "class",
+      "name": "CategoryHelper",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java",
+      "lineRange": [12, 54],
+      "summary": "提供 buildTree 与 findChildren 方法，基于 parentId 递归构建分类层级树。",
+      "tags": ["helper", "tree", "category"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java:buildTree",
+      "type": "function",
+      "name": "buildTree",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java",
+      "lineRange": [18, 29],
+      "summary": "遍历分类列表，为指定根分类查找并挂载子节点，返回包含层级结构的列表。",
+      "tags": ["tree", "category", "recursion"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java:findChildren",
+      "type": "function",
+      "name": "findChildren",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java",
+      "lineRange": [40, 53],
+      "summary": "递归查找指定分类的子分类并设置 children 列表，用于构建树形层级。",
+      "tags": ["tree", "recursion", "category"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/BrandMapper.java",
+      "type": "file",
+      "name": "BrandMapper.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/BrandMapper.java",
+      "summary": "品牌数据访问层接口，提供品牌表增删改查及全量查询的映射方法。",
+      "tags": ["mapper", "mybatis-plus", "brand", "data-access"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/BrandMapper.java:BrandMapper",
+      "type": "class",
+      "name": "BrandMapper",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/BrandMapper.java",
+      "lineRange": [8, 20],
+      "summary": "品牌数据访问层接口，扩展 MyBatis-Plus，提供品牌列表、详情、保存、更新、批量删除及查询全部品牌的方法。",
+      "tags": ["mapper", "mybatis-plus", "brand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryBrandMapper.java",
+      "type": "file",
+      "name": "CategoryBrandMapper.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryBrandMapper.java",
+      "summary": "分类与品牌关联表的映射接口，提供关联与按分类查询品牌的数据库操作。",
+      "tags": ["mapper", "mybatis-plus", "category-brand", "data-access"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryBrandMapper.java:CategoryBrandMapper",
+      "type": "class",
+      "name": "CategoryBrandMapper",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryBrandMapper.java",
+      "lineRange": [12, 18],
+      "summary": "分类-品牌关联数据访问接口，提供关联列表查询及按分类查询品牌列表的方法。",
+      "tags": ["mapper", "mybatis-plus", "category-brand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryMapper.java",
+      "type": "file",
+      "name": "CategoryMapper.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryMapper.java",
+      "summary": "商品分类数据访问层接口，扩展 MyBatis-Plus 提供分类查询能力。",
+      "tags": ["mapper", "mybatis-plus", "category", "data-access"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryMapper.java:CategoryMapper",
+      "type": "class",
+      "name": "CategoryMapper",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryMapper.java",
+      "lineRange": [9, 11],
+      "summary": "商品分类数据访问层接口，扩展 MyBatis-Plus 的 BaseMapper 作为分类查询契约。",
+      "tags": ["mapper", "mybatis-plus", "category"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductDetailsMapper.java",
+      "type": "file",
+      "name": "ProductDetailsMapper.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductDetailsMapper.java",
+      "summary": "商品详情数据访问层接口，扩展 MyBatis-Plus 提供详情查询能力。",
+      "tags": ["mapper", "mybatis-plus", "product-details", "data-access"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductDetailsMapper.java:ProductDetailsMapper",
+      "type": "class",
+      "name": "ProductDetailsMapper",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductDetailsMapper.java",
+      "lineRange": [9, 10],
+      "summary": "商品详情数据访问层接口，扩展 MyBatis-Plus 的 BaseMapper 作为详情查询契约。",
+      "tags": ["mapper", "mybatis-plus", "product-details"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductMapper.java",
+      "type": "file",
+      "name": "ProductMapper.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductMapper.java",
+      "summary": "商品主表数据访问层接口，提供商品分页列表查询映射。",
+      "tags": ["mapper", "mybatis-plus", "product", "data-access"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductMapper.java:ProductMapper",
+      "type": "class",
+      "name": "ProductMapper",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductMapper.java",
+      "lineRange": [11, 21],
+      "summary": "商品数据访问层接口，提供商品分页列表查询方法。",
+      "tags": ["mapper", "mybatis-plus", "product"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSkuMapper.java",
+      "type": "file",
+      "name": "ProductSkuMapper.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSkuMapper.java",
+      "summary": "商品 SKU 数据访问层接口，提供热销与 SKU 列表查询映射。",
+      "tags": ["mapper", "mybatis-plus", "sku", "data-access"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSkuMapper.java:ProductSkuMapper",
+      "type": "class",
+      "name": "ProductSkuMapper",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSkuMapper.java",
+      "lineRange": [12, 16],
+      "summary": "商品 SKU 数据访问层接口，提供热销与 SKU 列表查询方法。",
+      "tags": ["mapper", "mybatis-plus", "sku"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSpecMapper.java",
+      "type": "file",
+      "name": "ProductSpecMapper.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSpecMapper.java",
+      "summary": "商品规格数据访问层接口，提供规格列表查询映射。",
+      "tags": ["mapper", "mybatis-plus", "spec", "data-access"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSpecMapper.java:ProductSpecMapper",
+      "type": "class",
+      "name": "ProductSpecMapper",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSpecMapper.java",
+      "lineRange": [11, 21],
+      "summary": "商品规格数据访问层接口，提供规格列表查询方法。",
+      "tags": ["mapper", "mybatis-plus", "spec"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductUnitMapper.java",
+      "type": "file",
+      "name": "ProductUnitMapper.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductUnitMapper.java",
+      "summary": "商品计量单位数据访问层接口，扩展 MyBatis-Plus 提供单位查询能力。",
+      "tags": ["mapper", "mybatis-plus", "unit", "data-access"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductUnitMapper.java:ProductUnitMapper",
+      "type": "class",
+      "name": "ProductUnitMapper",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductUnitMapper.java",
+      "lineRange": [6, 7],
+      "summary": "商品计量单位数据访问层接口，扩展 MyBatis-Plus 的 BaseMapper 作为单位查询契约。",
+      "tags": ["mapper", "mybatis-plus", "unit"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/SkuStockMapper.java",
+      "type": "file",
+      "name": "SkuStockMapper.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/SkuStockMapper.java",
+      "summary": "SKU 库存数据访问层接口，提供库存校验、锁定、解锁与扣减的数据库映射。",
+      "tags": ["mapper", "mybatis-plus", "stock", "data-access"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/SkuStockMapper.java:SkuStockMapper",
+      "type": "class",
+      "name": "SkuStockMapper",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/SkuStockMapper.java",
+      "lineRange": [10, 20],
+      "summary": "SKU 库存数据访问层接口，提供库存校验、锁定、解锁与扣减的数据库操作映射方法。",
+      "tags": ["mapper", "mybatis-plus", "stock"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java",
+      "type": "file",
+      "name": "ProductReceiver.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java",
+      "summary": "RabbitMQ 商品消息消费者，处理库存解锁与扣减消息并调用商品服务处理。",
+      "tags": ["rabbitmq", "consumer", "message", "product"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java:ProductReceiver",
+      "type": "class",
+      "name": "ProductReceiver",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java",
+      "lineRange": [17, 68],
+      "summary": "RabbitMQ 消息监听类，消费库存解锁(unlock)与扣减(minus)消息，注入商品服务处理并手动确认消息。",
+      "tags": ["rabbitmq", "consumer", "product"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java:unlock",
+      "type": "function",
+      "name": "unlock",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java",
+      "lineRange": [30, 43],
+      "summary": "监听库存解锁消息，校验订单号后调用商品服务释放已锁定库存并手动确认消息。",
+      "tags": ["rabbitmq", "stock", "unlock", "message-handler"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java:minus",
+      "type": "function",
+      "name": "minus",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java",
+      "lineRange": [51, 67],
+      "summary": "监听库存扣减消息，校验订单号后调用商品服务扣减已锁定库存数量并手动确认消息。",
+      "tags": ["rabbitmq", "stock", "deduction", "message-handler"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/service/IBrandService.java",
+      "type": "file",
+      "name": "IBrandService.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/IBrandService.java",
+      "summary": "品牌业务服务接口，定义品牌管理相关操作契约。",
+      "tags": ["service", "interface", "brand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/service/IBrandService.java:IBrandService",
+      "type": "class",
+      "name": "IBrandService",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/IBrandService.java",
+      "lineRange": [11, 54],
+      "summary": "品牌业务服务接口，定义品牌列表、详情、保存、更新、批量删除及查询全部品牌的方法。",
+      "tags": ["service", "interface", "brand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/service/ICategoryBrandService.java",
+      "type": "file",
+      "name": "ICategoryBrandService.java",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/ICategoryBrandService.java",
+      "summary": "分类-品牌关联业务服务接口，定义关联管理操作契约。",
+      "tags": ["service", "interface", "category-brand"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/service/ICategoryBrandService.java:ICategoryBrandService",
+      "type": "class",
+      "name": "ICategoryBrandService",
+      "filePath": "spzx-modules/spzx-product/src/main/java/com/spzx/product/service/ICategoryBrandService.java",
+      "lineRange": [12, 48],
+      "summary": "分类-品牌关联业务服务接口，定义关联列表、详情、新增、更新及按分类查询品牌的接口方法。",
+      "tags": ["service", "interface", "category-brand"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java:CategoryHelper", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java", "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java:buildTree", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java", "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java:findChildren", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java:CategoryHelper", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java", "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/helper/CategoryHelper.java:buildTree", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/BrandMapper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/BrandMapper.java:BrandMapper", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/BrandMapper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/BrandMapper.java:BrandMapper", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryBrandMapper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryBrandMapper.java:CategoryBrandMapper", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryBrandMapper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryBrandMapper.java:CategoryBrandMapper", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryMapper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryMapper.java:CategoryMapper", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryMapper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/CategoryMapper.java:CategoryMapper", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductDetailsMapper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductDetailsMapper.java:ProductDetailsMapper", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductDetailsMapper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductDetailsMapper.java:ProductDetailsMapper", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductMapper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductMapper.java:ProductMapper", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductMapper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductMapper.java:ProductMapper", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSkuMapper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSkuMapper.java:ProductSkuMapper", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSkuMapper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSkuMapper.java:ProductSkuMapper", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSpecMapper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSpecMapper.java:ProductSpecMapper", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSpecMapper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductSpecMapper.java:ProductSpecMapper", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductUnitMapper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductUnitMapper.java:ProductUnitMapper", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductUnitMapper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/ProductUnitMapper.java:ProductUnitMapper", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/SkuStockMapper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/SkuStockMapper.java:SkuStockMapper", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/SkuStockMapper.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/mapper/SkuStockMapper.java:SkuStockMapper", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java:ProductReceiver", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java", "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java:unlock", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java", "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java:minus", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java:ProductReceiver", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java", "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java:unlock", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java", "target": "function:spzx-modules/spzx-product/src/main/java/com/spzx/product/receiver/ProductReceiver.java:minus", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/service/IBrandService.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/service/IBrandService.java:IBrandService", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/service/IBrandService.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/service/IBrandService.java:IBrandService", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/service/ICategoryBrandService.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/service/ICategoryBrandService.java:ICategoryBrandService", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:spzx-modules/spzx-product/src/main/java/com/spzx/product/service/ICategoryBrandService.java", "target": "class:spzx-modules/spzx-product/src/main/java/com/spzx/product/service/ICategoryBrandService.java:ICategoryBrandService", "type": "exports", "direction": "forward", "weight": 0.8}
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "nodes": [
+    {
+      "id": "config:spzx-modules/spzx-order/src/main/resources/mapper/order/OrderInfoMapper.xml",
+      "type": "config",
+      "name": "OrderInfoMapper.xml",
+      "filePath": "spzx-modules/spzx-order/src/main/resources/mapper/order/OrderInfoMapper.xml",
+      "summary": "MyBatis 订单主表映射文件,定义 OrderInfo 结果映射与 selectOrderInfoVo 查询片段,并提供 selectOrderInfoList(动态筛选订单列表)与 selectUserOrderInfoList(按用户查询订单)等查询,作用于 order_info 表。",
+      "tags": ["mybatis", "mapper", "order", "sql-mapping", "data-access"],
+      "complexity": "simple",
+      "languageNotes": "基于 MyBatis 动态 SQL(<if>/<where>/<include> refid)实现多条件订单筛选."
+    },
+    {
+      "id": "config:spzx-modules/spzx-order/src/main/resources/mapper/order/OrderItemMapper.xml",
+      "type": "config",
+      "name": "OrderItemMapper.xml",
+      "filePath": "spzx-modules/spzx-order/src/main/resources/mapper/order/OrderItemMapper.xml",
+      "summary": "MyBatis 订单明细表映射文件,定义 OrderItem 结果映射与 selectOrderItemVo 查询片段,作用于 order_item 表,为订单商品明细查询提供基础 SQL。",
+      "tags": ["mybatis", "mapper", "order", "sql-mapping", "data-access"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-modules/spzx-order/src/main/resources/mapper/order/OrderLogMapper.xml",
+      "type": "config",
+      "name": "OrderLogMapper.xml",
+      "filePath": "spzx-modules/spzx-order/src/main/resources/mapper/order/OrderLogMapper.xml",
+      "summary": "MyBatis 订单日志表映射文件,定义 OrderLog 结果映射与 selectOrderLogVo 查询片段,作用于 order_log 表,为订单流转日志查询提供基础 SQL。",
+      "tags": ["mybatis", "mapper", "order", "sql-mapping", "data-access"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

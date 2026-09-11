@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {
+      "id": "document:spzx-visual/spzx-monitor/src/main/resources/banner.txt",
+      "type": "document",
+      "name": "banner.txt",
+      "filePath": "spzx-visual/spzx-monitor/src/main/resources/banner.txt",
+      "summary": "spzx-monitor 服务的 Spring Boot 启动横幅文件，展示应用启动时的 ASCII 图案、应用名称及 Spring Boot 版本信息。",
+      "tags": ["documentation", "banner", "startup", "monitoring"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:spzx-visual/spzx-monitor/src/main/resources/bootstrap.yml",
+      "type": "config",
+      "name": "bootstrap.yml",
+      "filePath": "spzx-visual/spzx-monitor/src/main/resources/bootstrap.yml",
+      "summary": "spzx-monitor 应用启动引导配置，声明监听端口 9100、应用名称 spzx-monitor，并配置 Nacos 服务注册与配置中心地址及共享配置加载。",
+      "tags": ["configuration", "infrastructure", "nacos", "bootstrap"],
+      "complexity": "simple",
+      "languageNotes": "使用 Spring Cloud Nacos 的 discovery 与 config 模块，通过 shared-configs 引用 application-<env>.yml 共享配置。"
+    },
+    {
+      "id": "config:spzx-visual/spzx-monitor/src/main/resources/logback.xml",
+      "type": "config",
+      "name": "logback.xml",
+      "filePath": "spzx-visual/spzx-monitor/src/main/resources/logback.xml",
+      "summary": "spzx-monitor 服务的日志配置，定义控制台、info 与 error 滚动文件输出、日志级别及带 traceId 的日志格式，按 60 天保留历史日志。",
+      "tags": ["configuration", "logging", "infrastructure", "monitoring"],
+      "complexity": "moderate",
+      "languageNotes": "基于 Logback，使用 TimeBasedRollingPolicy 与 LevelFilter 拆分 info/error 级别日志，并在 pattern 中加入 %X{traceId} 用于链路追踪。"
+    }
+  ],
+  "edges": []
+}

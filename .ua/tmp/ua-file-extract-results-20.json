@@ -1,0 +1,2567 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 25,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 25,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/constant/ScheduleConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 40,
+      "classes": [
+        {
+          "name": "ScheduleConstants",
+          "startLine": 8,
+          "endLine": 50,
+          "methods": [],
+          "properties": [
+            "TASK_CLASS_NAME",
+            "TASK_PROPERTIES",
+            "MISFIRE_DEFAULT",
+            "MISFIRE_IGNORE_MISFIRES",
+            "MISFIRE_FIRE_AND_PROCEED",
+            "MISFIRE_DO_NOTHING"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TASK_CLASS_NAME",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "TASK_PROPERTIES",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "MISFIRE_DEFAULT",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "MISFIRE_IGNORE_MISFIRES",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "MISFIRE_FIRE_AND_PROCEED",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "MISFIRE_DO_NOTHING",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "ScheduleConstants",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/constant/SecurityConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 45,
+      "classes": [
+        {
+          "name": "SecurityConstants",
+          "startLine": 8,
+          "endLine": 54,
+          "methods": [],
+          "properties": [
+            "DETAILS_USER_ID",
+            "DETAILS_USERNAME",
+            "AUTHORIZATION_HEADER",
+            "FROM_SOURCE",
+            "INNER",
+            "USER_KEY",
+            "LOGIN_USER",
+            "ROLE_PERMISSION",
+            "TRACE_ID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DETAILS_USER_ID",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "DETAILS_USERNAME",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "AUTHORIZATION_HEADER",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "FROM_SOURCE",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "INNER",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "USER_KEY",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "LOGIN_USER",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "ROLE_PERMISSION",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "TRACE_ID",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityConstants",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/constant/ServiceNameConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 37,
+      "classes": [
+        {
+          "name": "ServiceNameConstants",
+          "startLine": 8,
+          "endLine": 45,
+          "methods": [],
+          "properties": [
+            "AUTH_SERVICE",
+            "SYSTEM_SERVICE",
+            "FILE_SERVICE",
+            "PRODUCT_SERVICE",
+            "USER_SERVICE",
+            "CART_SERVICE",
+            "ORDER_SERVICE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AUTH_SERVICE",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "SYSTEM_SERVICE",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "FILE_SERVICE",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "PRODUCT_SERVICE",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "USER_SERVICE",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "CART_SERVICE",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "ORDER_SERVICE",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "ServiceNameConstants",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/constant/TokenConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "TokenConstants",
+          "startLine": 8,
+          "endLine": 25,
+          "methods": [],
+          "properties": [
+            "AUTHENTICATION",
+            "PREFIX",
+            "SECRET"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AUTHENTICATION",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "PREFIX",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "SECRET",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "TokenConstants",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/constant/UserConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 80,
+      "nonEmptyLines": 58,
+      "classes": [
+        {
+          "name": "UserConstants",
+          "startLine": 8,
+          "endLine": 80,
+          "methods": [],
+          "properties": [
+            "SYS_USER",
+            "NORMAL",
+            "EXCEPTION",
+            "USER_DISABLE",
+            "ROLE_DISABLE",
+            "DEPT_NORMAL",
+            "DEPT_DISABLE",
+            "DICT_NORMAL",
+            "YES",
+            "YES_FRAME",
+            "NO_FRAME",
+            "TYPE_DIR",
+            "TYPE_MENU",
+            "TYPE_BUTTON",
+            "LAYOUT",
+            "PARENT_VIEW",
+            "INNER_LINK",
+            "UNIQUE",
+            "NOT_UNIQUE",
+            "USERNAME_MIN_LENGTH",
+            "USERNAME_MAX_LENGTH",
+            "PASSWORD_MIN_LENGTH",
+            "PASSWORD_MAX_LENGTH"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SYS_USER",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "NORMAL",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "EXCEPTION",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "USER_DISABLE",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "ROLE_DISABLE",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "DEPT_NORMAL",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "DEPT_DISABLE",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "DICT_NORMAL",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "YES",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "YES_FRAME",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "NO_FRAME",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "TYPE_DIR",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "TYPE_MENU",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "TYPE_BUTTON",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "LAYOUT",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "PARENT_VIEW",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "INNER_LINK",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "UNIQUE",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "NOT_UNIQUE",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "USERNAME_MIN_LENGTH",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "USERNAME_MAX_LENGTH",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "PASSWORD_MIN_LENGTH",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "PASSWORD_MAX_LENGTH",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "UserConstants",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 24,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/context/SecurityContextHolder.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 68,
+      "functions": [
+        {
+          "name": "set",
+          "startLine": 22,
+          "endLine": 25,
+          "params": [
+            "key",
+            "value"
+          ]
+        },
+        {
+          "name": "get",
+          "startLine": 27,
+          "endLine": 30,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "get",
+          "startLine": 32,
+          "endLine": 35,
+          "params": [
+            "key",
+            "clazz"
+          ]
+        },
+        {
+          "name": "getLocalMap",
+          "startLine": 37,
+          "endLine": 44,
+          "params": []
+        },
+        {
+          "name": "setLocalMap",
+          "startLine": 46,
+          "endLine": 48,
+          "params": [
+            "threadLocalMap"
+          ]
+        },
+        {
+          "name": "getUserId",
+          "startLine": 50,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "setUserId",
+          "startLine": 54,
+          "endLine": 56,
+          "params": [
+            "account"
+          ]
+        },
+        {
+          "name": "getUserName",
+          "startLine": 58,
+          "endLine": 60,
+          "params": []
+        },
+        {
+          "name": "setUserName",
+          "startLine": 62,
+          "endLine": 64,
+          "params": [
+            "username"
+          ]
+        },
+        {
+          "name": "getUserKey",
+          "startLine": 66,
+          "endLine": 68,
+          "params": []
+        },
+        {
+          "name": "setUserKey",
+          "startLine": 70,
+          "endLine": 72,
+          "params": [
+            "userKey"
+          ]
+        },
+        {
+          "name": "getPermission",
+          "startLine": 74,
+          "endLine": 76,
+          "params": []
+        },
+        {
+          "name": "setPermission",
+          "startLine": 78,
+          "endLine": 80,
+          "params": [
+            "permissions"
+          ]
+        },
+        {
+          "name": "remove",
+          "startLine": 82,
+          "endLine": 84,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityContextHolder",
+          "startLine": 17,
+          "endLine": 85,
+          "methods": [
+            "set",
+            "get",
+            "get",
+            "getLocalMap",
+            "setLocalMap",
+            "getUserId",
+            "setUserId",
+            "getUserName",
+            "setUserName",
+            "getUserKey",
+            "setUserKey",
+            "getPermission",
+            "setPermission",
+            "remove"
+          ],
+          "properties": [
+            "THREAD_LOCAL"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "set",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "get",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "get",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "getLocalMap",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "setLocalMap",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "getUserId",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "setUserId",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "getUserName",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "setUserName",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "getUserKey",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "setUserKey",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "getPermission",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "setPermission",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "remove",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityContextHolder",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "set",
+          "callee": "getLocalMap",
+          "lineNumber": 23
+        },
+        {
+          "caller": "set",
+          "callee": "map.put",
+          "lineNumber": 24
+        },
+        {
+          "caller": "get",
+          "callee": "getLocalMap",
+          "lineNumber": 28
+        },
+        {
+          "caller": "get",
+          "callee": "Convert.toStr",
+          "lineNumber": 29
+        },
+        {
+          "caller": "get",
+          "callee": "map.getOrDefault",
+          "lineNumber": 29
+        },
+        {
+          "caller": "get",
+          "callee": "getLocalMap",
+          "lineNumber": 33
+        },
+        {
+          "caller": "get",
+          "callee": "StringUtils.cast",
+          "lineNumber": 34
+        },
+        {
+          "caller": "get",
+          "callee": "map.getOrDefault",
+          "lineNumber": 34
+        },
+        {
+          "caller": "getLocalMap",
+          "callee": "THREAD_LOCAL.get",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getLocalMap",
+          "callee": "new ConcurrentHashMap<String, Object>",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getLocalMap",
+          "callee": "THREAD_LOCAL.set",
+          "lineNumber": 41
+        },
+        {
+          "caller": "setLocalMap",
+          "callee": "THREAD_LOCAL.set",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getUserId",
+          "callee": "Convert.toLong",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getUserId",
+          "callee": "get",
+          "lineNumber": 51
+        },
+        {
+          "caller": "setUserId",
+          "callee": "set",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getUserName",
+          "callee": "get",
+          "lineNumber": 59
+        },
+        {
+          "caller": "setUserName",
+          "callee": "set",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getUserKey",
+          "callee": "get",
+          "lineNumber": 67
+        },
+        {
+          "caller": "setUserKey",
+          "callee": "set",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getPermission",
+          "callee": "get",
+          "lineNumber": 75
+        },
+        {
+          "caller": "setPermission",
+          "callee": "set",
+          "lineNumber": 79
+        },
+        {
+          "caller": "remove",
+          "callee": "THREAD_LOCAL.remove",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 15,
+        "functionCount": 14,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/domain/R.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 115,
+      "nonEmptyLines": 91,
+      "functions": [
+        {
+          "name": "ok",
+          "startLine": 27,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "ok",
+          "startLine": 32,
+          "endLine": 35,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "ok",
+          "startLine": 37,
+          "endLine": 40,
+          "params": [
+            "data",
+            "msg"
+          ]
+        },
+        {
+          "name": "fail",
+          "startLine": 42,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "fail",
+          "startLine": 47,
+          "endLine": 50,
+          "params": [
+            "msg"
+          ]
+        },
+        {
+          "name": "fail",
+          "startLine": 52,
+          "endLine": 55,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "fail",
+          "startLine": 57,
+          "endLine": 60,
+          "params": [
+            "data",
+            "msg"
+          ]
+        },
+        {
+          "name": "fail",
+          "startLine": 62,
+          "endLine": 65,
+          "params": [
+            "code",
+            "msg"
+          ]
+        },
+        {
+          "name": "restResult",
+          "startLine": 67,
+          "endLine": 74,
+          "params": [
+            "data",
+            "code",
+            "msg"
+          ]
+        },
+        {
+          "name": "getCode",
+          "startLine": 76,
+          "endLine": 79,
+          "params": []
+        },
+        {
+          "name": "setCode",
+          "startLine": 81,
+          "endLine": 84,
+          "params": [
+            "code"
+          ]
+        },
+        {
+          "name": "getMsg",
+          "startLine": 86,
+          "endLine": 89,
+          "params": []
+        },
+        {
+          "name": "setMsg",
+          "startLine": 91,
+          "endLine": 94,
+          "params": [
+            "msg"
+          ]
+        },
+        {
+          "name": "getData",
+          "startLine": 96,
+          "endLine": 99,
+          "params": []
+        },
+        {
+          "name": "setData",
+          "startLine": 101,
+          "endLine": 104,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "isError",
+          "startLine": 106,
+          "endLine": 109,
+          "params": [
+            "ret"
+          ]
+        },
+        {
+          "name": "isSuccess",
+          "startLine": 111,
+          "endLine": 114,
+          "params": [
+            "ret"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "R",
+          "startLine": 11,
+          "endLine": 115,
+          "methods": [
+            "ok",
+            "ok",
+            "ok",
+            "fail",
+            "fail",
+            "fail",
+            "fail",
+            "fail",
+            "restResult",
+            "getCode",
+            "setCode",
+            "getMsg",
+            "setMsg",
+            "getData",
+            "setData",
+            "isError",
+            "isSuccess"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "SUCCESS",
+            "FAIL",
+            "code",
+            "msg",
+            "data"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SUCCESS",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "FAIL",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "ok",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "ok",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "ok",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "fail",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "fail",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "fail",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "fail",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "fail",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "getCode",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "setCode",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "getMsg",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "setMsg",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "getData",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "setData",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "isError",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "isSuccess",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "R",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ok",
+          "callee": "restResult",
+          "lineNumber": 29
+        },
+        {
+          "caller": "ok",
+          "callee": "restResult",
+          "lineNumber": 34
+        },
+        {
+          "caller": "ok",
+          "callee": "restResult",
+          "lineNumber": 39
+        },
+        {
+          "caller": "fail",
+          "callee": "restResult",
+          "lineNumber": 44
+        },
+        {
+          "caller": "fail",
+          "callee": "restResult",
+          "lineNumber": 49
+        },
+        {
+          "caller": "fail",
+          "callee": "restResult",
+          "lineNumber": 54
+        },
+        {
+          "caller": "fail",
+          "callee": "restResult",
+          "lineNumber": 59
+        },
+        {
+          "caller": "fail",
+          "callee": "restResult",
+          "lineNumber": 64
+        },
+        {
+          "caller": "restResult",
+          "callee": "new R<>",
+          "lineNumber": 69
+        },
+        {
+          "caller": "restResult",
+          "callee": "apiResult.setCode",
+          "lineNumber": 70
+        },
+        {
+          "caller": "restResult",
+          "callee": "apiResult.setData",
+          "lineNumber": 71
+        },
+        {
+          "caller": "restResult",
+          "callee": "apiResult.setMsg",
+          "lineNumber": 72
+        },
+        {
+          "caller": "isError",
+          "callee": "isSuccess",
+          "lineNumber": 108
+        },
+        {
+          "caller": "isSuccess",
+          "callee": "ret.getCode",
+          "lineNumber": 113
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 19,
+        "functionCount": 17,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/enums/UserStatus.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "UserStatus",
+          "startLine": 15,
+          "endLine": 19,
+          "params": [
+            "code",
+            "info"
+          ]
+        },
+        {
+          "name": "getCode",
+          "startLine": 21,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "getInfo",
+          "startLine": 26,
+          "endLine": 29,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "UserStatus",
+          "startLine": 8,
+          "endLine": 30,
+          "methods": [
+            "UserStatus",
+            "getCode",
+            "getInfo"
+          ],
+          "properties": [
+            "code",
+            "info"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getCode",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "getInfo",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "UserStatus",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/CaptchaException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "CaptchaException",
+          "startLine": 12,
+          "endLine": 15,
+          "params": [
+            "msg"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CaptchaException",
+          "startLine": 8,
+          "endLine": 16,
+          "methods": [
+            "CaptchaException"
+          ],
+          "properties": [
+            "serialVersionUID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CaptchaException",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "CaptchaException",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/CheckedException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "CheckedException",
+          "startLine": 12,
+          "endLine": 15,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "CheckedException",
+          "startLine": 17,
+          "endLine": 20,
+          "params": [
+            "cause"
+          ]
+        },
+        {
+          "name": "CheckedException",
+          "startLine": 22,
+          "endLine": 25,
+          "params": [
+            "message",
+            "cause"
+          ]
+        },
+        {
+          "name": "CheckedException",
+          "startLine": 27,
+          "endLine": 30,
+          "params": [
+            "message",
+            "cause",
+            "enableSuppression",
+            "writableStackTrace"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CheckedException",
+          "startLine": 8,
+          "endLine": 31,
+          "methods": [
+            "CheckedException",
+            "CheckedException",
+            "CheckedException",
+            "CheckedException"
+          ],
+          "properties": [
+            "serialVersionUID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CheckedException",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "CheckedException",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "CheckedException",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "CheckedException",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "CheckedException",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/DemoModeException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 13,
+      "functions": [
+        {
+          "name": "DemoModeException",
+          "startLine": 12,
+          "endLine": 14,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "DemoModeException",
+          "startLine": 8,
+          "endLine": 15,
+          "methods": [
+            "DemoModeException"
+          ],
+          "properties": [
+            "serialVersionUID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DemoModeException",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "DemoModeException",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/GlobalException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "GlobalException",
+          "startLine": 27,
+          "endLine": 29,
+          "params": []
+        },
+        {
+          "name": "GlobalException",
+          "startLine": 31,
+          "endLine": 34,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "getDetailMessage",
+          "startLine": 36,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "setDetailMessage",
+          "startLine": 41,
+          "endLine": 45,
+          "params": [
+            "detailMessage"
+          ]
+        },
+        {
+          "name": "getMessage",
+          "startLine": 47,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "setMessage",
+          "startLine": 53,
+          "endLine": 57,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GlobalException",
+          "startLine": 8,
+          "endLine": 58,
+          "methods": [
+            "GlobalException",
+            "GlobalException",
+            "getDetailMessage",
+            "setDetailMessage",
+            "getMessage",
+            "setMessage"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "message",
+            "detailMessage"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "GlobalException",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "GlobalException",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "getDetailMessage",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "setDetailMessage",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "getMessage",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "setMessage",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "GlobalException",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/InnerAuthException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "InnerAuthException",
+          "startLine": 12,
+          "endLine": 15,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "InnerAuthException",
+          "startLine": 8,
+          "endLine": 16,
+          "methods": [
+            "InnerAuthException"
+          ],
+          "properties": [
+            "serialVersionUID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "InnerAuthException",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "InnerAuthException",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/PreAuthorizeException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 13,
+      "functions": [
+        {
+          "name": "PreAuthorizeException",
+          "startLine": 12,
+          "endLine": 14,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "PreAuthorizeException",
+          "startLine": 8,
+          "endLine": 15,
+          "methods": [
+            "PreAuthorizeException"
+          ],
+          "properties": [
+            "serialVersionUID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PreAuthorizeException",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "PreAuthorizeException",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/ServiceException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "ServiceException",
+          "startLine": 32,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "ServiceException",
+          "startLine": 36,
+          "endLine": 39,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "ServiceException",
+          "startLine": 41,
+          "endLine": 45,
+          "params": [
+            "message",
+            "code"
+          ]
+        },
+        {
+          "name": "getDetailMessage",
+          "startLine": 47,
+          "endLine": 50,
+          "params": []
+        },
+        {
+          "name": "getMessage",
+          "startLine": 52,
+          "endLine": 56,
+          "params": []
+        },
+        {
+          "name": "getCode",
+          "startLine": 58,
+          "endLine": 61,
+          "params": []
+        },
+        {
+          "name": "setMessage",
+          "startLine": 63,
+          "endLine": 67,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "setDetailMessage",
+          "startLine": 69,
+          "endLine": 73,
+          "params": [
+            "detailMessage"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ServiceException",
+          "startLine": 8,
+          "endLine": 74,
+          "methods": [
+            "ServiceException",
+            "ServiceException",
+            "ServiceException",
+            "getDetailMessage",
+            "getMessage",
+            "getCode",
+            "setMessage",
+            "setDetailMessage"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "code",
+            "message",
+            "detailMessage"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ServiceException",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "ServiceException",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "ServiceException",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "getDetailMessage",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "getMessage",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "getCode",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "setMessage",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "setDetailMessage",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "ServiceException",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/UtilException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 22,
+      "functions": [
+        {
+          "name": "UtilException",
+          "startLine": 12,
+          "endLine": 15,
+          "params": [
+            "e"
+          ]
+        },
+        {
+          "name": "UtilException",
+          "startLine": 17,
+          "endLine": 20,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "UtilException",
+          "startLine": 22,
+          "endLine": 25,
+          "params": [
+            "message",
+            "throwable"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UtilException",
+          "startLine": 8,
+          "endLine": 26,
+          "methods": [
+            "UtilException",
+            "UtilException",
+            "UtilException"
+          ],
+          "properties": [
+            "serialVersionUID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "UtilException",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "UtilException",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "UtilException",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "UtilException",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "UtilException",
+          "callee": "e.getMessage",
+          "lineNumber": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/auth/NotLoginException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "NotLoginException",
+          "startLine": 12,
+          "endLine": 15,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NotLoginException",
+          "startLine": 8,
+          "endLine": 16,
+          "methods": [
+            "NotLoginException"
+          ],
+          "properties": [
+            "serialVersionUID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NotLoginException",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "NotLoginException",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/auth/NotPermissionException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "NotPermissionException",
+          "startLine": 14,
+          "endLine": 17,
+          "params": [
+            "permission"
+          ]
+        },
+        {
+          "name": "NotPermissionException",
+          "startLine": 19,
+          "endLine": 22,
+          "params": [
+            "permissions"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NotPermissionException",
+          "startLine": 10,
+          "endLine": 23,
+          "methods": [
+            "NotPermissionException",
+            "NotPermissionException"
+          ],
+          "properties": [
+            "serialVersionUID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NotPermissionException",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "NotPermissionException",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "NotPermissionException",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NotPermissionException",
+          "callee": "StringUtils.join",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/auth/NotRoleException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "NotRoleException",
+          "startLine": 14,
+          "endLine": 17,
+          "params": [
+            "role"
+          ]
+        },
+        {
+          "name": "NotRoleException",
+          "startLine": 19,
+          "endLine": 22,
+          "params": [
+            "roles"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NotRoleException",
+          "startLine": 10,
+          "endLine": 23,
+          "methods": [
+            "NotRoleException",
+            "NotRoleException"
+          ],
+          "properties": [
+            "serialVersionUID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NotRoleException",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "NotRoleException",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "NotRoleException",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NotRoleException",
+          "callee": "StringUtils.join",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/base/BaseException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "BaseException",
+          "startLine": 32,
+          "endLine": 38,
+          "params": [
+            "module",
+            "code",
+            "args",
+            "defaultMessage"
+          ]
+        },
+        {
+          "name": "BaseException",
+          "startLine": 40,
+          "endLine": 43,
+          "params": [
+            "module",
+            "code",
+            "args"
+          ]
+        },
+        {
+          "name": "BaseException",
+          "startLine": 45,
+          "endLine": 48,
+          "params": [
+            "module",
+            "defaultMessage"
+          ]
+        },
+        {
+          "name": "BaseException",
+          "startLine": 50,
+          "endLine": 53,
+          "params": [
+            "code",
+            "args"
+          ]
+        },
+        {
+          "name": "BaseException",
+          "startLine": 55,
+          "endLine": 58,
+          "params": [
+            "defaultMessage"
+          ]
+        },
+        {
+          "name": "getModule",
+          "startLine": 60,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "getCode",
+          "startLine": 65,
+          "endLine": 68,
+          "params": []
+        },
+        {
+          "name": "getArgs",
+          "startLine": 70,
+          "endLine": 73,
+          "params": []
+        },
+        {
+          "name": "getDefaultMessage",
+          "startLine": 75,
+          "endLine": 78,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "BaseException",
+          "startLine": 8,
+          "endLine": 79,
+          "methods": [
+            "BaseException",
+            "BaseException",
+            "BaseException",
+            "BaseException",
+            "BaseException",
+            "getModule",
+            "getCode",
+            "getArgs",
+            "getDefaultMessage"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "module",
+            "code",
+            "args",
+            "defaultMessage"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BaseException",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "BaseException",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "BaseException",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "BaseException",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "BaseException",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "getModule",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "getCode",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "getArgs",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "getDefaultMessage",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "BaseException",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/file/FileException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 15,
+      "functions": [
+        {
+          "name": "FileException",
+          "startLine": 14,
+          "endLine": 17,
+          "params": [
+            "code",
+            "args",
+            "msg"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FileException",
+          "startLine": 10,
+          "endLine": 19,
+          "methods": [
+            "FileException"
+          ],
+          "properties": [
+            "serialVersionUID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FileException",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "FileException",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/file/FileNameLengthLimitExceededException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "FileNameLengthLimitExceededException",
+          "startLine": 12,
+          "endLine": 15,
+          "params": [
+            "defaultFileNameLength"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FileNameLengthLimitExceededException",
+          "startLine": 8,
+          "endLine": 16,
+          "methods": [
+            "FileNameLengthLimitExceededException"
+          ],
+          "properties": [
+            "serialVersionUID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FileNameLengthLimitExceededException",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "FileNameLengthLimitExceededException",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/file/FileSizeLimitExceededException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "FileSizeLimitExceededException",
+          "startLine": 12,
+          "endLine": 15,
+          "params": [
+            "defaultMaxSize"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FileSizeLimitExceededException",
+          "startLine": 8,
+          "endLine": 16,
+          "methods": [
+            "FileSizeLimitExceededException"
+          ],
+          "properties": [
+            "serialVersionUID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FileSizeLimitExceededException",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "FileSizeLimitExceededException",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/file/FileUploadException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "FileUploadException",
+          "startLine": 18,
+          "endLine": 21,
+          "params": []
+        },
+        {
+          "name": "FileUploadException",
+          "startLine": 23,
+          "endLine": 26,
+          "params": [
+            "msg"
+          ]
+        },
+        {
+          "name": "FileUploadException",
+          "startLine": 28,
+          "endLine": 32,
+          "params": [
+            "msg",
+            "cause"
+          ]
+        },
+        {
+          "name": "printStackTrace",
+          "startLine": 34,
+          "endLine": 43,
+          "params": [
+            "stream"
+          ]
+        },
+        {
+          "name": "printStackTrace",
+          "startLine": 45,
+          "endLine": 54,
+          "params": [
+            "writer"
+          ]
+        },
+        {
+          "name": "getCause",
+          "startLine": 56,
+          "endLine": 60,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "FileUploadException",
+          "startLine": 11,
+          "endLine": 61,
+          "methods": [
+            "FileUploadException",
+            "FileUploadException",
+            "FileUploadException",
+            "printStackTrace",
+            "printStackTrace",
+            "getCause"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "cause"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FileUploadException",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "FileUploadException",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "FileUploadException",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "printStackTrace",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "printStackTrace",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "getCause",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "FileUploadException",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "printStackTrace",
+          "callee": "super.printStackTrace",
+          "lineNumber": 37
+        },
+        {
+          "caller": "printStackTrace",
+          "callee": "stream.println",
+          "lineNumber": 40
+        },
+        {
+          "caller": "printStackTrace",
+          "callee": "cause.printStackTrace",
+          "lineNumber": 41
+        },
+        {
+          "caller": "printStackTrace",
+          "callee": "super.printStackTrace",
+          "lineNumber": 48
+        },
+        {
+          "caller": "printStackTrace",
+          "callee": "writer.println",
+          "lineNumber": 51
+        },
+        {
+          "caller": "printStackTrace",
+          "callee": "cause.printStackTrace",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-common/spzx-common-core/src/main/java/com/spzx/common/core/exception/file/InvalidExtensionException.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 80,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "InvalidExtensionException",
+          "startLine": 18,
+          "endLine": 24,
+          "params": [
+            "allowedExtension",
+            "extension",
+            "filename"
+          ]
+        },
+        {
+          "name": "getAllowedExtension",
+          "startLine": 26,
+          "endLine": 29,
+          "params": []
+        },
+        {
+          "name": "getExtension",
+          "startLine": 31,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "getFilename",
+          "startLine": 36,
+          "endLine": 39,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "InvalidExtensionException",
+          "startLine": 10,
+          "endLine": 80,
+          "methods": [
+            "InvalidExtensionException",
+            "getAllowedExtension",
+            "getExtension",
+            "getFilename"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "allowedExtension",
+            "extension",
+            "filename"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "InvalidExtensionException",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "getAllowedExtension",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "getExtension",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "getFilename",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "InvalidExtensionException",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "InvalidExtensionException",
+          "callee": "Arrays.toString",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    }
+  ]
+}

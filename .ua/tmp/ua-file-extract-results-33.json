@@ -1,0 +1,7133 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 24,
+  "filesSkipped": [
+    "spzx-modules/spzx-system/pom.xml"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 24,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 24,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "spzx-modules/spzx-product/src/test/java/com/spzx/product/test/EasyExcelTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "testExport",
+          "startLine": 24,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "testImport",
+          "startLine": 40,
+          "endLine": 52,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "EasyExcelTest",
+          "startLine": 17,
+          "endLine": 53,
+          "methods": [
+            "testExport",
+            "testImport"
+          ],
+          "properties": [
+            "categoryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testExport",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "testImport",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "EasyExcelTest",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testExport",
+          "callee": "categoryService.list",
+          "lineNumber": 27
+        },
+        {
+          "caller": "testExport",
+          "callee": "categoryAllList.stream().map(category -> {\r\n            CategoryExcelVo vo = new CategoryExcelVo();\r\n            BeanUtils.copyProperties(category, vo);\r\n            return vo;\r\n        }).toList",
+          "lineNumber": 28
+        },
+        {
+          "caller": "testExport",
+          "callee": "categoryAllList.stream().map",
+          "lineNumber": 28
+        },
+        {
+          "caller": "testExport",
+          "callee": "categoryAllList.stream",
+          "lineNumber": 28
+        },
+        {
+          "caller": "testExport",
+          "callee": "new CategoryExcelVo",
+          "lineNumber": 29
+        },
+        {
+          "caller": "testExport",
+          "callee": "BeanUtils.copyProperties",
+          "lineNumber": 30
+        },
+        {
+          "caller": "testExport",
+          "callee": "EasyExcel.write(\"D:/category.xlsx\",CategoryExcelVo.class)\r\n                .sheet(\"商品分类数据\").doWrite",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testExport",
+          "callee": "EasyExcel.write(\"D:/category.xlsx\",CategoryExcelVo.class).sheet",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testExport",
+          "callee": "EasyExcel.write",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testImport",
+          "callee": "new ExcelListener",
+          "lineNumber": 42
+        },
+        {
+          "caller": "testImport",
+          "callee": "EasyExcel.read(\"D:/category.xlsx\")\r\n                .head(CategoryExcelVo.class)\r\n                .sheet()\r\n                .registerReadListener(readListener).doRead",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testImport",
+          "callee": "EasyExcel.read(\"D:/category.xlsx\")\r\n                .head(CategoryExcelVo.class)\r\n                .sheet().registerReadListener",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testImport",
+          "callee": "EasyExcel.read(\"D:/category.xlsx\")\r\n                .head(CategoryExcelVo.class).sheet",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testImport",
+          "callee": "EasyExcel.read(\"D:/category.xlsx\").head",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testImport",
+          "callee": "EasyExcel.read",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testImport",
+          "callee": "readListener.getDatas",
+          "lineNumber": 48
+        },
+        {
+          "caller": "testImport",
+          "callee": "System.out.println",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/test/java/com/spzx/product/test/ExcelListener.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "invoke",
+          "startLine": 25,
+          "endLine": 30,
+          "params": [
+            "data",
+            "context"
+          ]
+        },
+        {
+          "name": "doAfterAllAnalysed",
+          "startLine": 36,
+          "endLine": 39,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "getDatas",
+          "startLine": 45,
+          "endLine": 47,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ExcelListener",
+          "startLine": 15,
+          "endLine": 48,
+          "methods": [
+            "invoke",
+            "doAfterAllAnalysed",
+            "getDatas"
+          ],
+          "properties": [
+            "datas"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "invoke",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "doAfterAllAnalysed",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "getDatas",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "ExcelListener",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "invoke",
+          "callee": "log.info",
+          "lineNumber": 27
+        },
+        {
+          "caller": "invoke",
+          "callee": "log.info",
+          "lineNumber": 28
+        },
+        {
+          "caller": "invoke",
+          "callee": "data.toString",
+          "lineNumber": 28
+        },
+        {
+          "caller": "invoke",
+          "callee": "datas.add",
+          "lineNumber": 29
+        },
+        {
+          "caller": "doAfterAllAnalysed",
+          "callee": "log.info",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-product/src/test/java/com/spzx/product/test/TransmittableThreadLocalExample.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 13,
+          "endLine": 31,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TransmittableThreadLocalExample",
+          "startLine": 8,
+          "endLine": 32,
+          "methods": [
+            "main"
+          ],
+          "properties": [
+            "THREAD_LOCAL"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "TransmittableThreadLocalExample",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "THREAD_LOCAL.set",
+          "lineNumber": 15
+        },
+        {
+          "caller": "main",
+          "callee": "new ConcurrentHashMap<String, Object>",
+          "lineNumber": 15
+        },
+        {
+          "caller": "main",
+          "callee": "THREAD_LOCAL.get().put",
+          "lineNumber": 16
+        },
+        {
+          "caller": "main",
+          "callee": "THREAD_LOCAL.get",
+          "lineNumber": 16
+        },
+        {
+          "caller": "main",
+          "callee": "new Thread",
+          "lineNumber": 19
+        },
+        {
+          "caller": "main",
+          "callee": "System.out.println",
+          "lineNumber": 20
+        },
+        {
+          "caller": "main",
+          "callee": "THREAD_LOCAL.get().get",
+          "lineNumber": 20
+        },
+        {
+          "caller": "main",
+          "callee": "THREAD_LOCAL.get",
+          "lineNumber": 20
+        },
+        {
+          "caller": "main",
+          "callee": "THREAD_LOCAL.get().put",
+          "lineNumber": 21
+        },
+        {
+          "caller": "main",
+          "callee": "THREAD_LOCAL.get",
+          "lineNumber": 21
+        },
+        {
+          "caller": "main",
+          "callee": "t1.start",
+          "lineNumber": 23
+        },
+        {
+          "caller": "main",
+          "callee": "System.out.println",
+          "lineNumber": 25
+        },
+        {
+          "caller": "main",
+          "callee": "THREAD_LOCAL.get().get",
+          "lineNumber": 25
+        },
+        {
+          "caller": "main",
+          "callee": "THREAD_LOCAL.get",
+          "lineNumber": 25
+        },
+        {
+          "caller": "main",
+          "callee": "t1.join",
+          "lineNumber": 27
+        },
+        {
+          "caller": "main",
+          "callee": "System.out.println",
+          "lineNumber": 30
+        },
+        {
+          "caller": "main",
+          "callee": "THREAD_LOCAL.get().get",
+          "lineNumber": 30
+        },
+        {
+          "caller": "main",
+          "callee": "THREAD_LOCAL.get",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/SpzxSystemApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 18,
+          "endLine": 31,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SpzxSystemApplication",
+          "startLine": 13,
+          "endLine": 32,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "SpzxSystemApplication",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 20
+        },
+        {
+          "caller": "main",
+          "callee": "System.out.println",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysConfigController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 123,
+      "nonEmptyLines": 112,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 41,
+          "endLine": 47,
+          "params": [
+            "config"
+          ]
+        },
+        {
+          "name": "export",
+          "startLine": 49,
+          "endLine": 56,
+          "params": [
+            "response",
+            "config"
+          ]
+        },
+        {
+          "name": "getInfo",
+          "startLine": 61,
+          "endLine": 64,
+          "params": [
+            "configId"
+          ]
+        },
+        {
+          "name": "getConfigKey",
+          "startLine": 69,
+          "endLine": 72,
+          "params": [
+            "configKey"
+          ]
+        },
+        {
+          "name": "add",
+          "startLine": 77,
+          "endLine": 86,
+          "params": [
+            "config"
+          ]
+        },
+        {
+          "name": "edit",
+          "startLine": 91,
+          "endLine": 100,
+          "params": [
+            "config"
+          ]
+        },
+        {
+          "name": "remove",
+          "startLine": 105,
+          "endLine": 111,
+          "params": [
+            "configIds"
+          ]
+        },
+        {
+          "name": "refreshCache",
+          "startLine": 116,
+          "endLine": 122,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysConfigController",
+          "startLine": 32,
+          "endLine": 123,
+          "methods": [
+            "list",
+            "export",
+            "getInfo",
+            "getConfigKey",
+            "add",
+            "edit",
+            "remove",
+            "refreshCache"
+          ],
+          "properties": [
+            "configService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "export",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getInfo",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "getConfigKey",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "add",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "edit",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "remove",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "refreshCache",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "SysConfigController",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "startPage",
+          "lineNumber": 44
+        },
+        {
+          "caller": "list",
+          "callee": "configService.selectConfigList",
+          "lineNumber": 45
+        },
+        {
+          "caller": "list",
+          "callee": "getDataTable",
+          "lineNumber": 46
+        },
+        {
+          "caller": "export",
+          "callee": "configService.selectConfigList",
+          "lineNumber": 53
+        },
+        {
+          "caller": "export",
+          "callee": "new ExcelUtil<SysConfig>",
+          "lineNumber": 54
+        },
+        {
+          "caller": "export",
+          "callee": "util.exportExcel",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getInfo",
+          "callee": "success",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getInfo",
+          "callee": "configService.selectConfigById",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getConfigKey",
+          "callee": "success",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getConfigKey",
+          "callee": "configService.selectConfigByKey",
+          "lineNumber": 71
+        },
+        {
+          "caller": "add",
+          "callee": "configService.checkConfigKeyUnique",
+          "lineNumber": 81
+        },
+        {
+          "caller": "add",
+          "callee": "error",
+          "lineNumber": 82
+        },
+        {
+          "caller": "add",
+          "callee": "config.getConfigName",
+          "lineNumber": 82
+        },
+        {
+          "caller": "add",
+          "callee": "config.setCreateBy",
+          "lineNumber": 84
+        },
+        {
+          "caller": "add",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 84
+        },
+        {
+          "caller": "add",
+          "callee": "toAjax",
+          "lineNumber": 85
+        },
+        {
+          "caller": "add",
+          "callee": "configService.insertConfig",
+          "lineNumber": 85
+        },
+        {
+          "caller": "edit",
+          "callee": "configService.checkConfigKeyUnique",
+          "lineNumber": 95
+        },
+        {
+          "caller": "edit",
+          "callee": "error",
+          "lineNumber": 96
+        },
+        {
+          "caller": "edit",
+          "callee": "config.getConfigName",
+          "lineNumber": 96
+        },
+        {
+          "caller": "edit",
+          "callee": "config.setUpdateBy",
+          "lineNumber": 98
+        },
+        {
+          "caller": "edit",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 98
+        },
+        {
+          "caller": "edit",
+          "callee": "toAjax",
+          "lineNumber": 99
+        },
+        {
+          "caller": "edit",
+          "callee": "configService.updateConfig",
+          "lineNumber": 99
+        },
+        {
+          "caller": "remove",
+          "callee": "configService.deleteConfigByIds",
+          "lineNumber": 109
+        },
+        {
+          "caller": "remove",
+          "callee": "success",
+          "lineNumber": 110
+        },
+        {
+          "caller": "refreshCache",
+          "callee": "configService.resetConfigCache",
+          "lineNumber": 120
+        },
+        {
+          "caller": "refreshCache",
+          "callee": "success",
+          "lineNumber": 121
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDeptController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 123,
+      "nonEmptyLines": 113,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 46,
+          "endLine": 50,
+          "params": [
+            "dept"
+          ]
+        },
+        {
+          "name": "excludeChild",
+          "startLine": 55,
+          "endLine": 61,
+          "params": [
+            "deptId"
+          ]
+        },
+        {
+          "name": "getInfo",
+          "startLine": 66,
+          "endLine": 71,
+          "params": [
+            "deptId"
+          ]
+        },
+        {
+          "name": "add",
+          "startLine": 76,
+          "endLine": 85,
+          "params": [
+            "dept"
+          ]
+        },
+        {
+          "name": "edit",
+          "startLine": 90,
+          "endLine": 105,
+          "params": [
+            "dept"
+          ]
+        },
+        {
+          "name": "remove",
+          "startLine": 110,
+          "endLine": 122,
+          "params": [
+            "deptId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysDeptController",
+          "startLine": 33,
+          "endLine": 123,
+          "methods": [
+            "list",
+            "excludeChild",
+            "getInfo",
+            "add",
+            "edit",
+            "remove"
+          ],
+          "properties": [
+            "deptService",
+            "sysDeptMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "excludeChild",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "getInfo",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "add",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "edit",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "remove",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "SysDeptController",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "deptService.selectDeptList",
+          "lineNumber": 48
+        },
+        {
+          "caller": "list",
+          "callee": "success",
+          "lineNumber": 49
+        },
+        {
+          "caller": "excludeChild",
+          "callee": "deptService.selectDeptList",
+          "lineNumber": 58
+        },
+        {
+          "caller": "excludeChild",
+          "callee": "new SysDept",
+          "lineNumber": 58
+        },
+        {
+          "caller": "excludeChild",
+          "callee": "depts.removeIf",
+          "lineNumber": 59
+        },
+        {
+          "caller": "excludeChild",
+          "callee": "d.getDeptId().intValue",
+          "lineNumber": 59
+        },
+        {
+          "caller": "excludeChild",
+          "callee": "d.getDeptId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "excludeChild",
+          "callee": "ArrayUtils.contains",
+          "lineNumber": 59
+        },
+        {
+          "caller": "excludeChild",
+          "callee": "StringUtils.split",
+          "lineNumber": 59
+        },
+        {
+          "caller": "excludeChild",
+          "callee": "d.getAncestors",
+          "lineNumber": 59
+        },
+        {
+          "caller": "excludeChild",
+          "callee": "success",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getInfo",
+          "callee": "deptService.checkDeptDataScope",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getInfo",
+          "callee": "success",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getInfo",
+          "callee": "deptService.selectDeptById",
+          "lineNumber": 70
+        },
+        {
+          "caller": "add",
+          "callee": "deptService.checkDeptNameUnique",
+          "lineNumber": 80
+        },
+        {
+          "caller": "add",
+          "callee": "error",
+          "lineNumber": 81
+        },
+        {
+          "caller": "add",
+          "callee": "dept.getDeptName",
+          "lineNumber": 81
+        },
+        {
+          "caller": "add",
+          "callee": "dept.setCreateBy",
+          "lineNumber": 83
+        },
+        {
+          "caller": "add",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 83
+        },
+        {
+          "caller": "add",
+          "callee": "toAjax",
+          "lineNumber": 84
+        },
+        {
+          "caller": "add",
+          "callee": "deptService.insertDept",
+          "lineNumber": 84
+        },
+        {
+          "caller": "edit",
+          "callee": "dept.getDeptId",
+          "lineNumber": 94
+        },
+        {
+          "caller": "edit",
+          "callee": "deptService.checkDeptDataScope",
+          "lineNumber": 95
+        },
+        {
+          "caller": "edit",
+          "callee": "deptService.checkDeptNameUnique",
+          "lineNumber": 96
+        },
+        {
+          "caller": "edit",
+          "callee": "error",
+          "lineNumber": 97
+        },
+        {
+          "caller": "edit",
+          "callee": "dept.getDeptName",
+          "lineNumber": 97
+        },
+        {
+          "caller": "edit",
+          "callee": "dept.getParentId().equals",
+          "lineNumber": 98
+        },
+        {
+          "caller": "edit",
+          "callee": "dept.getParentId",
+          "lineNumber": 98
+        },
+        {
+          "caller": "edit",
+          "callee": "error",
+          "lineNumber": 99
+        },
+        {
+          "caller": "edit",
+          "callee": "dept.getDeptName",
+          "lineNumber": 99
+        },
+        {
+          "caller": "edit",
+          "callee": "StringUtils.equals",
+          "lineNumber": 100
+        },
+        {
+          "caller": "edit",
+          "callee": "dept.getStatus",
+          "lineNumber": 100
+        },
+        {
+          "caller": "edit",
+          "callee": "deptService.selectNormalChildrenDeptById",
+          "lineNumber": 100
+        },
+        {
+          "caller": "edit",
+          "callee": "error",
+          "lineNumber": 101
+        },
+        {
+          "caller": "edit",
+          "callee": "dept.setUpdateBy",
+          "lineNumber": 103
+        },
+        {
+          "caller": "edit",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 103
+        },
+        {
+          "caller": "edit",
+          "callee": "toAjax",
+          "lineNumber": 104
+        },
+        {
+          "caller": "edit",
+          "callee": "deptService.updateDept",
+          "lineNumber": 104
+        },
+        {
+          "caller": "remove",
+          "callee": "deptService.hasChildByDeptId",
+          "lineNumber": 114
+        },
+        {
+          "caller": "remove",
+          "callee": "warn",
+          "lineNumber": 115
+        },
+        {
+          "caller": "remove",
+          "callee": "deptService.checkDeptExistUser",
+          "lineNumber": 117
+        },
+        {
+          "caller": "remove",
+          "callee": "warn",
+          "lineNumber": 118
+        },
+        {
+          "caller": "remove",
+          "callee": "deptService.checkDeptDataScope",
+          "lineNumber": 120
+        },
+        {
+          "caller": "remove",
+          "callee": "toAjax",
+          "lineNumber": 121
+        },
+        {
+          "caller": "remove",
+          "callee": "deptService.deleteDeptById",
+          "lineNumber": 121
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictDataController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 114,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 44,
+          "endLine": 50,
+          "params": [
+            "dictData"
+          ]
+        },
+        {
+          "name": "export",
+          "startLine": 52,
+          "endLine": 59,
+          "params": [
+            "response",
+            "dictData"
+          ]
+        },
+        {
+          "name": "getInfo",
+          "startLine": 64,
+          "endLine": 68,
+          "params": [
+            "dictCode"
+          ]
+        },
+        {
+          "name": "dictType",
+          "startLine": 73,
+          "endLine": 80,
+          "params": [
+            "dictType"
+          ]
+        },
+        {
+          "name": "add",
+          "startLine": 85,
+          "endLine": 91,
+          "params": [
+            "dict"
+          ]
+        },
+        {
+          "name": "edit",
+          "startLine": 96,
+          "endLine": 102,
+          "params": [
+            "dict"
+          ]
+        },
+        {
+          "name": "remove",
+          "startLine": 107,
+          "endLine": 113,
+          "params": [
+            "dictCodes"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysDictDataController",
+          "startLine": 35,
+          "endLine": 114,
+          "methods": [
+            "list",
+            "export",
+            "getInfo",
+            "dictType",
+            "add",
+            "edit",
+            "remove"
+          ],
+          "properties": [
+            "dictDataService",
+            "dictTypeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "export",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "getInfo",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "dictType",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "add",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "edit",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "remove",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "SysDictDataController",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "startPage",
+          "lineNumber": 47
+        },
+        {
+          "caller": "list",
+          "callee": "dictDataService.selectDictDataList",
+          "lineNumber": 48
+        },
+        {
+          "caller": "list",
+          "callee": "getDataTable",
+          "lineNumber": 49
+        },
+        {
+          "caller": "export",
+          "callee": "dictDataService.selectDictDataList",
+          "lineNumber": 56
+        },
+        {
+          "caller": "export",
+          "callee": "new ExcelUtil<SysDictData>",
+          "lineNumber": 57
+        },
+        {
+          "caller": "export",
+          "callee": "util.exportExcel",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getInfo",
+          "callee": "success",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getInfo",
+          "callee": "dictDataService.selectDictDataById",
+          "lineNumber": 67
+        },
+        {
+          "caller": "dictType",
+          "callee": "dictTypeService.selectDictDataByType",
+          "lineNumber": 75
+        },
+        {
+          "caller": "dictType",
+          "callee": "StringUtils.isNull",
+          "lineNumber": 76
+        },
+        {
+          "caller": "dictType",
+          "callee": "new ArrayList<SysDictData>",
+          "lineNumber": 77
+        },
+        {
+          "caller": "dictType",
+          "callee": "success",
+          "lineNumber": 79
+        },
+        {
+          "caller": "add",
+          "callee": "dict.setCreateBy",
+          "lineNumber": 89
+        },
+        {
+          "caller": "add",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 89
+        },
+        {
+          "caller": "add",
+          "callee": "toAjax",
+          "lineNumber": 90
+        },
+        {
+          "caller": "add",
+          "callee": "dictDataService.insertDictData",
+          "lineNumber": 90
+        },
+        {
+          "caller": "edit",
+          "callee": "dict.setUpdateBy",
+          "lineNumber": 100
+        },
+        {
+          "caller": "edit",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 100
+        },
+        {
+          "caller": "edit",
+          "callee": "toAjax",
+          "lineNumber": 101
+        },
+        {
+          "caller": "edit",
+          "callee": "dictDataService.updateDictData",
+          "lineNumber": 101
+        },
+        {
+          "caller": "remove",
+          "callee": "dictDataService.deleteDictDataByIds",
+          "lineNumber": 111
+        },
+        {
+          "caller": "remove",
+          "callee": "success",
+          "lineNumber": 112
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysDictTypeController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 122,
+      "nonEmptyLines": 111,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 38,
+          "endLine": 44,
+          "params": [
+            "dictType"
+          ]
+        },
+        {
+          "name": "export",
+          "startLine": 46,
+          "endLine": 53,
+          "params": [
+            "response",
+            "dictType"
+          ]
+        },
+        {
+          "name": "getInfo",
+          "startLine": 58,
+          "endLine": 62,
+          "params": [
+            "dictId"
+          ]
+        },
+        {
+          "name": "add",
+          "startLine": 67,
+          "endLine": 76,
+          "params": [
+            "dict"
+          ]
+        },
+        {
+          "name": "edit",
+          "startLine": 81,
+          "endLine": 90,
+          "params": [
+            "dict"
+          ]
+        },
+        {
+          "name": "remove",
+          "startLine": 95,
+          "endLine": 101,
+          "params": [
+            "dictIds"
+          ]
+        },
+        {
+          "name": "refreshCache",
+          "startLine": 106,
+          "endLine": 112,
+          "params": []
+        },
+        {
+          "name": "optionselect",
+          "startLine": 117,
+          "endLine": 121,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysDictTypeController",
+          "startLine": 32,
+          "endLine": 122,
+          "methods": [
+            "list",
+            "export",
+            "getInfo",
+            "add",
+            "edit",
+            "remove",
+            "refreshCache",
+            "optionselect"
+          ],
+          "properties": [
+            "dictTypeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "export",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "getInfo",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "add",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "edit",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "remove",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "refreshCache",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "optionselect",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "SysDictTypeController",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "startPage",
+          "lineNumber": 41
+        },
+        {
+          "caller": "list",
+          "callee": "dictTypeService.selectDictTypeList",
+          "lineNumber": 42
+        },
+        {
+          "caller": "list",
+          "callee": "getDataTable",
+          "lineNumber": 43
+        },
+        {
+          "caller": "export",
+          "callee": "dictTypeService.selectDictTypeList",
+          "lineNumber": 50
+        },
+        {
+          "caller": "export",
+          "callee": "new ExcelUtil<SysDictType>",
+          "lineNumber": 51
+        },
+        {
+          "caller": "export",
+          "callee": "util.exportExcel",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getInfo",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getInfo",
+          "callee": "dictTypeService.selectDictTypeById",
+          "lineNumber": 61
+        },
+        {
+          "caller": "add",
+          "callee": "dictTypeService.checkDictTypeUnique",
+          "lineNumber": 71
+        },
+        {
+          "caller": "add",
+          "callee": "error",
+          "lineNumber": 72
+        },
+        {
+          "caller": "add",
+          "callee": "dict.getDictName",
+          "lineNumber": 72
+        },
+        {
+          "caller": "add",
+          "callee": "dict.setCreateBy",
+          "lineNumber": 74
+        },
+        {
+          "caller": "add",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 74
+        },
+        {
+          "caller": "add",
+          "callee": "toAjax",
+          "lineNumber": 75
+        },
+        {
+          "caller": "add",
+          "callee": "dictTypeService.insertDictType",
+          "lineNumber": 75
+        },
+        {
+          "caller": "edit",
+          "callee": "dictTypeService.checkDictTypeUnique",
+          "lineNumber": 85
+        },
+        {
+          "caller": "edit",
+          "callee": "error",
+          "lineNumber": 86
+        },
+        {
+          "caller": "edit",
+          "callee": "dict.getDictName",
+          "lineNumber": 86
+        },
+        {
+          "caller": "edit",
+          "callee": "dict.setUpdateBy",
+          "lineNumber": 88
+        },
+        {
+          "caller": "edit",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 88
+        },
+        {
+          "caller": "edit",
+          "callee": "toAjax",
+          "lineNumber": 89
+        },
+        {
+          "caller": "edit",
+          "callee": "dictTypeService.updateDictType",
+          "lineNumber": 89
+        },
+        {
+          "caller": "remove",
+          "callee": "dictTypeService.deleteDictTypeByIds",
+          "lineNumber": 99
+        },
+        {
+          "caller": "remove",
+          "callee": "success",
+          "lineNumber": 100
+        },
+        {
+          "caller": "refreshCache",
+          "callee": "dictTypeService.resetDictCache",
+          "lineNumber": 110
+        },
+        {
+          "caller": "refreshCache",
+          "callee": "success",
+          "lineNumber": 111
+        },
+        {
+          "caller": "optionselect",
+          "callee": "dictTypeService.selectDictTypeAll",
+          "lineNumber": 119
+        },
+        {
+          "caller": "optionselect",
+          "callee": "success",
+          "lineNumber": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysLogininforController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 76,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 41,
+          "endLine": 47,
+          "params": [
+            "logininfor"
+          ]
+        },
+        {
+          "name": "export",
+          "startLine": 49,
+          "endLine": 56,
+          "params": [
+            "response",
+            "logininfor"
+          ]
+        },
+        {
+          "name": "remove",
+          "startLine": 58,
+          "endLine": 63,
+          "params": [
+            "infoIds"
+          ]
+        },
+        {
+          "name": "clean",
+          "startLine": 65,
+          "endLine": 71,
+          "params": []
+        },
+        {
+          "name": "unlock",
+          "startLine": 73,
+          "endLine": 79,
+          "params": [
+            "userName"
+          ]
+        },
+        {
+          "name": "add",
+          "startLine": 81,
+          "endLine": 85,
+          "params": [
+            "logininfor"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysLogininforController",
+          "startLine": 32,
+          "endLine": 86,
+          "methods": [
+            "list",
+            "export",
+            "remove",
+            "clean",
+            "unlock",
+            "add"
+          ],
+          "properties": [
+            "logininforService",
+            "redisService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "export",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "remove",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "clean",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "unlock",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "add",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "SysLogininforController",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "startPage",
+          "lineNumber": 44
+        },
+        {
+          "caller": "list",
+          "callee": "logininforService.selectLogininforList",
+          "lineNumber": 45
+        },
+        {
+          "caller": "list",
+          "callee": "getDataTable",
+          "lineNumber": 46
+        },
+        {
+          "caller": "export",
+          "callee": "logininforService.selectLogininforList",
+          "lineNumber": 53
+        },
+        {
+          "caller": "export",
+          "callee": "new ExcelUtil<SysLogininfor>",
+          "lineNumber": 54
+        },
+        {
+          "caller": "export",
+          "callee": "util.exportExcel",
+          "lineNumber": 55
+        },
+        {
+          "caller": "remove",
+          "callee": "toAjax",
+          "lineNumber": 62
+        },
+        {
+          "caller": "remove",
+          "callee": "logininforService.deleteLogininforByIds",
+          "lineNumber": 62
+        },
+        {
+          "caller": "clean",
+          "callee": "logininforService.cleanLogininfor",
+          "lineNumber": 69
+        },
+        {
+          "caller": "clean",
+          "callee": "success",
+          "lineNumber": 70
+        },
+        {
+          "caller": "unlock",
+          "callee": "redisService.deleteObject",
+          "lineNumber": 77
+        },
+        {
+          "caller": "unlock",
+          "callee": "success",
+          "lineNumber": 78
+        },
+        {
+          "caller": "add",
+          "callee": "toAjax",
+          "lineNumber": 84
+        },
+        {
+          "caller": "add",
+          "callee": "logininforService.insertLogininfor",
+          "lineNumber": 84
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysMenuController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 141,
+      "nonEmptyLines": 130,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 40,
+          "endLine": 46,
+          "params": [
+            "menu"
+          ]
+        },
+        {
+          "name": "getInfo",
+          "startLine": 51,
+          "endLine": 55,
+          "params": [
+            "menuId"
+          ]
+        },
+        {
+          "name": "treeselect",
+          "startLine": 60,
+          "endLine": 65,
+          "params": [
+            "menu"
+          ]
+        },
+        {
+          "name": "roleMenuTreeselect",
+          "startLine": 70,
+          "endLine": 78,
+          "params": [
+            "roleId"
+          ]
+        },
+        {
+          "name": "add",
+          "startLine": 83,
+          "endLine": 94,
+          "params": [
+            "menu"
+          ]
+        },
+        {
+          "name": "edit",
+          "startLine": 99,
+          "endLine": 112,
+          "params": [
+            "menu"
+          ]
+        },
+        {
+          "name": "remove",
+          "startLine": 117,
+          "endLine": 128,
+          "params": [
+            "menuId"
+          ]
+        },
+        {
+          "name": "getRouters",
+          "startLine": 135,
+          "endLine": 140,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysMenuController",
+          "startLine": 31,
+          "endLine": 141,
+          "methods": [
+            "list",
+            "getInfo",
+            "treeselect",
+            "roleMenuTreeselect",
+            "add",
+            "edit",
+            "remove",
+            "getRouters"
+          ],
+          "properties": [
+            "menuService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "getInfo",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "treeselect",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "roleMenuTreeselect",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "add",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "edit",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "remove",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "getRouters",
+          "line": 135,
+          "isDefault": false
+        },
+        {
+          "name": "SysMenuController",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "SecurityUtils.getUserId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "list",
+          "callee": "menuService.selectMenuList",
+          "lineNumber": 44
+        },
+        {
+          "caller": "list",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getInfo",
+          "callee": "success",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getInfo",
+          "callee": "menuService.selectMenuById",
+          "lineNumber": 54
+        },
+        {
+          "caller": "treeselect",
+          "callee": "SecurityUtils.getUserId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "treeselect",
+          "callee": "menuService.selectMenuList",
+          "lineNumber": 63
+        },
+        {
+          "caller": "treeselect",
+          "callee": "success",
+          "lineNumber": 64
+        },
+        {
+          "caller": "treeselect",
+          "callee": "menuService.buildMenuTreeSelect",
+          "lineNumber": 64
+        },
+        {
+          "caller": "roleMenuTreeselect",
+          "callee": "SecurityUtils.getUserId",
+          "lineNumber": 72
+        },
+        {
+          "caller": "roleMenuTreeselect",
+          "callee": "menuService.selectMenuList",
+          "lineNumber": 73
+        },
+        {
+          "caller": "roleMenuTreeselect",
+          "callee": "AjaxResult.success",
+          "lineNumber": 74
+        },
+        {
+          "caller": "roleMenuTreeselect",
+          "callee": "ajax.put",
+          "lineNumber": 75
+        },
+        {
+          "caller": "roleMenuTreeselect",
+          "callee": "menuService.selectMenuListByRoleId",
+          "lineNumber": 75
+        },
+        {
+          "caller": "roleMenuTreeselect",
+          "callee": "ajax.put",
+          "lineNumber": 76
+        },
+        {
+          "caller": "roleMenuTreeselect",
+          "callee": "menuService.buildMenuTreeSelect",
+          "lineNumber": 76
+        },
+        {
+          "caller": "add",
+          "callee": "menuService.checkMenuNameUnique",
+          "lineNumber": 87
+        },
+        {
+          "caller": "add",
+          "callee": "error",
+          "lineNumber": 88
+        },
+        {
+          "caller": "add",
+          "callee": "menu.getMenuName",
+          "lineNumber": 88
+        },
+        {
+          "caller": "add",
+          "callee": "UserConstants.YES_FRAME.equals",
+          "lineNumber": 89
+        },
+        {
+          "caller": "add",
+          "callee": "menu.getIsFrame",
+          "lineNumber": 89
+        },
+        {
+          "caller": "add",
+          "callee": "StringUtils.ishttp",
+          "lineNumber": 89
+        },
+        {
+          "caller": "add",
+          "callee": "menu.getPath",
+          "lineNumber": 89
+        },
+        {
+          "caller": "add",
+          "callee": "error",
+          "lineNumber": 90
+        },
+        {
+          "caller": "add",
+          "callee": "menu.getMenuName",
+          "lineNumber": 90
+        },
+        {
+          "caller": "add",
+          "callee": "menu.setCreateBy",
+          "lineNumber": 92
+        },
+        {
+          "caller": "add",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 92
+        },
+        {
+          "caller": "add",
+          "callee": "toAjax",
+          "lineNumber": 93
+        },
+        {
+          "caller": "add",
+          "callee": "menuService.insertMenu",
+          "lineNumber": 93
+        },
+        {
+          "caller": "edit",
+          "callee": "menuService.checkMenuNameUnique",
+          "lineNumber": 103
+        },
+        {
+          "caller": "edit",
+          "callee": "error",
+          "lineNumber": 104
+        },
+        {
+          "caller": "edit",
+          "callee": "menu.getMenuName",
+          "lineNumber": 104
+        },
+        {
+          "caller": "edit",
+          "callee": "UserConstants.YES_FRAME.equals",
+          "lineNumber": 105
+        },
+        {
+          "caller": "edit",
+          "callee": "menu.getIsFrame",
+          "lineNumber": 105
+        },
+        {
+          "caller": "edit",
+          "callee": "StringUtils.ishttp",
+          "lineNumber": 105
+        },
+        {
+          "caller": "edit",
+          "callee": "menu.getPath",
+          "lineNumber": 105
+        },
+        {
+          "caller": "edit",
+          "callee": "error",
+          "lineNumber": 106
+        },
+        {
+          "caller": "edit",
+          "callee": "menu.getMenuName",
+          "lineNumber": 106
+        },
+        {
+          "caller": "edit",
+          "callee": "menu.getMenuId().equals",
+          "lineNumber": 107
+        },
+        {
+          "caller": "edit",
+          "callee": "menu.getMenuId",
+          "lineNumber": 107
+        },
+        {
+          "caller": "edit",
+          "callee": "menu.getParentId",
+          "lineNumber": 107
+        },
+        {
+          "caller": "edit",
+          "callee": "error",
+          "lineNumber": 108
+        },
+        {
+          "caller": "edit",
+          "callee": "menu.getMenuName",
+          "lineNumber": 108
+        },
+        {
+          "caller": "edit",
+          "callee": "menu.setUpdateBy",
+          "lineNumber": 110
+        },
+        {
+          "caller": "edit",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 110
+        },
+        {
+          "caller": "edit",
+          "callee": "toAjax",
+          "lineNumber": 111
+        },
+        {
+          "caller": "edit",
+          "callee": "menuService.updateMenu",
+          "lineNumber": 111
+        },
+        {
+          "caller": "remove",
+          "callee": "menuService.hasChildByMenuId",
+          "lineNumber": 121
+        },
+        {
+          "caller": "remove",
+          "callee": "warn",
+          "lineNumber": 122
+        },
+        {
+          "caller": "remove",
+          "callee": "menuService.checkMenuExistRole",
+          "lineNumber": 124
+        },
+        {
+          "caller": "remove",
+          "callee": "warn",
+          "lineNumber": 125
+        },
+        {
+          "caller": "remove",
+          "callee": "toAjax",
+          "lineNumber": 127
+        },
+        {
+          "caller": "remove",
+          "callee": "menuService.deleteMenuById",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getRouters",
+          "callee": "SecurityUtils.getUserId",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getRouters",
+          "callee": "menuService.selectMenuTreeByUserId",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getRouters",
+          "callee": "success",
+          "lineNumber": 139
+        },
+        {
+          "caller": "getRouters",
+          "callee": "menuService.buildMenus",
+          "lineNumber": 139
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysNoticeController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 87,
+      "nonEmptyLines": 79,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 39,
+          "endLine": 45,
+          "params": [
+            "notice"
+          ]
+        },
+        {
+          "name": "getInfo",
+          "startLine": 50,
+          "endLine": 54,
+          "params": [
+            "noticeId"
+          ]
+        },
+        {
+          "name": "add",
+          "startLine": 59,
+          "endLine": 65,
+          "params": [
+            "notice"
+          ]
+        },
+        {
+          "name": "edit",
+          "startLine": 70,
+          "endLine": 76,
+          "params": [
+            "notice"
+          ]
+        },
+        {
+          "name": "remove",
+          "startLine": 81,
+          "endLine": 86,
+          "params": [
+            "noticeIds"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysNoticeController",
+          "startLine": 30,
+          "endLine": 87,
+          "methods": [
+            "list",
+            "getInfo",
+            "add",
+            "edit",
+            "remove"
+          ],
+          "properties": [
+            "noticeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "getInfo",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "add",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "edit",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "remove",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "SysNoticeController",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "startPage",
+          "lineNumber": 42
+        },
+        {
+          "caller": "list",
+          "callee": "noticeService.selectNoticeList",
+          "lineNumber": 43
+        },
+        {
+          "caller": "list",
+          "callee": "getDataTable",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getInfo",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getInfo",
+          "callee": "noticeService.selectNoticeById",
+          "lineNumber": 53
+        },
+        {
+          "caller": "add",
+          "callee": "notice.setCreateBy",
+          "lineNumber": 63
+        },
+        {
+          "caller": "add",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 63
+        },
+        {
+          "caller": "add",
+          "callee": "toAjax",
+          "lineNumber": 64
+        },
+        {
+          "caller": "add",
+          "callee": "noticeService.insertNotice",
+          "lineNumber": 64
+        },
+        {
+          "caller": "edit",
+          "callee": "notice.setUpdateBy",
+          "lineNumber": 74
+        },
+        {
+          "caller": "edit",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 74
+        },
+        {
+          "caller": "edit",
+          "callee": "toAjax",
+          "lineNumber": 75
+        },
+        {
+          "caller": "edit",
+          "callee": "noticeService.updateNotice",
+          "lineNumber": 75
+        },
+        {
+          "caller": "remove",
+          "callee": "toAjax",
+          "lineNumber": 85
+        },
+        {
+          "caller": "remove",
+          "callee": "noticeService.deleteNoticeByIds",
+          "lineNumber": 85
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysOperlogController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 36,
+          "endLine": 42,
+          "params": [
+            "operLog"
+          ]
+        },
+        {
+          "name": "export",
+          "startLine": 44,
+          "endLine": 51,
+          "params": [
+            "response",
+            "operLog"
+          ]
+        },
+        {
+          "name": "remove",
+          "startLine": 53,
+          "endLine": 58,
+          "params": [
+            "operIds"
+          ]
+        },
+        {
+          "name": "clean",
+          "startLine": 60,
+          "endLine": 66,
+          "params": []
+        },
+        {
+          "name": "add",
+          "startLine": 68,
+          "endLine": 72,
+          "params": [
+            "operLog"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysOperlogController",
+          "startLine": 30,
+          "endLine": 73,
+          "methods": [
+            "list",
+            "export",
+            "remove",
+            "clean",
+            "add"
+          ],
+          "properties": [
+            "operLogService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "export",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "remove",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "clean",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "add",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "SysOperlogController",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "startPage",
+          "lineNumber": 39
+        },
+        {
+          "caller": "list",
+          "callee": "operLogService.selectOperLogList",
+          "lineNumber": 40
+        },
+        {
+          "caller": "list",
+          "callee": "getDataTable",
+          "lineNumber": 41
+        },
+        {
+          "caller": "export",
+          "callee": "operLogService.selectOperLogList",
+          "lineNumber": 48
+        },
+        {
+          "caller": "export",
+          "callee": "new ExcelUtil<SysOperLog>",
+          "lineNumber": 49
+        },
+        {
+          "caller": "export",
+          "callee": "util.exportExcel",
+          "lineNumber": 50
+        },
+        {
+          "caller": "remove",
+          "callee": "toAjax",
+          "lineNumber": 57
+        },
+        {
+          "caller": "remove",
+          "callee": "operLogService.deleteOperLogByIds",
+          "lineNumber": 57
+        },
+        {
+          "caller": "clean",
+          "callee": "operLogService.cleanOperLog",
+          "lineNumber": 64
+        },
+        {
+          "caller": "clean",
+          "callee": "success",
+          "lineNumber": 65
+        },
+        {
+          "caller": "add",
+          "callee": "toAjax",
+          "lineNumber": 71
+        },
+        {
+          "caller": "add",
+          "callee": "operLogService.insertOperlog",
+          "lineNumber": 71
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysPostController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 117,
+      "nonEmptyLines": 107,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 41,
+          "endLine": 47,
+          "params": [
+            "post"
+          ]
+        },
+        {
+          "name": "export",
+          "startLine": 49,
+          "endLine": 56,
+          "params": [
+            "response",
+            "post"
+          ]
+        },
+        {
+          "name": "getInfo",
+          "startLine": 61,
+          "endLine": 65,
+          "params": [
+            "postId"
+          ]
+        },
+        {
+          "name": "add",
+          "startLine": 70,
+          "endLine": 81,
+          "params": [
+            "post"
+          ]
+        },
+        {
+          "name": "edit",
+          "startLine": 86,
+          "endLine": 97,
+          "params": [
+            "post"
+          ]
+        },
+        {
+          "name": "remove",
+          "startLine": 102,
+          "endLine": 107,
+          "params": [
+            "postIds"
+          ]
+        },
+        {
+          "name": "optionselect",
+          "startLine": 112,
+          "endLine": 116,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysPostController",
+          "startLine": 32,
+          "endLine": 117,
+          "methods": [
+            "list",
+            "export",
+            "getInfo",
+            "add",
+            "edit",
+            "remove",
+            "optionselect"
+          ],
+          "properties": [
+            "postService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "export",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getInfo",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "add",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "edit",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "remove",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "optionselect",
+          "line": 112,
+          "isDefault": false
+        },
+        {
+          "name": "SysPostController",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "startPage",
+          "lineNumber": 44
+        },
+        {
+          "caller": "list",
+          "callee": "postService.selectPostList",
+          "lineNumber": 45
+        },
+        {
+          "caller": "list",
+          "callee": "getDataTable",
+          "lineNumber": 46
+        },
+        {
+          "caller": "export",
+          "callee": "postService.selectPostList",
+          "lineNumber": 53
+        },
+        {
+          "caller": "export",
+          "callee": "new ExcelUtil<SysPost>",
+          "lineNumber": 54
+        },
+        {
+          "caller": "export",
+          "callee": "util.exportExcel",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getInfo",
+          "callee": "success",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getInfo",
+          "callee": "postService.selectPostById",
+          "lineNumber": 64
+        },
+        {
+          "caller": "add",
+          "callee": "postService.checkPostNameUnique",
+          "lineNumber": 74
+        },
+        {
+          "caller": "add",
+          "callee": "error",
+          "lineNumber": 75
+        },
+        {
+          "caller": "add",
+          "callee": "post.getPostName",
+          "lineNumber": 75
+        },
+        {
+          "caller": "add",
+          "callee": "postService.checkPostCodeUnique",
+          "lineNumber": 76
+        },
+        {
+          "caller": "add",
+          "callee": "error",
+          "lineNumber": 77
+        },
+        {
+          "caller": "add",
+          "callee": "post.getPostName",
+          "lineNumber": 77
+        },
+        {
+          "caller": "add",
+          "callee": "post.setCreateBy",
+          "lineNumber": 79
+        },
+        {
+          "caller": "add",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 79
+        },
+        {
+          "caller": "add",
+          "callee": "toAjax",
+          "lineNumber": 80
+        },
+        {
+          "caller": "add",
+          "callee": "postService.insertPost",
+          "lineNumber": 80
+        },
+        {
+          "caller": "edit",
+          "callee": "postService.checkPostNameUnique",
+          "lineNumber": 90
+        },
+        {
+          "caller": "edit",
+          "callee": "error",
+          "lineNumber": 91
+        },
+        {
+          "caller": "edit",
+          "callee": "post.getPostName",
+          "lineNumber": 91
+        },
+        {
+          "caller": "edit",
+          "callee": "postService.checkPostCodeUnique",
+          "lineNumber": 92
+        },
+        {
+          "caller": "edit",
+          "callee": "error",
+          "lineNumber": 93
+        },
+        {
+          "caller": "edit",
+          "callee": "post.getPostName",
+          "lineNumber": 93
+        },
+        {
+          "caller": "edit",
+          "callee": "post.setUpdateBy",
+          "lineNumber": 95
+        },
+        {
+          "caller": "edit",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 95
+        },
+        {
+          "caller": "edit",
+          "callee": "toAjax",
+          "lineNumber": 96
+        },
+        {
+          "caller": "edit",
+          "callee": "postService.updatePost",
+          "lineNumber": 96
+        },
+        {
+          "caller": "remove",
+          "callee": "toAjax",
+          "lineNumber": 106
+        },
+        {
+          "caller": "remove",
+          "callee": "postService.deletePostByIds",
+          "lineNumber": 106
+        },
+        {
+          "caller": "optionselect",
+          "callee": "postService.selectPostAll",
+          "lineNumber": 114
+        },
+        {
+          "caller": "optionselect",
+          "callee": "success",
+          "lineNumber": 115
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysProfileController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 140,
+      "nonEmptyLines": 131,
+      "functions": [
+        {
+          "name": "profile",
+          "startLine": 50,
+          "endLine": 58,
+          "params": []
+        },
+        {
+          "name": "updateProfile",
+          "startLine": 63,
+          "endLine": 84,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "updatePwd",
+          "startLine": 89,
+          "endLine": 110,
+          "params": [
+            "oldPassword",
+            "newPassword"
+          ]
+        },
+        {
+          "name": "avatar",
+          "startLine": 115,
+          "endLine": 139,
+          "params": [
+            "file"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysProfileController",
+          "startLine": 35,
+          "endLine": 140,
+          "methods": [
+            "profile",
+            "updateProfile",
+            "updatePwd",
+            "avatar"
+          ],
+          "properties": [
+            "userService",
+            "tokenService",
+            "remoteFileService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "profile",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "updateProfile",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "updatePwd",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "avatar",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "SysProfileController",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "profile",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 52
+        },
+        {
+          "caller": "profile",
+          "callee": "userService.selectUserByUserName",
+          "lineNumber": 53
+        },
+        {
+          "caller": "profile",
+          "callee": "AjaxResult.success",
+          "lineNumber": 54
+        },
+        {
+          "caller": "profile",
+          "callee": "ajax.put",
+          "lineNumber": 55
+        },
+        {
+          "caller": "profile",
+          "callee": "userService.selectUserRoleGroup",
+          "lineNumber": 55
+        },
+        {
+          "caller": "profile",
+          "callee": "ajax.put",
+          "lineNumber": 56
+        },
+        {
+          "caller": "profile",
+          "callee": "userService.selectUserPostGroup",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "SecurityUtils.getLoginUser",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "loginUser.getSysUser",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "currentUser.setNickName",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "user.getNickName",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "currentUser.setEmail",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "user.getEmail",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "currentUser.setPhonenumber",
+          "lineNumber": 70
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "user.getPhonenumber",
+          "lineNumber": 70
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "currentUser.setSex",
+          "lineNumber": 71
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "user.getSex",
+          "lineNumber": 71
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "user.getPhonenumber",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "userService.checkPhoneUnique",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "error",
+          "lineNumber": 73
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "loginUser.getUsername",
+          "lineNumber": 73
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "user.getEmail",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "userService.checkEmailUnique",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "error",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "loginUser.getUsername",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "userService.updateUserProfile",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "tokenService.setLoginUser",
+          "lineNumber": 80
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "success",
+          "lineNumber": 81
+        },
+        {
+          "caller": "updateProfile",
+          "callee": "error",
+          "lineNumber": 83
+        },
+        {
+          "caller": "updatePwd",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 92
+        },
+        {
+          "caller": "updatePwd",
+          "callee": "userService.selectUserByUserName",
+          "lineNumber": 93
+        },
+        {
+          "caller": "updatePwd",
+          "callee": "user.getPassword",
+          "lineNumber": 94
+        },
+        {
+          "caller": "updatePwd",
+          "callee": "SecurityUtils.matchesPassword",
+          "lineNumber": 95
+        },
+        {
+          "caller": "updatePwd",
+          "callee": "error",
+          "lineNumber": 96
+        },
+        {
+          "caller": "updatePwd",
+          "callee": "SecurityUtils.matchesPassword",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updatePwd",
+          "callee": "error",
+          "lineNumber": 99
+        },
+        {
+          "caller": "updatePwd",
+          "callee": "SecurityUtils.encryptPassword",
+          "lineNumber": 101
+        },
+        {
+          "caller": "updatePwd",
+          "callee": "userService.resetUserPwd",
+          "lineNumber": 102
+        },
+        {
+          "caller": "updatePwd",
+          "callee": "SecurityUtils.getLoginUser",
+          "lineNumber": 104
+        },
+        {
+          "caller": "updatePwd",
+          "callee": "loginUser.getSysUser().setPassword",
+          "lineNumber": 105
+        },
+        {
+          "caller": "updatePwd",
+          "callee": "loginUser.getSysUser",
+          "lineNumber": 105
+        },
+        {
+          "caller": "updatePwd",
+          "callee": "tokenService.setLoginUser",
+          "lineNumber": 106
+        },
+        {
+          "caller": "updatePwd",
+          "callee": "success",
+          "lineNumber": 107
+        },
+        {
+          "caller": "updatePwd",
+          "callee": "error",
+          "lineNumber": 109
+        },
+        {
+          "caller": "avatar",
+          "callee": "file.isEmpty",
+          "lineNumber": 118
+        },
+        {
+          "caller": "avatar",
+          "callee": "SecurityUtils.getLoginUser",
+          "lineNumber": 119
+        },
+        {
+          "caller": "avatar",
+          "callee": "FileTypeUtils.getExtension",
+          "lineNumber": 120
+        },
+        {
+          "caller": "avatar",
+          "callee": "StringUtils.equalsAnyIgnoreCase",
+          "lineNumber": 121
+        },
+        {
+          "caller": "avatar",
+          "callee": "error",
+          "lineNumber": 122
+        },
+        {
+          "caller": "avatar",
+          "callee": "Arrays.toString",
+          "lineNumber": 122
+        },
+        {
+          "caller": "avatar",
+          "callee": "remoteFileService.upload",
+          "lineNumber": 124
+        },
+        {
+          "caller": "avatar",
+          "callee": "StringUtils.isNull",
+          "lineNumber": 125
+        },
+        {
+          "caller": "avatar",
+          "callee": "StringUtils.isNull",
+          "lineNumber": 125
+        },
+        {
+          "caller": "avatar",
+          "callee": "fileResult.getData",
+          "lineNumber": 125
+        },
+        {
+          "caller": "avatar",
+          "callee": "error",
+          "lineNumber": 126
+        },
+        {
+          "caller": "avatar",
+          "callee": "fileResult.getData().getUrl",
+          "lineNumber": 128
+        },
+        {
+          "caller": "avatar",
+          "callee": "fileResult.getData",
+          "lineNumber": 128
+        },
+        {
+          "caller": "avatar",
+          "callee": "userService.updateUserAvatar",
+          "lineNumber": 129
+        },
+        {
+          "caller": "avatar",
+          "callee": "loginUser.getUsername",
+          "lineNumber": 129
+        },
+        {
+          "caller": "avatar",
+          "callee": "AjaxResult.success",
+          "lineNumber": 130
+        },
+        {
+          "caller": "avatar",
+          "callee": "ajax.put",
+          "lineNumber": 131
+        },
+        {
+          "caller": "avatar",
+          "callee": "loginUser.getSysUser().setAvatar",
+          "lineNumber": 133
+        },
+        {
+          "caller": "avatar",
+          "callee": "loginUser.getSysUser",
+          "lineNumber": 133
+        },
+        {
+          "caller": "avatar",
+          "callee": "tokenService.setLoginUser",
+          "lineNumber": 134
+        },
+        {
+          "caller": "avatar",
+          "callee": "error",
+          "lineNumber": 138
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysRoleController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 219,
+      "nonEmptyLines": 198,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 49,
+          "endLine": 55,
+          "params": [
+            "role"
+          ]
+        },
+        {
+          "name": "export",
+          "startLine": 57,
+          "endLine": 64,
+          "params": [
+            "response",
+            "role"
+          ]
+        },
+        {
+          "name": "getInfo",
+          "startLine": 69,
+          "endLine": 74,
+          "params": [
+            "roleId"
+          ]
+        },
+        {
+          "name": "add",
+          "startLine": 79,
+          "endLine": 91,
+          "params": [
+            "role"
+          ]
+        },
+        {
+          "name": "edit",
+          "startLine": 96,
+          "endLine": 109,
+          "params": [
+            "role"
+          ]
+        },
+        {
+          "name": "dataScope",
+          "startLine": 114,
+          "endLine": 121,
+          "params": [
+            "role"
+          ]
+        },
+        {
+          "name": "changeStatus",
+          "startLine": 126,
+          "endLine": 134,
+          "params": [
+            "role"
+          ]
+        },
+        {
+          "name": "remove",
+          "startLine": 139,
+          "endLine": 144,
+          "params": [
+            "roleIds"
+          ]
+        },
+        {
+          "name": "optionselect",
+          "startLine": 149,
+          "endLine": 153,
+          "params": []
+        },
+        {
+          "name": "allocatedList",
+          "startLine": 158,
+          "endLine": 164,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "unallocatedList",
+          "startLine": 169,
+          "endLine": 175,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "cancelAuthUser",
+          "startLine": 180,
+          "endLine": 185,
+          "params": [
+            "userRole"
+          ]
+        },
+        {
+          "name": "cancelAuthUserAll",
+          "startLine": 190,
+          "endLine": 195,
+          "params": [
+            "roleId",
+            "userIds"
+          ]
+        },
+        {
+          "name": "selectAuthUserAll",
+          "startLine": 200,
+          "endLine": 206,
+          "params": [
+            "roleId",
+            "userIds"
+          ]
+        },
+        {
+          "name": "deptTree",
+          "startLine": 211,
+          "endLine": 218,
+          "params": [
+            "roleId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysRoleController",
+          "startLine": 37,
+          "endLine": 219,
+          "methods": [
+            "list",
+            "export",
+            "getInfo",
+            "add",
+            "edit",
+            "dataScope",
+            "changeStatus",
+            "remove",
+            "optionselect",
+            "allocatedList",
+            "unallocatedList",
+            "cancelAuthUser",
+            "cancelAuthUserAll",
+            "selectAuthUserAll",
+            "deptTree"
+          ],
+          "properties": [
+            "roleService",
+            "userService",
+            "deptService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "export",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "getInfo",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "add",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "edit",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "dataScope",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "changeStatus",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "remove",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "optionselect",
+          "line": 149,
+          "isDefault": false
+        },
+        {
+          "name": "allocatedList",
+          "line": 158,
+          "isDefault": false
+        },
+        {
+          "name": "unallocatedList",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "cancelAuthUser",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "cancelAuthUserAll",
+          "line": 190,
+          "isDefault": false
+        },
+        {
+          "name": "selectAuthUserAll",
+          "line": 200,
+          "isDefault": false
+        },
+        {
+          "name": "deptTree",
+          "line": 211,
+          "isDefault": false
+        },
+        {
+          "name": "SysRoleController",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "startPage",
+          "lineNumber": 52
+        },
+        {
+          "caller": "list",
+          "callee": "roleService.selectRoleList",
+          "lineNumber": 53
+        },
+        {
+          "caller": "list",
+          "callee": "getDataTable",
+          "lineNumber": 54
+        },
+        {
+          "caller": "export",
+          "callee": "roleService.selectRoleList",
+          "lineNumber": 61
+        },
+        {
+          "caller": "export",
+          "callee": "new ExcelUtil<SysRole>",
+          "lineNumber": 62
+        },
+        {
+          "caller": "export",
+          "callee": "util.exportExcel",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getInfo",
+          "callee": "roleService.checkRoleDataScope",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getInfo",
+          "callee": "success",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getInfo",
+          "callee": "roleService.selectRoleById",
+          "lineNumber": 73
+        },
+        {
+          "caller": "add",
+          "callee": "roleService.checkRoleNameUnique",
+          "lineNumber": 83
+        },
+        {
+          "caller": "add",
+          "callee": "error",
+          "lineNumber": 84
+        },
+        {
+          "caller": "add",
+          "callee": "role.getRoleName",
+          "lineNumber": 84
+        },
+        {
+          "caller": "add",
+          "callee": "roleService.checkRoleKeyUnique",
+          "lineNumber": 85
+        },
+        {
+          "caller": "add",
+          "callee": "error",
+          "lineNumber": 86
+        },
+        {
+          "caller": "add",
+          "callee": "role.getRoleName",
+          "lineNumber": 86
+        },
+        {
+          "caller": "add",
+          "callee": "role.setCreateBy",
+          "lineNumber": 88
+        },
+        {
+          "caller": "add",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 88
+        },
+        {
+          "caller": "add",
+          "callee": "toAjax",
+          "lineNumber": 89
+        },
+        {
+          "caller": "add",
+          "callee": "roleService.insertRole",
+          "lineNumber": 89
+        },
+        {
+          "caller": "edit",
+          "callee": "roleService.checkRoleAllowed",
+          "lineNumber": 100
+        },
+        {
+          "caller": "edit",
+          "callee": "roleService.checkRoleDataScope",
+          "lineNumber": 101
+        },
+        {
+          "caller": "edit",
+          "callee": "role.getRoleId",
+          "lineNumber": 101
+        },
+        {
+          "caller": "edit",
+          "callee": "roleService.checkRoleNameUnique",
+          "lineNumber": 102
+        },
+        {
+          "caller": "edit",
+          "callee": "error",
+          "lineNumber": 103
+        },
+        {
+          "caller": "edit",
+          "callee": "role.getRoleName",
+          "lineNumber": 103
+        },
+        {
+          "caller": "edit",
+          "callee": "roleService.checkRoleKeyUnique",
+          "lineNumber": 104
+        },
+        {
+          "caller": "edit",
+          "callee": "error",
+          "lineNumber": 105
+        },
+        {
+          "caller": "edit",
+          "callee": "role.getRoleName",
+          "lineNumber": 105
+        },
+        {
+          "caller": "edit",
+          "callee": "role.setUpdateBy",
+          "lineNumber": 107
+        },
+        {
+          "caller": "edit",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 107
+        },
+        {
+          "caller": "edit",
+          "callee": "toAjax",
+          "lineNumber": 108
+        },
+        {
+          "caller": "edit",
+          "callee": "roleService.updateRole",
+          "lineNumber": 108
+        },
+        {
+          "caller": "dataScope",
+          "callee": "roleService.checkRoleAllowed",
+          "lineNumber": 118
+        },
+        {
+          "caller": "dataScope",
+          "callee": "roleService.checkRoleDataScope",
+          "lineNumber": 119
+        },
+        {
+          "caller": "dataScope",
+          "callee": "role.getRoleId",
+          "lineNumber": 119
+        },
+        {
+          "caller": "dataScope",
+          "callee": "toAjax",
+          "lineNumber": 120
+        },
+        {
+          "caller": "dataScope",
+          "callee": "roleService.authDataScope",
+          "lineNumber": 120
+        },
+        {
+          "caller": "changeStatus",
+          "callee": "roleService.checkRoleAllowed",
+          "lineNumber": 130
+        },
+        {
+          "caller": "changeStatus",
+          "callee": "roleService.checkRoleDataScope",
+          "lineNumber": 131
+        },
+        {
+          "caller": "changeStatus",
+          "callee": "role.getRoleId",
+          "lineNumber": 131
+        },
+        {
+          "caller": "changeStatus",
+          "callee": "role.setUpdateBy",
+          "lineNumber": 132
+        },
+        {
+          "caller": "changeStatus",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 132
+        },
+        {
+          "caller": "changeStatus",
+          "callee": "toAjax",
+          "lineNumber": 133
+        },
+        {
+          "caller": "changeStatus",
+          "callee": "roleService.updateRoleStatus",
+          "lineNumber": 133
+        },
+        {
+          "caller": "remove",
+          "callee": "toAjax",
+          "lineNumber": 143
+        },
+        {
+          "caller": "remove",
+          "callee": "roleService.deleteRoleByIds",
+          "lineNumber": 143
+        },
+        {
+          "caller": "optionselect",
+          "callee": "success",
+          "lineNumber": 152
+        },
+        {
+          "caller": "optionselect",
+          "callee": "roleService.selectRoleAll",
+          "lineNumber": 152
+        },
+        {
+          "caller": "allocatedList",
+          "callee": "startPage",
+          "lineNumber": 161
+        },
+        {
+          "caller": "allocatedList",
+          "callee": "userService.selectAllocatedList",
+          "lineNumber": 162
+        },
+        {
+          "caller": "allocatedList",
+          "callee": "getDataTable",
+          "lineNumber": 163
+        },
+        {
+          "caller": "unallocatedList",
+          "callee": "startPage",
+          "lineNumber": 172
+        },
+        {
+          "caller": "unallocatedList",
+          "callee": "userService.selectUnallocatedList",
+          "lineNumber": 173
+        },
+        {
+          "caller": "unallocatedList",
+          "callee": "getDataTable",
+          "lineNumber": 174
+        },
+        {
+          "caller": "cancelAuthUser",
+          "callee": "toAjax",
+          "lineNumber": 184
+        },
+        {
+          "caller": "cancelAuthUser",
+          "callee": "roleService.deleteAuthUser",
+          "lineNumber": 184
+        },
+        {
+          "caller": "cancelAuthUserAll",
+          "callee": "toAjax",
+          "lineNumber": 194
+        },
+        {
+          "caller": "cancelAuthUserAll",
+          "callee": "roleService.deleteAuthUsers",
+          "lineNumber": 194
+        },
+        {
+          "caller": "selectAuthUserAll",
+          "callee": "roleService.checkRoleDataScope",
+          "lineNumber": 204
+        },
+        {
+          "caller": "selectAuthUserAll",
+          "callee": "toAjax",
+          "lineNumber": 205
+        },
+        {
+          "caller": "selectAuthUserAll",
+          "callee": "roleService.insertAuthUsers",
+          "lineNumber": 205
+        },
+        {
+          "caller": "deptTree",
+          "callee": "AjaxResult.success",
+          "lineNumber": 214
+        },
+        {
+          "caller": "deptTree",
+          "callee": "ajax.put",
+          "lineNumber": 215
+        },
+        {
+          "caller": "deptTree",
+          "callee": "deptService.selectDeptListByRoleId",
+          "lineNumber": 215
+        },
+        {
+          "caller": "deptTree",
+          "callee": "ajax.put",
+          "lineNumber": 216
+        },
+        {
+          "caller": "deptTree",
+          "callee": "deptService.selectDeptTreeList",
+          "lineNumber": 216
+        },
+        {
+          "caller": "deptTree",
+          "callee": "new SysDept",
+          "lineNumber": 216
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 16,
+        "functionCount": 15,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 299,
+      "nonEmptyLines": 275,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 72,
+          "endLine": 78,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "export",
+          "startLine": 80,
+          "endLine": 87,
+          "params": [
+            "response",
+            "user"
+          ]
+        },
+        {
+          "name": "importData",
+          "startLine": 89,
+          "endLine": 98,
+          "params": [
+            "file",
+            "updateSupport"
+          ]
+        },
+        {
+          "name": "importTemplate",
+          "startLine": 100,
+          "endLine": 104,
+          "params": [
+            "response"
+          ]
+        },
+        {
+          "name": "info",
+          "startLine": 109,
+          "endLine": 128,
+          "params": [
+            "username"
+          ]
+        },
+        {
+          "name": "register",
+          "startLine": 133,
+          "endLine": 145,
+          "params": [
+            "sysUser"
+          ]
+        },
+        {
+          "name": "getInfo",
+          "startLine": 152,
+          "endLine": 164,
+          "params": []
+        },
+        {
+          "name": "getInfo",
+          "startLine": 169,
+          "endLine": 184,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "add",
+          "startLine": 189,
+          "endLine": 203,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "edit",
+          "startLine": 208,
+          "endLine": 223,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "remove",
+          "startLine": 228,
+          "endLine": 236,
+          "params": [
+            "userIds"
+          ]
+        },
+        {
+          "name": "resetPwd",
+          "startLine": 241,
+          "endLine": 250,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "changeStatus",
+          "startLine": 255,
+          "endLine": 263,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "authRole",
+          "startLine": 268,
+          "endLine": 277,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "insertAuthRole",
+          "startLine": 282,
+          "endLine": 289,
+          "params": [
+            "userId",
+            "roleIds"
+          ]
+        },
+        {
+          "name": "deptTree",
+          "startLine": 294,
+          "endLine": 298,
+          "params": [
+            "dept"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysUserController",
+          "startLine": 48,
+          "endLine": 299,
+          "methods": [
+            "list",
+            "export",
+            "importData",
+            "importTemplate",
+            "info",
+            "register",
+            "getInfo",
+            "getInfo",
+            "add",
+            "edit",
+            "remove",
+            "resetPwd",
+            "changeStatus",
+            "authRole",
+            "insertAuthRole",
+            "deptTree"
+          ],
+          "properties": [
+            "userService",
+            "roleService",
+            "deptService",
+            "postService",
+            "permissionService",
+            "configService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "export",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "importData",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "importTemplate",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "info",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "register",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "getInfo",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "getInfo",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "add",
+          "line": 189,
+          "isDefault": false
+        },
+        {
+          "name": "edit",
+          "line": 208,
+          "isDefault": false
+        },
+        {
+          "name": "remove",
+          "line": 228,
+          "isDefault": false
+        },
+        {
+          "name": "resetPwd",
+          "line": 241,
+          "isDefault": false
+        },
+        {
+          "name": "changeStatus",
+          "line": 255,
+          "isDefault": false
+        },
+        {
+          "name": "authRole",
+          "line": 268,
+          "isDefault": false
+        },
+        {
+          "name": "insertAuthRole",
+          "line": 282,
+          "isDefault": false
+        },
+        {
+          "name": "deptTree",
+          "line": 294,
+          "isDefault": false
+        },
+        {
+          "name": "SysUserController",
+          "line": 48,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "startPage",
+          "lineNumber": 75
+        },
+        {
+          "caller": "list",
+          "callee": "userService.selectUserList",
+          "lineNumber": 76
+        },
+        {
+          "caller": "list",
+          "callee": "getDataTable",
+          "lineNumber": 77
+        },
+        {
+          "caller": "export",
+          "callee": "userService.selectUserList",
+          "lineNumber": 84
+        },
+        {
+          "caller": "export",
+          "callee": "new ExcelUtil<>",
+          "lineNumber": 85
+        },
+        {
+          "caller": "export",
+          "callee": "util.exportExcel",
+          "lineNumber": 86
+        },
+        {
+          "caller": "importData",
+          "callee": "new ExcelUtil<>",
+          "lineNumber": 93
+        },
+        {
+          "caller": "importData",
+          "callee": "util.importExcel",
+          "lineNumber": 94
+        },
+        {
+          "caller": "importData",
+          "callee": "file.getInputStream",
+          "lineNumber": 94
+        },
+        {
+          "caller": "importData",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 95
+        },
+        {
+          "caller": "importData",
+          "callee": "userService.importUser",
+          "lineNumber": 96
+        },
+        {
+          "caller": "importData",
+          "callee": "success",
+          "lineNumber": 97
+        },
+        {
+          "caller": "importTemplate",
+          "callee": "new ExcelUtil<SysUser>",
+          "lineNumber": 102
+        },
+        {
+          "caller": "importTemplate",
+          "callee": "util.importTemplateExcel",
+          "lineNumber": 103
+        },
+        {
+          "caller": "info",
+          "callee": "userService.selectUserByUserName",
+          "lineNumber": 112
+        },
+        {
+          "caller": "info",
+          "callee": "StringUtils.isNull",
+          "lineNumber": 113
+        },
+        {
+          "caller": "info",
+          "callee": "R.fail",
+          "lineNumber": 114
+        },
+        {
+          "caller": "info",
+          "callee": "permissionService.getRolePermission",
+          "lineNumber": 117
+        },
+        {
+          "caller": "info",
+          "callee": "permissionService.getMenuPermission",
+          "lineNumber": 119
+        },
+        {
+          "caller": "info",
+          "callee": "new LoginUser",
+          "lineNumber": 120
+        },
+        {
+          "caller": "info",
+          "callee": "sysUserVo.setUserid",
+          "lineNumber": 121
+        },
+        {
+          "caller": "info",
+          "callee": "sysUser.getUserId",
+          "lineNumber": 121
+        },
+        {
+          "caller": "info",
+          "callee": "sysUserVo.setUsername",
+          "lineNumber": 122
+        },
+        {
+          "caller": "info",
+          "callee": "sysUser.getUserName",
+          "lineNumber": 122
+        },
+        {
+          "caller": "info",
+          "callee": "sysUserVo.setPassword",
+          "lineNumber": 123
+        },
+        {
+          "caller": "info",
+          "callee": "sysUser.getPassword",
+          "lineNumber": 123
+        },
+        {
+          "caller": "info",
+          "callee": "sysUserVo.setSysUser",
+          "lineNumber": 124
+        },
+        {
+          "caller": "info",
+          "callee": "sysUserVo.setRoles",
+          "lineNumber": 125
+        },
+        {
+          "caller": "info",
+          "callee": "sysUserVo.setPermissions",
+          "lineNumber": 126
+        },
+        {
+          "caller": "info",
+          "callee": "R.ok",
+          "lineNumber": 127
+        },
+        {
+          "caller": "register",
+          "callee": "sysUser.getUserName",
+          "lineNumber": 137
+        },
+        {
+          "caller": "register",
+          "callee": "\"true\".equals",
+          "lineNumber": 138
+        },
+        {
+          "caller": "register",
+          "callee": "configService.selectConfigByKey",
+          "lineNumber": 138
+        },
+        {
+          "caller": "register",
+          "callee": "R.fail",
+          "lineNumber": 139
+        },
+        {
+          "caller": "register",
+          "callee": "userService.checkUserNameUnique",
+          "lineNumber": 141
+        },
+        {
+          "caller": "register",
+          "callee": "R.fail",
+          "lineNumber": 142
+        },
+        {
+          "caller": "register",
+          "callee": "R.ok",
+          "lineNumber": 144
+        },
+        {
+          "caller": "register",
+          "callee": "userService.registerUser",
+          "lineNumber": 144
+        },
+        {
+          "caller": "getInfo",
+          "callee": "userService.selectUserById",
+          "lineNumber": 154
+        },
+        {
+          "caller": "getInfo",
+          "callee": "SecurityUtils.getUserId",
+          "lineNumber": 154
+        },
+        {
+          "caller": "getInfo",
+          "callee": "permissionService.getRolePermission",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getInfo",
+          "callee": "permissionService.getMenuPermission",
+          "lineNumber": 158
+        },
+        {
+          "caller": "getInfo",
+          "callee": "AjaxResult.success",
+          "lineNumber": 159
+        },
+        {
+          "caller": "getInfo",
+          "callee": "ajax.put",
+          "lineNumber": 160
+        },
+        {
+          "caller": "getInfo",
+          "callee": "ajax.put",
+          "lineNumber": 161
+        },
+        {
+          "caller": "getInfo",
+          "callee": "ajax.put",
+          "lineNumber": 162
+        },
+        {
+          "caller": "getInfo",
+          "callee": "userService.checkUserDataScope",
+          "lineNumber": 172
+        },
+        {
+          "caller": "getInfo",
+          "callee": "AjaxResult.success",
+          "lineNumber": 173
+        },
+        {
+          "caller": "getInfo",
+          "callee": "roleService.selectRoleAll",
+          "lineNumber": 174
+        },
+        {
+          "caller": "getInfo",
+          "callee": "ajax.put",
+          "lineNumber": 175
+        },
+        {
+          "caller": "getInfo",
+          "callee": "SysUser.isAdmin",
+          "lineNumber": 175
+        },
+        {
+          "caller": "getInfo",
+          "callee": "roles.stream().filter(r -> !r.isAdmin()).collect",
+          "lineNumber": 175
+        },
+        {
+          "caller": "getInfo",
+          "callee": "roles.stream().filter",
+          "lineNumber": 175
+        },
+        {
+          "caller": "getInfo",
+          "callee": "roles.stream",
+          "lineNumber": 175
+        },
+        {
+          "caller": "getInfo",
+          "callee": "r.isAdmin",
+          "lineNumber": 175
+        },
+        {
+          "caller": "getInfo",
+          "callee": "Collectors.toList",
+          "lineNumber": 175
+        },
+        {
+          "caller": "getInfo",
+          "callee": "ajax.put",
+          "lineNumber": 176
+        },
+        {
+          "caller": "getInfo",
+          "callee": "postService.selectPostAll",
+          "lineNumber": 176
+        },
+        {
+          "caller": "getInfo",
+          "callee": "StringUtils.isNotNull",
+          "lineNumber": 177
+        },
+        {
+          "caller": "getInfo",
+          "callee": "userService.selectUserById",
+          "lineNumber": 178
+        },
+        {
+          "caller": "getInfo",
+          "callee": "ajax.put",
+          "lineNumber": 179
+        },
+        {
+          "caller": "getInfo",
+          "callee": "ajax.put",
+          "lineNumber": 180
+        },
+        {
+          "caller": "getInfo",
+          "callee": "postService.selectPostListByUserId",
+          "lineNumber": 180
+        },
+        {
+          "caller": "getInfo",
+          "callee": "ajax.put",
+          "lineNumber": 181
+        },
+        {
+          "caller": "getInfo",
+          "callee": "sysUser.getRoles().stream().map(SysRole::getRoleId).collect",
+          "lineNumber": 181
+        },
+        {
+          "caller": "getInfo",
+          "callee": "sysUser.getRoles().stream().map",
+          "lineNumber": 181
+        },
+        {
+          "caller": "getInfo",
+          "callee": "sysUser.getRoles().stream",
+          "lineNumber": 181
+        },
+        {
+          "caller": "getInfo",
+          "callee": "sysUser.getRoles",
+          "lineNumber": 181
+        },
+        {
+          "caller": "getInfo",
+          "callee": "Collectors.toList",
+          "lineNumber": 181
+        },
+        {
+          "caller": "add",
+          "callee": "userService.checkUserNameUnique",
+          "lineNumber": 193
+        },
+        {
+          "caller": "add",
+          "callee": "error",
+          "lineNumber": 194
+        },
+        {
+          "caller": "add",
+          "callee": "user.getUserName",
+          "lineNumber": 194
+        },
+        {
+          "caller": "add",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 195
+        },
+        {
+          "caller": "add",
+          "callee": "user.getPhonenumber",
+          "lineNumber": 195
+        },
+        {
+          "caller": "add",
+          "callee": "userService.checkPhoneUnique",
+          "lineNumber": 195
+        },
+        {
+          "caller": "add",
+          "callee": "error",
+          "lineNumber": 196
+        },
+        {
+          "caller": "add",
+          "callee": "user.getUserName",
+          "lineNumber": 196
+        },
+        {
+          "caller": "add",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 197
+        },
+        {
+          "caller": "add",
+          "callee": "user.getEmail",
+          "lineNumber": 197
+        },
+        {
+          "caller": "add",
+          "callee": "userService.checkEmailUnique",
+          "lineNumber": 197
+        },
+        {
+          "caller": "add",
+          "callee": "error",
+          "lineNumber": 198
+        },
+        {
+          "caller": "add",
+          "callee": "user.getUserName",
+          "lineNumber": 198
+        },
+        {
+          "caller": "add",
+          "callee": "user.setCreateBy",
+          "lineNumber": 200
+        },
+        {
+          "caller": "add",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 200
+        },
+        {
+          "caller": "add",
+          "callee": "user.setPassword",
+          "lineNumber": 201
+        },
+        {
+          "caller": "add",
+          "callee": "SecurityUtils.encryptPassword",
+          "lineNumber": 201
+        },
+        {
+          "caller": "add",
+          "callee": "user.getPassword",
+          "lineNumber": 201
+        },
+        {
+          "caller": "add",
+          "callee": "toAjax",
+          "lineNumber": 202
+        },
+        {
+          "caller": "add",
+          "callee": "userService.insertUser",
+          "lineNumber": 202
+        },
+        {
+          "caller": "edit",
+          "callee": "userService.checkUserAllowed",
+          "lineNumber": 212
+        },
+        {
+          "caller": "edit",
+          "callee": "userService.checkUserDataScope",
+          "lineNumber": 213
+        },
+        {
+          "caller": "edit",
+          "callee": "user.getUserId",
+          "lineNumber": 213
+        },
+        {
+          "caller": "edit",
+          "callee": "userService.checkUserNameUnique",
+          "lineNumber": 214
+        },
+        {
+          "caller": "edit",
+          "callee": "error",
+          "lineNumber": 215
+        },
+        {
+          "caller": "edit",
+          "callee": "user.getUserName",
+          "lineNumber": 215
+        },
+        {
+          "caller": "edit",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 216
+        },
+        {
+          "caller": "edit",
+          "callee": "user.getPhonenumber",
+          "lineNumber": 216
+        },
+        {
+          "caller": "edit",
+          "callee": "userService.checkPhoneUnique",
+          "lineNumber": 216
+        },
+        {
+          "caller": "edit",
+          "callee": "error",
+          "lineNumber": 217
+        },
+        {
+          "caller": "edit",
+          "callee": "user.getUserName",
+          "lineNumber": 217
+        },
+        {
+          "caller": "edit",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 218
+        },
+        {
+          "caller": "edit",
+          "callee": "user.getEmail",
+          "lineNumber": 218
+        },
+        {
+          "caller": "edit",
+          "callee": "userService.checkEmailUnique",
+          "lineNumber": 218
+        },
+        {
+          "caller": "edit",
+          "callee": "error",
+          "lineNumber": 219
+        },
+        {
+          "caller": "edit",
+          "callee": "user.getUserName",
+          "lineNumber": 219
+        },
+        {
+          "caller": "edit",
+          "callee": "user.setUpdateBy",
+          "lineNumber": 221
+        },
+        {
+          "caller": "edit",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 221
+        },
+        {
+          "caller": "edit",
+          "callee": "toAjax",
+          "lineNumber": 222
+        },
+        {
+          "caller": "edit",
+          "callee": "userService.updateUser",
+          "lineNumber": 222
+        },
+        {
+          "caller": "remove",
+          "callee": "ArrayUtils.contains",
+          "lineNumber": 232
+        },
+        {
+          "caller": "remove",
+          "callee": "SecurityUtils.getUserId",
+          "lineNumber": 232
+        },
+        {
+          "caller": "remove",
+          "callee": "error",
+          "lineNumber": 233
+        },
+        {
+          "caller": "remove",
+          "callee": "toAjax",
+          "lineNumber": 235
+        },
+        {
+          "caller": "remove",
+          "callee": "userService.deleteUserByIds",
+          "lineNumber": 235
+        },
+        {
+          "caller": "resetPwd",
+          "callee": "userService.checkUserAllowed",
+          "lineNumber": 245
+        },
+        {
+          "caller": "resetPwd",
+          "callee": "userService.checkUserDataScope",
+          "lineNumber": 246
+        },
+        {
+          "caller": "resetPwd",
+          "callee": "user.getUserId",
+          "lineNumber": 246
+        },
+        {
+          "caller": "resetPwd",
+          "callee": "user.setPassword",
+          "lineNumber": 247
+        },
+        {
+          "caller": "resetPwd",
+          "callee": "SecurityUtils.encryptPassword",
+          "lineNumber": 247
+        },
+        {
+          "caller": "resetPwd",
+          "callee": "user.getPassword",
+          "lineNumber": 247
+        },
+        {
+          "caller": "resetPwd",
+          "callee": "user.setUpdateBy",
+          "lineNumber": 248
+        },
+        {
+          "caller": "resetPwd",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 248
+        },
+        {
+          "caller": "resetPwd",
+          "callee": "toAjax",
+          "lineNumber": 249
+        },
+        {
+          "caller": "resetPwd",
+          "callee": "userService.resetPwd",
+          "lineNumber": 249
+        },
+        {
+          "caller": "changeStatus",
+          "callee": "userService.checkUserAllowed",
+          "lineNumber": 259
+        },
+        {
+          "caller": "changeStatus",
+          "callee": "userService.checkUserDataScope",
+          "lineNumber": 260
+        },
+        {
+          "caller": "changeStatus",
+          "callee": "user.getUserId",
+          "lineNumber": 260
+        },
+        {
+          "caller": "changeStatus",
+          "callee": "user.setUpdateBy",
+          "lineNumber": 261
+        },
+        {
+          "caller": "changeStatus",
+          "callee": "SecurityUtils.getUsername",
+          "lineNumber": 261
+        },
+        {
+          "caller": "changeStatus",
+          "callee": "toAjax",
+          "lineNumber": 262
+        },
+        {
+          "caller": "changeStatus",
+          "callee": "userService.updateUserStatus",
+          "lineNumber": 262
+        },
+        {
+          "caller": "authRole",
+          "callee": "AjaxResult.success",
+          "lineNumber": 271
+        },
+        {
+          "caller": "authRole",
+          "callee": "userService.selectUserById",
+          "lineNumber": 272
+        },
+        {
+          "caller": "authRole",
+          "callee": "roleService.selectRolesByUserId",
+          "lineNumber": 273
+        },
+        {
+          "caller": "authRole",
+          "callee": "ajax.put",
+          "lineNumber": 274
+        },
+        {
+          "caller": "authRole",
+          "callee": "ajax.put",
+          "lineNumber": 275
+        },
+        {
+          "caller": "authRole",
+          "callee": "SysUser.isAdmin",
+          "lineNumber": 275
+        },
+        {
+          "caller": "authRole",
+          "callee": "roles.stream().filter(r -> !r.isAdmin()).collect",
+          "lineNumber": 275
+        },
+        {
+          "caller": "authRole",
+          "callee": "roles.stream().filter",
+          "lineNumber": 275
+        },
+        {
+          "caller": "authRole",
+          "callee": "roles.stream",
+          "lineNumber": 275
+        },
+        {
+          "caller": "authRole",
+          "callee": "r.isAdmin",
+          "lineNumber": 275
+        },
+        {
+          "caller": "authRole",
+          "callee": "Collectors.toList",
+          "lineNumber": 275
+        },
+        {
+          "caller": "insertAuthRole",
+          "callee": "userService.checkUserDataScope",
+          "lineNumber": 286
+        },
+        {
+          "caller": "insertAuthRole",
+          "callee": "userService.insertUserAuth",
+          "lineNumber": 287
+        },
+        {
+          "caller": "insertAuthRole",
+          "callee": "success",
+          "lineNumber": 288
+        },
+        {
+          "caller": "deptTree",
+          "callee": "success",
+          "lineNumber": 297
+        },
+        {
+          "caller": "deptTree",
+          "callee": "deptService.selectDeptTreeList",
+          "lineNumber": 297
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 17,
+        "functionCount": 16,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/controller/SysUserOnlineController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "list",
+          "startLine": 41,
+          "endLine": 61,
+          "params": [
+            "ipaddr",
+            "userName"
+          ]
+        },
+        {
+          "name": "forceLogout",
+          "startLine": 66,
+          "endLine": 72,
+          "params": [
+            "tokenId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysUserOnlineController",
+          "startLine": 32,
+          "endLine": 73,
+          "methods": [
+            "list",
+            "forceLogout"
+          ],
+          "properties": [
+            "userOnlineService",
+            "redisService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "forceLogout",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "SysUserOnlineController",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list",
+          "callee": "redisService.keys",
+          "lineNumber": 44
+        },
+        {
+          "caller": "list",
+          "callee": "new ArrayList<SysUserOnline>",
+          "lineNumber": 45
+        },
+        {
+          "caller": "list",
+          "callee": "redisService.getCacheObject",
+          "lineNumber": 47
+        },
+        {
+          "caller": "list",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 48
+        },
+        {
+          "caller": "list",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 48
+        },
+        {
+          "caller": "list",
+          "callee": "userOnlineList.add",
+          "lineNumber": 49
+        },
+        {
+          "caller": "list",
+          "callee": "userOnlineService.selectOnlineByInfo",
+          "lineNumber": 49
+        },
+        {
+          "caller": "list",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 50
+        },
+        {
+          "caller": "list",
+          "callee": "userOnlineList.add",
+          "lineNumber": 51
+        },
+        {
+          "caller": "list",
+          "callee": "userOnlineService.selectOnlineByIpaddr",
+          "lineNumber": 51
+        },
+        {
+          "caller": "list",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 52
+        },
+        {
+          "caller": "list",
+          "callee": "userOnlineList.add",
+          "lineNumber": 53
+        },
+        {
+          "caller": "list",
+          "callee": "userOnlineService.selectOnlineByUserName",
+          "lineNumber": 53
+        },
+        {
+          "caller": "list",
+          "callee": "userOnlineList.add",
+          "lineNumber": 55
+        },
+        {
+          "caller": "list",
+          "callee": "userOnlineService.loginUserToUserOnline",
+          "lineNumber": 55
+        },
+        {
+          "caller": "list",
+          "callee": "Collections.reverse",
+          "lineNumber": 58
+        },
+        {
+          "caller": "list",
+          "callee": "userOnlineList.removeAll",
+          "lineNumber": 59
+        },
+        {
+          "caller": "list",
+          "callee": "Collections.singleton",
+          "lineNumber": 59
+        },
+        {
+          "caller": "list",
+          "callee": "getDataTable",
+          "lineNumber": 60
+        },
+        {
+          "caller": "forceLogout",
+          "callee": "redisService.deleteObject",
+          "lineNumber": 70
+        },
+        {
+          "caller": "forceLogout",
+          "callee": "success",
+          "lineNumber": 71
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 93,
+      "functions": [
+        {
+          "name": "getConfigId",
+          "startLine": 40,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "setConfigId",
+          "startLine": 45,
+          "endLine": 48,
+          "params": [
+            "configId"
+          ]
+        },
+        {
+          "name": "getConfigName",
+          "startLine": 50,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "setConfigName",
+          "startLine": 57,
+          "endLine": 60,
+          "params": [
+            "configName"
+          ]
+        },
+        {
+          "name": "getConfigKey",
+          "startLine": 62,
+          "endLine": 67,
+          "params": []
+        },
+        {
+          "name": "setConfigKey",
+          "startLine": 69,
+          "endLine": 72,
+          "params": [
+            "configKey"
+          ]
+        },
+        {
+          "name": "getConfigValue",
+          "startLine": 74,
+          "endLine": 79,
+          "params": []
+        },
+        {
+          "name": "setConfigValue",
+          "startLine": 81,
+          "endLine": 84,
+          "params": [
+            "configValue"
+          ]
+        },
+        {
+          "name": "getConfigType",
+          "startLine": 86,
+          "endLine": 89,
+          "params": []
+        },
+        {
+          "name": "setConfigType",
+          "startLine": 91,
+          "endLine": 94,
+          "params": [
+            "configType"
+          ]
+        },
+        {
+          "name": "toString",
+          "startLine": 96,
+          "endLine": 110,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysConfig",
+          "startLine": 16,
+          "endLine": 111,
+          "methods": [
+            "getConfigId",
+            "setConfigId",
+            "getConfigName",
+            "setConfigName",
+            "getConfigKey",
+            "setConfigKey",
+            "getConfigValue",
+            "setConfigValue",
+            "getConfigType",
+            "setConfigType",
+            "toString"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "configId",
+            "configName",
+            "configKey",
+            "configValue",
+            "configType"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getConfigId",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "setConfigId",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "getConfigName",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "setConfigName",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "getConfigKey",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "setConfigKey",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "getConfigValue",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "setConfigValue",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "getConfigType",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "setConfigType",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "toString",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "SysConfig",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"configId\", getConfigId())\n            .append(\"configName\", getConfigName())\n            .append(\"configKey\", getConfigKey())\n            .append(\"configValue\", getConfigValue())\n            .append(\"configType\", getConfigType())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy())\n            .append(\"updateTime\", getUpdateTime())\n            .append(\"remark\", getRemark()).toString",
+          "lineNumber": 98
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"configId\", getConfigId())\n            .append(\"configName\", getConfigName())\n            .append(\"configKey\", getConfigKey())\n            .append(\"configValue\", getConfigValue())\n            .append(\"configType\", getConfigType())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy())\n            .append(\"updateTime\", getUpdateTime()).append",
+          "lineNumber": 98
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"configId\", getConfigId())\n            .append(\"configName\", getConfigName())\n            .append(\"configKey\", getConfigKey())\n            .append(\"configValue\", getConfigValue())\n            .append(\"configType\", getConfigType())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy()).append",
+          "lineNumber": 98
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"configId\", getConfigId())\n            .append(\"configName\", getConfigName())\n            .append(\"configKey\", getConfigKey())\n            .append(\"configValue\", getConfigValue())\n            .append(\"configType\", getConfigType())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime()).append",
+          "lineNumber": 98
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"configId\", getConfigId())\n            .append(\"configName\", getConfigName())\n            .append(\"configKey\", getConfigKey())\n            .append(\"configValue\", getConfigValue())\n            .append(\"configType\", getConfigType())\n            .append(\"createBy\", getCreateBy()).append",
+          "lineNumber": 98
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"configId\", getConfigId())\n            .append(\"configName\", getConfigName())\n            .append(\"configKey\", getConfigKey())\n            .append(\"configValue\", getConfigValue())\n            .append(\"configType\", getConfigType()).append",
+          "lineNumber": 98
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"configId\", getConfigId())\n            .append(\"configName\", getConfigName())\n            .append(\"configKey\", getConfigKey())\n            .append(\"configValue\", getConfigValue()).append",
+          "lineNumber": 98
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"configId\", getConfigId())\n            .append(\"configName\", getConfigName())\n            .append(\"configKey\", getConfigKey()).append",
+          "lineNumber": 98
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"configId\", getConfigId())\n            .append(\"configName\", getConfigName()).append",
+          "lineNumber": 98
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"configId\", getConfigId()).append",
+          "lineNumber": 98
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE).append",
+          "lineNumber": 98
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder",
+          "lineNumber": 98
+        },
+        {
+          "caller": "toString",
+          "callee": "getConfigId",
+          "lineNumber": 99
+        },
+        {
+          "caller": "toString",
+          "callee": "getConfigName",
+          "lineNumber": 100
+        },
+        {
+          "caller": "toString",
+          "callee": "getConfigKey",
+          "lineNumber": 101
+        },
+        {
+          "caller": "toString",
+          "callee": "getConfigValue",
+          "lineNumber": 102
+        },
+        {
+          "caller": "toString",
+          "callee": "getConfigType",
+          "lineNumber": 103
+        },
+        {
+          "caller": "toString",
+          "callee": "getCreateBy",
+          "lineNumber": 104
+        },
+        {
+          "caller": "toString",
+          "callee": "getCreateTime",
+          "lineNumber": 105
+        },
+        {
+          "caller": "toString",
+          "callee": "getUpdateBy",
+          "lineNumber": 106
+        },
+        {
+          "caller": "toString",
+          "callee": "getUpdateTime",
+          "lineNumber": 107
+        },
+        {
+          "caller": "toString",
+          "callee": "getRemark",
+          "lineNumber": 108
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 12,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysMenu.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 259,
+      "nonEmptyLines": 208,
+      "functions": [
+        {
+          "name": "getMenuId",
+          "startLine": 69,
+          "endLine": 72,
+          "params": []
+        },
+        {
+          "name": "setMenuId",
+          "startLine": 74,
+          "endLine": 77,
+          "params": [
+            "menuId"
+          ]
+        },
+        {
+          "name": "getMenuName",
+          "startLine": 79,
+          "endLine": 84,
+          "params": []
+        },
+        {
+          "name": "setMenuName",
+          "startLine": 86,
+          "endLine": 89,
+          "params": [
+            "menuName"
+          ]
+        },
+        {
+          "name": "getParentName",
+          "startLine": 91,
+          "endLine": 94,
+          "params": []
+        },
+        {
+          "name": "setParentName",
+          "startLine": 96,
+          "endLine": 99,
+          "params": [
+            "parentName"
+          ]
+        },
+        {
+          "name": "getParentId",
+          "startLine": 101,
+          "endLine": 104,
+          "params": []
+        },
+        {
+          "name": "setParentId",
+          "startLine": 106,
+          "endLine": 109,
+          "params": [
+            "parentId"
+          ]
+        },
+        {
+          "name": "getOrderNum",
+          "startLine": 111,
+          "endLine": 115,
+          "params": []
+        },
+        {
+          "name": "setOrderNum",
+          "startLine": 117,
+          "endLine": 120,
+          "params": [
+            "orderNum"
+          ]
+        },
+        {
+          "name": "getPath",
+          "startLine": 122,
+          "endLine": 126,
+          "params": []
+        },
+        {
+          "name": "setPath",
+          "startLine": 128,
+          "endLine": 131,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "getComponent",
+          "startLine": 133,
+          "endLine": 137,
+          "params": []
+        },
+        {
+          "name": "setComponent",
+          "startLine": 139,
+          "endLine": 142,
+          "params": [
+            "component"
+          ]
+        },
+        {
+          "name": "getQuery",
+          "startLine": 144,
+          "endLine": 147,
+          "params": []
+        },
+        {
+          "name": "setQuery",
+          "startLine": 149,
+          "endLine": 152,
+          "params": [
+            "query"
+          ]
+        },
+        {
+          "name": "getIsFrame",
+          "startLine": 154,
+          "endLine": 157,
+          "params": []
+        },
+        {
+          "name": "setIsFrame",
+          "startLine": 159,
+          "endLine": 162,
+          "params": [
+            "isFrame"
+          ]
+        },
+        {
+          "name": "getIsCache",
+          "startLine": 164,
+          "endLine": 167,
+          "params": []
+        },
+        {
+          "name": "setIsCache",
+          "startLine": 169,
+          "endLine": 172,
+          "params": [
+            "isCache"
+          ]
+        },
+        {
+          "name": "getMenuType",
+          "startLine": 174,
+          "endLine": 178,
+          "params": []
+        },
+        {
+          "name": "setMenuType",
+          "startLine": 180,
+          "endLine": 183,
+          "params": [
+            "menuType"
+          ]
+        },
+        {
+          "name": "getVisible",
+          "startLine": 185,
+          "endLine": 188,
+          "params": []
+        },
+        {
+          "name": "setVisible",
+          "startLine": 190,
+          "endLine": 193,
+          "params": [
+            "visible"
+          ]
+        },
+        {
+          "name": "getStatus",
+          "startLine": 195,
+          "endLine": 198,
+          "params": []
+        },
+        {
+          "name": "setStatus",
+          "startLine": 200,
+          "endLine": 203,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "getPerms",
+          "startLine": 205,
+          "endLine": 209,
+          "params": []
+        },
+        {
+          "name": "setPerms",
+          "startLine": 211,
+          "endLine": 214,
+          "params": [
+            "perms"
+          ]
+        },
+        {
+          "name": "getIcon",
+          "startLine": 216,
+          "endLine": 219,
+          "params": []
+        },
+        {
+          "name": "setIcon",
+          "startLine": 221,
+          "endLine": 224,
+          "params": [
+            "icon"
+          ]
+        },
+        {
+          "name": "getChildren",
+          "startLine": 226,
+          "endLine": 229,
+          "params": []
+        },
+        {
+          "name": "setChildren",
+          "startLine": 231,
+          "endLine": 234,
+          "params": [
+            "children"
+          ]
+        },
+        {
+          "name": "toString",
+          "startLine": 236,
+          "endLine": 258,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysMenu",
+          "startLine": 17,
+          "endLine": 259,
+          "methods": [
+            "getMenuId",
+            "setMenuId",
+            "getMenuName",
+            "setMenuName",
+            "getParentName",
+            "setParentName",
+            "getParentId",
+            "setParentId",
+            "getOrderNum",
+            "setOrderNum",
+            "getPath",
+            "setPath",
+            "getComponent",
+            "setComponent",
+            "getQuery",
+            "setQuery",
+            "getIsFrame",
+            "setIsFrame",
+            "getIsCache",
+            "setIsCache",
+            "getMenuType",
+            "setMenuType",
+            "getVisible",
+            "setVisible",
+            "getStatus",
+            "setStatus",
+            "getPerms",
+            "setPerms",
+            "getIcon",
+            "setIcon",
+            "getChildren",
+            "setChildren",
+            "toString"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "menuId",
+            "menuName",
+            "parentName",
+            "parentId",
+            "orderNum",
+            "path",
+            "component",
+            "query",
+            "isFrame",
+            "isCache",
+            "menuType",
+            "visible",
+            "status",
+            "perms",
+            "icon",
+            "children"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getMenuId",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "setMenuId",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "getMenuName",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "setMenuName",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "getParentName",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "setParentName",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "getParentId",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "setParentId",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "getOrderNum",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "setOrderNum",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "getPath",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "setPath",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "getComponent",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "setComponent",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "getQuery",
+          "line": 144,
+          "isDefault": false
+        },
+        {
+          "name": "setQuery",
+          "line": 149,
+          "isDefault": false
+        },
+        {
+          "name": "getIsFrame",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "setIsFrame",
+          "line": 159,
+          "isDefault": false
+        },
+        {
+          "name": "getIsCache",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "setIsCache",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "getMenuType",
+          "line": 174,
+          "isDefault": false
+        },
+        {
+          "name": "setMenuType",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "getVisible",
+          "line": 185,
+          "isDefault": false
+        },
+        {
+          "name": "setVisible",
+          "line": 190,
+          "isDefault": false
+        },
+        {
+          "name": "getStatus",
+          "line": 195,
+          "isDefault": false
+        },
+        {
+          "name": "setStatus",
+          "line": 200,
+          "isDefault": false
+        },
+        {
+          "name": "getPerms",
+          "line": 205,
+          "isDefault": false
+        },
+        {
+          "name": "setPerms",
+          "line": 211,
+          "isDefault": false
+        },
+        {
+          "name": "getIcon",
+          "line": 216,
+          "isDefault": false
+        },
+        {
+          "name": "setIcon",
+          "line": 221,
+          "isDefault": false
+        },
+        {
+          "name": "getChildren",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "setChildren",
+          "line": 231,
+          "isDefault": false
+        },
+        {
+          "name": "toString",
+          "line": 236,
+          "isDefault": false
+        },
+        {
+          "name": "SysMenu",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"menuId\", getMenuId())\n            .append(\"menuName\", getMenuName())\n            .append(\"parentId\", getParentId())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"path\", getPath())\n            .append(\"component\", getComponent())\n            .append(\"isFrame\", getIsFrame())\n            .append(\"IsCache\", getIsCache())\n            .append(\"menuType\", getMenuType())\n            .append(\"visible\", getVisible())\n            .append(\"status \", getStatus())\n            .append(\"perms\", getPerms())\n            .append(\"icon\", getIcon())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy())\n            .append(\"updateTime\", getUpdateTime())\n            .append(\"remark\", getRemark()).toString",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"menuId\", getMenuId())\n            .append(\"menuName\", getMenuName())\n            .append(\"parentId\", getParentId())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"path\", getPath())\n            .append(\"component\", getComponent())\n            .append(\"isFrame\", getIsFrame())\n            .append(\"IsCache\", getIsCache())\n            .append(\"menuType\", getMenuType())\n            .append(\"visible\", getVisible())\n            .append(\"status \", getStatus())\n            .append(\"perms\", getPerms())\n            .append(\"icon\", getIcon())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy())\n            .append(\"updateTime\", getUpdateTime()).append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"menuId\", getMenuId())\n            .append(\"menuName\", getMenuName())\n            .append(\"parentId\", getParentId())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"path\", getPath())\n            .append(\"component\", getComponent())\n            .append(\"isFrame\", getIsFrame())\n            .append(\"IsCache\", getIsCache())\n            .append(\"menuType\", getMenuType())\n            .append(\"visible\", getVisible())\n            .append(\"status \", getStatus())\n            .append(\"perms\", getPerms())\n            .append(\"icon\", getIcon())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy()).append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"menuId\", getMenuId())\n            .append(\"menuName\", getMenuName())\n            .append(\"parentId\", getParentId())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"path\", getPath())\n            .append(\"component\", getComponent())\n            .append(\"isFrame\", getIsFrame())\n            .append(\"IsCache\", getIsCache())\n            .append(\"menuType\", getMenuType())\n            .append(\"visible\", getVisible())\n            .append(\"status \", getStatus())\n            .append(\"perms\", getPerms())\n            .append(\"icon\", getIcon())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime()).append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"menuId\", getMenuId())\n            .append(\"menuName\", getMenuName())\n            .append(\"parentId\", getParentId())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"path\", getPath())\n            .append(\"component\", getComponent())\n            .append(\"isFrame\", getIsFrame())\n            .append(\"IsCache\", getIsCache())\n            .append(\"menuType\", getMenuType())\n            .append(\"visible\", getVisible())\n            .append(\"status \", getStatus())\n            .append(\"perms\", getPerms())\n            .append(\"icon\", getIcon())\n            .append(\"createBy\", getCreateBy()).append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"menuId\", getMenuId())\n            .append(\"menuName\", getMenuName())\n            .append(\"parentId\", getParentId())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"path\", getPath())\n            .append(\"component\", getComponent())\n            .append(\"isFrame\", getIsFrame())\n            .append(\"IsCache\", getIsCache())\n            .append(\"menuType\", getMenuType())\n            .append(\"visible\", getVisible())\n            .append(\"status \", getStatus())\n            .append(\"perms\", getPerms())\n            .append(\"icon\", getIcon()).append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"menuId\", getMenuId())\n            .append(\"menuName\", getMenuName())\n            .append(\"parentId\", getParentId())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"path\", getPath())\n            .append(\"component\", getComponent())\n            .append(\"isFrame\", getIsFrame())\n            .append(\"IsCache\", getIsCache())\n            .append(\"menuType\", getMenuType())\n            .append(\"visible\", getVisible())\n            .append(\"status \", getStatus())\n            .append(\"perms\", getPerms()).append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"menuId\", getMenuId())\n            .append(\"menuName\", getMenuName())\n            .append(\"parentId\", getParentId())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"path\", getPath())\n            .append(\"component\", getComponent())\n            .append(\"isFrame\", getIsFrame())\n            .append(\"IsCache\", getIsCache())\n            .append(\"menuType\", getMenuType())\n            .append(\"visible\", getVisible())\n            .append(\"status \", getStatus()).append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"menuId\", getMenuId())\n            .append(\"menuName\", getMenuName())\n            .append(\"parentId\", getParentId())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"path\", getPath())\n            .append(\"component\", getComponent())\n            .append(\"isFrame\", getIsFrame())\n            .append(\"IsCache\", getIsCache())\n            .append(\"menuType\", getMenuType())\n            .append(\"visible\", getVisible()).append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"menuId\", getMenuId())\n            .append(\"menuName\", getMenuName())\n            .append(\"parentId\", getParentId())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"path\", getPath())\n            .append(\"component\", getComponent())\n            .append(\"isFrame\", getIsFrame())\n            .append(\"IsCache\", getIsCache())\n            .append(\"menuType\", getMenuType()).append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"menuId\", getMenuId())\n            .append(\"menuName\", getMenuName())\n            .append(\"parentId\", getParentId())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"path\", getPath())\n            .append(\"component\", getComponent())\n            .append(\"isFrame\", getIsFrame())\n            .append(\"IsCache\", getIsCache()).append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"menuId\", getMenuId())\n            .append(\"menuName\", getMenuName())\n            .append(\"parentId\", getParentId())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"path\", getPath())\n            .append(\"component\", getComponent())\n            .append(\"isFrame\", getIsFrame()).append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"menuId\", getMenuId())\n            .append(\"menuName\", getMenuName())\n            .append(\"parentId\", getParentId())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"path\", getPath())\n            .append(\"component\", getComponent()).append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"menuId\", getMenuId())\n            .append(\"menuName\", getMenuName())\n            .append(\"parentId\", getParentId())\n            .append(\"orderNum\", getOrderNum())\n            .append(\"path\", getPath()).append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"menuId\", getMenuId())\n            .append(\"menuName\", getMenuName())\n            .append(\"parentId\", getParentId())\n            .append(\"orderNum\", getOrderNum()).append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"menuId\", getMenuId())\n            .append(\"menuName\", getMenuName())\n            .append(\"parentId\", getParentId()).append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"menuId\", getMenuId())\n            .append(\"menuName\", getMenuName()).append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"menuId\", getMenuId()).append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE).append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder",
+          "lineNumber": 238
+        },
+        {
+          "caller": "toString",
+          "callee": "getMenuId",
+          "lineNumber": 239
+        },
+        {
+          "caller": "toString",
+          "callee": "getMenuName",
+          "lineNumber": 240
+        },
+        {
+          "caller": "toString",
+          "callee": "getParentId",
+          "lineNumber": 241
+        },
+        {
+          "caller": "toString",
+          "callee": "getOrderNum",
+          "lineNumber": 242
+        },
+        {
+          "caller": "toString",
+          "callee": "getPath",
+          "lineNumber": 243
+        },
+        {
+          "caller": "toString",
+          "callee": "getComponent",
+          "lineNumber": 244
+        },
+        {
+          "caller": "toString",
+          "callee": "getIsFrame",
+          "lineNumber": 245
+        },
+        {
+          "caller": "toString",
+          "callee": "getIsCache",
+          "lineNumber": 246
+        },
+        {
+          "caller": "toString",
+          "callee": "getMenuType",
+          "lineNumber": 247
+        },
+        {
+          "caller": "toString",
+          "callee": "getVisible",
+          "lineNumber": 248
+        },
+        {
+          "caller": "toString",
+          "callee": "getStatus",
+          "lineNumber": 249
+        },
+        {
+          "caller": "toString",
+          "callee": "getPerms",
+          "lineNumber": 250
+        },
+        {
+          "caller": "toString",
+          "callee": "getIcon",
+          "lineNumber": 251
+        },
+        {
+          "caller": "toString",
+          "callee": "getCreateBy",
+          "lineNumber": 252
+        },
+        {
+          "caller": "toString",
+          "callee": "getCreateTime",
+          "lineNumber": 253
+        },
+        {
+          "caller": "toString",
+          "callee": "getUpdateBy",
+          "lineNumber": 254
+        },
+        {
+          "caller": "toString",
+          "callee": "getUpdateTime",
+          "lineNumber": 255
+        },
+        {
+          "caller": "toString",
+          "callee": "getRemark",
+          "lineNumber": 256
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 34,
+        "functionCount": 33,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysNotice.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "getNoticeId",
+          "startLine": 34,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "setNoticeId",
+          "startLine": 39,
+          "endLine": 42,
+          "params": [
+            "noticeId"
+          ]
+        },
+        {
+          "name": "setNoticeTitle",
+          "startLine": 44,
+          "endLine": 47,
+          "params": [
+            "noticeTitle"
+          ]
+        },
+        {
+          "name": "getNoticeTitle",
+          "startLine": 49,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "setNoticeType",
+          "startLine": 57,
+          "endLine": 60,
+          "params": [
+            "noticeType"
+          ]
+        },
+        {
+          "name": "getNoticeType",
+          "startLine": 62,
+          "endLine": 65,
+          "params": []
+        },
+        {
+          "name": "setNoticeContent",
+          "startLine": 67,
+          "endLine": 70,
+          "params": [
+            "noticeContent"
+          ]
+        },
+        {
+          "name": "getNoticeContent",
+          "startLine": 72,
+          "endLine": 75,
+          "params": []
+        },
+        {
+          "name": "setStatus",
+          "startLine": 77,
+          "endLine": 80,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "getStatus",
+          "startLine": 82,
+          "endLine": 85,
+          "params": []
+        },
+        {
+          "name": "toString",
+          "startLine": 87,
+          "endLine": 101,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysNotice",
+          "startLine": 15,
+          "endLine": 102,
+          "methods": [
+            "getNoticeId",
+            "setNoticeId",
+            "setNoticeTitle",
+            "getNoticeTitle",
+            "setNoticeType",
+            "getNoticeType",
+            "setNoticeContent",
+            "getNoticeContent",
+            "setStatus",
+            "getStatus",
+            "toString"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "noticeId",
+            "noticeTitle",
+            "noticeType",
+            "noticeContent",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getNoticeId",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "setNoticeId",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "setNoticeTitle",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "getNoticeTitle",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "setNoticeType",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "getNoticeType",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "setNoticeContent",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "getNoticeContent",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "setStatus",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "getStatus",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "toString",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "SysNotice",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"noticeId\", getNoticeId())\n            .append(\"noticeTitle\", getNoticeTitle())\n            .append(\"noticeType\", getNoticeType())\n            .append(\"noticeContent\", getNoticeContent())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy())\n            .append(\"updateTime\", getUpdateTime())\n            .append(\"remark\", getRemark()).toString",
+          "lineNumber": 89
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"noticeId\", getNoticeId())\n            .append(\"noticeTitle\", getNoticeTitle())\n            .append(\"noticeType\", getNoticeType())\n            .append(\"noticeContent\", getNoticeContent())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy())\n            .append(\"updateTime\", getUpdateTime()).append",
+          "lineNumber": 89
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"noticeId\", getNoticeId())\n            .append(\"noticeTitle\", getNoticeTitle())\n            .append(\"noticeType\", getNoticeType())\n            .append(\"noticeContent\", getNoticeContent())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy()).append",
+          "lineNumber": 89
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"noticeId\", getNoticeId())\n            .append(\"noticeTitle\", getNoticeTitle())\n            .append(\"noticeType\", getNoticeType())\n            .append(\"noticeContent\", getNoticeContent())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime()).append",
+          "lineNumber": 89
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"noticeId\", getNoticeId())\n            .append(\"noticeTitle\", getNoticeTitle())\n            .append(\"noticeType\", getNoticeType())\n            .append(\"noticeContent\", getNoticeContent())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy()).append",
+          "lineNumber": 89
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"noticeId\", getNoticeId())\n            .append(\"noticeTitle\", getNoticeTitle())\n            .append(\"noticeType\", getNoticeType())\n            .append(\"noticeContent\", getNoticeContent())\n            .append(\"status\", getStatus()).append",
+          "lineNumber": 89
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"noticeId\", getNoticeId())\n            .append(\"noticeTitle\", getNoticeTitle())\n            .append(\"noticeType\", getNoticeType())\n            .append(\"noticeContent\", getNoticeContent()).append",
+          "lineNumber": 89
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"noticeId\", getNoticeId())\n            .append(\"noticeTitle\", getNoticeTitle())\n            .append(\"noticeType\", getNoticeType()).append",
+          "lineNumber": 89
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"noticeId\", getNoticeId())\n            .append(\"noticeTitle\", getNoticeTitle()).append",
+          "lineNumber": 89
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"noticeId\", getNoticeId()).append",
+          "lineNumber": 89
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE).append",
+          "lineNumber": 89
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder",
+          "lineNumber": 89
+        },
+        {
+          "caller": "toString",
+          "callee": "getNoticeId",
+          "lineNumber": 90
+        },
+        {
+          "caller": "toString",
+          "callee": "getNoticeTitle",
+          "lineNumber": 91
+        },
+        {
+          "caller": "toString",
+          "callee": "getNoticeType",
+          "lineNumber": 92
+        },
+        {
+          "caller": "toString",
+          "callee": "getNoticeContent",
+          "lineNumber": 93
+        },
+        {
+          "caller": "toString",
+          "callee": "getStatus",
+          "lineNumber": 94
+        },
+        {
+          "caller": "toString",
+          "callee": "getCreateBy",
+          "lineNumber": 95
+        },
+        {
+          "caller": "toString",
+          "callee": "getCreateTime",
+          "lineNumber": 96
+        },
+        {
+          "caller": "toString",
+          "callee": "getUpdateBy",
+          "lineNumber": 97
+        },
+        {
+          "caller": "toString",
+          "callee": "getUpdateTime",
+          "lineNumber": 98
+        },
+        {
+          "caller": "toString",
+          "callee": "getRemark",
+          "lineNumber": 99
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 12,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysPost.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 124,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "getPostId",
+          "startLine": 44,
+          "endLine": 47,
+          "params": []
+        },
+        {
+          "name": "setPostId",
+          "startLine": 49,
+          "endLine": 52,
+          "params": [
+            "postId"
+          ]
+        },
+        {
+          "name": "getPostCode",
+          "startLine": 54,
+          "endLine": 59,
+          "params": []
+        },
+        {
+          "name": "setPostCode",
+          "startLine": 61,
+          "endLine": 64,
+          "params": [
+            "postCode"
+          ]
+        },
+        {
+          "name": "getPostName",
+          "startLine": 66,
+          "endLine": 71,
+          "params": []
+        },
+        {
+          "name": "setPostName",
+          "startLine": 73,
+          "endLine": 76,
+          "params": [
+            "postName"
+          ]
+        },
+        {
+          "name": "getPostSort",
+          "startLine": 78,
+          "endLine": 82,
+          "params": []
+        },
+        {
+          "name": "setPostSort",
+          "startLine": 84,
+          "endLine": 87,
+          "params": [
+            "postSort"
+          ]
+        },
+        {
+          "name": "getStatus",
+          "startLine": 89,
+          "endLine": 92,
+          "params": []
+        },
+        {
+          "name": "setStatus",
+          "startLine": 94,
+          "endLine": 97,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "isFlag",
+          "startLine": 99,
+          "endLine": 102,
+          "params": []
+        },
+        {
+          "name": "setFlag",
+          "startLine": 104,
+          "endLine": 107,
+          "params": [
+            "flag"
+          ]
+        },
+        {
+          "name": "toString",
+          "startLine": 109,
+          "endLine": 123,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysPost",
+          "startLine": 17,
+          "endLine": 124,
+          "methods": [
+            "getPostId",
+            "setPostId",
+            "getPostCode",
+            "setPostCode",
+            "getPostName",
+            "setPostName",
+            "getPostSort",
+            "setPostSort",
+            "getStatus",
+            "setStatus",
+            "isFlag",
+            "setFlag",
+            "toString"
+          ],
+          "properties": [
+            "serialVersionUID",
+            "postId",
+            "postCode",
+            "postName",
+            "postSort",
+            "status",
+            "flag"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getPostId",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "setPostId",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getPostCode",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "setPostCode",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "getPostName",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "setPostName",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "getPostSort",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "setPostSort",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "getStatus",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "setStatus",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "isFlag",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "setFlag",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "toString",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "SysPost",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"postId\", getPostId())\n            .append(\"postCode\", getPostCode())\n            .append(\"postName\", getPostName())\n            .append(\"postSort\", getPostSort())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy())\n            .append(\"updateTime\", getUpdateTime())\n            .append(\"remark\", getRemark()).toString",
+          "lineNumber": 111
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"postId\", getPostId())\n            .append(\"postCode\", getPostCode())\n            .append(\"postName\", getPostName())\n            .append(\"postSort\", getPostSort())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy())\n            .append(\"updateTime\", getUpdateTime()).append",
+          "lineNumber": 111
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"postId\", getPostId())\n            .append(\"postCode\", getPostCode())\n            .append(\"postName\", getPostName())\n            .append(\"postSort\", getPostSort())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime())\n            .append(\"updateBy\", getUpdateBy()).append",
+          "lineNumber": 111
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"postId\", getPostId())\n            .append(\"postCode\", getPostCode())\n            .append(\"postName\", getPostName())\n            .append(\"postSort\", getPostSort())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy())\n            .append(\"createTime\", getCreateTime()).append",
+          "lineNumber": 111
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"postId\", getPostId())\n            .append(\"postCode\", getPostCode())\n            .append(\"postName\", getPostName())\n            .append(\"postSort\", getPostSort())\n            .append(\"status\", getStatus())\n            .append(\"createBy\", getCreateBy()).append",
+          "lineNumber": 111
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"postId\", getPostId())\n            .append(\"postCode\", getPostCode())\n            .append(\"postName\", getPostName())\n            .append(\"postSort\", getPostSort())\n            .append(\"status\", getStatus()).append",
+          "lineNumber": 111
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"postId\", getPostId())\n            .append(\"postCode\", getPostCode())\n            .append(\"postName\", getPostName())\n            .append(\"postSort\", getPostSort()).append",
+          "lineNumber": 111
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"postId\", getPostId())\n            .append(\"postCode\", getPostCode())\n            .append(\"postName\", getPostName()).append",
+          "lineNumber": 111
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"postId\", getPostId())\n            .append(\"postCode\", getPostCode()).append",
+          "lineNumber": 111
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"postId\", getPostId()).append",
+          "lineNumber": 111
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE).append",
+          "lineNumber": 111
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder",
+          "lineNumber": 111
+        },
+        {
+          "caller": "toString",
+          "callee": "getPostId",
+          "lineNumber": 112
+        },
+        {
+          "caller": "toString",
+          "callee": "getPostCode",
+          "lineNumber": 113
+        },
+        {
+          "caller": "toString",
+          "callee": "getPostName",
+          "lineNumber": 114
+        },
+        {
+          "caller": "toString",
+          "callee": "getPostSort",
+          "lineNumber": 115
+        },
+        {
+          "caller": "toString",
+          "callee": "getStatus",
+          "lineNumber": 116
+        },
+        {
+          "caller": "toString",
+          "callee": "getCreateBy",
+          "lineNumber": 117
+        },
+        {
+          "caller": "toString",
+          "callee": "getCreateTime",
+          "lineNumber": 118
+        },
+        {
+          "caller": "toString",
+          "callee": "getUpdateBy",
+          "lineNumber": 119
+        },
+        {
+          "caller": "toString",
+          "callee": "getUpdateTime",
+          "lineNumber": 120
+        },
+        {
+          "caller": "toString",
+          "callee": "getRemark",
+          "lineNumber": 121
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 14,
+        "functionCount": 13,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleDept.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "getRoleId",
+          "startLine": 19,
+          "endLine": 22,
+          "params": []
+        },
+        {
+          "name": "setRoleId",
+          "startLine": 24,
+          "endLine": 27,
+          "params": [
+            "roleId"
+          ]
+        },
+        {
+          "name": "getDeptId",
+          "startLine": 29,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "setDeptId",
+          "startLine": 34,
+          "endLine": 37,
+          "params": [
+            "deptId"
+          ]
+        },
+        {
+          "name": "toString",
+          "startLine": 39,
+          "endLine": 45,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysRoleDept",
+          "startLine": 11,
+          "endLine": 46,
+          "methods": [
+            "getRoleId",
+            "setRoleId",
+            "getDeptId",
+            "setDeptId",
+            "toString"
+          ],
+          "properties": [
+            "roleId",
+            "deptId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getRoleId",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "setRoleId",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "getDeptId",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "setDeptId",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "toString",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "SysRoleDept",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"roleId\", getRoleId())\n            .append(\"deptId\", getDeptId()).toString",
+          "lineNumber": 41
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"roleId\", getRoleId()).append",
+          "lineNumber": 41
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE).append",
+          "lineNumber": 41
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder",
+          "lineNumber": 41
+        },
+        {
+          "caller": "toString",
+          "callee": "getRoleId",
+          "lineNumber": 42
+        },
+        {
+          "caller": "toString",
+          "callee": "getDeptId",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysRoleMenu.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "getRoleId",
+          "startLine": 19,
+          "endLine": 22,
+          "params": []
+        },
+        {
+          "name": "setRoleId",
+          "startLine": 24,
+          "endLine": 27,
+          "params": [
+            "roleId"
+          ]
+        },
+        {
+          "name": "getMenuId",
+          "startLine": 29,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "setMenuId",
+          "startLine": 34,
+          "endLine": 37,
+          "params": [
+            "menuId"
+          ]
+        },
+        {
+          "name": "toString",
+          "startLine": 39,
+          "endLine": 45,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysRoleMenu",
+          "startLine": 11,
+          "endLine": 46,
+          "methods": [
+            "getRoleId",
+            "setRoleId",
+            "getMenuId",
+            "setMenuId",
+            "toString"
+          ],
+          "properties": [
+            "roleId",
+            "menuId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getRoleId",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "setRoleId",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "getMenuId",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "setMenuId",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "toString",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "SysRoleMenu",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"roleId\", getRoleId())\n            .append(\"menuId\", getMenuId()).toString",
+          "lineNumber": 41
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)\n            .append(\"roleId\", getRoleId()).append",
+          "lineNumber": 41
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE).append",
+          "lineNumber": 41
+        },
+        {
+          "caller": "toString",
+          "callee": "new ToStringBuilder",
+          "lineNumber": 41
+        },
+        {
+          "caller": "toString",
+          "callee": "getRoleId",
+          "lineNumber": 42
+        },
+        {
+          "caller": "toString",
+          "callee": "getMenuId",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "spzx-modules/spzx-system/src/main/java/com/spzx/system/domain/SysUserOnline.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 79,
+      "functions": [
+        {
+          "name": "getTokenId",
+          "startLine": 31,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "setTokenId",
+          "startLine": 36,
+          "endLine": 39,
+          "params": [
+            "tokenId"
+          ]
+        },
+        {
+          "name": "getUserName",
+          "startLine": 41,
+          "endLine": 44,
+          "params": []
+        },
+        {
+          "name": "setUserName",
+          "startLine": 46,
+          "endLine": 49,
+          "params": [
+            "userName"
+          ]
+        },
+        {
+          "name": "getIpaddr",
+          "startLine": 51,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "setIpaddr",
+          "startLine": 56,
+          "endLine": 59,
+          "params": [
+            "ipaddr"
+          ]
+        },
+        {
+          "name": "getLoginLocation",
+          "startLine": 61,
+          "endLine": 64,
+          "params": []
+        },
+        {
+          "name": "setLoginLocation",
+          "startLine": 66,
+          "endLine": 69,
+          "params": [
+            "loginLocation"
+          ]
+        },
+        {
+          "name": "getBrowser",
+          "startLine": 71,
+          "endLine": 74,
+          "params": []
+        },
+        {
+          "name": "setBrowser",
+          "startLine": 76,
+          "endLine": 79,
+          "params": [
+            "browser"
+          ]
+        },
+        {
+          "name": "getOs",
+          "startLine": 81,
+          "endLine": 84,
+          "params": []
+        },
+        {
+          "name": "setOs",
+          "startLine": 86,
+          "endLine": 89,
+          "params": [
+            "os"
+          ]
+        },
+        {
+          "name": "getLoginTime",
+          "startLine": 91,
+          "endLine": 94,
+          "params": []
+        },
+        {
+          "name": "setLoginTime",
+          "startLine": 96,
+          "endLine": 99,
+          "params": [
+            "loginTime"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SysUserOnline",
+          "startLine": 8,
+          "endLine": 100,
+          "methods": [
+            "getTokenId",
+            "setTokenId",
+            "getUserName",
+            "setUserName",
+            "getIpaddr",
+            "setIpaddr",
+            "getLoginLocation",
+            "setLoginLocation",
+            "getBrowser",
+            "setBrowser",
+            "getOs",
+            "setOs",
+            "getLoginTime",
+            "setLoginTime"
+          ],
+          "properties": [
+            "tokenId",
+            "userName",
+            "ipaddr",
+            "loginLocation",
+            "browser",
+            "os",
+            "loginTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getTokenId",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "setTokenId",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "getUserName",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "setUserName",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "getIpaddr",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "setIpaddr",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginLocation",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "setLoginLocation",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "getBrowser",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "setBrowser",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "getOs",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "setOs",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginTime",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "setLoginTime",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "SysUserOnline",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 15,
+        "functionCount": 14,
+        "classCount": 1
+      }
+    }
+  ]
+}
