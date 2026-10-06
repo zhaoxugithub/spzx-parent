@@ -36,7 +36,11 @@ public class TraceIdFilter implements GlobalFilter, Ordered {
         MDC.put("traceId", traceId);
         log.info("traceId: {} , url: {}", traceId, request.getURI().getPath());
 
-        return chain.filter(exchange.mutate().request(request).build())
+        ServerWebExchange webExchange = exchange.mutate()
+                .request(request)
+                .build();
+
+        return chain.filter(webExchange)
                 .doFinally(signalType -> MDC.clear());
     }
 
