@@ -30,6 +30,7 @@
 #     logs <svc>  查看日志（gateway|auth|system|product|ui，第二个参数 -f 跟随）
 #     verify      验证（注册状态 + 外网接口 + 可选完整登录链路）
 #     clean       清理服务器上悬空镜像
+#     config      打印当前生效的配置（含配置文件路径）
 #     help        帮助
 #
 # 指定服务（三种等价写法；只影响本次操作，远程 compose 文件始终包含全部服务）
@@ -63,7 +64,14 @@
 #   例：SSH_HOST=root@10.0.0.9 HOST_IP=10.0.0.9 NACOS_ADDR=10.0.0.9:8848 SENTINEL_DASHBOARD=10.0.0.9:8858 \
 #        ./docker/remote-deploy.sh all gateway auth system ui
 #
-# 环境变量（均可覆盖）
+# 配置文件（可选，一次写好长期复用）
+#   把要覆盖的变量写进 docker/deploy.env（或仓库根 .deploy.env、~/.spzx-deploy.env），
+#   之后直接 ./docker/remote-deploy.sh all 即可，不必每次带环境变量。
+#   优先级：命令行/环境变量 > 配置文件 > 脚本内置默认值；用 DEPLOY_ENV=/path 指定任意文件。
+#   例：cp docker/deploy.env.example docker/deploy.env && vi docker/deploy.env
+#       ./docker/remote-deploy.sh config     # 查看当前到底用了哪套配置
+#
+# 环境变量（均可覆盖；不设则用内置默认值）
 #   SSH_HOST=root@150.158.27.19   SSH_PORT=22   REMOTE_DIR=/opt/spzx
 #   HOST_IP=150.158.27.19         对外访问验证用的公网 IP（默认取 SSH_HOST 的 @ 后半段）
 #   TAG=latest                    IMAGE_PREFIX=spzx
@@ -101,6 +109,32 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# 可选的配置文件：一次写好，之后直接跑脚本即可，无需每次带环境变量。
+# 优先级：命令行/环境变量  >  配置文件  >  脚本内置默认值
+DEPLOY_ENV="${DEPLOY_ENV:-}"
+load_env_file() {  # $1=配置文件；只采用"环境里尚未设置"的键，故环境变量优先级更高
+  local line k v
+  while IFS= read -r line || [ -n "$line" ]; do
+    case "$line" in ''|'#'*) continue ;; esac
+    case "$line" in *'='*) ;; *) continue ;; esac
+    k="$(printf '%s' "${line%%=*}" | tr -d '[:space:]')"
+    v="${line#*=}"
+    v="${v#"${v%%[![:space:]]*}"}"; v="${v%"${v##*[![:space:]]}"}"   # 去首尾空白
+    v="${v%\"}"; v="${v#\"}"; v="${v%\'}"; v="${v#\'}"                # 去一层引号
+    case "$k" in [A-Za-z_][A-Za-z0-9_]*) ;; *) continue ;; esac
+    if [ -z "$(printenv "$k" 2>/dev/null || true)" ]; then
+      export "$k=$v"
+    fi
+  done < "$1"
+}
+
+if [ -z "$DEPLOY_ENV" ]; then
+  for c in "$ROOT_DIR/docker/deploy.env" "$ROOT_DIR/.deploy.env" "$HOME/.spzx-deploy.env"; do
+    [ -f "$c" ] && { DEPLOY_ENV="$c"; break; }
+  done
+fi
+[ -n "$DEPLOY_ENV" ] && [ -f "$DEPLOY_ENV" ] && load_env_file "$DEPLOY_ENV"
 
 # ⚠ 兼容性提醒（踩过的坑，勿回退）：
 #   消息字符串里的变量一律写成 ${VAR}，不要写成 $VAR 直接跟中文/全角符号。
@@ -189,7 +223,7 @@ if [ $# -gt 0 ]; then
   _cmd="$1"; shift || true
   case "$_cmd" in
     logs) CMD="logs"; LOG_SVC="${1:-gateway}"; LOG_FOLLOW="${2:-}" ;;
-    all|build|pack|image|up|stop|down|restart|status|verify|clean|help|-h|--help)
+    all|build|pack|image|up|stop|down|restart|status|verify|clean|config|help|-h|--help)
       CMD="$_cmd"
       if [ $# -gt 0 ]; then ONLY="${ONLY:+$ONLY }$*"; fi ;;
     *) CMD="all"; ONLY="${ONLY:+$ONLY }$_cmd $*" ;;
@@ -520,6 +554,29 @@ cmd_down() {
 
 cmd_clean() { ssh_do "docker image prune -f" >/dev/null; ok "已清理悬空镜像"; ssh_do "df -h / | tail -1"; }
 
+# 打印当前生效的配置（含配置文件路径），不开 SSH、不改服务器
+cmd_config() {
+  if [ -n "$DEPLOY_ENV" ] && [ -f "$DEPLOY_ENV" ]; then
+    ok "已加载配置文件：$DEPLOY_ENV"
+  else
+    warn "未使用配置文件（可选文件：docker/deploy.env 或 .deploy.env；可用 DEPLOY_ENV=/path 指定）"
+  fi
+  echo
+  printf '%-20s %s\n' \
+    SSH_HOST "$SSH_HOST" SSH_PORT "$SSH_PORT" REMOTE_DIR "$REMOTE_DIR" HOST_IP "$HOST_IP" \
+    TAG "$TAG" IMAGE_PREFIX "$IMAGE_PREFIX" XFER "$XFER" \
+    GATEWAY_PUBLISH "$GATEWAY_PUBLISH" UI_PUBLISH "$UI_PUBLISH" INTERNAL_BIND "$INTERNAL_BIND" \
+    NACOS_ADDR "$NACOS_ADDR" NACOS_API "$NACOS_API" \
+    SENTINEL_DASHBOARD "${SENTINEL_DASHBOARD:-（用 pom 默认值）}" \
+    ONLY "${ONLY:-（不限制，全部服务）}" SKIP_MAVEN "$SKIP_MAVEN" SKIP_JARS "$SKIP_JARS" \
+    CDS "$CDS" CDS_DIR "$CDS_DIR" \
+    GATEWAY_HEAP "$GATEWAY_HEAP" AUTH_HEAP "$AUTH_HEAP" SYSTEM_HEAP "$SYSTEM_HEAP" PRODUCT_HEAP "$PRODUCT_HEAP" \
+    UI_MEM "$UI_MEM" JVM_OPTS_EXTRA "${JVM_OPTS_EXTRA:-（无）}"
+  echo
+  log "可选服务：$(while read -r s; do echo "$(printf '%s' "$s" | cut -d'|' -f1)"; done < <(printf '%s\n' "${ALL_SERVICES[@]}") | tr '\n' ' ')"
+  log "本次会处理：$(selected_names | tr '\n' ' ')"
+}
+
 # ------------------------------------------------------------------ status / logs
 nacos_instances() {  # $1=serviceName
   ssh_do "curl -s -m 6 '$NACOS_API/nacos/v3/client/ns/instance/list?serviceName=$1&groupName=DEFAULT_GROUP&namespaceId=public'"
@@ -663,7 +720,7 @@ redis_cli() {  # $* = redis-cli 子命令与参数
 redis_set_captcha() { redis_cli set "captcha_codes:$1" "\\\"$2\\\"" EX 300 >/dev/null; }
 
 # ------------------------------------------------------------------ main
-usage() { sed -n '2,100p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; }
+usage() { sed -n '2,108p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; }
 
 case "$CMD" in
   all)     cmd_build; cmd_pack; cmd_image; cmd_up; cmd_verify ;;
@@ -678,6 +735,7 @@ case "$CMD" in
   logs)    cmd_logs "${LOG_SVC:-gateway}" "${LOG_FOLLOW:-}" ;;
   verify)  cmd_verify ;;
   clean)   cmd_clean ;;
+  config)  cmd_config ;;
   help|-h|--help) usage ;;
   *) die "未知命令：$CMD" ;;
 esac
