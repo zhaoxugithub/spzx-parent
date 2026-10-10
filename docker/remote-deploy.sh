@@ -16,7 +16,7 @@
 #   服务器：Docker + Docker Compose v2，且已运行 Nacos/MySQL/Redis
 #           （本项目 pom.xml 中 nacos.addr 指向的机器）
 #
-# 用法
+# 用法（完整命令操作文档：doc/远程部署-脚本使用说明.md）
 #   ./docker/remote-deploy.sh [命令] [服务...]
 #     all(默认)   对选中服务执行 build → pack → image → up → verify
 #     build       本地打包（后端 mvn package；前端 npm run build:prod）
@@ -52,14 +52,28 @@
 #   5) 网关路由 /product/** 已在 Nacos（spzx-gateway-dev.yml）里配好，product 注册后即可通过
 #      网关访问：http://<host>:19080/product/brand/list（需要 token；白名单只放行 /product/test/**）
 #
+# 换一台服务器部署（所有地址都能外部指定，无需改脚本）
+#   1) SSH_HOST=root@<新IP>  HOST_IP=<新IP>              # HOST_IP 默认从 SSH_HOST 推导，走跳板机时要显式指定
+#   2) NACOS_ADDR=<新IP>:8848                            # 会被 -Dnacos.addr 打进 jar，必须重新 build（不能用 SKIP_MAVEN=1）
+#   3) NACOS_API=http://<新IP>:8848                       # 仅脚本查注册状态用；Nacos 在目标机本机就保持默认
+#   4) 目标机的 Nacos 里必须已有 application-dev.yml 和各 spzx-<服务>-dev.yml，
+#      且其中的 MySQL/Redis/RabbitMQ 地址指向目标机自己的基础设施（脚本不生成/不修改这些配置）
+#   5) 目标机需有 Docker + Compose v2；端口/目录/镜像名分别用 GATEWAY_PUBLISH、UI_PUBLISH、
+#      REMOTE_DIR、TAG 覆盖；SSH 需免密（BatchMode，不接受交互输入）
+#   例：SSH_HOST=root@10.0.0.9 HOST_IP=10.0.0.9 NACOS_ADDR=10.0.0.9:8848 SENTINEL_DASHBOARD=10.0.0.9:8858 \
+#        ./docker/remote-deploy.sh all gateway auth system ui
+#
 # 环境变量（均可覆盖）
 #   SSH_HOST=root@150.158.27.19   SSH_PORT=22   REMOTE_DIR=/opt/spzx
+#   HOST_IP=150.158.27.19         对外访问验证用的公网 IP（默认取 SSH_HOST 的 @ 后半段）
 #   TAG=latest                    IMAGE_PREFIX=spzx
 #   GATEWAY_PUBLISH="19080:8080"  网关对外端口（80 默认留给前端）
 #   UI_PUBLISH="80:80"            前端对外端口
 #   INTERNAL_BIND=127.0.0.1       auth/system 绑定地址，默认只绑回环不对外暴露
 #   ONLY="auth ui"                SKIP_MAVEN=1   SKIP_JARS=1   XFER=auto|scp|rsync
-#   NACOS_ADDR=150.158.27.19:8848 预检：jar 内 bootstrap.yml 的注册地址
+#   NACOS_ADDR=150.158.27.19:8848 打包时 -Dnacos.addr 写进 jar + 上传前预检
+#   NACOS_API=http://127.0.0.1:8848   脚本查注册状态用的 Nacos 地址（在目标机上 curl）
+#   SENTINEL_DASHBOARD=               可选，打包时 -Dsentinel.dashboard 写入；留空用 pom 默认值
 #   ---- 内存相关（服务器内存紧张时的重点）----
 #   GATEWAY_HEAP=192m AUTH_HEAP=192m SYSTEM_HEAP=320m PRODUCT_HEAP=384m   各 JVM -Xmx
 #   GATEWAY_MEM= AUTH_MEM= SYSTEM_MEM= PRODUCT_MEM=      可选 cgroup 硬上限（默认不限制）
@@ -105,6 +119,10 @@ ONLY="${ONLY:-}"
 SKIP_MAVEN="${SKIP_MAVEN:-0}"
 SKIP_JARS="${SKIP_JARS:-0}"
 NACOS_ADDR="${NACOS_ADDR:-150.158.27.19:8848}"
+# 脚本查注册状态用的 Nacos 地址（在目标机上执行 curl，默认走本机回环）
+NACOS_API="${NACOS_API:-http://127.0.0.1:8848}"
+# Sentinel 控制台地址（仅打包时写入配置，留空则用 pom 里的默认值）
+SENTINEL_DASHBOARD="${SENTINEL_DASHBOARD:-}"
 XFER="${XFER:-auto}"   # 传输方式：auto|scp|rsync
 
 # 内存相关
@@ -140,7 +158,7 @@ GATEWAY_EXTERNAL_PORT="$(echo "$GATEWAY_PUBLISH" | awk '{print $1}' | cut -d: -f
 GATEWAY_EXTERNAL_PORT="${GATEWAY_EXTERNAL_PORT:-19080}"
 UI_EXTERNAL_PORT="$(echo "$UI_PUBLISH" | awk '{print $1}' | cut -d: -f1)"
 UI_EXTERNAL_PORT="${UI_EXTERNAL_PORT:-80}"
-HOST_IP="${SSH_HOST#*@}"
+HOST_IP="${HOST_IP:-${SSH_HOST#*@}}"
 
 SSH_OPTS=(-n -o BatchMode=yes -o StrictHostKeyChecking=accept-new -o ConnectTimeout=15 -p "$SSH_PORT")
 RSYNC_SSH="ssh -p $SSH_PORT -o BatchMode=yes -o StrictHostKeyChecking=accept-new"
@@ -398,7 +416,10 @@ cmd_build() {
     else
       modules="${modules#,}"
       log "Maven 打包：$modules （含依赖模块，跳过测试）"
-      ( cd "$ROOT_DIR" && mvn -B -q -DskipTests -pl "$modules" -am package )
+      local mvn_opts=(-Dnacos.addr="$NACOS_ADDR")
+      [ -n "$SENTINEL_DASHBOARD" ] && mvn_opts+=(-Dsentinel.dashboard="$SENTINEL_DASHBOARD")
+      log "写入 jar 的 Nacos 地址：$NACOS_ADDR"
+      ( cd "$ROOT_DIR" && mvn -B -q -DskipTests -pl "$modules" -am package "${mvn_opts[@]}" )
       ok "后端打包完成"
     fi
     did=1
@@ -501,7 +522,7 @@ cmd_clean() { ssh_do "docker image prune -f" >/dev/null; ok "已清理悬空镜�
 
 # ------------------------------------------------------------------ status / logs
 nacos_instances() {  # $1=serviceName
-  ssh_do "curl -s -m 6 'http://127.0.0.1:8848/nacos/v3/client/ns/instance/list?serviceName=$1&groupName=DEFAULT_GROUP&namespaceId=public'"
+  ssh_do "curl -s -m 6 '$NACOS_API/nacos/v3/client/ns/instance/list?serviceName=$1&groupName=DEFAULT_GROUP&namespaceId=public'"
 }
 
 cmd_status() {
@@ -642,7 +663,7 @@ redis_cli() {  # $* = redis-cli 子命令与参数
 redis_set_captcha() { redis_cli set "captcha_codes:$1" "\\\"$2\\\"" EX 300 >/dev/null; }
 
 # ------------------------------------------------------------------ main
-usage() { sed -n '2,86p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; }
+usage() { sed -n '2,100p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; }
 
 case "$CMD" in
   all)     cmd_build; cmd_pack; cmd_image; cmd_up; cmd_verify ;;
@@ -654,6 +675,7 @@ case "$CMD" in
   down)    cmd_down ;;
   restart) cmd_restart ;;
   status)  cmd_status ;;
+  logs)    cmd_logs "${LOG_SVC:-gateway}" "${LOG_FOLLOW:-}" ;;
   verify)  cmd_verify ;;
   clean)   cmd_clean ;;
   help|-h|--help) usage ;;
