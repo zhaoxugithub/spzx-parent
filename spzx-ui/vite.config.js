@@ -34,7 +34,8 @@ export default defineConfig(({ mode, command }) => {
           //    http://localhost/dev-api/product/brand/list
           //    转换后：
           //    http://localhost:8080/product/brand/list
-          target: 'http://localhost:8080',
+          // target: 'http://localhost:8080',
+          target: 'http://150.158.27.19:80',
           changeOrigin: true,
           //    将前端路径   /dev-api  前缀  替换为  ‘’ 空串
           rewrite: (p) => p.replace(/^\/dev-api/, '')
