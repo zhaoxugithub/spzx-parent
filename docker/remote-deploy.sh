@@ -120,6 +120,7 @@ load_env_file() {  # $1=配置文件；只采用"环境里尚未设置"的键，
     case "$line" in *'='*) ;; *) continue ;; esac
     k="$(printf '%s' "${line%%=*}" | tr -d '[:space:]')"
     v="${line#*=}"
+    v="${v%%[[:space:]]#*}"          # 去行内注释：空格/制表符后的 # 及其后内容视为注释
     v="${v#"${v%%[![:space:]]*}"}"; v="${v%"${v##*[![:space:]]}"}"   # 去首尾空白
     v="${v%\"}"; v="${v#\"}"; v="${v%\'}"; v="${v#\'}"                # 去一层引号
     case "$k" in [A-Za-z_][A-Za-z0-9_]*) ;; *) continue ;; esac

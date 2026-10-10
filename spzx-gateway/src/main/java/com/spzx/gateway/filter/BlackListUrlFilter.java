@@ -37,7 +37,6 @@ public class BlackListUrlFilter extends AbstractGatewayFilterFactory<BlackListUr
     public static class Config {
         @Getter
         private List<String> blacklistUrl;
-
         private final List<Pattern> blacklistUrlPattern = new ArrayList<>();
 
         public boolean matchBlacklist(String url) {
@@ -52,5 +51,4 @@ public class BlackListUrlFilter extends AbstractGatewayFilterFactory<BlackListUr
             });
         }
     }
-
 }
