@@ -56,7 +56,7 @@ public class TokenService {
         refreshToken(loginUser); //登录信息缓存12个小时
 
         // Jwt存储信息    头,主体,签名
-        Map<String, Object> claimsMap = new HashMap<String, Object>();
+        Map<String, Object> claimsMap = new HashMap<>();
         claimsMap.put(SecurityConstants.USER_KEY, token);
         claimsMap.put(SecurityConstants.DETAILS_USER_ID, userId);
         claimsMap.put(SecurityConstants.DETAILS_USERNAME, userName);

@@ -54,7 +54,7 @@ public class SecurityUtils {
      * 根据request获取请求token
      */
     public static String getToken(HttpServletRequest request) {
-        // 从header获取token标识
+        // 从header获取token标识 Authorization
         String token = request.getHeader(TokenConstants.AUTHENTICATION);
         return replaceTokenPrefix(token);
     }
@@ -63,7 +63,7 @@ public class SecurityUtils {
      * 裁剪token前缀
      */
     public static String replaceTokenPrefix(String token) {
-        // 如果前端设置了令牌前缀，则裁剪掉前缀
+        // 如果前端设置了令牌前缀，则裁剪掉前缀 Bearer
         if (StringUtils.isNotEmpty(token) && token.startsWith(TokenConstants.PREFIX)) {
             token = token.replaceFirst(TokenConstants.PREFIX, "");
         }

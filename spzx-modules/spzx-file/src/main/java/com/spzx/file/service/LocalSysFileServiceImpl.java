@@ -13,8 +13,7 @@ import com.spzx.file.utils.FileUploadUtils;
  */
 @Primary
 @Service("localSysFileService")
-public class LocalSysFileServiceImpl implements ISysFileService
-{
+public class LocalSysFileServiceImpl implements ISysFileService {
     /**
      * 资源映射路径 前缀
      */
@@ -41,8 +40,7 @@ public class LocalSysFileServiceImpl implements ISysFileService
      * @throws Exception
      */
     @Override
-    public String uploadFile(MultipartFile file) throws Exception
-    {
+    public String uploadFile(MultipartFile file) throws Exception {
         String name = FileUploadUtils.upload(localFilePath, file);
         String url = domain + localFilePrefix + name;
         return url;

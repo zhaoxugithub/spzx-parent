@@ -32,9 +32,10 @@ public class TokenController {
 
     @PostMapping("login")
     public R<?> login(@RequestBody LoginBody form) {
-        // 用户登录
-        LoginUser userInfo = sysLoginService.login(form.getUsername(), form.getPassword());
-        // 获取登录token
+        LoginUser userInfo = sysLoginService.login(
+                form.getUsername(),
+                form.getPassword()
+        );
         return R.ok(tokenService.createToken(userInfo));
     }
 

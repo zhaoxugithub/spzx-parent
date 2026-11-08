@@ -223,3 +223,15 @@ SW_AGENT_SAMPLE=1
 | 12800 | OAP HTTP（UI 查询接口） |
 | 18080 | SkyWalking UI（Web 控制台） |
 | 8080 | 网关（原有，未被占用） |
+
+
+
+TraceIdFilter  --->
+AuthFilter   --->
+XssFilter  -->
+
+
+
+
+TraceIdFilter   HeaderInterceptor  FeignRequestInterceptor
+InnerAuthAspect  PreAuthorizeAspect

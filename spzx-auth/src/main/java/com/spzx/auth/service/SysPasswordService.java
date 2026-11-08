@@ -38,6 +38,10 @@ public class SysPasswordService {
         return CacheConstants.PWD_ERR_CNT_KEY + username;
     }
 
+    /**
+     * @param user 系统数据
+     * @param password
+     */
     public void validate(LoginUser user, String password) {
         String username = user.getUsername();
         Integer retryCount = redisService.getCacheObject(getCacheKey(username));

@@ -135,7 +135,8 @@ public class SysUserController extends BaseController {
     @Log(title = "用户管理模块-注册", businessType = BusinessType.INSERT)
     public R<Boolean> register(@RequestBody SysUser sysUser) {
         String username = sysUser.getUserName();
-        if (!("true".equals(configService.selectConfigByKey("sys.account.registerUser")))) {
+        String configKey = configService.selectConfigByKey("sys.account.registerUser");
+        if (!(StringUtils.equalsIgnoreCase("true", configKey))) {
             return R.fail("当前系统没有开启注册功能！");
         }
         if (!userService.checkUserNameUnique(sysUser)) {

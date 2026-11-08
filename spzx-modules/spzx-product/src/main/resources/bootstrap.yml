@@ -27,3 +27,4 @@ spring:
           - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
         #namespace: xxx
         #group:
+        namespace: ${nacos.namespace}
