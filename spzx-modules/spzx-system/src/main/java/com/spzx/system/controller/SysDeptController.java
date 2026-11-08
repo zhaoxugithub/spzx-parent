@@ -3,6 +3,7 @@ package com.spzx.system.controller;
 import java.util.List;
 
 import com.spzx.system.mapper.SysDeptMapper;
+import jakarta.annotation.Resource;
 import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -36,7 +37,7 @@ public class SysDeptController extends BaseController {
     @Autowired
     private ISysDeptService deptService;
 
-    @Autowired
+    @Resource
     private SysDeptMapper sysDeptMapper;
 
     /**

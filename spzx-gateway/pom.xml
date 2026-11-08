@@ -9,7 +9,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spzx-gateway</artifactId>
-
     <description>
         spzx-gateway网关模块
     </description>
@@ -78,10 +77,6 @@
             <groupId>com.spzx</groupId>
             <artifactId>spzx-common-redis</artifactId>
         </dependency>
-
-
-
-
     </dependencies>
 
     <build>
@@ -100,5 +95,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

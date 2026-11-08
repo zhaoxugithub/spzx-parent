@@ -68,4 +68,8 @@ public class TokenController {
         sysLoginService.register(registerBody.getUsername(), registerBody.getPassword());
         return R.ok();
     }
+
+    public void dd() {
+        System.out.println("nihao");
+    }
 }
