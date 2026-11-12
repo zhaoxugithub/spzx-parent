@@ -41,41 +41,7 @@ public class SysLoginService {
      * 登录
      */
     public LoginUser login(String username, String password) {
-        // 1. 参数校验：用户名/密码不能为空
-        if (StringUtils.isAnyBlank(username, password)) {
-            loginFail(username, "用户/密码必须填写");
-        }
-        // 2. 参数校验：密码长度必须在指定范围内
-        if (password.length() < UserConstants.PASSWORD_MIN_LENGTH
-                || password.length() > UserConstants.PASSWORD_MAX_LENGTH) {
-            loginFail(username, "用户密码不在指定范围");
-        }
-        // 3. 参数校验：用户名长度必须在指定范围内
-        if (username.length() < UserConstants.USERNAME_MIN_LENGTH
-                || username.length() > UserConstants.USERNAME_MAX_LENGTH) {
-            loginFail(username, "用户名不在指定范围");
-        }
-        // 4. IP 黑名单校验
-        String blackStr = Convert.toStr(redisService.getCacheObject(CacheConstants.SYS_LOGIN_BLACKIPLIST));
-        if (IpUtils.isMatchedIp(blackStr, IpUtils.getIpAddr())) {
-            loginFail(username, "很遗憾，访问IP已被列入系统黑名单");
-        }
-        // 5. 远程查询用户信息（Feign 调用 spzx-system 的 RemoteUserService）
-        R<LoginUser> userResult = remoteUserService.getUserInfo(username, SecurityConstants.INNER);
-
-        // 5.1 远程服务调用异常/降级：先判断 R.FAIL，避免降级返回被误判为"用户不存在"
-        if (StringUtils.isNull(userResult)) {
-            loginFail(username, "登录服务调用失败");
-        }
-        if (R.FAIL == userResult.getCode()) {
-            loginFail(username, userResult.getMsg());
-        }
-        // 5.2 用户不存在
-        if (StringUtils.isNull(userResult.getData())) {
-            loginFail(username, "登录用户：" + username + " 不存在");
-        }
-
-        LoginUser userInfo = userResult.getData();
+        LoginUser userInfo = validate(username, password);
         SysUser user = userInfo.getSysUser();
         // 6. 账号状态校验：已删除
         if (UserStatus.DELETED.getCode().equals(user.getDelFlag())) {
@@ -138,5 +104,50 @@ public class SysLoginService {
     private void loginFail(String username, String message) {
         recordLogService.recordLogininfor(username, Constants.LOGIN_FAIL, message);
         throw new ServiceException(message);
+    }
+
+
+    /**
+     * 验证
+     * @param username
+     * @param password
+     * @return
+     * @throws ServiceException
+     */
+    private LoginUser validate(String username, String password) throws ServiceException {
+        // 1. 参数校验：用户名/密码不能为空
+        if (StringUtils.isAnyBlank(username, password)) {
+            loginFail(username, "用户/密码必须填写");
+        }
+        // 2. 参数校验：密码长度必须在指定范围内
+        if (password.length() < UserConstants.PASSWORD_MIN_LENGTH
+                || password.length() > UserConstants.PASSWORD_MAX_LENGTH) {
+            loginFail(username, "用户密码不在指定范围");
+        }
+        // 3. 参数校验：用户名长度必须在指定范围内
+        if (username.length() < UserConstants.USERNAME_MIN_LENGTH
+                || username.length() > UserConstants.USERNAME_MAX_LENGTH) {
+            loginFail(username, "用户名不在指定范围");
+        }
+        // 4. IP 黑名单校验
+        String blackStr = Convert.toStr(redisService.getCacheObject(CacheConstants.SYS_LOGIN_BLACKIPLIST));
+        if (IpUtils.isMatchedIp(blackStr, IpUtils.getIpAddr())) {
+            loginFail(username, "很遗憾，访问IP已被列入系统黑名单");
+        }
+        // 5. 远程查询用户信息（Feign 调用 spzx-system 的 RemoteUserService）
+        R<LoginUser> userResult = remoteUserService.getUserInfo(username, SecurityConstants.INNER);
+
+        // 5.1 远程服务调用异常/降级：先判断 R.FAIL，避免降级返回被误判为"用户不存在"
+        if (StringUtils.isNull(userResult)) {
+            loginFail(username, "登录服务调用失败");
+        }
+        if (R.FAIL == userResult.getCode()) {
+            loginFail(username, userResult.getMsg());
+        }
+        // 5.2 用户不存在
+        if (StringUtils.isNull(userResult.getData())) {
+            loginFail(username, "登录用户：" + username + " 不存在");
+        }
+        return userResult.getData();
     }
 }

@@ -27,27 +27,24 @@ import java.util.concurrent.atomic.AtomicReference;
 @Component
 public class ValidateCodeFilter extends AbstractGatewayFilterFactory<Object> {
     private final static String[] VALIDATE_URL = new String[]{"/auth/login", "/auth/register"};
-
     @Autowired
     private ValidateCodeService validateCodeService;
-
     @Autowired
     private CaptchaProperties captchaProperties;
-
     private static final String CODE = "code";
-
     private static final String UUID = "uuid";
 
     @Override
     public GatewayFilter apply(Object config) {
         return (exchange, chain) -> {
             ServerHttpRequest request = exchange.getRequest();
-
             // 非登录/注册请求或验证码关闭，不处理
-            if (!StringUtils.equalsAnyIgnoreCase(request.getURI().getPath(), VALIDATE_URL) || !captchaProperties.getEnabled()) {
+            boolean isValidUrl = StringUtils.equalsAnyIgnoreCase(request.getURI().getPath(), VALIDATE_URL);
+            Boolean enabledSwitch = captchaProperties.getEnabled();
+            // 如果不是登录或者注册|| 开关关闭
+            if (!isValidUrl || !enabledSwitch) {
                 return chain.filter(exchange);
             }
-
             try {
                 String rspStr = resolveBodyFromRequest(request);
                 JSONObject obj = JSON.parseObject(rspStr);
